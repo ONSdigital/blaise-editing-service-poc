@@ -1,9 +1,9 @@
 import supertest, { Response } from 'supertest';
-import BlaiseClient, { ICaseStatus, CaseStatusListMockObject } from 'blaise-api-node-client';
+import BlaiseClient, { CaseStatus, CaseStatusListMockObject, CaseResponseMockObject } from 'blaise-api-node-client';
 import { IMock, Mock, Times } from 'typemoq';
 import nodeServer from '../../../server/server';
 import FakeConfiguration from '../configuration/configuration.fake';
-import { ICaseDetails } from '../../../server/interfaces/case.details.interface';
+import { CaseDetails } from '../../../server/interfaces/case.details.interface';
 import createAxiosError from './axios.test.helper';
 import mapCaseDetails from '../../../server/mappers/case.details.mapper';
 
@@ -19,7 +19,7 @@ const server = nodeServer(configFake, blaiseApiClientMock.object);
 // supertest will handle all http calls
 const sut = supertest(server);
 
-describe('Get case tests', () => {
+describe('Get case list tests', () => {
   beforeEach(() => {
     blaiseApiClientMock.reset();
   });
@@ -32,8 +32,8 @@ describe('Get case tests', () => {
     // arrange
     // mock blaise client to return a list of cases
     const questionnaireName: string = 'TEST111A';
-    const caseStatusList: ICaseStatus[] = CaseStatusListMockObject;
-    const expectedCaseDetailsList: ICaseDetails[] = mapCaseDetails(caseStatusList, questionnaireName, configFake.ExternalWebUrl);
+    const caseStatusList: CaseStatus[] = CaseStatusListMockObject;
+    const expectedCaseDetailsList: CaseDetails[] = mapCaseDetails(caseStatusList, questionnaireName, configFake.ExternalWebUrl);
 
     blaiseApiClientMock.setup((client) => client.getCaseStatus(configFake.ServerPark, questionnaireName)).returns(async () => caseStatusList);
 
@@ -86,5 +86,33 @@ describe('Get case tests', () => {
 
     // assert
     expect(response.status).toEqual(404);
+  });
+});
+
+describe('Get case details tests', () => {
+  beforeEach(() => {
+    blaiseApiClientMock.reset();
+  });
+
+  afterAll(() => {
+    blaiseApiClientMock.reset();
+  });
+
+  it('It should return a 200 response with expected case details', async () => {
+    // arrange
+    // mock blaise client to return a list of cases
+    const caseId: string = '1';
+    const questionnaireName: string = 'TEST111A';
+
+    blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => CaseResponseMockObject);
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}`);
+    
+
+    // assert
+    expect(response.status).toEqual(200);
+    expect(response.body).toEqual(CaseResponseMockObject);
+    blaiseApiClientMock.verify((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId), Times.once());
   });
 });

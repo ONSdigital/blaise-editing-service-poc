@@ -4191,9 +4191,9 @@ binary-extensions@^2.0.0:
   resolved "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
-"blaise-api-node-client@git+https://github.com/ONSdigital/blaise-api-node-client":
+"blaise-api-node-client@git+https://github.com/ONSdigital/blaise-api-node-client#BL5FRS-59":
   version "1.0.0"
-  resolved "git+https://github.com/ONSdigital/blaise-api-node-client#9487f2039496d8c22404073fc115cec1f4221442"
+  resolved "git+https://github.com/ONSdigital/blaise-api-node-client#528bb22c8439a59daf528c2914e48d04c923fc83"
   dependencies:
     "@babel/preset-env" "^7.14.7"
     axios "^0.21.1"

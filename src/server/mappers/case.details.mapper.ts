@@ -1,7 +1,7 @@
-import { ICaseStatus } from 'blaise-api-node-client';
-import { ICaseDetails } from '../interfaces/case.details.interface';
+import { CaseStatus } from 'blaise-api-node-client';
+import { CaseDetails } from '../interfaces/case.details.interface';
 
-export default function mapCaseDetails(caseStatusList: ICaseStatus[], questionnaireName:string, externalWebUrl:string): ICaseDetails[] {
+export default function mapCaseDetails(caseStatusList: CaseStatus[], questionnaireName:string, externalWebUrl:string): CaseDetails[] {
   return caseStatusList.map((caseStatus) => ({
     CaseId: caseStatus.primaryKey,
     CaseStatus: caseStatus.outcome,

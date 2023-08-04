@@ -1,4 +1,4 @@
-import Configuration from '../../../server/configuration/configuration';
+import Configuration from '../../../server/configuration/serverConfiguration';
 
 /* eslint-disable no-new */
 

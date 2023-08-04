@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import BlaiseApiClient from 'blaise-api-node-client';
 import nodeServer from './server';
-import Configuration from './configuration/configuration';
+import Configuration from './configuration/serverConfiguration';
 
 // create/get configuration
 dotenv.config();

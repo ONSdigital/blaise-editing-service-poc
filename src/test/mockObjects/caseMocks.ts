@@ -1,19 +1,19 @@
-import { Outcome } from 'blaise-api-node-client';
-import { ICaseDetails } from '../../server/interfaces/case.details.interface';
+import { CaseOutcome } from 'blaise-api-node-client';
+import { CaseDetails } from '../../server/interfaces/case.details.interface';
 
-const caseDetailsList:ICaseDetails[] = [{
+const caseDetailsList:CaseDetails[] = [{
   CaseId: '1',
-  CaseStatus: Outcome.Completed,
+  CaseStatus: CaseOutcome.Completed,
   CaseLink: 'http://www.cati.com/1',
 },
 {
   CaseId: '2',
-  CaseStatus: Outcome.HQRefusal,
+  CaseStatus: CaseOutcome.HQRefusal,
   CaseLink: 'http://www.cati.com/2',
 },
 {
   CaseId: '3',
-  CaseStatus: Outcome.DeleteRequested,
+  CaseStatus: CaseOutcome.DeleteRequested,
   CaseLink: 'http://www.cati.com/3',
 }];
 

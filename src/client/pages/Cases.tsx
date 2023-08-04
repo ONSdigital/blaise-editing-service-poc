@@ -3,10 +3,10 @@ import { getCases } from '../api/blaiseApi';
 import AsyncContent from '../components/AsyncContent';
 import CasesList from '../components/CasesList';
 import { useAsyncRequestWithParams } from '../hooks/useAsyncRequest';
-import { ICaseDetails } from '../../server/interfaces/case.details.interface';
+import { CaseDetails } from '../../server/interfaces/case.details.interface';
 
 function DisplayCases(questionnaireName: string) {
-  const cases = useAsyncRequestWithParams<ICaseDetails[]>(getCases, questionnaireName);
+  const cases = useAsyncRequestWithParams<CaseDetails[]>(getCases, questionnaireName);
 
   return (
     <AsyncContent content={cases}>

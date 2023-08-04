@@ -3,12 +3,12 @@ import { BrowserRouter } from 'react-router-dom';
 import Router from 'react-router';
 import caseDetailsList from '../../mockObjects/caseMocks';
 import { getCases } from '../../../client/api/blaiseApi';
-import { ICaseDetails } from '../../../server/interfaces/case.details.interface';
+import { CaseDetails } from '../../../server/interfaces/case.details.interface';
 import Cases from '../../../client/pages/Cases';
 
 // declare global vars
 const questionnaireName: string = 'TEST111A';
-const getCasesMock = getCases as jest.Mock<Promise<ICaseDetails[]>>;
+const getCasesMock = getCases as jest.Mock<Promise<CaseDetails[]>>;
 let view:RenderResult;
 
 // declare mocks

@@ -1,7 +1,7 @@
-import { Outcome } from 'blaise-api-node-client';
+import { CaseOutcome } from 'blaise-api-node-client';
 
-export interface ICaseDetails {
+export interface CaseDetails {
   CaseId: string,
-  CaseStatus: Outcome,
+  CaseStatus: CaseOutcome,
   CaseLink: string
 }

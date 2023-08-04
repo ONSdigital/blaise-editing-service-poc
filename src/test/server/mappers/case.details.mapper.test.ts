@@ -1,5 +1,5 @@
-import { ICaseStatus, Outcome } from 'blaise-api-node-client';
-import { ICaseDetails } from '../../../server/interfaces/case.details.interface';
+import { CaseStatus, CaseOutcome } from 'blaise-api-node-client';
+import { CaseDetails } from '../../../server/interfaces/case.details.interface';
 import mapCaseDetails from '../../../server/mappers/case.details.mapper';
 
 describe('Map case status list to case details list', () => {
@@ -8,35 +8,35 @@ describe('Map case status list to case details list', () => {
     const questionnaireName: string = 'TEST111A';
     const externalWebUrl: string = 'cati.blaise.com';
 
-    const caseStatusList: ICaseStatus[] = [
+    const caseStatusList: CaseStatus[] = [
       {
         primaryKey: '1',
-        outcome: Outcome.Completed,
+        outcome: CaseOutcome.Completed,
       },
       {
         primaryKey: '2',
-        outcome: Outcome.Partial,
+        outcome: CaseOutcome.Partial,
       },
       {
         primaryKey: '3',
-        outcome: Outcome.AppointmentMade,
+        outcome: CaseOutcome.AppointmentMade,
       },
     ];
 
-    const expectedCasesList: ICaseDetails[] = [
+    const expectedCasesList: CaseDetails[] = [
       {
         CaseId: '1',
-        CaseStatus: Outcome.Completed,
+        CaseStatus: CaseOutcome.Completed,
         CaseLink: `https://${externalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=1`,
       },
       {
         CaseId: '2',
-        CaseStatus: Outcome.Partial,
+        CaseStatus: CaseOutcome.Partial,
         CaseLink: `https://${externalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=2`,
       },
       {
         CaseId: '3',
-        CaseStatus: Outcome.AppointmentMade,
+        CaseStatus: CaseOutcome.AppointmentMade,
         CaseLink: `https://${externalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=3`,
       },
     ];
