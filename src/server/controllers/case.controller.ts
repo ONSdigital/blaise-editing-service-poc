@@ -1,9 +1,9 @@
-import BlaiseClient, { CaseResponse } from 'blaise-api-node-client';
+import BlaiseClient from 'blaise-api-node-client';
 import express, { Request, Response, Router } from 'express';
 import { ControllerInterface } from '../interfaces/controller.interface';
 import { Configuration } from '../interfaces/configuration.interface';
-import { CaseDetails } from '../interfaces/case.details.interface';
-import mapCaseDetails from '../mappers/case.details.mapper';
+import { CaseDetails, CaseFactsheet } from '../interfaces/case.interface';
+import { mapCaseDetails, mapCaseFactsheet } from '../mappers/case.mapper';
 import notFound from '../../common/axios.helper';
 
 export default class CaseController implements ControllerInterface {
@@ -15,14 +15,14 @@ export default class CaseController implements ControllerInterface {
     this.config = config;
     this.blaiseApiClient = blaiseApiClient;
     this.getCases = this.getCases.bind(this);
-    this.getCase = this.getCase.bind(this);
+    this.getCaseFactsheet = this.getCaseFactsheet.bind(this);
   }
 
   getRoutes(): Router {
     const router = express.Router();
     router.get('/api/questionnaires/:questionnaireName/cases', this.getCases);
-    router.get('/api/questionnaires/:questionnaireName/cases/:caseId', this.getCase);
-    
+    router.get('/api/questionnaires/:questionnaireName/cases/:caseId', this.getCaseFactsheet);
+
     return router;
   }
 
@@ -46,8 +46,7 @@ export default class CaseController implements ControllerInterface {
     }
   }
 
-  async getCase(request: Request, response: Response<CaseResponse>) {
-    
+  async getCaseFactsheet(request: Request, response: Response<CaseFactsheet>) {
     const {
       questionnaireName,
       caseId,
@@ -62,8 +61,8 @@ export default class CaseController implements ControllerInterface {
     }
 
     const caseResponse = await this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
-    // const caseDetailsList = mapCaseDetails(caseStatusList, questionnaireName, this.config.ExternalWebUrl);
+    const caseFactsheet = mapCaseFactsheet(caseResponse);
 
-    return response.status(200).json(caseResponse);
+    return response.status(200).json(caseFactsheet);
   }
 }

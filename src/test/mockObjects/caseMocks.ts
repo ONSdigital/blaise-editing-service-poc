@@ -1,5 +1,5 @@
 import { CaseOutcome } from 'blaise-api-node-client';
-import { CaseDetails } from '../../server/interfaces/case.details.interface';
+import { CaseDetails } from '../../server/interfaces/case.interface';
 
 const caseDetailsList:CaseDetails[] = [{
   CaseId: '1',

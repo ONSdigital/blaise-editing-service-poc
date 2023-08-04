@@ -3,9 +3,9 @@ import BlaiseClient, { CaseStatus, CaseStatusListMockObject, CaseResponseMockObj
 import { IMock, Mock, Times } from 'typemoq';
 import nodeServer from '../../../server/server';
 import FakeConfiguration from '../configuration/configuration.fake';
-import { CaseDetails } from '../../../server/interfaces/case.details.interface';
+import { CaseDetails, CaseFactsheet } from '../../../server/interfaces/case.interface';
 import createAxiosError from './axios.test.helper';
-import mapCaseDetails from '../../../server/mappers/case.details.mapper';
+import { mapCaseDetails } from '../../../server/mappers/case.mapper';
 
 // create fake config
 const configFake = new FakeConfiguration('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com');
@@ -105,14 +105,14 @@ describe('Get case details tests', () => {
     const questionnaireName: string = 'TEST111A';
 
     blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => CaseResponseMockObject);
+    const expectedCaseFactsheet :CaseFactsheet = { CaseId: '1' };
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}`);
-    
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual(CaseResponseMockObject);
+    expect(response.body).toEqual(expectedCaseFactsheet);
     blaiseApiClientMock.verify((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId), Times.once());
   });
 });

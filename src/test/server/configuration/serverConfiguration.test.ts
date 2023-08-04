@@ -5,7 +5,7 @@ import Configuration from '../../../server/configuration/serverConfiguration';
 describe('Configuration file tests', () => {
   const emptyEnv = process.env;
   const blaiseApiUrl = 'rest.api.blaise.com';
-  const buildFolder = '../build';
+  const buildFolder = '../../build';
   const port = 5000;
   const serverPark = 'gusty';
   const externalWebUrl = 'cati.blaise.com';

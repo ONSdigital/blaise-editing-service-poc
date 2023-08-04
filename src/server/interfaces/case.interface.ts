@@ -5,3 +5,7 @@ export interface CaseDetails {
   CaseStatus: CaseOutcome,
   CaseLink: string
 }
+
+export interface CaseFactsheet {
+  CaseId: string
+}

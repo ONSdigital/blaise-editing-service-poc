@@ -1,6 +1,6 @@
 import { CaseStatus, CaseOutcome } from 'blaise-api-node-client';
-import { CaseDetails } from '../../../server/interfaces/case.details.interface';
-import mapCaseDetails from '../../../server/mappers/case.details.mapper';
+import { CaseDetails } from '../../../server/interfaces/case.interface';
+import { mapCaseDetails } from '../../../server/mappers/case.mapper';
 
 describe('Map case status list to case details list', () => {
   it('It should return a correctly mapped list of cases', () => {
