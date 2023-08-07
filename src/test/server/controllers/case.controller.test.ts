@@ -3,7 +3,7 @@ import BlaiseClient, { CaseStatus, CaseStatusListMockObject, CaseResponseMockObj
 import { IMock, Mock, Times } from 'typemoq';
 import nodeServer from '../../../server/server';
 import FakeConfiguration from '../configuration/configuration.fake';
-import { CaseDetails, CaseFactsheet } from '../../../common/interfaces/case.interface';
+import { CaseDetails } from '../../../common/interfaces/case.interface';
 import createAxiosError from './axios.test.helper';
 import { mapCaseDetails } from '../../../server/mappers/case.mapper';
 
@@ -105,7 +105,16 @@ describe('Get case details tests', () => {
     const questionnaireName: string = 'TEST111A';
 
     blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => CaseResponseMockObject);
-    const expectedCaseFactsheet :CaseFactsheet = { CaseId: '1' };
+    const expectedCaseFactsheet = {
+      CaseId: '1',
+      OutcomeCode: '100',
+      InterviewerName: 'rich',
+      RespondentName: 'Richomd Ricecak',
+      RespondentAddress: 'Flat 1, Richmond House, Rice Road, Gwent, Newport',
+      RespondentPostcode: 'NZ11 4PD',
+      RespondentDateOfBirth: '1980-01-15',
+      NumberOfRespondants: '2',
+    };
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}`);
