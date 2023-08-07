@@ -3,7 +3,7 @@ import BlaiseClient, { CaseStatus, CaseStatusListMockObject, CaseResponseMockObj
 import { IMock, Mock, Times } from 'typemoq';
 import nodeServer from '../../../server/server';
 import FakeConfiguration from '../configuration/configuration.fake';
-import { CaseDetails } from '../../../common/interfaces/case.interface';
+import { CaseDetails, CaseFactsheet } from '../../../common/interfaces/case.interface';
 import createAxiosError from './axios.test.helper';
 import { mapCaseDetails } from '../../../server/mappers/case.mapper';
 
@@ -105,15 +105,28 @@ describe('Get case details tests', () => {
     const questionnaireName: string = 'TEST111A';
 
     blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => CaseResponseMockObject);
-    const expectedCaseFactsheet = {
+    const expectedCaseFactsheet: CaseFactsheet = {
       CaseId: '1',
       OutcomeCode: '100',
       InterviewerName: 'rich',
-      RespondentName: 'Richomd Ricecak',
-      RespondentAddress: 'Flat 1, Richmond House, Rice Road, Gwent, Newport',
-      RespondentPostcode: 'NZ11 4PD',
-      RespondentDateOfBirth: '1980-01-15',
       NumberOfRespondants: '2',
+      Address: {
+        AddressLine1: 'Flat 1',
+        AddressLine2: 'Richmond House',
+        AddressLine3: 'Rice Road',
+        AddressLine4: '',
+        County: 'Gwent',
+        Town: 'Newport',
+        Postcode: 'NZ11 4PD',
+      },
+      Respondents: [{
+        RespondentName: 'Richmond Ricecake',
+        DateOfBirth: '1980-01-15',
+      },
+      {
+        RespondentName: 'Richmond Junior',
+        DateOfBirth: '2005-04-12',
+      }]
     };
 
     // act

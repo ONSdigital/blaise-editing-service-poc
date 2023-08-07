@@ -4193,7 +4193,7 @@ binary-extensions@^2.0.0:
 
 "blaise-api-node-client@git+https://github.com/ONSdigital/blaise-api-node-client#BL5FRS-59":
   version "1.0.0"
-  resolved "git+https://github.com/ONSdigital/blaise-api-node-client#528bb22c8439a59daf528c2914e48d04c923fc83"
+  resolved "git+https://github.com/ONSdigital/blaise-api-node-client#35a127e78e4310c32683717e1a0bd4a16be01377"
   dependencies:
     "@babel/preset-env" "^7.14.7"
     axios "^0.21.1"
