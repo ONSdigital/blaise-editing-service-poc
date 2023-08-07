@@ -5,7 +5,7 @@ import nodeServer from '../../../server/server';
 import FakeConfiguration from '../configuration/configuration.fake';
 import { CaseDetails, CaseFactsheet } from '../../../common/interfaces/case.interface';
 import createAxiosError from './axios.test.helper';
-import { mapCaseDetails } from '../../../server/mappers/case.mapper';
+import { mapCaseDetails, mapCaseFactsheet } from '../../../server/mappers/case.mapper';
 
 // create fake config
 const configFake = new FakeConfiguration('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com');
@@ -105,32 +105,10 @@ describe('Get case details tests', () => {
     const questionnaireName: string = 'TEST111A';
 
     blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => CaseResponseMockObject);
-    const expectedCaseFactsheet: CaseFactsheet = {
-      CaseId: '1',
-      OutcomeCode: '100',
-      InterviewerName: 'rich',
-      NumberOfRespondants: '2',
-      Address: {
-        AddressLine1: 'Flat 1',
-        AddressLine2: 'Richmond House',
-        AddressLine3: 'Rice Road',
-        AddressLine4: '',
-        County: 'Gwent',
-        Town: 'Newport',
-        Postcode: 'NZ11 4PD',
-      },
-      Respondents: [{
-        RespondentName: 'Richmond Ricecake',
-        DateOfBirth: '1980-01-15',
-      },
-      {
-        RespondentName: 'Richmond Junior',
-        DateOfBirth: '2005-04-12',
-      }]
-    };
+    const expectedCaseFactsheet: CaseFactsheet = mapCaseFactsheet(CaseResponseMockObject);
 
     // act
-    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}`);
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
 
     // assert
     expect(response.status).toEqual(200);

@@ -21,7 +21,7 @@ describe('All expected routes are registered', () => {
       // needs to be in the same order they are added to the server
       { methods: ['GET'], middlewares: ['bound '], path: '/api/questionnaires' },
       { methods: ['GET'], middlewares: ['bound '], path: '/api/questionnaires/:questionnaireName/cases' },
-      { methods: ['GET'], middlewares: ['bound '], path: '/api/questionnaires/:questionnaireName/cases/:caseId' },
+      { methods: ['GET'], middlewares: ['bound '], path: '/api/questionnaires/:questionnaireName/cases/:caseId/factsheet' },
       { methods: ['GET'], middlewares: ['anonymous'], path: '*' },
     ];
 

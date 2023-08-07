@@ -10,38 +10,35 @@ export function mapCaseDetails(caseStatusList: CaseStatus[], questionnaireName:s
 }
 
 export function mapCaseFactsheet(caseResponse: CaseResponse): CaseFactsheet {
-  let caseFactSheet: CaseFactsheet = {
+  const caseFactSheet: CaseFactsheet = {
     CaseId: caseResponse.caseId,
-      OutcomeCode: caseResponse.caseData["qhAdmin.HOut"],
-      InterviewerName: caseResponse.caseData["qhAdmin.Interviewer[1]"],
-      NumberOfRespondants: caseResponse.caseData["qHousehold.QHHold.PerCount"],
-      Address: {
-        AddressLine1: caseResponse.caseData["qDataBag.Prem1"],
-        AddressLine2: caseResponse.caseData["qDataBag.Prem2"],
-        AddressLine3: caseResponse.caseData["qDataBag.Prem3"],
-        AddressLine4: caseResponse.caseData["qDataBag.Prem4"],
-        County: caseResponse.caseData["qDataBag.District"],
-        Town: caseResponse.caseData["qDataBag.PostTown"],
-        Postcode: caseResponse.caseData["qDataBag.PostCode"],
-      },
-      Respondents: []
+    OutcomeCode: caseResponse.fieldData['qhAdmin.HOut'],
+    InterviewerName: caseResponse.fieldData['qhAdmin.Interviewer[1]'],
+    NumberOfRespondants: caseResponse.fieldData['dmhSize'],
+    Address: {
+      AddressLine1: caseResponse.fieldData['qDataBag.Prem1'],
+      AddressLine2: caseResponse.fieldData['qDataBag.Prem2'],
+      AddressLine3: caseResponse.fieldData['qDataBag.Prem3'],
+      AddressLine4: caseResponse.fieldData['qDataBag.Prem4'],
+      County: caseResponse.fieldData['qDataBag.District'],
+      Town: caseResponse.fieldData['qDataBag.PostTown'],
+      Postcode: caseResponse.fieldData['qDataBag.PostCode'],
+    },
+    Respondents: [],
   };
 
   const numberOfRespondents = +caseFactSheet.NumberOfRespondants;
-  console.debug(numberOfRespondents);
 
   if (Number.isNaN(numberOfRespondents) || numberOfRespondents === 0) {
     throw new Error('Number of responents not specified');
-  };
-
-  for (var respondentNumber = 1; respondentNumber <= numberOfRespondents; respondentNumber++)
-  {
-    caseFactSheet.Respondents.push({
-      RespondentName: caseResponse.caseData[`dmName[${respondentNumber}]`],
-      DateOfBirth: caseResponse.caseData[`dmDteOfBth[${respondentNumber}]`]
-    })
   }
 
+  for (let respondentNumber = 1; respondentNumber <= numberOfRespondents; respondentNumber += 1) {
+    caseFactSheet.Respondents.push({
+      RespondentName: caseResponse.fieldData[`dmName[${respondentNumber}]`],
+      DateOfBirth: caseResponse.fieldData[`dmDteOfBth[${respondentNumber}]`],
+    });
+  }
 
-  return caseFactSheet
+  return caseFactSheet;
 }

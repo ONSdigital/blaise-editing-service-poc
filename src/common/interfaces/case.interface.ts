@@ -24,4 +24,4 @@ export interface CaseFactsheet {
     RespondentName: string,
     DateOfBirth: string,
   }[]
-};
+}

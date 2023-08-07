@@ -21,7 +21,7 @@ export default class CaseController implements ControllerInterface {
   getRoutes(): Router {
     const router = express.Router();
     router.get('/api/questionnaires/:questionnaireName/cases', this.getCases);
-    router.get('/api/questionnaires/:questionnaireName/cases/:caseId', this.getCaseFactsheet);
+    router.get('/api/questionnaires/:questionnaireName/cases/:caseId/factsheet', this.getCaseFactsheet);
 
     return router;
   }
