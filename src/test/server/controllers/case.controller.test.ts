@@ -3,7 +3,7 @@ import BlaiseClient, { CaseStatus, CaseStatusListMockObject, CaseResponseMockObj
 import { IMock, Mock, Times } from 'typemoq';
 import nodeServer from '../../../server/server';
 import FakeConfiguration from '../configuration/configuration.fake';
-import { CaseDetails, CaseFactsheet } from '../../../server/interfaces/case.interface';
+import { CaseDetails, CaseFactsheet } from '../../../common/interfaces/case.interface';
 import createAxiosError from './axios.test.helper';
 import { mapCaseDetails } from '../../../server/mappers/case.mapper';
 

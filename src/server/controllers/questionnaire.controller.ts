@@ -2,7 +2,7 @@ import BlaiseClient, { Questionnaire } from 'blaise-api-node-client';
 import express, { Request, Response } from 'express';
 import { ControllerInterface } from '../interfaces/controller.interface';
 import { Configuration } from '../interfaces/configuration.interface';
-import notFound from '../../common/axios.helper';
+import notFound from '../../common/helpers/axios.helper';
 
 export default class QuestionnaireController implements ControllerInterface {
   config: Configuration;
