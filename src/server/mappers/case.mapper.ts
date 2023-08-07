@@ -10,7 +10,7 @@ export function mapCaseDetails(caseStatusList: CaseStatus[], questionnaireName:s
 }
 
 export function mapCaseFactsheet(caseResponse: CaseResponse): CaseFactsheet {
-  return {
+  let caseFactSheet: CaseFactsheet = {
     CaseId: caseResponse.caseId,
       OutcomeCode: caseResponse.caseData["qhAdmin.HOut"],
       InterviewerName: caseResponse.caseData["qhAdmin.Interviewer[1]"],
@@ -24,13 +24,24 @@ export function mapCaseFactsheet(caseResponse: CaseResponse): CaseFactsheet {
         Town: caseResponse.caseData["qDataBag.PostTown"],
         Postcode: caseResponse.caseData["qDataBag.PostCode"],
       },
-      Respondents: [{
-        RespondentName: caseResponse.caseData["dmName[1]"],
-        DateOfBirth: caseResponse.caseData['dmDteOfBth[1]'],
-      },
-      {
-        RespondentName: caseResponse.caseData["dmName[2]"],
-        DateOfBirth: caseResponse.caseData['dmDteOfBth[2]'],
-      }]
+      Respondents: []
   };
+
+  const numberOfRespondents = +caseFactSheet.NumberOfRespondants;
+  console.debug(numberOfRespondents);
+
+  if (Number.isNaN(numberOfRespondents) || numberOfRespondents === 0) {
+    throw new Error('Number of responents not specified');
+  };
+
+  for (var respondentNumber = 1; respondentNumber <= numberOfRespondents; respondentNumber++)
+  {
+    caseFactSheet.Respondents.push({
+      RespondentName: caseResponse.caseData[`dmName[${respondentNumber}]`],
+      DateOfBirth: caseResponse.caseData[`dmDteOfBth[${respondentNumber}]`]
+    })
+  }
+
+
+  return caseFactSheet
 }
