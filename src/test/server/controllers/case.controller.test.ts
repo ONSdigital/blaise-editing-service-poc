@@ -89,7 +89,7 @@ describe('Get case list tests', () => {
   });
 });
 
-describe('Get case details tests', () => {
+describe('Get case fact sheet tests', () => {
   beforeEach(() => {
     blaiseApiClientMock.reset();
   });
@@ -98,9 +98,8 @@ describe('Get case details tests', () => {
     blaiseApiClientMock.reset();
   });
 
-  it('It should return a 200 response with expected case details', async () => {
+  it('It should return a 200 response with expected case fact sheet', async () => {
     // arrange
-    // mock blaise client to return a list of cases
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
 
@@ -114,5 +113,50 @@ describe('Get case details tests', () => {
     expect(response.status).toEqual(200);
     expect(response.body).toEqual(expectedCaseFactsheet);
     blaiseApiClientMock.verify((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId), Times.once());
+  });
+
+  it('It should return a 500 response when a call is made to retrieve a case and the rest api is not availiable', async () => {
+    // arrange
+    const axiosError = createAxiosError(500);
+    const caseId: string = '1';
+    const questionnaireName: string = 'TEST111A';
+
+    blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(() => Promise.reject(axiosError));
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
+
+    // assert
+    expect(response.status).toEqual(500);
+  });
+
+  it('It should return a 500 response when the api client throws an error', async () => {
+    // arrange
+    const clientError = new Error();
+    const caseId: string = '1';
+    const questionnaireName: string = 'TEST111A';
+
+    blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(() => Promise.reject(clientError));
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
+
+    // assert
+    expect(response.status).toEqual(500);
+  });
+
+  it('It should return a 404 response when a call is made to retrieve a case and the client returns a 404 not found', async () => {
+    // arrange
+    const axiosError = createAxiosError(404);
+    const caseId: string = '1';
+    const questionnaireName: string = 'TEST111A';
+
+    blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(() => Promise.reject(axiosError));
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
+
+    // assert
+    expect(response.status).toEqual(404);
   });
 });

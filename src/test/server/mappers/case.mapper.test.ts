@@ -67,7 +67,7 @@ describe('Map case response to factsheet', () => {
         'qhAdmin.Interviewer[1]': 'rich',
         'dmName[1]': 'Richmond Ricecake',
         'dmDteOfBth[1]': '1980-01-15',
-        'dmhSize': '1',
+        dmhSize: '1',
       },
     };
 
@@ -116,7 +116,7 @@ describe('Map case response to factsheet', () => {
         'dmDteOfBth[1]': '1980-01-15',
         'dmName[2]': 'Richmond Junior',
         'dmDteOfBth[2]': '2005-04-12',
-        'dmhSize': '2',
+        dmhSize: '2',
       },
     };
 
@@ -167,7 +167,7 @@ describe('Map case response to factsheet', () => {
         'qhAdmin.Interviewer[1]': 'rich',
         'dmName[1]': 'Richmond Ricecake',
         'dmDteOfBth[1]': '1980-01-15',
-        'dmhSize': `${value}`,
+        dmhSize: `${value}`,
       },
     };
 
@@ -192,7 +192,7 @@ describe('Map case response to factsheet', () => {
         'qhAdmin.Interviewer[1]': 'rich',
         'dmName[1]': 'Richmond Ricecake',
         'dmDteOfBth[1]': '1980-01-15',
-        'dmhSize': `${value}`,
+        dmhSize: `${value}`,
       },
     };
 

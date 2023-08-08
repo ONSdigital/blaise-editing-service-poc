@@ -60,9 +60,16 @@ export default class CaseController implements ControllerInterface {
       throw new Error('Case ID has not been provided');
     }
 
-    const caseResponse = await this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
-    const caseFactsheet = mapCaseFactsheet(caseResponse);
+    try {
+      const caseResponse = await this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
+      const caseFactsheet = mapCaseFactsheet(caseResponse);
 
-    return response.status(200).json(caseFactsheet);
+      return response.status(200).json(caseFactsheet);
+    } catch (error: unknown) {
+      if (notFound(error)) {
+        return response.status(404).json();
+      }
+      return response.status(500).json();
+    }
   }
 }
