@@ -20,7 +20,7 @@ export default function CasesList({ cases }: CasesListProps) {
     >
       <>
         {cases.map((questionnaireCase) => (
-          <tr className="ons-table__row" data-testid="case-table-row">
+          <tr key={questionnaireCase.CaseId} className="ons-table__row" data-testid="case-table-row">
             <td className="ons-table__cell">
               <Link to={questionnaireCase.CaseLink}>
                 {questionnaireCase.CaseId}
