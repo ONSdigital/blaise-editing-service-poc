@@ -2,7 +2,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { QuestionnaireListMockObject } from 'blaise-api-node-client';
 import { getCases, getQuestionnaires } from '../../../client/api/blaiseApi';
-import caseDetailsList from '../../mockObjects/caseMocks';
+import { CaseDetailsListMockObject } from '../../mockObjects/caseMocks';
 
 const mock = new MockAdapter(axios, { onNoMatch: 'throwException' });
 
@@ -48,13 +48,13 @@ describe('GetCases from Blaise', () => {
 
   it('Should retrieve a list of cases in blaise with a 200 response', async () => {
     // arrange
-    mock.onGet(`/api/questionnaires/${questionnaireName}/cases`).reply(200, caseDetailsList);
+    mock.onGet(`/api/questionnaires/${questionnaireName}/cases`).reply(200, CaseDetailsListMockObject);
 
     // act
     const result = await getCases(questionnaireName);
 
     // assert
-    expect(result).toEqual(caseDetailsList);
+    expect(result).toEqual(CaseDetailsListMockObject);
   });
 
   it('Should throw the error "The questionnaire is no longer available', async () => {

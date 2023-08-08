@@ -1,4 +1,4 @@
-export interface Configuration {
+export interface ConfigurationInterface {
   BlaiseApiUrl: string;
   BuildFolder: string;
   Port: number;

@@ -1,17 +1,17 @@
 import BlaiseClient from 'blaise-api-node-client';
 import express, { Request, Response, Router } from 'express';
 import { ControllerInterface } from '../interfaces/controller.interface';
-import { Configuration } from '../interfaces/configuration.interface';
+import { ConfigurationInterface } from '../interfaces/configuration.interface';
 import { CaseDetails, CaseFactsheet } from '../../common/interfaces/case.interface';
 import { mapCaseDetails, mapCaseFactsheet } from '../mappers/case.mapper';
 import notFound from '../../common/helpers/axios.helper';
 
 export default class CaseController implements ControllerInterface {
-  config: Configuration;
+  config: ConfigurationInterface;
 
   blaiseApiClient: BlaiseClient;
 
-  constructor(config: Configuration, blaiseApiClient: BlaiseClient) {
+  constructor(config: ConfigurationInterface, blaiseApiClient: BlaiseClient) {
     this.config = config;
     this.blaiseApiClient = blaiseApiClient;
     this.getCases = this.getCases.bind(this);

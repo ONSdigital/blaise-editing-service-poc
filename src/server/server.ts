@@ -4,9 +4,9 @@ import ejs from 'ejs';
 import path from 'path';
 import QuestionnaireController from './controllers/questionnaire.controller';
 import CaseController from './controllers/case.controller';
-import { Configuration } from './interfaces/configuration.interface';
+import { ConfigurationInterface } from './interfaces/configuration.interface';
 
-export default function nodeServer(config: Configuration, blaiseApiClient: BlaiseClient): Express {
+export default function nodeServer(config: ConfigurationInterface, blaiseApiClient: BlaiseClient): Express {
   const server = express();
 
   // treat the index.html as a template and substitute the values at runtime

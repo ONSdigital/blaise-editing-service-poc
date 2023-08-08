@@ -1,15 +1,15 @@
 import BlaiseClient, { Questionnaire } from 'blaise-api-node-client';
 import express, { Request, Response } from 'express';
 import { ControllerInterface } from '../interfaces/controller.interface';
-import { Configuration } from '../interfaces/configuration.interface';
+import { ConfigurationInterface } from '../interfaces/configuration.interface';
 import notFound from '../../common/helpers/axios.helper';
 
 export default class QuestionnaireController implements ControllerInterface {
-  config: Configuration;
+  config: ConfigurationInterface;
 
   blaiseApiClient: BlaiseClient;
 
-  constructor(config: Configuration, blaiseApiClient: BlaiseClient) {
+  constructor(config: ConfigurationInterface, blaiseApiClient: BlaiseClient) {
     this.config = config;
     this.blaiseApiClient = blaiseApiClient;
     this.getQuestionnaires = this.getQuestionnaires.bind(this);

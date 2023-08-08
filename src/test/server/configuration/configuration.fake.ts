@@ -1,6 +1,6 @@
-import { Configuration } from '../../../server/interfaces/configuration.interface';
+import { ConfigurationInterface } from '../../../server/interfaces/configuration.interface';
 
-export default class FakeConfiguration implements Configuration {
+export default class FakeConfiguration implements ConfigurationInterface {
   BlaiseApiUrl: string;
 
   BuildFolder: string;

@@ -1,7 +1,7 @@
 import { CaseOutcome } from 'blaise-api-node-client';
-import { CaseDetails } from '../../common/interfaces/case.interface';
+import { CaseDetails, CaseFactsheet } from '../../common/interfaces/case.interface';
 
-const caseDetailsList:CaseDetails[] = [{
+export const CaseDetailsListMockObject:CaseDetails[] = [{
   CaseId: '1',
   CaseStatus: CaseOutcome.Completed,
   CaseLink: 'http://www.cati.com/1',
@@ -17,4 +17,26 @@ const caseDetailsList:CaseDetails[] = [{
   CaseLink: 'http://www.cati.com/3',
 }];
 
-export default caseDetailsList;
+export const CaseFactsheetMockObject: CaseFactsheet = {
+  CaseId: '1',
+  OutcomeCode: '100',
+  InterviewerName: 'rich',
+  NumberOfRespondants: '2',
+  Address: {
+    AddressLine1: 'Flat 1',
+    AddressLine2: 'Richmond House',
+    AddressLine3: 'Rice Road',
+    AddressLine4: '',
+    County: 'Gwent',
+    Town: 'Newport',
+    Postcode: 'NZ11 4PD',
+  },
+  Respondents: [{
+    RespondentName: 'Richmond Ricecake',
+    DateOfBirth: '1980-01-15',
+  },
+  {
+    RespondentName: 'Richmond Junior',
+    DateOfBirth: '2005-04-12',
+  }],
+};

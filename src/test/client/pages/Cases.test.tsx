@@ -1,7 +1,7 @@
 import { RenderResult, act, render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Router from 'react-router';
-import caseDetailsList from '../../mockObjects/caseMocks';
+import { CaseDetailsListMockObject } from '../../mockObjects/caseMocks';
 import { getCases } from '../../../client/api/blaiseApi';
 import { CaseDetails } from '../../../common/interfaces/case.interface';
 import Cases from '../../../client/pages/Cases';
@@ -19,7 +19,7 @@ jest.spyOn(Router, 'useParams').mockReturnValue({ questionnaireName });
 
 describe('Given there are cases available in blaise for questionnaire', () => {
   beforeEach(() => {
-    getCasesMock.mockImplementation(() => Promise.resolve(caseDetailsList));
+    getCasesMock.mockImplementation(() => Promise.resolve(CaseDetailsListMockObject));
   });
 
   afterEach(() => {
@@ -51,7 +51,7 @@ describe('Given there are cases available in blaise for questionnaire', () => {
     });
 
     // assert
-    caseDetailsList.forEach((caseDetail) => {
+    CaseDetailsListMockObject.forEach((caseDetail) => {
       expect(view.getByText(caseDetail.CaseId)).toBeInTheDocument();
       expect(view.getByText(caseDetail.CaseStatus)).toBeInTheDocument();
       expect(view.getByRole('link', { name: caseDetail.CaseId })).toHaveAttribute('href', caseDetail.CaseLink);

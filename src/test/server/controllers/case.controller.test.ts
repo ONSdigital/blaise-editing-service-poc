@@ -6,12 +6,16 @@ import FakeConfiguration from '../configuration/configuration.fake';
 import { CaseDetails, CaseFactsheet } from '../../../common/interfaces/case.interface';
 import createAxiosError from './axios.test.helper';
 import { mapCaseDetails, mapCaseFactsheet } from '../../../server/mappers/case.mapper';
+import { CaseDetailsListMockObject, CaseFactsheetMockObject } from '../../mockObjects/caseMocks';
 
 // create fake config
 const configFake = new FakeConfiguration('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com');
 
 // mock blaise api client
 const blaiseApiClientMock: IMock<BlaiseClient> = Mock.ofType(BlaiseClient);
+
+// mock case mappers
+jest.mock('../../../server/mappers/case.mapper');
 
 // need to test the endpoints through the express server
 const server = nodeServer(configFake, blaiseApiClientMock.object);
@@ -33,7 +37,9 @@ describe('Get case list tests', () => {
     // mock blaise client to return a list of cases
     const questionnaireName: string = 'TEST111A';
     const caseStatusList: CaseStatus[] = CaseStatusListMockObject;
-    const expectedCaseDetailsList: CaseDetails[] = mapCaseDetails(caseStatusList, questionnaireName, configFake.ExternalWebUrl);
+    const mapCaseDetailsMock = mapCaseDetails as jest.Mock<CaseDetails[]>;
+
+    mapCaseDetailsMock.mockReturnValueOnce(CaseDetailsListMockObject);
 
     blaiseApiClientMock.setup((client) => client.getCaseStatus(configFake.ServerPark, questionnaireName)).returns(async () => caseStatusList);
 
@@ -42,7 +48,7 @@ describe('Get case list tests', () => {
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual(expectedCaseDetailsList);
+    expect(response.body).toEqual(CaseDetailsListMockObject);
     blaiseApiClientMock.verify((client) => client.getCaseStatus(configFake.ServerPark, questionnaireName), Times.once());
   });
 
@@ -102,16 +108,18 @@ describe('Get case fact sheet tests', () => {
     // arrange
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
+    const mapCasefactsheetMock = mapCaseFactsheet as jest.Mock<CaseFactsheet>;
+
+    mapCasefactsheetMock.mockReturnValueOnce(CaseFactsheetMockObject);
 
     blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => CaseResponseMockObject);
-    const expectedCaseFactsheet: CaseFactsheet = mapCaseFactsheet(CaseResponseMockObject);
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual(expectedCaseFactsheet);
+    expect(response.body).toEqual(CaseFactsheetMockObject);
     blaiseApiClientMock.verify((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId), Times.once());
   });
 
@@ -164,12 +172,10 @@ describe('Get case fact sheet tests', () => {
     // arrange
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
-    jest.mock('../../../server/mappers/case.mapper');
-
     const mapCaseFactsheetMock = mapCaseFactsheet as jest.Mock<CaseFactsheet>;
+    mapCaseFactsheetMock.mockImplementation(() => { throw new Error('Error message'); });
 
     blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => CaseResponseMockObject);
-    mapCaseFactsheetMock.mockImplementation(() => {throw new Error('Error message');});
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
