@@ -1,6 +1,7 @@
 import { CaseStatus, CaseOutcome, CaseResponse } from 'blaise-api-node-client';
 import { CaseDetails, CaseFactsheet } from '../../../common/interfaces/case.interface';
 import { mapCaseDetails, mapCaseFactsheet } from '../../../server/mappers/case.mapper';
+import CaseBuilder from '../../builders/caseBuilder';
 
 describe('Map case status list to case details list', () => {
   it('It should return a correctly mapped list of cases', () => {
@@ -52,44 +53,10 @@ describe('Map case status list to case details list', () => {
 describe('Map case response to factsheet', () => {
   it('It should return a correctly mapped factsheet with 1 responent', () => {
     // arrange
-    const CaseResponseMockObject:CaseResponse = {
-      caseId: '1',
-      fieldData: {
-        'qiD.Serial_Number': '1',
-        'qDataBag.Prem1': 'Flat 1',
-        'qDataBag.Prem2': 'Richmond House',
-        'qDataBag.Prem3': 'Rice Road',
-        'qDataBag.Prem4': '',
-        'qDataBag.District': 'Gwent',
-        'qDataBag.PostTown': 'Newport',
-        'qDataBag.PostCode': 'NZ11 4PD',
-        'qhAdmin.HOut': '100',
-        'qhAdmin.Interviewer[1]': 'rich',
-        'dmName[1]': 'Richmond Ricecake',
-        'dmDteOfBth[1]': '1980-01-15',
-        dmhSize: '1',
-      },
-    };
+    const caseBuilder = new CaseBuilder(1);
+    const CaseResponseMockObject: CaseResponse = caseBuilder.buildCaseResponse();
+    const expectedCaseFactsheet: CaseFactsheet = caseBuilder.buildCaseFactsheet();
 
-    const expectedCaseFactsheet: CaseFactsheet = {
-      CaseId: '1',
-      OutcomeCode: '100',
-      InterviewerName: 'rich',
-      NumberOfRespondants: '1',
-      Address: {
-        AddressLine1: 'Flat 1',
-        AddressLine2: 'Richmond House',
-        AddressLine3: 'Rice Road',
-        AddressLine4: '',
-        County: 'Gwent',
-        Town: 'Newport',
-        Postcode: 'NZ11 4PD',
-      },
-      Respondents: [{
-        RespondentName: 'Richmond Ricecake',
-        DateOfBirth: '1980-01-15',
-      }],
-    };
     // act
     const result = mapCaseFactsheet(CaseResponseMockObject);
 
@@ -99,50 +66,10 @@ describe('Map case response to factsheet', () => {
 
   it('It should return a correctly mapped factsheet with 2 responents', () => {
     // arrange
-    const CaseResponseMockObject:CaseResponse = {
-      caseId: '1',
-      fieldData: {
-        'qiD.Serial_Number': '1',
-        'qDataBag.Prem1': 'Flat 1',
-        'qDataBag.Prem2': 'Richmond House',
-        'qDataBag.Prem3': 'Rice Road',
-        'qDataBag.Prem4': '',
-        'qDataBag.District': 'Gwent',
-        'qDataBag.PostTown': 'Newport',
-        'qDataBag.PostCode': 'NZ11 4PD',
-        'qhAdmin.HOut': '100',
-        'qhAdmin.Interviewer[1]': 'rich',
-        'dmName[1]': 'Richmond Ricecake',
-        'dmDteOfBth[1]': '1980-01-15',
-        'dmName[2]': 'Richmond Junior',
-        'dmDteOfBth[2]': '2005-04-12',
-        dmhSize: '2',
-      },
-    };
+    const caseBuilder = new CaseBuilder(2);
+    const CaseResponseMockObject: CaseResponse = caseBuilder.buildCaseResponse();
+    const expectedCaseFactsheet: CaseFactsheet = caseBuilder.buildCaseFactsheet();
 
-    const expectedCaseFactsheet: CaseFactsheet = {
-      CaseId: '1',
-      OutcomeCode: '100',
-      InterviewerName: 'rich',
-      NumberOfRespondants: '2',
-      Address: {
-        AddressLine1: 'Flat 1',
-        AddressLine2: 'Richmond House',
-        AddressLine3: 'Rice Road',
-        AddressLine4: '',
-        County: 'Gwent',
-        Town: 'Newport',
-        Postcode: 'NZ11 4PD',
-      },
-      Respondents: [{
-        RespondentName: 'Richmond Ricecake',
-        DateOfBirth: '1980-01-15',
-      },
-      {
-        RespondentName: 'Richmond Junior',
-        DateOfBirth: '2005-04-12',
-      }],
-    };
     // act
     const result = mapCaseFactsheet(CaseResponseMockObject);
 
