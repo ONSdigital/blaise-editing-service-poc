@@ -159,4 +159,22 @@ describe('Get case fact sheet tests', () => {
     // assert
     expect(response.status).toEqual(404);
   });
+
+  it('It should return an error when the mapper throws an error', async () => {
+    // arrange
+    const caseId: string = '1';
+    const questionnaireName: string = 'TEST111A';
+    jest.mock('../../../server/mappers/case.mapper');
+
+    const mapCaseFactsheetMock = mapCaseFactsheet as jest.Mock<CaseFactsheet>;
+
+    blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => CaseResponseMockObject);
+    mapCaseFactsheetMock.mockImplementation(() => {throw new Error('Error message');});
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
+
+    // assert
+    expect(response.status).toEqual(500);
+  });
 });
