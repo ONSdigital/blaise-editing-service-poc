@@ -14,7 +14,7 @@ export function mapCaseFactsheet(caseResponse: CaseResponse): CaseFactsheet {
     CaseId: caseResponse.caseId,
     OutcomeCode: caseResponse.fieldData['qhAdmin.HOut'],
     InterviewerName: caseResponse.fieldData['qhAdmin.Interviewer[1]'],
-    NumberOfRespondants: caseResponse.fieldData['dmhSize'],
+    NumberOfRespondents: caseResponse.fieldData['dmhSize'],
     Address: {
       AddressLine1: caseResponse.fieldData['qDataBag.Prem1'],
       AddressLine2: caseResponse.fieldData['qDataBag.Prem2'],
@@ -27,7 +27,7 @@ export function mapCaseFactsheet(caseResponse: CaseResponse): CaseFactsheet {
     Respondents: [],
   };
 
-  const numberOfRespondents = +caseFactSheet.NumberOfRespondants;
+  const numberOfRespondents = +caseFactSheet.NumberOfRespondents;
 
   if (Number.isNaN(numberOfRespondents) || numberOfRespondents === 0) {
     throw new Error('Number of responents not specified');

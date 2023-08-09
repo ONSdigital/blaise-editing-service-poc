@@ -19,9 +19,9 @@ export const CaseDetailsListMockObject:CaseDetails[] = [{
 
 export const CaseFactsheetMockObject: CaseFactsheet = {
   CaseId: '1',
-  OutcomeCode: '100',
+  OutcomeCode: 100,
   InterviewerName: 'rich',
-  NumberOfRespondants: '2',
+  NumberOfRespondents: 2,
   Address: {
     AddressLine1: 'Flat 1',
     AddressLine2: 'Richmond House',
@@ -33,10 +33,10 @@ export const CaseFactsheetMockObject: CaseFactsheet = {
   },
   Respondents: [{
     RespondentName: 'Richmond Ricecake',
-    DateOfBirth: '1980-01-15',
+    DateOfBirth: new Date('1980-01-15'),
   },
   {
     RespondentName: 'Richmond Junior',
-    DateOfBirth: '2005-04-12',
+    DateOfBirth: new Date('2005-04-12'),
   }],
 };

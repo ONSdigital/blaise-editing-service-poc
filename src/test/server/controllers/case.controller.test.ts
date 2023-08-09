@@ -112,6 +112,8 @@ describe('Get case fact sheet tests', () => {
 
     mapCasefactsheetMock.mockReturnValueOnce(CaseFactsheetMockObject);
 
+
+
     blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => CaseResponseMockObject);
 
     // act

@@ -8,9 +8,9 @@ export interface CaseDetails {
 
 export interface CaseFactsheet {
   CaseId: string
-  OutcomeCode: string,
+  OutcomeCode: number,
   InterviewerName: string,
-  NumberOfRespondants: string,
+  NumberOfRespondents: number,
   Address: {
     AddressLine1: string,
     AddressLine2: string,
@@ -22,6 +22,6 @@ export interface CaseFactsheet {
   },
   Respondents: {
     RespondentName: string,
-    DateOfBirth: string,
+    DateOfBirth: Date,
   }[]
 }
