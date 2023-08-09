@@ -33,10 +33,10 @@ export const CaseFactsheetMockObject: CaseFactsheet = {
   },
   Respondents: [{
     RespondentName: 'Richmond Ricecake',
-    DateOfBirth: new Date('1980-01-15'),
+    DateOfBirth: new Date(1980,1,15),
   },
   {
     RespondentName: 'Richmond Junior',
-    DateOfBirth: new Date('2005-04-12'),
+    DateOfBirth: new Date(2005,4,12),
   }],
 };

@@ -110,7 +110,7 @@ describe('Get case fact sheet tests', () => {
     const questionnaireName: string = 'TEST111A';
     const mapCasefactsheetMock = mapCaseFactsheet as jest.Mock<CaseFactsheet>;
 
-    mapCasefactsheetMock.mockReturnValueOnce(CaseFactsheetMockObject);
+    mapCasefactsheetMock.mockReturnValue(CaseFactsheetMockObject);
 
 
 
@@ -121,7 +121,7 @@ describe('Get case fact sheet tests', () => {
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual(CaseFactsheetMockObject);
+    expect(response.text).toEqual(JSON.stringify(CaseFactsheetMockObject));
     blaiseApiClientMock.verify((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId), Times.once());
   });
 
