@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Questionnaire } from 'blaise-api-node-client';
-import { CaseDetails } from '../../common/interfaces/case.interface';
+import { CaseDetails, CaseFactsheet } from '../../common/interfaces/case.interface';
 import notFound from '../../common/helpers/axios.helper';
 
 export async function getQuestionnaires(): Promise<Questionnaire[]> {
@@ -25,5 +25,17 @@ export async function getCases(questionnaireName: string): Promise<CaseDetails[]
       throw new Error('The questionnaire is no longer available');
     }
     throw new Error('Unable to retrieve cases, please try again in a few minutes');
+  }
+}
+
+export async function getCaseFactsheet(questionnaireName: string, caseId: string): Promise<CaseFactsheet> {
+  try {
+    const response = await axios.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
+    return response.data;
+  } catch (error) {
+    if (notFound(error)) {
+      throw new Error('The questionnaire is no longer available');
+    }
+    throw new Error('Unable to retrieve case factsheet, please try again in a few minutes');
   }
 }
