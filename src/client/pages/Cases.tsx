@@ -2,11 +2,11 @@ import { useParams } from 'react-router-dom';
 import { getCases } from '../api/blaiseApi';
 import AsyncContent from '../components/AsyncContent';
 import CasesList from '../components/CasesList';
-import { useAsyncRequestWithParams } from '../hooks/useAsyncRequest';
+import { useAsyncRequestWithParam } from '../hooks/useAsyncRequest';
 import { CaseDetails } from '../../common/interfaces/case.interface';
 
 function DisplayCases(questionnaireName: string) {
-  const cases = useAsyncRequestWithParams<CaseDetails[]>(getCases, questionnaireName);
+  const cases = useAsyncRequestWithParam<CaseDetails[]>(getCases, questionnaireName);
 
   return (
     <AsyncContent content={cases}>

@@ -1,5 +1,5 @@
 import { CaseResponse, CaseStatus } from 'blaise-api-node-client';
-import { CaseDetails, CaseFactsheet } from '../../common/interfaces/case.interface';
+import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/case.interface';
 
 export function mapCaseDetails(caseStatusList: CaseStatus[], questionnaireName:string, externalWebUrl:string): CaseDetails[] {
   return caseStatusList.map((caseStatus) => ({
@@ -9,8 +9,8 @@ export function mapCaseDetails(caseStatusList: CaseStatus[], questionnaireName:s
   }));
 }
 
-export function mapCaseFactsheet(caseResponse: CaseResponse): CaseFactsheet {
-  const caseFactSheet: CaseFactsheet = {
+export function mapCaseFactsheet(caseResponse: CaseResponse): CaseFactsheetDetails {
+  const caseFactSheet: CaseFactsheetDetails = {
     CaseId: caseResponse.caseId,
     OutcomeCode: caseResponse.fieldData['qhAdmin.HOut'],
     InterviewerName: caseResponse.fieldData['qhAdmin.Interviewer[1]'],

@@ -4,7 +4,7 @@ import { QuestionnaireListMockObject } from 'blaise-api-node-client';
 import { getCases, getQuestionnaires, getCaseFactsheet } from '../../../client/api/blaiseApi';
 import CaseDetailsListMockObject from '../../mockObjects/caseMocks';
 import CaseBuilder from '../../builders/caseBuilder';
-import { CaseFactsheet } from '../../../common/interfaces/case.interface';
+import { CaseFactsheetDetails } from '../../../common/interfaces/case.interface';
 
 const mock = new MockAdapter(axios, { onNoMatch: 'throwException' });
 
@@ -88,7 +88,7 @@ describe('GetCaseFactsheet from Blaise', () => {
   const questionnaireName = 'LMS2201_LT1';
   const caseId = '900001';
   const caseBuilder = new CaseBuilder(1);
-  const expectedCaseFactsheet: CaseFactsheet = caseBuilder.buildCaseFactsheet();
+  const expectedCaseFactsheet: CaseFactsheetDetails = caseBuilder.buildCaseFactsheet();
 
   it('Should retrieve a list of cases in blaise with a 200 response', async () => {
     // arrange
@@ -98,7 +98,7 @@ describe('GetCaseFactsheet from Blaise', () => {
     const result = await getCaseFactsheet(questionnaireName, caseId);
 
     // assert
-    expect(result).toEqual(expectedCaseFactsheet);
+    expect(JSON.stringify(result)).toEqual(JSON.stringify(expectedCaseFactsheet));
   });
 
   it('Should throw the error "The questionnaire is no longer available', async () => {

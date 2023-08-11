@@ -6,7 +6,7 @@ export interface CaseDetails {
   CaseLink: string
 }
 
-export interface CaseFactsheet {
+export interface CaseFactsheetDetails {
   CaseId: string
   OutcomeCode: number,
   InterviewerName: string,

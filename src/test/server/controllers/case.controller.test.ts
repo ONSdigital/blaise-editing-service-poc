@@ -3,7 +3,7 @@ import BlaiseClient, { CaseResponse, CaseStatus, CaseStatusListMockObject } from
 import { IMock, Mock, Times } from 'typemoq';
 import nodeServer from '../../../server/server';
 import FakeConfiguration from '../configuration/configuration.fake';
-import { CaseDetails, CaseFactsheet } from '../../../common/interfaces/case.interface';
+import { CaseDetails, CaseFactsheetDetails } from '../../../common/interfaces/case.interface';
 import createAxiosError from './axios.test.helper';
 import { mapCaseDetails, mapCaseFactsheet } from '../../../server/mappers/case.mapper';
 import CaseDetailsListMockObject from '../../mockObjects/caseMocks';
@@ -21,7 +21,7 @@ jest.mock('../../../server/mappers/case.mapper');
 // create case mock objects
 const caseBuilder = new CaseBuilder(2);
 const CaseResponseMockObject: CaseResponse = caseBuilder.buildCaseResponse();
-const CaseFactsheetMockObject: CaseFactsheet = caseBuilder.buildCaseFactsheet();
+const CaseFactsheetMockObject: CaseFactsheetDetails = caseBuilder.buildCaseFactsheet();
 
 // need to test the endpoints through the express server
 const server = nodeServer(configFake, blaiseApiClientMock.object);
@@ -114,7 +114,7 @@ describe('Get case fact sheet tests', () => {
     // arrange
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
-    const mapCasefactsheetMock = mapCaseFactsheet as jest.Mock<CaseFactsheet>;
+    const mapCasefactsheetMock = mapCaseFactsheet as jest.Mock<CaseFactsheetDetails>;
 
     mapCasefactsheetMock.mockReturnValue(CaseFactsheetMockObject);
 
@@ -178,7 +178,7 @@ describe('Get case fact sheet tests', () => {
     // arrange
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
-    const mapCaseFactsheetMock = mapCaseFactsheet as jest.Mock<CaseFactsheet>;
+    const mapCaseFactsheetMock = mapCaseFactsheet as jest.Mock<CaseFactsheetDetails>;
     mapCaseFactsheetMock.mockImplementation(() => { throw new Error('Error message'); });
 
     blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => CaseResponseMockObject);

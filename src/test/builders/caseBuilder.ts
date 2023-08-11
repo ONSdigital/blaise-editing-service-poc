@@ -1,6 +1,6 @@
 import { CaseResponse } from 'blaise-api-node-client';
 import { Faker, fakerEN_GB } from '@faker-js/faker';
-import { CaseFactsheet } from '../../common/interfaces/case.interface';
+import { CaseFactsheetDetails } from '../../common/interfaces/case.interface';
 
 export default class CaseBuilder {
   caseId: string;
@@ -25,7 +25,7 @@ export default class CaseBuilder {
 
   interviewerName: string;
 
-  respondentNames: string[];
+  respondentNames: Array<string>;
 
   resondentDateOfBirths: Date[];
 
@@ -48,7 +48,7 @@ export default class CaseBuilder {
     this.respondentNames = [];
     this.resondentDateOfBirths = [];
 
-    for (let respondentNumber = 1; respondentNumber <= +this.numberOfRespondents; respondentNumber += 1) {
+    for (let respondentNumber = 0; respondentNumber < this.numberOfRespondents; respondentNumber += 1) {
       this.respondentNames.push(this.fakeData.person.fullName());
       this.resondentDateOfBirths.push(this.fakeData.date.birthdate());
     }
@@ -72,15 +72,15 @@ export default class CaseBuilder {
       },
     };
 
-    for (let respondentNumber = 1; respondentNumber <= +this.numberOfRespondents; respondentNumber += 1) {
-      caseResponse.fieldData[`dmName[${respondentNumber}]`] = this.respondentNames[respondentNumber];
-      caseResponse.fieldData[`dmDteOfBth[${respondentNumber}]`] = this.resondentDateOfBirths[respondentNumber];
+    for (let respondentNumber = 0; respondentNumber < this.numberOfRespondents; respondentNumber += 1) {
+      caseResponse.fieldData[`dmName[${respondentNumber + 1}]`] = this.respondentNames[respondentNumber];
+      caseResponse.fieldData[`dmDteOfBth[${respondentNumber + 1}]`] = this.resondentDateOfBirths[respondentNumber];
     }
     return caseResponse;
   }
 
-  buildCaseFactsheet():CaseFactsheet {
-    const caseFactsheet: CaseFactsheet = {
+  buildCaseFactsheet():CaseFactsheetDetails {
+    const caseFactsheet: CaseFactsheetDetails = {
       CaseId: this.caseId,
       OutcomeCode: this.outcomeCode,
       InterviewerName: this.interviewerName,
@@ -97,7 +97,7 @@ export default class CaseBuilder {
       Respondents: [],
     };
 
-    for (let respondentNumber = 1; respondentNumber <= +this.numberOfRespondents; respondentNumber += 1) {
+    for (let respondentNumber = 0; respondentNumber < this.numberOfRespondents; respondentNumber += 1) {
       caseFactsheet.Respondents.push({
         RespondentName: this.respondentNames[respondentNumber] as string,
         DateOfBirth: this.resondentDateOfBirths[respondentNumber] as Date,

@@ -2,7 +2,7 @@ import BlaiseClient from 'blaise-api-node-client';
 import express, { Request, Response, Router } from 'express';
 import { ControllerInterface } from '../interfaces/controller.interface';
 import { ConfigurationInterface } from '../interfaces/configuration.interface';
-import { CaseDetails, CaseFactsheet } from '../../common/interfaces/case.interface';
+import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/case.interface';
 import { mapCaseDetails, mapCaseFactsheet } from '../mappers/case.mapper';
 import notFound from '../../common/helpers/axios.helper';
 
@@ -46,7 +46,7 @@ export default class CaseController implements ControllerInterface {
     }
   }
 
-  async getCaseFactsheet(request: Request, response: Response<CaseFactsheet>) {
+  async getCaseFactsheet(request: Request, response: Response<CaseFactsheetDetails>) {
     const {
       questionnaireName,
       caseId,

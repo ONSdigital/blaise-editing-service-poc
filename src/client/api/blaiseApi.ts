@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Questionnaire } from 'blaise-api-node-client';
-import { CaseDetails, CaseFactsheet } from '../../common/interfaces/case.interface';
+import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/case.interface';
 import notFound from '../../common/helpers/axios.helper';
 
 export async function getQuestionnaires(): Promise<Questionnaire[]> {
@@ -28,7 +28,7 @@ export async function getCases(questionnaireName: string): Promise<CaseDetails[]
   }
 }
 
-export async function getCaseFactsheet(questionnaireName: string, caseId: string): Promise<CaseFactsheet> {
+export async function getCaseFactsheet(questionnaireName: string, caseId: string): Promise<CaseFactsheetDetails> {
   try {
     const response = await axios.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
     return response.data;

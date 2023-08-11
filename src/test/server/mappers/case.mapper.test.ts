@@ -1,5 +1,5 @@
 import { CaseStatus, CaseOutcome, CaseResponse } from 'blaise-api-node-client';
-import { CaseDetails, CaseFactsheet } from '../../../common/interfaces/case.interface';
+import { CaseDetails, CaseFactsheetDetails } from '../../../common/interfaces/case.interface';
 import { mapCaseDetails, mapCaseFactsheet } from '../../../server/mappers/case.mapper';
 import CaseBuilder from '../../builders/caseBuilder';
 
@@ -51,11 +51,11 @@ describe('Map case status list to case details list', () => {
 });
 
 describe('Map case response to factsheet', () => {
-  it.each([1, 2, 3, 4])('It should return a correctly mapped factsheet with x responent(s)', (value) => {
+  it.each([1,2,3,4])('It should return a correctly mapped factsheet with x responent(s)', (value) => {
     // arrange
     const caseBuilder = new CaseBuilder(value);
     const CaseResponseMockObject: CaseResponse = caseBuilder.buildCaseResponse();
-    const expectedCaseFactsheet: CaseFactsheet = caseBuilder.buildCaseFactsheet();
+    const expectedCaseFactsheet: CaseFactsheetDetails = caseBuilder.buildCaseFactsheet();
 
     // act
     const result = mapCaseFactsheet(CaseResponseMockObject);
