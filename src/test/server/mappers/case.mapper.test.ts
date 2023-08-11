@@ -51,22 +51,9 @@ describe('Map case status list to case details list', () => {
 });
 
 describe('Map case response to factsheet', () => {
-  it('It should return a correctly mapped factsheet with 1 responent', () => {
+  it.each([1, 2, 3, 4])('It should return a correctly mapped factsheet with x responent(s)', (value) => {
     // arrange
-    const caseBuilder = new CaseBuilder(1);
-    const CaseResponseMockObject: CaseResponse = caseBuilder.buildCaseResponse();
-    const expectedCaseFactsheet: CaseFactsheet = caseBuilder.buildCaseFactsheet();
-
-    // act
-    const result = mapCaseFactsheet(CaseResponseMockObject);
-
-    // assert
-    expect(result).toEqual(expectedCaseFactsheet);
-  });
-
-  it('It should return a correctly mapped factsheet with 2 responents', () => {
-    // arrange
-    const caseBuilder = new CaseBuilder(2);
+    const caseBuilder = new CaseBuilder(value);
     const CaseResponseMockObject: CaseResponse = caseBuilder.buildCaseResponse();
     const expectedCaseFactsheet: CaseFactsheet = caseBuilder.buildCaseFactsheet();
 

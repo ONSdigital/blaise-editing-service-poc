@@ -2,7 +2,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { QuestionnaireListMockObject } from 'blaise-api-node-client';
 import { getCases, getQuestionnaires } from '../../../client/api/blaiseApi';
-import { CaseDetailsListMockObject } from '../../mockObjects/caseMocks';
+import CaseDetailsListMockObject from '../../mockObjects/caseMocks';
 
 const mock = new MockAdapter(axios, { onNoMatch: 'throwException' });
 
