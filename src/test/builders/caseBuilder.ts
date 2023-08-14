@@ -1,6 +1,6 @@
 import { CaseResponse } from 'blaise-api-node-client';
 import { Faker, fakerEN_GB } from '@faker-js/faker';
-import { CaseFactsheetDetails } from '../../common/interfaces/case';
+import { CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
 
 export default class CaseBuilder {
   caseId: string;

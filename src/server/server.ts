@@ -2,9 +2,9 @@ import BlaiseClient from 'blaise-api-node-client';
 import express, { Request, Response, Express } from 'express';
 import ejs from 'ejs';
 import path from 'path';
-import QuestionnaireController from './controllers/questionnaire.controller';
-import CaseController from './controllers/case.controller';
-import { Configuration } from './interfaces/configuration';
+import QuestionnaireController from './controllers/questionnaireController';
+import CaseController from './controllers/caseController';
+import { Configuration } from './interfaces/configurationInterface';
 
 export default function nodeServer(config: Configuration, blaiseApiClient: BlaiseClient): Express {
   const server = express();

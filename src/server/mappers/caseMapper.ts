@@ -1,5 +1,5 @@
 import { CaseResponse, CaseStatus } from 'blaise-api-node-client';
-import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/case';
+import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
 
 export function mapCaseDetails(caseStatusList: CaseStatus[], questionnaireName:string, externalWebUrl:string): CaseDetails[] {
   return caseStatusList.map((caseStatus) => ({

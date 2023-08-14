@@ -4,7 +4,7 @@ import { QuestionnaireListMockObject } from 'blaise-api-node-client';
 import { getCases, getQuestionnaires, getCaseFactsheet } from '../../../client/api/blaiseApi';
 import CaseDetailsListMockObject from '../../mockObjects/caseMocks';
 import CaseBuilder from '../../builders/caseBuilder';
-import { CaseFactsheetDetails } from '../../../common/interfaces/case';
+import { CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
 
 const mock = new MockAdapter(axios, { onNoMatch: 'throwException' });
 

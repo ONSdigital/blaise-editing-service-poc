@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Questionnaire } from 'blaise-api-node-client';
-import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/case';
-import notFound from '../../common/helpers/axios.helper';
+import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
+import notFound from '../../common/helpers/axiosHelper';
 
 export async function getQuestionnaires(): Promise<Questionnaire[]> {
   try {

@@ -2,7 +2,7 @@ import listEndpoints, { Endpoint } from 'express-list-endpoints';
 import BlaiseApiClient from 'blaise-api-node-client';
 import { IMock, Mock } from 'typemoq';
 import NodeServer from '../../server/server';
-import FakeConfiguration from './configuration/configuration.fake';
+import FakeConfiguration from './configuration/fakeConfiguration';
 
 // create fake config
 const configFake = new FakeConfiguration('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com');

@@ -2,10 +2,10 @@ import supertest, { Response } from 'supertest';
 import BlaiseClient, { CaseResponse, CaseStatus, CaseStatusListMockObject } from 'blaise-api-node-client';
 import { IMock, Mock, Times } from 'typemoq';
 import nodeServer from '../../../server/server';
-import FakeConfiguration from '../configuration/configuration.fake';
-import { CaseDetails, CaseFactsheetDetails } from '../../../common/interfaces/case';
-import createAxiosError from './axios.test.helper';
-import { mapCaseDetails, mapCaseFactsheet } from '../../../server/mappers/case.mapper';
+import FakeConfiguration from '../configuration/fakeConfiguration';
+import { CaseDetails, CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
+import createAxiosError from './axiosTestHelper';
+import { mapCaseDetails, mapCaseFactsheet } from '../../../server/mappers/caseMapper';
 import CaseDetailsListMockObject from '../../mockObjects/caseMocks';
 import CaseBuilder from '../../builders/caseBuilder';
 
@@ -16,7 +16,7 @@ const configFake = new FakeConfiguration('restapi.blaise.com', 'dist', 5000, 'gu
 const blaiseApiClientMock: IMock<BlaiseClient> = Mock.ofType(BlaiseClient);
 
 // mock case mappers
-jest.mock('../../../server/mappers/case.mapper');
+jest.mock('../../../server/mappers/caseMapper');
 
 // create case mock objects
 const caseBuilder = new CaseBuilder(2);

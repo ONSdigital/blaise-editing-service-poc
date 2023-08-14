@@ -1,5 +1,5 @@
-import { Configuration } from '../interfaces/configuration';
-import { getStringOrThrowError, getNumberOrThrowError } from './configuration.helper';
+import { Configuration } from '../interfaces/configurationInterface';
+import { getStringOrThrowError, getNumberOrThrowError } from './configurationHelper';
 
 export default class ConfigurationProvider implements Configuration {
   BlaiseApiUrl: string;

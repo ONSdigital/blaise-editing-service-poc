@@ -1,5 +1,5 @@
 import { CaseOutcome } from 'blaise-api-node-client';
-import { CaseDetails } from '../../common/interfaces/case';
+import { CaseDetails } from '../../common/interfaces/caseInterface';
 
 const CaseDetailsListMockObject: CaseDetails[] = [{
   CaseId: '1',

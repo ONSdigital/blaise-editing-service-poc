@@ -1,8 +1,8 @@
 import BlaiseClient, { Questionnaire } from 'blaise-api-node-client';
 import express, { Request, Response } from 'express';
-import { Controller } from '../interfaces/controller';
-import { Configuration } from '../interfaces/configuration';
-import notFound from '../../common/helpers/axios.helper';
+import { Controller } from '../interfaces/controllerInterface';
+import { Configuration } from '../interfaces/configurationInterface';
+import notFound from '../../common/helpers/axiosHelper';
 
 export default class QuestionnaireController implements Controller {
   config: Configuration;

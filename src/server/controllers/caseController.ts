@@ -1,10 +1,10 @@
 import BlaiseClient from 'blaise-api-node-client';
 import express, { Request, Response, Router } from 'express';
-import { Controller } from '../interfaces/controller';
-import { Configuration } from '../interfaces/configuration';
-import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/case';
-import { mapCaseDetails, mapCaseFactsheet } from '../mappers/case.mapper';
-import notFound from '../../common/helpers/axios.helper';
+import { Controller } from '../interfaces/controllerInterface';
+import { Configuration } from '../interfaces/configurationInterface';
+import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
+import { mapCaseDetails, mapCaseFactsheet } from '../mappers/caseMapper';
+import notFound from '../../common/helpers/axiosHelper';
 
 export default class CaseController implements Controller {
   config: Configuration;

@@ -2,8 +2,8 @@ import supertest, { Response } from 'supertest';
 import BlaiseClient, { Questionnaire, QuestionnaireListMockObject } from 'blaise-api-node-client';
 import { IMock, Mock, Times } from 'typemoq';
 import nodeServer from '../../../server/server';
-import FakeConfiguration from '../configuration/configuration.fake';
-import createAxiosError from './axios.test.helper';
+import FakeConfiguration from '../configuration/fakeConfiguration';
+import createAxiosError from './axiosTestHelper';
 
 // create fake config
 const configFake = new FakeConfiguration('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com');
