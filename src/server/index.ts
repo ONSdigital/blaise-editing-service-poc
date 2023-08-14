@@ -15,5 +15,6 @@ const server = nodeServer(config, blaiseApiClient);
 
 // run server
 server.listen(config.Port, () => {
+  /* eslint-disable no-console, no-control-regex */
   console.log(`Example app listening on port ${config.Port}`);
 });
