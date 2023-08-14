@@ -1,4 +1,4 @@
-import { CaseFactsheetDetails } from '../../common/interfaces/case.interface';
+import { CaseFactsheetDetails } from '../../common/interfaces/case';
 
 interface FactsheetContentProps {
   factsheet: CaseFactsheetDetails;

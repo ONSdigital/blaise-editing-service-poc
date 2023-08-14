@@ -1,6 +1,6 @@
 import { ONSPanel, ONSTable } from 'blaise-design-system-react-components';
 import { Link } from 'react-router-dom';
-import { CaseDetails } from '../../common/interfaces/case.interface';
+import { CaseDetails } from '../../common/interfaces/case';
 
 interface CasesListProps {
   cases: CaseDetails[];

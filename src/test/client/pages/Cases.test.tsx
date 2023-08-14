@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Router from 'react-router';
 import CaseDetailsListMockObject from '../../mockObjects/caseMocks';
 import { getCases } from '../../../client/api/blaiseApi';
-import { CaseDetails } from '../../../common/interfaces/case.interface';
+import { CaseDetails } from '../../../common/interfaces/case';
 import Cases from '../../../client/pages/Cases';
 
 // declare global vars

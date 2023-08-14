@@ -1,7 +1,7 @@
-import { ConfigurationInterface } from '../interfaces/configuration.interface';
+import { Configuration } from '../interfaces/configuration';
 import { getStringOrThrowError, getNumberOrThrowError } from './configuration.helper';
 
-export default class Configuration implements ConfigurationInterface {
+export default class ConfigurationProvider implements Configuration {
   BlaiseApiUrl: string;
 
   BuildFolder: string;
