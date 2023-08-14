@@ -29,16 +29,19 @@ describe('Map case status list to case details list', () => {
         CaseId: '1',
         CaseStatus: CaseOutcome.Completed,
         CaseLink: `https://${externalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=1`,
+        QuestionnaireName: questionnaireName,
       },
       {
         CaseId: '2',
         CaseStatus: CaseOutcome.Partial,
         CaseLink: `https://${externalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=2`,
+        QuestionnaireName: questionnaireName,
       },
       {
         CaseId: '3',
         CaseStatus: CaseOutcome.AppointmentMade,
         CaseLink: `https://${externalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=3`,
+        QuestionnaireName: questionnaireName,
       },
     ];
 

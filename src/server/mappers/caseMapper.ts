@@ -6,6 +6,7 @@ export function mapCaseDetails(caseStatusList: CaseStatus[], questionnaireName:s
     CaseId: caseStatus.primaryKey,
     CaseStatus: caseStatus.outcome,
     CaseLink: `https://${externalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=${caseStatus.primaryKey}`,
+    QuestionnaireName: questionnaireName,
   }));
 }
 

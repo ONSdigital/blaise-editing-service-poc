@@ -16,6 +16,7 @@ export default function CasesList({ cases }: CasesListProps) {
       columns={[
         'Case ID',
         'Status',
+        'Factsheet',
       ]}
     >
       <>
@@ -27,6 +28,9 @@ export default function CasesList({ cases }: CasesListProps) {
               </Link>
             </td>
             <td className="ons-table__cell">{questionnaireCase.CaseStatus}</td>
+            <td className="ons-table__cell">
+              <Link to={`/questionnaires/${questionnaireCase.QuestionnaireName}/cases/${questionnaireCase.CaseId}/factsheet`}>Factsheet</Link>
+            </td>
           </tr>
         ))}
       </>

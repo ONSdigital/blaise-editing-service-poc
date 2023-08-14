@@ -28,6 +28,12 @@ exports[`Given there are cases available in blaise for questionnaire should rend
             >
               Status
             </th>
+            <th
+              class="ons-table__header"
+              scope="col"
+            >
+              Factsheet
+            </th>
           </tr>
         </thead>
         <tbody
@@ -51,6 +57,15 @@ exports[`Given there are cases available in blaise for questionnaire should rend
             >
               110
             </td>
+            <td
+              class="ons-table__cell"
+            >
+              <a
+                href="/questionnaires/OPN2201A/cases/1/factsheet"
+              >
+                Factsheet
+              </a>
+            </td>
           </tr>
           <tr
             class="ons-table__row"
@@ -70,6 +85,15 @@ exports[`Given there are cases available in blaise for questionnaire should rend
             >
               430
             </td>
+            <td
+              class="ons-table__cell"
+            >
+              <a
+                href="/questionnaires/OPN2201A/cases/2/factsheet"
+              >
+                Factsheet
+              </a>
+            </td>
           </tr>
           <tr
             class="ons-table__row"
@@ -88,6 +112,15 @@ exports[`Given there are cases available in blaise for questionnaire should rend
               class="ons-table__cell"
             >
               390
+            </td>
+            <td
+              class="ons-table__cell"
+            >
+              <a
+                href="/questionnaires/OPN2201A/cases/3/factsheet"
+              >
+                Factsheet
+              </a>
             </td>
           </tr>
         </tbody>
@@ -118,6 +151,12 @@ exports[`Given there are cases available in blaise for questionnaire should rend
           >
             Status
           </th>
+          <th
+            class="ons-table__header"
+            scope="col"
+          >
+            Factsheet
+          </th>
         </tr>
       </thead>
       <tbody
@@ -141,6 +180,15 @@ exports[`Given there are cases available in blaise for questionnaire should rend
           >
             110
           </td>
+          <td
+            class="ons-table__cell"
+          >
+            <a
+              href="/questionnaires/OPN2201A/cases/1/factsheet"
+            >
+              Factsheet
+            </a>
+          </td>
         </tr>
         <tr
           class="ons-table__row"
@@ -160,6 +208,15 @@ exports[`Given there are cases available in blaise for questionnaire should rend
           >
             430
           </td>
+          <td
+            class="ons-table__cell"
+          >
+            <a
+              href="/questionnaires/OPN2201A/cases/2/factsheet"
+            >
+              Factsheet
+            </a>
+          </td>
         </tr>
         <tr
           class="ons-table__row"
@@ -178,6 +235,15 @@ exports[`Given there are cases available in blaise for questionnaire should rend
             class="ons-table__cell"
           >
             390
+          </td>
+          <td
+            class="ons-table__cell"
+          >
+            <a
+              href="/questionnaires/OPN2201A/cases/3/factsheet"
+            >
+              Factsheet
+            </a>
           </td>
         </tr>
       </tbody>
