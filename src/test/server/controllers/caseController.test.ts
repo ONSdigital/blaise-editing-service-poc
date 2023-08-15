@@ -6,8 +6,8 @@ import FakeConfiguration from '../configuration/fakeConfiguration';
 import { CaseDetails, CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
 import createAxiosError from './axiosTestHelper';
 import { mapCaseDetails, mapCaseFactsheet } from '../../../server/mappers/caseMapper';
-import CaseDetailsListMockObject from '../../mockObjects/caseMocks';
 import CaseBuilder from '../../builders/caseBuilder';
+import CaseDetailsBuilder from '../../builders/caseDetailsBuilder';
 
 // create fake config
 const configFake = new FakeConfiguration('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com');
@@ -43,6 +43,7 @@ describe('Get case list tests', () => {
     // mock blaise client to return a list of cases
     const questionnaireName: string = 'TEST111A';
     const caseStatusList: CaseStatus[] = CaseStatusListMockObject;
+    const CaseDetailsListMockObject = CaseDetailsBuilder.BuildCaseDetails(3);
     const mapCaseDetailsMock = mapCaseDetails as jest.Mock<CaseDetails[]>;
 
     mapCaseDetailsMock.mockReturnValueOnce(CaseDetailsListMockObject);

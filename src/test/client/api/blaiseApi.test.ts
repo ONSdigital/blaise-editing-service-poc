@@ -2,9 +2,9 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { QuestionnaireListMockObject } from 'blaise-api-node-client';
 import { getCases, getQuestionnaires, getCaseFactsheet } from '../../../client/api/blaiseApi';
-import CaseDetailsListMockObject from '../../mockObjects/caseMocks';
 import CaseBuilder from '../../builders/caseBuilder';
 import { CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
+import CaseDetailsBuilder from '../../builders/caseDetailsBuilder';
 
 const mock = new MockAdapter(axios, { onNoMatch: 'throwException' });
 
@@ -50,6 +50,7 @@ describe('GetCases from Blaise', () => {
 
   it('Should retrieve a list of cases in blaise with a 200 response', async () => {
     // arrange
+    const CaseDetailsListMockObject = CaseDetailsBuilder.BuildCaseDetails(3);
     mock.onGet(`/api/questionnaires/${questionnaireName}/cases`).reply(200, CaseDetailsListMockObject);
 
     // act
