@@ -19,15 +19,16 @@ jest.mock('react-router', () => ({ ...jest.requireActual('react-router'), usePar
 jest.spyOn(Router, 'useParams').mockReturnValue({ questionnaireName });
 
 describe('Given there are cases available in blaise for questionnaire', () => {
-
   afterEach(() => {
     getCasesMock.mockReset();
   });
 
-  it.each([1,2,3,4])('should render the page correctly when x cases are returned', async (value) => {
+  it.each([1, 2, 3, 4])('should render the page correctly when x cases are returned', async (value) => {
     // arrange
-    const CaseDetailsListMockObject = CaseDetailsBuilder.BuildCaseDetails(value);
-    getCasesMock.mockImplementation(() => Promise.resolve(CaseDetailsListMockObject));
+    const caseDetailsBuider = new CaseDetailsBuilder(value);
+    const caseDetailsListMockObject = caseDetailsBuider.BuildCaseDetails();
+
+    getCasesMock.mockImplementation(() => Promise.resolve(caseDetailsListMockObject));
 
     // act
     await act(async () => {
@@ -42,10 +43,11 @@ describe('Given there are cases available in blaise for questionnaire', () => {
     expect(view).toMatchSnapshot();
   });
 
-  it.each([1,2,3,4])('should display a list of the expected questionnaires of x cases', async (value) => {
+  it.each([1, 2, 3, 4])('should display a list of the expected questionnaires of x cases', async (value) => {
     // arrange
-    const CaseDetailsListMockObject = CaseDetailsBuilder.BuildCaseDetails(value);
-    getCasesMock.mockImplementation(() => Promise.resolve(CaseDetailsListMockObject));
+    const caseDetailsBuider = new CaseDetailsBuilder(value);
+    const caseDetailsListMockObject = caseDetailsBuider.BuildCaseDetails();
+    getCasesMock.mockImplementation(() => Promise.resolve(caseDetailsListMockObject));
 
     // act
     await act(async () => {
@@ -57,9 +59,8 @@ describe('Given there are cases available in blaise for questionnaire', () => {
     });
 
     // assert
-    
-    
-    CaseDetailsListMockObject.forEach((caseDetail, caseIndex) => {
+
+    caseDetailsListMockObject.forEach((caseDetail, caseIndex) => {
       const caseListView = view.getByTestId(`case-table-row${caseIndex}`);
       expect(caseListView).toHaveTextContent(caseDetail.CaseId);
       expect(caseListView).toHaveTextContent(String(caseDetail.CaseStatus));

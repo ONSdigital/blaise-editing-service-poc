@@ -38,15 +38,16 @@ describe('Get case list tests', () => {
     blaiseApiClientMock.reset();
   });
 
-  it('It should return a 200 response with an expected list of cases', async () => {
+  it.each([1, 2, 3, 4])('It should return a 200 response with an expected list of cases', async (value) => {
     // arrange
     // mock blaise client to return a list of cases
     const questionnaireName: string = 'TEST111A';
     const caseStatusList: CaseStatus[] = CaseStatusListMockObject;
-    const CaseDetailsListMockObject = CaseDetailsBuilder.BuildCaseDetails(3);
+    const caseDetailsBuider = new CaseDetailsBuilder(value);
+    const caseDetailsListMockObject = caseDetailsBuider.BuildCaseDetails();
     const mapCaseDetailsMock = mapCaseDetails as jest.Mock<CaseDetails[]>;
 
-    mapCaseDetailsMock.mockReturnValueOnce(CaseDetailsListMockObject);
+    mapCaseDetailsMock.mockReturnValueOnce(caseDetailsListMockObject);
 
     blaiseApiClientMock.setup((client) => client.getCaseStatus(configFake.ServerPark, questionnaireName)).returns(async () => caseStatusList);
 
@@ -55,7 +56,7 @@ describe('Get case list tests', () => {
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual(CaseDetailsListMockObject);
+    expect(response.body).toEqual(caseDetailsListMockObject);
     blaiseApiClientMock.verify((client) => client.getCaseStatus(configFake.ServerPark, questionnaireName), Times.once());
   });
 

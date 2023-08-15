@@ -1,49 +1,18 @@
-import { CaseStatus, CaseOutcome, CaseResponse } from 'blaise-api-node-client';
-import { CaseDetails, CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
+import { CaseResponse } from 'blaise-api-node-client';
+import { CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
 import { mapCaseDetails, mapCaseFactsheet } from '../../../server/mappers/caseMapper';
 import CaseBuilder from '../../builders/caseBuilder';
+import CaseDetailsBuilder from '../../builders/caseDetailsBuilder';
 
 describe('Map case status list to case details list', () => {
-  it('It should return a correctly mapped list of cases', () => {
+  it.each([1, 2, 3, 4])('It should return a correctly mapped list of cases', (value) => {
     // arrange
-    const questionnaireName: string = 'TEST111A';
+    const questionnaireName: string = 'OPN2201A';
     const externalWebUrl: string = 'cati.blaise.com';
 
-    const caseStatusList: CaseStatus[] = [
-      {
-        primaryKey: '1',
-        outcome: CaseOutcome.Completed,
-      },
-      {
-        primaryKey: '2',
-        outcome: CaseOutcome.Partial,
-      },
-      {
-        primaryKey: '3',
-        outcome: CaseOutcome.AppointmentMade,
-      },
-    ];
-
-    const expectedCasesList: CaseDetails[] = [
-      {
-        CaseId: '1',
-        CaseStatus: CaseOutcome.Completed,
-        CaseLink: `https://${externalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=1`,
-        QuestionnaireName: questionnaireName,
-      },
-      {
-        CaseId: '2',
-        CaseStatus: CaseOutcome.Partial,
-        CaseLink: `https://${externalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=2`,
-        QuestionnaireName: questionnaireName,
-      },
-      {
-        CaseId: '3',
-        CaseStatus: CaseOutcome.AppointmentMade,
-        CaseLink: `https://${externalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=3`,
-        QuestionnaireName: questionnaireName,
-      },
-    ];
+    const caseDetailsBuider = new CaseDetailsBuilder(value);
+    const expectedCasesList = caseDetailsBuider.BuildCaseDetails();
+    const caseStatusList = caseDetailsBuider.BuildCaseStatus();
 
     // act
     const result = mapCaseDetails(caseStatusList, questionnaireName, externalWebUrl);
@@ -54,7 +23,7 @@ describe('Map case status list to case details list', () => {
 });
 
 describe('Map case response to factsheet', () => {
-  it.each([1, 2, 3, 4])('It should return a correctly mapped factsheet with x responent(s)', (value) => {
+  it.each([1, 3, 5, 10])('It should return a correctly mapped factsheet with x responent(s)', (value) => {
     // arrange
     const caseBuilder = new CaseBuilder(value);
     const CaseResponseMockObject: CaseResponse = caseBuilder.buildCaseResponse();

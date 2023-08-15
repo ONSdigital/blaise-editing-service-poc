@@ -20,10 +20,10 @@ jest.spyOn(Router, 'useParams').mockReturnValue({ questionnaireName, caseId });
 const getCaseFactsheetMock = getCaseFactsheet as jest.Mock<Promise<CaseFactsheetDetails>>;
 
 describe('Given there is a case available in blaise for a questionnaire', () => {
-  it('should render the factsheet page for the case correctly', async () => {
+  it.each([1, 3, 5, 10])('should render the factsheet page for the case correctly', async (value) => {
     // arrange
 
-    const caseBuilder = new CaseBuilder(1);
+    const caseBuilder = new CaseBuilder(value);
     const expectedCaseFactsheet: CaseFactsheetDetails = caseBuilder.buildCaseFactsheet();
 
     getCaseFactsheetMock.mockImplementation(() => Promise.resolve(expectedCaseFactsheet));

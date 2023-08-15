@@ -48,16 +48,17 @@ describe('GetQuestionnaires from Blaise', () => {
 describe('GetCases from Blaise', () => {
   const questionnaireName = 'LMS2201_LT1';
 
-  it('Should retrieve a list of cases in blaise with a 200 response', async () => {
+  it.each([1, 2, 3, 4])('Should retrieve a list of cases in blaise with a 200 response', async (value) => {
     // arrange
-    const CaseDetailsListMockObject = CaseDetailsBuilder.BuildCaseDetails(3);
-    mock.onGet(`/api/questionnaires/${questionnaireName}/cases`).reply(200, CaseDetailsListMockObject);
+    const caseDetailsBuider = new CaseDetailsBuilder(value);
+    const caseDetailsListMockObject = caseDetailsBuider.BuildCaseDetails();
+    mock.onGet(`/api/questionnaires/${questionnaireName}/cases`).reply(200, caseDetailsListMockObject);
 
     // act
     const result = await getCases(questionnaireName);
 
     // assert
-    expect(result).toEqual(CaseDetailsListMockObject);
+    expect(result).toEqual(caseDetailsListMockObject);
   });
 
   it('Should throw the error "The questionnaire is no longer available', async () => {

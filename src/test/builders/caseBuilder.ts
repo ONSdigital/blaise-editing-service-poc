@@ -1,5 +1,4 @@
 import { CaseResponse } from 'blaise-api-node-client';
-import { Faker, fakerEN_GB } from '@faker-js/faker';
 import { CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
 
 export default class CaseBuilder {
@@ -25,32 +24,57 @@ export default class CaseBuilder {
 
   interviewerName: string;
 
-  respondentNames: Array<string>;
+  respondentNames: string[];
 
-  resondentDateOfBirths: Date[];
+  respondentDateOfBirths: Date[];
 
-  fakeData: Faker;
+  names: string[] = [
+    'Richmond Ricecake',
+    'Bartholomew Edgar',
+    'Sariha Smith',
+    'George Thompson',
+    'Tina Pipes',
+    'Steve Doe',
+    'Debra Oak',
+    'Margret Keys',
+    'Tim Lemmings',
+    "Becky O'Light",
+    'Ben Simmons',
+    'Iona South-West',
+  ];
+
+  dateOfBirths: Date[] = [
+    new Date(1980, 1, 15),
+    new Date(1995, 5, 11),
+    new Date(1991, 1, 1),
+    new Date(1994, 12, 25),
+    new Date(1999, 11, 7),
+    new Date(1973, 7, 9),
+    new Date(1982, 2, 23),
+    new Date(1990, 9, 13),
+    new Date(1996, 1, 24),
+    new Date(1954, 7, 30),
+  ];
 
   constructor(numberOfRespondents: number) {
     this.numberOfRespondents = numberOfRespondents;
-    this.fakeData = fakerEN_GB;
 
     this.caseId = '90001';
-    this.addressLine1 = this.fakeData.location.secondaryAddress();
-    this.addressLine2 = this.fakeData.location.buildingNumber();
-    this.addressLine3 = this.fakeData.location.street();
-    this.addressLine4 = this.fakeData.location.streetAddress();
-    this.county = this.fakeData.location.county();
-    this.town = this.fakeData.location.city();
-    this.postcode = this.fakeData.location.zipCode();
+    this.addressLine1 = 'Flat 1';
+    this.addressLine2 = 'Richmond House';
+    this.addressLine3 = 'Rice Road';
+    this.addressLine4 = 'Duffrin';
+    this.county = 'Gwent';
+    this.town = 'Newport';
+    this.postcode = 'NZ11 4PD';
     this.outcomeCode = 110;
-    this.interviewerName = this.fakeData.person.fullName();
+    this.interviewerName = 'Rich';
     this.respondentNames = [];
-    this.resondentDateOfBirths = [];
+    this.respondentDateOfBirths = [];
 
     for (let respondentNumber = 0; respondentNumber < this.numberOfRespondents; respondentNumber += 1) {
-      this.respondentNames.push(this.fakeData.person.fullName());
-      this.resondentDateOfBirths.push(this.fakeData.date.birthdate());
+      this.respondentNames.push(String(this.names[respondentNumber]));
+      this.respondentDateOfBirths.push(this.dateOfBirths[respondentNumber] as Date);
     }
   }
 
@@ -74,7 +98,7 @@ export default class CaseBuilder {
 
     for (let respondentNumber = 0; respondentNumber < this.numberOfRespondents; respondentNumber += 1) {
       caseResponse.fieldData[`dmName[${respondentNumber + 1}]`] = this.respondentNames[respondentNumber];
-      caseResponse.fieldData[`dmDteOfBth[${respondentNumber + 1}]`] = this.resondentDateOfBirths[respondentNumber];
+      caseResponse.fieldData[`dmDteOfBth[${respondentNumber + 1}]`] = this.respondentDateOfBirths[respondentNumber];
     }
     return caseResponse;
   }
@@ -100,7 +124,7 @@ export default class CaseBuilder {
     for (let respondentNumber = 0; respondentNumber < this.numberOfRespondents; respondentNumber += 1) {
       caseFactsheet.Respondents.push({
         RespondentName: this.respondentNames[respondentNumber] as string,
-        DateOfBirth: this.resondentDateOfBirths[respondentNumber] as Date,
+        DateOfBirth: this.respondentDateOfBirths[respondentNumber] as Date,
       });
     }
     return caseFactsheet;
