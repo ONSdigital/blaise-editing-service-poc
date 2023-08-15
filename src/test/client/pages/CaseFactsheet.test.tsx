@@ -38,21 +38,21 @@ describe('Given there is a case available in blaise for a questionnaire', () => 
     });
 
     // assert
-    const fred = view.getByTestId('factsheetId');
-    expect(fred).toHaveTextContent(expectedCaseFactsheet.CaseId);
-    expect(fred).toHaveTextContent(expectedCaseFactsheet.Address.AddressLine1);
-    expect(fred).toHaveTextContent(expectedCaseFactsheet.Address.AddressLine2);
-    expect(fred).toHaveTextContent(expectedCaseFactsheet.Address.AddressLine3);
-    expect(fred).toHaveTextContent(expectedCaseFactsheet.Address.AddressLine4);
-    expect(fred).toHaveTextContent(expectedCaseFactsheet.Address.County);
-    expect(fred).toHaveTextContent(expectedCaseFactsheet.Address.Postcode);
-    expect(fred).toHaveTextContent(expectedCaseFactsheet.Address.Town);
-    expect(fred).toHaveTextContent(expectedCaseFactsheet.InterviewerName);
-    expect(fred).toHaveTextContent(String(expectedCaseFactsheet.NumberOfRespondents));
-    expect(fred).toHaveTextContent(String(expectedCaseFactsheet.OutcomeCode));
+    const caseFactSheetView = view.getByTestId('factsheetId');
+    expect(caseFactSheetView).toHaveTextContent(expectedCaseFactsheet.CaseId);
+    expect(caseFactSheetView).toHaveTextContent(expectedCaseFactsheet.Address.AddressLine1);
+    expect(caseFactSheetView).toHaveTextContent(expectedCaseFactsheet.Address.AddressLine2);
+    expect(caseFactSheetView).toHaveTextContent(expectedCaseFactsheet.Address.AddressLine3);
+    expect(caseFactSheetView).toHaveTextContent(expectedCaseFactsheet.Address.AddressLine4);
+    expect(caseFactSheetView).toHaveTextContent(expectedCaseFactsheet.Address.County);
+    expect(caseFactSheetView).toHaveTextContent(expectedCaseFactsheet.Address.Postcode);
+    expect(caseFactSheetView).toHaveTextContent(expectedCaseFactsheet.Address.Town);
+    expect(caseFactSheetView).toHaveTextContent(expectedCaseFactsheet.InterviewerName);
+    expect(caseFactSheetView).toHaveTextContent(String(expectedCaseFactsheet.NumberOfRespondents));
+    expect(caseFactSheetView).toHaveTextContent(String(expectedCaseFactsheet.OutcomeCode));
     expectedCaseFactsheet.Respondents.forEach((respondent) => {
-      expect(fred).toHaveTextContent(respondent.RespondentName);
-      expect(fred).toHaveTextContent(String(respondent.DateOfBirth));
+      expect(caseFactSheetView).toHaveTextContent(respondent.RespondentName);
+      expect(caseFactSheetView).toHaveTextContent(String(respondent.DateOfBirth));
     });
   });
 });

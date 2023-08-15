@@ -9,7 +9,7 @@ import CaseDetailsBuilder from '../../builders/caseDetailsBuilder';
 // declare global vars
 const questionnaireName: string = 'TEST111A';
 const getCasesMock = getCases as jest.Mock<Promise<CaseDetails[]>>;
-const CaseDetailsListMockObject = CaseDetailsBuilder.BuildCaseDetails(3);
+
 let view:RenderResult;
 
 // declare mocks
@@ -19,15 +19,16 @@ jest.mock('react-router', () => ({ ...jest.requireActual('react-router'), usePar
 jest.spyOn(Router, 'useParams').mockReturnValue({ questionnaireName });
 
 describe('Given there are cases available in blaise for questionnaire', () => {
-  beforeEach(() => {
-    getCasesMock.mockImplementation(() => Promise.resolve(CaseDetailsListMockObject));
-  });
 
   afterEach(() => {
     getCasesMock.mockReset();
   });
 
-  it('should render the page correctly when cases are returned', async () => {
+  it.each([1,2,3,4])('should render the page correctly when x cases are returned', async (value) => {
+    // arrange
+    const CaseDetailsListMockObject = CaseDetailsBuilder.BuildCaseDetails(value);
+    getCasesMock.mockImplementation(() => Promise.resolve(CaseDetailsListMockObject));
+
     // act
     await act(async () => {
       view = render(
@@ -41,7 +42,11 @@ describe('Given there are cases available in blaise for questionnaire', () => {
     expect(view).toMatchSnapshot();
   });
 
-  it('should display a list of the expected questionnaires', async () => {
+  it.each([1,2,3,4])('should display a list of the expected questionnaires of x cases', async (value) => {
+    // arrange
+    const CaseDetailsListMockObject = CaseDetailsBuilder.BuildCaseDetails(value);
+    getCasesMock.mockImplementation(() => Promise.resolve(CaseDetailsListMockObject));
+
     // act
     await act(async () => {
       view = render(
@@ -52,9 +57,12 @@ describe('Given there are cases available in blaise for questionnaire', () => {
     });
 
     // assert
-    CaseDetailsListMockObject.forEach((caseDetail) => {
-      expect(view.getByText(caseDetail.CaseId)).toBeInTheDocument();
-      expect(view.getByText(caseDetail.CaseStatus)).toBeInTheDocument();
+    
+    
+    CaseDetailsListMockObject.forEach((caseDetail, caseIndex) => {
+      const caseListView = view.getByTestId(`case-table-row${caseIndex}`);
+      expect(caseListView).toHaveTextContent(caseDetail.CaseId);
+      expect(caseListView).toHaveTextContent(String(caseDetail.CaseStatus));
       expect(view.getByRole('link', { name: caseDetail.CaseId })).toHaveAttribute('href', caseDetail.CaseLink);
     });
   });
