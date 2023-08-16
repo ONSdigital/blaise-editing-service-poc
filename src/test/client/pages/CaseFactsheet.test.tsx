@@ -38,7 +38,7 @@ describe('Given there is a case available in blaise for a questionnaire', () => 
     });
 
     // assert
-    const caseFactSheetView = view.getByTestId('factsheetId');
+    const caseFactSheetView = view.getByTestId('Factsheet');
     expect(caseFactSheetView).toHaveTextContent(expectedCaseFactsheet.CaseId);
     expect(caseFactSheetView).toHaveTextContent(expectedCaseFactsheet.Address.AddressLine1);
     expect(caseFactSheetView).toHaveTextContent(expectedCaseFactsheet.Address.AddressLine2);
@@ -54,5 +54,64 @@ describe('Given there is a case available in blaise for a questionnaire', () => 
       expect(caseFactSheetView).toHaveTextContent(respondent.RespondentName);
       expect(caseFactSheetView).toHaveTextContent(String(respondent.DateOfBirth));
     });
+  });
+
+  it.each([1, 3, 5, 10])('should display the factsheet correctly', async (value) => {
+    // arrange
+
+    const caseBuilder = new CaseBuilder(value);
+    const expectedCaseFactsheet: CaseFactsheetDetails = caseBuilder.buildCaseFactsheet();
+
+    getCaseFactsheetMock.mockImplementation(() => Promise.resolve(expectedCaseFactsheet));
+
+    // act
+    await act(async () => {
+      view = render(
+        <BrowserRouter>
+          <CaseFactsheet />
+        </BrowserRouter>,
+      );
+    });
+
+    // assert
+    expect(view).toMatchSnapshot();
+  });
+});
+
+describe('Given there the blaise rest api is not available', () => {
+  beforeEach(() => {
+    getCaseFactsheetMock.mockRejectedValue(new Error('try again in a few minutes'));
+  });
+
+  afterEach(() => {
+    getCaseFactsheetMock.mockReset();
+  });
+
+  it('should display an error message telling the user to try again in a few minutes', async () => {
+    // act
+    await act(async () => {
+      view = render(
+        <BrowserRouter>
+          <CaseFactsheet />
+        </BrowserRouter>,
+      );
+    });
+
+    // assert
+    expect(view.getByText(/try again in a few minutes/)).toBeInTheDocument();
+  });
+
+  it('should render the page correctly when an error occurs', async () => {
+    // act
+    await act(async () => {
+      view = render(
+        <BrowserRouter>
+          <CaseFactsheet />
+        </BrowserRouter>,
+      );
+    });
+
+    // assert
+    expect(view).toMatchSnapshot();
   });
 });

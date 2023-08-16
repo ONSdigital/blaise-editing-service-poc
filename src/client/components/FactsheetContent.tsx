@@ -10,6 +10,7 @@ export default function FactsheetContent({ factsheet }: FactsheetContentProps) {
     <dl
       className="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
       title="Factsheet"
+      data-testid="Factsheet"
     >
       <dt className="ons-metadata__term ons-grid__col ons-col-3@m">CaseId:</dt>
       <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{factsheet.CaseId}</dd>
@@ -29,7 +30,7 @@ export default function FactsheetContent({ factsheet }: FactsheetContentProps) {
       <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{factsheet.NumberOfRespondents}</dd>
       <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Respondents:</dt>
       {factsheet.Respondents.map((respondent) => (
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m" key={respondent.RespondentName}>
           {respondent.RespondentName}
           {' '}
           {String(respondent.DateOfBirth)}
