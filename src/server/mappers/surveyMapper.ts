@@ -2,23 +2,20 @@ import { Questionnaire } from 'blaise-api-node-client';
 import { Survey } from '../../common/interfaces/surveyInterface';
 
 export default function mapSurveys(questionnaires: Questionnaire[]): Survey[] {
-  let surveys: Survey[] = []; 
-  let surveyIndex = 0;
+  const surveys: Survey[] = [];
 
   questionnaires.forEach((questionaire) => {
-      let surveyName = questionaire.name.slice(0, 3);
-      let existingIndex = surveys.findIndex(s => s.name === surveyName);
-      if(existingIndex === -1) {
-        surveys[surveyIndex] = {
-          name: surveyName,
-          questionnaires: [questionaire]
-        };
+    const surveyName = questionaire.name.slice(0, 3);
+    const surveyElement = surveys.find((survey) => survey.name === surveyName);
 
-        surveyIndex++;
-      }
-      else {
-        surveys[existingIndex]?.questionnaires.push(questionaire);
-      }
+    if (surveyElement === undefined) {
+      surveys.push({
+        name: surveyName,
+        questionnaires: [questionaire],
+      });
+    } else {
+      surveyElement.questionnaires.push(questionaire);
+    }
   });
 
   return surveys;
