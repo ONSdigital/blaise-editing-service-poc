@@ -1,60 +1,32 @@
 import { Questionnaire } from 'blaise-api-node-client';
-import { ONSPanel } from 'blaise-design-system-react-components';
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
 interface QuestionnairesListProps {
   questionnaires: Questionnaire[];
 }
 
-const tableStyle = {
-  margin: '15px',
-  width: '700px',
-};
-
-const linkStyle = {
-  textDecoration: 'none',
-  color: 'blue',
-};
-
 export default function QuestionnairesList({ questionnaires }: QuestionnairesListProps): ReactElement {
-  if (questionnaires.length === 0) {
-    return (
-      <ONSPanel spacious status="info">There are no questionnaires available</ONSPanel>
-    );
-  }
   return (
-    <table style={tableStyle} id="questionnaire-table">
-      <thead>
-        <th style={{
-          width: '50%', textAlign: 'left', margin: '5px', padding: '5px',
-        }}
-        >
-          <strong>Questionnaire name</strong>
-        </th>
-        <th style={{
-          width: '50%', textAlign: 'left', margin: '5px', padding: '5px',
-        }}
-        >
-          <strong>Case count</strong>
-        </th>
-      </thead>
+    <dl
+      className="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+      title="Questionnares"
+      data-testid="QuestionnaireList"
+      style={{ padding: '0 0 15px 5px' }}
+    >
+      <dt className="ons-metadata__term ons-grid__col ons-col-6@m">Questionnaire</dt>
+      <dd className="ons-metadata__value ons-grid__col ons-col-6@m" style={{ fontWeight: 'bold' }}>Case Count</dd>
       {questionnaires.map((questionnaire) => (
-        <tr key={questionnaire.name} data-testid="questionnaire-table-row">
-          <td style={{
-            width: '50%', textAlign: 'left', margin: '5px', padding: '5px',
-          }}
-          >
-            <Link to={`/questionnaires/${questionnaire.name}/cases`} style={linkStyle}>{questionnaire.name}</Link>
-          </td>
-          <td style={{
-            width: '50%', textAlign: 'left', margin: '5px', padding: '5px',
-          }}
-          >
-            {questionnaire.dataRecordCount}
-          </td>
-        </tr>
+        <React.Fragment key={questionnaire.name}>
+          <dt className="ons-metadata__term ons-grid__col ons-col-6@m">
+            <Link to={`/questionnaires/${questionnaire.name}/cases`} style={{ fontWeight: 'normal' }}>
+              {questionnaire.name}
+            </Link>
+          </dt>
+          <dd className="ons-metadata__value ons-grid__col ons-col-6@m">{questionnaire.dataRecordCount}</dd>
+        </React.Fragment>
       ))}
-    </table>
+    </dl>
+
   );
 }
