@@ -1,3 +1,4 @@
+import { ONSPanel } from 'blaise-design-system-react-components';
 import AsyncContent from '../components/AsyncContent';
 import { useAsyncRequest } from '../hooks/useAsyncRequest';
 import { getSurveys } from '../api/blaiseApi';
@@ -8,8 +9,11 @@ export default function Surveys() {
   const surveys = useAsyncRequest<Survey []>(getSurveys);
 
   return (
-    <AsyncContent content={surveys}>
-      {(loadedSurveys) => <SurveysList surveys={loadedSurveys} />}
-    </AsyncContent>
+    <>
+      <ONSPanel status="info">Bonjour tout le monde</ONSPanel>
+      <AsyncContent content={surveys}>
+        {(loadedSurveys) => <SurveysList surveys={loadedSurveys} />}
+      </AsyncContent>
+    </>
   );
 }
