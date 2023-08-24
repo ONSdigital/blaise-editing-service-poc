@@ -1,19 +1,30 @@
-import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Footer, Header } from 'blaise-design-system-react-components';
-import Cases from './pages/Cases';
-import CaseFactsheet from './pages/CaseFactsheet';
-import Surveys from './pages/Surveys';
+import { ReactElement, useState } from 'react';
+import { AuthManager } from 'blaise-login-react-client';
+import AppRoutes from './components/AppRoutes';
 
 const divStyle = {
   minHeight: 'calc(67vh)',
 };
+const authManager = new AuthManager();
 
-function App() {
+/* eslint-disable react/jsx-no-bind */
+function App(): ReactElement {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  function signOut(): void {
+    authManager.clearToken();
+    setLoggedIn(false);
+  }
+
   return (
     <>
       <Header
         title="Blaise Editing Service"
+        noSave
+        signOutButton
+        signOutFunction={signOut}
         navigationLinks={[
           {
             endpoint: '/',
@@ -23,11 +34,7 @@ function App() {
         ]}
       />
       <div style={divStyle} className="ons-page__container ons-container">
-        <Routes>
-          <Route path="/" element={<Surveys />} />
-          <Route path="questionnaires/:questionnaireName/cases/" element={<Cases />} />
-          <Route path="questionnaires/:questionnaireName/cases/:caseId/factsheet" element={<CaseFactsheet />} />
-        </Routes>
+        <AppRoutes authManager={authManager} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       </div>
       <Footer />
     </>

@@ -2,9 +2,11 @@ import BlaiseClient from 'blaise-api-node-client';
 import express, { Request, Response, Express } from 'express';
 import ejs from 'ejs';
 import path from 'path';
+import { Auth, newLoginHandler } from 'blaise-login-react-server';
 import SurveyController from './controllers/surveyController';
 import CaseController from './controllers/caseController';
 import { Configuration } from './interfaces/configurationInterface';
+import AuthConfigurationProvider from './configuration/AuthConfigurationProvider';
 
 export default function nodeServer(config: Configuration, blaiseApiClient: BlaiseClient): Express {
   const server = express();
@@ -21,6 +23,12 @@ export default function nodeServer(config: Configuration, blaiseApiClient: Blais
   // case routing
   const caseController = new CaseController(config, blaiseApiClient);
   server.use('/', caseController.getRoutes());
+
+  // login routing
+  const authConfig = new AuthConfigurationProvider();
+  const auth = new Auth(authConfig);
+  const loginHandler = newLoginHandler(auth, blaiseApiClient);
+  server.use('/', loginHandler);
 
   // catch all other routes renders react pages
   server.get('*', (_request: Request, response: Response) => {
