@@ -13,7 +13,7 @@ let view:RenderResult;
 
 // declare mocks
 /* eslint import/no-extraneous-dependencies: 0 */
-jest.mock('../../../client/api/blaiseApi');
+jest.mock('../../../client/clients/serverApi');
 jest.mock('react-router', () => ({ ...jest.requireActual('react-router'), useParams: jest.fn() }));
 jest.spyOn(Router, 'useParams').mockReturnValue({ questionnaireName, caseId });
 

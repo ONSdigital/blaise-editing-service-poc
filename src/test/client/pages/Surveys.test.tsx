@@ -5,7 +5,7 @@ import { Survey } from '../../../common/interfaces/surveyInterface';
 import surveyListMockObject from '../../mockObjects/surveyListMockObject';
 import Surveys from '../../../client/pages/Surveys';
 
-jest.mock('../../../client/api/blaiseApi');
+jest.mock('../../../client/clients/serverApi');
 
 const getSurveysMock = getSurveys as jest.Mock<Promise<Survey[]>>;
 let view:RenderResult;

@@ -1,3 +1,4 @@
+import { ONSPanel } from 'blaise-design-system-react-components';
 import { AuthManager, LoginForm } from 'blaise-login-react-client';
 import { ReactElement, useEffect } from 'react';
 
@@ -13,5 +14,11 @@ export default function LoginPage({ authManager, setLoggedIn }: LoginProps): Rea
     });
   }, [authManager, setLoggedIn]);
 
-  return <LoginForm authManager={authManager} setLoggedIn={setLoggedIn} />;
+  return (
+    <>
+      <ONSPanel status="info">Enter your Bliase username and password</ONSPanel>
+      <LoginForm authManager={authManager} setLoggedIn={setLoggedIn} />
+      ;
+    </>
+  );
 }

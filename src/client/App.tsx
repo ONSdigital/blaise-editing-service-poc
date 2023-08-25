@@ -28,7 +28,7 @@ function App(): ReactElement {
         signOutFunction={() => loginClient.signOut()}
         navigationLinks={navigationLinks}
       />
-      <div style={divStyle} className="ons-page__container ons-container">
+      <div style={divStyle} className="ons-page__container ons-container" data-testid="app-content">
         <AppRoutes loginClient={loginClient} />
       </div>
       <Footer />
