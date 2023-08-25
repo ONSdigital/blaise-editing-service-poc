@@ -1,7 +1,7 @@
 import { RenderResult, act, render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Router from 'react-router';
-import { getCaseFactsheet } from '../../../client/api/blaiseApi';
+import { getCaseFactsheet } from '../../../client/clients/serverApi';
 import { CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
 import CaseBuilder from '../../builders/caseBuilder';
 import CaseFactsheet from '../../../client/pages/CaseFactsheet';

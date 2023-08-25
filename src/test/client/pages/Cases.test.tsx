@@ -1,7 +1,7 @@
 import { RenderResult, act, render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Router from 'react-router';
-import { getCases } from '../../../client/api/blaiseApi';
+import { getCases } from '../../../client/clients/serverApi';
 import { CaseDetails } from '../../../common/interfaces/caseInterface';
 import Cases from '../../../client/pages/Cases';
 import CaseDetailsBuilder from '../../builders/caseDetailsBuilder';

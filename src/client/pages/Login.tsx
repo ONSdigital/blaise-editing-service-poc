@@ -2,11 +2,11 @@ import { AuthManager, LoginForm } from 'blaise-login-react-client';
 import { ReactElement, useEffect } from 'react';
 
 interface LoginProps {
-  authManager: AuthManager;
+  authManager:AuthManager;
   setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Login({ authManager, setLoggedIn } :LoginProps): ReactElement {
+export default function LoginPage({ authManager, setLoggedIn }: LoginProps): ReactElement {
   useEffect(() => {
     authManager.loggedIn().then((isLoggedIn: boolean) => {
       setLoggedIn(isLoggedIn);

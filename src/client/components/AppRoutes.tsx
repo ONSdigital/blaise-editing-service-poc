@@ -1,19 +1,16 @@
 import { ReactElement } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { AuthManager } from 'blaise-login-react-client';
 import Surveys from '../pages/Surveys';
 import Cases from '../pages/Cases';
 import CaseFactsheet from '../pages/CaseFactsheet';
-import Login from '../pages/Login';
+import LoginClient from '../clients/Login';
 
 interface RoutesProps {
-  authManager: AuthManager;
-  loggedIn: boolean;
-  setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+  loginClient: LoginClient;
 }
 
-export default function AppRoutes({ authManager, loggedIn, setLoggedIn }: RoutesProps): ReactElement {
-  if (loggedIn) {
+export default function AppRoutes({ loginClient }: RoutesProps): ReactElement {
+  if (loginClient.loggedIn) {
     return (
       <Routes>
         <Route path="/" element={<Surveys />} />
@@ -23,5 +20,5 @@ export default function AppRoutes({ authManager, loggedIn, setLoggedIn }: Routes
     );
   }
 
-  return <Login authManager={authManager} setLoggedIn={setLoggedIn} />;
+  return loginClient.loginPage();
 }
