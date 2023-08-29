@@ -7,6 +7,13 @@ export function getStringOrThrowError(variable: string | undefined, variableName
   return variable;
 }
 
+export function getStringOrSetDefault(variable: string | undefined, defaultValue: string): string {
+  if (variable === undefined || variable.trim() === '') {
+    return defaultValue;
+  }
+  return variable;
+}
+
 export function getNumberOrThrowError(variable: string | undefined, variableName: string) {
   const value = getStringOrThrowError(variable, variableName);
 

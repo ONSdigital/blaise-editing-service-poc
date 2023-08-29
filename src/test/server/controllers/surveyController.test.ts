@@ -9,7 +9,7 @@ import { Survey } from '../../../common/interfaces/surveyInterface';
 import mapSurveys from '../../../server/mappers/surveyMapper';
 
 // create fake config
-const configFake = new FakeConfiguration('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com');
+const configFake = new FakeConfiguration('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
 
 // mock blaise api client
 const blaiseApiClientMock: IMock<BlaiseClient> = Mock.ofType(BlaiseClient);
