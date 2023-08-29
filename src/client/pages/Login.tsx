@@ -16,7 +16,7 @@ export default function LoginPage({ authManager, setLoggedIn }: LoginProps): Rea
 
   return (
     <>
-      <ONSPanel status="info">Enter your Bliase username and password</ONSPanel>
+      <ONSPanel status="info">Enter your Blaise username and password</ONSPanel>
       <LoginForm authManager={authManager} setLoggedIn={setLoggedIn} />
       ;
     </>

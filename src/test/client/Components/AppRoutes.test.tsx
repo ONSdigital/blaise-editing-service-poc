@@ -24,7 +24,7 @@ describe('Renders the correct page when a user first accesses the service', () =
     render(<BrowserRouter><AppRoutes loginClient={loginClientMock.object} /></BrowserRouter>);
 
     // assert
-    const loginText = screen.getByText(/Enter your Bliase username and password/i);
+    const loginText = screen.getByText(/Enter your Blaise username and password/i);
 
     expect(loginText).toBeInTheDocument();
   });
