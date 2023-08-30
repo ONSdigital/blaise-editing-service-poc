@@ -1,4 +1,4 @@
-import ConfigurationProvider from '../../../server/configuration/ConfigurationProvider';
+import ConfigurationProvider from '../../../server/configuration/serverConfigurationProvider';
 
 export default class FakeConfigurationProvider implements ConfigurationProvider {
   BlaiseApiUrl: string;
