@@ -1,15 +1,18 @@
 import ConfigurationProvider from '../../../server/configuration/ConfigurationProvider';
 
 /* eslint-disable no-new */
+const emptyEnv = process.env;
+const blaiseApiUrl = 'rest.api.blaise.com';
+const buildFolder = '../../build';
+const port = 5000;
+const serverPark = 'gusty';
+const externalWebUrl = 'cati.blaise.com';
+const sessionSecret = 'richlikesricecakes';
+const sessionTimeout = '12h';
+const roles = 'DST';
+const rolesArray = ['DST'];
 
 describe('Configuration file tests', () => {
-  const emptyEnv = process.env;
-  const blaiseApiUrl = 'rest.api.blaise.com';
-  const buildFolder = '../../build';
-  const port = 5000;
-  const serverPark = 'gusty';
-  const externalWebUrl = 'cati.blaise.com';
-
   beforeEach(() => {
     process.env['BLAISE_API_URL'] = blaiseApiUrl;
     process.env['PORT'] = port.toString();
@@ -79,14 +82,6 @@ describe('Configuration file tests', () => {
 });
 
 describe('Authentication file tests', () => {
-  const emptyEnv = process.env;
-  const sessionSecret = 'richlikesricecakes';
-  const sessionTimeout = '12h';
-  const roles = 'DST';
-  const blaiseApiUrl = 'rest.api.blaise.com';
-
-  const rolesArray = ['DST'];
-
   beforeEach(() => {
     process.env['SESSION_SECRET'] = sessionSecret;
     process.env['SESSION_TIMEOUT'] = sessionTimeout;
