@@ -1,4 +1,4 @@
-import ConfigurationProvider from '../../../server/configuration/serverConfigurationProvider';
+import ConfigurationProvider from '../../../server/configuration/ConfigurationProvider';
 
 /* eslint-disable no-new */
 const emptyEnv = process.env;
