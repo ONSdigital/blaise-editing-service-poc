@@ -2,10 +2,7 @@ import BlaiseClient from 'blaise-api-node-client';
 import express, { Request, Response, Express } from 'express';
 import ejs from 'ejs';
 import path from 'path';
-<<<<<<< HEAD
 import { Auth, newLoginHandler } from 'blaise-login-react-server';
-=======
->>>>>>> main
 import SurveyController from './controllers/surveyController';
 import CaseController from './controllers/caseController';
 import ConfigurationProvider from './configuration/ConfigurationProvider';

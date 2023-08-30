@@ -4,7 +4,6 @@ import { ReactElement, useState } from 'react';
 import AppRoutes from './components/AppRoutes';
 import LoginClient from './clients/Login';
 
-
 const divStyle = {
   minHeight: 'calc(67vh)',
 };
