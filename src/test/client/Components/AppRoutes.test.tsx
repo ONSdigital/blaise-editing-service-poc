@@ -18,6 +18,7 @@ describe('Renders the correct page when a user first accesses the service', () =
   it('Should show the login page if the user has not logged in', () => {
     // arrange
     loginClientMock.setup((lc) => lc.loggedIn).returns(() => false);
+    loginClientMock.setup((lc) => lc.getRoleOfCurrentUser()).returns(async () => 'Editor');
     loginClientMock.setup((lc) => lc.loginPage()).returns(():ReactElement => <>Enter your Blaise username and password</>);
 
     // act
@@ -32,6 +33,7 @@ describe('Renders the correct page when a user first accesses the service', () =
   it('Should render the login page correctly if the user has not logged in', async () => {
     // arrange
     loginClientMock.setup((lc) => lc.loggedIn).returns(() => false);
+    loginClientMock.setup((lc) => lc.getRoleOfCurrentUser()).returns(async () => 'Editor');
     loginClientMock.setup((lc) => lc.loginPage()).returns(():ReactElement => <>Enter your Bliase username and password</>);
 
     // act
@@ -46,6 +48,7 @@ describe('Renders the correct page when a user first accesses the service', () =
   it('Should show the surveys page if the user has logged in', () => {
     // arrange
     loginClientMock.setup((lc) => lc.loggedIn).returns(() => true);
+    loginClientMock.setup((lc) => lc.getRoleOfCurrentUser()).returns(async () => 'Editor');
 
     // act
     render(<BrowserRouter><AppRoutes loginClient={loginClientMock.object} /></BrowserRouter>);
@@ -59,6 +62,7 @@ describe('Renders the correct page when a user first accesses the service', () =
   it('Should render the surveys page correctly if the user has logged in', async () => {
     // arrange
     loginClientMock.setup((lc) => lc.loggedIn).returns(() => true);
+    loginClientMock.setup((lc) => lc.getRoleOfCurrentUser()).returns(async () => 'Editor');
 
     // act
     await act(async () => {

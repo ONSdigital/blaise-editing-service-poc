@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { AuthManager } from 'blaise-login-react-client';
 import LoginPage from '../pages/Login';
+import { getLoggedInUser } from './serverApi';
 
 export default class LoginClient {
   authManager: AuthManager;
@@ -25,5 +26,11 @@ export default class LoginClient {
       authManager: this.authManager,
       setLoggedIn: this.setLoggedIn,
     });
+  }
+
+  async getRoleOfCurrentUser(): Promise<string> {
+    const user = await getLoggedInUser(this.authManager);
+
+    return user.role;
   }
 }

@@ -76,7 +76,8 @@ exports[`Renders the correct page when a user first accesses the service Should 
         <div
           class="ons-panel__body "
         >
-          Bonjour tout le monde
+          Bonjour tout le monde 
+          Editor
         </div>
       </div>
       <div
@@ -177,7 +178,8 @@ exports[`Renders the correct page when a user first accesses the service Should 
       <div
         class="ons-panel__body "
       >
-        Bonjour tout le monde
+        Bonjour tout le monde 
+        Editor
       </div>
     </div>
     <div

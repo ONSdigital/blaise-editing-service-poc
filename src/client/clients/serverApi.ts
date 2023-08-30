@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { AuthManager, getCurrentUser } from 'blaise-login-react-client';
+import { User } from 'blaise-api-node-client';
 import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
 import notFound from '../../common/helpers/axiosHelper';
 import { Survey } from '../../common/interfaces/surveyInterface';
-import { User } from 'blaise-api-node-client';
 
 export async function getSurveys(): Promise<Survey[]> {
   try {
