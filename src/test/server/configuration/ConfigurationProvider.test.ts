@@ -40,24 +40,32 @@ describe('Configuration file tests', () => {
     // arrange
     process.env['BLAISE_API_URL'] = value;
 
-    // act && assert
-    expect(() => { new ConfigurationProvider(); }).toThrowError('BLAISE_API_URL has not been set or is set to an empty string');
+    // act
+    const configuration = () => { new ConfigurationProvider(); };
+
+    // assert
+    expect(configuration).toThrowError('BLAISE_API_URL has not been set or is set to an empty string');
   });
 
   it.each([undefined, '', ' ', '  '])('should throw an error if the PORT is empty or does not exist', (value) => {
     // arrange
     process.env['PORT'] = value;
 
+    // act
+    const configuration = () => { new ConfigurationProvider(); };
+
     // act && assert
-    expect(() => { new ConfigurationProvider(); }).toThrowError('PORT has not been set or is set to an empty string');
+    expect(configuration).toThrowError('PORT has not been set or is set to an empty string');
   });
 
   it.each(['NotNumber', 'eight'])('should throw an error if the PORT is not number', (value) => {
     // arrange
     process.env['PORT'] = value;
+
+    // act
     const configuration = () => { new ConfigurationProvider(); };
 
-    // act && assert
+    // assert
     expect(configuration).toThrowError(TypeError);
     expect(configuration).toThrowError('PORT is not set to a valid number');
   });
@@ -65,18 +73,22 @@ describe('Configuration file tests', () => {
   it.each([undefined, '', '  ', '   '])('should throw an error if SERVER_PARK is empty or does not exist', (value) => {
     // arrange
     process.env['SERVER_PARK'] = value;
+
+    // act
     const configuration = () => { new ConfigurationProvider(); };
 
-    // act && assert
+    // assert
     expect(configuration).toThrowError('SERVER_PARK has not been set or is set to an empty string');
   });
 
   it.each([undefined, '', '  ', '   '])('should throw an error if VM_EXTERNAL_WEB_URL is empty or does not exist', (value) => {
     // arrange
     process.env['VM_EXTERNAL_WEB_URL'] = value;
+
+    // act
     const configuration = () => { new ConfigurationProvider(); };
 
-    // act && assert
+    // assert
     expect(configuration).toThrowError('VM_EXTERNAL_WEB_URL has not been set or is set to an empty string');
   });
 });
@@ -141,6 +153,8 @@ describe('Authentication file tests', () => {
   it.each([undefined, '', '  ', '   '])('should throw an error if BLAISE_API_URL is empty or does not exist', (value) => {
     // arrange
     process.env['BLAISE_API_URL'] = value;
+
+    // act
     const configuration = () => { new ConfigurationProvider(); };
 
     // act && assert
