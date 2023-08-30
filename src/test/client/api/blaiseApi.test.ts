@@ -1,6 +1,10 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
+<<<<<<< HEAD
 import { getCases, getSurveys, getCaseFactsheet } from '../../../client/clients/serverApi';
+=======
+import { getCases, getSurveys, getCaseFactsheet } from '../../../client/api/blaiseApi';
+>>>>>>> main
 import CaseBuilder from '../../builders/caseBuilder';
 import { CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
 import CaseDetailsBuilder from '../../builders/caseDetailsBuilder';
