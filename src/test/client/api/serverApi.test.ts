@@ -3,7 +3,7 @@ import MockAdapter from 'axios-mock-adapter';
 import { AuthManager, getCurrentUser } from 'blaise-login-react-client';
 import { User } from 'blaise-api-node-client';
 import {
-  getCases, getSurveys, getCaseFactsheet, getLoggedInUserRole,
+  getCases, getSurveys, getCaseFactsheet, getLoggedInUser,
 } from '../../../client/clients/serverApi';
 import CaseBuilder from '../../builders/caseBuilder';
 import { CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
@@ -137,30 +137,32 @@ describe('GetCaseFactsheet from Blaise', () => {
   });
 });
 
-describe('GetUserRole from Blaise', () => {
-  it('Should return expected role of logged in user', async () => {
+describe('GetUser from Blaise', () => {
+  it('Should return expected user', async () => {
     // arrange
     const getLoggedInUserMock = getCurrentUser as jest.Mock<Promise<User>>;
-    getLoggedInUserMock.mockImplementation(() => Promise.resolve({
+    const userMock = {
       name: 'jake',
       role: 'Manager',
       serverParks: ['gusty'],
       defaultServerPark: 'gusty',
-    }));
+    };
+
+    getLoggedInUserMock.mockImplementation(() => Promise.resolve(userMock));
 
     // act
-    const role = await getLoggedInUserRole(authManagerMock);
+    const user = await getLoggedInUser(authManagerMock);
 
     // assert
-    expect(role).toEqual('Manager');
+    expect(user).toEqual(userMock);
   });
 
-  it('Should throw an error if getCurrentUser has no role', async () => {
+  it('Should throw an error if getCurrentUser errors', async () => {
     // arrange
     const getLoggedInUserMock = getCurrentUser as jest.Mock<Promise<User>>;
     getLoggedInUserMock.mockImplementation(() => Promise.reject());
 
     // act && assert
-    expect(() => getLoggedInUserRole(authManagerMock)).rejects.toThrow(/Unable to retrieve a role/);
+    expect(() => getLoggedInUser(authManagerMock)).rejects.toThrow(/Unable to retrieve logged in user/);
   });
 });

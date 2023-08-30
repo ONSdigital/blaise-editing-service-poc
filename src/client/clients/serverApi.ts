@@ -3,6 +3,7 @@ import { AuthManager, getCurrentUser } from 'blaise-login-react-client';
 import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
 import notFound from '../../common/helpers/axiosHelper';
 import { Survey } from '../../common/interfaces/surveyInterface';
+import { User } from 'blaise-api-node-client';
 
 export async function getSurveys(): Promise<Survey[]> {
   try {
@@ -41,11 +42,10 @@ export async function getCaseFactsheet(questionnaireName: string, caseId: string
   }
 }
 
-export async function getLoggedInUserRole(authManager: AuthManager): Promise<String> {
+export async function getLoggedInUser(authManager: AuthManager): Promise<User> {
   try {
-    const user = await getCurrentUser(authManager);
-    return user.role;
+    return await getCurrentUser(authManager);
   } catch (error) {
-    throw new Error('Unable to retrieve a role');
+    throw new Error('Unable to retrieve logged in user');
   }
 }
