@@ -18,7 +18,6 @@ export default function LoginPage({ authManager, setLoggedIn }: LoginProps): Rea
     <>
       <ONSPanel status="info">Enter your Blaise username and password</ONSPanel>
       <LoginForm authManager={authManager} setLoggedIn={setLoggedIn} />
-      ;
     </>
   );
 }
