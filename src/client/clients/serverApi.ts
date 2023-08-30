@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { AuthManager, getCurrentUser } from 'blaise-login-react-client';
 import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
 import notFound from '../../common/helpers/axiosHelper';
 import { Survey } from '../../common/interfaces/surveyInterface';
@@ -37,5 +38,14 @@ export async function getCaseFactsheet(questionnaireName: string, caseId: string
       throw new Error('The questionnaire is no longer available');
     }
     throw new Error('Unable to retrieve case factsheet, please try again in a few minutes');
+  }
+}
+
+export async function getLoggedInUserRole(authManager: AuthManager): Promise<String> {
+  try {
+    const user = await getCurrentUser(authManager);
+    return user.role;
+  } catch (error) {
+    throw new Error('Unable to retrieve a role');
   }
 }
