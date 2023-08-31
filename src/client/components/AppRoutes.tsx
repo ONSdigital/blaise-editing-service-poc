@@ -10,7 +10,7 @@ interface RoutesProps {
 }
 
 export default function AppRoutes({ loginClient }: RoutesProps): ReactElement {
-  const [userRole, setUserRole] = useState<string>();
+  const [userRole, setUserRole] = useState<string>('');
 
   useEffect(() => {
     console.debug('Enter use effect');
@@ -32,7 +32,7 @@ export default function AppRoutes({ loginClient }: RoutesProps): ReactElement {
   if (loginClient.loggedIn) {
     return (
       <Routes>
-        <Route path="/" element={<Surveys userRole={userRole || ''} />} />
+        <Route path="/" element={<Surveys userRole={userRole} />} />
         <Route path="questionnaires/:questionnaireName/cases/" element={<Cases />} />
         <Route path="questionnaires/:questionnaireName/cases/:caseId/factsheet" element={<CaseFactsheet />} />
       </Routes>
