@@ -1,6 +1,6 @@
-import { ONSPanel } from 'blaise-design-system-react-components';
+import { ONSLoadingPanel, ONSPanel } from 'blaise-design-system-react-components';
 import { AuthManager, LoginForm } from 'blaise-login-react-client';
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 
 interface LoginProps {
   authManager:AuthManager;
@@ -8,10 +8,24 @@ interface LoginProps {
 }
 
 export default function LoginPage({ authManager, setLoggedIn }: LoginProps): ReactElement {
-  return (
-    <>
-      <ONSPanel status="info">Enter your Blaise username and password</ONSPanel>
-      <LoginForm authManager={authManager} setLoggedIn={setLoggedIn} />
-    </>
-  );
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    console.debug('useEffect LoginPage');
+    authManager.loggedIn().then((isLoggedIn: boolean) => {
+      setLoggedIn(isLoggedIn);
+      setLoaded(true);
+    });
+  }, [authManager, setLoggedIn]);
+
+  if (loaded) {
+    return (
+      <>
+        <ONSPanel status="info">Enter your Blaise username and password</ONSPanel>
+        <LoginForm authManager={authManager} setLoggedIn={setLoggedIn} />
+      </>
+    );
+  }
+
+  return <ONSLoadingPanel />;
 }
