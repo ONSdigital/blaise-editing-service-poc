@@ -7,11 +7,11 @@ const divStyle = {
 
 interface LayoutTemplateProps {
   children: React.ReactNode;
-  isLoggedIn: boolean;
-  logOut: () => void;
+  showSignOutButton: boolean;
+  signOut: () => void;
 }
 
-export default function LayoutTemplate({ children, isLoggedIn, logOut }: LayoutTemplateProps) {
+export default function LayoutTemplate({ children, showSignOutButton, signOut }: LayoutTemplateProps) {
   console.debug('LayoutTemplate');
   const navigationLinks = [
     {
@@ -27,8 +27,8 @@ export default function LayoutTemplate({ children, isLoggedIn, logOut }: LayoutT
       <Header
         title="Blaise Editing Service"
         noSave
-        signOutButton={isLoggedIn}
-        signOutFunction={() => logOut()}
+        signOutButton={showSignOutButton}
+        signOutFunction={() => signOut()}
         navigationLinks={navigationLinks}
       />
       <div style={divStyle} className="ons-page__container ons-container" data-testid="app-content">
