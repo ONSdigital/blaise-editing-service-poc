@@ -1,42 +1,20 @@
 import './App.css';
-import { ReactElement, useEffect, useState } from 'react';
-import { AuthManager } from 'blaise-login-react-client';
+import { ReactElement, useState } from 'react';
 import AppContent from './components/AppContent';
 import LayoutTemplate from './components/LayoutTemplate';
 import LoginPage from './pages/Login';
-import { getLoggedInUser } from './clients/serverApi';
+import LoginManager from './clients/LoginManager';
 
-const authManager = new AuthManager();
-console.debug('AuthManager');
+const loginManager = new LoginManager();
 
 function App(): ReactElement {
-  console.debug('App');
-
   const [loggedIn, setLoggedIn] = useState(false);
-  const [userRole, setUserRole] = useState<string>('');
-  useEffect(() => {
-    console.debug('useEffect App');
-
-    if (loggedIn) {
-      console.debug('getLoggedInUser');
-      getLoggedInUser(authManager).then((user) => {
-        console.debug('setUserRole ', user.role);
-        setUserRole(user.role);
-      });
-    }
-  }, [loggedIn]);
-
-  function logOut() {
-    console.debug('logOut');
-    authManager.clearToken();
-    setLoggedIn(false);
-  }
 
   return (
-    <LayoutTemplate isLoggedIn={loggedIn} logOut={() => logOut()}>
+    <LayoutTemplate isLoggedIn={loggedIn} logOut={() => loginManager.logOut(setLoggedIn)}>
       {loggedIn
-        ? <AppContent userRole={userRole} />
-        : <LoginPage authManager={authManager} setLoggedIn={setLoggedIn} />}
+        ? <AppContent loginManager={loginManager} />
+        : <LoginPage loginManager={loginManager} setLoggedIn={setLoggedIn} />}
     </LayoutTemplate>
   );
 }
