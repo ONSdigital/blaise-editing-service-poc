@@ -7,7 +7,7 @@ import { useAsyncRequestWithParam } from '../hooks/useAsyncRequest';
 import { CaseDetails } from '../../common/interfaces/caseInterface';
 
 function DisplayCases(questionnaireName: string) {
-  const cases = useAsyncRequestWithParam<CaseDetails[]>(getCases, questionnaireName);
+  const cases = useAsyncRequestWithParam<CaseDetails[], string>(getCases, questionnaireName);
 
   return (
     <AsyncContent content={cases}>

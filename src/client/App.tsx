@@ -1,31 +1,32 @@
 import './App.css';
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement, useState } from 'react';
 import AppContent from './components/AppContent';
 import LayoutTemplate from './components/LayoutTemplate';
 import Login from './components/Login';
 import LoginManager from './clients/LoginManager';
-import Loading from './pages/LoadingPage';
+import { useAsyncRequestWithParam } from './hooks/useAsyncRequest';
+import AsyncContent from './components/AsyncContent';
 
 const loginManager = new LoginManager();
 
+async function setLoggedInUser(setLoggedIn: (loggedIn: boolean) => void) {
+  setLoggedIn(await loginManager.loggedIn());
+}
+
 function App(): ReactElement {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-    loginManager.loggedIn().then((isLoggedIn: boolean) => {
-      setLoggedIn(isLoggedIn);
-      setLoaded(true);
-    });
-  }, [setLoggedIn]);
-
-  if (!loaded) return <Loading showSignOutButton={loggedIn} signOut={() => loginManager.logOut(setLoggedIn)} />;
+  const getUserLoggedIn = useAsyncRequestWithParam<void, (loggedIn: boolean) => void>(setLoggedInUser, setLoggedIn);
 
   return (
     <LayoutTemplate showSignOutButton={loggedIn} signOut={() => loginManager.logOut(setLoggedIn)}>
-      {loggedIn
-        ? <AppContent loginManager={loginManager} />
-        : <Login loginManager={loginManager} setLoggedIn={setLoggedIn} />}
+      <AsyncContent content={getUserLoggedIn}>
+        {() => (
+          loggedIn
+            ? <AppContent loginManager={loginManager} />
+            : <Login loginManager={loginManager} setLoggedIn={setLoggedIn} />
+        )}
+      </AsyncContent>
     </LayoutTemplate>
   );
 }

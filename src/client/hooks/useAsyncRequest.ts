@@ -49,8 +49,8 @@ export function useAsyncRequest<T>(request: () => Promise<T>) {
   return state;
 }
 
-export function useAsyncRequestWithParam<T>(request:(param: string) => Promise<T>, param: string) {
-  const [state, setState] = useState<AsyncState<T>>(loading());
+export function useAsyncRequestWithParam<T1, T2>(request:(param: T2) => Promise<T1>, param: T2) {
+  const [state, setState] = useState<AsyncState<T1>>(loading());
 
   useEffect(() => {
     setState(loading());
