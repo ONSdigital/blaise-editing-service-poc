@@ -16,7 +16,6 @@ export default class LoginManager extends AuthManager {
       const user = await getCurrentUser(this);
       return user.role;
     } catch (error) {
-      console.debug(error);
       throw new Error('Unable to retrieve logged in user');
     }
   }
