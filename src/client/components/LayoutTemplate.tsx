@@ -12,7 +12,6 @@ interface LayoutTemplateProps {
 }
 
 export default function LayoutTemplate({ children, showSignOutButton, signOut }: LayoutTemplateProps) {
-  console.debug('LayoutTemplate');
   const navigationLinks = [
     {
       endpoint: '/',

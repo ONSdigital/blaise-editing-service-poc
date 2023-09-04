@@ -1,11 +1,19 @@
 import { AuthManager } from 'blaise-login-react-client';
+import { getLoggedInUser } from './serverApi';
 
 export default class LoginManager extends AuthManager {
-  isLoggedIn: boolean = false;
+  constructor() {
+    super();
+    this.getRoleOfLoggedInUser = this.getRoleOfLoggedInUser.bind(this);
+  }
 
   logOut(setLoggedIn:(loggedIn: boolean) => void) {
-    console.debug('logOut');
     super.clearToken();
     setLoggedIn(false);
+  }
+
+  async getRoleOfLoggedInUser():Promise<string> {
+    const user = await getLoggedInUser(this);
+    return user.role;
   }
 }

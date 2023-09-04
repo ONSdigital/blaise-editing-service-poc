@@ -11,13 +11,13 @@ interface SurveyProps {
 
 export default function Surveys(props: SurveyProps) {
   const { userRole } = props;
+  const infoPanelMessage = `Bonjour tout le monde ${userRole}`;
   const surveys = useAsyncRequest<Survey []>(getSurveys);
 
   return (
     <>
       <ONSPanel status="info">
-        Bonjour tout le monde
-        {userRole}
+        {infoPanelMessage}
       </ONSPanel>
       <AsyncContent content={surveys}>
         {(loadedSurveys) => <SurveysList surveys={loadedSurveys} />}

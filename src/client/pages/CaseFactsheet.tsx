@@ -6,7 +6,7 @@ import AsyncContent from '../components/AsyncContent';
 import FactsheetContent from '../components/FactsheetContent';
 
 function DisplayCaseFactsheet(questionnaireName: string, caseId: string) {
-  const caseFactsheet = useAsyncRequestWithTwoParams<CaseFactsheetDetails>(getCaseFactsheet, questionnaireName, caseId);
+  const caseFactsheet = useAsyncRequestWithTwoParams<CaseFactsheetDetails, string, string>(getCaseFactsheet, questionnaireName, caseId);
 
   return (
     <AsyncContent content={caseFactsheet}>

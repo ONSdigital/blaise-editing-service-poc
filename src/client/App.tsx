@@ -4,23 +4,25 @@ import AppContent from './components/AppContent';
 import LayoutTemplate from './components/LayoutTemplate';
 import Login from './components/Login';
 import LoginManager from './clients/LoginManager';
-import { useAsyncRequestWithParam } from './hooks/useAsyncRequest';
+import { useAsyncRequestWithTwoParams } from './hooks/useAsyncRequest';
 import AsyncContent from './components/AsyncContent';
 
-const loginManager = new LoginManager();
-
-async function setLoggedInUser(setLoggedIn: (loggedIn: boolean) => void) {
+async function setLoggedInUser(loginManager: LoginManager, setLoggedIn: (loggedIn: boolean) => void) {
   setLoggedIn(await loginManager.loggedIn());
 }
 
-function App(): ReactElement {
+interface AppProps {
+  loginManager:LoginManager;
+}
+
+function App({ loginManager }:AppProps): ReactElement {
   const [loggedIn, setLoggedIn] = useState(false);
 
-  const getUserLoggedIn = useAsyncRequestWithParam<void, (loggedIn: boolean) => void>(setLoggedInUser, setLoggedIn);
+  const logInUser = useAsyncRequestWithTwoParams<void, LoginManager, (loggedIn: boolean) => void>(setLoggedInUser, loginManager, setLoggedIn);
 
   return (
     <LayoutTemplate showSignOutButton={loggedIn} signOut={() => loginManager.logOut(setLoggedIn)}>
-      <AsyncContent content={getUserLoggedIn}>
+      <AsyncContent content={logInUser}>
         {() => (
           loggedIn
             ? <AppContent loginManager={loginManager} />
