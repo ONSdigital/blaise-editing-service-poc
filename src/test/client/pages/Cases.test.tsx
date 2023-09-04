@@ -1,26 +1,25 @@
 import { RenderResult, act, render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Router from 'react-router';
-import { getCases } from '../../../client/clients/serverApi';
-import { CaseDetails } from '../../../common/interfaces/caseInterface';
+import { IMock, Mock } from 'typemoq';
 import Cases from '../../../client/pages/Cases';
 import CaseDetailsBuilder from '../../builders/caseDetailsBuilder';
+import NodeApi from '../../../client/clients/NodeApi';
 
 // declare global vars
 const questionnaireName: string = 'TEST111A';
-const getCasesMock = getCases as jest.Mock<Promise<CaseDetails[]>>;
-
 let view:RenderResult;
 
 // declare mocks
 /* eslint import/no-extraneous-dependencies: 0 */
-jest.mock('../../../client/clients/serverApi');
 jest.mock('react-router', () => ({ ...jest.requireActual('react-router'), useParams: jest.fn() }));
 jest.spyOn(Router, 'useParams').mockReturnValue({ questionnaireName });
 
+const nodeApiMock: IMock<NodeApi> = Mock.ofType(NodeApi);
+
 describe('Given there are cases available in blaise for questionnaire', () => {
   afterEach(() => {
-    getCasesMock.mockReset();
+    nodeApiMock.reset();
   });
 
   it.each([1, 2, 3, 4])('should render the page correctly when x cases are returned', async (value) => {
@@ -28,13 +27,13 @@ describe('Given there are cases available in blaise for questionnaire', () => {
     const caseDetailsBuider = new CaseDetailsBuilder(value);
     const caseDetailsListMockObject = caseDetailsBuider.BuildCaseDetails();
 
-    getCasesMock.mockImplementation(() => Promise.resolve(caseDetailsListMockObject));
+    nodeApiMock.setup((api) => api.getCases(questionnaireName)).returns(() => Promise.resolve(caseDetailsListMockObject));
 
     // act
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Cases />
+          <Cases nodeApi={nodeApiMock.object} />
         </BrowserRouter>,
       );
     });
@@ -47,13 +46,13 @@ describe('Given there are cases available in blaise for questionnaire', () => {
     // arrange
     const caseDetailsBuider = new CaseDetailsBuilder(value);
     const caseDetailsListMockObject = caseDetailsBuider.BuildCaseDetails();
-    getCasesMock.mockImplementation(() => Promise.resolve(caseDetailsListMockObject));
+    nodeApiMock.setup((api) => api.getCases(questionnaireName)).returns(() => Promise.resolve(caseDetailsListMockObject));
 
     // act
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Cases />
+          <Cases nodeApi={nodeApiMock.object} />
         </BrowserRouter>,
       );
     });
@@ -71,11 +70,11 @@ describe('Given there are cases available in blaise for questionnaire', () => {
 
 describe('Given there are no cases available in blaise for questionnaire', () => {
   beforeEach(() => {
-    getCasesMock.mockImplementation(() => Promise.resolve([]));
+    nodeApiMock.setup((api) => api.getCases(questionnaireName)).returns(() => Promise.resolve([]));
   });
 
   afterEach(() => {
-    getCasesMock.mockReset();
+    nodeApiMock.reset();
   });
 
   it('should render the page correctly when no cases are returned', async () => {
@@ -83,7 +82,7 @@ describe('Given there are no cases available in blaise for questionnaire', () =>
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Cases />
+          <Cases nodeApi={nodeApiMock.object} />
         </BrowserRouter>,
       );
     });
@@ -97,7 +96,7 @@ describe('Given there are no cases available in blaise for questionnaire', () =>
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Cases />
+          <Cases nodeApi={nodeApiMock.object} />
         </BrowserRouter>,
       );
     });
@@ -109,11 +108,11 @@ describe('Given there are no cases available in blaise for questionnaire', () =>
 
 describe('Given there the blaise rest api is not available', () => {
   beforeEach(() => {
-    getCasesMock.mockRejectedValue(new Error('try again in a few minutes'));
+    nodeApiMock.setup((api) => api.getCases(questionnaireName)).returns(() => Promise.reject(new Error('try again in a few minutes')));
   });
 
   afterEach(() => {
-    getCasesMock.mockReset();
+    nodeApiMock.reset();
   });
 
   it('should display an error message telling the user to try again in a few minutes', async () => {
@@ -121,13 +120,14 @@ describe('Given there the blaise rest api is not available', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Cases />
+          <Cases nodeApi={nodeApiMock.object} />
         </BrowserRouter>,
       );
     });
 
     // assert
-    expect(view.getByText(/try again in a few minutes/)).toBeInTheDocument();
+    const casesView = view.getByTestId('Cases');
+    expect(casesView).toHaveTextContent('try again in a few minutes');
   });
 
   it('should render the page correctly when an error occurs', async () => {
@@ -135,7 +135,7 @@ describe('Given there the blaise rest api is not available', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Cases />
+          <Cases nodeApi={nodeApiMock.object} />
         </BrowserRouter>,
       );
     });

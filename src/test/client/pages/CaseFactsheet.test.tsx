@@ -1,10 +1,11 @@
 import { RenderResult, act, render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Router from 'react-router';
-import { getCaseFactsheet } from '../../../client/clients/serverApi';
+import { IMock, Mock } from 'typemoq';
 import { CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
 import CaseBuilder from '../../builders/caseBuilder';
 import CaseFactsheet from '../../../client/pages/CaseFactsheet';
+import NodeApi from '../../../client/clients/NodeApi';
 
 // declare global vars
 const questionnaireName: string = 'TEST111A';
@@ -13,26 +14,28 @@ let view:RenderResult;
 
 // declare mocks
 /* eslint import/no-extraneous-dependencies: 0 */
-jest.mock('../../../client/clients/serverApi');
 jest.mock('react-router', () => ({ ...jest.requireActual('react-router'), useParams: jest.fn() }));
 jest.spyOn(Router, 'useParams').mockReturnValue({ questionnaireName, caseId });
 
-const getCaseFactsheetMock = getCaseFactsheet as jest.Mock<Promise<CaseFactsheetDetails>>;
+const nodeApiMock: IMock<NodeApi> = Mock.ofType(NodeApi);
 
 describe('Given there is a case available in blaise for a questionnaire', () => {
+  afterEach(() => {
+    nodeApiMock.reset();
+  });
+
   it.each([1, 3, 5, 10])('should render the factsheet page for the case correctly', async (value) => {
     // arrange
-
     const caseBuilder = new CaseBuilder(value);
     const expectedCaseFactsheet: CaseFactsheetDetails = caseBuilder.buildCaseFactsheet();
 
-    getCaseFactsheetMock.mockImplementation(() => Promise.resolve(expectedCaseFactsheet));
+    nodeApiMock.setup((api) => api.getCaseFactsheet(questionnaireName, caseId)).returns(() => Promise.resolve(expectedCaseFactsheet));
 
     // act
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <CaseFactsheet />
+          <CaseFactsheet nodeApi={nodeApiMock.object} />
         </BrowserRouter>,
       );
     });
@@ -58,17 +61,16 @@ describe('Given there is a case available in blaise for a questionnaire', () => 
 
   it.each([1, 3, 5, 10])('should display the factsheet correctly', async (value) => {
     // arrange
-
     const caseBuilder = new CaseBuilder(value);
     const expectedCaseFactsheet: CaseFactsheetDetails = caseBuilder.buildCaseFactsheet();
 
-    getCaseFactsheetMock.mockImplementation(() => Promise.resolve(expectedCaseFactsheet));
+    nodeApiMock.setup((api) => api.getCaseFactsheet(questionnaireName, caseId)).returns(() => Promise.resolve(expectedCaseFactsheet));
 
     // act
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <CaseFactsheet />
+          <CaseFactsheet nodeApi={nodeApiMock.object} />
         </BrowserRouter>,
       );
     });
@@ -80,11 +82,11 @@ describe('Given there is a case available in blaise for a questionnaire', () => 
 
 describe('Given there the blaise rest api is not available', () => {
   beforeEach(() => {
-    getCaseFactsheetMock.mockRejectedValue(new Error('try again in a few minutes'));
+    nodeApiMock.setup((api) => api.getCaseFactsheet(questionnaireName, caseId)).returns(() => Promise.reject(new Error('try again in a few minutes')));
   });
 
   afterEach(() => {
-    getCaseFactsheetMock.mockReset();
+    nodeApiMock.reset();
   });
 
   it('should display an error message telling the user to try again in a few minutes', async () => {
@@ -92,13 +94,14 @@ describe('Given there the blaise rest api is not available', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <CaseFactsheet />
+          <CaseFactsheet nodeApi={nodeApiMock.object} />
         </BrowserRouter>,
       );
     });
 
     // assert
-    expect(view.getByText(/try again in a few minutes/)).toBeInTheDocument();
+    const factsheetView = view.getByTestId('Factsheet');
+    expect(factsheetView).toHaveTextContent('try again in a few minutes');
   });
 
   it('should render the page correctly when an error occurs', async () => {
@@ -106,7 +109,7 @@ describe('Given there the blaise rest api is not available', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <CaseFactsheet />
+          <CaseFactsheet nodeApi={nodeApiMock.object} />
         </BrowserRouter>,
       );
     });

@@ -6,21 +6,23 @@ import CaseFactsheet from '../pages/CaseFactsheet';
 import LoginManager from '../clients/LoginManager';
 import { useAsyncRequest } from '../hooks/useAsyncRequest';
 import AsyncContent from './AsyncContent';
+import NodeApi from '../clients/NodeApi';
 
 interface AppContentProps {
   loginManager:LoginManager;
+  nodeApi: NodeApi;
 }
 
-export default function AppContent({ loginManager }: AppContentProps): ReactElement {
+export default function AppContent({ loginManager, nodeApi }: AppContentProps): ReactElement {
   const getUserRole = useAsyncRequest<string>(loginManager.getRoleOfLoggedInUser);
 
   return (
     <AsyncContent content={getUserRole}>
       {(userRole) => (
         <Routes>
-          <Route path="/" element={<Surveys userRole={userRole} />} />
-          <Route path="questionnaires/:questionnaireName/cases/" element={<Cases />} />
-          <Route path="questionnaires/:questionnaireName/cases/:caseId/factsheet" element={<CaseFactsheet />} />
+          <Route path="/" element={<Surveys nodeApi={nodeApi} userRole={userRole} />} />
+          <Route path="questionnaires/:questionnaireName/cases/" element={<Cases nodeApi={nodeApi} />} />
+          <Route path="questionnaires/:questionnaireName/cases/:caseId/factsheet" element={<CaseFactsheet nodeApi={nodeApi} />} />
         </Routes>
       )}
     </AsyncContent>

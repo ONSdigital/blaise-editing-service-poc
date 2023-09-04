@@ -5,17 +5,19 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './client/App';
 import reportWebVitals from './client/reportWebVitals';
 import LoginManager from './client/clients/LoginManager';
+import NodeApi from './client/clients/NodeApi';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 
 const loginManager = new LoginManager();
+const nodeApi = new NodeApi();
 
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App loginManager={loginManager} />
+      <App loginManager={loginManager} nodeApi={nodeApi} />
     </BrowserRouter>
   </React.StrictMode>,
 );

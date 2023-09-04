@@ -11,7 +11,6 @@ export default function FactsheetContent({ factsheet }: FactsheetContentProps): 
     <dl
       className="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
       title="Factsheet"
-      data-testid="Factsheet"
     >
       <dt className="ons-metadata__term ons-grid__col ons-col-3@m">CaseId:</dt>
       <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{factsheet.CaseId}</dd>

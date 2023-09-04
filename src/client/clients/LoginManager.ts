@@ -1,5 +1,4 @@
-import { AuthManager } from 'blaise-login-react-client';
-import { getLoggedInUser } from './serverApi';
+import { AuthManager, getCurrentUser } from 'blaise-login-react-client';
 
 export default class LoginManager extends AuthManager {
   constructor() {
@@ -13,7 +12,12 @@ export default class LoginManager extends AuthManager {
   }
 
   async getRoleOfLoggedInUser():Promise<string> {
-    const user = await getLoggedInUser(this);
-    return user.role;
+    try {
+      const user = await getCurrentUser(this);
+      return user.role;
+    } catch (error) {
+      console.debug(error);
+      throw new Error('Unable to retrieve logged in user');
+    }
   }
 }

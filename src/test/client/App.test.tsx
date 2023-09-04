@@ -5,14 +5,12 @@ import { BrowserRouter } from 'react-router-dom';
 import { IMock, Mock } from 'typemoq';
 import App from '../../client/App';
 import LoginManager from '../../client/clients/LoginManager';
-import { getSurveys } from '../../client/clients/serverApi';
-import { Survey } from '../../common/interfaces/surveyInterface';
 import surveyListMockObject from '../mockObjects/surveyListMockObject';
+import NodeApi from '../../client/clients/NodeApi';
 
 // create mocks
-jest.mock('../../client/clients/serverApi');
-const getSurveysMock = getSurveys as jest.Mock<Promise<Survey[]>>;
 const loginManagerMock: IMock<LoginManager> = Mock.ofType(LoginManager);
+const nodeApiMock: IMock<NodeApi> = Mock.ofType(NodeApi);
 
 // set global variables
 const validUserRoles:string[] = ['Manager', 'Editor'];
@@ -20,12 +18,12 @@ let view:RenderResult;
 
 describe('Renders the correct screen depending if the user has recently logged in', () => {
   beforeEach(() => {
-    getSurveysMock.mockImplementation(() => Promise.resolve(surveyListMockObject));
+    nodeApiMock.setup((api) => api.getSurveys()).returns(() => Promise.resolve(surveyListMockObject));
   });
 
   afterEach(() => {
     loginManagerMock.reset();
-    getSurveysMock.mockReset();
+    nodeApiMock.reset();
   });
 
   it('Should display a message asking the user to enter their Blaise user credentials if they are not logged in', async () => {
@@ -34,7 +32,7 @@ describe('Renders the correct screen depending if the user has recently logged i
 
     // act
     await act(async () => {
-      view = render(<BrowserRouter><App loginManager={loginManagerMock.object} /></BrowserRouter>);
+      view = render(<BrowserRouter><App loginManager={loginManagerMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
     });
 
     // assert
@@ -48,7 +46,7 @@ describe('Renders the correct screen depending if the user has recently logged i
 
     // act
     await act(async () => {
-      view = render(<BrowserRouter><App loginManager={loginManagerMock.object} /></BrowserRouter>);
+      view = render(<BrowserRouter><App loginManager={loginManagerMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
     });
 
     // assert
@@ -62,7 +60,7 @@ describe('Renders the correct screen depending if the user has recently logged i
 
     // act
     await act(async () => {
-      view = render(<BrowserRouter><App loginManager={loginManagerMock.object} /></BrowserRouter>);
+      view = render(<BrowserRouter><App loginManager={loginManagerMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
     });
 
     // assert
@@ -77,7 +75,7 @@ describe('Renders the correct screen depending if the user has recently logged i
 
     // act
     await act(async () => {
-      view = render(<BrowserRouter><App loginManager={loginManagerMock.object} /></BrowserRouter>);
+      view = render(<BrowserRouter><App loginManager={loginManagerMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
     });
 
     // assert

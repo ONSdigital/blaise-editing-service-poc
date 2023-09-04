@@ -1,21 +1,28 @@
 import { useParams } from 'react-router-dom';
 import { useAsyncRequestWithTwoParams } from '../hooks/useAsyncRequest';
 import { CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
-import { getCaseFactsheet } from '../clients/serverApi';
 import AsyncContent from '../components/AsyncContent';
 import FactsheetContent from '../components/FactsheetContent';
+import NodeApi from '../clients/NodeApi';
 
-function DisplayCaseFactsheet(questionnaireName: string, caseId: string) {
+function DisplayCaseFactsheet(nodeApi: NodeApi, questionnaireName: string, caseId: string) {
+  const { getCaseFactsheet } = nodeApi;
   const caseFactsheet = useAsyncRequestWithTwoParams<CaseFactsheetDetails, string, string>(getCaseFactsheet, questionnaireName, caseId);
 
   return (
-    <AsyncContent content={caseFactsheet}>
-      {(factsheetContent) => <FactsheetContent factsheet={factsheetContent} />}
-    </AsyncContent>
+    <div data-testid="Factsheet">
+      <AsyncContent content={caseFactsheet}>
+        {(factsheetContent) => <FactsheetContent factsheet={factsheetContent} />}
+      </AsyncContent>
+    </div>
   );
 }
 
-export default function CaseFactSheet() {
+interface CaseFactSheetProps {
+  nodeApi: NodeApi;
+}
+
+export default function CaseFactSheet({ nodeApi }:CaseFactSheetProps) {
   const { questionnaireName, caseId } = useParams();
   if (!questionnaireName || !caseId) {
     return (
@@ -25,5 +32,5 @@ export default function CaseFactSheet() {
     );
   }
 
-  return DisplayCaseFactsheet(questionnaireName, caseId);
+  return DisplayCaseFactsheet(nodeApi, questionnaireName, caseId);
 }
