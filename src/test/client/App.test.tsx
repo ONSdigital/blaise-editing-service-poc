@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { IMock, Mock } from 'typemoq';
 import App from '../../client/App';
 import LoginManager from '../../client/clients/LoginManager';
-import { getSurveys } from '../../client/clients/serverApi'
+import { getSurveys } from '../../client/clients/serverApi';
 import { Survey } from '../../common/interfaces/surveyInterface';
 import surveyListMockObject from '../mockObjects/surveyListMockObject';
 
@@ -14,7 +14,7 @@ jest.mock('../../client/clients/serverApi');
 const getSurveysMock = getSurveys as jest.Mock<Promise<Survey[]>>;
 const loginManagerMock: IMock<LoginManager> = Mock.ofType(LoginManager);
 
-//set global variables
+// set global variables
 const validUserRoles:string[] = ['Manager', 'Editor'];
 let view:RenderResult;
 

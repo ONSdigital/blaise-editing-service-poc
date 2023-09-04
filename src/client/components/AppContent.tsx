@@ -12,7 +12,6 @@ interface AppContentProps {
 }
 
 export default function AppContent({ loginManager }: AppContentProps): ReactElement {
-  console.debug('Login manager',loginManager);
   const getUserRole = useAsyncRequest<string>(loginManager.getRoleOfLoggedInUser);
 
   return (
