@@ -33,6 +33,6 @@ describe('GetUser from Blaise', () => {
     getLoggedInUserMock.mockImplementation(() => Promise.reject());
 
     // act && assert
-    expect(() => sut.getRoleOfLoggedInUser()).rejects.toThrow("Unable to retrieve logged in user");
+    expect(() => sut.getRoleOfLoggedInUser()).rejects.toThrow('Unable to retrieve logged in user');
   });
 });
