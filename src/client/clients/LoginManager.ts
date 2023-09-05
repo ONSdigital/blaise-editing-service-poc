@@ -6,16 +6,9 @@ export default class LoginManager extends AuthManager {
     this.getRoleOfLoggedInUser = this.getRoleOfLoggedInUser.bind(this);
   }
 
-  userLoggedIn:boolean = false;
-
-  async LoginUser() {
-    this.userLoggedIn = await this.loggedIn();
-  }
-
   logOut(setLoggedIn:(loggedIn: boolean) => void) {
     super.clearToken();
     setLoggedIn(false);
-    this.userLoggedIn = false;
   }
 
   async getRoleOfLoggedInUser():Promise<string> {

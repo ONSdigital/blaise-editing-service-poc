@@ -1,10 +1,9 @@
 import './App.css';
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 import AppContent from './components/AppContent';
-import LayoutTemplate from './components/LayoutTemplate';
-import Login from './components/Login';
 import LoginManager from './clients/LoginManager';
 import NodeApi from './clients/NodeApi';
+import Authentication from './pages/Authentication';
 
 interface AppProps {
   loginManager:LoginManager;
@@ -12,16 +11,10 @@ interface AppProps {
 }
 
 function App({ loginManager, nodeApi }:AppProps): ReactElement {
-  const [loggedIn, setLoggedIn] = useState(loginManager.userLoggedIn);
-
   return (
-    <LayoutTemplate showSignOutButton={loggedIn} signOut={() => loginManager.logOut(setLoggedIn)}>
-      {(
-          loggedIn
-            ? <AppContent loginManager={loginManager} nodeApi={nodeApi} />
-            : <Login loginManager={loginManager} setLoggedIn={setLoggedIn} />
-        )}
-    </LayoutTemplate>
+    <Authentication loginManager={loginManager}>
+      <AppContent loginManager={loginManager} nodeApi={nodeApi} />
+    </Authentication>
   );
 }
 
