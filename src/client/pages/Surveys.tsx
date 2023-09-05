@@ -10,7 +10,7 @@ interface SurveyProps {
   userRole: string;
 }
 
-export default function Surveys({ userRole, nodeApi }: SurveyProps) {
+export default function Surveys({ nodeApi, userRole }: SurveyProps) {
   const infoPanelMessage = `Bonjour tout le monde ${userRole}`;
   const surveys = useAsyncRequest<Survey []>(nodeApi.getSurveys);
 

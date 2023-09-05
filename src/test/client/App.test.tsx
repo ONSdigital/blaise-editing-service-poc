@@ -28,7 +28,7 @@ describe('Renders the correct screen depending if the user has recently logged i
 
   it('Should display a message asking the user to enter their Blaise user credentials if they are not logged in', async () => {
     // arrange
-    loginManagerMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(false));
+    loginManagerMock.setup((lm) => lm.userLoggedIn).returns(() => false);
 
     // act
     await act(async () => {
@@ -42,7 +42,7 @@ describe('Renders the correct screen depending if the user has recently logged i
 
   it('Should render the login page correctly', async () => {
     // arrange
-    loginManagerMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(false));
+    loginManagerMock.setup((lm) => lm.userLoggedIn).returns(() => false);
 
     // act
     await act(async () => {
@@ -55,7 +55,7 @@ describe('Renders the correct screen depending if the user has recently logged i
 
   it.each(validUserRoles)('Should display the surveys page if the user is already logged in', async (userRole) => {
     // arrange
-    loginManagerMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(true));
+    loginManagerMock.setup((lm) => lm.userLoggedIn).returns(() => true);
     loginManagerMock.setup((lm) => lm.getRoleOfLoggedInUser()).returns(() => Promise.resolve(userRole));
 
     // act
@@ -70,7 +70,7 @@ describe('Renders the correct screen depending if the user has recently logged i
 
   it.each(validUserRoles)('Should render the surveys page correctly', async (userRole) => {
     // arrange
-    loginManagerMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(true));
+    loginManagerMock.setup((lm) => lm.userLoggedIn).returns(() => true);
     loginManagerMock.setup((lm) => lm.getRoleOfLoggedInUser()).returns(() => Promise.resolve(userRole));
 
     // act

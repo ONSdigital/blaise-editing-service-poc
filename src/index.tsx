@@ -12,6 +12,7 @@ const root = ReactDOM.createRoot(
 );
 
 const loginManager = new LoginManager();
+await loginManager.LoginUser();
 const nodeApi = new NodeApi();
 
 root.render(
