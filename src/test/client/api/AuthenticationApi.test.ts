@@ -1,11 +1,11 @@
 import { getCurrentUser } from 'blaise-login-react-client';
 import { User } from 'blaise-api-node-client';
-import LoginManager from '../../../client/clients/LoginManager';
+import AuthenticationApi from '../../../client/clients/AuthenticationApi';
 
 // use axios mock adapter
 // mock blaise login module including AuthManager
 jest.mock('blaise-login-react-client');
-const sut = new LoginManager();
+const sut = new AuthenticationApi();
 
 describe('GetUser from Blaise', () => {
   it('Should return expected user', async () => {

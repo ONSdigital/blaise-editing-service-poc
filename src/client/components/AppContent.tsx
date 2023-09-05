@@ -3,18 +3,18 @@ import { Route, Routes } from 'react-router-dom';
 import Surveys from '../pages/Surveys';
 import Cases from '../pages/Cases';
 import CaseFactsheet from '../pages/CaseFactsheet';
-import LoginManager from '../clients/LoginManager';
+import AuthenticationApi from '../clients/AuthenticationApi';
 import { useAsyncRequest } from '../hooks/useAsyncRequest';
 import AsyncContent from './AsyncContent';
 import NodeApi from '../clients/NodeApi';
 
 interface AppContentProps {
-  loginManager:LoginManager;
+  authenticationApi:AuthenticationApi;
   nodeApi: NodeApi;
 }
 
-export default function AppContent({ loginManager, nodeApi }: AppContentProps): ReactElement {
-  const getUserRole = useAsyncRequest<string>(loginManager.getRoleOfLoggedInUser);
+export default function AppContent({ authenticationApi, nodeApi }: AppContentProps): ReactElement {
+  const getUserRole = useAsyncRequest<string>(authenticationApi.getRoleOfLoggedInUser);
 
   return (
     <AsyncContent content={getUserRole}>

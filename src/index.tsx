@@ -4,20 +4,20 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import App from './client/App';
 import reportWebVitals from './client/reportWebVitals';
-import LoginManager from './client/clients/LoginManager';
+import AuthenticationApi from './client/clients/AuthenticationApi';
 import NodeApi from './client/clients/NodeApi';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 
-const loginManager = new LoginManager();
+const authenticationApi = new AuthenticationApi();
 const nodeApi = new NodeApi();
 
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App loginManager={loginManager} nodeApi={nodeApi} />
+      <App authenticationApi={authenticationApi} nodeApi={nodeApi} />
     </BrowserRouter>
   </React.StrictMode>,
 );

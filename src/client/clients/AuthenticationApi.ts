@@ -1,6 +1,6 @@
 import { AuthManager, getCurrentUser } from 'blaise-login-react-client';
 
-export default class LoginManager extends AuthManager {
+export default class AuthenticationApi extends AuthManager {
   constructor() {
     super();
     this.getRoleOfLoggedInUser = this.getRoleOfLoggedInUser.bind(this);

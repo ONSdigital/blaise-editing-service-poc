@@ -1,19 +1,19 @@
 import './App.css';
 import { ReactElement } from 'react';
 import AppContent from './components/AppContent';
-import LoginManager from './clients/LoginManager';
+import AuthenticationApi from './clients/AuthenticationApi';
 import NodeApi from './clients/NodeApi';
 import Authentication from './pages/Authentication';
 
 interface AppProps {
-  loginManager:LoginManager;
+  authenticationApi:AuthenticationApi;
   nodeApi: NodeApi;
 }
 
-function App({ loginManager, nodeApi }:AppProps): ReactElement {
+function App({ authenticationApi, nodeApi }:AppProps): ReactElement {
   return (
-    <Authentication loginManager={loginManager}>
-      <AppContent loginManager={loginManager} nodeApi={nodeApi} />
+    <Authentication authenticationApi={authenticationApi}>
+      <AppContent authenticationApi={authenticationApi} nodeApi={nodeApi} />
     </Authentication>
   );
 }

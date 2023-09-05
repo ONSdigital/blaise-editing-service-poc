@@ -4,12 +4,12 @@ import {
 import { BrowserRouter } from 'react-router-dom';
 import { IMock, Mock } from 'typemoq';
 import App from '../../client/App';
-import LoginManager from '../../client/clients/LoginManager';
+import AuthenticationApi from '../../client/clients/AuthenticationApi';
 import surveyListMockObject from '../mockObjects/surveyListMockObject';
 import NodeApi from '../../client/clients/NodeApi';
 
 // create mocks
-const loginManagerMock: IMock<LoginManager> = Mock.ofType(LoginManager);
+const authenticationApiMock: IMock<AuthenticationApi> = Mock.ofType(AuthenticationApi);
 const nodeApiMock: IMock<NodeApi> = Mock.ofType(NodeApi);
 
 // set global variables
@@ -22,17 +22,17 @@ describe('Renders the correct screen depending if the user has recently logged i
   });
 
   afterEach(() => {
-    loginManagerMock.reset();
+    authenticationApiMock.reset();
     nodeApiMock.reset();
   });
 
   it('Should display a message asking the user to enter their Blaise user credentials if they are not logged in', async () => {
     // arrange
-    loginManagerMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(false));
+    authenticationApiMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(false));
 
     // act
     await act(async () => {
-      view = render(<BrowserRouter><App loginManager={loginManagerMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
+      view = render(<BrowserRouter><App authenticationApi={authenticationApiMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
     });
 
     // assert
@@ -42,11 +42,11 @@ describe('Renders the correct screen depending if the user has recently logged i
 
   it('Should render the login page correctly', async () => {
     // arrange
-    loginManagerMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(false));
+    authenticationApiMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(false));
 
     // act
     await act(async () => {
-      view = render(<BrowserRouter><App loginManager={loginManagerMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
+      view = render(<BrowserRouter><App authenticationApi={authenticationApiMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
     });
 
     // assert
@@ -55,12 +55,12 @@ describe('Renders the correct screen depending if the user has recently logged i
 
   it.each(validUserRoles)('Should display the surveys page if the user is already logged in', async (userRole) => {
     // arrange
-    loginManagerMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(true));
-    loginManagerMock.setup((lm) => lm.getRoleOfLoggedInUser()).returns(() => Promise.resolve(userRole));
+    authenticationApiMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(true));
+    authenticationApiMock.setup((lm) => lm.getRoleOfLoggedInUser()).returns(() => Promise.resolve(userRole));
 
     // act
     await act(async () => {
-      view = render(<BrowserRouter><App loginManager={loginManagerMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
+      view = render(<BrowserRouter><App authenticationApi={authenticationApiMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
     });
 
     // assert
@@ -70,12 +70,12 @@ describe('Renders the correct screen depending if the user has recently logged i
 
   it.each(validUserRoles)('Should render the surveys page correctly', async (userRole) => {
     // arrange
-    loginManagerMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(true));
-    loginManagerMock.setup((lm) => lm.getRoleOfLoggedInUser()).returns(() => Promise.resolve(userRole));
+    authenticationApiMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(true));
+    authenticationApiMock.setup((lm) => lm.getRoleOfLoggedInUser()).returns(() => Promise.resolve(userRole));
 
     // act
     await act(async () => {
-      view = render(<BrowserRouter><App loginManager={loginManagerMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
+      view = render(<BrowserRouter><App authenticationApi={authenticationApiMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
     });
 
     // assert
