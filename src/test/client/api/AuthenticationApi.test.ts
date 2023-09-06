@@ -3,15 +3,15 @@ import { User } from 'blaise-api-node-client';
 import AuthenticationApi from '../../../client/clients/AuthenticationApi';
 import userMockObject from '../../mockObjects/userMockObject';
 
-// use axios mock adapter
-// mock blaise login module including AuthManager
+// mock getCurrentUser
 jest.mock('blaise-login-react-client');
+const getLoggedInUserMock = getCurrentUser as jest.Mock<Promise<User>>;
+
 const sut = new AuthenticationApi();
 
 describe('GetUser from Blaise', () => {
   it('Should return expected user', async () => {
     // arrange
-    const getLoggedInUserMock = getCurrentUser as jest.Mock<Promise<User>>;
 
     getLoggedInUserMock.mockImplementation(() => Promise.resolve(userMockObject));
 
@@ -24,7 +24,6 @@ describe('GetUser from Blaise', () => {
 
   it('Should throw an error if getCurrentUser errors', async () => {
     // arrange
-    const getLoggedInUserMock = getCurrentUser as jest.Mock<Promise<User>>;
     getLoggedInUserMock.mockImplementation(() => Promise.reject());
 
     // act && assert
