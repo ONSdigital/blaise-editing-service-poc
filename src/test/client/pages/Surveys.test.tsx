@@ -4,6 +4,7 @@ import { IMock, Mock } from 'typemoq';
 import surveyListMockObject from '../../mockObjects/surveyListMockObject';
 import Surveys from '../../../client/pages/Surveys';
 import NodeApi from '../../../client/clients/NodeApi';
+import userMockObject from '../../mockObjects/userMockObject';
 
 const validUserRoles:string[] = ['Manager', 'Editor'];
 const nodeApiMock: IMock<NodeApi> = Mock.ofType(NodeApi);
@@ -19,11 +20,15 @@ describe('Given there are surveys available in blaise', () => {
   });
 
   it.each(validUserRoles)('should render the manager page correctly when surveys are returned', async (userRole) => {
+    // arrange
+    let user = userMockObject;
+    user.role = userRole;
+    
     // act
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Surveys nodeApi={nodeApiMock.object} userRole={userRole} />
+          <Surveys nodeApi={nodeApiMock.object} user={user} />
         </BrowserRouter>,
       );
     });
@@ -33,11 +38,15 @@ describe('Given there are surveys available in blaise', () => {
   });
 
   it.each(validUserRoles)('should display a list of the expected surveys', async (userRole) => {
+    // arrange
+    let user = userMockObject;
+    user.role = userRole;
+
     // act
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Surveys nodeApi={nodeApiMock.object} userRole={userRole} />
+          <Surveys nodeApi={nodeApiMock.object} user={user} />
         </BrowserRouter>,
       );
     });
@@ -66,11 +75,15 @@ describe('Given there are no surveys available in blaise', () => {
   });
 
   it.each(validUserRoles)('should render the page correctly when no surveys are returned', async (userRole) => {
+    // arrange
+    let user = userMockObject;
+    user.role = userRole;
+
     // act
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Surveys nodeApi={nodeApiMock.object} userRole={userRole} />
+          <Surveys nodeApi={nodeApiMock.object} user={user} />
         </BrowserRouter>,
       );
     });
@@ -80,11 +93,15 @@ describe('Given there are no surveys available in blaise', () => {
   });
 
   it.each(validUserRoles)('should display a message telling the user there are no surveys', async (userRole) => {
+    // arrange
+    let user = userMockObject;
+    user.role = userRole;
+
     // act
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Surveys nodeApi={nodeApiMock.object} userRole={userRole} />
+          <Surveys nodeApi={nodeApiMock.object} user={user} />
         </BrowserRouter>,
       );
     });
@@ -105,11 +122,15 @@ describe('Given there the blaise rest api is not available', () => {
   });
 
   it.each(validUserRoles)('should display an error message telling the user to try again in a few minutes', async (userRole) => {
+    // arrange
+    let user = userMockObject;
+    user.role = userRole;
+
     // act
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Surveys nodeApi={nodeApiMock.object} userRole={userRole} />
+          <Surveys nodeApi={nodeApiMock.object} user={user} />
         </BrowserRouter>,
       );
     });
@@ -120,11 +141,15 @@ describe('Given there the blaise rest api is not available', () => {
   });
 
   it.each(validUserRoles)('should render the page correctly for the user when an error occurs', async (userRole) => {
+    // arrange
+    let user = userMockObject;
+    user.role = userRole;
+
     // act
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Surveys nodeApi={nodeApiMock.object} userRole={userRole} />
+          <Surveys nodeApi={nodeApiMock.object} user={user} />
         </BrowserRouter>,
       );
     });

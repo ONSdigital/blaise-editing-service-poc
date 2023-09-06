@@ -13,7 +13,7 @@ interface AppProps {
 function App({ authenticationApi, nodeApi }:AppProps): ReactElement {
   return (
     <Authentication authenticationApi={authenticationApi}>
-      <AppContent authenticationApi={authenticationApi} nodeApi={nodeApi} />
+      {(user) => (<AppContent user={user} nodeApi={nodeApi} />)}
     </Authentication>
   );
 }

@@ -7,6 +7,7 @@ import App from '../../client/App';
 import AuthenticationApi from '../../client/clients/AuthenticationApi';
 import surveyListMockObject from '../mockObjects/surveyListMockObject';
 import NodeApi from '../../client/clients/NodeApi';
+import userMockObject from '../mockObjects/userMockObject';
 
 // create mocks
 const authenticationApiMock: IMock<AuthenticationApi> = Mock.ofType(AuthenticationApi);
@@ -55,8 +56,11 @@ describe('Renders the correct screen depending if the user has recently logged i
 
   it.each(validUserRoles)('Should display the surveys page if the user is already logged in', async (userRole) => {
     // arrange
+    let user = userMockObject;
+    user.role = userRole;
+
     authenticationApiMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(true));
-    authenticationApiMock.setup((lm) => lm.getRoleOfLoggedInUser()).returns(() => Promise.resolve(userRole));
+    authenticationApiMock.setup((lm) => lm.getLoggedInUser()).returns(() => Promise.resolve(user));
 
     // act
     await act(async () => {
@@ -65,13 +69,16 @@ describe('Renders the correct screen depending if the user has recently logged i
 
     // assert
     const appView = view.getByTestId('app-content');
-    expect(appView).toHaveTextContent(`Bonjour tout le monde ${userRole}`);
+    expect(appView).toHaveTextContent(`Bonjour tout le monde ${user.name}`);
   });
 
   it.each(validUserRoles)('Should render the surveys page correctly', async (userRole) => {
     // arrange
+    let user = userMockObject;
+    user.role = userRole;
+
     authenticationApiMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(true));
-    authenticationApiMock.setup((lm) => lm.getRoleOfLoggedInUser()).returns(() => Promise.resolve(userRole));
+    authenticationApiMock.setup((lm) => lm.getLoggedInUser()).returns(() => Promise.resolve(user));
 
     // act
     await act(async () => {

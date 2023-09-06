@@ -1,6 +1,7 @@
 import { getCurrentUser } from 'blaise-login-react-client';
 import { User } from 'blaise-api-node-client';
 import AuthenticationApi from '../../../client/clients/AuthenticationApi';
+import userMockObject from '../../mockObjects/userMockObject';
 
 // use axios mock adapter
 // mock blaise login module including AuthManager
@@ -11,20 +12,14 @@ describe('GetUser from Blaise', () => {
   it('Should return expected user', async () => {
     // arrange
     const getLoggedInUserMock = getCurrentUser as jest.Mock<Promise<User>>;
-    const userMock = {
-      name: 'jake',
-      role: 'Manager',
-      serverParks: ['gusty'],
-      defaultServerPark: 'gusty',
-    };
 
-    getLoggedInUserMock.mockImplementation(() => Promise.resolve(userMock));
+    getLoggedInUserMock.mockImplementation(() => Promise.resolve(userMockObject));
 
     // act
-    const userRole = await sut.getRoleOfLoggedInUser();
+    const user = await sut.getLoggedInUser();
 
     // assert
-    expect(userRole).toEqual(userMock.role);
+    expect(user).toEqual(userMockObject);
   });
 
   it('Should throw an error if getCurrentUser errors', async () => {
@@ -33,6 +28,6 @@ describe('GetUser from Blaise', () => {
     getLoggedInUserMock.mockImplementation(() => Promise.reject());
 
     // act && assert
-    expect(() => sut.getRoleOfLoggedInUser()).rejects.toThrow('Unable to retrieve logged in user');
+    expect(() => sut.getLoggedInUser()).rejects.toThrow('Unable to retrieve logged in user');
   });
 });

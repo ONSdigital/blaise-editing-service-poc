@@ -1,4 +1,5 @@
 import { ONSPanel } from 'blaise-design-system-react-components';
+import { User } from 'blaise-api-node-client';
 import AsyncContent from '../components/AsyncContent';
 import { useAsyncRequest } from '../hooks/useAsyncRequest';
 import { Survey } from '../../common/interfaces/surveyInterface';
@@ -7,11 +8,11 @@ import NodeApi from '../clients/NodeApi';
 
 interface SurveyProps {
   nodeApi: NodeApi;
-  userRole: string;
+  user: User;
 }
 
-export default function Surveys({ nodeApi, userRole }: SurveyProps) {
-  const infoPanelMessage = `Bonjour tout le monde ${userRole}`;
+export default function Surveys({ nodeApi, user }: SurveyProps) {
+  const infoPanelMessage = `Bonjour tout le monde ${user.name}`;
   const surveys = useAsyncRequest<Survey []>(nodeApi.getSurveys);
 
   return (

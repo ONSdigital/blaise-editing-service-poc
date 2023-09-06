@@ -824,7 +824,7 @@ exports[`Renders the correct screen depending if the user has recently logged in
           <div
             class="ons-panel__body "
           >
-            Bonjour tout le monde Manager
+            Bonjour tout le monde Jake Bullet
           </div>
         </div>
         <div
@@ -1322,7 +1322,7 @@ exports[`Renders the correct screen depending if the user has recently logged in
         <div
           class="ons-panel__body "
         >
-          Bonjour tout le monde Manager
+          Bonjour tout le monde Jake Bullet
         </div>
       </div>
       <div
@@ -1877,7 +1877,7 @@ exports[`Renders the correct screen depending if the user has recently logged in
           <div
             class="ons-panel__body "
           >
-            Bonjour tout le monde Editor
+            Bonjour tout le monde Jake Bullet
           </div>
         </div>
         <div
@@ -2375,7 +2375,7 @@ exports[`Renders the correct screen depending if the user has recently logged in
         <div
           class="ons-panel__body "
         >
-          Bonjour tout le monde Editor
+          Bonjour tout le monde Jake Bullet
         </div>
       </div>
       <div
