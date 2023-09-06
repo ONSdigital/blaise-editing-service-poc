@@ -4,20 +4,15 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import App from './client/App';
 import reportWebVitals from './client/reportWebVitals';
-import AuthenticationApi from './client/clients/AuthenticationApi';
-import NodeApi from './client/clients/NodeApi';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 
-const authenticationApi = new AuthenticationApi();
-const nodeApi = new NodeApi();
-
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App authenticationApi={authenticationApi} nodeApi={nodeApi} />
+      <App />
     </BrowserRouter>
   </React.StrictMode>,
 );

@@ -4,10 +4,9 @@ import AsyncContent from '../components/AsyncContent';
 import CasesList from '../components/CasesList';
 import { useAsyncRequestWithParam } from '../hooks/useAsyncRequest';
 import { CaseDetails } from '../../common/interfaces/caseInterface';
-import NodeApi from '../clients/NodeApi';
+import { getCases } from '../clients/NodeApi';
 
-function DisplayCases(nodeApi: NodeApi, questionnaireName: string) {
-  const { getCases } = nodeApi;
+function DisplayCases(questionnaireName: string) {
   const cases = useAsyncRequestWithParam<CaseDetails[], string>(getCases, questionnaireName);
 
   return (
@@ -19,11 +18,7 @@ function DisplayCases(nodeApi: NodeApi, questionnaireName: string) {
   );
 }
 
-interface CasesProps {
-  nodeApi: NodeApi;
-}
-
-export default function Cases({ nodeApi }:CasesProps): ReactElement {
+export default function Cases(): ReactElement {
   const { questionnaireName } = useParams();
   if (!questionnaireName) {
     return (
@@ -33,5 +28,5 @@ export default function Cases({ nodeApi }:CasesProps): ReactElement {
     );
   }
 
-  return DisplayCases(nodeApi, questionnaireName);
+  return DisplayCases(questionnaireName);
 }

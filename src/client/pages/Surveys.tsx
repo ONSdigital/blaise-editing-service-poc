@@ -4,16 +4,15 @@ import AsyncContent from '../components/AsyncContent';
 import { useAsyncRequest } from '../hooks/useAsyncRequest';
 import { Survey } from '../../common/interfaces/surveyInterface';
 import SurveysList from '../components/SurveysList';
-import NodeApi from '../clients/NodeApi';
+import { getSurveys } from '../clients/NodeApi';
 
 interface SurveyProps {
-  nodeApi: NodeApi;
   user: User;
 }
 
-export default function Surveys({ nodeApi, user }: SurveyProps) {
+export default function Surveys({ user }: SurveyProps) {
   const infoPanelMessage = `Bonjour tout le monde ${user.name}`;
-  const surveys = useAsyncRequest<Survey []>(nodeApi.getSurveys);
+  const surveys = useAsyncRequest<Survey []>(getSurveys);
 
   return (
     <>

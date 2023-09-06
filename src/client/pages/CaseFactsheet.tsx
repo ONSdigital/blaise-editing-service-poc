@@ -3,10 +3,9 @@ import { useAsyncRequestWithTwoParams } from '../hooks/useAsyncRequest';
 import { CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
 import AsyncContent from '../components/AsyncContent';
 import FactsheetContent from '../components/FactsheetContent';
-import NodeApi from '../clients/NodeApi';
+import { getCaseFactsheet } from '../clients/NodeApi';
 
-function DisplayCaseFactsheet(nodeApi: NodeApi, questionnaireName: string, caseId: string) {
-  const { getCaseFactsheet } = nodeApi;
+function DisplayCaseFactsheet(questionnaireName: string, caseId: string) {
   const caseFactsheet = useAsyncRequestWithTwoParams<CaseFactsheetDetails, string, string>(getCaseFactsheet, questionnaireName, caseId);
 
   return (
@@ -18,11 +17,7 @@ function DisplayCaseFactsheet(nodeApi: NodeApi, questionnaireName: string, caseI
   );
 }
 
-interface CaseFactSheetProps {
-  nodeApi: NodeApi;
-}
-
-export default function CaseFactSheet({ nodeApi }:CaseFactSheetProps) {
+export default function CaseFactSheet() {
   const { questionnaireName, caseId } = useParams();
   if (!questionnaireName || !caseId) {
     return (
@@ -32,5 +27,5 @@ export default function CaseFactSheet({ nodeApi }:CaseFactSheetProps) {
     );
   }
 
-  return DisplayCaseFactsheet(nodeApi, questionnaireName, caseId);
+  return DisplayCaseFactsheet(questionnaireName, caseId);
 }

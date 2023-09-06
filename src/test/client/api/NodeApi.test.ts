@@ -4,12 +4,10 @@ import CaseBuilder from '../../builders/caseBuilder';
 import { CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
 import CaseDetailsBuilder from '../../builders/caseDetailsBuilder';
 import surveyListMockObject from '../../mockObjects/surveyListMockObject';
-import NodeApi from '../../../client/clients/NodeApi';
+import { getCaseFactsheet, getCases, getSurveys } from '../../../client/clients/NodeApi';
 
 // use axios mock adapter
 const axiosMock = new MockAdapter(axios, { onNoMatch: 'throwException' });
-
-const sut = new NodeApi();
 
 describe('GetSurveys from Blaise', () => {
   it('Should retrieve a list of surveys in blaise with a 200 response', async () => {
@@ -17,7 +15,7 @@ describe('GetSurveys from Blaise', () => {
     axiosMock.onGet('/api/surveys').reply(200, surveyListMockObject);
 
     // act
-    const result = await sut.getSurveys();
+    const result = await getSurveys();
 
     // assert
     expect(result).toEqual(surveyListMockObject);
@@ -28,7 +26,7 @@ describe('GetSurveys from Blaise', () => {
     axiosMock.onGet('/api/surveys').reply(404, null);
 
     // act && assert
-    expect(sut.getSurveys()).rejects.toThrow('Unable to find surveys, please contact Richmond Rice');
+    expect(getSurveys()).rejects.toThrow('Unable to find surveys, please contact Richmond Rice');
   });
 
   it('Should throw the error "Unable to retrieve surveys, please try again in a few minutes" when a 500 response is recieved', async () => {
@@ -36,7 +34,7 @@ describe('GetSurveys from Blaise', () => {
     axiosMock.onGet('/api/surveys').reply(500, null);
 
     // act && assert
-    expect(sut.getSurveys()).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getSurveys()).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 
   it('Should throw the error "Unable to retrieve surveys, please try again in a few minutes" when there is a network error', async () => {
@@ -44,7 +42,7 @@ describe('GetSurveys from Blaise', () => {
     axiosMock.onGet('/api/surveys').networkError();
 
     // act && assert
-    expect(sut.getSurveys()).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getSurveys()).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 });
 
@@ -58,7 +56,7 @@ describe('GetCases from Blaise', () => {
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases`).reply(200, caseDetailsListMockObject);
 
     // act
-    const result = await sut.getCases(questionnaireName);
+    const result = await getCases(questionnaireName);
 
     // assert
     expect(result).toEqual(caseDetailsListMockObject);
@@ -69,7 +67,7 @@ describe('GetCases from Blaise', () => {
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases`).reply(404, null);
 
     // act && assert
-    expect(sut.getCases(questionnaireName)).rejects.toThrow(/The questionnaire is no longer available/);
+    expect(getCases(questionnaireName)).rejects.toThrow(/The questionnaire is no longer available/);
   });
 
   it('Should throw the error "Unable to retrieve cases, please try again in a few minutes" when a 500 response is recieved', async () => {
@@ -77,7 +75,7 @@ describe('GetCases from Blaise', () => {
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases`).reply(500, null);
 
     // act && assert
-    expect(sut.getCases(questionnaireName)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getCases(questionnaireName)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 
   it('Should throw the error "Unable to retrieve cases, please try again in a few minutes" when there is a network error', async () => {
@@ -85,7 +83,7 @@ describe('GetCases from Blaise', () => {
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases`).networkError();
 
     // act && assert
-    expect(sut.getCases(questionnaireName)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getCases(questionnaireName)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 });
 
@@ -100,7 +98,7 @@ describe('GetCaseFactsheet from Blaise', () => {
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`).reply(200, expectedCaseFactsheet);
 
     // act
-    const result = await sut.getCaseFactsheet(questionnaireName, caseId);
+    const result = await getCaseFactsheet(questionnaireName, caseId);
 
     // assert
     expect(JSON.stringify(result)).toEqual(JSON.stringify(expectedCaseFactsheet));
@@ -111,7 +109,7 @@ describe('GetCaseFactsheet from Blaise', () => {
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`).reply(404, null);
 
     // act && assert
-    expect(sut.getCaseFactsheet(questionnaireName, caseId)).rejects.toThrow(/The questionnaire is no longer available/);
+    expect(getCaseFactsheet(questionnaireName, caseId)).rejects.toThrow(/The questionnaire is no longer available/);
   });
 
   it('Should throw the error "Unable to retrieve case factsheet, please try again in a few minutes" when a 500 response is recieved', async () => {
@@ -119,7 +117,7 @@ describe('GetCaseFactsheet from Blaise', () => {
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`).reply(500, null);
 
     // act && assert
-    expect(sut.getCaseFactsheet(questionnaireName, caseId)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getCaseFactsheet(questionnaireName, caseId)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 
   it('Should throw the error "Unable to retrieve case factsheet, please try again in a few minutes" when there is a network error', async () => {
@@ -127,6 +125,6 @@ describe('GetCaseFactsheet from Blaise', () => {
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`).networkError();
 
     // act && assert
-    expect(sut.getCaseFactsheet(questionnaireName, caseId)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getCaseFactsheet(questionnaireName, caseId)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 });

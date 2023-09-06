@@ -2,38 +2,43 @@ import {
   RenderResult, act, render,
 } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { IMock, Mock } from 'typemoq';
 import App from '../../client/App';
-import AuthenticationApi from '../../client/clients/AuthenticationApi';
 import surveyListMockObject from '../mockObjects/surveyListMockObject';
-import NodeApi from '../../client/clients/NodeApi';
+import { getSurveys } from '../../client/clients/NodeApi';
+import { Survey } from '../../common/interfaces/surveyInterface';
+import AuthenticationApi from '../../client/clients/AuthenticationApi';
 import userMockObject from '../mockObjects/userMockObject';
-
-// create mocks
-const authenticationApiMock: IMock<AuthenticationApi> = Mock.ofType(AuthenticationApi);
-const nodeApiMock: IMock<NodeApi> = Mock.ofType(NodeApi);
 
 // set global variables
 const validUserRoles:string[] = ['Manager', 'Editor'];
 let view:RenderResult;
 
+// create mocks
+jest.mock('../../client/clients/AuthenticationApi');
+const mockLoggedIn = jest.fn();
+const mockLoggedInUser = jest.fn();
+AuthenticationApi.prototype.loggedIn = mockLoggedIn;
+AuthenticationApi.prototype.getLoggedInUser = mockLoggedInUser;
+
+jest.mock('../../client/clients/NodeApi');
+const getSurveysMock = getSurveys as jest.Mock<Promise<Survey[]>>;
+
 describe('Renders the correct screen depending if the user has recently logged in', () => {
   beforeEach(() => {
-    nodeApiMock.setup((api) => api.getSurveys()).returns(() => Promise.resolve(surveyListMockObject));
+    getSurveysMock.mockImplementation(() => Promise.resolve(surveyListMockObject));
   });
 
   afterEach(() => {
-    authenticationApiMock.reset();
-    nodeApiMock.reset();
+    getSurveysMock.mockReset();
   });
 
   it('Should display a message asking the user to enter their Blaise user credentials if they are not logged in', async () => {
     // arrange
-    authenticationApiMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(false));
+    mockLoggedIn.mockImplementation(() => Promise.resolve(false));
 
     // act
     await act(async () => {
-      view = render(<BrowserRouter><App authenticationApi={authenticationApiMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
+      view = render(<BrowserRouter><App /></BrowserRouter>);
     });
 
     // assert
@@ -43,11 +48,11 @@ describe('Renders the correct screen depending if the user has recently logged i
 
   it('Should render the login page correctly', async () => {
     // arrange
-    authenticationApiMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(false));
+    mockLoggedIn.mockImplementation(() => Promise.resolve(false));
 
     // act
     await act(async () => {
-      view = render(<BrowserRouter><App authenticationApi={authenticationApiMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
+      view = render(<BrowserRouter><App /></BrowserRouter>);
     });
 
     // assert
@@ -56,15 +61,15 @@ describe('Renders the correct screen depending if the user has recently logged i
 
   it.each(validUserRoles)('Should display the surveys page if the user is already logged in', async (userRole) => {
     // arrange
-    let user = userMockObject;
+    const user = userMockObject;
     user.role = userRole;
 
-    authenticationApiMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(true));
-    authenticationApiMock.setup((lm) => lm.getLoggedInUser()).returns(() => Promise.resolve(user));
+    mockLoggedIn.mockImplementation(() => Promise.resolve(true));
+    mockLoggedInUser.mockImplementation(() => Promise.resolve(user));
 
     // act
     await act(async () => {
-      view = render(<BrowserRouter><App authenticationApi={authenticationApiMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
+      view = render(<BrowserRouter><App /></BrowserRouter>);
     });
 
     // assert
@@ -74,15 +79,15 @@ describe('Renders the correct screen depending if the user has recently logged i
 
   it.each(validUserRoles)('Should render the surveys page correctly', async (userRole) => {
     // arrange
-    let user = userMockObject;
+    const user = userMockObject;
     user.role = userRole;
 
-    authenticationApiMock.setup((lm) => lm.loggedIn()).returns(() => Promise.resolve(true));
-    authenticationApiMock.setup((lm) => lm.getLoggedInUser()).returns(() => Promise.resolve(user));
+    mockLoggedIn.mockImplementation(() => Promise.resolve(true));
+    mockLoggedInUser.mockImplementation(() => Promise.resolve(user));
 
     // act
     await act(async () => {
-      view = render(<BrowserRouter><App authenticationApi={authenticationApiMock.object} nodeApi={nodeApiMock.object} /></BrowserRouter>);
+      view = render(<BrowserRouter><App /></BrowserRouter>);
     });
 
     // assert
