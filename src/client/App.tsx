@@ -1,13 +1,19 @@
 import './App.css';
 import { ReactElement } from 'react';
+import { Authenticate } from 'blaise-login-react-client';
 import AppContent from './components/AppContent';
-import Authentication from './pages/Authentication';
+import LayoutTemplate from './components/LayoutTemplate';
 
 function App(): ReactElement {
   return (
-    <Authentication>
-      {(user) => (<AppContent user={user} />)}
-    </Authentication>
+    <Authenticate title="Blaise editing service">
+      {(user, loggedIn, logOutFunction) => (
+        <LayoutTemplate showSignOutButton={loggedIn} signOut={() => logOutFunction()}>
+          <AppContent user={user} />
+        </LayoutTemplate>
+      )}
+    </Authenticate>
+
   );
 }
 
