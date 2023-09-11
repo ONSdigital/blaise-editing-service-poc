@@ -2,18 +2,17 @@ import {
   RenderResult, act, render,
 } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import { Authenticate } from 'blaise-login-react-client';
 import surveyListMockObject from '../mockObjects/surveyListMockObject';
 import { getSurveys } from '../../client/clients/NodeApi';
 import { Survey } from '../../common/interfaces/surveyInterface';
 import userMockObject from '../mockObjects/userMockObject';
 import App from '../../client/App';
-import { Authenticate } from 'blaise-login-react-client';
 import MockAuthenticate from '../mockComponents/mockAuthenticate';
 
 // set global variables
-//const validUserRoles:string[] = ['Manager', 'Editor'];
+// const validUserRoles:string[] = ['Manager', 'Editor'];
 let view:RenderResult;
-
 
 // create mocks
 jest.mock('blaise-login-react-client');
@@ -37,16 +36,10 @@ describe('Renders the correct screen depending if the user has recently logged i
     // act
     await act(async () => {
       view = render(
-      <BrowserRouter>
-      <App/>
-{/*           <MockAuthenticate title="Blaise editing service">
-      {(user, loggedIn, logOutFunction) => (
-        <LayoutTemplate showSignOutButton={loggedIn} signOut={() => logOutFunction()}>
-          <AppContent user={user} />
-        </LayoutTemplate>
-      )}
-    </MockAuthenticate> */}
-      </BrowserRouter>);
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>,
+      );
     });
 
     // assert
