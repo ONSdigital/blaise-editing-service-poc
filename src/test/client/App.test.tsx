@@ -33,7 +33,7 @@ describe('Renders the correct screen depending if the user has recently logged i
   it('Should display a message asking the user to enter their Blaise user credentials if they are not logged in', async () => {
     // arrange
     const user = userMockObject;
-    MockAuthenticate.OverrideReturnValues(user,false);
+    MockAuthenticate.OverrideReturnValues(user, false);
 
     // act
     await act(async () => {
