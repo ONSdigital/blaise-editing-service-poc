@@ -18,6 +18,5 @@ export default function AppContent({ user }: AppContentProps): ReactElement {
       <Route path="questionnaires/:questionnaireName/cases/:caseId/factsheet" element={<CaseFactsheet />} />
       <Route path="questionnaires/:questionnaireName/allocation/" element={<Allocation />} />
     </Routes>
-
   );
 }
