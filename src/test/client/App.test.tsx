@@ -11,7 +11,7 @@ import App from '../../client/App';
 import MockAuthenticate from '../mockComponents/mockAuthenticate';
 
 // set global variables
-// const validUserRoles:string[] = ['Manager', 'Editor'];
+const validUserRoles:string[] = ['Manager', 'Editor'];
 let view:RenderResult;
 
 // create mocks
@@ -33,6 +33,8 @@ describe('Renders the correct screen depending if the user has recently logged i
   it('Should display a message asking the user to enter their Blaise user credentials if they are not logged in', async () => {
     // arrange
     const user = userMockObject;
+    MockAuthenticate.OverrideReturnValues(user,false);
+
     // act
     await act(async () => {
       view = render(
@@ -43,21 +45,8 @@ describe('Renders the correct screen depending if the user has recently logged i
     });
 
     // assert
-    const appView = view.getByTestId('app-content');
-    expect(appView).toHaveTextContent(`Bonjour tout le monde ${user.name}`);
-  });
-/*
-  it('Should render the login page correctly', async () => {
-    // arrange
-    //mockLoggedIn.mockImplementation(() => Promise.resolve(false));
-
-    // act
-    await act(async () => {
-      view = render(<BrowserRouter><App /></BrowserRouter>);
-    });
-
-    // assert
-    expect(view).toMatchSnapshot();
+    const appView = view.getByTestId('login-page');
+    expect(appView).toHaveTextContent('Enter your Blaise username and password');
   });
 
   it.each(validUserRoles)('Should display the surveys page if the user is already logged in', async (userRole) => {
@@ -65,8 +54,7 @@ describe('Renders the correct screen depending if the user has recently logged i
     const user = userMockObject;
     user.role = userRole;
 
-    mockLoggedIn.mockImplementation(() => Promise.resolve(true));
-    mockLoggedInUser.mockImplementation(() => Promise.resolve(user));
+    MockAuthenticate.OverrideReturnValues(user, true);
 
     // act
     await act(async () => {
@@ -77,21 +65,4 @@ describe('Renders the correct screen depending if the user has recently logged i
     const appView = view.getByTestId('app-content');
     expect(appView).toHaveTextContent(`Bonjour tout le monde ${user.name}`);
   });
-
-  it.each(validUserRoles)('Should render the surveys page correctly', async (userRole) => {
-    // arrange
-    const user = userMockObject;
-    user.role = userRole;
-
-    mockLoggedIn.mockImplementation(() => Promise.resolve(true));
-    mockLoggedInUser.mockImplementation(() => Promise.resolve(user));
-
-    // act
-    await act(async () => {
-      view = render(<BrowserRouter><App /></BrowserRouter>);
-    });
-
-    // assert
-    expect(view).toMatchSnapshot();
-  }); */
 });
