@@ -43,7 +43,7 @@ describe('Renders the correct screen depending if the user has recently logged i
     });
 
     // assert
-    const appView = view.getByTestId('authenticated');
+    const appView = view.getByTestId('app-content');
     expect(appView).toHaveTextContent(`Bonjour tout le monde ${user.name}`);
   });
 /*
