@@ -302,59 +302,65 @@ exports[`Given there are surveys available in blaise should render the manager p
                 title="Questionnares"
               >
                 <dt
-                  class="ons-metadata__term ons-grid__col ons-col-6@m"
+                  class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   Questionnaire
                 </dt>
                 <dd
-                  class="ons-metadata__value ons-grid__col ons-col-6@m"
+                  class="ons-metadata__value ons-grid__col ons-col-8@m"
                   style="font-weight: bold;"
                 >
-                  Case Count
+                  Cases allocated / unallocated
                 </dd>
                 <dt
-                  class="ons-metadata__term ons-grid__col ons-col-6@m"
+                  class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   <a
-                    href="/questionnaires/LMS2101_AA1/cases"
+                    href="/questionnaires/LMS2101_AA1/allocation"
                     style="font-weight: normal;"
                   >
                     LMS2101_AA1
                   </a>
                 </dt>
                 <dd
-                  class="ons-metadata__value ons-grid__col ons-col-6@m"
+                  class="ons-metadata__value ons-grid__col ons-col-8@m"
                 >
+                  0 /
+                   
                   5
                 </dd>
                 <dt
-                  class="ons-metadata__term ons-grid__col ons-col-6@m"
+                  class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   <a
-                    href="/questionnaires/LMS2101_AB1/cases"
+                    href="/questionnaires/LMS2101_AB1/allocation"
                     style="font-weight: normal;"
                   >
                     LMS2101_AB1
                   </a>
                 </dt>
                 <dd
-                  class="ons-metadata__value ons-grid__col ons-col-6@m"
+                  class="ons-metadata__value ons-grid__col ons-col-8@m"
                 >
+                  0 /
+                   
                   15
                 </dd>
                 <dt
-                  class="ons-metadata__term ons-grid__col ons-col-6@m"
+                  class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   <a
-                    href="/questionnaires/LMS2101_AC1/cases"
+                    href="/questionnaires/LMS2101_AC1/allocation"
                     style="font-weight: normal;"
                   >
                     LMS2101_AC1
                   </a>
                 </dt>
                 <dd
-                  class="ons-metadata__value ons-grid__col ons-col-6@m"
+                  class="ons-metadata__value ons-grid__col ons-col-8@m"
                 >
+                  0 /
+                   
                   7
                 </dd>
               </dl>
@@ -413,29 +419,31 @@ exports[`Given there are surveys available in blaise should render the manager p
                 title="Questionnares"
               >
                 <dt
-                  class="ons-metadata__term ons-grid__col ons-col-6@m"
+                  class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   Questionnaire
                 </dt>
                 <dd
-                  class="ons-metadata__value ons-grid__col ons-col-6@m"
+                  class="ons-metadata__value ons-grid__col ons-col-8@m"
                   style="font-weight: bold;"
                 >
-                  Case Count
+                  Cases allocated / unallocated
                 </dd>
                 <dt
-                  class="ons-metadata__term ons-grid__col ons-col-6@m"
+                  class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   <a
-                    href="/questionnaires/OPN2201A/cases"
+                    href="/questionnaires/OPN2201A/allocation"
                     style="font-weight: normal;"
                   >
                     OPN2201A
                   </a>
                 </dt>
                 <dd
-                  class="ons-metadata__value ons-grid__col ons-col-6@m"
+                  class="ons-metadata__value ons-grid__col ons-col-8@m"
                 >
+                  0 /
+                   
                   24
                 </dd>
               </dl>
@@ -529,59 +537,65 @@ exports[`Given there are surveys available in blaise should render the manager p
               title="Questionnares"
             >
               <dt
-                class="ons-metadata__term ons-grid__col ons-col-6@m"
+                class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 Questionnaire
               </dt>
               <dd
-                class="ons-metadata__value ons-grid__col ons-col-6@m"
+                class="ons-metadata__value ons-grid__col ons-col-8@m"
                 style="font-weight: bold;"
               >
-                Case Count
+                Cases allocated / unallocated
               </dd>
               <dt
-                class="ons-metadata__term ons-grid__col ons-col-6@m"
+                class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 <a
-                  href="/questionnaires/LMS2101_AA1/cases"
+                  href="/questionnaires/LMS2101_AA1/allocation"
                   style="font-weight: normal;"
                 >
                   LMS2101_AA1
                 </a>
               </dt>
               <dd
-                class="ons-metadata__value ons-grid__col ons-col-6@m"
+                class="ons-metadata__value ons-grid__col ons-col-8@m"
               >
+                0 /
+                 
                 5
               </dd>
               <dt
-                class="ons-metadata__term ons-grid__col ons-col-6@m"
+                class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 <a
-                  href="/questionnaires/LMS2101_AB1/cases"
+                  href="/questionnaires/LMS2101_AB1/allocation"
                   style="font-weight: normal;"
                 >
                   LMS2101_AB1
                 </a>
               </dt>
               <dd
-                class="ons-metadata__value ons-grid__col ons-col-6@m"
+                class="ons-metadata__value ons-grid__col ons-col-8@m"
               >
+                0 /
+                 
                 15
               </dd>
               <dt
-                class="ons-metadata__term ons-grid__col ons-col-6@m"
+                class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 <a
-                  href="/questionnaires/LMS2101_AC1/cases"
+                  href="/questionnaires/LMS2101_AC1/allocation"
                   style="font-weight: normal;"
                 >
                   LMS2101_AC1
                 </a>
               </dt>
               <dd
-                class="ons-metadata__value ons-grid__col ons-col-6@m"
+                class="ons-metadata__value ons-grid__col ons-col-8@m"
               >
+                0 /
+                 
                 7
               </dd>
             </dl>
@@ -640,29 +654,31 @@ exports[`Given there are surveys available in blaise should render the manager p
               title="Questionnares"
             >
               <dt
-                class="ons-metadata__term ons-grid__col ons-col-6@m"
+                class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 Questionnaire
               </dt>
               <dd
-                class="ons-metadata__value ons-grid__col ons-col-6@m"
+                class="ons-metadata__value ons-grid__col ons-col-8@m"
                 style="font-weight: bold;"
               >
-                Case Count
+                Cases allocated / unallocated
               </dd>
               <dt
-                class="ons-metadata__term ons-grid__col ons-col-6@m"
+                class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 <a
-                  href="/questionnaires/OPN2201A/cases"
+                  href="/questionnaires/OPN2201A/allocation"
                   style="font-weight: normal;"
                 >
                   OPN2201A
                 </a>
               </dt>
               <dd
-                class="ons-metadata__value ons-grid__col ons-col-6@m"
+                class="ons-metadata__value ons-grid__col ons-col-8@m"
               >
+                0 /
+                 
                 24
               </dd>
             </dl>
@@ -813,18 +829,18 @@ exports[`Given there are surveys available in blaise should render the manager p
                 title="Questionnares"
               >
                 <dt
-                  class="ons-metadata__term ons-grid__col ons-col-6@m"
+                  class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   Questionnaire
                 </dt>
                 <dd
-                  class="ons-metadata__value ons-grid__col ons-col-6@m"
+                  class="ons-metadata__value ons-grid__col ons-col-8@m"
                   style="font-weight: bold;"
                 >
-                  Case Count
+                  Cases allocated to me
                 </dd>
                 <dt
-                  class="ons-metadata__term ons-grid__col ons-col-6@m"
+                  class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   <a
                     href="/questionnaires/LMS2101_AA1/cases"
@@ -834,12 +850,12 @@ exports[`Given there are surveys available in blaise should render the manager p
                   </a>
                 </dt>
                 <dd
-                  class="ons-metadata__value ons-grid__col ons-col-6@m"
+                  class="ons-metadata__value ons-grid__col ons-col-8@m"
                 >
                   5
                 </dd>
                 <dt
-                  class="ons-metadata__term ons-grid__col ons-col-6@m"
+                  class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   <a
                     href="/questionnaires/LMS2101_AB1/cases"
@@ -849,12 +865,12 @@ exports[`Given there are surveys available in blaise should render the manager p
                   </a>
                 </dt>
                 <dd
-                  class="ons-metadata__value ons-grid__col ons-col-6@m"
+                  class="ons-metadata__value ons-grid__col ons-col-8@m"
                 >
                   15
                 </dd>
                 <dt
-                  class="ons-metadata__term ons-grid__col ons-col-6@m"
+                  class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   <a
                     href="/questionnaires/LMS2101_AC1/cases"
@@ -864,7 +880,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                   </a>
                 </dt>
                 <dd
-                  class="ons-metadata__value ons-grid__col ons-col-6@m"
+                  class="ons-metadata__value ons-grid__col ons-col-8@m"
                 >
                   7
                 </dd>
@@ -924,18 +940,18 @@ exports[`Given there are surveys available in blaise should render the manager p
                 title="Questionnares"
               >
                 <dt
-                  class="ons-metadata__term ons-grid__col ons-col-6@m"
+                  class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   Questionnaire
                 </dt>
                 <dd
-                  class="ons-metadata__value ons-grid__col ons-col-6@m"
+                  class="ons-metadata__value ons-grid__col ons-col-8@m"
                   style="font-weight: bold;"
                 >
-                  Case Count
+                  Cases allocated to me
                 </dd>
                 <dt
-                  class="ons-metadata__term ons-grid__col ons-col-6@m"
+                  class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   <a
                     href="/questionnaires/OPN2201A/cases"
@@ -945,7 +961,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                   </a>
                 </dt>
                 <dd
-                  class="ons-metadata__value ons-grid__col ons-col-6@m"
+                  class="ons-metadata__value ons-grid__col ons-col-8@m"
                 >
                   24
                 </dd>
@@ -1040,18 +1056,18 @@ exports[`Given there are surveys available in blaise should render the manager p
               title="Questionnares"
             >
               <dt
-                class="ons-metadata__term ons-grid__col ons-col-6@m"
+                class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 Questionnaire
               </dt>
               <dd
-                class="ons-metadata__value ons-grid__col ons-col-6@m"
+                class="ons-metadata__value ons-grid__col ons-col-8@m"
                 style="font-weight: bold;"
               >
-                Case Count
+                Cases allocated to me
               </dd>
               <dt
-                class="ons-metadata__term ons-grid__col ons-col-6@m"
+                class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 <a
                   href="/questionnaires/LMS2101_AA1/cases"
@@ -1061,12 +1077,12 @@ exports[`Given there are surveys available in blaise should render the manager p
                 </a>
               </dt>
               <dd
-                class="ons-metadata__value ons-grid__col ons-col-6@m"
+                class="ons-metadata__value ons-grid__col ons-col-8@m"
               >
                 5
               </dd>
               <dt
-                class="ons-metadata__term ons-grid__col ons-col-6@m"
+                class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 <a
                   href="/questionnaires/LMS2101_AB1/cases"
@@ -1076,12 +1092,12 @@ exports[`Given there are surveys available in blaise should render the manager p
                 </a>
               </dt>
               <dd
-                class="ons-metadata__value ons-grid__col ons-col-6@m"
+                class="ons-metadata__value ons-grid__col ons-col-8@m"
               >
                 15
               </dd>
               <dt
-                class="ons-metadata__term ons-grid__col ons-col-6@m"
+                class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 <a
                   href="/questionnaires/LMS2101_AC1/cases"
@@ -1091,7 +1107,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                 </a>
               </dt>
               <dd
-                class="ons-metadata__value ons-grid__col ons-col-6@m"
+                class="ons-metadata__value ons-grid__col ons-col-8@m"
               >
                 7
               </dd>
@@ -1151,18 +1167,18 @@ exports[`Given there are surveys available in blaise should render the manager p
               title="Questionnares"
             >
               <dt
-                class="ons-metadata__term ons-grid__col ons-col-6@m"
+                class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 Questionnaire
               </dt>
               <dd
-                class="ons-metadata__value ons-grid__col ons-col-6@m"
+                class="ons-metadata__value ons-grid__col ons-col-8@m"
                 style="font-weight: bold;"
               >
-                Case Count
+                Cases allocated to me
               </dd>
               <dt
-                class="ons-metadata__term ons-grid__col ons-col-6@m"
+                class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 <a
                   href="/questionnaires/OPN2201A/cases"
@@ -1172,7 +1188,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                 </a>
               </dt>
               <dd
-                class="ons-metadata__value ons-grid__col ons-col-6@m"
+                class="ons-metadata__value ons-grid__col ons-col-8@m"
               >
                 24
               </dd>
