@@ -8,6 +8,106 @@ exports[`Given there are cases available in blaise for questionnaire should rend
       <div
         data-testid="Cases"
       >
+        <div
+          class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+        >
+          <div
+            class="ons-panel__body "
+          >
+            These cases are allocated to you for questionnire
+             
+            OPN2201A
+          </div>
+        </div>
+        <div
+          style="margin: 2rem 0px 0px 0px;"
+        >
+          <table
+            class="ons-table"
+            data-testid="case-table"
+            id="case-table"
+          >
+            <thead
+              class="ons-table__head"
+            >
+              <tr
+                class="ons-table__row"
+              >
+                <th
+                  class="ons-table__header"
+                  scope="col"
+                >
+                  Case
+                </th>
+                <th
+                  class="ons-table__header"
+                  scope="col"
+                >
+                  Status
+                </th>
+                <th
+                  class="ons-table__header"
+                  scope="col"
+                >
+                  Factsheet
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class="ons-table__body"
+            >
+              <tr
+                class="ons-table__row"
+                data-testid="case-table-row0"
+              >
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=1"
+                  >
+                    1
+                  </a>
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  110
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="/questionnaires/OPN2201A/cases/1/factsheet"
+                  >
+                    Factsheet
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-testid="Cases"
+    >
+      <div
+        class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+      >
+        <div
+          class="ons-panel__body "
+        >
+          These cases are allocated to you for questionnire
+           
+          OPN2201A
+        </div>
+      </div>
+      <div
+        style="margin: 2rem 0px 0px 0px;"
+      >
         <table
           class="ons-table"
           data-testid="case-table"
@@ -23,7 +123,7 @@ exports[`Given there are cases available in blaise for questionnaire should rend
                 class="ons-table__header"
                 scope="col"
               >
-                Case ID
+                Case
               </th>
               <th
                 class="ons-table__header"
@@ -73,76 +173,6 @@ exports[`Given there are cases available in blaise for questionnaire should rend
           </tbody>
         </table>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      data-testid="Cases"
-    >
-      <table
-        class="ons-table"
-        data-testid="case-table"
-        id="case-table"
-      >
-        <thead
-          class="ons-table__head"
-        >
-          <tr
-            class="ons-table__row"
-          >
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              Case ID
-            </th>
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              Status
-            </th>
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              Factsheet
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="ons-table__body"
-        >
-          <tr
-            class="ons-table__row"
-            data-testid="case-table-row0"
-          >
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=1"
-              >
-                1
-              </a>
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              110
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="/questionnaires/OPN2201A/cases/1/factsheet"
-              >
-                Factsheet
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>,
   "debug": [Function],
@@ -207,6 +237,134 @@ exports[`Given there are cases available in blaise for questionnaire should rend
       <div
         data-testid="Cases"
       >
+        <div
+          class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+        >
+          <div
+            class="ons-panel__body "
+          >
+            These cases are allocated to you for questionnire
+             
+            OPN2201A
+          </div>
+        </div>
+        <div
+          style="margin: 2rem 0px 0px 0px;"
+        >
+          <table
+            class="ons-table"
+            data-testid="case-table"
+            id="case-table"
+          >
+            <thead
+              class="ons-table__head"
+            >
+              <tr
+                class="ons-table__row"
+              >
+                <th
+                  class="ons-table__header"
+                  scope="col"
+                >
+                  Case
+                </th>
+                <th
+                  class="ons-table__header"
+                  scope="col"
+                >
+                  Status
+                </th>
+                <th
+                  class="ons-table__header"
+                  scope="col"
+                >
+                  Factsheet
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class="ons-table__body"
+            >
+              <tr
+                class="ons-table__row"
+                data-testid="case-table-row0"
+              >
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=1"
+                  >
+                    1
+                  </a>
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  110
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="/questionnaires/OPN2201A/cases/1/factsheet"
+                  >
+                    Factsheet
+                  </a>
+                </td>
+              </tr>
+              <tr
+                class="ons-table__row"
+                data-testid="case-table-row1"
+              >
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=2"
+                  >
+                    2
+                  </a>
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  430
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="/questionnaires/OPN2201A/cases/2/factsheet"
+                  >
+                    Factsheet
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-testid="Cases"
+    >
+      <div
+        class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+      >
+        <div
+          class="ons-panel__body "
+        >
+          These cases are allocated to you for questionnire
+           
+          OPN2201A
+        </div>
+      </div>
+      <div
+        style="margin: 2rem 0px 0px 0px;"
+      >
         <table
           class="ons-table"
           data-testid="case-table"
@@ -222,7 +380,7 @@ exports[`Given there are cases available in blaise for questionnaire should rend
                 class="ons-table__header"
                 scope="col"
               >
-                Case ID
+                Case
               </th>
               <th
                 class="ons-table__header"
@@ -301,104 +459,6 @@ exports[`Given there are cases available in blaise for questionnaire should rend
         </table>
       </div>
     </div>
-  </body>,
-  "container": <div>
-    <div
-      data-testid="Cases"
-    >
-      <table
-        class="ons-table"
-        data-testid="case-table"
-        id="case-table"
-      >
-        <thead
-          class="ons-table__head"
-        >
-          <tr
-            class="ons-table__row"
-          >
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              Case ID
-            </th>
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              Status
-            </th>
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              Factsheet
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="ons-table__body"
-        >
-          <tr
-            class="ons-table__row"
-            data-testid="case-table-row0"
-          >
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=1"
-              >
-                1
-              </a>
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              110
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="/questionnaires/OPN2201A/cases/1/factsheet"
-              >
-                Factsheet
-              </a>
-            </td>
-          </tr>
-          <tr
-            class="ons-table__row"
-            data-testid="case-table-row1"
-          >
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=2"
-              >
-                2
-              </a>
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              430
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="/questionnaires/OPN2201A/cases/2/factsheet"
-              >
-                Factsheet
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -462,6 +522,162 @@ exports[`Given there are cases available in blaise for questionnaire should rend
       <div
         data-testid="Cases"
       >
+        <div
+          class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+        >
+          <div
+            class="ons-panel__body "
+          >
+            These cases are allocated to you for questionnire
+             
+            OPN2201A
+          </div>
+        </div>
+        <div
+          style="margin: 2rem 0px 0px 0px;"
+        >
+          <table
+            class="ons-table"
+            data-testid="case-table"
+            id="case-table"
+          >
+            <thead
+              class="ons-table__head"
+            >
+              <tr
+                class="ons-table__row"
+              >
+                <th
+                  class="ons-table__header"
+                  scope="col"
+                >
+                  Case
+                </th>
+                <th
+                  class="ons-table__header"
+                  scope="col"
+                >
+                  Status
+                </th>
+                <th
+                  class="ons-table__header"
+                  scope="col"
+                >
+                  Factsheet
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class="ons-table__body"
+            >
+              <tr
+                class="ons-table__row"
+                data-testid="case-table-row0"
+              >
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=1"
+                  >
+                    1
+                  </a>
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  110
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="/questionnaires/OPN2201A/cases/1/factsheet"
+                  >
+                    Factsheet
+                  </a>
+                </td>
+              </tr>
+              <tr
+                class="ons-table__row"
+                data-testid="case-table-row1"
+              >
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=2"
+                  >
+                    2
+                  </a>
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  430
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="/questionnaires/OPN2201A/cases/2/factsheet"
+                  >
+                    Factsheet
+                  </a>
+                </td>
+              </tr>
+              <tr
+                class="ons-table__row"
+                data-testid="case-table-row2"
+              >
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=3"
+                  >
+                    3
+                  </a>
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  390
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="/questionnaires/OPN2201A/cases/3/factsheet"
+                  >
+                    Factsheet
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-testid="Cases"
+    >
+      <div
+        class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+      >
+        <div
+          class="ons-panel__body "
+        >
+          These cases are allocated to you for questionnire
+           
+          OPN2201A
+        </div>
+      </div>
+      <div
+        style="margin: 2rem 0px 0px 0px;"
+      >
         <table
           class="ons-table"
           data-testid="case-table"
@@ -477,7 +693,7 @@ exports[`Given there are cases available in blaise for questionnaire should rend
                 class="ons-table__header"
                 scope="col"
               >
-                Case ID
+                Case
               </th>
               <th
                 class="ons-table__header"
@@ -584,132 +800,6 @@ exports[`Given there are cases available in blaise for questionnaire should rend
         </table>
       </div>
     </div>
-  </body>,
-  "container": <div>
-    <div
-      data-testid="Cases"
-    >
-      <table
-        class="ons-table"
-        data-testid="case-table"
-        id="case-table"
-      >
-        <thead
-          class="ons-table__head"
-        >
-          <tr
-            class="ons-table__row"
-          >
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              Case ID
-            </th>
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              Status
-            </th>
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              Factsheet
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="ons-table__body"
-        >
-          <tr
-            class="ons-table__row"
-            data-testid="case-table-row0"
-          >
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=1"
-              >
-                1
-              </a>
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              110
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="/questionnaires/OPN2201A/cases/1/factsheet"
-              >
-                Factsheet
-              </a>
-            </td>
-          </tr>
-          <tr
-            class="ons-table__row"
-            data-testid="case-table-row1"
-          >
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=2"
-              >
-                2
-              </a>
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              430
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="/questionnaires/OPN2201A/cases/2/factsheet"
-              >
-                Factsheet
-              </a>
-            </td>
-          </tr>
-          <tr
-            class="ons-table__row"
-            data-testid="case-table-row2"
-          >
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=3"
-              >
-                3
-              </a>
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              390
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="/questionnaires/OPN2201A/cases/3/factsheet"
-              >
-                Factsheet
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -773,6 +863,190 @@ exports[`Given there are cases available in blaise for questionnaire should rend
       <div
         data-testid="Cases"
       >
+        <div
+          class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+        >
+          <div
+            class="ons-panel__body "
+          >
+            These cases are allocated to you for questionnire
+             
+            OPN2201A
+          </div>
+        </div>
+        <div
+          style="margin: 2rem 0px 0px 0px;"
+        >
+          <table
+            class="ons-table"
+            data-testid="case-table"
+            id="case-table"
+          >
+            <thead
+              class="ons-table__head"
+            >
+              <tr
+                class="ons-table__row"
+              >
+                <th
+                  class="ons-table__header"
+                  scope="col"
+                >
+                  Case
+                </th>
+                <th
+                  class="ons-table__header"
+                  scope="col"
+                >
+                  Status
+                </th>
+                <th
+                  class="ons-table__header"
+                  scope="col"
+                >
+                  Factsheet
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class="ons-table__body"
+            >
+              <tr
+                class="ons-table__row"
+                data-testid="case-table-row0"
+              >
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=1"
+                  >
+                    1
+                  </a>
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  110
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="/questionnaires/OPN2201A/cases/1/factsheet"
+                  >
+                    Factsheet
+                  </a>
+                </td>
+              </tr>
+              <tr
+                class="ons-table__row"
+                data-testid="case-table-row1"
+              >
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=2"
+                  >
+                    2
+                  </a>
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  430
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="/questionnaires/OPN2201A/cases/2/factsheet"
+                  >
+                    Factsheet
+                  </a>
+                </td>
+              </tr>
+              <tr
+                class="ons-table__row"
+                data-testid="case-table-row2"
+              >
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=3"
+                  >
+                    3
+                  </a>
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  390
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="/questionnaires/OPN2201A/cases/3/factsheet"
+                  >
+                    Factsheet
+                  </a>
+                </td>
+              </tr>
+              <tr
+                class="ons-table__row"
+                data-testid="case-table-row3"
+              >
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=4"
+                  >
+                    4
+                  </a>
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  110
+                </td>
+                <td
+                  class="ons-table__cell"
+                >
+                  <a
+                    href="/questionnaires/OPN2201A/cases/4/factsheet"
+                  >
+                    Factsheet
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      data-testid="Cases"
+    >
+      <div
+        class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+      >
+        <div
+          class="ons-panel__body "
+        >
+          These cases are allocated to you for questionnire
+           
+          OPN2201A
+        </div>
+      </div>
+      <div
+        style="margin: 2rem 0px 0px 0px;"
+      >
         <table
           class="ons-table"
           data-testid="case-table"
@@ -788,7 +1062,7 @@ exports[`Given there are cases available in blaise for questionnaire should rend
                 class="ons-table__header"
                 scope="col"
               >
-                Case ID
+                Case
               </th>
               <th
                 class="ons-table__header"
@@ -922,160 +1196,6 @@ exports[`Given there are cases available in blaise for questionnaire should rend
           </tbody>
         </table>
       </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      data-testid="Cases"
-    >
-      <table
-        class="ons-table"
-        data-testid="case-table"
-        id="case-table"
-      >
-        <thead
-          class="ons-table__head"
-        >
-          <tr
-            class="ons-table__row"
-          >
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              Case ID
-            </th>
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              Status
-            </th>
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              Factsheet
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="ons-table__body"
-        >
-          <tr
-            class="ons-table__row"
-            data-testid="case-table-row0"
-          >
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=1"
-              >
-                1
-              </a>
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              110
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="/questionnaires/OPN2201A/cases/1/factsheet"
-              >
-                Factsheet
-              </a>
-            </td>
-          </tr>
-          <tr
-            class="ons-table__row"
-            data-testid="case-table-row1"
-          >
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=2"
-              >
-                2
-              </a>
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              430
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="/questionnaires/OPN2201A/cases/2/factsheet"
-              >
-                Factsheet
-              </a>
-            </td>
-          </tr>
-          <tr
-            class="ons-table__row"
-            data-testid="case-table-row2"
-          >
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=3"
-              >
-                3
-              </a>
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              390
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="/questionnaires/OPN2201A/cases/3/factsheet"
-              >
-                Factsheet
-              </a>
-            </td>
-          </tr>
-          <tr
-            class="ons-table__row"
-            data-testid="case-table-row3"
-          >
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="https://cati.blaise.com/OPN2201A?Mode=CAWI&KeyValue=4"
-              >
-                4
-              </a>
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              110
-            </td>
-            <td
-              class="ons-table__cell"
-            >
-              <a
-                href="/questionnaires/OPN2201A/cases/4/factsheet"
-              >
-                Factsheet
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>,
   "debug": [Function],

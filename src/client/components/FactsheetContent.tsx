@@ -10,7 +10,7 @@ export default function FactsheetContent({ factsheet }: FactsheetContentProps): 
   return (
     <>
       <ONSPanel spacious status="info">
-        This factsheer contains information for case
+        This factsheet contains information for case
         {' '}
         {factsheet.CaseId}
         {' '}
