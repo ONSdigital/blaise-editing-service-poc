@@ -1,4 +1,4 @@
-import { Footer, Header } from 'blaise-design-system-react-components';
+import { Footer, Header, NotProductionWarning } from 'blaise-design-system-react-components';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -26,6 +26,7 @@ export default function LayoutTemplate({ children, showSignOutButton, signOut }:
   return (
 
     <>
+      <NotProductionWarning />
       <Header
         title="Blaise Editing Service"
         noSave
@@ -34,6 +35,7 @@ export default function LayoutTemplate({ children, showSignOutButton, signOut }:
         navigationLinks={navigationLinks}
       />
       <div style={divStyle} className="ons-page__container ons-container" data-testid="app-content">
+
         {children}
       </div>
       <Footer />

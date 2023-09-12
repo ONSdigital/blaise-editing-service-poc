@@ -8,6 +8,19 @@ exports[`Given there is a case available in blaise for a questionnaire should di
       <div
         data-testid="Factsheet"
       >
+        <div
+          class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+        >
+          <div
+            class="ons-panel__body "
+          >
+            This page contains information for case '
+            90001
+            ' completed by '
+            Rich
+            '
+          </div>
+        </div>
         <dl
           class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
           title="Factsheet"
@@ -112,6 +125,19 @@ exports[`Given there is a case available in blaise for a questionnaire should di
     <div
       data-testid="Factsheet"
     >
+      <div
+        class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+      >
+        <div
+          class="ons-panel__body "
+        >
+          This page contains information for case '
+          90001
+          ' completed by '
+          Rich
+          '
+        </div>
+      </div>
       <dl
         class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
         title="Factsheet"
@@ -273,6 +299,19 @@ exports[`Given there is a case available in blaise for a questionnaire should di
       <div
         data-testid="Factsheet"
       >
+        <div
+          class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+        >
+          <div
+            class="ons-panel__body "
+          >
+            This page contains information for case '
+            90001
+            ' completed by '
+            Rich
+            '
+          </div>
+        </div>
         <dl
           class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
           title="Factsheet"
@@ -391,6 +430,19 @@ exports[`Given there is a case available in blaise for a questionnaire should di
     <div
       data-testid="Factsheet"
     >
+      <div
+        class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+      >
+        <div
+          class="ons-panel__body "
+        >
+          This page contains information for case '
+          90001
+          ' completed by '
+          Rich
+          '
+        </div>
+      </div>
       <dl
         class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
         title="Factsheet"
@@ -566,6 +618,19 @@ exports[`Given there is a case available in blaise for a questionnaire should di
       <div
         data-testid="Factsheet"
       >
+        <div
+          class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+        >
+          <div
+            class="ons-panel__body "
+          >
+            This page contains information for case '
+            90001
+            ' completed by '
+            Rich
+            '
+          </div>
+        </div>
         <dl
           class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
           title="Factsheet"
@@ -698,6 +763,19 @@ exports[`Given there is a case available in blaise for a questionnaire should di
     <div
       data-testid="Factsheet"
     >
+      <div
+        class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+      >
+        <div
+          class="ons-panel__body "
+        >
+          This page contains information for case '
+          90001
+          ' completed by '
+          Rich
+          '
+        </div>
+      </div>
       <dl
         class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
         title="Factsheet"
@@ -887,6 +965,19 @@ exports[`Given there is a case available in blaise for a questionnaire should di
       <div
         data-testid="Factsheet"
       >
+        <div
+          class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+        >
+          <div
+            class="ons-panel__body "
+          >
+            This page contains information for case '
+            90001
+            ' completed by '
+            Rich
+            '
+          </div>
+        </div>
         <dl
           class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
           title="Factsheet"
@@ -1054,6 +1145,19 @@ exports[`Given there is a case available in blaise for a questionnaire should di
     <div
       data-testid="Factsheet"
     >
+      <div
+        class="ons-panel ons-panel--info ons-panel--no-title ons-panel--spacious ons-u-mt-m"
+      >
+        <div
+          class="ons-panel__body "
+        >
+          This page contains information for case '
+          90001
+          ' completed by '
+          Rich
+          '
+        </div>
+      </div>
       <dl
         class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
         title="Factsheet"
