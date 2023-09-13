@@ -24,7 +24,7 @@ export default function ManagersQuestionnairesList({ questionnaires }: ManagersQ
             </Link>
           </dt>
           <dd className="ons-metadata__value ons-grid__col ons-col-8@m">
-            0 /
+            6 /
             {' '}
             {questionnaire.dataRecordCount}
           </dd>

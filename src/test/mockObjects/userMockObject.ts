@@ -8,13 +8,13 @@ const userMockObject:User = {
 };
 
 export const caseEditorsMockObject:User[] = [{
-  name: 'Toby Maguire (0 cases)',
+  name: 'Toby Maguire (4 cases)',
   role: 'Editor',
   serverParks: ['gusty'],
   defaultServerPark: 'gusty',
 },
 {
-  name: 'Richmond Ricecake (4 cases)',
+  name: 'Richmond Ricecake (2 cases)',
   role: 'Editor',
   serverParks: ['gusty'],
   defaultServerPark: 'gusty',

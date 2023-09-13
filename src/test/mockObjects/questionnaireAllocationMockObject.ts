@@ -10,10 +10,6 @@ const questionnaireAllocationMockObject: QuestionnaireAllocationDetails = {
     editor: 'Richmond Ricecake',
     cases: ['90005', '90006'],
   },
-  {
-    editor: 'Sarah Bosslady',
-    cases: [],
-  },
   ],
 };
 
