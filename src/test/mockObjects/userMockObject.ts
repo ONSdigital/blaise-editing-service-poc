@@ -7,4 +7,24 @@ const userMockObject:User = {
   defaultServerPark: 'gusty',
 };
 
+export const caseEditorsMockObject:User[] = [{
+  name: 'Toby Maguire (0 cases)',
+  role: 'Editor',
+  serverParks: ['gusty'],
+  defaultServerPark: 'gusty',
+},
+{
+  name: 'Richmond Ricecake (4 cases)',
+  role: 'Editor',
+  serverParks: ['gusty'],
+  defaultServerPark: 'gusty',
+},
+{
+  name: 'Sarah Bosslady (0 cases)',
+  role: 'Editor',
+  serverParks: ['gusty'],
+  defaultServerPark: 'gusty',
+},
+];
+
 export default userMockObject;

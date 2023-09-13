@@ -3,26 +3,8 @@ import {
   ONSButton, ONSPanel, ONSSelect, ONSTextInput,
 } from 'blaise-design-system-react-components';
 import { useParams } from 'react-router-dom';
-
-const caseEditors:User[] = [{
-  name: 'Toby Maguire (0 cases)',
-  role: 'Editor',
-  serverParks: ['gusty'],
-  defaultServerPark: 'gusty',
-},
-{
-  name: 'Richmond Ricecake (20 cases)',
-  role: 'Editor',
-  serverParks: ['gusty'],
-  defaultServerPark: 'gusty',
-},
-{
-  name: 'Sarah Bosslady (0 cases)',
-  role: 'Editor',
-  serverParks: ['gusty'],
-  defaultServerPark: 'gusty',
-},
-];
+import { caseEditorsMockObject } from '../../test/mockObjects/userMockObject';
+import QuestionnaireAllocation from '../components/QuestionnaireAllocation';
 
 function mapEditorsToOptionList(editors:User[]) {
   return editors.map((editor) => ({
@@ -40,11 +22,13 @@ function displayAllocation(questionnaireName:string) {
         {questionnaireName}
       </ONSPanel>
 
+      <QuestionnaireAllocation />
+
       <ONSSelect
         value="Select the editor"
         id="select-editor"
         label="Select editor"
-        options={mapEditorsToOptionList(caseEditors)}
+        options={mapEditorsToOptionList(caseEditorsMockObject)}
       />
 
       <ONSTextInput
