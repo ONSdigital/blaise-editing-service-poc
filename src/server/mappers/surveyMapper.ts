@@ -1,7 +1,6 @@
-import { Questionnaire } from 'blaise-api-node-client';
-import { Survey } from '../../common/interfaces/surveyInterface';
+import { Questionnaire2, Survey } from '../../common/interfaces/surveyInterface';
 
-export default function mapSurveys(questionnaires: Questionnaire[]): Survey[] {
+export default function mapSurveys(questionnaires: Questionnaire2[]): Survey[] {
   const surveys: Survey[] = [];
 
   questionnaires.forEach((questionaire) => {

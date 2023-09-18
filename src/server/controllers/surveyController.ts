@@ -3,7 +3,7 @@ import express, { Request, Response } from 'express';
 import { Controller } from '../interfaces/controllerInterface';
 import { Configuration } from '../interfaces/configurationInterface';
 import notFound from '../../common/helpers/axiosHelper';
-import { Survey } from '../../common/interfaces/surveyInterface';
+import { Questionnaire2, Survey } from '../../common/interfaces/surveyInterface';
 import mapSurveys from '../mappers/surveyMapper';
 
 export default class SurveyController implements Controller {
@@ -25,7 +25,15 @@ export default class SurveyController implements Controller {
   async getSurveys(_request: Request, response: Response<Survey[]>) {
     try {
       const questionnaires = await this.blaiseApiClient.getQuestionnaires(this.config.ServerPark);
-      const surveys = mapSurveys(questionnaires);
+      let questionnairesWithAllocation:Questionnaire2[] = [];
+
+      questionnaires.forEach(async (questionnaire) => {
+        let questionaireWithAllocation :Questionnaire2 = questionnaire;
+        questionaireWithAllocation.caseAllocation = await this.blaiseApiClient.getReportData(this.config.ServerPark, questionnaire.name);
+        questionnairesWithAllocation.push(questionaireWithAllocation);
+      });
+
+      const surveys = mapSurveys(questionnairesWithAllocation);
 
       return response.status(200).json(surveys);
     } catch (error: unknown) {

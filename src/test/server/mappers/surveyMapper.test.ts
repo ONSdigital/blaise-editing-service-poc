@@ -1,13 +1,12 @@
-import { Questionnaire } from 'blaise-api-node-client';
-import { Survey } from '../../../common/interfaces/surveyInterface';
+import { Questionnaire2, Survey } from '../../../common/interfaces/surveyInterface';
 import mapSurveys from '../../../server/mappers/surveyMapper';
-import surveyListMockObject from '../../mockObjects/surveyListMockObject';
-import questionnaireListMockObject from '../../mockObjects/questionnaireListMockObject';
+import surveyListMockObject from '../../mockObjects/surveyListWithAllocationMockObject';
+import questionnaireListMockObject from '../../mockObjects/questionnaireListWithAllocationMockObject';
 
 describe('Map questionnaire list to survey list', () => {
   it('Should map a list of questionnaires to an expected list of surveys', () => {
     // arrange
-    const questionnaires: Questionnaire[] = questionnaireListMockObject;
+    const questionnaires: Questionnaire2[] = questionnaireListMockObject;
     const expectedSurveys: Survey[] = surveyListMockObject;
 
     // act

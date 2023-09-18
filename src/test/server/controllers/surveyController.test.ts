@@ -1,12 +1,12 @@
 import supertest, { Response } from 'supertest';
-import BlaiseClient, { QuestionnaireListMockObject } from 'blaise-api-node-client';
+import BlaiseClient, { QuestionnaireListMockObject, reportMockObject } from 'blaise-api-node-client';
 import { IMock, Mock, Times } from 'typemoq';
 import nodeServer from '../../../server/server';
 import FakeConfigurationProvider from '../configuration/FakeConfigurationProvider';
 import createAxiosError from './axiosTestHelper';
-import surveyListMockObject from '../../mockObjects/surveyListMockObject';
 import { Survey } from '../../../common/interfaces/surveyInterface';
 import mapSurveys from '../../../server/mappers/surveyMapper';
+import surveyListWithAllocationMockObject from '../../mockObjects/surveyListWithAllocationMockObject';
 
 // create fake config
 const configFake = new FakeConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
@@ -37,16 +37,27 @@ describe('Get surveys tests', () => {
     // mock blaise client to return a list of questionnaires
     blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => QuestionnaireListMockObject);
 
+    // mock blaise client to return case allocation
+    QuestionnaireListMockObject.forEach((questionnaire) => {
+      blaiseApiClientMock.setup((client) => client.getReportData(configFake.ServerPark, questionnaire.name)).returns(async () => reportMockObject);
+    });
+
     const surveyMapperMock = mapSurveys as jest.Mock<Survey[]>;
-    surveyMapperMock.mockReturnValueOnce(surveyListMockObject);
+    surveyMapperMock.mockReturnValueOnce(surveyListWithAllocationMockObject);
 
     // act
     const response: Response = await sut.get('/api/surveys');
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual(surveyListMockObject);
+    expect(response.body).toEqual(surveyListWithAllocationMockObject);
     blaiseApiClientMock.verify((client) => client.getQuestionnaires(configFake.ServerPark), Times.once());
+
+    QuestionnaireListMockObject.forEach((questionnaire) => {
+      blaiseApiClientMock.verify((client) => client.getReportData(configFake.ServerPark, questionnaire.name), Times.once());
+    });
+
+    expect(mapSurveys).toBeCalledWith('messages', expect.any(Function))
   });
 
   it('It should return a 500 response when a call is made to retrieve a list of surveys and the rest api is not availiable', async () => {
