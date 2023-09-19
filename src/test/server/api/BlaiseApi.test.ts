@@ -17,6 +17,10 @@ const blaiseApiClientMock: IMock<BlaiseApiClient> = Mock.ofType(BlaiseApiClient)
 const sut = new BlaiseApi(configFake, blaiseApiClientMock.object);
 
 describe('getCaseStatus from Blaise', () => {
+  beforeEach(() => {
+    blaiseApiClientMock.reset();
+  });
+
   it('Should retrieve a list case statuses from blaise', async () => {
     // arrange
     blaiseApiClientMock.setup((client) => client.getCaseStatus(configFake.ServerPark, questionnaireName)).returns(async () => CaseStatusListMockObject);
@@ -27,9 +31,24 @@ describe('getCaseStatus from Blaise', () => {
     // assert
     expect(result).toEqual(CaseStatusListMockObject);
   });
+
+  it('Should call the getCaseStatus function with the expected parameters', async () => {
+    // arrange
+    blaiseApiClientMock.setup((client) => client.getCaseStatus(It.isAnyString(), It.isAnyString())).returns(async () => CaseStatusListMockObject);
+
+    // act
+    await sut.getCaseStatus(questionnaireName);
+
+    // assert
+    blaiseApiClientMock.verify((client) => client.getCaseStatus(configFake.ServerPark, questionnaireName), Times.once());
+  });  
 });
 
 describe('getCase from Blaise', () => {    
+  beforeEach(() => {
+    blaiseApiClientMock.reset();
+  });
+
   it('Should retrieve a case from blaise', async () => {
     // arrange
     const caseId = '90001';
@@ -41,13 +60,25 @@ describe('getCase from Blaise', () => {
     // assert
     expect(result).toEqual(CaseResponseMockObject);
   });
+
+  it('Should call the getCase function with the expected parameters', async () => {
+    // arrange
+    const caseId = '90001';
+    blaiseApiClientMock.setup((client) => client.getCase(It.isAnyString(), It.isAnyString(), It.isAnyString())).returns(async () => CaseResponseMockObject);
+
+    // act
+    await sut.getCase(questionnaireName, caseId);
+
+    // assert
+    blaiseApiClientMock.verify((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId), Times.once());
+  });  
 });
 
 describe('getQuestionnairesWithAllocation from Blaise', () => {
   beforeEach(() => {
     blaiseApiClientMock.reset();
   });
-  it('Should retrieve a list of questionnaires from blaise and get the allocation info for all questionnaires in that list', async () => {
+  it('Should call getQuestionnaires and getReportData for all questionnaires in that list', async () => {
     // arrange
     blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => questionnaireListMockObject);
     blaiseApiClientMock.setup((client) => client.getReportData(configFake.ServerPark, It.isAnyString())).returns(async () => reportMockObject);
@@ -78,9 +109,7 @@ describe('getQuestionnairesWithAllocation from Blaise', () => {
     // act
     const result = await sut.getQuestionnairesWithAllocation();
 
-
     // assert
     expect(result).toEqual(questionnaireAllocationListMockObject)
-
   });   
 });
