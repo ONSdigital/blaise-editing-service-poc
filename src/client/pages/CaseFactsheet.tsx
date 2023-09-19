@@ -3,7 +3,7 @@ import { useAsyncRequestWithTwoParams } from '../hooks/useAsyncRequest';
 import { CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
 import AsyncContent from '../components/AsyncContent';
 import FactsheetContent from '../components/FactsheetContent';
-import { getCaseFactsheet } from '../clients/NodeApi';
+import { getCaseFactsheet } from '../api/NodeApi';
 
 function DisplayCaseFactsheet(questionnaireName: string, caseId: string) {
   const caseFactsheet = useAsyncRequestWithTwoParams<CaseFactsheetDetails, string, string>(getCaseFactsheet, questionnaireName, caseId);

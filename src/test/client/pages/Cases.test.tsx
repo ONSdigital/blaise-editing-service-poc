@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Router from 'react-router';
 import Cases from '../../../client/pages/Cases';
 import CaseDetailsBuilder from '../../builders/caseDetailsBuilder';
-import { getCases } from '../../../client/clients/NodeApi';
+import { getCases } from '../../../client/api/NodeApi';
 import { CaseDetails } from '../../../common/interfaces/caseInterface';
 
 // declare global vars
@@ -15,7 +15,7 @@ let view:RenderResult;
 jest.mock('react-router', () => ({ ...jest.requireActual('react-router'), useParams: jest.fn() }));
 jest.spyOn(Router, 'useParams').mockReturnValue({ questionnaireName });
 
-jest.mock('../../../client/clients/NodeApi');
+jest.mock('../../../client/api/NodeApi');
 const getCasesMock = getCases as jest.Mock<Promise<CaseDetails[]>>;
 
 describe('Given there are cases available in blaise for questionnaire', () => {

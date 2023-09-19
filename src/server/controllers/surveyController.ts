@@ -1,19 +1,16 @@
-import BlaiseClient from 'blaise-api-node-client';
 import express, { Request, Response } from 'express';
 import { Controller } from '../interfaces/controllerInterface';
-import { Configuration } from '../interfaces/configurationInterface';
 import notFound from '../../common/helpers/axiosHelper';
-import { Questionnaire2, Survey } from '../../common/interfaces/surveyInterface';
+import { Survey } from '../../common/interfaces/surveyInterface';
 import mapSurveys from '../mappers/surveyMapper';
+import BlaiseApi from '../api/BlaiseApi';
 
 export default class SurveyController implements Controller {
-  config: Configuration;
 
-  blaiseApiClient: BlaiseClient;
+  blaiseApi: BlaiseApi
 
-  constructor(config: Configuration, blaiseApiClient: BlaiseClient) {
-    this.config = config;
-    this.blaiseApiClient = blaiseApiClient;
+  constructor(blaiseApi: BlaiseApi) {
+    this.blaiseApi = blaiseApi;
     this.getSurveys = this.getSurveys.bind(this);
   }
 
@@ -24,16 +21,8 @@ export default class SurveyController implements Controller {
 
   async getSurveys(_request: Request, response: Response<Survey[]>) {
     try {
-      const questionnaires = await this.blaiseApiClient.getQuestionnaires(this.config.ServerPark);
-      let questionnairesWithAllocation:Questionnaire2[] = [];
-
-      questionnaires.forEach(async (questionnaire) => {
-        let questionaireWithAllocation :Questionnaire2 = questionnaire;
-        questionaireWithAllocation.caseAllocation = await this.blaiseApiClient.getReportData(this.config.ServerPark, questionnaire.name);
-        questionnairesWithAllocation.push(questionaireWithAllocation);
-      });
-
-      const surveys = mapSurveys(questionnairesWithAllocation);
+      const questionnaires = await this.blaiseApi.getQuestionnairesWithAllocation();
+      const surveys = mapSurveys(questionnaires);
 
       return response.status(200).json(surveys);
     } catch (error: unknown) {

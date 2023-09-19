@@ -1,6 +1,6 @@
-import { Questionnaire2, Survey } from '../../common/interfaces/surveyInterface';
+import { QuestionnaireAllocation, Survey } from '../../common/interfaces/surveyInterface';
 
-export default function mapSurveys(questionnaires: Questionnaire2[]): Survey[] {
+export default function mapSurveys(questionnaires: QuestionnaireAllocation[]): Survey[] {
   const surveys: Survey[] = [];
 
   questionnaires.forEach((questionaire) => {

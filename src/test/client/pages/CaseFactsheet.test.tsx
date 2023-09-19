@@ -4,7 +4,7 @@ import Router from 'react-router';
 import { CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
 import CaseBuilder from '../../builders/caseBuilder';
 import CaseFactsheet from '../../../client/pages/CaseFactsheet';
-import { getCaseFactsheet } from '../../../client/clients/NodeApi';
+import { getCaseFactsheet } from '../../../client/api/NodeApi';
 
 // declare global vars
 const questionnaireName: string = 'TEST111A';
@@ -15,7 +15,7 @@ let view:RenderResult;
 /* eslint import/no-extraneous-dependencies: 0 */
 jest.mock('react-router', () => ({ ...jest.requireActual('react-router'), useParams: jest.fn() }));
 jest.spyOn(Router, 'useParams').mockReturnValue({ questionnaireName, caseId });
-jest.mock('../../../client/clients/NodeApi');
+jest.mock('../../../client/api/NodeApi');
 const getCaseFactsheetMock = getCaseFactsheet as jest.Mock<Promise<CaseFactsheetDetails>>;
 
 describe('Given there is a case available in blaise for a questionnaire', () => {

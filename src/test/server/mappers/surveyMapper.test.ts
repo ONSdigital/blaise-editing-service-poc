@@ -1,12 +1,12 @@
-import { Questionnaire2, Survey } from '../../../common/interfaces/surveyInterface';
+import { QuestionnaireAllocation, Survey } from '../../../common/interfaces/surveyInterface';
 import mapSurveys from '../../../server/mappers/surveyMapper';
-import surveyListMockObject from '../../mockObjects/surveyListWithAllocationMockObject';
-import questionnaireListMockObject from '../../mockObjects/questionnaireListWithAllocationMockObject';
+import surveyListMockObject from '../../mockObjects/surveyAllocationListMockObject';
+import {questionnaireAllocationListMockObject} from '../../mockObjects/questionnaireListMockObject';
 
 describe('Map questionnaire list to survey list', () => {
   it('Should map a list of questionnaires to an expected list of surveys', () => {
     // arrange
-    const questionnaires: Questionnaire2[] = questionnaireListMockObject;
+    const questionnaires: QuestionnaireAllocation[] = questionnaireAllocationListMockObject;
     const expectedSurveys: Survey[] = surveyListMockObject;
 
     // act

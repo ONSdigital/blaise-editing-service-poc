@@ -4,7 +4,7 @@ import CaseBuilder from '../../builders/caseBuilder';
 import { CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
 import CaseDetailsBuilder from '../../builders/caseDetailsBuilder';
 import surveyListMockObject from '../../mockObjects/surveyListMockObject';
-import { getCaseFactsheet, getCases, getSurveys } from '../../../client/clients/NodeApi';
+import { getCaseFactsheet, getCases, getSurveys } from '../../../client/api/NodeApi';
 
 // use axios mock adapter
 const axiosMock = new MockAdapter(axios, { onNoMatch: 'throwException' });

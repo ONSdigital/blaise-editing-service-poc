@@ -1,17 +1,17 @@
 import listEndpoints, { Endpoint } from 'express-list-endpoints';
-import BlaiseApiClient from 'blaise-api-node-client';
 import { IMock, Mock } from 'typemoq';
 import NodeServer from '../../server/server';
 import FakeConfigurationProvider from './configuration/FakeConfigurationProvider';
+import BlaiseApi from '../../server/api/BlaiseApi';
 
 // create fake config
 const configFake = new FakeConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
 
 // mock blaise api client
-const blaiseApiClientMock: IMock<BlaiseApiClient> = Mock.ofType(BlaiseApiClient);
+const blaiseApiMock: IMock<BlaiseApi> = Mock.ofType(BlaiseApi);
 
 // create service to test
-const sut = NodeServer(configFake, blaiseApiClientMock.object);
+const sut = NodeServer(configFake, blaiseApiMock.object);
 
 describe('All expected routes are registered', () => {
   it('should contain expected routes', async () => {
