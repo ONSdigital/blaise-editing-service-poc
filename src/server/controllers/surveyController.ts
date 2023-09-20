@@ -20,8 +20,10 @@ export default class SurveyController implements Controller {
 
   async getSurveys(_request: Request, response: Response<Survey[]>) {
     try {
-      const questionnaires = await this.blaiseApi.getQuestionnairesWithAllocation();
-      const surveys = mapSurveys(questionnaires);
+      const questionnaires = await this.blaiseApi.getQuestionnaires();
+      const questionnairesReportData = await this.blaiseApi.getReportsForQuestionnaires(questionnaires.map((q) => q.name));
+
+      const surveys = mapSurveys(questionnaires, questionnairesReportData);
 
       return response.status(200).json(surveys);
     } catch (error: unknown) {

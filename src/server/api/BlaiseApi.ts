@@ -1,6 +1,7 @@
-import BlaiseClient, { CaseResponse, CaseStatus } from 'blaise-api-node-client';
+import BlaiseClient, {
+  CaseResponse, CaseStatus, Questionnaire, QuestionnaireReport,
+} from 'blaise-api-node-client';
 import { Configuration } from '../interfaces/configurationInterface';
-import { QuestionnaireAllocation } from '../../common/interfaces/surveyInterface';
 
 export default class BlaiseApi {
   config: Configuration;
@@ -12,7 +13,8 @@ export default class BlaiseApi {
     this.blaiseApiClient = blaiseApiClient;
     this.getCaseStatus = this.getCaseStatus.bind(this);
     this.getCaseStatus = this.getCaseStatus.bind(this);
-    this.getQuestionnairesWithAllocation = this.getQuestionnairesWithAllocation.bind(this);
+    this.getQuestionnaires = this.getQuestionnaires.bind(this);
+    this.getReportsForQuestionnaires = this.getReportsForQuestionnaires.bind(this);
   }
 
   async getCaseStatus(questionnaireName: string): Promise<CaseStatus[]> {
@@ -23,22 +25,18 @@ export default class BlaiseApi {
     return this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
   }
 
-  /* eslint no-restricted-syntax: ["off", "ForOfStatement"] */
-  /* eslint no-await-in-loop: 0 */
+  async getQuestionnaires(): Promise<Questionnaire[]> {
+    return this.blaiseApiClient.getQuestionnaires(this.config.ServerPark);
+  }
 
-  async getQuestionnairesWithAllocation(): Promise<QuestionnaireAllocation[]> {
-    const questionnairesWithAllocation:QuestionnaireAllocation[] = [];
-    const questionnaires = await this.blaiseApiClient.getQuestionnaires(this.config.ServerPark);
+  async getReportsForQuestionnaires(questionnaireNames: string[]): Promise<QuestionnaireReport[]> {
     const allocationFieldIds = ['allocation.toeditor'];
+    const results: Promise<QuestionnaireReport>[] = [];
 
-    for (const questionnaire of questionnaires) {
-      const questionaireWithAllocation :QuestionnaireAllocation = questionnaire;
-      const reportData = await this.blaiseApiClient.getQuestionnaireReportData(this.config.ServerPark, questionnaire.name, allocationFieldIds);
+    questionnaireNames.forEach((questionnaireName) => {
+      results.push(this.blaiseApiClient.getQuestionnaireReportData(this.config.ServerPark, questionnaireName, allocationFieldIds));
+    });
 
-      questionaireWithAllocation.caseAllocation = reportData.reportingData;
-      questionnairesWithAllocation.push(questionaireWithAllocation);
-    }
-
-    return questionnairesWithAllocation;
+    return Promise.all(results);
   }
 }

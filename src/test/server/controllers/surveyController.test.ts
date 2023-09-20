@@ -36,7 +36,7 @@ describe('Get surveys tests', () => {
   it('It should return a 200 response with an expected list of surveys', async () => {
     // arrange
     // mock blaise client to return a list of questionnaires with allocation
-    blaiseApiMock.setup((api) => api.getQuestionnairesWithAllocation()).returns(async () => questionnaireAllocationListMockObject);
+    blaiseApiMock.setup((api) => api.getQuestionnaires()).returns(async () => questionnaireAllocationListMockObject);
 
     const surveyMapperMock = mapSurveys as jest.Mock<Survey[]>;
     surveyMapperMock.mockReturnValueOnce(surveyAllocationListMockObject);
@@ -47,7 +47,7 @@ describe('Get surveys tests', () => {
     // assert
     expect(response.status).toEqual(200);
     expect(response.body).toEqual(surveyAllocationListMockObject);
-    blaiseApiMock.verify((api) => api.getQuestionnairesWithAllocation(), Times.once());
+    blaiseApiMock.verify((api) => api.getQuestionnaires(), Times.once());
     expect(mapSurveys).toBeCalledWith(questionnaireAllocationListMockObject);
   });
 
@@ -55,7 +55,7 @@ describe('Get surveys tests', () => {
     // arrange
     const axiosError = createAxiosError(500);
 
-    blaiseApiMock.setup((api) => api.getQuestionnairesWithAllocation()).returns(() => Promise.reject(axiosError));
+    blaiseApiMock.setup((api) => api.getQuestionnaires()).returns(() => Promise.reject(axiosError));
 
     // act
     const response: Response = await sut.get('/api/surveys');
@@ -68,7 +68,7 @@ describe('Get surveys tests', () => {
     // arrange
     const apiClientError = new Error();
 
-    blaiseApiMock.setup((api) => api.getQuestionnairesWithAllocation()).returns(() => Promise.reject(apiClientError));
+    blaiseApiMock.setup((api) => api.getQuestionnaires()).returns(() => Promise.reject(apiClientError));
 
     // act
     const response: Response = await sut.get('/api/surveys');
@@ -81,7 +81,7 @@ describe('Get surveys tests', () => {
     // arrange
     const axiosError = createAxiosError(404);
 
-    blaiseApiMock.setup((api) => api.getQuestionnairesWithAllocation()).returns(() => Promise.reject(axiosError));
+    blaiseApiMock.setup((api) => api.getQuestionnaires()).returns(() => Promise.reject(axiosError));
 
     // act
     const response: Response = await sut.get('/api/surveys');

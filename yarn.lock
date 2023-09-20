@@ -4319,7 +4319,7 @@ blaise-api-node-client@ONSDigital/blaise-api-node-client#BL5FRS-67:
 
 "blaise-login-react-client@https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-client?BL5FRS-57":
   version "1.0.0"
-  resolved "https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-client?BL5FRS-57#35ad12d4dfd1e57e1dfbcd92d651a4da631ddf24"
+  resolved "https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-client?BL5FRS-57#f6457f21054342c3ba4bf89f47c1ab387295fcdc"
   dependencies:
     axios "~0.21.0"
     blaise-api-node-client ONSDigital/blaise-api-node-client#BL5FRS-67
@@ -4333,7 +4333,7 @@ blaise-api-node-client@ONSDigital/blaise-api-node-client#BL5FRS-67:
 
 "blaise-login-react-server@https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-server?BL5FRS-57":
   version "1.1.0"
-  resolved "https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-server?BL5FRS-57#f8ce4a0e818d7c3d7f0393e4a341d4ff85c3ff2d"
+  resolved "https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-server?BL5FRS-57#a58499b3c77ea65a748ebcc0d6be82b1be348182"
   dependencies:
     "@babel/preset-env" "^7.14.7"
     axios "^0.21.1"
