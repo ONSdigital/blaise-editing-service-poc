@@ -5,9 +5,9 @@ import FakeConfigurationProvider from '../configuration/FakeConfigurationProvide
 import createAxiosError from './axiosTestHelper';
 import { Survey } from '../../../common/interfaces/surveyInterface';
 import mapSurveys from '../../../server/mappers/surveyMapper';
-import {questionnaireAllocationListMockObject} from '../../mockObjects/questionnaireListMockObject';
+import { questionnaireAllocationListMockObject } from '../../mockObjects/questionnaireListMockObject';
 import BlaiseApi from '../../../server/api/BlaiseApi';
-import surveyAllocationListMockObject from '../../mockObjects/surveyAllocationListMockObject'
+import surveyAllocationListMockObject from '../../mockObjects/surveyAllocationListMockObject';
 
 // create fake config
 const configFake = new FakeConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);

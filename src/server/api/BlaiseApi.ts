@@ -2,40 +2,39 @@ import BlaiseClient, { CaseResponse, CaseStatus } from 'blaise-api-node-client';
 import { Configuration } from '../interfaces/configurationInterface';
 import { QuestionnaireAllocation } from '../../common/interfaces/surveyInterface';
 
-export default class BlaiseApi  {
-    config: Configuration;
+export default class BlaiseApi {
+  config: Configuration;
 
-    blaiseApiClient: BlaiseClient;
+  blaiseApiClient: BlaiseClient;
 
-    constructor(config: Configuration, blaiseApiClient: BlaiseClient) {
-        this.config = config;
-        this.blaiseApiClient = blaiseApiClient;
-        this.getCaseStatus = this.getCaseStatus.bind(this);
-        this.getCaseStatus = this.getCaseStatus.bind(this);
-        this.getQuestionnairesWithAllocation = this.getQuestionnairesWithAllocation.bind(this);
-      }
+  constructor(config: Configuration, blaiseApiClient: BlaiseClient) {
+    this.config = config;
+    this.blaiseApiClient = blaiseApiClient;
+    this.getCaseStatus = this.getCaseStatus.bind(this);
+    this.getCaseStatus = this.getCaseStatus.bind(this);
+    this.getQuestionnairesWithAllocation = this.getQuestionnairesWithAllocation.bind(this);
+  }
 
-    async getCaseStatus(questionnaireName: string): Promise<CaseStatus[]> {
-        return await this.blaiseApiClient.getCaseStatus(this.config.ServerPark, questionnaireName);
-    }
+  async getCaseStatus(questionnaireName: string): Promise<CaseStatus[]> {
+    return this.blaiseApiClient.getCaseStatus(this.config.ServerPark, questionnaireName);
+  }
 
-    async getCase(questionnaireName: string, caseId: string): Promise<CaseResponse> {
-        return await this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
-    }
+  async getCase(questionnaireName: string, caseId: string): Promise<CaseResponse> {
+    return this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
+  }
 
-    async getQuestionnairesWithAllocation(): Promise<QuestionnaireAllocation[]> {
-        let questionnairesWithAllocation:QuestionnaireAllocation[] = [];
+  async getQuestionnairesWithAllocation(): Promise<QuestionnaireAllocation[]> {
+    const questionnairesWithAllocation:QuestionnaireAllocation[] = [];
 
-        const questionnaires = await this.blaiseApiClient.getQuestionnaires(this.config.ServerPark);
+    const questionnaires = await this.blaiseApiClient.getQuestionnaires(this.config.ServerPark);
 
-        for (const questionnaire of questionnaires)
-        {
-            const questionaireWithAllocation :QuestionnaireAllocation = questionnaire;
-            let reportData = await this.blaiseApiClient.getQuestionnaireReportData(this.config.ServerPark, questionnaire.name);
-            questionaireWithAllocation.caseAllocation = reportData.reportingData;
-            questionnairesWithAllocation.push(questionaireWithAllocation);            
-        }
-       
-        return questionnairesWithAllocation;
-    }
+    questionnaires.forEach(async (questionnaire) => {
+      const questionaireWithAllocation :QuestionnaireAllocation = questionnaire;
+      const reportData = await this.blaiseApiClient.getQuestionnaireReportData(this.config.ServerPark, questionnaire.name);
+      questionaireWithAllocation.caseAllocation = reportData.reportingData;
+      questionnairesWithAllocation.push(questionaireWithAllocation);
+    });
+
+    return questionnairesWithAllocation;
+  }
 }

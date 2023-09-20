@@ -6,8 +6,7 @@ import mapSurveys from '../mappers/surveyMapper';
 import BlaiseApi from '../api/BlaiseApi';
 
 export default class SurveyController implements Controller {
-
-  blaiseApi: BlaiseApi
+  blaiseApi: BlaiseApi;
 
   constructor(blaiseApi: BlaiseApi) {
     this.blaiseApi = blaiseApi;

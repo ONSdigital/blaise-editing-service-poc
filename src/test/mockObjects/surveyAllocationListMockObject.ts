@@ -74,7 +74,7 @@ const surveyAllocationListMockObject: Survey[] = [{
         CaseId: '9003',
         HOut: '110',
         ToEditor: 'jakew',
-      }    ],
+      }],
     }],
 }];
 
