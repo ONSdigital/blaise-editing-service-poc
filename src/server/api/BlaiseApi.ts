@@ -10,6 +10,8 @@ export default class BlaiseApi  {
     constructor(config: Configuration, blaiseApiClient: BlaiseClient) {
         this.config = config;
         this.blaiseApiClient = blaiseApiClient;
+        this.getCaseStatus = this.getCaseStatus.bind(this);
+        this.getCaseStatus = this.getCaseStatus.bind(this);
         this.getQuestionnairesWithAllocation = this.getQuestionnairesWithAllocation.bind(this);
       }
 
@@ -26,14 +28,14 @@ export default class BlaiseApi  {
 
         const questionnaires = await this.blaiseApiClient.getQuestionnaires(this.config.ServerPark);
 
-        questionnaires.forEach(async (questionnaire) => {
-          let questionaireWithAllocation :QuestionnaireAllocation = questionnaire;
-          const reportData = await this.blaiseApiClient.getReportData(this.config.ServerPark, questionnaire.name);
-
-          questionaireWithAllocation.caseAllocation = reportData.reportingData;
-          questionnairesWithAllocation.push(questionaireWithAllocation);
-        });  
-        
+        for (const questionnaire of questionnaires)
+        {
+            let questionaireWithAllocation :QuestionnaireAllocation = questionnaire;
+            const reportData = await this.blaiseApiClient.getReportData(this.config.ServerPark, questionnaire.name);
+            questionaireWithAllocation.caseAllocation = reportData.reportingData;
+            questionnairesWithAllocation.push(questionaireWithAllocation);
+        }
+       
         return questionnairesWithAllocation;
     }
 }
