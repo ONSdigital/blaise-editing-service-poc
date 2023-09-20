@@ -4279,8 +4279,8 @@ binary-extensions@^2.0.0:
 
 blaise-api-node-client@ONSDigital/blaise-api-node-client#BL5FRS-67:
   version "1.0.0"
-  uid "8924d5a5e7ebc010b3739aee613c50dd508d725f"
-  resolved "https://codeload.github.com/ONSDigital/blaise-api-node-client/tar.gz/8924d5a5e7ebc010b3739aee613c50dd508d725f"
+  uid "15f64bd3e788116d29aeb3b91e01b6c7324f98b5"
+  resolved "https://codeload.github.com/ONSDigital/blaise-api-node-client/tar.gz/15f64bd3e788116d29aeb3b91e01b6c7324f98b5"
   dependencies:
     "@babel/preset-env" "^7.14.7"
     axios "^0.21.1"
@@ -4289,7 +4289,7 @@ blaise-api-node-client@ONSDigital/blaise-api-node-client#BL5FRS-67:
 
 "blaise-api-node-client@git+https://github.com/ONSdigital/blaise-api-node-client#BL5FRS-67":
   version "1.0.0"
-  resolved "git+https://github.com/ONSdigital/blaise-api-node-client#8924d5a5e7ebc010b3739aee613c50dd508d725f"
+  resolved "git+https://github.com/ONSdigital/blaise-api-node-client#15f64bd3e788116d29aeb3b91e01b6c7324f98b5"
   dependencies:
     "@babel/preset-env" "^7.14.7"
     axios "^0.21.1"
@@ -4317,9 +4317,9 @@ blaise-api-node-client@ONSDigital/blaise-api-node-client#BL5FRS-67:
     path-parse "^1.0.7"
     typescript "~4.2.2"
 
-"blaise-login-react-client@https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-client?0fb53fc31793427d7664e2e385686efbb7f53146":
+"blaise-login-react-client@https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-client?a333331ff5e8603e5298612bb19140e30719d314":
   version "1.0.0"
-  resolved "https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-client?0fb53fc31793427d7664e2e385686efbb7f53146#5e9f7c3f66b9e6c252dfd9ab0f09499357f1e344"
+  resolved "https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-client?a333331ff5e8603e5298612bb19140e30719d314#080f2d6296cfdd6ed51939e1b56bf0addfa2cc10"
   dependencies:
     axios "~0.21.0"
     blaise-api-node-client ONSDigital/blaise-api-node-client#BL5FRS-67
@@ -4331,9 +4331,9 @@ blaise-api-node-client@ONSDigital/blaise-api-node-client#BL5FRS-67:
     react-router-dom "^6.11.2"
     universal-cookie "^4.0.4"
 
-"blaise-login-react-server@https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-server?c1fc3664c75e40ae8504705cf6328a421a5b013f":
+"blaise-login-react-server@https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-server?6e9e2d97d50d0cf1f5dab7bb948dec7a018d2473":
   version "1.1.0"
-  resolved "https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-server?c1fc3664c75e40ae8504705cf6328a421a5b013f#656dc1e42b4291e083851829a8e440f80ab6b64d"
+  resolved "https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-server?6e9e2d97d50d0cf1f5dab7bb948dec7a018d2473#f857edf92fb52607b92979ee263931d33349cb59"
   dependencies:
     "@babel/preset-env" "^7.14.7"
     axios "^0.21.1"
@@ -4540,9 +4540,9 @@ caniuse-lite@^1.0.30001503:
   integrity sha512-2S9nK0G/mE+jasCUsMPlARhRCts1ebcp2Ji8Y8PWi4NDE1iRdLCnEPHkEfeBrGC45L4isBx5ur3IQ6yTE2mRZw==
 
 caniuse-lite@^1.0.30001517:
-  version "1.0.30001535"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001535.tgz#908a5b7ef11172f51f0b88f3d850aef1c6a3cf7b"
-  integrity sha512-48jLyUkiWFfhm/afF7cQPqPjaUmSraEhK4j+FCTJpgnGGEZHqyLe3hmWH7lIooZdSzXL0ReMvHz0vKDoTBsrwg==
+  version "1.0.30001538"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001538.tgz#9dbc6b9af1ff06b5eb12350c2012b3af56744f3f"
+  integrity sha512-HWJnhnID+0YMtGlzcp3T9drmBJUVDchPJ08tpUGFLs9CYlwWPH2uLgpHn8fND5pCgXVtnGS3H4QR9XLMHVNkHw==
 
 case-sensitive-paths-webpack-plugin@^2.4.0:
   version "2.4.0"
@@ -5460,9 +5460,9 @@ electron-to-chromium@^1.4.431:
   integrity sha512-YYbXHIBxAHe3KWvGOJOuWa6f3tgow44rBW+QAuwVp2DvGqNZeE//K2MowNdWS7XE8li5cgQDrX1LdBr41LufkA==
 
 electron-to-chromium@^1.4.477:
-  version "1.4.523"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.523.tgz#f82f99243c827df05c26776d49712cb284972df6"
-  integrity sha512-9AreocSUWnzNtvLcbpng6N+GkXnCcBR80IQkxRC9Dfdyg4gaWNUPBujAHUpKkiUkoSoR9UlhA4zD/IgBklmhzg==
+  version "1.4.525"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.525.tgz#614284f33901fbecd3e90176c0d60590cd939700"
+  integrity sha512-GIZ620hDK4YmIqAWkscG4W6RwY6gOx1y5J6f4JUQwctiJrqH2oxZYU4mXHi35oV32tr630UcepBzSBGJ/WYcZA==
 
 emittery@^0.10.2:
   version "0.10.2"
@@ -6256,10 +6256,15 @@ flatted@^3.1.0:
   resolved "https://registry.npmjs.org/flatted/-/flatted-3.2.7.tgz"
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
 
-follow-redirects@^1.0.0, follow-redirects@^1.14.0, follow-redirects@^1.15.0:
+follow-redirects@^1.0.0, follow-redirects@^1.15.0:
   version "1.15.2"
   resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz"
   integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
+
+follow-redirects@^1.14.0:
+  version "1.15.3"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.3.tgz#fe2f3ef2690afce7e82ed0b44db08165b207123a"
+  integrity sha512-1VzOtuEM8pC9SFU1E+8KfTjZyMztRsgEfwQl44z8A25uy13jSzTj6dyK2Df52iV0vgHCfBwLhDWevLn95w5v6Q==
 
 for-each@^0.3.3:
   version "0.3.3"

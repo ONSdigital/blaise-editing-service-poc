@@ -30,10 +30,10 @@ export default class BlaiseApi  {
 
         for (const questionnaire of questionnaires)
         {
-            let questionaireWithAllocation :QuestionnaireAllocation = questionnaire;
-            const reportData = await this.blaiseApiClient.getReportData(this.config.ServerPark, questionnaire.name);
+            const questionaireWithAllocation :QuestionnaireAllocation = questionnaire;
+            let reportData = await this.blaiseApiClient.getQuestionnaireReportData(this.config.ServerPark, questionnaire.name);
             questionaireWithAllocation.caseAllocation = reportData.reportingData;
-            questionnairesWithAllocation.push(questionaireWithAllocation);
+            questionnairesWithAllocation.push(questionaireWithAllocation);            
         }
        
         return questionnairesWithAllocation;
