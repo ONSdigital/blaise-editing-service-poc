@@ -1,9 +1,9 @@
-import { Questionnaire } from 'blaise-api-node-client';
 import React, { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
+import { QuestionnaireAllocation } from '../../common/interfaces/surveyInterface';
 
 interface ManagersQuestionnairesListProps {
-  questionnaires: Questionnaire[];
+  questionnaires: QuestionnaireAllocation[];
 }
 
 export default function ManagersQuestionnairesList({ questionnaires }: ManagersQuestionnairesListProps): ReactElement {

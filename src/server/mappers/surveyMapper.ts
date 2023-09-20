@@ -16,6 +16,5 @@ export default function mapSurveys(questionnaires: QuestionnaireAllocation[]): S
       surveyElement.questionnaires.push(questionaire);
     }
   });
-
   return surveys;
 }

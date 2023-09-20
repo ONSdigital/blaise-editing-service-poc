@@ -23,17 +23,21 @@ export default class BlaiseApi {
     return this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
   }
 
+  /* eslint no-restricted-syntax: ["off", "ForOfStatement"] */
+  /* eslint no-await-in-loop: 0 */
+
   async getQuestionnairesWithAllocation(): Promise<QuestionnaireAllocation[]> {
     const questionnairesWithAllocation:QuestionnaireAllocation[] = [];
-
     const questionnaires = await this.blaiseApiClient.getQuestionnaires(this.config.ServerPark);
+    const allocationFieldIds = ['allocation.toeditor'];
 
-    questionnaires.forEach(async (questionnaire) => {
+    for (const questionnaire of questionnaires) {
       const questionaireWithAllocation :QuestionnaireAllocation = questionnaire;
-      const reportData = await this.blaiseApiClient.getQuestionnaireReportData(this.config.ServerPark, questionnaire.name);
+      const reportData = await this.blaiseApiClient.getQuestionnaireReportData(this.config.ServerPark, questionnaire.name, allocationFieldIds);
+
       questionaireWithAllocation.caseAllocation = reportData.reportingData;
       questionnairesWithAllocation.push(questionaireWithAllocation);
-    });
+    }
 
     return questionnairesWithAllocation;
   }

@@ -83,13 +83,16 @@ describe('getCase from Blaise', () => {
 });
 
 describe('getQuestionnairesWithAllocation from Blaise', () => {
+  const fieldIds = ['allocation.toeditor'];
+
   beforeEach(() => {
     blaiseApiClientMock.reset();
   });
   it('Should call getQuestionnaires and getReportData for all questionnaires in that list', async () => {
     // arrange
     blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => questionnaireListMockObject);
-    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, It.isAnyString())).returns(async () => questionnaireReport1MockObject);
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, It.isAnyString(), fieldIds))
+      .returns(async () => questionnaireReport1MockObject);
 
     // act
     await sut.getQuestionnairesWithAllocation();
@@ -98,7 +101,7 @@ describe('getQuestionnairesWithAllocation from Blaise', () => {
     blaiseApiClientMock.verify((client) => client.getQuestionnaires(configFake.ServerPark), Times.once());
 
     questionnaireListMockObject.forEach((questionnaire) => {
-      blaiseApiClientMock.verify((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire.name), Times.once());
+      blaiseApiClientMock.verify((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire.name, fieldIds), Times.once());
     });
   });
 
@@ -109,22 +112,22 @@ describe('getQuestionnairesWithAllocation from Blaise', () => {
     // mock questionnaire 1 report data
     const reportdata1Mock = questionnaireReport1MockObject;
     reportdata1Mock.reportingData = questionnaire1CaseAllocationMock;
-    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire1Mock.name)).returns(async () => reportdata1Mock);
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire1Mock.name, fieldIds)).returns(async () => reportdata1Mock);
 
     // mock questionnaire 2 report data
     const reportdata2Mock = questionnaireReport2MockObject;
     reportdata2Mock.reportingData = questionnaire2CaseAllocationMock;
-    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire2Mock.name)).returns(async () => reportdata2Mock);
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire2Mock.name, fieldIds)).returns(async () => reportdata2Mock);
 
     // mock questionnaire 3 report data
     const reportdata3Mock = questionnaireReport3MockObject;
     reportdata3Mock.reportingData = questionnaire3CaseAllocationMock;
-    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire3Mock.name)).returns(async () => reportdata3Mock);
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire3Mock.name, fieldIds)).returns(async () => reportdata3Mock);
 
     // mock questionnaire 4 report data
     const reportdata4Mock = questionnaireReport4MockObject;
     reportdata4Mock.reportingData = questionnaire4CaseAllocationMock;
-    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire4Mock.name)).returns(async () => reportdata4Mock);
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire4Mock.name, fieldIds)).returns(async () => reportdata4Mock);
 
     // act
     const result = await sut.getQuestionnairesWithAllocation();

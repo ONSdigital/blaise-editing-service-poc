@@ -6,5 +6,5 @@ export interface Survey {
 }
 
 export interface QuestionnaireAllocation extends Questionnaire {
-  caseAllocation?: CaseData
+  caseAllocation?: CaseData[]
 }
