@@ -3,8 +3,6 @@ import { IMock, Mock, Times } from 'typemoq';
 import nodeServer from '../../../server/server';
 import FakeConfigurationProvider from '../configuration/FakeConfigurationProvider';
 import createAxiosError from './axiosTestHelper';
-import { Survey } from '../../../common/interfaces/surveyInterface';
-import mapSurveys from '../../../server/mappers/surveyMapper';
 import { questionnaireAllocationListMockObject } from '../../mockObjects/questionnaireListMockObject';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import surveyAllocationListMockObject from '../../mockObjects/surveyAllocationListMockObject';
@@ -14,9 +12,6 @@ const configFake = new FakeConfigurationProvider('restapi.blaise.com', 'dist', 5
 
 // mock blaise api client
 const blaiseApiMock: IMock<BlaiseApi> = Mock.ofType(BlaiseApi);
-
-// mock survey mapper
-jest.mock('../../../server/mappers/surveyMapper');
 
 // need to test the endpoints through the express server
 const server = nodeServer(configFake, blaiseApiMock.object);
@@ -38,9 +33,6 @@ describe('Get surveys tests', () => {
     // mock blaise client to return a list of questionnaires with allocation
     blaiseApiMock.setup((api) => api.getQuestionnaires()).returns(async () => questionnaireAllocationListMockObject);
 
-    const surveyMapperMock = mapSurveys as jest.Mock<Survey[]>;
-    surveyMapperMock.mockReturnValueOnce(surveyAllocationListMockObject);
-
     // act
     const response: Response = await sut.get('/api/surveys');
 
@@ -48,7 +40,6 @@ describe('Get surveys tests', () => {
     expect(response.status).toEqual(200);
     expect(response.body).toEqual(surveyAllocationListMockObject);
     blaiseApiMock.verify((api) => api.getQuestionnaires(), Times.once());
-    expect(mapSurveys).toBeCalledWith(questionnaireAllocationListMockObject);
   });
 
   it('It should return a 500 response when a call is made to retrieve a list of surveys and the rest api is not availiable', async () => {
