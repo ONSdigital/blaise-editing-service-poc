@@ -20,17 +20,17 @@ export default class BlaiseApi {
   }
 
   async getCaseStatus(questionnaireName: string): Promise<CaseStatus[]> {
-    return await this.blaiseApiClient.getCaseStatus(this.config.ServerPark, questionnaireName);
+    return this.blaiseApiClient.getCaseStatus(this.config.ServerPark, questionnaireName);
   }
 
   async getCase(questionnaireName: string, caseId: string): Promise<CaseResponse> {
-    return await this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
+    return this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
   }
 
   async getQuestionnaires(): Promise<QuestionnaireAllocation[]> {
     const questionnaires = await this.blaiseApiClient.getQuestionnaires(this.config.ServerPark) as QuestionnaireAllocation[];
     const questionnairesReportData = await this.getReportsForQuestionnaires(questionnaires);
-    
+
     return mapQuestionnaireAllocation(questionnaires, questionnairesReportData);
   }
 

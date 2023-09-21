@@ -88,7 +88,7 @@ describe('getQuestionnairesWithAllocation from Blaise', () => {
   beforeEach(() => {
     blaiseApiClientMock.reset();
   });
-    it('Should call getQuestionnaires and getReportData for all questionnaires in that list', async () => {
+  it('Should call getQuestionnaires and getReportData for all questionnaires in that list', async () => {
     // arrange
     blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => questionnaireListMockObject);
     blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, It.isAnyString(), fieldIds))

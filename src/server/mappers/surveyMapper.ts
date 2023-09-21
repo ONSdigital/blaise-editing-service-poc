@@ -3,7 +3,7 @@ import { QuestionnaireAllocation, Survey } from '../../common/interfaces/surveyI
 export default function mapSurveys(questionnaires: QuestionnaireAllocation[]): Survey[] {
   const surveys: Survey[] = [];
 
-  questionnaires.forEach((questionnaire) => {   
+  questionnaires.forEach((questionnaire) => {
     const surveyName = questionnaire.name.slice(0, 3);
     const surveyElement = surveys.find((survey) => survey.name === surveyName);
 
