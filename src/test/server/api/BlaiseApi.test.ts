@@ -88,14 +88,14 @@ describe('getQuestionnairesWithAllocation from Blaise', () => {
   beforeEach(() => {
     blaiseApiClientMock.reset();
   });
-  /*   it('Should call getQuestionnaires and getReportData for all questionnaires in that list', async () => {
+    it('Should call getQuestionnaires and getReportData for all questionnaires in that list', async () => {
     // arrange
     blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => questionnaireListMockObject);
     blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, It.isAnyString(), fieldIds))
       .returns(async () => questionnaireReport1MockObject);
 
     // act
-    await sut.getQuestionnairesWithAllocation();
+    await sut.getQuestionnaires();
 
     // assert
     blaiseApiClientMock.verify((client) => client.getQuestionnaires(configFake.ServerPark), Times.once());
@@ -103,7 +103,7 @@ describe('getQuestionnairesWithAllocation from Blaise', () => {
     questionnaireListMockObject.forEach((questionnaire) => {
       blaiseApiClientMock.verify((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire.name, fieldIds), Times.once());
     });
-  }); */
+  });
 
   it('Should return the expected list of questionnaires with allocation information', async () => {
     // arrange

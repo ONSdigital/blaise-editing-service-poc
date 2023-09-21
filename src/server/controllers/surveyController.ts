@@ -21,7 +21,6 @@ export default class SurveyController implements Controller {
   async getSurveys(_request: Request, response: Response<Survey[]>) {
     try {
       const questionnaires = await this.blaiseApi.getQuestionnaires();
-
       const surveys = mapSurveys(questionnaires);
 
       return response.status(200).json(surveys);
