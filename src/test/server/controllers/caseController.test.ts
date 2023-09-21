@@ -1,13 +1,11 @@
 import supertest, { Response } from 'supertest';
-import { CaseResponse, CaseStatus } from 'blaise-api-node-client';
+import { CaseStatus } from 'blaise-api-node-client';
 import { IMock, Mock, Times } from 'typemoq';
 import nodeServer from '../../../server/server';
 import FakeConfigurationProvider from '../configuration/FakeConfigurationProvider';
-import { CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
 import createAxiosError from './axiosTestHelper';
-import CaseBuilder from '../../builders/caseBuilder';
 import BlaiseApi from '../../../server/api/BlaiseApi';
-import { CaseDetailsListMockObject, CaseStatusListMockObject } from '../../mockObjects/caseMockObject';
+import { CaseDetailsListMockObject, CaseFactsheetMockObject, CaseResponseMockObject, CaseStatusListMockObject } from '../../mockObjects/caseMockObject';
 
 // create fake config
 const configFake = new FakeConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
@@ -15,10 +13,6 @@ const configFake = new FakeConfigurationProvider('restapi.blaise.com', 'dist', 5
 // mock blaise api client
 const blaiseApiMock: IMock<BlaiseApi> = Mock.ofType(BlaiseApi);
 
-// create case mock objects
-const caseBuilder = new CaseBuilder(2);
-const CaseResponseMockObject: CaseResponse = caseBuilder.buildCaseResponse();
-const CaseFactsheetMockObject: CaseFactsheetDetails = caseBuilder.buildCaseFactsheet();
 
 // need to test the endpoints through the express server
 const server = nodeServer(configFake, blaiseApiMock.object);
@@ -110,6 +104,7 @@ describe('Get case fact sheet tests', () => {
     const questionnaireName: string = 'TEST111A';
 
     blaiseApiMock.setup((api) => api.getCase(questionnaireName, caseId)).returns(async () => CaseResponseMockObject);
+    console.debug(CaseFactsheetMockObject);
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
