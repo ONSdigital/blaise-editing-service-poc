@@ -5,7 +5,7 @@ import nodeServer from '../../../server/server';
 import FakeConfigurationProvider from '../configuration/FakeConfigurationProvider';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
-import { CaseDetailsListMockObject, CaseFactsheetMockObject, CaseResponseMockObject, CaseStatusListMockObject } from '../../mockObjects/caseMockObject';
+import { caseDetailsListMockObject, caseFactsheetMockObject, caseResponseMockObject, caseStatusListMockObject } from '../../mockObjects/caseMockObject';
 
 // create fake config
 const configFake = new FakeConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
@@ -33,7 +33,7 @@ describe('Get case list tests', () => {
     // arrange
     // mock blaise client to return a list of cases
     const questionnaireName: string = 'OPN2201A';
-    const caseStatusList: CaseStatus[] = CaseStatusListMockObject;
+    const caseStatusList: CaseStatus[] = caseStatusListMockObject;
 
     blaiseApiMock.setup((api) => api.getCaseStatus(questionnaireName)).returns(async () => caseStatusList);
 
@@ -42,7 +42,7 @@ describe('Get case list tests', () => {
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual(CaseDetailsListMockObject);
+    expect(response.body).toEqual(caseDetailsListMockObject);
     blaiseApiMock.verify((api) => api.getCaseStatus(questionnaireName), Times.once());
   });
 
@@ -103,15 +103,15 @@ describe('Get case fact sheet tests', () => {
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
 
-    blaiseApiMock.setup((api) => api.getCase(questionnaireName, caseId)).returns(async () => CaseResponseMockObject);
-    console.debug(CaseFactsheetMockObject);
+    blaiseApiMock.setup((api) => api.getCase(questionnaireName, caseId)).returns(async () => caseResponseMockObject);
+    console.debug(caseFactsheetMockObject);
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.text).toEqual(JSON.stringify(CaseFactsheetMockObject));
+    expect(response.text).toEqual(JSON.stringify(caseFactsheetMockObject));
     blaiseApiMock.verify((api) => api.getCase(questionnaireName, caseId), Times.once());
   });
 

@@ -16,7 +16,7 @@ const person2Name ='Bartholomew Edgar';
 const person1Dob = new Date(1980, 1, 15);
 const person2Dob = new Date(1995, 5, 11);
 
-export const CaseStatusListMockObject:CaseStatus[] = [{
+export const caseStatusListMockObject:CaseStatus[] = [{
   primaryKey: case1PrimaryKey,
   outcome: case1outcome,
 }, {
@@ -27,7 +27,7 @@ export const CaseStatusListMockObject:CaseStatus[] = [{
   outcome: case3outcome,
 }];
 
-export const CaseDetailsListMockObject:CaseDetails[] = [
+export const caseDetailsListMockObject:CaseDetails[] = [
   {
     CaseId: case1PrimaryKey,
     CaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=${case1PrimaryKey}`,
@@ -48,7 +48,7 @@ export const CaseDetailsListMockObject:CaseDetails[] = [
   },
 ];
 
-export const CaseResponseMockObject: CaseResponse =     {
+export const caseResponseMockObject: CaseResponse =     {
   caseId: case1PrimaryKey,
   fieldData: {
     'qiD.Serial_Number': case1PrimaryKey,      
@@ -69,7 +69,7 @@ export const CaseResponseMockObject: CaseResponse =     {
   }
 }
 
-export const CaseFactsheetMockObject:CaseFactsheetDetails =  {
+export const caseFactsheetMockObject:CaseFactsheetDetails =  {
   CaseId: case1PrimaryKey,
   OutcomeCode: case1outcome,
   InterviewerName: 'Rich',
