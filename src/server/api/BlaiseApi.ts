@@ -1,9 +1,9 @@
-import BlaiseClient, {
-  CaseResponse, CaseStatus, Questionnaire, QuestionnaireReport,
-} from 'blaise-api-node-client';
+import BlaiseClient, { Questionnaire, QuestionnaireReport } from 'blaise-api-node-client';
 import { Configuration } from '../interfaces/configurationInterface';
 import { QuestionnaireAllocation } from '../../common/interfaces/surveyInterface';
 import mapQuestionnaireAllocation from '../mappers/questionnaireMapper';
+import { mapCaseDetails, mapCaseFactsheet } from '../mappers/caseMapper';
+import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
 
 export default class BlaiseApi {
   config: Configuration;
@@ -13,18 +13,24 @@ export default class BlaiseApi {
   constructor(config: Configuration, blaiseApiClient: BlaiseClient) {
     this.config = config;
     this.blaiseApiClient = blaiseApiClient;
-    this.getCaseStatus = this.getCaseStatus.bind(this);
-    this.getCaseStatus = this.getCaseStatus.bind(this);
+    this.getCaseDetails = this.getCaseDetails.bind(this);
+    this.getCaseFactsheet = this.getCaseFactsheet.bind(this);
     this.getQuestionnaires = this.getQuestionnaires.bind(this);
     this.getReportsForQuestionnaires = this.getReportsForQuestionnaires.bind(this);
   }
 
-  async getCaseStatus(questionnaireName: string): Promise<CaseStatus[]> {
-    return this.blaiseApiClient.getCaseStatus(this.config.ServerPark, questionnaireName);
+  async getCaseDetails(questionnaireName: string): Promise<CaseDetails[]> {
+    const caseStatusList = await this.blaiseApiClient.getCaseStatus(this.config.ServerPark, questionnaireName);
+    const caseDetails = mapCaseDetails(caseStatusList, questionnaireName, this.config.ExternalWebUrl);
+
+    return caseDetails;
   }
 
-  async getCase(questionnaireName: string, caseId: string): Promise<CaseResponse> {
-    return this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
+  async getCaseFactsheet(questionnaireName: string, caseId: string): Promise<CaseFactsheetDetails> {
+    const caseResponse = await this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
+    const casefactsheet = mapCaseFactsheet(caseResponse);
+
+    return casefactsheet;
   }
 
   async getQuestionnaires(): Promise<QuestionnaireAllocation[]> {

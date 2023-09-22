@@ -1,4 +1,4 @@
-import BlaiseApiClient, { CaseResponseMockObject, CaseStatusListMockObject } from 'blaise-api-node-client';
+import BlaiseApiClient from 'blaise-api-node-client';
 import {
   IMock, It, Mock, Times,
 } from 'typemoq';
@@ -11,8 +11,11 @@ import {
 import {
   questionnaireReport1MockObject, questionnaireReport2MockObject, questionnaireReport3MockObject, questionnaireReport4MockObject,
 } from '../../mockObjects/questionnaireReportMockObjects';
+import {
+  caseDetailsListMockObject, caseFactsheetMockObject, caseResponseMockObject, caseStatusListMockObject,
+} from '../../mockObjects/caseMockObject';
 
-const questionnaireName = 'LMS2201_LT1';
+const questionnaireName = 'OPN2201A';
 
 // create fake config
 const configFake = new FakeConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
@@ -29,30 +32,30 @@ describe('getCaseStatus from Blaise', () => {
     blaiseApiClientMock.reset();
   });
 
-  it('Should retrieve a list case statuses from blaise', async () => {
+  it('Should retrieve a list case details from blaise', async () => {
     // arrange
-    blaiseApiClientMock.setup((client) => client.getCaseStatus(configFake.ServerPark, questionnaireName)).returns(async () => CaseStatusListMockObject);
+    blaiseApiClientMock.setup((client) => client.getCaseStatus(configFake.ServerPark, questionnaireName)).returns(async () => caseStatusListMockObject);
 
     // act
-    const result = await sut.getCaseStatus(questionnaireName);
+    const result = await sut.getCaseDetails(questionnaireName);
 
     // assert
-    expect(result).toEqual(CaseStatusListMockObject);
+    expect(result).toEqual(caseDetailsListMockObject);
   });
 
   it('Should call the getCaseStatus function with the expected parameters', async () => {
     // arrange
-    blaiseApiClientMock.setup((client) => client.getCaseStatus(It.isAnyString(), It.isAnyString())).returns(async () => CaseStatusListMockObject);
+    blaiseApiClientMock.setup((client) => client.getCaseStatus(It.isAnyString(), It.isAnyString())).returns(async () => caseStatusListMockObject);
 
     // act
-    await sut.getCaseStatus(questionnaireName);
+    await sut.getCaseDetails(questionnaireName);
 
     // assert
     blaiseApiClientMock.verify((client) => client.getCaseStatus(configFake.ServerPark, questionnaireName), Times.once());
   });
 });
 
-describe('getCase from Blaise', () => {
+describe('getCaseFactsheet from Blaise', () => {
   beforeEach(() => {
     blaiseApiClientMock.reset();
   });
@@ -60,22 +63,22 @@ describe('getCase from Blaise', () => {
   it('Should retrieve a case from blaise', async () => {
     // arrange
     const caseId = '90001';
-    blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => CaseResponseMockObject);
+    blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => caseResponseMockObject);
 
     // act
-    const result = await sut.getCase(questionnaireName, caseId);
+    const result = await sut.getCaseFactsheet(questionnaireName, caseId);
 
     // assert
-    expect(result).toEqual(CaseResponseMockObject);
+    expect(result).toEqual(caseFactsheetMockObject);
   });
 
-  it('Should call the getCase function with the expected parameters', async () => {
+  it('Should call the getCaseFactsheet function with the expected parameters', async () => {
     // arrange
     const caseId = '90001';
-    blaiseApiClientMock.setup((client) => client.getCase(It.isAnyString(), It.isAnyString(), It.isAnyString())).returns(async () => CaseResponseMockObject);
+    blaiseApiClientMock.setup((client) => client.getCase(It.isAnyString(), It.isAnyString(), It.isAnyString())).returns(async () => caseResponseMockObject);
 
     // act
-    await sut.getCase(questionnaireName, caseId);
+    await sut.getCaseFactsheet(questionnaireName, caseId);
 
     // assert
     blaiseApiClientMock.verify((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId), Times.once());

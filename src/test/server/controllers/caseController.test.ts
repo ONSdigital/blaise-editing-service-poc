@@ -1,18 +1,16 @@
 import supertest, { Response } from 'supertest';
-import { CaseStatus } from 'blaise-api-node-client';
 import { IMock, Mock, Times } from 'typemoq';
 import nodeServer from '../../../server/server';
 import FakeConfigurationProvider from '../configuration/FakeConfigurationProvider';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
-import { caseDetailsListMockObject, caseFactsheetMockObject, caseResponseMockObject, caseStatusListMockObject } from '../../mockObjects/caseMockObject';
+import { caseDetailsListMockObject, caseFactsheetMockObject } from '../../mockObjects/caseMockObject';
 
 // create fake config
 const configFake = new FakeConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
 
 // mock blaise api client
 const blaiseApiMock: IMock<BlaiseApi> = Mock.ofType(BlaiseApi);
-
 
 // need to test the endpoints through the express server
 const server = nodeServer(configFake, blaiseApiMock.object);
@@ -33,9 +31,8 @@ describe('Get case list tests', () => {
     // arrange
     // mock blaise client to return a list of cases
     const questionnaireName: string = 'OPN2201A';
-    const caseStatusList: CaseStatus[] = caseStatusListMockObject;
 
-    blaiseApiMock.setup((api) => api.getCaseStatus(questionnaireName)).returns(async () => caseStatusList);
+    blaiseApiMock.setup((api) => api.getCaseDetails(questionnaireName)).returns(async () => caseDetailsListMockObject);
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases`);
@@ -43,7 +40,7 @@ describe('Get case list tests', () => {
     // assert
     expect(response.status).toEqual(200);
     expect(response.body).toEqual(caseDetailsListMockObject);
-    blaiseApiMock.verify((api) => api.getCaseStatus(questionnaireName), Times.once());
+    blaiseApiMock.verify((api) => api.getCaseDetails(questionnaireName), Times.once());
   });
 
   it('It should return a 500 response when a call is made to retrieve a list of cases and the rest api is not availiable', async () => {
@@ -51,7 +48,7 @@ describe('Get case list tests', () => {
     const axiosError = createAxiosError(500);
     const questionnaireName: string = 'OPN2201A';
 
-    blaiseApiMock.setup((api) => api.getCaseStatus(questionnaireName)).returns(() => Promise.reject(axiosError));
+    blaiseApiMock.setup((api) => api.getCaseDetails(questionnaireName)).returns(() => Promise.reject(axiosError));
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases`);
@@ -65,7 +62,7 @@ describe('Get case list tests', () => {
     const clientError = new Error();
     const questionnaireName: string = 'OPN2201A';
 
-    blaiseApiMock.setup((api) => api.getCaseStatus(questionnaireName)).returns(() => Promise.reject(clientError));
+    blaiseApiMock.setup((api) => api.getCaseDetails(questionnaireName)).returns(() => Promise.reject(clientError));
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases`);
@@ -79,7 +76,7 @@ describe('Get case list tests', () => {
     const axiosError = createAxiosError(404);
     const questionnaireName: string = 'OPN2201A';
 
-    blaiseApiMock.setup((api) => api.getCaseStatus(questionnaireName)).returns(() => Promise.reject(axiosError));
+    blaiseApiMock.setup((api) => api.getCaseDetails(questionnaireName)).returns(() => Promise.reject(axiosError));
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases`);
@@ -103,8 +100,7 @@ describe('Get case fact sheet tests', () => {
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
 
-    blaiseApiMock.setup((api) => api.getCase(questionnaireName, caseId)).returns(async () => caseResponseMockObject);
-    console.debug(caseFactsheetMockObject);
+    blaiseApiMock.setup((api) => api.getCaseFactsheet(questionnaireName, caseId)).returns(async () => caseFactsheetMockObject);
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
@@ -112,7 +108,7 @@ describe('Get case fact sheet tests', () => {
     // assert
     expect(response.status).toEqual(200);
     expect(response.text).toEqual(JSON.stringify(caseFactsheetMockObject));
-    blaiseApiMock.verify((api) => api.getCase(questionnaireName, caseId), Times.once());
+    blaiseApiMock.verify((api) => api.getCaseFactsheet(questionnaireName, caseId), Times.once());
   });
 
   it('It should return a 500 response when a call is made to retrieve a case and the rest api is not availiable', async () => {
@@ -121,7 +117,7 @@ describe('Get case fact sheet tests', () => {
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
 
-    blaiseApiMock.setup((api) => api.getCase(questionnaireName, caseId)).returns(() => Promise.reject(axiosError));
+    blaiseApiMock.setup((api) => api.getCaseFactsheet(questionnaireName, caseId)).returns(() => Promise.reject(axiosError));
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
@@ -136,7 +132,7 @@ describe('Get case fact sheet tests', () => {
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
 
-    blaiseApiMock.setup((api) => api.getCase(questionnaireName, caseId)).returns(() => Promise.reject(clientError));
+    blaiseApiMock.setup((api) => api.getCaseFactsheet(questionnaireName, caseId)).returns(() => Promise.reject(clientError));
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
@@ -151,7 +147,7 @@ describe('Get case fact sheet tests', () => {
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
 
-    blaiseApiMock.setup((api) => api.getCase(questionnaireName, caseId)).returns(() => Promise.reject(axiosError));
+    blaiseApiMock.setup((api) => api.getCaseFactsheet(questionnaireName, caseId)).returns(() => Promise.reject(axiosError));
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);

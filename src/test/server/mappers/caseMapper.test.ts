@@ -1,6 +1,8 @@
-import { CaseResponse} from 'blaise-api-node-client';
+import { CaseResponse } from 'blaise-api-node-client';
 import { mapCaseDetails, mapCaseFactsheet } from '../../../server/mappers/caseMapper';
-import { caseDetailsListMockObject, caseFactsheetMockObject, caseResponseMockObject, caseStatusListMockObject } from '../../mockObjects/caseMockObject';
+import {
+  caseDetailsListMockObject, caseFactsheetMockObject, caseResponseMockObject, caseStatusListMockObject,
+} from '../../mockObjects/caseMockObject';
 
 describe('Map case status list to case details list', () => {
   it('It should return a correctly mapped list of cases', () => {

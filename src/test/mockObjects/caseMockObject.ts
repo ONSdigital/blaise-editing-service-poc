@@ -11,7 +11,7 @@ const case2outcome = 310;
 const case3outcome = 0;
 
 const person1Name = 'Richmond Ricecake';
-const person2Name ='Bartholomew Edgar';
+const person2Name = 'Bartholomew Edgar';
 
 const person1Dob = new Date(1980, 1, 15);
 const person2Dob = new Date(1995, 5, 11);
@@ -48,11 +48,11 @@ export const caseDetailsListMockObject:CaseDetails[] = [
   },
 ];
 
-export const caseResponseMockObject: CaseResponse =     {
+export const caseResponseMockObject: CaseResponse = {
   caseId: case1PrimaryKey,
   fieldData: {
-    'qiD.Serial_Number': case1PrimaryKey,      
-    'qDataBag.Prem1': 'Flat 1',        
+    'qiD.Serial_Number': case1PrimaryKey,
+    'qDataBag.Prem1': 'Flat 1',
     'qDataBag.Prem2': 'Richmond House',
     'qDataBag.Prem3': 'Rice Road',
     'qDataBag.Prem4': 'Duffrin',
@@ -61,15 +61,15 @@ export const caseResponseMockObject: CaseResponse =     {
     'qDataBag.PostCode': 'NZ11 4PD',
     'qhAdmin.HOut': case1outcome,
     'qhAdmin.Interviewer[1]': 'Rich',
-    'dmhSize': 2,
+    dmhSize: 2,
     'dmName[1]': person1Name,
     'dmDteOfBth[1]': person1Dob,
     'dmName[2]': person2Name,
-    'dmDteOfBth[2]': person2Dob
-  }
-}
+    'dmDteOfBth[2]': person2Dob,
+  },
+};
 
-export const caseFactsheetMockObject:CaseFactsheetDetails =  {
+export const caseFactsheetMockObject:CaseFactsheetDetails = {
   CaseId: case1PrimaryKey,
   OutcomeCode: case1outcome,
   InterviewerName: 'Rich',
@@ -81,16 +81,16 @@ export const caseFactsheetMockObject:CaseFactsheetDetails =  {
     AddressLine4: 'Duffrin',
     County: 'Gwent',
     Town: 'Newport',
-    Postcode: 'NZ11 4PD'
+    Postcode: 'NZ11 4PD',
   },
   Respondents: [
     {
       RespondentName: person1Name,
-      DateOfBirth: person1Dob
+      DateOfBirth: person1Dob,
     },
     {
       RespondentName: person2Name,
-      DateOfBirth: person2Dob
-    }
-  ]
-}
+      DateOfBirth: person2Dob,
+    },
+  ],
+};

@@ -2,7 +2,6 @@ import express, { Request, Response, Router } from 'express';
 import { Controller } from '../interfaces/controllerInterface';
 import { Configuration } from '../interfaces/configurationInterface';
 import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
-import { mapCaseDetails, mapCaseFactsheet } from '../mappers/caseMapper';
 import notFound from '../../common/helpers/axiosHelper';
 import BlaiseApi from '../api/BlaiseApi';
 
@@ -34,8 +33,7 @@ export default class CaseController implements Controller {
     }
 
     try {
-      const caseStatusList = await this.blaiseApi.getCaseStatus(questionnaireName);
-      const caseDetailsList = mapCaseDetails(caseStatusList, questionnaireName, this.config.ExternalWebUrl);
+      const caseDetailsList = await this.blaiseApi.getCaseDetails(questionnaireName);
 
       return response.status(200).json(caseDetailsList);
     } catch (error: unknown) {
@@ -61,8 +59,7 @@ export default class CaseController implements Controller {
     }
 
     try {
-      const caseResponse = await this.blaiseApi.getCase(questionnaireName, caseId);
-      const caseFactsheet = mapCaseFactsheet(caseResponse);
+      const caseFactsheet = await this.blaiseApi.getCaseFactsheet(questionnaireName, caseId);
 
       return response.status(200).json(caseFactsheet);
     } catch (error: unknown) {

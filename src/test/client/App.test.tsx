@@ -15,7 +15,7 @@ let view:RenderResult;
 
 // create mocks
 jest.mock('blaise-login-react-client');
-const {MockAuthenticate} = jest.requireActual('blaise-login-react-client');
+const { MockAuthenticate } = jest.requireActual('blaise-login-react-client');
 Authenticate.prototype.render = MockAuthenticate.prototype.render;
 
 jest.mock('../../client/api/NodeApi');
