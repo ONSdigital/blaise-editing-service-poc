@@ -3,11 +3,11 @@
 */
 import listEndpoints, { Endpoint } from 'express-list-endpoints';
 import { IMock, Mock } from 'typemoq';
+import supertest from 'supertest';
+import path from 'path';
 import NodeServer from '../../server/server';
 import FakeConfigurationProvider from './configuration/FakeConfigurationProvider';
 import BlaiseApi from '../../server/api/BlaiseApi';
-import supertest from 'supertest';
-import path from 'path';
 // create fake config
 const configFake = new FakeConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
 
@@ -47,14 +47,14 @@ describe('Render react pages as default route', () => {
     // arrange
     server.set('views', path.join(__dirname, '../../../build'));
     const sut = supertest(server);
-   
-    // act   
-   const result = await sut.get('/');
-    
+
+    // act
+    const result = await sut.get('/');
+
     // assert
     expect(result.error).toBeFalsy();
     expect(result.statusCode).toEqual(200);
     expect(result.type).toEqual('text/html');
-    expect(result.text).toContain('Web site created using create-react-app');   
+    expect(result.text).toContain('Web site created using create-react-app');
   });
 });

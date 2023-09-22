@@ -18,15 +18,12 @@ function DisplayCases(questionnaireName: string) {
   );
 }
 
+export type CasesParams = {
+  questionnaireName: string
+};
+
 export default function Cases(): ReactElement {
-  const { questionnaireName } = useParams();
-  if (!questionnaireName) {
-    return (
-      <div>
-        No questionnaire name
-      </div>
-    );
-  }
+  const { questionnaireName } = useParams<keyof CasesParams>() as CasesParams;
 
   return DisplayCases(questionnaireName);
 }
