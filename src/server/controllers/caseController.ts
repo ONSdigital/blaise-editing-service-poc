@@ -25,12 +25,8 @@ export default class CaseController implements Controller {
     return router;
   }
 
-  async getCases(request: Request, response: Response<CaseDetails[]>) {
+  async getCases(request: Request<{ questionnaireName:string }>, response: Response<CaseDetails[]>) {
     const { questionnaireName } = request.params;
-
-    if (questionnaireName === undefined) {
-      throw new Error('Questionnaire name has not been provided');
-    }
 
     try {
       const caseDetailsList = await this.blaiseApi.getCaseDetails(questionnaireName);
@@ -44,19 +40,11 @@ export default class CaseController implements Controller {
     }
   }
 
-  async getCaseFactsheet(request: Request, response: Response<CaseFactsheetDetails>) {
+  async getCaseFactsheet(request: Request<{ questionnaireName:string, caseId:string }>, response: Response<CaseFactsheetDetails>) {
     const {
       questionnaireName,
       caseId,
     } = request.params;
-
-    if (questionnaireName === undefined) {
-      throw new Error('Questionnaire name has not been provided');
-    }
-
-    if (caseId === undefined) {
-      throw new Error('Case ID has not been provided');
-    }
 
     try {
       const caseFactsheet = await this.blaiseApi.getCaseFactsheet(questionnaireName, caseId);
