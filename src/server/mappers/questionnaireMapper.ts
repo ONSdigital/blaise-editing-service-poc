@@ -1,15 +1,20 @@
 import { Questionnaire, QuestionnaireReport } from 'blaise-api-node-client';
-import { QuestionnaireAllocation } from '../../common/interfaces/surveyInterface';
+import { QuestionnaireCaseDetails } from '../../common/interfaces/surveyInterface';
+import stringIsNullOrEmpty from '../../common/helpers/stringHelper';
 
-export default function mapQuestionnaireAllocation(questionnaires: Questionnaire[], reports:QuestionnaireReport[]): QuestionnaireAllocation[] {
-  const questionnairesWithAllocations:QuestionnaireAllocation[] = [];
+export default function mapQuestionnaireAllocation(questionnaires: Questionnaire[], reports:QuestionnaireReport[]): QuestionnaireCaseDetails[] {
+  const questionnairesWithCaseDetails:QuestionnaireCaseDetails[] = [];
 
   questionnaires.forEach((questionnaire) => {
-    const questionnaireWithAllocation = questionnaire as QuestionnaireAllocation;
     const report = reports.find((r) => r.questionnaireName === questionnaire.name);
-    questionnaireWithAllocation.caseAllocation = report?.reportingData ?? [];
-    questionnairesWithAllocations.push(questionnaireWithAllocation);
+    const allocatedCases = report?.reportingData.filter((data) => !stringIsNullOrEmpty(data['ToEditor'])).length;
+
+    questionnairesWithCaseDetails.push({
+      questionnaireName: questionnaire.name,
+      numberOfCases: questionnaire.dataRecordCount ?? 0,
+      numberOfCasesAllocated: allocatedCases ?? 0,
+    });
   });
 
-  return questionnairesWithAllocations;
+  return questionnairesWithCaseDetails;
 }

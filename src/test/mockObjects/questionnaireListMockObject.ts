@@ -1,5 +1,5 @@
-import { CaseData, Questionnaire } from 'blaise-api-node-client';
-import { QuestionnaireAllocation } from '../../common/interfaces/surveyInterface';
+import { Questionnaire } from 'blaise-api-node-client';
+import { QuestionnaireCaseDetails } from '../../common/interfaces/surveyInterface';
 
 export const questionnaire1Mock: Questionnaire = {
   name: 'LMS2101_AA1',
@@ -48,60 +48,33 @@ export const questionnaireListMockObject: Questionnaire[] = [
   questionnaire4Mock,
 ];
 
-export const questionnaire1CaseAllocationMock: CaseData[] = [{
-  CaseId: '9001',
-  HOut: '110',
-  ToEditor: 'jakew',
-},
-{
-  CaseId: '9002',
-  HOut: '210',
-  ToEditor: 'tobym',
-}];
-
-export const questionnaire2CaseAllocationMock: CaseData[] = [{
-  CaseId: '9008',
-  HOut: '110',
-  ToEditor: 'jakew',
-}];
-
-export const questionnaire3CaseAllocationMock: CaseData[] = [];
-
-export const questionnaire4CaseAllocationMock: CaseData[] = [{
-  CaseId: '9001',
-  HOut: '110',
-  ToEditor: 'jakew',
-},
-{
-  CaseId: '9002',
-  HOut: '210',
-  ToEditor: 'tobym',
-},
-{
-  CaseId: '9003',
-  HOut: '110',
-  ToEditor: 'jakew',
-}];
-
-const questionnaireAllocation1Mock: QuestionnaireAllocation = questionnaire1Mock;
-questionnaireAllocation1Mock.caseAllocation = questionnaire1CaseAllocationMock;
-
-const questionnaireAllocation2Mock: QuestionnaireAllocation = questionnaire2Mock;
-questionnaireAllocation2Mock.caseAllocation = questionnaire2CaseAllocationMock;
-
-const questionnaireAllocation3Mock: QuestionnaireAllocation = questionnaire3Mock;
-questionnaireAllocation3Mock.caseAllocation = questionnaire3CaseAllocationMock;
-
-const questionnaireAllocation4Mock: QuestionnaireAllocation = questionnaire4Mock;
-questionnaireAllocation4Mock.caseAllocation = questionnaire4CaseAllocationMock;
-
-export {
-  questionnaireAllocation1Mock, questionnaireAllocation2Mock, questionnaireAllocation3Mock, questionnaireAllocation4Mock,
+export const questionnaireCaseDetails1MockObject = {
+  questionnaireName: questionnaire1Mock.name,
+  numberOfCases: questionnaire1Mock.dataRecordCount ?? 0,
+  numberOfCasesAllocated: 1,
 };
 
-export const questionnaireAllocationListMockObject: QuestionnaireAllocation[] = [
-  questionnaireAllocation1Mock,
-  questionnaireAllocation2Mock,
-  questionnaireAllocation3Mock,
-  questionnaireAllocation4Mock,
+export const questionnaireCaseDetails2MockObject = {
+  questionnaireName: questionnaire2Mock.name,
+  numberOfCases: questionnaire2Mock.dataRecordCount ?? 0,
+  numberOfCasesAllocated: 0,
+};
+
+export const questionnaireCaseDetails3MockObject = {
+  questionnaireName: questionnaire3Mock.name,
+  numberOfCases: questionnaire3Mock.dataRecordCount ?? 0,
+  numberOfCasesAllocated: 0,
+};
+
+export const questionnaireCaseDetails4MockObject = {
+  questionnaireName: questionnaire4Mock.name,
+  numberOfCases: questionnaire4Mock.dataRecordCount ?? 0,
+  numberOfCasesAllocated: 3,
+};
+
+export const questionnaireCaseDetailsListMockObject: QuestionnaireCaseDetails[] = [
+  questionnaireCaseDetails1MockObject,
+  questionnaireCaseDetails2MockObject,
+  questionnaireCaseDetails3MockObject,
+  questionnaireCaseDetails4MockObject,
 ];

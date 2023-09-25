@@ -60,10 +60,10 @@ describe('Given there are surveys available in blaise', () => {
       const surveyListView = view.getByTestId(`accordion-${surveyIndex}-heading`);
       expect(surveyListView).toHaveTextContent(survey.name);
 
-      survey.questionnaires.forEach(({ name, dataRecordCount }) => {
+      survey.questionnaires.forEach(({ questionnaireName, numberOfCases }) => {
         const questionnaireListView = view.getByTestId(`accordion-${surveyIndex}-content`);
-        expect(questionnaireListView).toHaveTextContent(name);
-        expect(questionnaireListView).toHaveTextContent(String(dataRecordCount));
+        expect(questionnaireListView).toHaveTextContent(questionnaireName);
+        expect(questionnaireListView).toHaveTextContent(String(numberOfCases));
       });
     });
   });

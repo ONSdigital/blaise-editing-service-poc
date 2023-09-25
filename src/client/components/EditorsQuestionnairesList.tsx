@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
-import { QuestionnaireAllocation } from '../../common/interfaces/surveyInterface';
+import { QuestionnaireCaseDetails } from '../../common/interfaces/surveyInterface';
 
 interface EditorsQuestionnairesListProps {
-  questionnaires: QuestionnaireAllocation[];
+  questionnaires: QuestionnaireCaseDetails[];
 }
 
 export default function EditorsQuestionnairesList({ questionnaires }: EditorsQuestionnairesListProps): ReactElement {
@@ -17,13 +17,13 @@ export default function EditorsQuestionnairesList({ questionnaires }: EditorsQue
       <dt className="ons-metadata__term ons-grid__col ons-col-4@m">Questionnaire</dt>
       <dd className="ons-metadata__value ons-grid__col ons-col-8@m" style={{ fontWeight: 'bold' }}>Cases allocated to me</dd>
       {questionnaires.map((questionnaire) => (
-        <React.Fragment key={questionnaire.name}>
+        <React.Fragment key={questionnaire.questionnaireName}>
           <dt className="ons-metadata__term ons-grid__col ons-col-4@m">
-            <Link to={`/questionnaires/${questionnaire.name}/cases`} style={{ fontWeight: 'normal' }}>
-              {questionnaire.name}
+            <Link to={`/questionnaires/${questionnaire.questionnaireName}/cases`} style={{ fontWeight: 'normal' }}>
+              {questionnaire.questionnaireName}
             </Link>
           </dt>
-          <dd className="ons-metadata__value ons-grid__col ons-col-8@m">{questionnaire.dataRecordCount}</dd>
+          <dd className="ons-metadata__value ons-grid__col ons-col-8@m">{questionnaire.numberOfCases}</dd>
         </React.Fragment>
       ))}
     </dl>

@@ -5,8 +5,8 @@ import {
 import FakeConfigurationProvider from '../configuration/FakeConfigurationProvider';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import {
-  questionnaire1CaseAllocationMock, questionnaire1Mock, questionnaire2CaseAllocationMock, questionnaire2Mock, questionnaire3CaseAllocationMock, questionnaire3Mock,
-  questionnaire4CaseAllocationMock, questionnaire4Mock, questionnaireAllocationListMockObject, questionnaireListMockObject,
+  questionnaire1Mock, questionnaire2Mock, questionnaire3Mock,
+  questionnaire4Mock, questionnaireCaseDetailsListMockObject, questionnaireListMockObject,
 } from '../../mockObjects/questionnaireListMockObject';
 import {
   questionnaireReport1MockObject, questionnaireReport2MockObject, questionnaireReport3MockObject, questionnaireReport4MockObject,
@@ -114,28 +114,24 @@ describe('getQuestionnairesWithAllocation from Blaise', () => {
 
     // mock questionnaire 1 report data
     const reportdata1Mock = questionnaireReport1MockObject;
-    reportdata1Mock.reportingData = questionnaire1CaseAllocationMock;
     blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire1Mock.name, fieldIds)).returns(async () => reportdata1Mock);
 
     // mock questionnaire 2 report data
     const reportdata2Mock = questionnaireReport2MockObject;
-    reportdata2Mock.reportingData = questionnaire2CaseAllocationMock;
     blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire2Mock.name, fieldIds)).returns(async () => reportdata2Mock);
 
     // mock questionnaire 3 report data
     const reportdata3Mock = questionnaireReport3MockObject;
-    reportdata3Mock.reportingData = questionnaire3CaseAllocationMock;
     blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire3Mock.name, fieldIds)).returns(async () => reportdata3Mock);
 
     // mock questionnaire 4 report data
     const reportdata4Mock = questionnaireReport4MockObject;
-    reportdata4Mock.reportingData = questionnaire4CaseAllocationMock;
     blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire4Mock.name, fieldIds)).returns(async () => reportdata4Mock);
 
     // act
     const result = await sut.getQuestionnaires();
 
     // assert
-    expect(result).toEqual(questionnaireAllocationListMockObject);
+    expect(result).toEqual(questionnaireCaseDetailsListMockObject);
   });
 });

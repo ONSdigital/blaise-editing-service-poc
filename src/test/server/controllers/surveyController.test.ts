@@ -3,9 +3,9 @@ import { IMock, Mock, Times } from 'typemoq';
 import nodeServer from '../../../server/server';
 import FakeConfigurationProvider from '../configuration/FakeConfigurationProvider';
 import createAxiosError from './axiosTestHelper';
-import { questionnaireAllocationListMockObject } from '../../mockObjects/questionnaireListMockObject';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import surveyAllocationListMockObject from '../../mockObjects/surveyAllocationListMockObject';
+import { questionnaireCaseDetailsListMockObject } from '../../mockObjects/questionnaireListMockObject';
 
 // create fake config
 const configFake = new FakeConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
@@ -31,7 +31,7 @@ describe('Get surveys tests', () => {
   it('It should return a 200 response with an expected list of surveys', async () => {
     // arrange
     // mock blaise client to return a list of questionnaires with allocation
-    blaiseApiMock.setup((api) => api.getQuestionnaires()).returns(async () => questionnaireAllocationListMockObject);
+    blaiseApiMock.setup((api) => api.getQuestionnaires()).returns(async () => questionnaireCaseDetailsListMockObject);
 
     // act
     const response: Response = await sut.get('/api/surveys');

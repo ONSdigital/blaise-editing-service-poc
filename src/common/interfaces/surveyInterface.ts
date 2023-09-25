@@ -1,10 +1,10 @@
-import { CaseData, Questionnaire } from 'blaise-api-node-client';
-
 export interface Survey {
   name: string,
-  questionnaires: QuestionnaireAllocation[],
+  questionnaires: QuestionnaireCaseDetails[],
 }
 
-export interface QuestionnaireAllocation extends Questionnaire {
-  caseAllocation?: CaseData[]
+export interface QuestionnaireCaseDetails {
+  questionnaireName: string,
+  numberOfCases: number,
+  numberOfCasesAllocated: number
 }

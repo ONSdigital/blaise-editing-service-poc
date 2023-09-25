@@ -1,10 +1,10 @@
-import { QuestionnaireAllocation, Survey } from '../../common/interfaces/surveyInterface';
+import { QuestionnaireCaseDetails, Survey } from '../../common/interfaces/surveyInterface';
 
-export default function mapSurveys(questionnaires: QuestionnaireAllocation[]): Survey[] {
+export default function mapSurveys(questionnaires: QuestionnaireCaseDetails[]): Survey[] {
   const surveys: Survey[] = [];
 
   questionnaires.forEach((questionnaire) => {
-    const surveyName = questionnaire.name.slice(0, 3);
+    const surveyName = questionnaire.questionnaireName.slice(0, 3);
     const surveyElement = surveys.find((survey) => survey.name === surveyName);
 
     if (surveyElement === undefined) {
