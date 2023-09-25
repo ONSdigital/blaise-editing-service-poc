@@ -7,7 +7,7 @@ export default function mapQuestionnaireAllocation(questionnaires: Questionnaire
 
   questionnaires.forEach((questionnaire) => {
     const report = reports.find((r) => r.questionnaireName === questionnaire.name);
-    const allocatedCases = report?.reportingData.filter((data) => !stringIsNullOrEmpty(data['ToEditor'])).length;
+    const allocatedCases = report?.reportingData.filter((data) => !stringIsNullOrEmpty(data['allocation.toeditor'])).length;
 
     questionnairesWithCaseDetails.push({
       questionnaireName: questionnaire.name,

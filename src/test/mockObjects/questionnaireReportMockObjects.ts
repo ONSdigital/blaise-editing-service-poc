@@ -8,10 +8,10 @@ export const questionnaireReport1MockObject: QuestionnaireReport = {
   questionnaireId: '00000000-0000-0000-0000-000000000000',
   reportingData: [
     {
-      ToEditor: 'jakew',
+      'allocation.toeditor': 'jakew',
     },
     {
-      ToEditor: '',
+      'allocation.toeditor': '',
     },
   ],
 };
@@ -21,7 +21,7 @@ export const questionnaireReport2MockObject: QuestionnaireReport = {
   questionnaireId: '00000000-0000-0000-0000-000000000000',
   reportingData: [
     {
-      ToEditor: '',
+      'allocation.toeditor': '',
     },
   ],
 };
@@ -37,13 +37,13 @@ export const questionnaireReport4MockObject: QuestionnaireReport = {
   questionnaireId: '00000000-0000-0000-0000-000000000000',
   reportingData: [
     {
-      ToEditor: 'jakew',
+      'allocation.toeditor': 'jakew',
     },
     {
-      ToEditor: 'tobym',
+      'allocation.toeditor': 'tobym',
     },
     {
-      ToEditor: 'jakew',
+      'allocation.toeditor': 'jakew',
     },
   ],
 };

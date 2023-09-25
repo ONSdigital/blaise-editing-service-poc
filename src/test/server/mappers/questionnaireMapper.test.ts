@@ -14,7 +14,7 @@ describe('Map a list o questionnaires and reports to a questionnaire allocation 
   it.each(['', ' ', '     ', null, undefined])('It should handle multiple diffrent scenarios where a case has not been allocated', (value) => {
     // arrange
     const report = questionnaireReportMockObjectList.find((r) => r.questionnaireName === questionnaire2Mock.name);
-    report!.reportingData[0] = { ToEditor: value };
+    report!.reportingData[0] = { 'allocation.toeditor': value };
 
     // act
     const result = mapQuestionnaireAllocation(questionnaireListMockObject, questionnaireReportMockObjectList);
