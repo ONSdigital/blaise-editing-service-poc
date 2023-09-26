@@ -1,4 +1,4 @@
-import BlaiseApiClient from 'blaise-api-node-client';
+import BlaiseApiClient, { QuestionnaireReport } from 'blaise-api-node-client';
 import {
   IMock, It, Mock, Times,
 } from 'typemoq';
@@ -12,8 +12,9 @@ import {
   questionnaireReport1MockObject, questionnaireReport2MockObject, questionnaireReport3MockObject, questionnaireReport4MockObject,
 } from '../../mockObjects/questionnaireReportMockObjects';
 import {
-  caseDetailsListMockObject, caseFactsheetMockObject, caseResponseMockObject, caseStatusListMockObject,
+  caseFactsheetMockObject, caseResponseMockObject,
 } from '../../mockObjects/caseMockObject';
+import { CaseDetails } from '../../../common/interfaces/caseInterface';
 
 const questionnaireName = 'OPN2201A';
 
@@ -28,30 +29,79 @@ const blaiseApiClientMock: IMock<BlaiseApiClient> = Mock.ofType(BlaiseApiClient)
 const sut = new BlaiseApi(configFake, blaiseApiClientMock.object);
 
 describe('getCaseStatus from Blaise', () => {
+  const username: string = 'toby';
+  const fieldIds: string[] = ['qserial.serial_number', 'qhadmin.hout', 'allocation.toeditor'];
+
   beforeEach(() => {
     blaiseApiClientMock.reset();
   });
 
-  it('Should retrieve a list case details from blaise', async () => {
+  it('Should retrieve a filtered list of case details for the user from blaise', async () => {
     // arrange
-    blaiseApiClientMock.setup((client) => client.getCaseStatus(configFake.ServerPark, questionnaireName)).returns(async () => caseStatusListMockObject);
+    const questionnaireReport1MockObjectLocal: QuestionnaireReport = {
+      questionnaireName,
+      questionnaireId: '00000000-0000-0000-0000-000000000000',
+      reportingData: [
+        {
+          'qserial.serial_number': '9001',
+          'qhadmin.hout': 110,
+          'allocation.toeditor': username,
+        },
+        {
+          'qserial.serial_number': '9002',
+          'qhadmin.hout': 120,
+          'allocation.toeditor': '',
+        },
+        {
+          'qserial.serial_number': '9003',
+          'qhadmin.hout': 210,
+          'allocation.toeditor': username,
+        },
+        {
+          'qserial.serial_number': '9004',
+          'qhadmin.hout': 120,
+          'allocation.toeditor': 'Mike',
+        },
+      ],
+    };
+
+    const caseDetailsListMockObject:CaseDetails[] = [
+      {
+        CaseId: '9001',
+        CaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9001`,
+        CaseStatus: 110,
+        QuestionnaireName: questionnaireName,
+        EditorAllocated: username,
+      },
+      {
+        CaseId: '9003',
+        CaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9003`,
+        CaseStatus: 210,
+        QuestionnaireName: questionnaireName,
+        EditorAllocated: username,
+      },
+    ];
+
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaireName, fieldIds))
+      .returns(async () => questionnaireReport1MockObjectLocal);
 
     // act
-    const result = await sut.getCaseDetails(questionnaireName);
+    const result = await sut.getCaseDetails(questionnaireName, username);
 
     // assert
     expect(result).toEqual(caseDetailsListMockObject);
   });
 
-  it('Should call the getCaseStatus function with the expected parameters', async () => {
+  it('Should call the getCaseDetails function with the expected parameters', async () => {
     // arrange
-    blaiseApiClientMock.setup((client) => client.getCaseStatus(It.isAnyString(), It.isAnyString())).returns(async () => caseStatusListMockObject);
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaireName, fieldIds))
+      .returns(async () => questionnaireReport1MockObject);
 
     // act
-    await sut.getCaseDetails(questionnaireName);
+    await sut.getCaseDetails(questionnaireName, username);
 
     // assert
-    blaiseApiClientMock.verify((client) => client.getCaseStatus(configFake.ServerPark, questionnaireName), Times.once());
+    blaiseApiClientMock.verify((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaireName, fieldIds), Times.once());
   });
 });
 

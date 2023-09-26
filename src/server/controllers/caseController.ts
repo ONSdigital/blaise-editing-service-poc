@@ -25,11 +25,12 @@ export default class CaseController implements Controller {
     return router;
   }
 
-  async getCases(request: Request<{ questionnaireName:string }>, response: Response<CaseDetails[]>) {
+  async getCases(request: Request<{ questionnaireName:string }, {}, {}, { username:string }>, response: Response<CaseDetails[]>) {
     const { questionnaireName } = request.params;
+    const { username } = request.query;
 
     try {
-      const caseDetailsList = await this.blaiseApi.getCaseDetails(questionnaireName);
+      const caseDetailsList = await this.blaiseApi.getCaseDetails(questionnaireName, username);
 
       return response.status(200).json(caseDetailsList);
     } catch (error: unknown) {

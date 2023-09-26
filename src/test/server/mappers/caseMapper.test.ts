@@ -1,17 +1,17 @@
 import { CaseResponse } from 'blaise-api-node-client';
 import { mapCaseDetails, mapCaseFactsheet } from '../../../server/mappers/caseMapper';
 import {
-  caseDetailsListMockObject, caseFactsheetMockObject, caseResponseMockObject, caseStatusListMockObject,
+  caseDetailsListMockObject, caseFactsheetMockObject, caseResponseMockObject, caseDataListMockObject,
 } from '../../mockObjects/caseMockObject';
 
-describe('Map case status list to case details list', () => {
+describe('Map case report data to case details list', () => {
   it('It should return a correctly mapped list of cases', () => {
     // arrange
     const questionnaireName: string = 'OPN2201A';
     const externalWebUrl: string = 'cati.blaise.com';
 
     // act
-    const result = mapCaseDetails(caseStatusListMockObject, questionnaireName, externalWebUrl);
+    const result = mapCaseDetails(caseDataListMockObject, questionnaireName, externalWebUrl);
 
     // assert
     expect(result).toEqual(caseDetailsListMockObject);

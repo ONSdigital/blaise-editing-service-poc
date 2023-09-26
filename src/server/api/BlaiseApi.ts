@@ -1,4 +1,4 @@
-import BlaiseClient, { QuestionnaireReport } from 'blaise-api-node-client';
+import BlaiseClient, { CaseData, QuestionnaireReport } from 'blaise-api-node-client';
 import { Configuration } from '../interfaces/configurationInterface';
 import mapQuestionnaireAllocation from '../mappers/questionnaireMapper';
 import { mapCaseDetails, mapCaseFactsheet } from '../mappers/caseMapper';
@@ -16,12 +16,22 @@ export default class BlaiseApi {
     this.getCaseDetails = this.getCaseDetails.bind(this);
     this.getCaseFactsheet = this.getCaseFactsheet.bind(this);
     this.getQuestionnaires = this.getQuestionnaires.bind(this);
+    this.getCaseFieldsForQuestionnaire = this.getCaseFieldsForQuestionnaire.bind(this);
     this.getCaseFieldsForQuestionnaires = this.getCaseFieldsForQuestionnaires.bind(this);
   }
 
-  async getCaseDetails(questionnaireName: string): Promise<CaseDetails[]> {
-    const caseStatusList = await this.blaiseApiClient.getCaseStatus(this.config.ServerPark, questionnaireName);
-    const caseDetails = mapCaseDetails(caseStatusList, questionnaireName, this.config.ExternalWebUrl);
+  async getCaseDetails(questionnaireName: string, username: string): Promise<CaseDetails[]> {
+    const fieldIds: string[] = ['qserial.serial_number', 'qhadmin.hout', 'allocation.toeditor'];
+    const questionnaireReportData = await this.getCaseFieldsForQuestionnaire(questionnaireName, fieldIds);
+
+    const filteredReportingData: CaseData[] = [];
+    questionnaireReportData.reportingData.forEach((caseData) => {
+      if (caseData['allocation.toeditor'] === username) {
+        filteredReportingData.push(caseData);
+      }
+    });
+
+    const caseDetails = mapCaseDetails(filteredReportingData, questionnaireName, this.config.ExternalWebUrl);
 
     return caseDetails;
   }
@@ -41,6 +51,10 @@ export default class BlaiseApi {
     const questionnairesReportData = await this.getCaseFieldsForQuestionnaires(questionnaireNames, allocationFieldIds);
 
     return mapQuestionnaireAllocation(questionnaires, questionnairesReportData);
+  }
+
+  private async getCaseFieldsForQuestionnaire(questionnaireName: string, fieldIds: string[]): Promise<QuestionnaireReport> {
+    return this.blaiseApiClient.getQuestionnaireReportData(this.config.ServerPark, questionnaireName, fieldIds);
   }
 
   private async getCaseFieldsForQuestionnaires(questionnaireNames: string[], fieldIds:string[]): Promise<QuestionnaireReport[]> {

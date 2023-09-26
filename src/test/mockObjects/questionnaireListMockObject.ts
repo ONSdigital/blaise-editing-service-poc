@@ -6,7 +6,7 @@ export const questionnaire1Mock: Questionnaire = {
   serverParkName: 'gusty',
   installDate: '2021-01-15T15:26:43.4233454+00:00',
   status: 'Active',
-  dataRecordCount: 2,
+  dataRecordCount: 3,
   hasData: false,
   active: false,
 };
@@ -51,7 +51,7 @@ export const questionnaireListMockObject: Questionnaire[] = [
 export const questionnaireCaseDetails1MockObject = {
   questionnaireName: questionnaire1Mock.name,
   numberOfCases: questionnaire1Mock.dataRecordCount ?? 0,
-  numberOfCasesAllocated: 1,
+  numberOfCasesAllocated: 2,
 };
 
 export const questionnaireCaseDetails2MockObject = {
