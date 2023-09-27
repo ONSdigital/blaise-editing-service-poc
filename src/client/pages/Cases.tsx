@@ -2,12 +2,13 @@ import { useParams } from 'react-router-dom';
 import { ReactElement } from 'react';
 import AsyncContent from '../components/AsyncContent';
 import CasesList from '../components/CasesList';
-import { useAsyncRequestWithParam } from '../hooks/useAsyncRequest';
+import { useAsyncRequestWithTwoParams } from '../hooks/useAsyncRequest';
 import { CaseDetails } from '../../common/interfaces/caseInterface';
 import { getCases } from '../api/NodeApi';
+import { User } from 'blaise-api-node-client';
 
-function DisplayCases(questionnaireName: string) {
-  const cases = useAsyncRequestWithParam<CaseDetails[], string>(getCases, questionnaireName);
+function DisplayCases(questionnaireName: string, username: string) {
+  const cases = useAsyncRequestWithTwoParams<CaseDetails[], string, string>(getCases, questionnaireName, username);
 
   return (
     <div data-testid="Cases">
@@ -18,12 +19,16 @@ function DisplayCases(questionnaireName: string) {
   );
 }
 
+interface CasesProps {
+  user: User
+}
+
 export type CasesParams = {
   questionnaireName: string
 };
 
-export default function Cases(): ReactElement {
+export default function Cases({ user }: CasesProps): ReactElement {
   const { questionnaireName } = useParams<keyof CasesParams>() as CasesParams;
 
-  return DisplayCases(questionnaireName);
+  return DisplayCases(questionnaireName, user.name);
 }

@@ -5,6 +5,7 @@ import Cases from '../../../client/pages/Cases';
 import { getCases } from '../../../client/api/NodeApi';
 import { CaseDetails } from '../../../common/interfaces/caseInterface';
 import { caseDetailsListMockObject } from '../../mockObjects/caseMockObject';
+import userMockObject from '../../mockObjects/userMockObject';
 
 // declare global vars
 const questionnaireName: string = 'TEST111A';
@@ -32,7 +33,7 @@ describe('Given there are cases available in blaise for questionnaire', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Cases />
+          <Cases user={userMockObject}/>
         </BrowserRouter>,
       );
     });
@@ -49,7 +50,7 @@ describe('Given there are cases available in blaise for questionnaire', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Cases />
+          <Cases user={userMockObject}/>
         </BrowserRouter>,
       );
     });
@@ -79,7 +80,7 @@ describe('Given there are no cases available in blaise for questionnaire', () =>
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Cases />
+          <Cases user={userMockObject}/>
         </BrowserRouter>,
       );
     });
@@ -93,7 +94,7 @@ describe('Given there are no cases available in blaise for questionnaire', () =>
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Cases />
+          <Cases user={userMockObject}/>
         </BrowserRouter>,
       );
     });
@@ -117,7 +118,7 @@ describe('Given there the blaise rest api is not available', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Cases />
+          <Cases user={userMockObject}/>
         </BrowserRouter>,
       );
     });
@@ -132,7 +133,7 @@ describe('Given there the blaise rest api is not available', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <Cases />
+          <Cases user={userMockObject}/>
         </BrowserRouter>,
       );
     });

@@ -23,14 +23,8 @@ export default class BlaiseApi {
   async getCaseDetails(questionnaireName: string, username: string): Promise<CaseDetails[]> {
     const fieldIds: string[] = ['qserial.serial_number', 'qhadmin.hout', 'allocation.toeditor'];
     const questionnaireReportData = await this.getCaseFieldsForQuestionnaire(questionnaireName, fieldIds);
-
-    const filteredReportingData: CaseData[] = [];
-    questionnaireReportData.reportingData.forEach((caseData) => {
-      if (caseData['allocation.toeditor'] === username) {
-        filteredReportingData.push(caseData);
-      }
-    });
-
+    const filteredReportingData: CaseData[] = questionnaireReportData.reportingData
+      .filter((caseData) => caseData['allocation.toeditor'] === username);
     const caseDetails = mapCaseDetails(filteredReportingData, questionnaireName, this.config.ExternalWebUrl);
 
     return caseDetails;
