@@ -6,7 +6,6 @@ export function mapCaseDetails(caseDataList: CaseData[], questionnaireName:strin
     CaseId: caseData['qserial.serial_number'],
     CaseStatus: caseData['qhadmin.hout'],
     CaseLink: `https://${externalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=${caseData['qserial.serial_number']}`,
-    QuestionnaireName: questionnaireName,
     EditorAllocated: caseData['allocation.toeditor'],
   }));
 }

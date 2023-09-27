@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { ReactElement } from 'react';
+import { User } from 'blaise-api-node-client';
 import AsyncContent from '../components/AsyncContent';
 import CasesList from '../components/CasesList';
 import { useAsyncRequestWithTwoParams } from '../hooks/useAsyncRequest';
 import { CaseDetails } from '../../common/interfaces/caseInterface';
 import { getCases } from '../api/NodeApi';
-import { User } from 'blaise-api-node-client';
 
 function DisplayCases(questionnaireName: string, username: string) {
   const cases = useAsyncRequestWithTwoParams<CaseDetails[], string, string>(getCases, questionnaireName, username);
@@ -13,7 +13,7 @@ function DisplayCases(questionnaireName: string, username: string) {
   return (
     <div data-testid="Cases">
       <AsyncContent content={cases}>
-        {(loadedCases) => <CasesList cases={loadedCases} />}
+        {(loadedCases) => <CasesList questionnaireName={questionnaireName} cases={loadedCases} />}
       </AsyncContent>
     </div>
   );

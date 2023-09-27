@@ -70,14 +70,12 @@ describe('getCaseStatus from Blaise', () => {
         CaseId: '9001',
         CaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9001`,
         CaseStatus: 110,
-        QuestionnaireName: questionnaireName,
         EditorAllocated: username,
       },
       {
         CaseId: '9003',
         CaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9003`,
         CaseStatus: 210,
-        QuestionnaireName: questionnaireName,
         EditorAllocated: username,
       },
     ];
@@ -90,6 +88,45 @@ describe('getCaseStatus from Blaise', () => {
 
     // assert
     expect(result).toEqual(caseDetailsListMockObject);
+  });
+
+  it('Should retrieve an empty list of cases if none are allocated to the user', async () => {
+    // arrange
+    const questionnaireReport1MockObjectLocal: QuestionnaireReport = {
+      questionnaireName,
+      questionnaireId: '00000000-0000-0000-0000-000000000000',
+      reportingData: [
+        {
+          'qserial.serial_number': '9001',
+          'qhadmin.hout': 110,
+          'allocation.toeditor': 'bob',
+        },
+        {
+          'qserial.serial_number': '9002',
+          'qhadmin.hout': 120,
+          'allocation.toeditor': '',
+        },
+        {
+          'qserial.serial_number': '9003',
+          'qhadmin.hout': 210,
+          'allocation.toeditor': 'mike',
+        },
+        {
+          'qserial.serial_number': '9004',
+          'qhadmin.hout': 120,
+          'allocation.toeditor': 'Mike',
+        },
+      ],
+    };
+
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaireName, fieldIds))
+      .returns(async () => questionnaireReport1MockObjectLocal);
+
+    // act
+    const result = await sut.getCaseDetails(questionnaireName, username);
+
+    // assert
+    expect(result).toEqual([]);
   });
 
   it('Should call the getCaseDetails function with the expected parameters', async () => {

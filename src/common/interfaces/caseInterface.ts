@@ -4,7 +4,6 @@ export interface CaseDetails {
   CaseId: string,
   CaseStatus: CaseOutcome,
   CaseLink: string,
-  QuestionnaireName: string,
   EditorAllocated: string
 }
 

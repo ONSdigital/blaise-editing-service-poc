@@ -1,8 +1,7 @@
-import { CaseResponse } from 'blaise-api-node-client';
+import { CaseData, CaseResponse } from 'blaise-api-node-client';
 import { mapCaseDetails, mapCaseFactsheet } from '../../../server/mappers/caseMapper';
-import {
-  caseDetailsListMockObject, caseFactsheetMockObject, caseResponseMockObject, caseDataListMockObject,
-} from '../../mockObjects/caseMockObject';
+import { caseFactsheetMockObject, caseResponseMockObject } from '../../mockObjects/caseMockObject';
+import { CaseDetails } from '../../../common/interfaces/caseInterface';
 
 describe('Map case report data to case details list', () => {
   it('It should return a correctly mapped list of cases', () => {
@@ -10,11 +9,50 @@ describe('Map case report data to case details list', () => {
     const questionnaireName: string = 'OPN2201A';
     const externalWebUrl: string = 'cati.blaise.com';
 
+    const caseDataList: CaseData[] = [
+      {
+        'qserial.serial_number': '9001',
+        'qhadmin.hout': 110,
+        'allocation.toeditor': 'rrice',
+      },
+      {
+        'qserial.serial_number': '9002',
+        'qhadmin.hout': 210,
+        'allocation.toeditor': '',
+      },
+      {
+        'qserial.serial_number': '9003',
+        'qhadmin.hout': 0,
+        'allocation.toeditor': 'bedgar',
+      },
+    ];
+
+    const expectedCaseDetails:CaseDetails[] = [
+      {
+        CaseId: '9001',
+        CaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9001`,
+        CaseStatus: 110,
+        EditorAllocated: 'rrice',
+      },
+      {
+        CaseId: '9002',
+        CaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9002`,
+        CaseStatus: 210,
+        EditorAllocated: '',
+      },
+      {
+        CaseId: '9003',
+        CaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9003`,
+        CaseStatus: 0,
+        EditorAllocated: 'bedgar',
+      },
+    ];
+
     // act
-    const result = mapCaseDetails(caseDataListMockObject, questionnaireName, externalWebUrl);
+    const result = mapCaseDetails(caseDataList, questionnaireName, externalWebUrl);
 
     // assert
-    expect(result).toEqual(caseDetailsListMockObject);
+    expect(result).toEqual(expectedCaseDetails);
   });
 });
 
