@@ -6,8 +6,6 @@ import { CaseDetails } from '../../../common/interfaces/caseInterface';
 describe('Map case report data to case details list', () => {
   it('It should return a correctly mapped list of cases', () => {
     // arrange
-    const questionnaireName: string = 'OPN2201A';
-    const externalWebUrl: string = 'cati.blaise.com';
 
     const caseDataList: CaseData[] = [
       {
@@ -30,26 +28,23 @@ describe('Map case report data to case details list', () => {
     const expectedCaseDetails:CaseDetails[] = [
       {
         CaseId: '9001',
-        CaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9001`,
         CaseStatus: 110,
         EditorAllocated: 'rrice',
       },
       {
         CaseId: '9002',
-        CaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9002`,
         CaseStatus: 210,
         EditorAllocated: '',
       },
       {
         CaseId: '9003',
-        CaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9003`,
         CaseStatus: 0,
         EditorAllocated: 'bedgar',
       },
     ];
 
     // act
-    const result = mapCaseDetails(caseDataList, questionnaireName, externalWebUrl);
+    const result = mapCaseDetails(caseDataList);
 
     // assert
     expect(result).toEqual(expectedCaseDetails);

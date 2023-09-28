@@ -1,14 +1,20 @@
-import React, { ReactElement } from 'react';
-import { Link } from 'react-router-dom';
-import { QuestionnaireCaseDetails } from '../../common/interfaces/surveyInterface';
+import { ReactElement } from 'react';
+import { QuestionnaireDetails } from '../../common/interfaces/surveyInterface';
+import CasesList from './CasesList';
 
 interface EditorsQuestionnairesListProps {
-  questionnaires: QuestionnaireCaseDetails[];
+  questionnaires: QuestionnaireDetails[];
 }
 
 export default function EditorsQuestionnairesList({ questionnaires }: EditorsQuestionnairesListProps): ReactElement {
   return (
-    <dl
+    <>
+      {questionnaires.map((questionnaire) => (
+        <CasesList questionnaireName={questionnaire.questionnaireName} cases={questionnaire.allocationDetails.casesAllocated} />
+      ))}
+
+    </>
+  /*     <dl
       className="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
       title="Questionnares"
       data-testid="QuestionnaireList"
@@ -16,17 +22,13 @@ export default function EditorsQuestionnairesList({ questionnaires }: EditorsQue
     >
       <dt className="ons-metadata__term ons-grid__col ons-col-4@m">Questionnaire</dt>
       <dd className="ons-metadata__value ons-grid__col ons-col-8@m" style={{ fontWeight: 'bold' }}>Cases allocated to me</dd>
+
       {questionnaires.map((questionnaire) => (
-        <React.Fragment key={questionnaire.questionnaireName}>
-          <dt className="ons-metadata__term ons-grid__col ons-col-4@m">
-            <Link to={`/questionnaires/${questionnaire.questionnaireName}/cases`} style={{ fontWeight: 'normal' }}>
-              {questionnaire.questionnaireName}
-            </Link>
-          </dt>
-          <dd className="ons-metadata__value ons-grid__col ons-col-8@m">{questionnaire.numberOfCases}</dd>
-        </React.Fragment>
+        <div>{questionnaire.questionnaireName}</div>
+
+        // <CasesList questionnaireName={questionnaire.questionnaireName} cases={questionnaire.allocationDetails.casesAllocated} />
       ))}
-    </dl>
+    </dl> */
 
   );
 }

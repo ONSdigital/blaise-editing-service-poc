@@ -1,16 +1,9 @@
-import { CaseDetails } from "./caseInterface"
+import { CaseDetails } from './caseInterface';
 
 export interface Survey {
   name: string,
   questionnaires: QuestionnaireDetails[],
 }
-
-//TODO: maybe not use this and use QuestionnaireDetails
- export interface QuestionnaireCaseDetails {
-  questionnaireName: string,
-  numberOfCases: number,
-  numberOfCasesAllocated: number
-}  
 
 export interface QuestionnaireDetails {
   questionnaireName: string,
@@ -23,4 +16,3 @@ export interface AllocationDetails {
   casesAllocated: CaseDetails[]
   casesNotAllocated: CaseDetails[]
 }
-

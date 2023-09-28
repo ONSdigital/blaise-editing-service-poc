@@ -4,8 +4,8 @@ import nodeServer from '../../../server/server';
 import FakeConfigurationProvider from '../configuration/FakeConfigurationProvider';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
-import surveyAllocationListMockObject from '../../mockObjects/surveyAllocationListMockObject';
-import { questionnaireCaseDetailsListMockObject } from '../../mockObjects/questionnaireListMockObject';
+import surveyListMockObject from '../../mockObjects/surveyListMockObject';
+import { questionnaireDetailsListMockObject } from '../../mockObjects/questionnaireListMockObject';
 
 // create fake config
 const configFake = new FakeConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
@@ -31,14 +31,14 @@ describe('Get surveys tests', () => {
   it('It should return a 200 response with an expected list of surveys', async () => {
     // arrange
     // mock blaise client to return a list of questionnaires with allocation
-    blaiseApiMock.setup((api) => api.getQuestionnaires()).returns(async () => questionnaireCaseDetailsListMockObject);
+    blaiseApiMock.setup((api) => api.getQuestionnaires()).returns(async () => questionnaireDetailsListMockObject);
 
     // act
     const response: Response = await sut.get('/api/surveys');
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual(surveyAllocationListMockObject);
+    expect(response.body).toEqual(surveyListMockObject);
     blaiseApiMock.verify((api) => api.getQuestionnaires(), Times.once());
   });
 

@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
-import { QuestionnaireCaseDetails } from '../../common/interfaces/surveyInterface';
+import { QuestionnaireDetails } from '../../common/interfaces/surveyInterface';
 
 interface ManagersQuestionnairesListProps {
-  questionnaires: QuestionnaireCaseDetails[];
+  questionnaires: QuestionnaireDetails[];
 }
 
 export default function ManagersQuestionnairesList({ questionnaires }: ManagersQuestionnairesListProps): ReactElement {
@@ -24,7 +24,7 @@ export default function ManagersQuestionnairesList({ questionnaires }: ManagersQ
             </Link>
           </dt>
           <dd className="ons-metadata__value ons-grid__col ons-col-8@m">
-            {questionnaire.numberOfCasesAllocated}
+            {questionnaire.allocationDetails.numberOfAllocatedCases}
             {' '}
             /
             {' '}

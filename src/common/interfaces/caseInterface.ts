@@ -3,7 +3,6 @@ import { CaseOutcome } from 'blaise-api-node-client';
 export interface CaseDetails {
   CaseId: string,
   CaseStatus: CaseOutcome,
-  CaseLink: string, //TODO: maybe just render this inline in the react page rather than create
   EditorAllocated: string
 }
 

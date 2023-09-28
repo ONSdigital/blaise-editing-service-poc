@@ -13,7 +13,7 @@ interface SurveyProps {
 export default function Surveys({ user }: SurveyProps) {
   const infoPanelMessage = `Bonjour tout le monde ${user.name}`;
 
-  //TODO: maybe filter surveys returned here - pass user details to node and bring back full list or filtered
+  // TODO: maybe filter surveys returned here - pass user details to node and bring back full list or filtered
   const surveys = useAsyncRequest<Survey []>(getSurveys);
 
   return (
