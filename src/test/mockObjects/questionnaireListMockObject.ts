@@ -1,5 +1,4 @@
 import { Questionnaire } from 'blaise-api-node-client';
-import { QuestionnaireCaseDetails } from '../../common/interfaces/surveyInterface';
 
 export const questionnaire1Mock: Questionnaire = {
   name: 'LMS2101_AA1',
@@ -72,9 +71,4 @@ export const questionnaireCaseDetails4MockObject = {
   numberOfCasesAllocated: 3,
 };
 
-export const questionnaireCaseDetailsListMockObject: QuestionnaireCaseDetails[] = [
-  questionnaireCaseDetails1MockObject,
-  questionnaireCaseDetails2MockObject,
-  questionnaireCaseDetails3MockObject,
-  questionnaireCaseDetails4MockObject,
-];
+

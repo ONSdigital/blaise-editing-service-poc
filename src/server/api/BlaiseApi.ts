@@ -1,9 +1,9 @@
-import BlaiseClient, { CaseData, QuestionnaireReport } from 'blaise-api-node-client';
+import BlaiseClient, { CaseData, Questionnaire, QuestionnaireReport } from 'blaise-api-node-client';
 import { Configuration } from '../interfaces/configurationInterface';
-import mapQuestionnaireAllocation from '../mappers/questionnaireMapper';
-import { mapCaseDetails, mapCaseFactsheet } from '../mappers/caseMapper';
-import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
-import { QuestionnaireCaseDetails } from '../../common/interfaces/surveyInterface';
+import mapQuestionnaireDetails from '../mappers/questionnaireMapper';
+import { mapCaseFactsheet } from '../mappers/caseMapper';
+import { CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
+import { QuestionnaireDetails } from '../../common/interfaces/surveyInterface';
 
 export default class BlaiseApi {
   config: Configuration;
@@ -13,21 +13,11 @@ export default class BlaiseApi {
   constructor(config: Configuration, blaiseApiClient: BlaiseClient) {
     this.config = config;
     this.blaiseApiClient = blaiseApiClient;
-    this.getCaseDetails = this.getCaseDetails.bind(this);
+    this.getQuestionnaireDetails = this.getQuestionnaireDetails.bind(this);
     this.getCaseFactsheet = this.getCaseFactsheet.bind(this);
     this.getQuestionnaires = this.getQuestionnaires.bind(this);
     this.getCaseFieldsForQuestionnaire = this.getCaseFieldsForQuestionnaire.bind(this);
-    this.getCaseFieldsForQuestionnaires = this.getCaseFieldsForQuestionnaires.bind(this);
-  }
-
-  async getCaseDetails(questionnaireName: string, username: string): Promise<CaseDetails[]> {
-    const fieldIds: string[] = ['qserial.serial_number', 'qhadmin.hout', 'allocation.toeditor'];
-    const questionnaireReportData = await this.getCaseFieldsForQuestionnaire(questionnaireName, fieldIds);
-    const filteredReportingData: CaseData[] = questionnaireReportData.reportingData
-      .filter((caseData) => caseData['allocation.toeditor'] === username);
-    const caseDetails = mapCaseDetails(filteredReportingData, questionnaireName, this.config.ExternalWebUrl);
-
-    return caseDetails;
+    this.getQuestionnaireDetailsList = this.getQuestionnaireDetailsList.bind(this);
   }
 
   async getCaseFactsheet(questionnaireName: string, caseId: string): Promise<CaseFactsheetDetails> {
@@ -37,25 +27,33 @@ export default class BlaiseApi {
     return casefactsheet;
   }
 
-  async getQuestionnaires(): Promise<QuestionnaireCaseDetails[]> {
-    const allocationFieldIds = ['allocation.toeditor'];
-
+  async getQuestionnaires(username?: string): Promise<QuestionnaireDetails[]> {
     const questionnaires = await this.blaiseApiClient.getQuestionnaires(this.config.ServerPark);
-    const questionnaireNames = questionnaires.map((q) => q.name);
-    const questionnairesReportData = await this.getCaseFieldsForQuestionnaires(questionnaireNames, allocationFieldIds);
-
-    return mapQuestionnaireAllocation(questionnaires, questionnairesReportData);
+     
+    return await this.getQuestionnaireDetailsList(questionnaires, username); 
   }
 
   private async getCaseFieldsForQuestionnaire(questionnaireName: string, fieldIds: string[]): Promise<QuestionnaireReport> {
     return this.blaiseApiClient.getQuestionnaireReportData(this.config.ServerPark, questionnaireName, fieldIds);
   }
 
-  private async getCaseFieldsForQuestionnaires(questionnaireNames: string[], fieldIds:string[]): Promise<QuestionnaireReport[]> {
-    const reports: Promise<QuestionnaireReport>[] = [];
+  private async getQuestionnaireDetails(questionnaire: Questionnaire, username?: string): Promise<QuestionnaireDetails> {
+    const fieldIds: string[] = ['qserial.serial_number', 'qhadmin.hout', 'allocation.toeditor'];
+    const questionnaireReportData = await this.getCaseFieldsForQuestionnaire(questionnaire.name, fieldIds);
+    const reportData = questionnaireReportData.reportingData;
 
-    questionnaireNames.forEach((questionnaireName) => {
-      reports.push(this.blaiseApiClient.getQuestionnaireReportData(this.config.ServerPark, questionnaireName, fieldIds));
+    const caseData: CaseData[]  = !username 
+      ? reportData
+      : reportData.filter((caseData) => caseData['allocation.toeditor'] === username);
+    
+    return mapQuestionnaireDetails(questionnaire, caseData);
+  }
+
+  private async getQuestionnaireDetailsList(questionnaires: Questionnaire[], username?: string): Promise<QuestionnaireDetails[]> {
+    const reports: Promise<QuestionnaireDetails>[] = [];
+
+    questionnaires.forEach((questionnaire) => {
+      reports.push(this.getQuestionnaireDetails(questionnaire, username));
     });
 
     return Promise.all(reports);
