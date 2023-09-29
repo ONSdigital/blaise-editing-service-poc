@@ -3,12 +3,11 @@ import { IMock, Mock, Times } from 'typemoq';
 import nodeServer from '../../../server/server';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
-import surveyListMockObject from '../../mockObjects/surveyListMockObject';
-import { questionnaireDetailsListMockObject } from '../../mockObjects/questionnaireListMockObject';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
+import { QuestionnaireDetails, Survey } from '../../../common/interfaces/surveyInterface';
 
 // create fake config
-const configFake = new FakeServerConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
+const configFake = new FakeServerConfigurationProvider();
 
 // mock blaise api client
 const blaiseApiMock: IMock<BlaiseApi> = Mock.ofType(BlaiseApi);
@@ -31,14 +30,58 @@ describe('Get surveys tests', () => {
   it('It should return a 200 response with an expected list of surveys', async () => {
     // arrange
     // mock blaise client to return a list of questionnaires with allocation
-    blaiseApiMock.setup((api) => api.getQuestionnaires()).returns(async () => questionnaireDetailsListMockObject);
+    const questionnaireList:QuestionnaireDetails[] = [
+      {
+        questionnaireName: 'LMS2101_AA1',
+        numberOfCases: 10,
+        numberOfCasesAllocated: 3,
+      },
+      {
+        questionnaireName: 'LMS2101_AB1',
+        numberOfCases: 4,
+        numberOfCasesAllocated: 1,
+      },
+      {
+        questionnaireName: 'OPN2201A',
+        numberOfCases: 12,
+        numberOfCasesAllocated: 10,
+      },
+    ];
+
+    const expectedSurveyList:Survey[] = [{
+      name: 'LMS',
+      questionnaires: [
+        {
+          questionnaireName: 'LMS2101_AA1',
+          numberOfCases: 10,
+          numberOfCasesAllocated: 3,
+        },
+        {
+          questionnaireName: 'LMS2101_AB1',
+          numberOfCases: 4,
+          numberOfCasesAllocated: 1,
+        }
+      ],
+    },
+    {
+      name: 'OPN',
+      questionnaires: [
+        {
+          questionnaireName: 'OPN2201A',
+          numberOfCases: 12,
+          numberOfCasesAllocated: 10,
+        },
+      ],
+    }];
+
+    blaiseApiMock.setup((api) => api.getQuestionnaires()).returns(async () => questionnaireList);
 
     // act
     const response: Response = await sut.get('/api/surveys');
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual(surveyListMockObject);
+    expect(response.body).toEqual(expectedSurveyList);
     blaiseApiMock.verify((api) => api.getQuestionnaires(), Times.once());
   });
 
