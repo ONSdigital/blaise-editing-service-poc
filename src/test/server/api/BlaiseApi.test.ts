@@ -10,9 +10,6 @@ import {
 import {
   questionnaireReport1MockObject,
 } from '../../mockObjects/questionnaireReportMockObjects';
-import {
-  caseFactsheetMockObject, caseResponseMockObject,
-} from '../../mockObjects/caseMockObject';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 import { CaseDetails, CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
@@ -216,7 +213,7 @@ describe('getCaseFactsheet from Blaise', () => {
     blaiseApiClientMock.reset();
   });
 
-  it('Should retrieve a case from blaise', async () => {
+  it('Should retrieve a case factsheet from blaise', async () => {
     // arrange
     const caseId = '90001';
 
@@ -233,7 +230,7 @@ describe('getCaseFactsheet from Blaise', () => {
         'qDataBag.PostCode': 'NZ11 4PD',
         'qhAdmin.HOut': 110,
         'qhAdmin.Interviewer[1]': 'Rich',
-        'dmhSize': 2,
+        'dmhSize': 1,
         'dmName[1]': 'Bartholomew Edgar',
         'dmDteOfBth[1]': new Date(1995, 5, 11),
       },
@@ -243,7 +240,7 @@ describe('getCaseFactsheet from Blaise', () => {
       CaseId: '9001',
       OutcomeCode: 110,
       InterviewerName: 'Rich',
-      NumberOfRespondents: 2,
+      NumberOfRespondents: 1,
       Address: {
         AddressLine1: 'Flat 1',
         AddressLine2: 'Richmond House',
@@ -287,7 +284,7 @@ describe('getCaseFactsheet from Blaise', () => {
         'qDataBag.PostCode': 'NZ11 4PD',
         'qhAdmin.HOut': 110,
         'qhAdmin.Interviewer[1]': 'Rich',
-        'dmhSize': 2,
+        'dmhSize': 1,
         'dmName[1]': 'Bartholomew Edgar',
         'dmDteOfBth[1]': new Date(1995, 5, 11),
       },
