@@ -10,7 +10,7 @@ import BlaiseApi from '../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from './configuration/FakeServerConfigurationProvider';
 
 // create fake config
-const configFake = new FakeServerConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
+const configFake = new FakeServerConfigurationProvider();
 
 // mock blaise api client
 const blaiseApiMock: IMock<BlaiseApi> = Mock.ofType(BlaiseApi);
