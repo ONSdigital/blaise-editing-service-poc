@@ -1,4 +1,4 @@
-import BlaiseApiClient, { QuestionnaireReport } from 'blaise-api-node-client';
+import BlaiseApiClient, { CaseResponse, QuestionnaireReport } from 'blaise-api-node-client';
 import {
   IMock, It, Mock, Times,
 } from 'typemoq';
@@ -14,11 +14,11 @@ import {
   caseFactsheetMockObject, caseResponseMockObject,
 } from '../../mockObjects/caseMockObject';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
-import { CaseDetails } from '../../../common/interfaces/caseInterface';
+import { CaseDetails, CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
 
 // create fake config
-const configFake = new FakeServerConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
+const configFake = new FakeServerConfigurationProvider();
 
 // mock blaise api client
 
@@ -38,7 +38,7 @@ describe('getCaseDetails from Blaise', () => {
 
   it('Should retrieve a filtered list of case details is a username is supplied', async () => {
     // arrange
-    const questionnaireReport1MockObjectLocal: QuestionnaireReport = {
+    const questionnaireReport1: QuestionnaireReport = {
       questionnaireName,
       questionnaireId: '00000000-0000-0000-0000-000000000000',
       reportingData: [
@@ -65,7 +65,7 @@ describe('getCaseDetails from Blaise', () => {
       ],
     };
 
-    const caseDetailsListMockObject:CaseDetails[] = [
+    const expectedCaseDetailsList:CaseDetails[] = [
       {
         CaseId: '9001',
         CaseStatus: 110,
@@ -81,18 +81,18 @@ describe('getCaseDetails from Blaise', () => {
     ];
 
     blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaireName, fieldIds))
-      .returns(async () => questionnaireReport1MockObjectLocal);
+      .returns(async () => questionnaireReport1);
 
     // act
     const result = await sut.getCaseDetails(questionnaireName, username);
 
     // assert
-    expect(result).toEqual(caseDetailsListMockObject);
+    expect(result).toEqual(expectedCaseDetailsList);
   });
 
   it('Should retrieve a full list of case details is a username is not supplied', async () => {
     // arrange
-    const questionnaireReport1MockObjectLocal: QuestionnaireReport = {
+    const questionnaireReport: QuestionnaireReport = {
       questionnaireName,
       questionnaireId: '00000000-0000-0000-0000-000000000000',
       reportingData: [
@@ -107,25 +107,19 @@ describe('getCaseDetails from Blaise', () => {
           'allocation.toeditor': '',
         },
         {
-          'qserial.serial_number': '9003',
-          'qhadmin.hout': 210,
-          'allocation.toeditor': username,
-        },
-        {
           'qserial.serial_number': '9004',
-          'qhadmin.hout': 120,
+          'qhadmin.hout': 300,
           'allocation.toeditor': 'Mike',
         },
       ],
     };
 
-    const caseDetailsListMockObject:CaseDetails[] = [
+    const expectedCaseDetailsList:CaseDetails[] = [
       {
         CaseId: '9001',
         CaseStatus: 110,
         EditorAllocated: username,
         EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9001`,
-
       },
       {
         CaseId: '9002',
@@ -134,32 +128,26 @@ describe('getCaseDetails from Blaise', () => {
         EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9002`,
       },
       {
-        CaseId: '9003',
-        CaseStatus: 210,
-        EditorAllocated: username,
-        EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9003`,
-      },
-      {
         CaseId: '9004',
-        CaseStatus: 120,
+        CaseStatus: 300,
         EditorAllocated: 'Mike',
         EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9004`,
       },
     ];
 
     blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaireName, fieldIds))
-      .returns(async () => questionnaireReport1MockObjectLocal);
+      .returns(async () => questionnaireReport);
 
     // act
     const result = await sut.getCaseDetails(questionnaireName);
 
     // assert
-    expect(result).toEqual(caseDetailsListMockObject);
+    expect(result).toEqual(expectedCaseDetailsList);
   });
 
   it('Should retrieve an empty list of cases if none are allocated to the user when a username is supplied', async () => {
     // arrange
-    const questionnaireReport1MockObjectLocal: QuestionnaireReport = {
+    const questionnaireReport: QuestionnaireReport = {
       questionnaireName,
       questionnaireId: '00000000-0000-0000-0000-000000000000',
       reportingData: [
@@ -173,21 +161,11 @@ describe('getCaseDetails from Blaise', () => {
           'qhadmin.hout': 120,
           'allocation.toeditor': '',
         },
-        {
-          'qserial.serial_number': '9003',
-          'qhadmin.hout': 210,
-          'allocation.toeditor': 'mike',
-        },
-        {
-          'qserial.serial_number': '9004',
-          'qhadmin.hout': 120,
-          'allocation.toeditor': 'Mike',
-        },
       ],
     };
 
     blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaireName, fieldIds))
-      .returns(async () => questionnaireReport1MockObjectLocal);
+      .returns(async () => questionnaireReport);
 
     // act
     const result = await sut.getCaseDetails(questionnaireName, username);
@@ -198,14 +176,14 @@ describe('getCaseDetails from Blaise', () => {
 
   it('Should retrieve an empty list is questionnaire has no cases', async () => {
     // arrange
-    const questionnaireReport1MockObjectLocal: QuestionnaireReport = {
+    const questionnaireReport: QuestionnaireReport = {
       questionnaireName,
       questionnaireId: '00000000-0000-0000-0000-000000000000',
       reportingData: [],
     };
 
     blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaireName, fieldIds))
-      .returns(async () => questionnaireReport1MockObjectLocal);
+      .returns(async () => questionnaireReport);
 
     // act
     const result = await sut.getCaseDetails(questionnaireName);
@@ -216,8 +194,14 @@ describe('getCaseDetails from Blaise', () => {
 
   it('Should call the getCaseDetails function with the expected parameters', async () => {
     // arrange
+    const questionnaireReport: QuestionnaireReport = {
+      questionnaireName,
+      questionnaireId: '00000000-0000-0000-0000-000000000000',
+      reportingData: [],
+    };
+
     blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaireName, fieldIds))
-      .returns(async () => questionnaireReport1MockObject);
+      .returns(async () => questionnaireReport);
 
     // act
     await sut.getCaseDetails(questionnaireName, username);
@@ -235,19 +219,81 @@ describe('getCaseFactsheet from Blaise', () => {
   it('Should retrieve a case from blaise', async () => {
     // arrange
     const caseId = '90001';
-    blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => caseResponseMockObject);
+
+    const caseResponse: CaseResponse = {
+      caseId: '9001',
+      fieldData: {
+        'qiD.Serial_Number': '9001',
+        'qDataBag.Prem1': 'Flat 1',
+        'qDataBag.Prem2': 'Richmond House',
+        'qDataBag.Prem3': 'Rice Road',
+        'qDataBag.Prem4': 'Duffrin',
+        'qDataBag.District': 'Gwent',
+        'qDataBag.PostTown': 'Newport',
+        'qDataBag.PostCode': 'NZ11 4PD',
+        'qhAdmin.HOut': 110,
+        'qhAdmin.Interviewer[1]': 'Rich',
+        'dmhSize': 2,
+        'dmName[1]': 'Bartholomew Edgar',
+        'dmDteOfBth[1]': new Date(1995, 5, 11),
+      },
+    };
+
+    const expectedCaseFactsheet:CaseFactsheetDetails = {
+      CaseId: '9001',
+      OutcomeCode: 110,
+      InterviewerName: 'Rich',
+      NumberOfRespondents: 2,
+      Address: {
+        AddressLine1: 'Flat 1',
+        AddressLine2: 'Richmond House',
+        AddressLine3: 'Rice Road',
+        AddressLine4: 'Duffrin',
+        County: 'Gwent',
+        Town: 'Newport',
+        Postcode: 'NZ11 4PD',
+      },
+      Respondents: [
+        {
+          RespondentName: 'Bartholomew Edgar',
+          DateOfBirth: new Date(1995, 5, 11),
+        },
+      ],
+    };
+
+    blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => caseResponse);
 
     // act
     const result = await sut.getCaseFactsheet(questionnaireName, caseId);
 
     // assert
-    expect(result).toEqual(caseFactsheetMockObject);
+    expect(result).toEqual(expectedCaseFactsheet);
   });
 
   it('Should call the getCaseFactsheet function with the expected parameters', async () => {
     // arrange
     const caseId = '90001';
-    blaiseApiClientMock.setup((client) => client.getCase(It.isAnyString(), It.isAnyString(), It.isAnyString())).returns(async () => caseResponseMockObject);
+
+    const caseResponse: CaseResponse = {
+      caseId: '9001',
+      fieldData: {
+        'qiD.Serial_Number': '9001',
+        'qDataBag.Prem1': 'Flat 1',
+        'qDataBag.Prem2': 'Richmond House',
+        'qDataBag.Prem3': 'Rice Road',
+        'qDataBag.Prem4': 'Duffrin',
+        'qDataBag.District': 'Gwent',
+        'qDataBag.PostTown': 'Newport',
+        'qDataBag.PostCode': 'NZ11 4PD',
+        'qhAdmin.HOut': 110,
+        'qhAdmin.Interviewer[1]': 'Rich',
+        'dmhSize': 2,
+        'dmName[1]': 'Bartholomew Edgar',
+        'dmDteOfBth[1]': new Date(1995, 5, 11),
+      },
+    };
+
+    blaiseApiClientMock.setup((client) => client.getCase(It.isAnyString(), It.isAnyString(), It.isAnyString())).returns(async () => caseResponse);
 
     // act
     await sut.getCaseFactsheet(questionnaireName, caseId);
