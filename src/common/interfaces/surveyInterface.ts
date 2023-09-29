@@ -8,11 +8,10 @@ export interface Survey {
 export interface QuestionnaireDetails {
   questionnaireName: string,
   numberOfCases: number,
-  allocationDetails: AllocationDetails
+  numberOfCasesAllocated: number,
 }
 
 export interface AllocationDetails {
-  numberOfAllocatedCases: number
   casesAllocated: CaseDetails[]
   casesNotAllocated: CaseDetails[]
 }

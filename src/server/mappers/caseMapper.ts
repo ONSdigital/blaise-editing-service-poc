@@ -1,11 +1,12 @@
 import { CaseData, CaseResponse } from 'blaise-api-node-client';
 import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
 
-export function mapCaseDetails(caseDataList: CaseData[]): CaseDetails[] {
+export function mapCaseDetails(caseDataList: CaseData[], questionnaireName:string, externalWebUrl:string): CaseDetails[] {
   return caseDataList.map((caseData) => ({
     CaseId: caseData['qserial.serial_number'],
     CaseStatus: caseData['qhadmin.hout'],
     EditorAllocated: caseData['allocation.toeditor'],
+    EditCaseLink: `https://${externalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=${caseData['qserial.serial_number']}`,
   }));
 }
 

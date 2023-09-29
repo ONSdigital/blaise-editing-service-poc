@@ -29,12 +29,16 @@ export default function CasesList({ questionnaireName, cases }: CasesListProps) 
           ]}
         >
           <>
-            {cases.map((questionnaireCase, caseIndex) => (
-              <tr key={questionnaireCase.CaseId} className="ons-table__row" data-testid={`case-table-row${caseIndex}`}>
-                <td className="ons-table__cell">{questionnaireCase.CaseId}</td>
-                <td className="ons-table__cell">{questionnaireCase.CaseStatus}</td>
+            {cases.map((caseDetails, caseIndex) => (
+              <tr key={caseDetails.CaseId} className="ons-table__row" data-testid={`case-table-row${caseIndex}`}>
                 <td className="ons-table__cell">
-                  <Link to={`/questionnaires/${questionnaireName}/cases/${questionnaireCase.CaseId}/factsheet`}>Factsheet</Link>
+                  <Link to={caseDetails.EditCaseLink}>
+                    {caseDetails.CaseId}
+                  </Link>
+                </td>
+                <td className="ons-table__cell">{caseDetails.CaseStatus}</td>
+                <td className="ons-table__cell">
+                  <Link to={`/questionnaires/${questionnaireName}/cases/${caseDetails.CaseId}/factsheet`}>Factsheet</Link>
                 </td>
               </tr>
             ))}

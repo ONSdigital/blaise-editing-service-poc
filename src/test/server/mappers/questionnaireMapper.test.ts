@@ -3,7 +3,7 @@ import mapQuestionnaireDetails from '../../../server/mappers/questionnaireMapper
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 
 describe('Map a list of questionnaires and reports to a questionnaire allocation list', () => {
-  it('It should return a correctly mapped list of questionnaires with allocation details', () => {
+  it('It should return a correctly mapped list of questionnaires', () => {
     // arrange
     const username: string = 'toby';
 
@@ -38,27 +38,34 @@ describe('Map a list of questionnaires and reports to a questionnaire allocation
     const expectedQuestionnaireDetails: QuestionnaireDetails = {
       questionnaireName: questionnaire.name,
       numberOfCases: questionnaire.dataRecordCount ?? 0,
-      allocationDetails: {
-        numberOfAllocatedCases: 2,
-        casesAllocated: [
-          {
-            CaseId: '9001',
-            CaseStatus: 110,
-            EditorAllocated: 'jakew',
-          },
-          {
-            CaseId: '9002',
-            CaseStatus: 210,
-            EditorAllocated: username,
-          },
-        ],
-        casesNotAllocated: [
-          {
-            CaseId: '9003',
-            CaseStatus: 210,
-            EditorAllocated: '',
-          }],
-      },
+      numberOfCasesAllocated: 2,
+    };
+
+    // act
+    const result = mapQuestionnaireDetails(questionnaire, caseData);
+
+    // assert
+    expect(result).toEqual(expectedQuestionnaireDetails);
+  });
+
+  it('It should return a correctly mapped list of questionnaires when there are no cases', () => {
+    // arrange
+    const questionnaire: Questionnaire = {
+      name: 'LMS2101_AA1',
+      serverParkName: 'gusty',
+      installDate: '2021-01-15T15:26:43.4233454+00:00',
+      status: 'Active',
+      dataRecordCount: 0,
+      hasData: false,
+      active: false,
+    };
+
+    const caseData: CaseData[] = [];
+
+    const expectedQuestionnaireDetails: QuestionnaireDetails = {
+      questionnaireName: questionnaire.name,
+      numberOfCases: questionnaire.dataRecordCount ?? 0,
+      numberOfCasesAllocated: 0,
     };
 
     // act

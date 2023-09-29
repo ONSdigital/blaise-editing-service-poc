@@ -4,6 +4,7 @@ export interface CaseDetails {
   CaseId: string,
   CaseStatus: CaseOutcome,
   EditorAllocated: string
+  EditCaseLink: string;
 }
 
 export interface CaseFactsheetDetails {

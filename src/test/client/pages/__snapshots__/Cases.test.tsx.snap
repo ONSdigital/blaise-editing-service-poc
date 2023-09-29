@@ -64,7 +64,7 @@ exports[`Given there are cases available in blaise for questionnaire should rend
                   class="ons-table__cell"
                 >
                   <a
-                    href="https://cati.blaise.com/TEST111A?Mode=CAWI&KeyValue=9001"
+                    href="https://cati.blaise.com/OPN2211A?Mode=CAWI&KeyValue=9001"
                   >
                     9001
                   </a>
@@ -92,7 +92,7 @@ exports[`Given there are cases available in blaise for questionnaire should rend
                   class="ons-table__cell"
                 >
                   <a
-                    href="https://cati.blaise.com/TEST111A?Mode=CAWI&KeyValue=9002"
+                    href="https://cati.blaise.com/OPN2211A?Mode=CAWI&KeyValue=9002"
                   >
                     9002
                   </a>
@@ -120,7 +120,7 @@ exports[`Given there are cases available in blaise for questionnaire should rend
                   class="ons-table__cell"
                 >
                   <a
-                    href="https://cati.blaise.com/TEST111A?Mode=CAWI&KeyValue=9003"
+                    href="https://cati.blaise.com/OPN2211A?Mode=CAWI&KeyValue=9003"
                   >
                     9003
                   </a>
@@ -206,7 +206,7 @@ exports[`Given there are cases available in blaise for questionnaire should rend
                 class="ons-table__cell"
               >
                 <a
-                  href="https://cati.blaise.com/TEST111A?Mode=CAWI&KeyValue=9001"
+                  href="https://cati.blaise.com/OPN2211A?Mode=CAWI&KeyValue=9001"
                 >
                   9001
                 </a>
@@ -234,7 +234,7 @@ exports[`Given there are cases available in blaise for questionnaire should rend
                 class="ons-table__cell"
               >
                 <a
-                  href="https://cati.blaise.com/TEST111A?Mode=CAWI&KeyValue=9002"
+                  href="https://cati.blaise.com/OPN2211A?Mode=CAWI&KeyValue=9002"
                 >
                   9002
                 </a>
@@ -262,7 +262,7 @@ exports[`Given there are cases available in blaise for questionnaire should rend
                 class="ons-table__cell"
               >
                 <a
-                  href="https://cati.blaise.com/TEST111A?Mode=CAWI&KeyValue=9003"
+                  href="https://cati.blaise.com/OPN2211A?Mode=CAWI&KeyValue=9003"
                 >
                   9003
                 </a>

@@ -24,16 +24,19 @@ describe('Given there are cases available in blaise for questionnaire', () => {
       CaseId: '9001',
       CaseStatus: 110,
       EditorAllocated: 'rrice',
+      EditCaseLink: 'https://cati.blaise.com/OPN2211A?Mode=CAWI&KeyValue=9001',
     },
     {
       CaseId: '9002',
       CaseStatus: 210,
       EditorAllocated: '',
+      EditCaseLink: 'https://cati.blaise.com/OPN2211A?Mode=CAWI&KeyValue=9002',
     },
     {
       CaseId: '9003',
       CaseStatus: 0,
       EditorAllocated: 'bedgar',
+      EditCaseLink: 'https://cati.blaise.com/OPN2211A?Mode=CAWI&KeyValue=9003',
     },
   ];
 
@@ -78,7 +81,7 @@ describe('Given there are cases available in blaise for questionnaire', () => {
       const caseListView = view.getByTestId(`case-table-row${caseIndex}`);
       expect(caseListView).toHaveTextContent(caseDetail.CaseId);
       expect(caseListView).toHaveTextContent(String(caseDetail.CaseStatus));
-      // expect(view.getByRole('link', { name: caseDetail.CaseId })).toHaveAttribute('href', caseDetail.CaseLink);
+      expect(view.getByRole('link', { name: caseDetail.CaseId })).toHaveAttribute('href', caseDetail.EditCaseLink);
     });
   });
 });

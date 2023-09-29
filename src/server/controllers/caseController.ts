@@ -1,16 +1,16 @@
 import express, { Request, Response, Router } from 'express';
 import { Controller } from '../interfaces/controllerInterface';
-import { Configuration } from '../interfaces/configurationInterface';
+import { ServerConfiguration } from '../interfaces/serverConfigurationInterface';
 import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
-import notFound from '../../common/helpers/axiosHelper';
+import notFound from '../helpers/axiosHelper';
 import BlaiseApi from '../api/BlaiseApi';
 
 export default class CaseController implements Controller {
-  config: Configuration;
+  config: ServerConfiguration;
 
   blaiseApi: BlaiseApi;
 
-  constructor(config: Configuration, blaiseApi: BlaiseApi) {
+  constructor(config: ServerConfiguration, blaiseApi: BlaiseApi) {
     this.config = config;
     this.blaiseApi = blaiseApi;
     this.getCases = this.getCases.bind(this);

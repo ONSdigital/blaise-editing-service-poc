@@ -1,6 +1,7 @@
 import { CaseData, CaseResponse } from 'blaise-api-node-client';
 import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
 
+const questionnaireName = 'OPN2201A';
 const case1PrimaryKey = '1';
 const case2PrimaryKey = '2';
 const case3PrimaryKey = '3';
@@ -39,16 +40,19 @@ export const caseDataListMockObject: CaseData[] = [
 export const caseDetailsListMockObject:CaseDetails[] = [
   {
     CaseId: case1PrimaryKey,
+    EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=${case1PrimaryKey}`,
     CaseStatus: case1outcome,
     EditorAllocated: blaiseUser1,
   },
   {
     CaseId: case2PrimaryKey,
+    EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=${case2PrimaryKey}`,
     CaseStatus: case2outcome,
     EditorAllocated: '',
   },
   {
     CaseId: case3PrimaryKey,
+    EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=${case3PrimaryKey}`,
     CaseStatus: case3outcome,
     EditorAllocated: blaiseUser2,
   },

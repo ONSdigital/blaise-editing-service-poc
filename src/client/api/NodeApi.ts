@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
-import notFound from '../../common/helpers/axiosHelper';
+import notFound from '../../server/helpers/axiosHelper';
 import { Survey } from '../../common/interfaces/surveyInterface';
 
 async function getDataFromNode<T>(url: string, notFoundError: string): Promise<T> {

@@ -51,78 +51,25 @@ export const questionnaireListMockObject: Questionnaire[] = [
 export const questionnaireDetails1MockObject: QuestionnaireDetails = {
   questionnaireName: questionnaire1Mock.name,
   numberOfCases: questionnaire1Mock.dataRecordCount ?? 0,
-  allocationDetails: {
-    numberOfAllocatedCases: 2,
-    casesAllocated: [
-      {
-        CaseId: '9001',
-        CaseStatus: 110,
-        EditorAllocated: 'jakew',
-      },
-      {
-        CaseId: '9002',
-        CaseStatus: 210,
-        EditorAllocated: 'toby',
-      },
-    ],
-    casesNotAllocated: [
-      {
-        CaseId: '9003',
-        CaseStatus: 210,
-        EditorAllocated: '',
-      }],
-  },
+  numberOfCasesAllocated: 3,
 };
 
 export const questionnaireDetails2MockObject: QuestionnaireDetails = {
   questionnaireName: questionnaire2Mock.name,
   numberOfCases: questionnaire2Mock.dataRecordCount ?? 0,
-  allocationDetails: {
-    numberOfAllocatedCases: 0,
-    casesAllocated: [],
-    casesNotAllocated: [
-      {
-        CaseId: '8001',
-        CaseStatus: 0,
-        EditorAllocated: '',
-      }],
-  },
+  numberOfCasesAllocated: 1,
 };
 
 export const questionnaireDetails3MockObject: QuestionnaireDetails = {
   questionnaireName: questionnaire3Mock.name,
   numberOfCases: questionnaire3Mock.dataRecordCount ?? 0,
-  allocationDetails: {
-    numberOfAllocatedCases: 0,
-    casesAllocated: [],
-    casesNotAllocated: [],
-  },
+  numberOfCasesAllocated: 0,
 };
 
 export const questionnaireDetails4MockObject: QuestionnaireDetails = {
   questionnaireName: questionnaire4Mock.name,
   numberOfCases: questionnaire4Mock.dataRecordCount ?? 0,
-  allocationDetails: {
-    numberOfAllocatedCases: 2,
-    casesAllocated: [
-      {
-        CaseId: '7001',
-        CaseStatus: 110,
-        EditorAllocated: 'toby',
-      },
-      {
-        CaseId: '7002',
-        CaseStatus: 210,
-        EditorAllocated: 'toby',
-      },
-    ],
-    casesNotAllocated: [
-      {
-        CaseId: '7003',
-        CaseStatus: 210,
-        EditorAllocated: '',
-      }],
-  },
+  numberOfCasesAllocated: 3,
 };
 
 export const questionnaireDetailsListMockObject: QuestionnaireDetails[] = [

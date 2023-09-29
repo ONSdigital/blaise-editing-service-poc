@@ -2,7 +2,6 @@ import BlaiseApiClient, { QuestionnaireReport } from 'blaise-api-node-client';
 import {
   IMock, It, Mock, Times,
 } from 'typemoq';
-import FakeConfigurationProvider from '../configuration/FakeConfigurationProvider';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import {
   questionnaire1Mock, questionnaire2Mock, questionnaire3Mock,
@@ -16,9 +15,10 @@ import {
 } from '../../mockObjects/caseMockObject';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 import { CaseDetails } from '../../../common/interfaces/caseInterface';
+import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
 
 // create fake config
-const configFake = new FakeConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
+const configFake = new FakeServerConfigurationProvider('restapi.blaise.com', 'dist', 5000, 'gusty', 'cati.blaise.com', 'richlikesricecakes', '12h', ['DST']);
 
 // mock blaise api client
 
@@ -30,9 +30,8 @@ const sut = new BlaiseApi(configFake, blaiseApiClientMock.object);
 const questionnaireName = 'OPN2201A';
 const username: string = 'toby';
 
-describe('getCaseStatus from Blaise', () => {
+describe('getCaseDetails from Blaise', () => {
   const fieldIds: string[] = ['qserial.serial_number', 'qhadmin.hout', 'allocation.toeditor'];
-
   beforeEach(() => {
     blaiseApiClientMock.reset();
   });
@@ -71,11 +70,13 @@ describe('getCaseStatus from Blaise', () => {
         CaseId: '9001',
         CaseStatus: 110,
         EditorAllocated: username,
+        EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9001`,
       },
       {
         CaseId: '9003',
         CaseStatus: 210,
         EditorAllocated: username,
+        EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9003`,
       },
     ];
 
@@ -123,21 +124,26 @@ describe('getCaseStatus from Blaise', () => {
         CaseId: '9001',
         CaseStatus: 110,
         EditorAllocated: username,
+        EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9001`,
+
       },
       {
         CaseId: '9002',
         CaseStatus: 120,
         EditorAllocated: '',
+        EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9002`,
       },
       {
         CaseId: '9003',
         CaseStatus: 210,
         EditorAllocated: username,
+        EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9003`,
       },
       {
         CaseId: '9004',
         CaseStatus: 120,
         EditorAllocated: 'Mike',
+        EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9004`,
       },
     ];
 
@@ -252,7 +258,7 @@ describe('getCaseFactsheet from Blaise', () => {
 });
 
 describe('getQuestionnaires from Blaise', () => {
-  const fieldIds: string[] = ['qserial.serial_number', 'qhadmin.hout', 'allocation.toeditor'];
+  const fieldIds: string[] = ['allocation.toeditor'];
 
   beforeEach(() => {
     blaiseApiClientMock.reset();
@@ -351,75 +357,22 @@ describe('getQuestionnaires from Blaise', () => {
     const expectedQuestionnaireDetails: QuestionnaireDetails[] = [{
       questionnaireName: questionnaire1Mock.name,
       numberOfCases: questionnaire1Mock.dataRecordCount ?? 0,
-      allocationDetails: {
-        numberOfAllocatedCases: 2,
-        casesAllocated: [
-          {
-            CaseId: '9001',
-            CaseStatus: 110,
-            EditorAllocated: 'jakew',
-          },
-          {
-            CaseId: '9002',
-            CaseStatus: 210,
-            EditorAllocated: username,
-          },
-        ],
-        casesNotAllocated: [
-          {
-            CaseId: '9003',
-            CaseStatus: 210,
-            EditorAllocated: '',
-          }],
-      },
+      numberOfCasesAllocated: 2,
     },
     {
       questionnaireName: questionnaire2Mock.name,
       numberOfCases: questionnaire2Mock.dataRecordCount ?? 0,
-      allocationDetails: {
-        numberOfAllocatedCases: 0,
-        casesAllocated: [],
-        casesNotAllocated: [
-          {
-            CaseId: '8001',
-            CaseStatus: 0,
-            EditorAllocated: '',
-          }],
-      },
+      numberOfCasesAllocated: 0,
     },
     {
       questionnaireName: questionnaire3Mock.name,
       numberOfCases: questionnaire3Mock.dataRecordCount ?? 0,
-      allocationDetails: {
-        numberOfAllocatedCases: 0,
-        casesAllocated: [],
-        casesNotAllocated: [],
-      },
+      numberOfCasesAllocated: 0,
     },
     {
       questionnaireName: questionnaire4Mock.name,
       numberOfCases: questionnaire4Mock.dataRecordCount ?? 0,
-      allocationDetails: {
-        numberOfAllocatedCases: 2,
-        casesAllocated: [
-          {
-            CaseId: '7001',
-            CaseStatus: 110,
-            EditorAllocated: username,
-          },
-          {
-            CaseId: '7002',
-            CaseStatus: 210,
-            EditorAllocated: username,
-          },
-        ],
-        casesNotAllocated: [
-          {
-            CaseId: '7003',
-            CaseStatus: 210,
-            EditorAllocated: '',
-          }],
-      },
+      numberOfCasesAllocated: 2,
     }];
 
     // act
