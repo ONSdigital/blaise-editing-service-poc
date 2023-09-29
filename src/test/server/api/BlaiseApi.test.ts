@@ -323,7 +323,109 @@ describe('getQuestionnaires from Blaise', () => {
     });
   });
 
-  it('Should return the expected full list of questionnaires with allocation details is no username is supplied', async () => {
+  it('Should return the expected list of questionnaires with allocation details if a username is supplied', async () => {
+    // arrange
+    blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => questionnaireListMockObject);
+
+    // mock questionnaire 1 report data
+    const reportdata1Mock: QuestionnaireReport = {
+      questionnaireName: questionnaire1Mock.name,
+      questionnaireId: '00000000-0000-0000-0000-000000000000',
+      reportingData: [
+        {
+          'qserial.serial_number': '9001',
+          'qhadmin.hout': 110,
+          'allocation.toeditor': 'jakew',
+        },
+        {
+          'qserial.serial_number': '9002',
+          'qhadmin.hout': 210,
+          'allocation.toeditor': username,
+        },
+        {
+          'qserial.serial_number': '9003',
+          'qhadmin.hout': 210,
+          'allocation.toeditor': '',
+        },
+      ],
+    };
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire1Mock.name, fieldIds)).returns(async () => reportdata1Mock);
+
+    // mock questionnaire 2 report data
+    const reportdata2Mock: QuestionnaireReport = {
+      questionnaireName: questionnaire2Mock.name,
+      questionnaireId: '00000000-0000-0000-0000-000000000000',
+      reportingData: [
+        {
+          'qserial.serial_number': '8001',
+          'qhadmin.hout': 0,
+          'allocation.toeditor': '',
+        },
+      ],
+    };
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire2Mock.name, fieldIds)).returns(async () => reportdata2Mock);
+
+    // mock questionnaire 3 report data
+    const reportdata3Mock: QuestionnaireReport = {
+      questionnaireName: questionnaire3Mock.name,
+      questionnaireId: '00000000-0000-0000-0000-000000000000',
+      reportingData: [],
+    };
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire3Mock.name, fieldIds)).returns(async () => reportdata3Mock);
+
+    // mock questionnaire 4 report data
+    const reportdata4Mock: QuestionnaireReport = {
+      questionnaireName: questionnaire4Mock.name,
+      questionnaireId: '00000000-0000-0000-0000-000000000000',
+      reportingData: [
+        {
+          'qserial.serial_number': '7001',
+          'qhadmin.hout': 110,
+          'allocation.toeditor': username,
+        },
+        {
+          'qserial.serial_number': '7002',
+          'qhadmin.hout': 210,
+          'allocation.toeditor': username,
+        },
+        {
+          'qserial.serial_number': '7003',
+          'qhadmin.hout': 210,
+          'allocation.toeditor': '',
+        },
+      ],
+    };
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire4Mock.name, fieldIds)).returns(async () => reportdata4Mock);
+
+    const expectedQuestionnaireDetails: QuestionnaireDetails[] = [{
+      questionnaireName: questionnaire1Mock.name,
+      numberOfCases: questionnaire1Mock.dataRecordCount ?? 0,
+      numberOfCasesAllocated: 1,
+    },
+    {
+      questionnaireName: questionnaire2Mock.name,
+      numberOfCases: questionnaire2Mock.dataRecordCount ?? 0,
+      numberOfCasesAllocated: 0,
+    },
+    {
+      questionnaireName: questionnaire3Mock.name,
+      numberOfCases: questionnaire3Mock.dataRecordCount ?? 0,
+      numberOfCasesAllocated: 0,
+    },
+    {
+      questionnaireName: questionnaire4Mock.name,
+      numberOfCases: questionnaire4Mock.dataRecordCount ?? 0,
+      numberOfCasesAllocated: 2,
+    }];
+
+    // act
+    const result = await sut.getQuestionnaires(username);
+
+    // assert
+    expect(result).toEqual(expectedQuestionnaireDetails);
+  });
+
+  it('Should return the expected list of questionnaires with allocation details if no username is supplied', async () => {
     // arrange
     blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => questionnaireListMockObject);
 
