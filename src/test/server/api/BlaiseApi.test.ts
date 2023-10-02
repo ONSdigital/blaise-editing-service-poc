@@ -8,11 +8,12 @@ import {
   questionnaire4Mock, questionnaireListMockObject,
 } from '../../mockObjects/questionnaireListMockObject';
 import {
-  questionnaireReport1MockObject,
+  questionnaireReport1MockObject, questionnaireReport2MockObject, questionnaireReport3MockObject, questionnaireReport4MockObject,
 } from '../../mockObjects/questionnaireReportMockObjects';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
-import { CaseDetails, CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
+import { CaseDetails } from '../../../common/interfaces/caseInterface';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
+import { caseFactsheetMockObject, caseResponseMockObject } from '../../mockObjects/caseMockObject';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
@@ -35,7 +36,7 @@ describe('getCaseDetails from Blaise', () => {
 
   it('Should retrieve a filtered list of case details is a username is supplied', async () => {
     // arrange
-    const questionnaireReport1: QuestionnaireReport = {
+    const questionnaireReport: QuestionnaireReport = {
       questionnaireName,
       questionnaireId: '00000000-0000-0000-0000-000000000000',
       reportingData: [
@@ -78,7 +79,7 @@ describe('getCaseDetails from Blaise', () => {
     ];
 
     blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaireName, fieldIds))
-      .returns(async () => questionnaireReport1);
+      .returns(async () => questionnaireReport);
 
     // act
     const result = await sut.getCaseDetails(questionnaireName, username);
@@ -217,61 +218,20 @@ describe('getCaseFactsheet from Blaise', () => {
     // arrange
     const caseId = '90001';
 
-    const caseResponse: CaseResponse = {
-      caseId: '9001',
-      fieldData: {
-        'qiD.Serial_Number': '9001',
-        'qDataBag.Prem1': 'Flat 1',
-        'qDataBag.Prem2': 'Richmond House',
-        'qDataBag.Prem3': 'Rice Road',
-        'qDataBag.Prem4': 'Duffrin',
-        'qDataBag.District': 'Gwent',
-        'qDataBag.PostTown': 'Newport',
-        'qDataBag.PostCode': 'NZ11 4PD',
-        'qhAdmin.HOut': 110,
-        'qhAdmin.Interviewer[1]': 'Rich',
-        dmhSize: 1,
-        'dmName[1]': 'Bartholomew Edgar',
-        'dmDteOfBth[1]': new Date(1995, 5, 11),
-      },
-    };
-
-    const expectedCaseFactsheet:CaseFactsheetDetails = {
-      CaseId: '9001',
-      OutcomeCode: 110,
-      InterviewerName: 'Rich',
-      NumberOfRespondents: 1,
-      Address: {
-        AddressLine1: 'Flat 1',
-        AddressLine2: 'Richmond House',
-        AddressLine3: 'Rice Road',
-        AddressLine4: 'Duffrin',
-        County: 'Gwent',
-        Town: 'Newport',
-        Postcode: 'NZ11 4PD',
-      },
-      Respondents: [
-        {
-          RespondentName: 'Bartholomew Edgar',
-          DateOfBirth: new Date(1995, 5, 11),
-        },
-      ],
-    };
-
-    blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => caseResponse);
+    blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => caseResponseMockObject);
 
     // act
     const result = await sut.getCaseFactsheet(questionnaireName, caseId);
 
     // assert
-    expect(result).toEqual(expectedCaseFactsheet);
+    expect(result).toEqual(caseFactsheetMockObject);
   });
 
   it('Should call the getCaseFactsheet function with the expected parameters', async () => {
     // arrange
     const caseId = '90001';
 
-    const caseResponse: CaseResponse = {
+    const caseResponseData: CaseResponse = {
       caseId: '9001',
       fieldData: {
         'qiD.Serial_Number': '9001',
@@ -290,7 +250,7 @@ describe('getCaseFactsheet from Blaise', () => {
       },
     };
 
-    blaiseApiClientMock.setup((client) => client.getCase(It.isAnyString(), It.isAnyString(), It.isAnyString())).returns(async () => caseResponse);
+    blaiseApiClientMock.setup((client) => client.getCase(It.isAnyString(), It.isAnyString(), It.isAnyString())).returns(async () => caseResponseData);
 
     // act
     await sut.getCaseFactsheet(questionnaireName, caseId);
@@ -327,80 +287,24 @@ describe('getQuestionnaires from Blaise', () => {
     // arrange
     blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => questionnaireListMockObject);
 
-    // mock questionnaire 1 report data
-    const reportdata1Mock: QuestionnaireReport = {
-      questionnaireName: questionnaire1Mock.name,
-      questionnaireId: '00000000-0000-0000-0000-000000000000',
-      reportingData: [
-        {
-          'qserial.serial_number': '9001',
-          'qhadmin.hout': 110,
-          'allocation.toeditor': 'jakew',
-        },
-        {
-          'qserial.serial_number': '9002',
-          'qhadmin.hout': 210,
-          'allocation.toeditor': username,
-        },
-        {
-          'qserial.serial_number': '9003',
-          'qhadmin.hout': 210,
-          'allocation.toeditor': '',
-        },
-      ],
-    };
-    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire1Mock.name, fieldIds)).returns(async () => reportdata1Mock);
+    // mock questionnaire report data
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire1Mock.name, fieldIds))
+      .returns(async () => questionnaireReport1MockObject);
 
-    // mock questionnaire 2 report data
-    const reportdata2Mock: QuestionnaireReport = {
-      questionnaireName: questionnaire2Mock.name,
-      questionnaireId: '00000000-0000-0000-0000-000000000000',
-      reportingData: [
-        {
-          'qserial.serial_number': '8001',
-          'qhadmin.hout': 0,
-          'allocation.toeditor': '',
-        },
-      ],
-    };
-    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire2Mock.name, fieldIds)).returns(async () => reportdata2Mock);
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire2Mock.name, fieldIds))
+      .returns(async () => questionnaireReport2MockObject);
 
-    // mock questionnaire 3 report data
-    const reportdata3Mock: QuestionnaireReport = {
-      questionnaireName: questionnaire3Mock.name,
-      questionnaireId: '00000000-0000-0000-0000-000000000000',
-      reportingData: [],
-    };
-    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire3Mock.name, fieldIds)).returns(async () => reportdata3Mock);
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire3Mock.name, fieldIds))
+      .returns(async () => questionnaireReport3MockObject);
 
     // mock questionnaire 4 report data
-    const reportdata4Mock: QuestionnaireReport = {
-      questionnaireName: questionnaire4Mock.name,
-      questionnaireId: '00000000-0000-0000-0000-000000000000',
-      reportingData: [
-        {
-          'qserial.serial_number': '7001',
-          'qhadmin.hout': 110,
-          'allocation.toeditor': username,
-        },
-        {
-          'qserial.serial_number': '7002',
-          'qhadmin.hout': 210,
-          'allocation.toeditor': username,
-        },
-        {
-          'qserial.serial_number': '7003',
-          'qhadmin.hout': 210,
-          'allocation.toeditor': '',
-        },
-      ],
-    };
-    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire4Mock.name, fieldIds)).returns(async () => reportdata4Mock);
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire4Mock.name, fieldIds))
+      .returns(async () => questionnaireReport4MockObject);
 
     const expectedQuestionnaireDetails: QuestionnaireDetails[] = [{
       questionnaireName: questionnaire1Mock.name,
       numberOfCases: questionnaire1Mock.dataRecordCount ?? 0,
-      numberOfCasesAllocated: 1,
+      numberOfCasesAllocated: 2,
     },
     {
       questionnaireName: questionnaire2Mock.name,
@@ -415,7 +319,7 @@ describe('getQuestionnaires from Blaise', () => {
     {
       questionnaireName: questionnaire4Mock.name,
       numberOfCases: questionnaire4Mock.dataRecordCount ?? 0,
-      numberOfCasesAllocated: 2,
+      numberOfCasesAllocated: 1,
     }];
 
     // act
@@ -429,75 +333,19 @@ describe('getQuestionnaires from Blaise', () => {
     // arrange
     blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => questionnaireListMockObject);
 
-    // mock questionnaire 1 report data
-    const reportdata1Mock: QuestionnaireReport = {
-      questionnaireName: questionnaire1Mock.name,
-      questionnaireId: '00000000-0000-0000-0000-000000000000',
-      reportingData: [
-        {
-          'qserial.serial_number': '9001',
-          'qhadmin.hout': 110,
-          'allocation.toeditor': 'jakew',
-        },
-        {
-          'qserial.serial_number': '9002',
-          'qhadmin.hout': 210,
-          'allocation.toeditor': username,
-        },
-        {
-          'qserial.serial_number': '9003',
-          'qhadmin.hout': 210,
-          'allocation.toeditor': '',
-        },
-      ],
-    };
-    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire1Mock.name, fieldIds)).returns(async () => reportdata1Mock);
+    // mock questionnaire report data
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire1Mock.name, fieldIds))
+      .returns(async () => questionnaireReport1MockObject);
 
-    // mock questionnaire 2 report data
-    const reportdata2Mock: QuestionnaireReport = {
-      questionnaireName: questionnaire2Mock.name,
-      questionnaireId: '00000000-0000-0000-0000-000000000000',
-      reportingData: [
-        {
-          'qserial.serial_number': '8001',
-          'qhadmin.hout': 0,
-          'allocation.toeditor': '',
-        },
-      ],
-    };
-    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire2Mock.name, fieldIds)).returns(async () => reportdata2Mock);
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire2Mock.name, fieldIds))
+      .returns(async () => questionnaireReport2MockObject);
 
-    // mock questionnaire 3 report data
-    const reportdata3Mock: QuestionnaireReport = {
-      questionnaireName: questionnaire3Mock.name,
-      questionnaireId: '00000000-0000-0000-0000-000000000000',
-      reportingData: [],
-    };
-    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire3Mock.name, fieldIds)).returns(async () => reportdata3Mock);
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire3Mock.name, fieldIds))
+      .returns(async () => questionnaireReport3MockObject);
 
     // mock questionnaire 4 report data
-    const reportdata4Mock: QuestionnaireReport = {
-      questionnaireName: questionnaire4Mock.name,
-      questionnaireId: '00000000-0000-0000-0000-000000000000',
-      reportingData: [
-        {
-          'qserial.serial_number': '7001',
-          'qhadmin.hout': 110,
-          'allocation.toeditor': username,
-        },
-        {
-          'qserial.serial_number': '7002',
-          'qhadmin.hout': 210,
-          'allocation.toeditor': username,
-        },
-        {
-          'qserial.serial_number': '7003',
-          'qhadmin.hout': 210,
-          'allocation.toeditor': '',
-        },
-      ],
-    };
-    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire4Mock.name, fieldIds)).returns(async () => reportdata4Mock);
+    blaiseApiClientMock.setup((client) => client.getQuestionnaireReportData(configFake.ServerPark, questionnaire4Mock.name, fieldIds))
+      .returns(async () => questionnaireReport4MockObject);
 
     const expectedQuestionnaireDetails: QuestionnaireDetails[] = [{
       questionnaireName: questionnaire1Mock.name,
@@ -517,7 +365,7 @@ describe('getQuestionnaires from Blaise', () => {
     {
       questionnaireName: questionnaire4Mock.name,
       numberOfCases: questionnaire4Mock.dataRecordCount ?? 0,
-      numberOfCasesAllocated: 2,
+      numberOfCasesAllocated: 3,
     }];
 
     // act

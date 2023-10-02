@@ -4,7 +4,7 @@ import nodeServer from '../../../server/server';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
-import { CaseDetails, CaseFactsheetDetails } from '../../../common/interfaces/caseInterface';
+import { caseDetailsListMockObject, caseFactsheetMockObject } from '../../mockObjects/caseMockObject';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
@@ -34,29 +34,14 @@ describe('Get case list tests', () => {
     // mock blaise client to return a list of cases
     const questionnaireName: string = 'OPN2201A';
 
-    const caseDetailsList:CaseDetails[] = [
-      {
-        CaseId: '9001',
-        EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9001`,
-        CaseStatus: 110,
-        EditorAllocated: 'blaiseUser1',
-      },
-      {
-        CaseId: '9002',
-        EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9002`,
-        CaseStatus: 120,
-        EditorAllocated: '',
-      },
-    ];
-
-    blaiseApiMock.setup((api) => api.getCaseDetails(questionnaireName, username)).returns(async () => caseDetailsList);
+    blaiseApiMock.setup((api) => api.getCaseDetails(questionnaireName, username)).returns(async () => caseDetailsListMockObject);
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases?username=${username}`);
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual(caseDetailsList);
+    expect(response.body).toEqual(caseDetailsListMockObject);
     blaiseApiMock.verify((api) => api.getCaseDetails(questionnaireName, username), Times.once());
   });
 
@@ -117,40 +102,14 @@ describe('Get case fact sheet tests', () => {
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
 
-    const caseFactsheet:CaseFactsheetDetails = {
-      CaseId: '9001',
-      OutcomeCode: 110,
-      InterviewerName: 'Rich',
-      NumberOfRespondents: 2,
-      Address: {
-        AddressLine1: 'Flat 1',
-        AddressLine2: 'Richmond House',
-        AddressLine3: 'Rice Road',
-        AddressLine4: 'Duffrin',
-        County: 'Gwent',
-        Town: 'Newport',
-        Postcode: 'NZ11 4PD',
-      },
-      Respondents: [
-        {
-          RespondentName: 'Richmond Ricecake',
-          DateOfBirth: new Date(1980, 1, 15),
-        },
-        {
-          RespondentName: 'Bartholomew Edgar',
-          DateOfBirth: new Date(1995, 5, 11),
-        },
-      ],
-    };
-
-    blaiseApiMock.setup((api) => api.getCaseFactsheet(questionnaireName, caseId)).returns(async () => caseFactsheet);
+    blaiseApiMock.setup((api) => api.getCaseFactsheet(questionnaireName, caseId)).returns(async () => caseFactsheetMockObject);
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/factsheet`);
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.text).toEqual(JSON.stringify(caseFactsheet));
+    expect(response.text).toEqual(JSON.stringify(caseFactsheetMockObject));
     blaiseApiMock.verify((api) => api.getCaseFactsheet(questionnaireName, caseId), Times.once());
   });
 

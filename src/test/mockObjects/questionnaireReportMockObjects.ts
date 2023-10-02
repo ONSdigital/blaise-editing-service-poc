@@ -1,33 +1,29 @@
 import { QuestionnaireReport } from 'blaise-api-node-client';
-import {
-  questionnaire1Mock, questionnaire2Mock, questionnaire3Mock, questionnaire4Mock,
-} from './questionnaireListMockObject';
-import { caseDetailsListMockObject } from './caseMockObject';
 
 export const questionnaireReport1MockObject: QuestionnaireReport = {
-  questionnaireName: questionnaire1Mock.name,
+  questionnaireName: 'LMS2101_AA1',
   questionnaireId: '00000000-0000-0000-0000-000000000000',
   reportingData: [
     {
-      'qserial.serial_number': caseDetailsListMockObject[0]?.CaseId,
-      'qhadmin.hout': caseDetailsListMockObject[0]?.CaseStatus,
-      'allocation.toeditor': caseDetailsListMockObject[0]?.EditorAllocated,
+      'qserial.serial_number': '9001',
+      'qhadmin.hout': '110',
+      'allocation.toeditor': 'toby',
     },
     {
-      'qserial.serial_number': caseDetailsListMockObject[1]?.CaseId,
-      'qhadmin.hout': caseDetailsListMockObject[1]?.CaseStatus,
-      'allocation.toeditor': caseDetailsListMockObject[1]?.EditorAllocated,
+      'qserial.serial_number': '9002',
+      'qhadmin.hout': '310',
+      'allocation.toeditor': '',
     },
     {
-      'qserial.serial_number': caseDetailsListMockObject[2]?.CaseId,
-      'qhadmin.hout': caseDetailsListMockObject[2]?.CaseStatus,
-      'allocation.toeditor': caseDetailsListMockObject[2]?.EditorAllocated,
+      'qserial.serial_number': '9003',
+      'qhadmin.hout': '0',
+      'allocation.toeditor': 'toby',
     },
   ],
 };
 
 export const questionnaireReport2MockObject: QuestionnaireReport = {
-  questionnaireName: questionnaire2Mock.name,
+  questionnaireName: 'LMS2101_AB1',
   questionnaireId: '00000000-0000-0000-0000-000000000000',
   reportingData: [
     {
@@ -37,23 +33,23 @@ export const questionnaireReport2MockObject: QuestionnaireReport = {
 };
 
 export const questionnaireReport3MockObject: QuestionnaireReport = {
-  questionnaireName: questionnaire3Mock.name,
+  questionnaireName: 'LMS2101_AC1',
   questionnaireId: '00000000-0000-0000-0000-000000000000',
   reportingData: [],
 };
 
 export const questionnaireReport4MockObject: QuestionnaireReport = {
-  questionnaireName: questionnaire4Mock.name,
+  questionnaireName: 'OPN2201A',
   questionnaireId: '00000000-0000-0000-0000-000000000000',
   reportingData: [
     {
-      'allocation.toeditor': 'jakew',
+      'allocation.toeditor': 'jake',
     },
     {
-      'allocation.toeditor': 'tobym',
+      'allocation.toeditor': 'toby',
     },
     {
-      'allocation.toeditor': 'jakew',
+      'allocation.toeditor': 'jake',
     },
   ],
 };
