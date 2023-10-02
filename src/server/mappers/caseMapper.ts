@@ -13,9 +13,9 @@ export function mapCaseDetails(caseDataList: CaseData[], questionnaireName:strin
 export function mapCaseFactsheet(caseResponse: CaseResponse): CaseFactsheetDetails {
   const caseFactSheet: CaseFactsheetDetails = {
     CaseId: caseResponse.caseId,
-    OutcomeCode: caseResponse.fieldData['qhAdmin.HOut'],
+    OutcomeCode: Number(caseResponse.fieldData['qhAdmin.HOut']),
     InterviewerName: caseResponse.fieldData['qhAdmin.Interviewer[1]'],
-    NumberOfRespondents: caseResponse.fieldData['dmhSize'],
+    NumberOfRespondents: Number(caseResponse.fieldData['dmhSize']),
     Address: {
       AddressLine1: caseResponse.fieldData['qDataBag.Prem1'],
       AddressLine2: caseResponse.fieldData['qDataBag.Prem2'],
@@ -37,7 +37,7 @@ export function mapCaseFactsheet(caseResponse: CaseResponse): CaseFactsheetDetai
   for (let respondentNumber = 1; respondentNumber <= numberOfRespondents; respondentNumber += 1) {
     caseFactSheet.Respondents.push({
       RespondentName: caseResponse.fieldData[`dmName[${respondentNumber}]`],
-      DateOfBirth: caseResponse.fieldData[`dmDteOfBth[${respondentNumber}]`],
+      DateOfBirth: new Date(caseResponse.fieldData[`dmDteOfBth[${respondentNumber}]`]),
     });
   }
 
