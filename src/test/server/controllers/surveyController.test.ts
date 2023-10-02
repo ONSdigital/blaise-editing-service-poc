@@ -60,7 +60,7 @@ describe('Get surveys tests', () => {
           questionnaireName: 'LMS2101_AB1',
           numberOfCases: 4,
           numberOfCasesAllocated: 1,
-        }
+        },
       ],
     },
     {

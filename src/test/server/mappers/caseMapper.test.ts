@@ -58,7 +58,7 @@ describe('Map case report data to case details list', () => {
 describe('Map case response to factsheet', () => {
   it('It should return a correctly mapped factsheet withresponent(s)', () => {
     // arrange
-    const CaseResponse:CaseResponse = {
+    const CaseResponseData:CaseResponse = {
       caseId: '9001',
       fieldData: {
         'qiD.Serial_Number': '9001',
@@ -74,10 +74,10 @@ describe('Map case response to factsheet', () => {
         'dmName[1]': 'Richmond Ricecake',
         'dmDteOfBth[1]': '1980-01-15',
         'dmName[2]': 'Bartholomew Edgar',
-        'dmDteOfBth[2]': '1995-06-11',        
-        'dmhSize': '2',
+        'dmDteOfBth[2]': '1995-06-11',
+        dmhSize: '2',
       },
-    };    
+    };
 
     const expectedFactsheet:CaseFactsheetDetails = {
       CaseId: '9001',
@@ -96,17 +96,17 @@ describe('Map case response to factsheet', () => {
       Respondents: [
         {
           RespondentName: 'Richmond Ricecake',
-          DateOfBirth:  new Date('1980-01-15'),
+          DateOfBirth: new Date('1980-01-15'),
         },
         {
           RespondentName: 'Bartholomew Edgar',
-          DateOfBirth:  new Date('1995-06-11'),
-        }        
+          DateOfBirth: new Date('1995-06-11'),
+        },
       ],
-    };    
+    };
 
     // act
-    const result = mapCaseFactsheet(CaseResponse);
+    const result = mapCaseFactsheet(CaseResponseData);
 
     // assert
     expect(result).toEqual(expectedFactsheet);
@@ -114,7 +114,7 @@ describe('Map case response to factsheet', () => {
 
   it.each(['one', 'dyhzjsgfkb'])('It should error when household size can not be converted into a number', (value) => {
     // arrange
-    const CaseResponse:CaseResponse = {
+    const CaseResponseData:CaseResponse = {
       caseId: '9001',
       fieldData: {
         'qiD.Serial_Number': '9001',
@@ -134,12 +134,12 @@ describe('Map case response to factsheet', () => {
     };
 
     // act && assert
-    expect(() => mapCaseFactsheet(CaseResponse)).toThrowError('Number of responents not specified');
+    expect(() => mapCaseFactsheet(CaseResponseData)).toThrowError('Number of responents not specified');
   });
 
   it.each(['0', '', ' '])('It should error when household Size is missing or zero', (value) => {
     // arrange
-    const CaseResponse:CaseResponse = {
+    const CaseResponseData:CaseResponse = {
       caseId: '9001',
       fieldData: {
         'qiD.Serial_Number': '9001',
@@ -159,6 +159,6 @@ describe('Map case response to factsheet', () => {
     };
 
     // act && assert
-    expect(() => mapCaseFactsheet(CaseResponse)).toThrowError('Number of responents not specified');
+    expect(() => mapCaseFactsheet(CaseResponseData)).toThrowError('Number of responents not specified');
   });
 });

@@ -1,4 +1,4 @@
-import crypto from "crypto"
+import crypto from 'crypto';
 
 export function getStringOrThrowError(variable: string | undefined, variableName: string) {
   if (variable === undefined || variable.trim() === '') {

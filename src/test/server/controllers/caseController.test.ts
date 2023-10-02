@@ -46,7 +46,7 @@ describe('Get case list tests', () => {
         EditCaseLink: `https://cati.blaise.com/${questionnaireName}?Mode=CAWI&KeyValue=9002`,
         CaseStatus: 120,
         EditorAllocated: '',
-      }
+      },
     ];
 
     blaiseApiMock.setup((api) => api.getCaseDetails(questionnaireName, username)).returns(async () => caseDetailsList);
