@@ -9,7 +9,7 @@ function DisplayAllocation(questionnaireName:string) {
   const allocationDetails = useAsyncRequestWithParam<AllocationDetails, string>(getAllocationDetails, questionnaireName);
 
   return (
-    <div data-testid="Allocation">
+    <div data-testid="Allocate">
       <AsyncContent content={allocationDetails}>
         {(loadedAllocationDetails) => <QuestionnaireAllocation questionnaireName={questionnaireName} allocationDetails={loadedAllocationDetails} />}
       </AsyncContent>
@@ -17,12 +17,12 @@ function DisplayAllocation(questionnaireName:string) {
   );
 }
 
-export type AllocationParams = {
+export type AllocateParams = {
   questionnaireName: string
 };
 
-export default function Allocation() {
-  const { questionnaireName } = useParams<keyof AllocationParams>() as AllocationParams;
+export default function Allocate() {
+  const { questionnaireName } = useParams<keyof AllocateParams>() as AllocateParams;
 
   return DisplayAllocation(questionnaireName);
 }

@@ -5,6 +5,7 @@ import { useAsyncRequest } from '../hooks/useAsyncRequest';
 import { Survey } from '../../common/interfaces/surveyInterface';
 import SurveysList from '../components/SurveysList';
 import { getSurveys } from '../api/NodeApi';
+import surveyListMockObject from '../../test/mockObjects/surveyListMockObject';
 
 interface SurveyProps {
   user: User;
@@ -23,7 +24,7 @@ export default function Surveys({ user }: SurveyProps) {
       </ONSPanel>
       <div data-testid="Surveys">
         <AsyncContent content={surveys}>
-          {(loadedSurveys) => <SurveysList surveys={loadedSurveys} user={user} />}
+          {() => <SurveysList surveys={surveyListMockObject} user={user} />}
         </AsyncContent>
       </div>
     </>

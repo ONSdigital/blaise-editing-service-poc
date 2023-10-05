@@ -1,7 +1,7 @@
 import { RenderResult, act, render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Router from 'react-router';
-import Allocation from '../../../client/pages/Allocation';
+import Allocation from '../../../client/pages/Allocate';
 import { AllocationDetails } from '../../../common/interfaces/surveyInterface';
 import { getAllocationDetails } from '../../../client/api/NodeApi';
 import { allocationDetailsMockObject } from '../../mockObjects/questionnaireAllocationMockObject';
