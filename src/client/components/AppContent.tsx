@@ -4,6 +4,8 @@ import { User } from 'blaise-api-node-client';
 import Surveys from '../pages/Surveys';
 import Cases from '../pages/Cases';
 import CaseFactsheet from '../pages/CaseFactsheet';
+import Allocate from '../pages/Allocate';
+import AllocationBreakdown from '../pages/AllocationBreakdown';
 
 interface AppContentProps {
   user:User

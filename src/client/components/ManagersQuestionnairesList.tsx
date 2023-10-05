@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { Link } from 'react-router-dom';
 import { QuestionnaireDetails } from '../../common/interfaces/surveyInterface';
 
 interface ManagersQuestionnairesListProps {
@@ -29,7 +30,9 @@ export default function ManagersQuestionnairesList({ questionnaires }: ManagersQ
                           className="ons-summary__button-text"
                           aria-hidden="true"
                         >
-                          View Breakdown
+                          <Link to={`questionnaires/${questionnaire.questionnaireName}/allocation/breakdown`} style={{ fontWeight: 'normal' }}>
+                            View Breakdown
+                          </Link>
                         </span>
                         <span className="ons-u-vh">View Breakdown</span>
                       </a>
@@ -53,7 +56,9 @@ export default function ManagersQuestionnairesList({ questionnaires }: ManagersQ
                           className="ons-summary__button-text"
                           aria-hidden="true"
                         >
-                          Allocate
+                          <Link to={`questionnaires/${questionnaire.questionnaireName}/allocation/allocate`} style={{ fontWeight: 'normal' }}>
+                            Allocate
+                          </Link>
                         </span>
                         <span className="ons-u-vh">Allocate</span>
                       </a>
