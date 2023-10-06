@@ -5,7 +5,7 @@ import Surveys from '../pages/Surveys';
 import Cases from '../pages/Cases';
 import CaseFactsheet from '../pages/CaseFactsheet';
 import Allocate from '../pages/Allocate';
-import AllocationBreakdown from '../pages/AllocationBreakdown';
+import AllocatedList from '../pages/CurrentlyAllocated';
 
 interface AppContentProps {
   user:User
@@ -18,7 +18,7 @@ export default function AppContent({ user }: AppContentProps): ReactElement {
       <Route path="questionnaires/:questionnaireName/cases/" element={<Cases user={user} />} />
       <Route path="questionnaires/:questionnaireName/cases/:caseId/factsheet" element={<CaseFactsheet />} />
       <Route path="questionnaires/:questionnaireName/allocation/allocate" element={<Allocate />} />
-      <Route path="questionnaires/:questionnaireName/allocation/breakdown" element={<AllocationBreakdown />} />
+      <Route path="questionnaires/:questionnaireName/allocation/allocated" element={<AllocatedList />} />
     </Routes>
   );
 }

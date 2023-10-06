@@ -3,7 +3,7 @@ import { AllocationDetails } from '../../common/interfaces/surveyInterface';
 import { getAllocationDetails } from '../api/NodeApi';
 import { useAsyncRequestWithParam } from '../hooks/useAsyncRequest';
 import AsyncContent from '../components/AsyncContent';
-import Breakdown from '../components/Breakdown';
+import AllocatedList from '../components/AllocatedList';
 
 function DisplayAllocation(questionnaireName:string) {
   const allocationDetails = useAsyncRequestWithParam<AllocationDetails, string>(getAllocationDetails, questionnaireName);
@@ -11,7 +11,7 @@ function DisplayAllocation(questionnaireName:string) {
   return (
     <div data-testid="Allocate">
       <AsyncContent content={allocationDetails}>
-        {(loadedAllocationDetails) => <Breakdown questionnaireName={questionnaireName} allocationDetails={loadedAllocationDetails} />}
+        {(loadedAllocationDetails) => <AllocatedList questionnaireName={questionnaireName} allocationDetails={loadedAllocationDetails} />}
       </AsyncContent>
     </div>
   );

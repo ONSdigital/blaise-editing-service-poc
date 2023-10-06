@@ -30,11 +30,11 @@ export default function ManagersQuestionnairesList({ questionnaires }: ManagersQ
                           className="ons-summary__button-text"
                           aria-hidden="true"
                         >
-                          <Link to={`questionnaires/${questionnaire.questionnaireName}/allocation/breakdown`} style={{ fontWeight: 'normal' }}>
-                            View Breakdown
+                          <Link to={`questionnaires/${questionnaire.questionnaireName}/allocation/allocated`} style={{ fontWeight: 'normal' }}>
+                            Currently Allocated
                           </Link>
                         </span>
-                        <span className="ons-u-vh">View Breakdown</span>
+                        <span className="ons-u-vh">Currently Allocated</span>
                       </a>
                     </dd>
                   </dl>
@@ -57,10 +57,10 @@ export default function ManagersQuestionnairesList({ questionnaires }: ManagersQ
                           aria-hidden="true"
                         >
                           <Link to={`questionnaires/${questionnaire.questionnaireName}/allocation/allocate`} style={{ fontWeight: 'normal' }}>
-                            Allocate
+                            Allocate Cases
                           </Link>
                         </span>
-                        <span className="ons-u-vh">Allocate</span>
+                        <span className="ons-u-vh">Allocate Cases</span>
                       </a>
                     </dd>
                   </dl>

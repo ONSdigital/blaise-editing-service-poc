@@ -3,25 +3,32 @@ import {
 } from 'blaise-design-system-react-components';
 import { ExpandableContent } from 'blaise-design-system-react-components/build/src/components/Accordion';
 import { ReactElement } from 'react';
+import { Link } from 'react-router-dom';
 import { OldAllocationDetails } from '../../common/interfaces/questionnaireAllocationInterface';
 import { questionnaireAllocationMockObject } from '../../test/mockObjects/questionnaireAllocationMockObject';
 import EditorAllocation from './EditorAllocation';
 import { AllocationDetails } from '../../common/interfaces/surveyInterface';
 
-function CreateAllocationBreakdownContent(allocation: OldAllocationDetails[]):ExpandableContent[] {
-  return allocation.map(({ editor, cases }) => ({ title: editor, content: <EditorAllocation cases={cases} /> }));
+function CreateAllocatedListContent(questionnaireName: string, allocation: OldAllocationDetails[]):ExpandableContent[] {
+  return allocation.map(({ editor, cases }) => ({ title: editor, content: <EditorAllocation cases={cases} editor={editor} questionnaireName={questionnaireName} /> }));
 }
 
-interface QuestionnaireBreakdownProps {
+interface AllocatedListProps {
   questionnaireName: string;
   allocationDetails: AllocationDetails
 }
 
-export default function Breakdown({ questionnaireName, allocationDetails }: QuestionnaireBreakdownProps): ReactElement {
+export default function AllocatedList({ questionnaireName, allocationDetails }: AllocatedListProps): ReactElement {
   const questionnaireAllocationDetails = questionnaireAllocationMockObject;
 
   return (
     <>
+      <Link to={`/questionnaires/${questionnaireName}/allocation/allocate`} style={{ fontWeight: 'normal' }}>
+        Allocate editors to
+        {' '}
+        {questionnaireName}
+      </Link>
+
       <ONSPanel spacious status="info" testID="info-panel">
         There are
         {' '}
@@ -34,7 +41,7 @@ export default function Breakdown({ questionnaireName, allocationDetails }: Ques
 
       <br />
       <h3>Currently allocated</h3>
-      <Accordion Expandables={CreateAllocationBreakdownContent(questionnaireAllocationDetails.allocation)} />
+      <Accordion Expandables={CreateAllocatedListContent(questionnaireName, questionnaireAllocationDetails.allocation)} />
       <br />
     </>
   );
