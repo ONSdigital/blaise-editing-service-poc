@@ -31,10 +31,10 @@ export default function ManagersQuestionnairesList({ questionnaires }: ManagersQ
                           aria-hidden="true"
                         >
                           <Link to={`questionnaires/${questionnaire.questionnaireName}/allocation/allocated`} style={{ fontWeight: 'normal' }}>
-                            Currently Allocated
+                            Cases allocated to editors
                           </Link>
                         </span>
-                        <span className="ons-u-vh">Currently Allocated</span>
+                        <span className="ons-u-vh">Cases allocated to editors</span>
                       </a>
                     </dd>
                   </dl>
@@ -57,10 +57,10 @@ export default function ManagersQuestionnairesList({ questionnaires }: ManagersQ
                           aria-hidden="true"
                         >
                           <Link to={`questionnaires/${questionnaire.questionnaireName}/allocation/allocate`} style={{ fontWeight: 'normal' }}>
-                            Allocate Cases
+                            Allocate Cases to editors
                           </Link>
                         </span>
-                        <span className="ons-u-vh">Allocate Cases</span>
+                        <span className="ons-u-vh">Allocate Cases to editors</span>
                       </a>
                     </dd>
                   </dl>

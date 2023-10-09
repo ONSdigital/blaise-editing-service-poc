@@ -40,6 +40,6 @@ describe('The allocation page should display the case allocation for the questio
 
     // assert
     const infopanel = view.getByTestId('info-panel');
-    expect(infopanel).toHaveTextContent(`There are 800 cases left to allocate for ${questionnaireName}`);
+    expect(infopanel).toHaveTextContent(`Allocate cases for ${questionnaireName}`);
   });
 });
