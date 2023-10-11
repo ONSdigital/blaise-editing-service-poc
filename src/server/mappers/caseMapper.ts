@@ -1,6 +1,8 @@
 import { CaseData, CaseResponse } from 'blaise-api-node-client';
 import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
 import CaseFields from '../../client/enums/CaseFields';
+import { EditorAllocationDetails } from '../../common/interfaces/surveyInterface';
+import stringIsNullOrEmpty from '../../common/helpers/stringHelper';
 
 export function mapCaseDetails(caseDataList: CaseData[], questionnaireName:string, externalWebUrl:string): CaseDetails[] {
   return caseDataList.map((caseData) => ({
@@ -9,6 +11,28 @@ export function mapCaseDetails(caseDataList: CaseData[], questionnaireName:strin
     EditorAllocated: caseData[CaseFields.AllocatedTo],
     EditCaseLink: `https://${externalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=${caseData[CaseFields.Id]}`,
   }));
+}
+
+export function mapEditorAllocationDetails(caseDataList: CaseData[]): EditorAllocationDetails[] {
+  const editorAllocationDetails: EditorAllocationDetails[] = []
+  const casesAssigned = caseDataList.filter((cases) => !stringIsNullOrEmpty(cases[CaseFields.AllocatedTo]))
+
+  casesAssigned.forEach((caseAssigned) => {
+    const editor:string = caseAssigned[CaseFields.AllocatedTo];
+    const caseId:string = caseAssigned[CaseFields.Id];
+    const editorAllocation = editorAllocationDetails.find(details => details.editor === editor)
+
+    if(editorAllocation === undefined) {
+      editorAllocationDetails.push({
+        editor: editor,
+      cases:[caseId]});
+      return;
+    }
+
+    editorAllocation.cases.push(caseId);
+  });
+
+  return editorAllocationDetails;
 }
 
 export function mapCaseFactsheet(caseResponse: CaseResponse): CaseFactsheetDetails {
