@@ -45,18 +45,16 @@ export default class BlaiseApi {
 
   async getAllocationDetails(questionnaireName: string, username?: string): Promise<AllocationDetails> {
     const questionnaire = await this.blaiseApiClient.getQuestionnaire(this.config.ServerPark, questionnaireName);
-    const questionnaireDetails = await this.getQuestionnaireDetails(questionnaire, username);
     const fieldIds: string[] = [CaseFields.Id, CaseFields.AllocatedTo];
 
     const caseData = await this.getCaseData(questionnaireName, fieldIds, username);  
+    const questionaireDetails: QuestionnaireDetails = mapQuestionnaireDetails(questionnaire, caseData);
     const editorAllocationDetails: EditorAllocationDetails[] = mapEditorAllocationDetails(caseData);
 
-    const allocationDetails: AllocationDetails = {
-      ...questionnaireDetails,
+    return {
+      ...questionaireDetails,
       editorAllocationDetails:editorAllocationDetails
     }
-
-    return allocationDetails;
   }
 
   private async getCaseFieldsForQuestionnaire(questionnaireName: string, fieldIds: string[]): Promise<QuestionnaireReport> {
