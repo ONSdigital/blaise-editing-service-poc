@@ -1,4 +1,3 @@
-
 export interface Survey {
   name: string,
   questionnaires: QuestionnaireDetails[],

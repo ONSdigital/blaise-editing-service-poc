@@ -422,9 +422,9 @@ describe('getAllocationDetails from Blaise', () => {
       numberOfCasesAllocated: 2,
       editorAllocationDetails: [{
         editor: 'toby',
-        cases: ['9001', '9003']
-      }
-    ]
+        cases: ['9001', '9003'],
+      },
+      ],
     };
 
     // act

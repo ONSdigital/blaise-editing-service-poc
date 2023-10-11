@@ -14,18 +14,19 @@ export function mapCaseDetails(caseDataList: CaseData[], questionnaireName:strin
 }
 
 export function mapEditorAllocationDetails(caseDataList: CaseData[]): EditorAllocationDetails[] {
-  const editorAllocationDetails: EditorAllocationDetails[] = []
-  const casesAssigned = caseDataList.filter((cases) => !stringIsNullOrEmpty(cases[CaseFields.AllocatedTo]))
+  const editorAllocationDetails: EditorAllocationDetails[] = [];
+  const casesAssigned = caseDataList.filter((cases) => !stringIsNullOrEmpty(cases[CaseFields.AllocatedTo]));
 
   casesAssigned.forEach((caseAssigned) => {
     const editor:string = caseAssigned[CaseFields.AllocatedTo];
     const caseId:string = caseAssigned[CaseFields.Id];
-    const editorAllocation = editorAllocationDetails.find(details => details.editor === editor)
+    const editorAllocation = editorAllocationDetails.find((details) => details.editor === editor);
 
-    if(editorAllocation === undefined) {
+    if (editorAllocation === undefined) {
       editorAllocationDetails.push({
-        editor: editor,
-      cases:[caseId]});
+        editor,
+        cases: [caseId],
+      });
       return;
     }
 

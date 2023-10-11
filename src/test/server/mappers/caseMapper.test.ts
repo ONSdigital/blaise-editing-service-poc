@@ -75,22 +75,22 @@ describe('Map case report data to Editor Allocation Details list', () => {
       {
         'qserial.serial_number': '9004',
         'allocation.toeditor': 'jake',
-      },    
+      },
       {
         'qserial.serial_number': '9005',
         'allocation.toeditor': '       ',
-      },        
+      },
     ];
 
     const expectedAllocationDetails:EditorAllocationDetails[] = [{
       editor: 'toby',
-      cases: ['9001', '9003']
+      cases: ['9001', '9003'],
     },
     {
       editor: 'jake',
-      cases: ['9004']
-    }    
-  ];
+      cases: ['9004'],
+    },
+    ];
 
     // act
     const result = mapEditorAllocationDetails(caseDataList);
