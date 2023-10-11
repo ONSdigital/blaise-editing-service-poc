@@ -21,6 +21,7 @@ interface AllocateCasesProps {
 }
 
 export default function AllocateCases({ questionnaireName, allocationDetails, userName }: AllocateCasesProps): ReactElement {
+  console.debug(allocationDetails);
 
   return (
 
