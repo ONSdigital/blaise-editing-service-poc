@@ -10,7 +10,7 @@ export default function ManagersQuestionnairesList({ questionnaires }: ManagersQ
   return (
     <>
       {questionnaires.map((questionnaire) => (
-        <div key={questionnaire.questionnaireName}>
+        <>
           <br />
           <div className="ons-summary">
             <div id="turnover" className="ons-summary__group">
@@ -25,15 +25,17 @@ export default function ManagersQuestionnairesList({ questionnaires }: ManagersQ
                       <span className="ons-summary__text">{questionnaire.numberOfCasesAllocated}</span>
                     </dd>
                     <dd className="ons-summary__actions">
-                      <span
-                        className="ons-summary__button-text"
-                        aria-hidden="true"
-                      >
-                        <Link to={`questionnaires/${questionnaire.questionnaireName}/allocation/allocated`} style={{ fontWeight: 'normal' }}>
-                          Cases allocated to editors
-                        </Link>
-                      </span>
-                      <span className="ons-u-vh">Cases allocated to editors</span>
+                      <a href="#0" className="ons-summary__button">
+                        <span
+                          className="ons-summary__button-text"
+                          aria-hidden="true"
+                        >
+                          <Link to={`questionnaires/${questionnaire.questionnaireName}/allocation/allocated`} style={{ fontWeight: 'normal' }}>
+                            Cases allocated to editors
+                          </Link>
+                        </span>
+                        <span className="ons-u-vh">Cases allocated to editors</span>
+                      </a>
                     </dd>
                   </dl>
                 </div>
@@ -49,15 +51,17 @@ export default function ManagersQuestionnairesList({ questionnaires }: ManagersQ
                       </span>
                     </dd>
                     <dd className="ons-summary__actions">
-                      <span
-                        className="ons-summary__button-text"
-                        aria-hidden="true"
-                      >
-                        <Link to={`questionnaires/${questionnaire.questionnaireName}/allocation/allocate`} style={{ fontWeight: 'normal' }}>
-                          Allocate Cases to editors
-                        </Link>
-                      </span>
-                      <span className="ons-u-vh">Allocate Cases to editors</span>
+                      <a href="#0" className="ons-summary__button">
+                        <span
+                          className="ons-summary__button-text"
+                          aria-hidden="true"
+                        >
+                          <Link to={`questionnaires/${questionnaire.questionnaireName}/allocation/allocate`} style={{ fontWeight: 'normal' }}>
+                            Allocate Cases to editors
+                          </Link>
+                        </span>
+                        <span className="ons-u-vh">Allocate Cases to editors</span>
+                      </a>
                     </dd>
                   </dl>
                 </div>
@@ -65,7 +69,7 @@ export default function ManagersQuestionnairesList({ questionnaires }: ManagersQ
             </div>
           </div>
           <hr />
-        </div>
+        </>
       ))}
 
     </>
