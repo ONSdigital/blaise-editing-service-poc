@@ -20,17 +20,14 @@ export function mapEditorAllocationDetails(caseDataList: CaseData[]): EditorAllo
   casesAssigned.forEach((caseAssigned) => {
     const editor:string = caseAssigned[CaseFields.AllocatedTo];
     const caseId:string = caseAssigned[CaseFields.Id];
-    const editorAllocation = editorAllocationDetails.find((details) => details.editor === editor);
+    const existingEditorAllocation = editorAllocationDetails.find((allocationDetails) => allocationDetails.editor === editor);
 
-    if (editorAllocation === undefined) {
-      editorAllocationDetails.push({
-        editor,
-        cases: [caseId],
-      });
+    if(existingEditorAllocation) {
+      existingEditorAllocation.cases.push(caseId);
       return;
     }
-
-    editorAllocation.cases.push(caseId);
+    
+    editorAllocationDetails.push({editor, cases: [caseId]})
   });
 
   return editorAllocationDetails;
