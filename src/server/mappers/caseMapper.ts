@@ -22,12 +22,12 @@ export function mapEditorAllocationDetails(caseDataList: CaseData[]): EditorAllo
     const caseId:string = caseAssigned[CaseFields.Id];
     const existingEditorAllocation = editorAllocationDetails.find((allocationDetails) => allocationDetails.editor === editor);
 
-    if(existingEditorAllocation) {
+    if (existingEditorAllocation) {
       existingEditorAllocation.cases.push(caseId);
       return;
     }
-    
-    editorAllocationDetails.push({editor, cases: [caseId]})
+
+    editorAllocationDetails.push({ editor, cases: [caseId] });
   });
 
   return editorAllocationDetails;
