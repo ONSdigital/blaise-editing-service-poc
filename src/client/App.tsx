@@ -1,8 +1,8 @@
 import './App.css';
 import { ReactElement } from 'react';
 import { Authenticate } from 'blaise-login-react-client';
-import AppContent from './components/AppContent';
-import LayoutTemplate from './components/LayoutTemplate';
+import AppContent from './Common/components/AppRoutes';
+import LayoutTemplate from './Common/components/LayoutTemplate';
 
 function App(): ReactElement {
   return (

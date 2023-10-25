@@ -1,6 +1,6 @@
 import { CaseData, CaseResponse } from 'blaise-api-node-client';
 import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
-import CaseFields from '../../client/enums/CaseFields';
+import CaseFields from '../../client/Common/enums/CaseFields';
 import { EditorAllocationDetails } from '../../common/interfaces/surveyInterface';
 import stringIsNullOrEmpty from '../../common/helpers/stringHelper';
 
