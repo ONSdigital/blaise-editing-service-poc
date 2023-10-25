@@ -7,7 +7,7 @@ import Cases from '../pages/Cases';
 import CaseFactsheet from '../pages/CaseFactsheet';
 import AllocatedList from '../pages/CurrentlyAllocated';
 import UserRole from '../enums/UserRole';
-import ConditionalRoute from './ConditionalRoute';
+import CreateRoutes from './ConditionalRoute';
 
 interface AppContentProps {
   user:User
@@ -18,52 +18,17 @@ export default function AppContent({ user }: AppContentProps): ReactElement {
 
   return (
     <>
-      <ConditionalRoute condition={userRole === UserRole.Manager}>
+      <CreateRoutes onConditionThat={userRole === UserRole.Manager}>
         <Route path="/" element={<Surveys user={user} />} />
         <Route path="questionnaires/:questionnaireName/allocation/allocate" element={<Allocate />} />
-      </ConditionalRoute>
-      <ConditionalRoute condition={userRole === UserRole.Editor}>
+      </CreateRoutes>
+
+      <CreateRoutes onConditionThat={userRole === UserRole.Editor}>
         <Route path="/" element={<Surveys user={user} />} />
         <Route path="questionnaires/:questionnaireName/cases/" element={<Cases user={user} />} />
         <Route path="questionnaires/:questionnaireName/cases/:caseId/factsheet" element={<CaseFactsheet />} />
         <Route path="questionnaires/:questionnaireName/allocation/allocated" element={<AllocatedList />} />
-      </ConditionalRoute>
+      </CreateRoutes>
     </>
   );
-
-  // switch (userRole) {
-  //   case 'Manager':
-  //     return (
-  //       <Routes>
-  //         <Route path="/" element={<Surveys user={user} />} />
-  //         <Route path="questionnaires/:questionnaireName/allocation/allocate" element={<Allocate />} />
-  //       </Routes>
-  //     );
-  //   case 'Editor':
-  //     return (
-  //       <Routes>
-  //         <Route path="/" element={<Surveys user={user} />} />
-  //         <Route path="questionnaires/:questionnaireName/cases/" element={<Cases user={user} />} />
-  //         <Route path="questionnaires/:questionnaireName/cases/:caseId/factsheet" element={<CaseFactsheet />} />
-  //         <Route path="questionnaires/:questionnaireName/allocation/allocated" element={<AllocatedList />} />
-  //       </Routes>
-  //     );
-  //   default:
-  //     return <div />;
-  // }
-
-  // return userRole === 'Manager' ? (
-  //   <Routes>
-  //     <Route path="/" element={<Surveys user={user} />} />
-  //     <Route path="questionnaires/:questionnaireName/allocation/allocate" element={<Allocate />} />
-  //   </Routes>
-  // )
-  //   : (
-  //     <Routes>
-  //       <Route path="/" element={<Surveys user={user} />} />
-  //       <Route path="questionnaires/:questionnaireName/cases/" element={<Cases user={user} />} />
-  //       <Route path="questionnaires/:questionnaireName/cases/:caseId/factsheet" element={<CaseFactsheet />} />
-  //       <Route path="questionnaires/:questionnaireName/allocation/allocated" element={<AllocatedList />} />
-  //     </Routes>
-  //   );
 }

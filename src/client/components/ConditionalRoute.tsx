@@ -5,8 +5,10 @@ import { Routes } from 'react-router-dom';
  * Only allows navigation to a route if a condition is met.
  * Otherwise, it redirects to a different specified route.
  */
-export default function ConditionalRoute({ condition, children }: ConditionalRouteProps): JSX.Element {
-  return condition ? <Routes>{children}</Routes> : <div />;
+
+/* eslint-disable react/jsx-no-useless-fragment */
+export default function CreateRoutes({ onConditionThat, children }: ConditionalRouteProps): JSX.Element {
+  return onConditionThat ? <Routes>{children}</Routes> : <></>;
 }
 
 export type ConditionalRouteProps = {
@@ -14,7 +16,7 @@ export type ConditionalRouteProps = {
    * Route is created if its condition is true.
    * For example, `condition={isLoggedIn}` or `condition={isAdmin}`
    */
-  condition: boolean
+  onConditionThat: boolean
 
   children?: ReactNode
 };
