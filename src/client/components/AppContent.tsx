@@ -18,11 +18,11 @@ export default function AppContent({ user }: AppContentProps): ReactElement {
 
   return (
     <>
-      <ConditionalRoute condition={userRole === 'Manager'}>
+      <ConditionalRoute condition={userRole === UserRole.Manager}>
         <Route path="/" element={<Surveys user={user} />} />
         <Route path="questionnaires/:questionnaireName/allocation/allocate" element={<Allocate />} />
       </ConditionalRoute>
-      <ConditionalRoute condition={userRole === 'Editor'}>
+      <ConditionalRoute condition={userRole === UserRole.Editor}>
         <Route path="/" element={<Surveys user={user} />} />
         <Route path="questionnaires/:questionnaireName/cases/" element={<Cases user={user} />} />
         <Route path="questionnaires/:questionnaireName/cases/:caseId/factsheet" element={<CaseFactsheet />} />
