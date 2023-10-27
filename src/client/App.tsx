@@ -1,7 +1,7 @@
 import './App.css';
 import { ReactElement } from 'react';
 import { Authenticate } from 'blaise-login-react-client';
-import AppContent from './Common/components/AppRoutes';
+import AppRoutes from './Common/components/AppRoutes';
 import LayoutTemplate from './Common/components/LayoutTemplate';
 
 function App(): ReactElement {
@@ -9,7 +9,7 @@ function App(): ReactElement {
     <Authenticate title="Blaise editing service">
       {(user, loggedIn, logOutFunction) => (
         <LayoutTemplate showSignOutButton={loggedIn} signOut={() => logOutFunction()}>
-          <AppContent user={user} />
+          <AppRoutes user={user} />
         </LayoutTemplate>
       )}
     </Authenticate>
