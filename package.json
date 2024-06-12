@@ -17,7 +17,8 @@
     "build-server-watch": "yarn build-server -w",
     "run-server-watch": "nodemon ./dist/server/index.js",
     "start-server-watch": "concurrently npm:build-server-watch npm:run-server-watch",
-    "dev": "concurrently npm:start-react npm:start-server-watch"
+    "dev": "concurrently npm:start-react npm:start-server-watch",
+    "gcp-build": "GENERATE_SOURCEMAP=false react-scripts build && tsc --project tsconfig.server.json"
   },
   "proxy": "http://localhost:5000",
   "eslintConfig": {
