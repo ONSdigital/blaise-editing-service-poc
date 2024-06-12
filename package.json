@@ -39,7 +39,9 @@
       "last 1 safari version"
     ]
   },
-  "resolutions": { "blaise-api-node-client": "git+https://github.com/ONSdigital/blaise-api-node-client#BL5FRS-67" },
+  "resolutions": {
+    "blaise-api-node-client": "git+https://github.com/ONSdigital/blaise-api-node-client#BL5FRS-67"
+  },
   "dependencies": {
     "@types/ejs": "^3.1.2",
     "@types/node": "^16.7.13",
