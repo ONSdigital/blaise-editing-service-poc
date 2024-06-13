@@ -118,14 +118,14 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           >
             Richmond Ricecake
              
-            Fri Feb 15 1980 00:00:00 GMT+0000 (Greenwich Mean Time)
+            1980-02-15
           </dd>
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
           >
             Bartholomew Edgar
              
-            Sun Jun 11 1995 00:00:00 GMT+0100 (British Summer Time)
+            1995-06-10
           </dd>
         </dl>
       </div>
@@ -245,14 +245,14 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         >
           Richmond Ricecake
            
-          Fri Feb 15 1980 00:00:00 GMT+0000 (Greenwich Mean Time)
+          1980-02-15
         </dd>
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
         >
           Bartholomew Edgar
            
-          Sun Jun 11 1995 00:00:00 GMT+0100 (British Summer Time)
+          1995-06-10
         </dd>
       </dl>
     </div>

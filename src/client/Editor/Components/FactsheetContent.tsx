@@ -44,7 +44,7 @@ export default function FactsheetContent({ factsheet }: FactsheetContentProps): 
           <dd className="ons-metadata__value ons-grid__col ons-col-9@m" key={respondent.RespondentName}>
             {respondent.RespondentName}
             {' '}
-            {String(respondent.DateOfBirth)}
+            {respondent.DateOfBirth.toISOString().split('T')[0]}
           </dd>
         ))}
       </dl>

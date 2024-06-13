@@ -53,7 +53,7 @@ describe('Given there is a case available in blaise for a questionnaire', () => 
     expect(caseFactSheetView).toHaveTextContent(String(expectedCaseFactsheet.OutcomeCode));
     expectedCaseFactsheet.Respondents.forEach((respondent) => {
       expect(caseFactSheetView).toHaveTextContent(respondent.RespondentName);
-      expect(caseFactSheetView).toHaveTextContent(String(respondent.DateOfBirth));
+      expect(caseFactSheetView).toHaveTextContent(String(respondent.DateOfBirth.toISOString().split('T')[0]));
     });
   });
 
