@@ -13,8 +13,8 @@ const case3outcome = 0;
 const person1Name = 'Richmond Ricecake';
 const person2Name = 'Bartholomew Edgar';
 
-const person1Dob = new Date(1980, 1, 15);
-const person2Dob = new Date(1995, 5, 11);
+const person1Dob = new Date(1980, 1, 15, 10);
+const person2Dob = new Date(1995, 5, 11, 10);
 
 const blaiseUser1 = 'rrice';
 const blaiseUser2 = 'bedgar';
