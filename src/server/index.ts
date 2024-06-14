@@ -9,6 +9,7 @@ dotenv.config(); // TODO: only needed for running locally
 const config = new ServerConfigurationProvider();
 
 // create client
+console.log(`BlaiseApiUrl ${config.BlaiseApiUrl}`);
 const blaiseApiClient = new BlaiseApiClient(config.BlaiseApiUrl);
 
 // create Blaise API
