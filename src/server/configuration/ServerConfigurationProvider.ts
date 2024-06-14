@@ -1,7 +1,7 @@
 import { AuthConfig } from 'blaise-login-react-server';
 import { ServerConfiguration } from '../interfaces/serverConfigurationInterface';
 import {
-  generateSessionSecret,
+  fixUrl, generateSessionSecret,
   getNumberOrThrowError, getStringOrSetDefault, getStringOrThrowError, loadRoles,
 } from '../helpers/configurationHelper';
 
@@ -35,7 +35,7 @@ export default class ServerConfigurationProvider implements ServerConfiguration,
 
     this.BuildFolder = '../../build';
 
-    this.BlaiseApiUrl = getStringOrThrowError(BLAISE_API_URL, 'BLAISE_API_URL');
+    this.BlaiseApiUrl = fixUrl(getStringOrThrowError(BLAISE_API_URL, 'BLAISE_API_URL'));
 
     this.Port = getNumberOrThrowError(PORT, 'PORT');
 

@@ -36,3 +36,10 @@ export function generateSessionSecret(secret: string | undefined): string {
   }
   return secret;
 }
+
+export function fixUrl(url: string): string {
+  if (url.startsWith("http")) {
+      return url;
+  }
+  return `http://${url}`;
+}

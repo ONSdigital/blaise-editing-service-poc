@@ -29,7 +29,7 @@ describe('Configuration file tests', () => {
     const sut = new ServerConfigurationProvider();
 
     // assert
-    expect(sut.BlaiseApiUrl).toEqual(blaiseApiUrl);
+    expect(sut.BlaiseApiUrl).toEqual(`http://${blaiseApiUrl}`);
     expect(sut.BuildFolder).toEqual(buildFolder);
     expect(sut.Port).toEqual(port);
     expect(sut.ServerPark).toEqual(serverPark);
@@ -101,7 +101,7 @@ describe('Authentication file tests', () => {
     expect(sut.SessionSecret).toEqual(sessionSecret);
     expect(sut.SessionTimeout).toEqual(sessionTimeout);
     expect(sut.Roles).toEqual(rolesArray);
-    expect(sut.BlaiseApiUrl).toEqual(blaiseApiUrl);
+    expect(sut.BlaiseApiUrl).toEqual(`http://${blaiseApiUrl}`);
   });
 
   it.each([undefined, ''])('should return a session secret alpha numeric hex if SESSION_SECRET is empty or does not exist', (value) => {
