@@ -29,6 +29,7 @@ export default function nodeServer(config: ConfigurationProvider, blaiseApi: Bla
   server.use('/', allocationController.getRoutes());
 
   // login routing
+  console.log(`Session secret - ${config.SessionSecret}`);
   const auth = new Auth(config);
   const loginHandler = newLoginHandler(auth, blaiseApi.blaiseApiClient);
   server.use('/', loginHandler);
