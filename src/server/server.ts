@@ -29,14 +29,7 @@ export default function nodeServer(config: ConfigurationProvider, blaiseApi: Bla
   server.use('/', allocationController.getRoutes());
 
   // login routing
-  console.log(`Creating auth object from config ${config}`);
-  console.log(`session secret ${config.SessionSecret}`);
-  console.log(`session timeout ${config.SessionTimeout}`);
-  console.log(`url ${config.BlaiseApiUrl}`);
-
   const auth = new Auth(config);
-
-  console.log(`Creating auth object from config ${config}`);
   const loginHandler = newLoginHandler(auth, blaiseApi.blaiseApiClient);
   server.use('/', loginHandler);
 

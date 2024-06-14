@@ -1,11 +1,10 @@
-import dotenv from 'dotenv';
 import BlaiseApiClient from 'blaise-api-node-client';
 import nodeServer from './server';
 import ServerConfigurationProvider from './configuration/ServerConfigurationProvider';
 import BlaiseApi from './api/BlaiseApi';
 
 // create/get configuration
-dotenv.config(); // TODO: only needed for running locally
+//dotenv.config(); // TODO: only needed for running locally
 const config = new ServerConfigurationProvider();
 
 // create client
