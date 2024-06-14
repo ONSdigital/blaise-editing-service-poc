@@ -53,7 +53,7 @@
     "blaise-api-node-client": "https://github.com/ONSdigital/blaise-api-node-client",
     "blaise-design-system-react-components": "git+https://github.com/ONSdigital/blaise-design-system-react-components#BL5FRS-54",
     "blaise-login-react-client": "https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-client?1089498c8f21f3086ecd47d6669c2e8cafd8d4a4",
-    "blaise-login-react-server": "https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-server?1089498c8f21f3086ecd47d6669c2e8cafd8d4a4",
+    "blaise-login-react-server": "https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-server?f545da47f7aec943c0f385a9af5acc92e77544b8",
     "concurrently": "^8.1.0",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",

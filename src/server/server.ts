@@ -10,6 +10,7 @@ import AllocationController from './controllers/allocationController';
 
 export default function nodeServer(config: ConfigurationProvider, blaiseApi: BlaiseApi): Express {
   const server = express();
+  server.use(express.json());
 
   // treat the index.html as a template and substitute the values at runtime
   server.set('views', path.join(__dirname, config.BuildFolder));
@@ -29,7 +30,6 @@ export default function nodeServer(config: ConfigurationProvider, blaiseApi: Bla
   server.use('/', allocationController.getRoutes());
 
   // login routing
-  console.log(`Session secret - ${config.SessionSecret}`);
   const auth = new Auth(config);
   const loginHandler = newLoginHandler(auth, blaiseApi.blaiseApiClient);
   server.use('/', loginHandler);
