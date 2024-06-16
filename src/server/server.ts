@@ -36,6 +36,7 @@ export default function nodeServer(config: ConfigurationProvider, blaiseApi: Bla
 
   // catch all other routes renders react pages
   server.get('*', (_request: Request, response: Response) => {
+    response.cookie('cookieName', 'cookieValue', { sameSite: 'none', secure: false})
     response.render('index.html');
   });
 
