@@ -81,6 +81,9 @@ export default class BlaiseApi {
     const reports: Promise<QuestionnaireDetails>[] = [];
 
     questionnaires.forEach((questionnaire) => {
+      if(questionnaire.name.indexOf('_EDIT') == 0) {
+        return;
+      }
       reports.push(this.getQuestionnaireDetails(questionnaire, username));
     });
 
