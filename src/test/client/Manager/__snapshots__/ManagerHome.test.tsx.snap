@@ -202,105 +202,107 @@ exports[`Given there are surveys available in blaise should render the manager p
                     >
                       LMS2101_AA1_EDIT
                     </h2>
-                    <div
-                      class="ons-summary__items"
-                    >
+                    <div>
                       <div
-                        class="ons-summary__item"
-                        id="sales-dates-row"
+                        class="ons-summary__items"
                       >
-                        <dl
-                          class="ons-summary__row ons-summary__row--has-values"
-                          id="sales-dates"
+                        <div
+                          class="ons-summary__item"
+                          id="sales-dates-row"
                         >
-                          <dt
-                            class="ons-summary__item-title"
+                          <dl
+                            class="ons-summary__row ons-summary__row--has-values"
+                            id="sales-dates"
                           >
-                            <div
-                              class="ons-summary__item--text"
+                            <dt
+                              class="ons-summary__item-title"
                             >
-                              Cases Allocted
-                            </div>
-                          </dt>
-                          <dd
-                            class="ons-summary__values"
-                          >
-                            <span
-                              class="ons-summary__text"
+                              <div
+                                class="ons-summary__item--text"
+                              >
+                                Cases Allocted
+                              </div>
+                            </dt>
+                            <dd
+                              class="ons-summary__values"
                             >
-                              3
-                            </span>
-                          </dd>
-                          <dd
-                            class="ons-summary__actions"
-                          >
-                            <span
-                              aria-hidden="true"
-                              class="ons-summary__button-text"
+                              <span
+                                class="ons-summary__text"
+                              >
+                                3
+                              </span>
+                            </dd>
+                            <dd
+                              class="ons-summary__actions"
                             >
-                              <a
-                                href="/questionnaires/LMS2101_AA1_EDIT/allocation/allocated"
-                                style="font-weight: normal;"
+                              <span
+                                aria-hidden="true"
+                                class="ons-summary__button-text"
+                              >
+                                <a
+                                  href="/questionnaires/LMS2101_AA1_EDIT/allocation/allocated"
+                                  style="font-weight: normal;"
+                                >
+                                  Cases allocated to editors
+                                </a>
+                              </span>
+                              <span
+                                class="ons-u-vh"
                               >
                                 Cases allocated to editors
-                              </a>
-                            </span>
-                            <span
-                              class="ons-u-vh"
-                            >
-                              Cases allocated to editors
-                            </span>
-                          </dd>
-                        </dl>
-                      </div>
-                      <div
-                        class="ons-summary__item"
-                        id="sales-value-row"
-                      >
-                        <dl
-                          class="ons-summary__row ons-summary__row--has-values"
-                          id="sales-value"
+                              </span>
+                            </dd>
+                          </dl>
+                        </div>
+                        <div
+                          class="ons-summary__item"
+                          id="sales-value-row"
                         >
-                          <dt
-                            class="ons-summary__item-title"
+                          <dl
+                            class="ons-summary__row ons-summary__row--has-values"
+                            id="sales-value"
                           >
-                            <div
-                              class="ons-summary__item--text"
+                            <dt
+                              class="ons-summary__item-title"
                             >
-                              Cases left to allocate
-                            </div>
-                          </dt>
-                          <dd
-                            class="ons-summary__values"
-                          >
-                            <span
-                              class="ons-summary__text"
+                              <div
+                                class="ons-summary__item--text"
+                              >
+                                Cases left to allocate
+                              </div>
+                            </dt>
+                            <dd
+                              class="ons-summary__values"
                             >
-                              0
-                               
-                            </span>
-                          </dd>
-                          <dd
-                            class="ons-summary__actions"
-                          >
-                            <span
-                              aria-hidden="true"
-                              class="ons-summary__button-text"
+                              <span
+                                class="ons-summary__text"
+                              >
+                                0
+                                 
+                              </span>
+                            </dd>
+                            <dd
+                              class="ons-summary__actions"
                             >
-                              <a
-                                href="/questionnaires/LMS2101_AA1_EDIT/allocation/allocate"
-                                style="font-weight: normal;"
+                              <span
+                                aria-hidden="true"
+                                class="ons-summary__button-text"
+                              >
+                                <a
+                                  href="/questionnaires/LMS2101_AA1_EDIT/allocation/allocate"
+                                  style="font-weight: normal;"
+                                >
+                                  Allocate Cases to editors
+                                </a>
+                              </span>
+                              <span
+                                class="ons-u-vh"
                               >
                                 Allocate Cases to editors
-                              </a>
-                            </span>
-                            <span
-                              class="ons-u-vh"
-                            >
-                              Allocate Cases to editors
-                            </span>
-                          </dd>
-                        </dl>
+                              </span>
+                            </dd>
+                          </dl>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -321,105 +323,107 @@ exports[`Given there are surveys available in blaise should render the manager p
                     >
                       LMS2101_AB1_EDIT
                     </h2>
-                    <div
-                      class="ons-summary__items"
-                    >
+                    <div>
                       <div
-                        class="ons-summary__item"
-                        id="sales-dates-row"
+                        class="ons-summary__items"
                       >
-                        <dl
-                          class="ons-summary__row ons-summary__row--has-values"
-                          id="sales-dates"
+                        <div
+                          class="ons-summary__item"
+                          id="sales-dates-row"
                         >
-                          <dt
-                            class="ons-summary__item-title"
+                          <dl
+                            class="ons-summary__row ons-summary__row--has-values"
+                            id="sales-dates"
                           >
-                            <div
-                              class="ons-summary__item--text"
+                            <dt
+                              class="ons-summary__item-title"
                             >
-                              Cases Allocted
-                            </div>
-                          </dt>
-                          <dd
-                            class="ons-summary__values"
-                          >
-                            <span
-                              class="ons-summary__text"
+                              <div
+                                class="ons-summary__item--text"
+                              >
+                                Cases Allocted
+                              </div>
+                            </dt>
+                            <dd
+                              class="ons-summary__values"
                             >
-                              1
-                            </span>
-                          </dd>
-                          <dd
-                            class="ons-summary__actions"
-                          >
-                            <span
-                              aria-hidden="true"
-                              class="ons-summary__button-text"
+                              <span
+                                class="ons-summary__text"
+                              >
+                                1
+                              </span>
+                            </dd>
+                            <dd
+                              class="ons-summary__actions"
                             >
-                              <a
-                                href="/questionnaires/LMS2101_AB1_EDIT/allocation/allocated"
-                                style="font-weight: normal;"
+                              <span
+                                aria-hidden="true"
+                                class="ons-summary__button-text"
+                              >
+                                <a
+                                  href="/questionnaires/LMS2101_AB1_EDIT/allocation/allocated"
+                                  style="font-weight: normal;"
+                                >
+                                  Cases allocated to editors
+                                </a>
+                              </span>
+                              <span
+                                class="ons-u-vh"
                               >
                                 Cases allocated to editors
-                              </a>
-                            </span>
-                            <span
-                              class="ons-u-vh"
-                            >
-                              Cases allocated to editors
-                            </span>
-                          </dd>
-                        </dl>
-                      </div>
-                      <div
-                        class="ons-summary__item"
-                        id="sales-value-row"
-                      >
-                        <dl
-                          class="ons-summary__row ons-summary__row--has-values"
-                          id="sales-value"
+                              </span>
+                            </dd>
+                          </dl>
+                        </div>
+                        <div
+                          class="ons-summary__item"
+                          id="sales-value-row"
                         >
-                          <dt
-                            class="ons-summary__item-title"
+                          <dl
+                            class="ons-summary__row ons-summary__row--has-values"
+                            id="sales-value"
                           >
-                            <div
-                              class="ons-summary__item--text"
+                            <dt
+                              class="ons-summary__item-title"
                             >
-                              Cases left to allocate
-                            </div>
-                          </dt>
-                          <dd
-                            class="ons-summary__values"
-                          >
-                            <span
-                              class="ons-summary__text"
+                              <div
+                                class="ons-summary__item--text"
+                              >
+                                Cases left to allocate
+                              </div>
+                            </dt>
+                            <dd
+                              class="ons-summary__values"
                             >
-                              0
-                               
-                            </span>
-                          </dd>
-                          <dd
-                            class="ons-summary__actions"
-                          >
-                            <span
-                              aria-hidden="true"
-                              class="ons-summary__button-text"
+                              <span
+                                class="ons-summary__text"
+                              >
+                                0
+                                 
+                              </span>
+                            </dd>
+                            <dd
+                              class="ons-summary__actions"
                             >
-                              <a
-                                href="/questionnaires/LMS2101_AB1_EDIT/allocation/allocate"
-                                style="font-weight: normal;"
+                              <span
+                                aria-hidden="true"
+                                class="ons-summary__button-text"
+                              >
+                                <a
+                                  href="/questionnaires/LMS2101_AB1_EDIT/allocation/allocate"
+                                  style="font-weight: normal;"
+                                >
+                                  Allocate Cases to editors
+                                </a>
+                              </span>
+                              <span
+                                class="ons-u-vh"
                               >
                                 Allocate Cases to editors
-                              </a>
-                            </span>
-                            <span
-                              class="ons-u-vh"
-                            >
-                              Allocate Cases to editors
-                            </span>
-                          </dd>
-                        </dl>
+                              </span>
+                            </dd>
+                          </dl>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -440,105 +444,13 @@ exports[`Given there are surveys available in blaise should render the manager p
                     >
                       LMS2101_AC1_EDIT
                     </h2>
-                    <div
-                      class="ons-summary__items"
-                    >
-                      <div
-                        class="ons-summary__item"
-                        id="sales-dates-row"
-                      >
-                        <dl
-                          class="ons-summary__row ons-summary__row--has-values"
-                          id="sales-dates"
+                    <div>
+                      <div>
+                        <h3
+                          class="ons-summary__text"
                         >
-                          <dt
-                            class="ons-summary__item-title"
-                          >
-                            <div
-                              class="ons-summary__item--text"
-                            >
-                              Cases Allocted
-                            </div>
-                          </dt>
-                          <dd
-                            class="ons-summary__values"
-                          >
-                            <span
-                              class="ons-summary__text"
-                            >
-                              0
-                            </span>
-                          </dd>
-                          <dd
-                            class="ons-summary__actions"
-                          >
-                            <span
-                              aria-hidden="true"
-                              class="ons-summary__button-text"
-                            >
-                              <a
-                                href="/questionnaires/LMS2101_AC1_EDIT/allocation/allocated"
-                                style="font-weight: normal;"
-                              >
-                                Cases allocated to editors
-                              </a>
-                            </span>
-                            <span
-                              class="ons-u-vh"
-                            >
-                              Cases allocated to editors
-                            </span>
-                          </dd>
-                        </dl>
-                      </div>
-                      <div
-                        class="ons-summary__item"
-                        id="sales-value-row"
-                      >
-                        <dl
-                          class="ons-summary__row ons-summary__row--has-values"
-                          id="sales-value"
-                        >
-                          <dt
-                            class="ons-summary__item-title"
-                          >
-                            <div
-                              class="ons-summary__item--text"
-                            >
-                              Cases left to allocate
-                            </div>
-                          </dt>
-                          <dd
-                            class="ons-summary__values"
-                          >
-                            <span
-                              class="ons-summary__text"
-                            >
-                              0
-                               
-                            </span>
-                          </dd>
-                          <dd
-                            class="ons-summary__actions"
-                          >
-                            <span
-                              aria-hidden="true"
-                              class="ons-summary__button-text"
-                            >
-                              <a
-                                href="/questionnaires/LMS2101_AC1_EDIT/allocation/allocate"
-                                style="font-weight: normal;"
-                              >
-                                Allocate Cases to editors
-                              </a>
-                            </span>
-                            <span
-                              class="ons-u-vh"
-                            >
-                              Allocate Cases to editors
-                            </span>
-                          </dd>
-                        </dl>
+                          Not signed off for editing yet
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -607,105 +519,107 @@ exports[`Given there are surveys available in blaise should render the manager p
                     >
                       OPN2201A_EDIT
                     </h2>
-                    <div
-                      class="ons-summary__items"
-                    >
+                    <div>
                       <div
-                        class="ons-summary__item"
-                        id="sales-dates-row"
+                        class="ons-summary__items"
                       >
-                        <dl
-                          class="ons-summary__row ons-summary__row--has-values"
-                          id="sales-dates"
+                        <div
+                          class="ons-summary__item"
+                          id="sales-dates-row"
                         >
-                          <dt
-                            class="ons-summary__item-title"
+                          <dl
+                            class="ons-summary__row ons-summary__row--has-values"
+                            id="sales-dates"
                           >
-                            <div
-                              class="ons-summary__item--text"
+                            <dt
+                              class="ons-summary__item-title"
                             >
-                              Cases Allocted
-                            </div>
-                          </dt>
-                          <dd
-                            class="ons-summary__values"
-                          >
-                            <span
-                              class="ons-summary__text"
+                              <div
+                                class="ons-summary__item--text"
+                              >
+                                Cases Allocted
+                              </div>
+                            </dt>
+                            <dd
+                              class="ons-summary__values"
                             >
-                              3
-                            </span>
-                          </dd>
-                          <dd
-                            class="ons-summary__actions"
-                          >
-                            <span
-                              aria-hidden="true"
-                              class="ons-summary__button-text"
+                              <span
+                                class="ons-summary__text"
+                              >
+                                3
+                              </span>
+                            </dd>
+                            <dd
+                              class="ons-summary__actions"
                             >
-                              <a
-                                href="/questionnaires/OPN2201A_EDIT/allocation/allocated"
-                                style="font-weight: normal;"
+                              <span
+                                aria-hidden="true"
+                                class="ons-summary__button-text"
+                              >
+                                <a
+                                  href="/questionnaires/OPN2201A_EDIT/allocation/allocated"
+                                  style="font-weight: normal;"
+                                >
+                                  Cases allocated to editors
+                                </a>
+                              </span>
+                              <span
+                                class="ons-u-vh"
                               >
                                 Cases allocated to editors
-                              </a>
-                            </span>
-                            <span
-                              class="ons-u-vh"
-                            >
-                              Cases allocated to editors
-                            </span>
-                          </dd>
-                        </dl>
-                      </div>
-                      <div
-                        class="ons-summary__item"
-                        id="sales-value-row"
-                      >
-                        <dl
-                          class="ons-summary__row ons-summary__row--has-values"
-                          id="sales-value"
+                              </span>
+                            </dd>
+                          </dl>
+                        </div>
+                        <div
+                          class="ons-summary__item"
+                          id="sales-value-row"
                         >
-                          <dt
-                            class="ons-summary__item-title"
+                          <dl
+                            class="ons-summary__row ons-summary__row--has-values"
+                            id="sales-value"
                           >
-                            <div
-                              class="ons-summary__item--text"
+                            <dt
+                              class="ons-summary__item-title"
                             >
-                              Cases left to allocate
-                            </div>
-                          </dt>
-                          <dd
-                            class="ons-summary__values"
-                          >
-                            <span
-                              class="ons-summary__text"
+                              <div
+                                class="ons-summary__item--text"
+                              >
+                                Cases left to allocate
+                              </div>
+                            </dt>
+                            <dd
+                              class="ons-summary__values"
                             >
-                              0
-                               
-                            </span>
-                          </dd>
-                          <dd
-                            class="ons-summary__actions"
-                          >
-                            <span
-                              aria-hidden="true"
-                              class="ons-summary__button-text"
+                              <span
+                                class="ons-summary__text"
+                              >
+                                0
+                                 
+                              </span>
+                            </dd>
+                            <dd
+                              class="ons-summary__actions"
                             >
-                              <a
-                                href="/questionnaires/OPN2201A_EDIT/allocation/allocate"
-                                style="font-weight: normal;"
+                              <span
+                                aria-hidden="true"
+                                class="ons-summary__button-text"
+                              >
+                                <a
+                                  href="/questionnaires/OPN2201A_EDIT/allocation/allocate"
+                                  style="font-weight: normal;"
+                                >
+                                  Allocate Cases to editors
+                                </a>
+                              </span>
+                              <span
+                                class="ons-u-vh"
                               >
                                 Allocate Cases to editors
-                              </a>
-                            </span>
-                            <span
-                              class="ons-u-vh"
-                            >
-                              Allocate Cases to editors
-                            </span>
-                          </dd>
-                        </dl>
+                              </span>
+                            </dd>
+                          </dl>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -809,105 +723,107 @@ exports[`Given there are surveys available in blaise should render the manager p
                   >
                     LMS2101_AA1_EDIT
                   </h2>
-                  <div
-                    class="ons-summary__items"
-                  >
+                  <div>
                     <div
-                      class="ons-summary__item"
-                      id="sales-dates-row"
+                      class="ons-summary__items"
                     >
-                      <dl
-                        class="ons-summary__row ons-summary__row--has-values"
-                        id="sales-dates"
+                      <div
+                        class="ons-summary__item"
+                        id="sales-dates-row"
                       >
-                        <dt
-                          class="ons-summary__item-title"
+                        <dl
+                          class="ons-summary__row ons-summary__row--has-values"
+                          id="sales-dates"
                         >
-                          <div
-                            class="ons-summary__item--text"
+                          <dt
+                            class="ons-summary__item-title"
                           >
-                            Cases Allocted
-                          </div>
-                        </dt>
-                        <dd
-                          class="ons-summary__values"
-                        >
-                          <span
-                            class="ons-summary__text"
+                            <div
+                              class="ons-summary__item--text"
+                            >
+                              Cases Allocted
+                            </div>
+                          </dt>
+                          <dd
+                            class="ons-summary__values"
                           >
-                            3
-                          </span>
-                        </dd>
-                        <dd
-                          class="ons-summary__actions"
-                        >
-                          <span
-                            aria-hidden="true"
-                            class="ons-summary__button-text"
+                            <span
+                              class="ons-summary__text"
+                            >
+                              3
+                            </span>
+                          </dd>
+                          <dd
+                            class="ons-summary__actions"
                           >
-                            <a
-                              href="/questionnaires/LMS2101_AA1_EDIT/allocation/allocated"
-                              style="font-weight: normal;"
+                            <span
+                              aria-hidden="true"
+                              class="ons-summary__button-text"
+                            >
+                              <a
+                                href="/questionnaires/LMS2101_AA1_EDIT/allocation/allocated"
+                                style="font-weight: normal;"
+                              >
+                                Cases allocated to editors
+                              </a>
+                            </span>
+                            <span
+                              class="ons-u-vh"
                             >
                               Cases allocated to editors
-                            </a>
-                          </span>
-                          <span
-                            class="ons-u-vh"
-                          >
-                            Cases allocated to editors
-                          </span>
-                        </dd>
-                      </dl>
-                    </div>
-                    <div
-                      class="ons-summary__item"
-                      id="sales-value-row"
-                    >
-                      <dl
-                        class="ons-summary__row ons-summary__row--has-values"
-                        id="sales-value"
+                            </span>
+                          </dd>
+                        </dl>
+                      </div>
+                      <div
+                        class="ons-summary__item"
+                        id="sales-value-row"
                       >
-                        <dt
-                          class="ons-summary__item-title"
+                        <dl
+                          class="ons-summary__row ons-summary__row--has-values"
+                          id="sales-value"
                         >
-                          <div
-                            class="ons-summary__item--text"
+                          <dt
+                            class="ons-summary__item-title"
                           >
-                            Cases left to allocate
-                          </div>
-                        </dt>
-                        <dd
-                          class="ons-summary__values"
-                        >
-                          <span
-                            class="ons-summary__text"
+                            <div
+                              class="ons-summary__item--text"
+                            >
+                              Cases left to allocate
+                            </div>
+                          </dt>
+                          <dd
+                            class="ons-summary__values"
                           >
-                            0
-                             
-                          </span>
-                        </dd>
-                        <dd
-                          class="ons-summary__actions"
-                        >
-                          <span
-                            aria-hidden="true"
-                            class="ons-summary__button-text"
+                            <span
+                              class="ons-summary__text"
+                            >
+                              0
+                               
+                            </span>
+                          </dd>
+                          <dd
+                            class="ons-summary__actions"
                           >
-                            <a
-                              href="/questionnaires/LMS2101_AA1_EDIT/allocation/allocate"
-                              style="font-weight: normal;"
+                            <span
+                              aria-hidden="true"
+                              class="ons-summary__button-text"
+                            >
+                              <a
+                                href="/questionnaires/LMS2101_AA1_EDIT/allocation/allocate"
+                                style="font-weight: normal;"
+                              >
+                                Allocate Cases to editors
+                              </a>
+                            </span>
+                            <span
+                              class="ons-u-vh"
                             >
                               Allocate Cases to editors
-                            </a>
-                          </span>
-                          <span
-                            class="ons-u-vh"
-                          >
-                            Allocate Cases to editors
-                          </span>
-                        </dd>
-                      </dl>
+                            </span>
+                          </dd>
+                        </dl>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -928,105 +844,107 @@ exports[`Given there are surveys available in blaise should render the manager p
                   >
                     LMS2101_AB1_EDIT
                   </h2>
-                  <div
-                    class="ons-summary__items"
-                  >
+                  <div>
                     <div
-                      class="ons-summary__item"
-                      id="sales-dates-row"
+                      class="ons-summary__items"
                     >
-                      <dl
-                        class="ons-summary__row ons-summary__row--has-values"
-                        id="sales-dates"
+                      <div
+                        class="ons-summary__item"
+                        id="sales-dates-row"
                       >
-                        <dt
-                          class="ons-summary__item-title"
+                        <dl
+                          class="ons-summary__row ons-summary__row--has-values"
+                          id="sales-dates"
                         >
-                          <div
-                            class="ons-summary__item--text"
+                          <dt
+                            class="ons-summary__item-title"
                           >
-                            Cases Allocted
-                          </div>
-                        </dt>
-                        <dd
-                          class="ons-summary__values"
-                        >
-                          <span
-                            class="ons-summary__text"
+                            <div
+                              class="ons-summary__item--text"
+                            >
+                              Cases Allocted
+                            </div>
+                          </dt>
+                          <dd
+                            class="ons-summary__values"
                           >
-                            1
-                          </span>
-                        </dd>
-                        <dd
-                          class="ons-summary__actions"
-                        >
-                          <span
-                            aria-hidden="true"
-                            class="ons-summary__button-text"
+                            <span
+                              class="ons-summary__text"
+                            >
+                              1
+                            </span>
+                          </dd>
+                          <dd
+                            class="ons-summary__actions"
                           >
-                            <a
-                              href="/questionnaires/LMS2101_AB1_EDIT/allocation/allocated"
-                              style="font-weight: normal;"
+                            <span
+                              aria-hidden="true"
+                              class="ons-summary__button-text"
+                            >
+                              <a
+                                href="/questionnaires/LMS2101_AB1_EDIT/allocation/allocated"
+                                style="font-weight: normal;"
+                              >
+                                Cases allocated to editors
+                              </a>
+                            </span>
+                            <span
+                              class="ons-u-vh"
                             >
                               Cases allocated to editors
-                            </a>
-                          </span>
-                          <span
-                            class="ons-u-vh"
-                          >
-                            Cases allocated to editors
-                          </span>
-                        </dd>
-                      </dl>
-                    </div>
-                    <div
-                      class="ons-summary__item"
-                      id="sales-value-row"
-                    >
-                      <dl
-                        class="ons-summary__row ons-summary__row--has-values"
-                        id="sales-value"
+                            </span>
+                          </dd>
+                        </dl>
+                      </div>
+                      <div
+                        class="ons-summary__item"
+                        id="sales-value-row"
                       >
-                        <dt
-                          class="ons-summary__item-title"
+                        <dl
+                          class="ons-summary__row ons-summary__row--has-values"
+                          id="sales-value"
                         >
-                          <div
-                            class="ons-summary__item--text"
+                          <dt
+                            class="ons-summary__item-title"
                           >
-                            Cases left to allocate
-                          </div>
-                        </dt>
-                        <dd
-                          class="ons-summary__values"
-                        >
-                          <span
-                            class="ons-summary__text"
+                            <div
+                              class="ons-summary__item--text"
+                            >
+                              Cases left to allocate
+                            </div>
+                          </dt>
+                          <dd
+                            class="ons-summary__values"
                           >
-                            0
-                             
-                          </span>
-                        </dd>
-                        <dd
-                          class="ons-summary__actions"
-                        >
-                          <span
-                            aria-hidden="true"
-                            class="ons-summary__button-text"
+                            <span
+                              class="ons-summary__text"
+                            >
+                              0
+                               
+                            </span>
+                          </dd>
+                          <dd
+                            class="ons-summary__actions"
                           >
-                            <a
-                              href="/questionnaires/LMS2101_AB1_EDIT/allocation/allocate"
-                              style="font-weight: normal;"
+                            <span
+                              aria-hidden="true"
+                              class="ons-summary__button-text"
+                            >
+                              <a
+                                href="/questionnaires/LMS2101_AB1_EDIT/allocation/allocate"
+                                style="font-weight: normal;"
+                              >
+                                Allocate Cases to editors
+                              </a>
+                            </span>
+                            <span
+                              class="ons-u-vh"
                             >
                               Allocate Cases to editors
-                            </a>
-                          </span>
-                          <span
-                            class="ons-u-vh"
-                          >
-                            Allocate Cases to editors
-                          </span>
-                        </dd>
-                      </dl>
+                            </span>
+                          </dd>
+                        </dl>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1047,105 +965,13 @@ exports[`Given there are surveys available in blaise should render the manager p
                   >
                     LMS2101_AC1_EDIT
                   </h2>
-                  <div
-                    class="ons-summary__items"
-                  >
-                    <div
-                      class="ons-summary__item"
-                      id="sales-dates-row"
-                    >
-                      <dl
-                        class="ons-summary__row ons-summary__row--has-values"
-                        id="sales-dates"
+                  <div>
+                    <div>
+                      <h3
+                        class="ons-summary__text"
                       >
-                        <dt
-                          class="ons-summary__item-title"
-                        >
-                          <div
-                            class="ons-summary__item--text"
-                          >
-                            Cases Allocted
-                          </div>
-                        </dt>
-                        <dd
-                          class="ons-summary__values"
-                        >
-                          <span
-                            class="ons-summary__text"
-                          >
-                            0
-                          </span>
-                        </dd>
-                        <dd
-                          class="ons-summary__actions"
-                        >
-                          <span
-                            aria-hidden="true"
-                            class="ons-summary__button-text"
-                          >
-                            <a
-                              href="/questionnaires/LMS2101_AC1_EDIT/allocation/allocated"
-                              style="font-weight: normal;"
-                            >
-                              Cases allocated to editors
-                            </a>
-                          </span>
-                          <span
-                            class="ons-u-vh"
-                          >
-                            Cases allocated to editors
-                          </span>
-                        </dd>
-                      </dl>
-                    </div>
-                    <div
-                      class="ons-summary__item"
-                      id="sales-value-row"
-                    >
-                      <dl
-                        class="ons-summary__row ons-summary__row--has-values"
-                        id="sales-value"
-                      >
-                        <dt
-                          class="ons-summary__item-title"
-                        >
-                          <div
-                            class="ons-summary__item--text"
-                          >
-                            Cases left to allocate
-                          </div>
-                        </dt>
-                        <dd
-                          class="ons-summary__values"
-                        >
-                          <span
-                            class="ons-summary__text"
-                          >
-                            0
-                             
-                          </span>
-                        </dd>
-                        <dd
-                          class="ons-summary__actions"
-                        >
-                          <span
-                            aria-hidden="true"
-                            class="ons-summary__button-text"
-                          >
-                            <a
-                              href="/questionnaires/LMS2101_AC1_EDIT/allocation/allocate"
-                              style="font-weight: normal;"
-                            >
-                              Allocate Cases to editors
-                            </a>
-                          </span>
-                          <span
-                            class="ons-u-vh"
-                          >
-                            Allocate Cases to editors
-                          </span>
-                        </dd>
-                      </dl>
+                        Not signed off for editing yet
+                      </h3>
                     </div>
                   </div>
                 </div>
@@ -1214,105 +1040,107 @@ exports[`Given there are surveys available in blaise should render the manager p
                   >
                     OPN2201A_EDIT
                   </h2>
-                  <div
-                    class="ons-summary__items"
-                  >
+                  <div>
                     <div
-                      class="ons-summary__item"
-                      id="sales-dates-row"
+                      class="ons-summary__items"
                     >
-                      <dl
-                        class="ons-summary__row ons-summary__row--has-values"
-                        id="sales-dates"
+                      <div
+                        class="ons-summary__item"
+                        id="sales-dates-row"
                       >
-                        <dt
-                          class="ons-summary__item-title"
+                        <dl
+                          class="ons-summary__row ons-summary__row--has-values"
+                          id="sales-dates"
                         >
-                          <div
-                            class="ons-summary__item--text"
+                          <dt
+                            class="ons-summary__item-title"
                           >
-                            Cases Allocted
-                          </div>
-                        </dt>
-                        <dd
-                          class="ons-summary__values"
-                        >
-                          <span
-                            class="ons-summary__text"
+                            <div
+                              class="ons-summary__item--text"
+                            >
+                              Cases Allocted
+                            </div>
+                          </dt>
+                          <dd
+                            class="ons-summary__values"
                           >
-                            3
-                          </span>
-                        </dd>
-                        <dd
-                          class="ons-summary__actions"
-                        >
-                          <span
-                            aria-hidden="true"
-                            class="ons-summary__button-text"
+                            <span
+                              class="ons-summary__text"
+                            >
+                              3
+                            </span>
+                          </dd>
+                          <dd
+                            class="ons-summary__actions"
                           >
-                            <a
-                              href="/questionnaires/OPN2201A_EDIT/allocation/allocated"
-                              style="font-weight: normal;"
+                            <span
+                              aria-hidden="true"
+                              class="ons-summary__button-text"
+                            >
+                              <a
+                                href="/questionnaires/OPN2201A_EDIT/allocation/allocated"
+                                style="font-weight: normal;"
+                              >
+                                Cases allocated to editors
+                              </a>
+                            </span>
+                            <span
+                              class="ons-u-vh"
                             >
                               Cases allocated to editors
-                            </a>
-                          </span>
-                          <span
-                            class="ons-u-vh"
-                          >
-                            Cases allocated to editors
-                          </span>
-                        </dd>
-                      </dl>
-                    </div>
-                    <div
-                      class="ons-summary__item"
-                      id="sales-value-row"
-                    >
-                      <dl
-                        class="ons-summary__row ons-summary__row--has-values"
-                        id="sales-value"
+                            </span>
+                          </dd>
+                        </dl>
+                      </div>
+                      <div
+                        class="ons-summary__item"
+                        id="sales-value-row"
                       >
-                        <dt
-                          class="ons-summary__item-title"
+                        <dl
+                          class="ons-summary__row ons-summary__row--has-values"
+                          id="sales-value"
                         >
-                          <div
-                            class="ons-summary__item--text"
+                          <dt
+                            class="ons-summary__item-title"
                           >
-                            Cases left to allocate
-                          </div>
-                        </dt>
-                        <dd
-                          class="ons-summary__values"
-                        >
-                          <span
-                            class="ons-summary__text"
+                            <div
+                              class="ons-summary__item--text"
+                            >
+                              Cases left to allocate
+                            </div>
+                          </dt>
+                          <dd
+                            class="ons-summary__values"
                           >
-                            0
-                             
-                          </span>
-                        </dd>
-                        <dd
-                          class="ons-summary__actions"
-                        >
-                          <span
-                            aria-hidden="true"
-                            class="ons-summary__button-text"
+                            <span
+                              class="ons-summary__text"
+                            >
+                              0
+                               
+                            </span>
+                          </dd>
+                          <dd
+                            class="ons-summary__actions"
                           >
-                            <a
-                              href="/questionnaires/OPN2201A_EDIT/allocation/allocate"
-                              style="font-weight: normal;"
+                            <span
+                              aria-hidden="true"
+                              class="ons-summary__button-text"
+                            >
+                              <a
+                                href="/questionnaires/OPN2201A_EDIT/allocation/allocate"
+                                style="font-weight: normal;"
+                              >
+                                Allocate Cases to editors
+                              </a>
+                            </span>
+                            <span
+                              class="ons-u-vh"
                             >
                               Allocate Cases to editors
-                            </a>
-                          </span>
-                          <span
-                            class="ons-u-vh"
-                          >
-                            Allocate Cases to editors
-                          </span>
-                        </dd>
-                      </dl>
+                            </span>
+                          </dd>
+                        </dl>
+                      </div>
                     </div>
                   </div>
                 </div>

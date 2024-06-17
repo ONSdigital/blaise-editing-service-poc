@@ -38,8 +38,8 @@ export function generateSessionSecret(secret: string | undefined): string {
 }
 
 export function fixUrl(url: string): string {
-  if (url.startsWith("http")) {
-      return url;
+  if (url.startsWith('http')) {
+    return url;
   }
   return `http://${url}`;
 }

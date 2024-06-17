@@ -7,12 +7,13 @@ import CaseController from './controllers/caseController';
 import ConfigurationProvider from './configuration/ServerConfigurationProvider';
 import BlaiseApi from './api/BlaiseApi';
 import AllocationController from './controllers/allocationController';
-const cors = require("cors") 
+
+const cors = require('cors');
 
 export default function nodeServer(config: ConfigurationProvider, blaiseApi: BlaiseApi): Express {
   const server = express();
   server.use(express.json());
-  server.use(cors())
+  server.use(cors());
 
   // treat the index.html as a template and substitute the values at runtime
   server.set('views', path.join(__dirname, config.BuildFolder));

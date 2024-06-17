@@ -81,7 +81,7 @@ export default class BlaiseApi {
     const reports: Promise<QuestionnaireDetails>[] = [];
 
     questionnaires.forEach((questionnaire) => {
-      if(!questionnaire.name.includes('_EDIT')) {
+      if (!questionnaire.name.includes('_EDIT')) {
         return;
       }
 
