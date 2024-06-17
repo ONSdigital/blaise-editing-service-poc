@@ -1,4 +1,4 @@
-service: bus-ui
+service: editing-ui
 runtime: nodejs20
 
 vpc_access_connector:
