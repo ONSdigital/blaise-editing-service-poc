@@ -200,7 +200,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                     <h2
                       class="ons-summary__group-title"
                     >
-                      LMS2101_AA1
+                      LMS2101_AA1_EDIT
                     </h2>
                     <div
                       class="ons-summary__items"
@@ -239,7 +239,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                               class="ons-summary__button-text"
                             >
                               <a
-                                href="/questionnaires/LMS2101_AA1/allocation/allocated"
+                                href="/questionnaires/LMS2101_AA1_EDIT/allocation/allocated"
                                 style="font-weight: normal;"
                               >
                                 Cases allocated to editors
@@ -288,7 +288,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                               class="ons-summary__button-text"
                             >
                               <a
-                                href="/questionnaires/LMS2101_AA1/allocation/allocate"
+                                href="/questionnaires/LMS2101_AA1_EDIT/allocation/allocate"
                                 style="font-weight: normal;"
                               >
                                 Allocate Cases to editors
@@ -319,7 +319,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                     <h2
                       class="ons-summary__group-title"
                     >
-                      LMS2101_AB1
+                      LMS2101_AB1_EDIT
                     </h2>
                     <div
                       class="ons-summary__items"
@@ -358,7 +358,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                               class="ons-summary__button-text"
                             >
                               <a
-                                href="/questionnaires/LMS2101_AB1/allocation/allocated"
+                                href="/questionnaires/LMS2101_AB1_EDIT/allocation/allocated"
                                 style="font-weight: normal;"
                               >
                                 Cases allocated to editors
@@ -407,7 +407,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                               class="ons-summary__button-text"
                             >
                               <a
-                                href="/questionnaires/LMS2101_AB1/allocation/allocate"
+                                href="/questionnaires/LMS2101_AB1_EDIT/allocation/allocate"
                                 style="font-weight: normal;"
                               >
                                 Allocate Cases to editors
@@ -438,7 +438,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                     <h2
                       class="ons-summary__group-title"
                     >
-                      LMS2101_AC1
+                      LMS2101_AC1_EDIT
                     </h2>
                     <div
                       class="ons-summary__items"
@@ -477,7 +477,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                               class="ons-summary__button-text"
                             >
                               <a
-                                href="/questionnaires/LMS2101_AC1/allocation/allocated"
+                                href="/questionnaires/LMS2101_AC1_EDIT/allocation/allocated"
                                 style="font-weight: normal;"
                               >
                                 Cases allocated to editors
@@ -526,7 +526,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                               class="ons-summary__button-text"
                             >
                               <a
-                                href="/questionnaires/LMS2101_AC1/allocation/allocate"
+                                href="/questionnaires/LMS2101_AC1_EDIT/allocation/allocate"
                                 style="font-weight: normal;"
                               >
                                 Allocate Cases to editors
@@ -605,7 +605,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                     <h2
                       class="ons-summary__group-title"
                     >
-                      OPN2201A
+                      OPN2201A_EDIT
                     </h2>
                     <div
                       class="ons-summary__items"
@@ -644,7 +644,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                               class="ons-summary__button-text"
                             >
                               <a
-                                href="/questionnaires/OPN2201A/allocation/allocated"
+                                href="/questionnaires/OPN2201A_EDIT/allocation/allocated"
                                 style="font-weight: normal;"
                               >
                                 Cases allocated to editors
@@ -693,7 +693,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                               class="ons-summary__button-text"
                             >
                               <a
-                                href="/questionnaires/OPN2201A/allocation/allocate"
+                                href="/questionnaires/OPN2201A_EDIT/allocation/allocate"
                                 style="font-weight: normal;"
                               >
                                 Allocate Cases to editors
@@ -807,7 +807,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                   <h2
                     class="ons-summary__group-title"
                   >
-                    LMS2101_AA1
+                    LMS2101_AA1_EDIT
                   </h2>
                   <div
                     class="ons-summary__items"
@@ -846,7 +846,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                             class="ons-summary__button-text"
                           >
                             <a
-                              href="/questionnaires/LMS2101_AA1/allocation/allocated"
+                              href="/questionnaires/LMS2101_AA1_EDIT/allocation/allocated"
                               style="font-weight: normal;"
                             >
                               Cases allocated to editors
@@ -895,7 +895,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                             class="ons-summary__button-text"
                           >
                             <a
-                              href="/questionnaires/LMS2101_AA1/allocation/allocate"
+                              href="/questionnaires/LMS2101_AA1_EDIT/allocation/allocate"
                               style="font-weight: normal;"
                             >
                               Allocate Cases to editors
@@ -926,7 +926,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                   <h2
                     class="ons-summary__group-title"
                   >
-                    LMS2101_AB1
+                    LMS2101_AB1_EDIT
                   </h2>
                   <div
                     class="ons-summary__items"
@@ -965,7 +965,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                             class="ons-summary__button-text"
                           >
                             <a
-                              href="/questionnaires/LMS2101_AB1/allocation/allocated"
+                              href="/questionnaires/LMS2101_AB1_EDIT/allocation/allocated"
                               style="font-weight: normal;"
                             >
                               Cases allocated to editors
@@ -1014,7 +1014,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                             class="ons-summary__button-text"
                           >
                             <a
-                              href="/questionnaires/LMS2101_AB1/allocation/allocate"
+                              href="/questionnaires/LMS2101_AB1_EDIT/allocation/allocate"
                               style="font-weight: normal;"
                             >
                               Allocate Cases to editors
@@ -1045,7 +1045,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                   <h2
                     class="ons-summary__group-title"
                   >
-                    LMS2101_AC1
+                    LMS2101_AC1_EDIT
                   </h2>
                   <div
                     class="ons-summary__items"
@@ -1084,7 +1084,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                             class="ons-summary__button-text"
                           >
                             <a
-                              href="/questionnaires/LMS2101_AC1/allocation/allocated"
+                              href="/questionnaires/LMS2101_AC1_EDIT/allocation/allocated"
                               style="font-weight: normal;"
                             >
                               Cases allocated to editors
@@ -1133,7 +1133,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                             class="ons-summary__button-text"
                           >
                             <a
-                              href="/questionnaires/LMS2101_AC1/allocation/allocate"
+                              href="/questionnaires/LMS2101_AC1_EDIT/allocation/allocate"
                               style="font-weight: normal;"
                             >
                               Allocate Cases to editors
@@ -1212,7 +1212,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                   <h2
                     class="ons-summary__group-title"
                   >
-                    OPN2201A
+                    OPN2201A_EDIT
                   </h2>
                   <div
                     class="ons-summary__items"
@@ -1251,7 +1251,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                             class="ons-summary__button-text"
                           >
                             <a
-                              href="/questionnaires/OPN2201A/allocation/allocated"
+                              href="/questionnaires/OPN2201A_EDIT/allocation/allocated"
                               style="font-weight: normal;"
                             >
                               Cases allocated to editors
@@ -1300,7 +1300,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                             class="ons-summary__button-text"
                           >
                             <a
-                              href="/questionnaires/OPN2201A/allocation/allocate"
+                              href="/questionnaires/OPN2201A_EDIT/allocation/allocate"
                               style="font-weight: normal;"
                             >
                               Allocate Cases to editors

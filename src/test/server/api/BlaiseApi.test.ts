@@ -36,7 +36,7 @@ describe('getCaseDetails from Blaise', () => {
 
   it('Should retrieve a filtered list of case details is a username is supplied', async () => {
     // arrange
-    const questionnaireName = 'OPN2201A';
+    const questionnaireName = 'OPN2201A_EDIT';
 
     const questionnaireReport: QuestionnaireReport = {
       questionnaireName,

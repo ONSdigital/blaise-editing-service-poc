@@ -2,7 +2,7 @@ import { Questionnaire } from 'blaise-api-node-client';
 import { QuestionnaireDetails } from '../../common/interfaces/surveyInterface';
 
 export const questionnaire1Mock: Questionnaire = {
-  name: 'LMS2101_AA1',
+  name: 'LMS2101_AA1_EDIT',
   serverParkName: 'gusty',
   installDate: '2021-01-15T15:26:43.4233454+00:00',
   status: 'Active',
@@ -12,7 +12,7 @@ export const questionnaire1Mock: Questionnaire = {
 };
 
 export const questionnaire2Mock: Questionnaire = {
-  name: 'LMS2101_AB1',
+  name: 'LMS2101_AB1_EDIT',
   serverParkName: 'gusty',
   installDate: '2021-02-15T15:26:43.4233454+00:00',
   status: 'Active',
@@ -22,7 +22,7 @@ export const questionnaire2Mock: Questionnaire = {
 };
 
 export const questionnaire3Mock: Questionnaire = {
-  name: 'LMS2101_AC1',
+  name: 'LMS2101_AC1_EDIT',
   serverParkName: 'gusty',
   installDate: '2021-03-15T15:26:43.4233454+00:00',
   status: 'Active',
@@ -32,7 +32,7 @@ export const questionnaire3Mock: Questionnaire = {
 };
 
 export const questionnaire4Mock: Questionnaire = {
-  name: 'OPN2201A',
+  name: 'OPN2201A_EDIT',
   serverParkName: 'gusty',
   installDate: '2021-04-15T15:26:43.4233454+00:00',
   status: 'Active',
