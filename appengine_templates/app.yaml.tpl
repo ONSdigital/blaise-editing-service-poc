@@ -1,4 +1,4 @@
-service: editing-ui
+service: mir-ui
 runtime: nodejs20
 
 vpc_access_connector:
