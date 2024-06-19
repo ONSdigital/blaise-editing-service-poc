@@ -1,7 +1,7 @@
 import { CaseData, CaseResponse } from 'blaise-api-node-client';
 import { CaseDetails, CaseFactsheetDetails } from '../../common/interfaces/caseInterface';
 
-const questionnaireName = 'OPN2201A';
+const questionnaireName = 'OPN2201A_EDIT';
 const case1PrimaryKey = '1';
 const case2PrimaryKey = '2';
 const case3PrimaryKey = '3';

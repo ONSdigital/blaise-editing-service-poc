@@ -10,11 +10,11 @@ export default function ManagersQuestionnairesList({ questionnaires }: ManagersQ
   return (
     <>
       {questionnaires.map((questionnaire) => (
-        <div key={questionnaire.questionnaireName}>
+        <div key={questionnaire.questionnaireDisplayName}>
           <br />
           <div className="ons-summary">
             <div id="turnover" className="ons-summary__group">
-              <h2 className="ons-summary__group-title">{questionnaire.questionnaireName}</h2>
+              <h2 className="ons-summary__group-title">{questionnaire.questionnaireDisplayName}</h2>
               <div>
                 {questionnaire.numberOfCases === 0 ? (
                   <div>

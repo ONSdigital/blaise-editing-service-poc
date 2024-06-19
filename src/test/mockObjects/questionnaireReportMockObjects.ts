@@ -1,7 +1,7 @@
 import { QuestionnaireReport } from 'blaise-api-node-client';
 
 export const questionnaireReport1MockObject: QuestionnaireReport = {
-  questionnaireName: 'LMS2101_AA1',
+  questionnaireName: 'LMS2101_AA1_EDIT',
   questionnaireId: '00000000-0000-0000-0000-000000000000',
   reportingData: [
     {
@@ -23,7 +23,7 @@ export const questionnaireReport1MockObject: QuestionnaireReport = {
 };
 
 export const questionnaireReport2MockObject: QuestionnaireReport = {
-  questionnaireName: 'LMS2101_AB1',
+  questionnaireName: 'LMS2101_AB1_EDIT',
   questionnaireId: '00000000-0000-0000-0000-000000000000',
   reportingData: [
     {
@@ -33,13 +33,13 @@ export const questionnaireReport2MockObject: QuestionnaireReport = {
 };
 
 export const questionnaireReport3MockObject: QuestionnaireReport = {
-  questionnaireName: 'LMS2101_AC1',
+  questionnaireName: 'LMS2101_AC1_EDIT',
   questionnaireId: '00000000-0000-0000-0000-000000000000',
   reportingData: [],
 };
 
 export const questionnaireReport4MockObject: QuestionnaireReport = {
-  questionnaireName: 'OPN2201A',
+  questionnaireName: 'OPN2201A_EDIT',
   questionnaireId: '00000000-0000-0000-0000-000000000000',
   reportingData: [
     {

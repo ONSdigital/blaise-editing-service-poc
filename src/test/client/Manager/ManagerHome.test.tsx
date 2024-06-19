@@ -60,9 +60,12 @@ describe('Given there are surveys available in blaise', () => {
       const surveyListView = view.getByTestId(`accordion-${surveyIndex}-heading`);
       expect(surveyListView).toHaveTextContent(survey.name);
 
-      survey.questionnaires.forEach(({ questionnaireName, numberOfCases, numberOfCasesAllocated }) => {
+      survey.questionnaires.forEach(({
+        questionnaireName, questionnaireDisplayName, numberOfCases, numberOfCasesAllocated,
+      }) => {
         const questionnaireListView = view.getByTestId(`accordion-${surveyIndex}-content`);
-        expect(questionnaireListView).toHaveTextContent(questionnaireName);
+        expect(questionnaireListView).not.toHaveTextContent(questionnaireName);
+        expect(questionnaireListView).toHaveTextContent(questionnaireDisplayName);
         if (numberOfCases === 0) {
           expect(questionnaireListView).toHaveTextContent('Not signed off for editing yet');
         } else {

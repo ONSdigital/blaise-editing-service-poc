@@ -37,6 +37,7 @@ describe('Map a list of questionnaires and reports to a questionnaire allocation
 
     const expectedQuestionnaireDetails: QuestionnaireDetails = {
       questionnaireName: questionnaire.name,
+      questionnaireDisplayName: questionnaire.name.replace('_EDIT', ''),
       numberOfCases: questionnaire.dataRecordCount ?? 0,
       numberOfCasesAllocated: 2,
     };
@@ -64,6 +65,7 @@ describe('Map a list of questionnaires and reports to a questionnaire allocation
 
     const expectedQuestionnaireDetails: QuestionnaireDetails = {
       questionnaireName: questionnaire.name,
+      questionnaireDisplayName: questionnaire.name.replace('_EDIT', ''),
       numberOfCases: questionnaire.dataRecordCount ?? 0,
       numberOfCasesAllocated: 0,
     };

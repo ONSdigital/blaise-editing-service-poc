@@ -315,21 +315,25 @@ describe('getQuestionnaires from Blaise', () => {
 
     const expectedQuestionnaireDetails: QuestionnaireDetails[] = [{
       questionnaireName: questionnaire1Mock.name,
+      questionnaireDisplayName: questionnaire1Mock.name.replace('_EDIT', ''),
       numberOfCases: questionnaire1Mock.dataRecordCount ?? 0,
       numberOfCasesAllocated: 2,
     },
     {
       questionnaireName: questionnaire2Mock.name,
+      questionnaireDisplayName: questionnaire2Mock.name.replace('_EDIT', ''),
       numberOfCases: questionnaire2Mock.dataRecordCount ?? 0,
       numberOfCasesAllocated: 0,
     },
     {
       questionnaireName: questionnaire3Mock.name,
+      questionnaireDisplayName: questionnaire3Mock.name.replace('_EDIT', ''),
       numberOfCases: questionnaire3Mock.dataRecordCount ?? 0,
       numberOfCasesAllocated: 0,
     },
     {
       questionnaireName: questionnaire4Mock.name,
+      questionnaireDisplayName: questionnaire4Mock.name.replace('_EDIT', ''),
       numberOfCases: questionnaire4Mock.dataRecordCount ?? 0,
       numberOfCasesAllocated: 1,
     }];
@@ -361,21 +365,25 @@ describe('getQuestionnaires from Blaise', () => {
 
     const expectedQuestionnaireDetails: QuestionnaireDetails[] = [{
       questionnaireName: questionnaire1Mock.name,
+      questionnaireDisplayName: questionnaire1Mock.name.replace('_EDIT', ''),
       numberOfCases: questionnaire1Mock.dataRecordCount ?? 0,
       numberOfCasesAllocated: 2,
     },
     {
       questionnaireName: questionnaire2Mock.name,
+      questionnaireDisplayName: questionnaire2Mock.name.replace('_EDIT', ''),
       numberOfCases: questionnaire2Mock.dataRecordCount ?? 0,
       numberOfCasesAllocated: 0,
     },
     {
       questionnaireName: questionnaire3Mock.name,
+      questionnaireDisplayName: questionnaire3Mock.name.replace('_EDIT', ''),
       numberOfCases: questionnaire3Mock.dataRecordCount ?? 0,
       numberOfCasesAllocated: 0,
     },
     {
       questionnaireName: questionnaire4Mock.name,
+      questionnaireDisplayName: questionnaire4Mock.name.replace('_EDIT', ''),
       numberOfCases: questionnaire4Mock.dataRecordCount ?? 0,
       numberOfCasesAllocated: 3,
     }];
@@ -418,6 +426,7 @@ describe('getAllocationDetails from Blaise', () => {
 
     const expectedAllocationDetails: AllocationDetails = {
       questionnaireName: questionnaire1Mock.name,
+      questionnaireDisplayName: questionnaire1Mock.name.replace('_EDIT', ''),
       numberOfCases: questionnaire1Mock.dataRecordCount ?? 0,
       numberOfCasesAllocated: 2,
       editorAllocationDetails: [{

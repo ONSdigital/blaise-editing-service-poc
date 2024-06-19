@@ -200,7 +200,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                     <h2
                       class="ons-summary__group-title"
                     >
-                      LMS2101_AA1_EDIT
+                      LMS2101_AA1
                     </h2>
                     <div>
                       <div
@@ -321,7 +321,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                     <h2
                       class="ons-summary__group-title"
                     >
-                      LMS2101_AB1_EDIT
+                      LMS2101_AB1
                     </h2>
                     <div>
                       <div
@@ -442,7 +442,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                     <h2
                       class="ons-summary__group-title"
                     >
-                      LMS2101_AC1_EDIT
+                      LMS2101_AC1
                     </h2>
                     <div>
                       <div>
@@ -517,7 +517,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                     <h2
                       class="ons-summary__group-title"
                     >
-                      OPN2201A_EDIT
+                      OPN2201A
                     </h2>
                     <div>
                       <div
@@ -721,7 +721,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                   <h2
                     class="ons-summary__group-title"
                   >
-                    LMS2101_AA1_EDIT
+                    LMS2101_AA1
                   </h2>
                   <div>
                     <div
@@ -842,7 +842,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                   <h2
                     class="ons-summary__group-title"
                   >
-                    LMS2101_AB1_EDIT
+                    LMS2101_AB1
                   </h2>
                   <div>
                     <div
@@ -963,7 +963,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                   <h2
                     class="ons-summary__group-title"
                   >
-                    LMS2101_AC1_EDIT
+                    LMS2101_AC1
                   </h2>
                   <div>
                     <div>
@@ -1038,7 +1038,7 @@ exports[`Given there are surveys available in blaise should render the manager p
                   <h2
                     class="ons-summary__group-title"
                   >
-                    OPN2201A_EDIT
+                    OPN2201A
                   </h2>
                   <div>
                     <div

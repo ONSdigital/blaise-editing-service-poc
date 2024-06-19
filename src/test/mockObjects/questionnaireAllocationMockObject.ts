@@ -1,7 +1,8 @@
 import { AllocationDetails } from '../../common/interfaces/surveyInterface';
 
 const allocationDetailsMockObject: AllocationDetails = {
-  questionnaireName: 'LMS2101_AA1',
+  questionnaireName: 'LMS2101_AA1_EDIT',
+  questionnaireDisplayName: 'LMS2101_AA1',
   numberOfCases: 900,
   numberOfCasesAllocated: 100,
   editorAllocationDetails: [{

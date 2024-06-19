@@ -212,7 +212,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                     href="/questionnaires/LMS2101_AA1_EDIT/cases"
                     style="font-weight: normal;"
                   >
-                    LMS2101_AA1_EDIT
+                    LMS2101_AA1
                   </a>
                 </dt>
                 <dd
@@ -227,7 +227,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                     href="/questionnaires/LMS2101_AB1_EDIT/cases"
                     style="font-weight: normal;"
                   >
-                    LMS2101_AB1_EDIT
+                    LMS2101_AB1
                   </a>
                 </dt>
                 <dd
@@ -242,7 +242,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                     href="/questionnaires/LMS2101_AC1_EDIT/cases"
                     style="font-weight: normal;"
                   >
-                    LMS2101_AC1_EDIT
+                    LMS2101_AC1
                   </a>
                 </dt>
                 <dd
@@ -323,7 +323,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                     href="/questionnaires/OPN2201A_EDIT/cases"
                     style="font-weight: normal;"
                   >
-                    OPN2201A_EDIT
+                    OPN2201A
                   </a>
                 </dt>
                 <dd
@@ -439,7 +439,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                   href="/questionnaires/LMS2101_AA1_EDIT/cases"
                   style="font-weight: normal;"
                 >
-                  LMS2101_AA1_EDIT
+                  LMS2101_AA1
                 </a>
               </dt>
               <dd
@@ -454,7 +454,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                   href="/questionnaires/LMS2101_AB1_EDIT/cases"
                   style="font-weight: normal;"
                 >
-                  LMS2101_AB1_EDIT
+                  LMS2101_AB1
                 </a>
               </dt>
               <dd
@@ -469,7 +469,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                   href="/questionnaires/LMS2101_AC1_EDIT/cases"
                   style="font-weight: normal;"
                 >
-                  LMS2101_AC1_EDIT
+                  LMS2101_AC1
                 </a>
               </dt>
               <dd
@@ -550,7 +550,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                   href="/questionnaires/OPN2201A_EDIT/cases"
                   style="font-weight: normal;"
                 >
-                  OPN2201A_EDIT
+                  OPN2201A
                 </a>
               </dt>
               <dd
