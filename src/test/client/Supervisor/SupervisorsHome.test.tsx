@@ -4,10 +4,10 @@ import surveyListMockObject from '../../mockObjects/surveyListMockObject';
 import userMockObject from '../../mockObjects/userMockObject';
 import { getSurveys } from '../../../client/Common/api/NodeApi';
 import { Survey } from '../../../common/interfaces/surveyInterface';
-import ManagerHome from '../../../client/Manager/Pages/ManagerHome';
+import SupervisorsHome from '../../../client/Supervisor/Pages/SupervisorsHome';
 
 // set global vars
-const userRole:string = 'Manager';
+const userRole:string = 'Supervisor';
 let view:RenderResult;
 
 // set mocks
@@ -23,7 +23,7 @@ describe('Given there are surveys available in blaise', () => {
     getSurveysMock.mockReset();
   });
 
-  it('should render the manager page correctly when surveys are returned', async () => {
+  it('should render the supervisor page correctly when surveys are returned', async () => {
     // arrange
     const user = userMockObject;
     user.role = userRole;
@@ -32,7 +32,7 @@ describe('Given there are surveys available in blaise', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <ManagerHome user={user} />
+          <SupervisorsHome user={user} />
         </BrowserRouter>,
       );
     });
@@ -50,7 +50,7 @@ describe('Given there are surveys available in blaise', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <ManagerHome user={user} />
+          <SupervisorsHome user={user} />
         </BrowserRouter>,
       );
     });
@@ -92,7 +92,7 @@ describe('Given there are no surveys available in blaise', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <ManagerHome user={user} />
+          <SupervisorsHome user={user} />
         </BrowserRouter>,
       );
     });
@@ -110,7 +110,7 @@ describe('Given there are no surveys available in blaise', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <ManagerHome user={user} />
+          <SupervisorsHome user={user} />
         </BrowserRouter>,
       );
     });
@@ -139,7 +139,7 @@ describe('Given there the blaise rest api is not available', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <ManagerHome user={user} />
+          <SupervisorsHome user={user} />
         </BrowserRouter>,
       );
     });
@@ -158,7 +158,7 @@ describe('Given there the blaise rest api is not available', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <ManagerHome user={user} />
+          <SupervisorsHome user={user} />
         </BrowserRouter>,
       );
     });

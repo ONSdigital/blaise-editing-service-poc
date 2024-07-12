@@ -2,26 +2,26 @@ import { User } from 'blaise-api-node-client';
 
 const userMockObject:User = {
   name: 'Jake Bullet',
-  role: 'Manager',
+  role: 'SVT_Supervisor',
   serverParks: ['gusty'],
   defaultServerPark: 'gusty',
 };
 
 export const caseEditorsMockObject:User[] = [{
   name: 'Toby Maguire',
-  role: 'Editor',
+  role: 'SVT_Editor',
   serverParks: ['gusty'],
   defaultServerPark: 'gusty',
 },
 {
   name: 'Richmond Ricecake',
-  role: 'Editor',
+  role: 'SVT_Editor',
   serverParks: ['gusty'],
   defaultServerPark: 'gusty',
 },
 {
   name: 'Sarah Bosslady',
-  role: 'Editor',
+  role: 'SVT_Editor',
   serverParks: ['gusty'],
   defaultServerPark: 'gusty',
 },

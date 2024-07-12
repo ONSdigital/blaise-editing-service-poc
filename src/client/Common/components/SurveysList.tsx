@@ -4,7 +4,7 @@ import { ReactElement } from 'react';
 import { User } from 'blaise-api-node-client';
 import { Survey } from '../../../common/interfaces/surveyInterface';
 import EditorsQuestionnaireList from '../../Editor/Components/EditorsQuestionnairesList';
-import ManagersQuestionnairesList from '../../Manager/Components/ManagersQuestionnairesList';
+import SupervisorsQuestionnairesList from '../../Supervisor/Components/SupervisorsQuestionnairesList';
 import UserRole from '../enums/UserRole';
 
 interface SurveysListProps {
@@ -14,8 +14,8 @@ interface SurveysListProps {
 
 function CreateContent(surveys:Survey[], user: User):ExpandableContent[] {
   const userRole:UserRole = UserRole[user.role as UserRole];
-  return userRole === UserRole.Manager
-    ? surveys.map(({ name, questionnaires }) => ({ title: name, content: <ManagersQuestionnairesList questionnaires={questionnaires} /> }))
+  return userRole === UserRole.SVT_Supervisor
+    ? surveys.map(({ name, questionnaires }) => ({ title: name, content: <SupervisorsQuestionnairesList questionnaires={questionnaires} /> }))
     : surveys.map(({ name, questionnaires }) => ({ title: name, content: <EditorsQuestionnaireList questionnaires={questionnaires} /> }));
 }
 

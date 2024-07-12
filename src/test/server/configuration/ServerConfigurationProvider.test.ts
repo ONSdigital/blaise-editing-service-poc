@@ -132,7 +132,7 @@ describe('Authentication file tests', () => {
 
     // act
     const sut = new ServerConfigurationProvider();
-    const allRoles = ['Manager', 'Editor'];
+    const allRoles = ['SVT_Supervisor', 'SVT_Editor'];
 
     // assert
     expect(sut.Roles).toEqual(allRoles);

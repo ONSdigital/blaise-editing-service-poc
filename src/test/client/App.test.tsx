@@ -10,7 +10,7 @@ import userMockObject from '../mockObjects/userMockObject';
 import App from '../../client/App';
 
 // set global variables
-const validUserRoles:string[] = ['Manager', 'Editor'];
+const validUserRoles:string[] = ['SVT_Supervisor', 'SVT_Editor'];
 let view:RenderResult;
 
 // create mocks
@@ -63,6 +63,7 @@ describe('Renders the correct screen depending if the user has recently logged i
 
     // assert
     const appView = view.getByTestId('app-content');
+    console.log('output', appView);
     expect(appView).toHaveTextContent(`Bonjour tout le monde ${user.name}`);
   });
 });

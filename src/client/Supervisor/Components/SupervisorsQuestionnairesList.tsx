@@ -2,11 +2,11 @@ import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 
-interface ManagersQuestionnairesListProps {
+interface SupervisorsQuestionnairesListProps {
   questionnaires: QuestionnaireDetails[];
 }
 
-export default function ManagersQuestionnairesList({ questionnaires }: ManagersQuestionnairesListProps): ReactElement {
+export default function SupervisorsQuestionnairesList({ questionnaires }: SupervisorsQuestionnairesListProps): ReactElement {
   return (
     <>
       {questionnaires.map((questionnaire) => (

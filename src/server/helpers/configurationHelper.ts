@@ -25,7 +25,7 @@ export function getNumberOrThrowError(variable: string | undefined, variableName
 
 export function loadRoles(roles: string | undefined): string[] {
   if (!roles || roles === '' || roles === '_ROLES') {
-    return ['Manager', 'Editor'];
+    return ['SVT_Supervisor', 'SVT_Editor'];
   }
   return roles.split(',');
 }
