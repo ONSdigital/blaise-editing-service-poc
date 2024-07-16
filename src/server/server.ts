@@ -3,10 +3,8 @@ import ejs from 'ejs';
 import path from 'path';
 import { Auth, newLoginHandler } from 'blaise-login-react-server';
 import SurveyController from './controllers/surveyController';
-import CaseController from './controllers/caseController';
 import ConfigurationProvider from './configuration/ServerConfigurationProvider';
 import BlaiseApi from './api/BlaiseApi';
-import AllocationController from './controllers/allocationController';
 
 const cors = require('cors');
 
@@ -23,14 +21,6 @@ export default function nodeServer(config: ConfigurationProvider, blaiseApi: Bla
   // survey routing
   const surveyController = new SurveyController(blaiseApi);
   server.use('/', surveyController.getRoutes());
-
-  // case routing
-  const caseController = new CaseController(config, blaiseApi);
-  server.use('/', caseController.getRoutes());
-
-  // allocation routing
-  const allocationController = new AllocationController(blaiseApi);
-  server.use('/', allocationController.getRoutes());
 
   // login routing
   const auth = new Auth(config);

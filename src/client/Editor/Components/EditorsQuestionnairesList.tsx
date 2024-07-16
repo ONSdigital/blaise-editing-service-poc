@@ -23,7 +23,7 @@ export default function EditorsQuestionnairesList({ questionnaires }: EditorsQue
               {questionnaire.questionnaireName}
             </Link>
           </dt>
-          <dd className="ons-metadata__value ons-grid__col ons-col-8@m">{questionnaire.numberOfCasesAllocated}</dd>
+          <dd className="ons-metadata__value ons-grid__col ons-col-8@m">{questionnaire.numberOfCases}</dd>
         </React.Fragment>
       ))}
     </dl>

@@ -209,10 +209,10 @@ exports[`Given there are surveys available in blaise should render the editor pa
                   class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   <a
-                    href="/questionnaires/LMS2101_AA1_EDIT/cases"
+                    href="/questionnaires/LMS2101_AA1/cases"
                     style="font-weight: normal;"
                   >
-                    LMS2101_AA1_EDIT
+                    LMS2101_AA1
                   </a>
                 </dt>
                 <dd
@@ -224,10 +224,10 @@ exports[`Given there are surveys available in blaise should render the editor pa
                   class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   <a
-                    href="/questionnaires/LMS2101_AB1_EDIT/cases"
+                    href="/questionnaires/LMS2101_AB1/cases"
                     style="font-weight: normal;"
                   >
-                    LMS2101_AB1_EDIT
+                    LMS2101_AB1
                   </a>
                 </dt>
                 <dd
@@ -239,10 +239,10 @@ exports[`Given there are surveys available in blaise should render the editor pa
                   class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   <a
-                    href="/questionnaires/LMS2101_AC1_EDIT/cases"
+                    href="/questionnaires/LMS2101_AC1/cases"
                     style="font-weight: normal;"
                   >
-                    LMS2101_AC1_EDIT
+                    LMS2101_AC1
                   </a>
                 </dt>
                 <dd
@@ -320,10 +320,10 @@ exports[`Given there are surveys available in blaise should render the editor pa
                   class="ons-metadata__term ons-grid__col ons-col-4@m"
                 >
                   <a
-                    href="/questionnaires/OPN2201A_EDIT/cases"
+                    href="/questionnaires/OPN2201A/cases"
                     style="font-weight: normal;"
                   >
-                    OPN2201A_EDIT
+                    OPN2201A
                   </a>
                 </dt>
                 <dd
@@ -436,10 +436,10 @@ exports[`Given there are surveys available in blaise should render the editor pa
                 class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 <a
-                  href="/questionnaires/LMS2101_AA1_EDIT/cases"
+                  href="/questionnaires/LMS2101_AA1/cases"
                   style="font-weight: normal;"
                 >
-                  LMS2101_AA1_EDIT
+                  LMS2101_AA1
                 </a>
               </dt>
               <dd
@@ -451,10 +451,10 @@ exports[`Given there are surveys available in blaise should render the editor pa
                 class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 <a
-                  href="/questionnaires/LMS2101_AB1_EDIT/cases"
+                  href="/questionnaires/LMS2101_AB1/cases"
                   style="font-weight: normal;"
                 >
-                  LMS2101_AB1_EDIT
+                  LMS2101_AB1
                 </a>
               </dt>
               <dd
@@ -466,10 +466,10 @@ exports[`Given there are surveys available in blaise should render the editor pa
                 class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 <a
-                  href="/questionnaires/LMS2101_AC1_EDIT/cases"
+                  href="/questionnaires/LMS2101_AC1/cases"
                   style="font-weight: normal;"
                 >
-                  LMS2101_AC1_EDIT
+                  LMS2101_AC1
                 </a>
               </dt>
               <dd
@@ -547,10 +547,10 @@ exports[`Given there are surveys available in blaise should render the editor pa
                 class="ons-metadata__term ons-grid__col ons-col-4@m"
               >
                 <a
-                  href="/questionnaires/OPN2201A_EDIT/cases"
+                  href="/questionnaires/OPN2201A/cases"
                   style="font-weight: normal;"
                 >
-                  OPN2201A_EDIT
+                  OPN2201A
                 </a>
               </dt>
               <dd

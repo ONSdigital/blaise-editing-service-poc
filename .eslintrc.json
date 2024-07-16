@@ -29,7 +29,10 @@
     "@typescript-eslint/no-explicit-any": "error",
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",
-    "no-spaced-func": "off", 
+    "no-constant-condition": "error",
+    "no-unused-vars": "error",
+    "no-unreachable": "error",
+    "no-spaced-func": "off",
     "max-len": ["error", { "code": 180 }],
     "import/no-extraneous-dependencies": [
       "error", {

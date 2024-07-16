@@ -27,9 +27,6 @@ export default function SupervisorsQuestionnairesList({ questionnaires }: Superv
                         <dt className="ons-summary__item-title">
                           <div className="ons-summary__item--text">Cases Allocted</div>
                         </dt>
-                        <dd className="ons-summary__values">
-                          <span className="ons-summary__text">{questionnaire.numberOfCasesAllocated}</span>
-                        </dd>
                         <dd className="ons-summary__actions">
                           <span
                             className="ons-summary__button-text"
@@ -48,12 +45,6 @@ export default function SupervisorsQuestionnairesList({ questionnaires }: Superv
                         <dt className="ons-summary__item-title">
                           <div className="ons-summary__item--text">Cases left to allocate</div>
                         </dt>
-                        <dd className="ons-summary__values">
-                          <span className="ons-summary__text">
-                            {questionnaire.numberOfCases - questionnaire.numberOfCasesAllocated}
-                            {' '}
-                          </span>
-                        </dd>
                         <dd className="ons-summary__actions">
                           <span
                             className="ons-summary__button-text"

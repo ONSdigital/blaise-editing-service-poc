@@ -2,7 +2,7 @@ import { render, act, RenderResult } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import surveyListMockObject from '../../mockObjects/surveyListMockObject';
 import userMockObject from '../../mockObjects/userMockObject';
-import { getSurveys } from '../../../client/Common/api/NodeApi';
+import getSurveys from '../../../client/Common/api/NodeApi';
 import { Survey } from '../../../common/interfaces/surveyInterface';
 import EditorHome from '../../../client/Editor/Pages/EditorHome';
 

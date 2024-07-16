@@ -4,7 +4,7 @@ import {
 import { BrowserRouter } from 'react-router-dom';
 import { Authenticate } from 'blaise-login-react-client';
 import surveyListMockObject from '../mockObjects/surveyListMockObject';
-import { getSurveys } from '../../client/Common/api/NodeApi';
+import getSurveys from '../../client/Common/api/NodeApi';
 import { Survey } from '../../common/interfaces/surveyInterface';
 import userMockObject from '../mockObjects/userMockObject';
 import App from '../../client/App';
@@ -63,7 +63,6 @@ describe('Renders the correct screen depending if the user has recently logged i
 
     // assert
     const appView = view.getByTestId('app-content');
-    console.log('output', appView);
     expect(appView).toHaveTextContent(`Bonjour tout le monde ${user.name}`);
   });
 });

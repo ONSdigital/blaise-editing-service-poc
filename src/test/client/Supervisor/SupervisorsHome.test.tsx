@@ -2,7 +2,7 @@ import { render, act, RenderResult } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import surveyListMockObject from '../../mockObjects/surveyListMockObject';
 import userMockObject from '../../mockObjects/userMockObject';
-import { getSurveys } from '../../../client/Common/api/NodeApi';
+import getSurveys from '../../../client/Common/api/NodeApi';
 import { Survey } from '../../../common/interfaces/surveyInterface';
 import SupervisorsHome from '../../../client/Supervisor/Pages/SupervisorsHome';
 
@@ -60,14 +60,11 @@ describe('Given there are surveys available in blaise', () => {
       const surveyListView = view.getByTestId(`accordion-${surveyIndex}-heading`);
       expect(surveyListView).toHaveTextContent(survey.name);
 
-      survey.questionnaires.forEach(({ questionnaireName, numberOfCases, numberOfCasesAllocated }) => {
+      survey.questionnaires.forEach(({ questionnaireName, numberOfCases }) => {
         const questionnaireListView = view.getByTestId(`accordion-${surveyIndex}-content`);
         expect(questionnaireListView).toHaveTextContent(questionnaireName);
         if (numberOfCases === 0) {
           expect(questionnaireListView).toHaveTextContent('Not signed off for editing yet');
-        } else {
-          expect(questionnaireListView).toHaveTextContent(String(numberOfCases - numberOfCasesAllocated));
-          expect(questionnaireListView).toHaveTextContent(String(numberOfCasesAllocated));
         }
       });
     });

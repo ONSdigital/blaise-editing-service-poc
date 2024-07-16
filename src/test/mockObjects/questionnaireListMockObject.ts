@@ -2,7 +2,7 @@ import { Questionnaire } from 'blaise-api-node-client';
 import { QuestionnaireDetails } from '../../common/interfaces/surveyInterface';
 
 export const questionnaire1Mock: Questionnaire = {
-  name: 'LMS2101_AA1_EDIT',
+  name: 'LMS2101_AA1',
   serverParkName: 'gusty',
   installDate: '2021-01-15T15:26:43.4233454+00:00',
   status: 'Active',
@@ -12,7 +12,7 @@ export const questionnaire1Mock: Questionnaire = {
 };
 
 export const questionnaire2Mock: Questionnaire = {
-  name: 'LMS2101_AB1_EDIT',
+  name: 'LMS2101_AB1',
   serverParkName: 'gusty',
   installDate: '2021-02-15T15:26:43.4233454+00:00',
   status: 'Active',
@@ -22,7 +22,7 @@ export const questionnaire2Mock: Questionnaire = {
 };
 
 export const questionnaire3Mock: Questionnaire = {
-  name: 'LMS2101_AC1_EDIT',
+  name: 'LMS2101_AC1',
   serverParkName: 'gusty',
   installDate: '2021-03-15T15:26:43.4233454+00:00',
   status: 'Active',
@@ -32,7 +32,7 @@ export const questionnaire3Mock: Questionnaire = {
 };
 
 export const questionnaire4Mock: Questionnaire = {
-  name: 'OPN2201A_EDIT',
+  name: 'OPN2201A',
   serverParkName: 'gusty',
   installDate: '2021-04-15T15:26:43.4233454+00:00',
   status: 'Active',
@@ -51,25 +51,21 @@ export const questionnaireListMockObject: Questionnaire[] = [
 export const questionnaireDetails1MockObject: QuestionnaireDetails = {
   questionnaireName: questionnaire1Mock.name,
   numberOfCases: questionnaire1Mock.dataRecordCount ?? 0,
-  numberOfCasesAllocated: 3,
 };
 
 export const questionnaireDetails2MockObject: QuestionnaireDetails = {
   questionnaireName: questionnaire2Mock.name,
   numberOfCases: questionnaire2Mock.dataRecordCount ?? 0,
-  numberOfCasesAllocated: 1,
 };
 
 export const questionnaireDetails3MockObject: QuestionnaireDetails = {
   questionnaireName: questionnaire3Mock.name,
   numberOfCases: questionnaire3Mock.dataRecordCount ?? 0,
-  numberOfCasesAllocated: 0,
 };
 
 export const questionnaireDetails4MockObject: QuestionnaireDetails = {
   questionnaireName: questionnaire4Mock.name,
   numberOfCases: questionnaire4Mock.dataRecordCount ?? 0,
-  numberOfCasesAllocated: 3,
 };
 
 export const questionnaireDetailsListMockObject: QuestionnaireDetails[] = [

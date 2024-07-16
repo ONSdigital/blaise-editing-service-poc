@@ -7,22 +7,18 @@ describe('Map questionnaire list to survey list', () => {
       {
         questionnaireName: 'LMS2101_AA1',
         numberOfCases: 3,
-        numberOfCasesAllocated: 3,
       },
       {
         questionnaireName: 'LMS2101_AB1',
         numberOfCases: 1,
-        numberOfCasesAllocated: 1,
       },
       {
         questionnaireName: 'LMS2101_AC1',
         numberOfCases: 0,
-        numberOfCasesAllocated: 0,
       },
       {
         questionnaireName: 'OPN2201A',
         numberOfCases: 3,
-        numberOfCasesAllocated: 3,
       },
     ];
 
@@ -33,17 +29,14 @@ describe('Map questionnaire list to survey list', () => {
       [{
         questionnaireName: 'LMS2101_AA1',
         numberOfCases: 3,
-        numberOfCasesAllocated: 3,
       },
       {
         questionnaireName: 'LMS2101_AB1',
         numberOfCases: 1,
-        numberOfCasesAllocated: 1,
       },
       {
         questionnaireName: 'LMS2101_AC1',
         numberOfCases: 0,
-        numberOfCasesAllocated: 0,
       }],
       },
       {
@@ -51,7 +44,6 @@ describe('Map questionnaire list to survey list', () => {
         questionnaires: [{
           questionnaireName: 'OPN2201A',
           numberOfCases: 3,
-          numberOfCasesAllocated: 3,
         }],
       },
     ];
