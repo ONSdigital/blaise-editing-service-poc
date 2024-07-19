@@ -28,7 +28,7 @@ export const questionnaire3Mock: Questionnaire = {
   status: 'Active',
   dataRecordCount: 0,
   hasData: false,
-  active: false,
+  active: false, 
 };
 
 export const questionnaire4Mock: Questionnaire = {
@@ -51,21 +51,25 @@ export const questionnaireListMockObject: Questionnaire[] = [
 export const questionnaireDetails1MockObject: QuestionnaireDetails = {
   questionnaireName: questionnaire1Mock.name,
   numberOfCases: questionnaire1Mock.dataRecordCount ?? 0,
+  questionnaireMonth: `${questionnaire1Mock.name.slice(5, 7)} - 20${questionnaire1Mock.name.slice(3, 5)}`,
 };
 
 export const questionnaireDetails2MockObject: QuestionnaireDetails = {
   questionnaireName: questionnaire2Mock.name,
   numberOfCases: questionnaire2Mock.dataRecordCount ?? 0,
+  questionnaireMonth: `${questionnaire2Mock.name.slice(5, 7)} - 20${questionnaire2Mock.name.slice(3, 5)}`, 
 };
 
 export const questionnaireDetails3MockObject: QuestionnaireDetails = {
   questionnaireName: questionnaire3Mock.name,
   numberOfCases: questionnaire3Mock.dataRecordCount ?? 0,
+  questionnaireMonth: `${questionnaire3Mock.name.slice(5, 7)} - 20${questionnaire3Mock.name.slice(3, 5)}`, 
 };
 
 export const questionnaireDetails4MockObject: QuestionnaireDetails = {
   questionnaireName: questionnaire4Mock.name,
   numberOfCases: questionnaire4Mock.dataRecordCount ?? 0,
+  questionnaireMonth: `${questionnaire4Mock.name.slice(5, 7)} - 20${questionnaire4Mock.name.slice(3, 5)}`,  
 };
 
 export const questionnaireDetailsListMockObject: QuestionnaireDetails[] = [

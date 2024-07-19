@@ -6,4 +6,5 @@ export interface Survey {
 export interface QuestionnaireDetails {
   questionnaireName: string,
   numberOfCases: number,
+  questionnaireMonth: string,
 }

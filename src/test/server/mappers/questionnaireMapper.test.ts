@@ -19,6 +19,7 @@ describe('Map a list of questionnaires', () => {
     const expectedQuestionnaireDetails: QuestionnaireDetails = {
       questionnaireName: questionnaire.name,
       numberOfCases: questionnaire.dataRecordCount ?? 0,
+      questionnaireMonth: `${questionnaire.name.slice(5, 7)} - 20${questionnaire.name.slice(3, 5)}`,
     };
 
     // act
