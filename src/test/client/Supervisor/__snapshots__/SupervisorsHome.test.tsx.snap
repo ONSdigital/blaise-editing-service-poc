@@ -265,7 +265,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                           <dt
                             class="ons-description-list__term ons-grid__col ons-col-5@m"
                           >
-                            Number of cases:
+                            Total number of cases:
                           </dt>
                           <dd
                             class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -284,6 +284,18 @@ exports[`Given there are surveys available in blaise should render the superviso
                           >
                             <strong>
                               30
+                            </strong>
+                          </dd>
+                          <dt
+                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          >
+                            Number of cases not allocated:
+                          </dt>
+                          <dd
+                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          >
+                            <strong>
+                              970
                             </strong>
                              
                             <a
@@ -483,7 +495,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                           <dt
                             class="ons-description-list__term ons-grid__col ons-col-5@m"
                           >
-                            Number of cases:
+                            Total number of cases:
                           </dt>
                           <dd
                             class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -502,6 +514,18 @@ exports[`Given there are surveys available in blaise should render the superviso
                           >
                             <strong>
                               30
+                            </strong>
+                          </dd>
+                          <dt
+                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          >
+                            Number of cases not allocated:
+                          </dt>
+                          <dd
+                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          >
+                            <strong>
+                              970
                             </strong>
                              
                             <a
@@ -701,7 +725,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                           <dt
                             class="ons-description-list__term ons-grid__col ons-col-5@m"
                           >
-                            Number of cases:
+                            Total number of cases:
                           </dt>
                           <dd
                             class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -720,6 +744,18 @@ exports[`Given there are surveys available in blaise should render the superviso
                           >
                             <strong>
                               30
+                            </strong>
+                          </dd>
+                          <dt
+                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          >
+                            Number of cases not allocated:
+                          </dt>
+                          <dd
+                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          >
+                            <strong>
+                              970
                             </strong>
                              
                             <a
@@ -986,7 +1022,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                           <dt
                             class="ons-description-list__term ons-grid__col ons-col-5@m"
                           >
-                            Number of cases:
+                            Total number of cases:
                           </dt>
                           <dd
                             class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1005,6 +1041,18 @@ exports[`Given there are surveys available in blaise should render the superviso
                           >
                             <strong>
                               30
+                            </strong>
+                          </dd>
+                          <dt
+                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          >
+                            Number of cases not allocated:
+                          </dt>
+                          <dd
+                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          >
+                            <strong>
+                              970
                             </strong>
                              
                             <a
@@ -1293,7 +1341,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Number of cases:
+                          Total number of cases:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1312,6 +1360,18 @@ exports[`Given there are surveys available in blaise should render the superviso
                         >
                           <strong>
                             30
+                          </strong>
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Number of cases not allocated:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            970
                           </strong>
                            
                           <a
@@ -1511,7 +1571,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Number of cases:
+                          Total number of cases:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1530,6 +1590,18 @@ exports[`Given there are surveys available in blaise should render the superviso
                         >
                           <strong>
                             30
+                          </strong>
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Number of cases not allocated:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            970
                           </strong>
                            
                           <a
@@ -1729,7 +1801,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Number of cases:
+                          Total number of cases:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1748,6 +1820,18 @@ exports[`Given there are surveys available in blaise should render the superviso
                         >
                           <strong>
                             30
+                          </strong>
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Number of cases not allocated:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            970
                           </strong>
                            
                           <a
@@ -2014,7 +2098,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Number of cases:
+                          Total number of cases:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -2033,6 +2117,18 @@ exports[`Given there are surveys available in blaise should render the superviso
                         >
                           <strong>
                             30
+                          </strong>
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Number of cases not allocated:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            970
                           </strong>
                            
                           <a

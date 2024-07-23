@@ -17,16 +17,20 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
       >
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Field period:</dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>{questionnaire.fieldPeriod}</strong></dd>
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases:</dt>
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Total number of cases:</dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>1000</strong></dd>
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases allocated:</dt>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>30</strong></dd>
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases not allocated:</dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
-          <strong>30</strong>
+          <strong>970</strong>
           {' '}
           <Link className="allocate" to="/">(Allocate)</Link>
         </dd>
 
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m" style={{ margin: '50px 0 0 0' }}><Link className="allocate" to="/">Doctor Doom:</Link></dt>
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m" style={{ margin: '50px 0 0 0' }}>
+          <Link className="allocate" to="/">Doctor Doom:</Link>
+        </dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m" style={{ margin: '50px 0 0 0' }}>
           <strong>10</strong>
           {' '}

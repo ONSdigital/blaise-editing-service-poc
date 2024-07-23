@@ -4,7 +4,7 @@ import { ExpandableContent } from 'blaise-design-system-react-components/build/s
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 import SupervisorsQuestionnaireDetails from './SupervisorsQuestionnaireDetails';
 
-interface SupervisorsQuestionnairesListProps {
+export interface SupervisorsQuestionnairesListProps {
   questionnaires: QuestionnaireDetails[];
 }
 

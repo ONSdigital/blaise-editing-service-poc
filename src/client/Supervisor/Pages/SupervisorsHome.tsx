@@ -4,7 +4,7 @@ import { Survey } from '../../../common/interfaces/surveyInterface';
 import { useAsyncRequest } from '../../Common/hooks/useAsyncRequest';
 import getSurveys from '../../Common/api/NodeApi';
 import AsyncContent from '../../Common/components/AsyncContent';
-import SupervisorsSurveysList from '../Components/SupervisorsSurveysList';
+import SurveysList from '../../Common/components/SurveysList';
 
 interface SurveyProps {
   user: User;
@@ -23,7 +23,7 @@ export default function SupervisorsHome({ user }: SurveyProps) {
       </ONSPanel>
       <div data-testid="Surveys">
         <AsyncContent content={surveys}>
-          {(loadedSurveys) => <SupervisorsSurveysList surveys={loadedSurveys} />}
+          {(loadedSurveys) => <SurveysList surveys={loadedSurveys} role={user.role} />}
         </AsyncContent>
       </div>
     </>
