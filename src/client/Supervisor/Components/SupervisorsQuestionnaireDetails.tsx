@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
+import { ONSPanel } from 'blaise-design-system-react-components';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 
 interface SupervisorsQuestionnairesDetailsProps {
@@ -8,10 +9,7 @@ interface SupervisorsQuestionnairesDetailsProps {
 
 export default function SupervisorsQuestionnaireDetails({ questionnaire }: SupervisorsQuestionnairesDetailsProps): ReactElement {
   return (
-    <div style={{
-      margin: '0 0 0 2px', padding: '10px', backgroundColor: '#e7f3ec', border: '1px dotted',
-    }}
-    >
+    <ONSPanel status="info">
       <dl
         className="ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
         title="Information about this business and its survey requirements"
@@ -78,6 +76,6 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
           case(s) allocated
         </dd>
       </dl>
-    </div>
+    </ONSPanel>
   );
 }
