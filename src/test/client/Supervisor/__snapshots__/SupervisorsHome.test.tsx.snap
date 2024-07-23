@@ -239,186 +239,105 @@ exports[`Given there are surveys available in blaise should render the superviso
                     data-testid="questionnaire-accordion-0-content"
                     id="questionnaire-accordion-0-content"
                   >
+                    <dl
+                      class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                      data-testid="QuestionnaireList"
+                      style="padding: 0px 0px 15px 5px;"
+                      title="Questionnares"
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Field period:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2021-01-01T00:00:00
+                        </strong>
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Cases Allocated:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          3
+                        </strong>
+                      </dd>
+                    </dl>
                     <div
                       class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                     >
                       <div
                         class="ons-panel__body "
                       >
-                        <dl
-                          aria-label="Information about this business and its survey requirements"
-                          class="ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                          title="Information about this business and its survey requirements"
+                        <a
+                          class="allocate"
+                          href="/"
                         >
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          10001012
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
                           >
-                            Field period:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            10001012
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
                           >
-                            <strong>
-                              2021-01-01T00:00:00
-                            </strong>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            Edit
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
                           >
-                            Total number of cases:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            10001013
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
                           >
-                            <strong>
-                              1000
-                            </strong>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            Number of cases allocated:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              30
-                            </strong>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            Number of cases not allocated:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              970
-                            </strong>
-                             
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              (Allocate)
-                            </a>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            style="margin: 50px 0px 0px 0px;"
-                          >
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              Doctor Doom:
-                            </a>
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            style="margin: 50px 0px 0px 0px;"
-                          >
-                            <strong>
-                              10
-                            </strong>
-                             
-                            case(s) allocated
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              5
-                            </strong>
-                             
-                            case(s) not started
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              2
-                            </strong>
-                             
-                            case(s) in progress
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              2
-                            </strong>
-                             
-                            case(s) completed
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              1
-                            </strong>
-                             
-                            case(s) with queries
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              Captain Fantastic:
-                            </a>
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              5
-                            </strong>
-                             
-                            case(s) allocated
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              4
-                            </strong>
-                             
-                            case(s) not started
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              1
-                            </strong>
-                             
-                            case(s) in progress
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              The Thing:
-                            </a>
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              0
-                            </strong>
-                             
-                            case(s) allocated
-                          </dd>
-                        </dl>
+                            Edit
+                          </a>
+                        </dd>
                       </div>
                     </div>
                   </div>
@@ -469,186 +388,105 @@ exports[`Given there are surveys available in blaise should render the superviso
                     data-testid="questionnaire-accordion-1-content"
                     id="questionnaire-accordion-1-content"
                   >
+                    <dl
+                      class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                      data-testid="QuestionnaireList"
+                      style="padding: 0px 0px 15px 5px;"
+                      title="Questionnares"
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Field period:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2021-01-01T00:00:00
+                        </strong>
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Cases Allocated:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          3
+                        </strong>
+                      </dd>
+                    </dl>
                     <div
                       class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                     >
                       <div
                         class="ons-panel__body "
                       >
-                        <dl
-                          aria-label="Information about this business and its survey requirements"
-                          class="ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                          title="Information about this business and its survey requirements"
+                        <a
+                          class="allocate"
+                          href="/"
                         >
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          10001012
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
                           >
-                            Field period:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            10001012
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
                           >
-                            <strong>
-                              2021-01-01T00:00:00
-                            </strong>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            Edit
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
                           >
-                            Total number of cases:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            10001013
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
                           >
-                            <strong>
-                              1000
-                            </strong>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            Number of cases allocated:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              30
-                            </strong>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            Number of cases not allocated:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              970
-                            </strong>
-                             
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              (Allocate)
-                            </a>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            style="margin: 50px 0px 0px 0px;"
-                          >
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              Doctor Doom:
-                            </a>
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            style="margin: 50px 0px 0px 0px;"
-                          >
-                            <strong>
-                              10
-                            </strong>
-                             
-                            case(s) allocated
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              5
-                            </strong>
-                             
-                            case(s) not started
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              2
-                            </strong>
-                             
-                            case(s) in progress
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              2
-                            </strong>
-                             
-                            case(s) completed
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              1
-                            </strong>
-                             
-                            case(s) with queries
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              Captain Fantastic:
-                            </a>
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              5
-                            </strong>
-                             
-                            case(s) allocated
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              4
-                            </strong>
-                             
-                            case(s) not started
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              1
-                            </strong>
-                             
-                            case(s) in progress
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              The Thing:
-                            </a>
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              0
-                            </strong>
-                             
-                            case(s) allocated
-                          </dd>
-                        </dl>
+                            Edit
+                          </a>
+                        </dd>
                       </div>
                     </div>
                   </div>
@@ -699,186 +537,105 @@ exports[`Given there are surveys available in blaise should render the superviso
                     data-testid="questionnaire-accordion-2-content"
                     id="questionnaire-accordion-2-content"
                   >
+                    <dl
+                      class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                      data-testid="QuestionnaireList"
+                      style="padding: 0px 0px 15px 5px;"
+                      title="Questionnares"
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Field period:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2021-01-01T00:00:00
+                        </strong>
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Cases Allocated:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          3
+                        </strong>
+                      </dd>
+                    </dl>
                     <div
                       class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                     >
                       <div
                         class="ons-panel__body "
                       >
-                        <dl
-                          aria-label="Information about this business and its survey requirements"
-                          class="ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                          title="Information about this business and its survey requirements"
+                        <a
+                          class="allocate"
+                          href="/"
                         >
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          10001012
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
                           >
-                            Field period:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            10001012
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
                           >
-                            <strong>
-                              2021-01-01T00:00:00
-                            </strong>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            Edit
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
                           >
-                            Total number of cases:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            10001013
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
                           >
-                            <strong>
-                              1000
-                            </strong>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            Number of cases allocated:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              30
-                            </strong>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            Number of cases not allocated:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              970
-                            </strong>
-                             
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              (Allocate)
-                            </a>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            style="margin: 50px 0px 0px 0px;"
-                          >
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              Doctor Doom:
-                            </a>
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            style="margin: 50px 0px 0px 0px;"
-                          >
-                            <strong>
-                              10
-                            </strong>
-                             
-                            case(s) allocated
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              5
-                            </strong>
-                             
-                            case(s) not started
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              2
-                            </strong>
-                             
-                            case(s) in progress
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              2
-                            </strong>
-                             
-                            case(s) completed
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              1
-                            </strong>
-                             
-                            case(s) with queries
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              Captain Fantastic:
-                            </a>
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              5
-                            </strong>
-                             
-                            case(s) allocated
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              4
-                            </strong>
-                             
-                            case(s) not started
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              1
-                            </strong>
-                             
-                            case(s) in progress
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              The Thing:
-                            </a>
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              0
-                            </strong>
-                             
-                            case(s) allocated
-                          </dd>
-                        </dl>
+                            Edit
+                          </a>
+                        </dd>
                       </div>
                     </div>
                   </div>
@@ -996,186 +753,105 @@ exports[`Given there are surveys available in blaise should render the superviso
                     data-testid="questionnaire-accordion-0-content"
                     id="questionnaire-accordion-0-content"
                   >
+                    <dl
+                      class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                      data-testid="QuestionnaireList"
+                      style="padding: 0px 0px 15px 5px;"
+                      title="Questionnares"
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Field period:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2022-01-01T00:00:00
+                        </strong>
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Cases Allocated:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          3
+                        </strong>
+                      </dd>
+                    </dl>
                     <div
                       class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                     >
                       <div
                         class="ons-panel__body "
                       >
-                        <dl
-                          aria-label="Information about this business and its survey requirements"
-                          class="ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                          title="Information about this business and its survey requirements"
+                        <a
+                          class="allocate"
+                          href="/"
                         >
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          10001012
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
                           >
-                            Field period:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            10001012
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
                           >
-                            <strong>
-                              2022-01-01T00:00:00
-                            </strong>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            Edit
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
                           >
-                            Total number of cases:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            10001013
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
                           >
-                            <strong>
-                              1000
-                            </strong>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            Number of cases allocated:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              30
-                            </strong>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            Number of cases not allocated:
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              970
-                            </strong>
-                             
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              (Allocate)
-                            </a>
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            style="margin: 50px 0px 0px 0px;"
-                          >
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              Doctor Doom:
-                            </a>
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            style="margin: 50px 0px 0px 0px;"
-                          >
-                            <strong>
-                              10
-                            </strong>
-                             
-                            case(s) allocated
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              5
-                            </strong>
-                             
-                            case(s) not started
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              2
-                            </strong>
-                             
-                            case(s) in progress
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              2
-                            </strong>
-                             
-                            case(s) completed
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              1
-                            </strong>
-                             
-                            case(s) with queries
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              Captain Fantastic:
-                            </a>
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              5
-                            </strong>
-                             
-                            case(s) allocated
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              4
-                            </strong>
-                             
-                            case(s) not started
-                          </dd>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              1
-                            </strong>
-                             
-                            case(s) in progress
-                          </dd>
-                          <dt
-                            class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          >
-                            <a
-                              class="allocate"
-                              href="/"
-                            >
-                              The Thing:
-                            </a>
-                          </dt>
-                          <dd
-                            class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          >
-                            <strong>
-                              0
-                            </strong>
-                             
-                            case(s) allocated
-                          </dd>
-                        </dl>
+                            Edit
+                          </a>
+                        </dd>
                       </div>
                     </div>
                   </div>
@@ -1315,186 +991,105 @@ exports[`Given there are surveys available in blaise should render the superviso
                   data-testid="questionnaire-accordion-0-content"
                   id="questionnaire-accordion-0-content"
                 >
+                  <dl
+                    class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                    data-testid="QuestionnaireList"
+                    style="padding: 0px 0px 15px 5px;"
+                    title="Questionnares"
+                  >
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Field period:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        2021-01-01T00:00:00
+                      </strong>
+                    </dd>
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Cases Allocated:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        3
+                      </strong>
+                    </dd>
+                  </dl>
                   <div
                     class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                   >
                     <div
                       class="ons-panel__body "
                     >
-                      <dl
-                        aria-label="Information about this business and its survey requirements"
-                        class="ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                        title="Information about this business and its survey requirements"
+                      <a
+                        class="allocate"
+                        href="/"
                       >
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        10001012
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
                         >
-                          Field period:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          10001012
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
                         >
-                          <strong>
-                            2021-01-01T00:00:00
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          Edit
+                        </a>
+                      </dd>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
                         >
-                          Total number of cases:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          10001013
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
                         >
-                          <strong>
-                            1000
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          Number of cases allocated:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            30
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          Number of cases not allocated:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            970
-                          </strong>
-                           
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            (Allocate)
-                          </a>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          style="margin: 50px 0px 0px 0px;"
-                        >
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            Doctor Doom:
-                          </a>
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          style="margin: 50px 0px 0px 0px;"
-                        >
-                          <strong>
-                            10
-                          </strong>
-                           
-                          case(s) allocated
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            5
-                          </strong>
-                           
-                          case(s) not started
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) completed
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            1
-                          </strong>
-                           
-                          case(s) with queries
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            Captain Fantastic:
-                          </a>
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            5
-                          </strong>
-                           
-                          case(s) allocated
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            4
-                          </strong>
-                           
-                          case(s) not started
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            1
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            The Thing:
-                          </a>
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            0
-                          </strong>
-                           
-                          case(s) allocated
-                        </dd>
-                      </dl>
+                          Edit
+                        </a>
+                      </dd>
                     </div>
                   </div>
                 </div>
@@ -1545,186 +1140,105 @@ exports[`Given there are surveys available in blaise should render the superviso
                   data-testid="questionnaire-accordion-1-content"
                   id="questionnaire-accordion-1-content"
                 >
+                  <dl
+                    class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                    data-testid="QuestionnaireList"
+                    style="padding: 0px 0px 15px 5px;"
+                    title="Questionnares"
+                  >
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Field period:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        2021-01-01T00:00:00
+                      </strong>
+                    </dd>
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Cases Allocated:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        3
+                      </strong>
+                    </dd>
+                  </dl>
                   <div
                     class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                   >
                     <div
                       class="ons-panel__body "
                     >
-                      <dl
-                        aria-label="Information about this business and its survey requirements"
-                        class="ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                        title="Information about this business and its survey requirements"
+                      <a
+                        class="allocate"
+                        href="/"
                       >
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        10001012
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
                         >
-                          Field period:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          10001012
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
                         >
-                          <strong>
-                            2021-01-01T00:00:00
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          Edit
+                        </a>
+                      </dd>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
                         >
-                          Total number of cases:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          10001013
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
                         >
-                          <strong>
-                            1000
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          Number of cases allocated:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            30
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          Number of cases not allocated:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            970
-                          </strong>
-                           
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            (Allocate)
-                          </a>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          style="margin: 50px 0px 0px 0px;"
-                        >
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            Doctor Doom:
-                          </a>
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          style="margin: 50px 0px 0px 0px;"
-                        >
-                          <strong>
-                            10
-                          </strong>
-                           
-                          case(s) allocated
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            5
-                          </strong>
-                           
-                          case(s) not started
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) completed
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            1
-                          </strong>
-                           
-                          case(s) with queries
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            Captain Fantastic:
-                          </a>
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            5
-                          </strong>
-                           
-                          case(s) allocated
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            4
-                          </strong>
-                           
-                          case(s) not started
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            1
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            The Thing:
-                          </a>
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            0
-                          </strong>
-                           
-                          case(s) allocated
-                        </dd>
-                      </dl>
+                          Edit
+                        </a>
+                      </dd>
                     </div>
                   </div>
                 </div>
@@ -1775,186 +1289,105 @@ exports[`Given there are surveys available in blaise should render the superviso
                   data-testid="questionnaire-accordion-2-content"
                   id="questionnaire-accordion-2-content"
                 >
+                  <dl
+                    class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                    data-testid="QuestionnaireList"
+                    style="padding: 0px 0px 15px 5px;"
+                    title="Questionnares"
+                  >
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Field period:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        2021-01-01T00:00:00
+                      </strong>
+                    </dd>
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Cases Allocated:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        3
+                      </strong>
+                    </dd>
+                  </dl>
                   <div
                     class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                   >
                     <div
                       class="ons-panel__body "
                     >
-                      <dl
-                        aria-label="Information about this business and its survey requirements"
-                        class="ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                        title="Information about this business and its survey requirements"
+                      <a
+                        class="allocate"
+                        href="/"
                       >
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        10001012
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
                         >
-                          Field period:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          10001012
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
                         >
-                          <strong>
-                            2021-01-01T00:00:00
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          Edit
+                        </a>
+                      </dd>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
                         >
-                          Total number of cases:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          10001013
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
                         >
-                          <strong>
-                            1000
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          Number of cases allocated:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            30
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          Number of cases not allocated:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            970
-                          </strong>
-                           
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            (Allocate)
-                          </a>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          style="margin: 50px 0px 0px 0px;"
-                        >
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            Doctor Doom:
-                          </a>
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          style="margin: 50px 0px 0px 0px;"
-                        >
-                          <strong>
-                            10
-                          </strong>
-                           
-                          case(s) allocated
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            5
-                          </strong>
-                           
-                          case(s) not started
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) completed
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            1
-                          </strong>
-                           
-                          case(s) with queries
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            Captain Fantastic:
-                          </a>
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            5
-                          </strong>
-                           
-                          case(s) allocated
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            4
-                          </strong>
-                           
-                          case(s) not started
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            1
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            The Thing:
-                          </a>
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            0
-                          </strong>
-                           
-                          case(s) allocated
-                        </dd>
-                      </dl>
+                          Edit
+                        </a>
+                      </dd>
                     </div>
                   </div>
                 </div>
@@ -2072,186 +1505,105 @@ exports[`Given there are surveys available in blaise should render the superviso
                   data-testid="questionnaire-accordion-0-content"
                   id="questionnaire-accordion-0-content"
                 >
+                  <dl
+                    class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                    data-testid="QuestionnaireList"
+                    style="padding: 0px 0px 15px 5px;"
+                    title="Questionnares"
+                  >
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Field period:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        2022-01-01T00:00:00
+                      </strong>
+                    </dd>
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Cases Allocated:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        3
+                      </strong>
+                    </dd>
+                  </dl>
                   <div
                     class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                   >
                     <div
                       class="ons-panel__body "
                     >
-                      <dl
-                        aria-label="Information about this business and its survey requirements"
-                        class="ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                        title="Information about this business and its survey requirements"
+                      <a
+                        class="allocate"
+                        href="/"
                       >
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        10001012
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
                         >
-                          Field period:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          10001012
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
                         >
-                          <strong>
-                            2022-01-01T00:00:00
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          Edit
+                        </a>
+                      </dd>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
                         >
-                          Total number of cases:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          10001013
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
                         >
-                          <strong>
-                            1000
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          Number of cases allocated:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            30
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          Number of cases not allocated:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            970
-                          </strong>
-                           
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            (Allocate)
-                          </a>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                          style="margin: 50px 0px 0px 0px;"
-                        >
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            Doctor Doom:
-                          </a>
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                          style="margin: 50px 0px 0px 0px;"
-                        >
-                          <strong>
-                            10
-                          </strong>
-                           
-                          case(s) allocated
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            5
-                          </strong>
-                           
-                          case(s) not started
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) completed
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            1
-                          </strong>
-                           
-                          case(s) with queries
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            Captain Fantastic:
-                          </a>
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            5
-                          </strong>
-                           
-                          case(s) allocated
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            4
-                          </strong>
-                           
-                          case(s) not started
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            1
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          <a
-                            class="allocate"
-                            href="/"
-                          >
-                            The Thing:
-                          </a>
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            0
-                          </strong>
-                           
-                          case(s) allocated
-                        </dd>
-                      </dl>
+                          Edit
+                        </a>
+                      </dd>
                     </div>
                   </div>
                 </div>

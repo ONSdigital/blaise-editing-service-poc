@@ -5,6 +5,7 @@ import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface
 
 import UserRole from '../enums/UserRole';
 import SupervisorsQuestionnaireDetails from '../../Supervisor/Components/SupervisorsQuestionnaireDetails';
+import EditorsQuestionnaireDetails from '../../Editor/Components/EditorsQuestionnaireDetails';
 
 function RenderQuestionnaireDetails(role:string, questionnaire:QuestionnaireDetails) {
   const userRole:UserRole = UserRole[role as UserRole];
@@ -13,7 +14,7 @@ function RenderQuestionnaireDetails(role:string, questionnaire:QuestionnaireDeta
     return <SupervisorsQuestionnaireDetails questionnaire={questionnaire} />;
   }
 
-  return <SupervisorsQuestionnaireDetails questionnaire={questionnaire} />;
+  return <EditorsQuestionnaireDetails questionnaire={questionnaire} />;
 }
 
 interface QuestionnairesListProps {

@@ -175,69 +175,472 @@ exports[`Given there are surveys available in blaise should render the editor pa
               data-testid="survey-accordion-0-content"
               id="survey-accordion-0-content"
             >
-              <dl
-                class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                data-testid="QuestionnaireList"
-                style="padding: 0px 0px 15px 5px;"
-                title="Questionnares"
+              <br />
+              <div
+                class="ons-accordion"
+                id="questionnaire-accordion"
               >
-                <dt
-                  class="ons-metadata__term ons-grid__col ons-col-4@m"
+                <button
+                  class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
+                  data-close-all="Hide all"
+                  data-group="accordion"
+                  data-testid="questionnaire-accordion-show-all"
+                  type="button"
                 >
-                  Questionnaire
-                </dt>
-                <dd
-                  class="ons-metadata__value ons-grid__col ons-col-8@m"
-                  style="font-weight: bold;"
-                >
-                  Cases allocated to me
-                </dd>
-                <dt
-                  class="ons-metadata__term ons-grid__col ons-col-4@m"
-                >
-                  <a
-                    href="/questionnaires/LMS2101_AA1/cases"
-                    style="font-weight: normal;"
+                  <span
+                    class="ons-btn__inner ons-js-collapsible-all-inner"
                   >
-                    LMS2101_AA1
-                  </a>
-                </dt>
-                <dd
-                  class="ons-metadata__value ons-grid__col ons-col-8@m"
+                    Show all
+                  </span>
+                </button>
+                <details
+                  class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                  data-btn-close="Hide"
+                  data-group="accordion"
+                  id="questionnaire-accordion-0"
                 >
-                  3
-                </dd>
-                <dt
-                  class="ons-metadata__term ons-grid__col ons-col-4@m"
-                >
-                  <a
-                    href="/questionnaires/LMS2101_AB1/cases"
-                    style="font-weight: normal;"
+                  <summary
+                    aria-controls="questionnaire-accordion-0"
+                    aria-expanded="false"
+                    class="ons-collapsible__heading ons-js-collapsible-heading"
+                    data-ga-action="Open panel"
+                    data-testid="questionnaire-accordion-0-heading"
+                    role="link"
+                    tabindex="0"
                   >
-                    LMS2101_AB1
-                  </a>
-                </dt>
-                <dd
-                  class="ons-metadata__value ons-grid__col ons-col-8@m"
-                >
-                  1
-                </dd>
-                <dt
-                  class="ons-metadata__term ons-grid__col ons-col-4@m"
-                >
-                  <a
-                    href="/questionnaires/LMS2101_AC1/cases"
-                    style="font-weight: normal;"
+                    <div
+                      class="ons-collapsible__controls"
+                    >
+                      <h2
+                        class="ons-collapsible__title"
+                      >
+                        LMS2101_AA1
+                      </h2>
+                      <span
+                        class="ons-collapsible__icon"
+                      >
+                        <svg
+                          class="ons-svg-icon"
+                          focusable="false"
+                          viewBox="0 0 7.5 12.85"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                            transform="translate(-5.02 -1.59)"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </summary>
+                  <div
+                    aria-hidden="true"
+                    class="ons-collapsible__content ons-js-collapsible-content"
+                    data-testid="questionnaire-accordion-0-content"
+                    id="questionnaire-accordion-0-content"
                   >
-                    LMS2101_AC1
-                  </a>
-                </dt>
-                <dd
-                  class="ons-metadata__value ons-grid__col ons-col-8@m"
+                    <dl
+                      class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                      data-testid="QuestionnaireList"
+                      style="padding: 0px 0px 15px 5px;"
+                      title="Questionnares"
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Field period:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2021-01-01T00:00:00
+                        </strong>
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Cases Allocated:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          3
+                        </strong>
+                      </dd>
+                    </dl>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <a
+                          class="allocate"
+                          href="/"
+                        >
+                          10001012
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
+                          >
+                            10001012
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
+                          >
+                            Edit
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
+                          >
+                            10001013
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
+                          >
+                            Edit
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+                <details
+                  class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                  data-btn-close="Hide"
+                  data-group="accordion"
+                  id="questionnaire-accordion-1"
                 >
-                  0
-                </dd>
-              </dl>
+                  <summary
+                    aria-controls="questionnaire-accordion-1"
+                    aria-expanded="false"
+                    class="ons-collapsible__heading ons-js-collapsible-heading"
+                    data-ga-action="Open panel"
+                    data-testid="questionnaire-accordion-1-heading"
+                    role="link"
+                    tabindex="0"
+                  >
+                    <div
+                      class="ons-collapsible__controls"
+                    >
+                      <h2
+                        class="ons-collapsible__title"
+                      >
+                        LMS2101_AB1
+                      </h2>
+                      <span
+                        class="ons-collapsible__icon"
+                      >
+                        <svg
+                          class="ons-svg-icon"
+                          focusable="false"
+                          viewBox="0 0 7.5 12.85"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                            transform="translate(-5.02 -1.59)"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </summary>
+                  <div
+                    aria-hidden="true"
+                    class="ons-collapsible__content ons-js-collapsible-content"
+                    data-testid="questionnaire-accordion-1-content"
+                    id="questionnaire-accordion-1-content"
+                  >
+                    <dl
+                      class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                      data-testid="QuestionnaireList"
+                      style="padding: 0px 0px 15px 5px;"
+                      title="Questionnares"
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Field period:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2021-01-01T00:00:00
+                        </strong>
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Cases Allocated:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          3
+                        </strong>
+                      </dd>
+                    </dl>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <a
+                          class="allocate"
+                          href="/"
+                        >
+                          10001012
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
+                          >
+                            10001012
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
+                          >
+                            Edit
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
+                          >
+                            10001013
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
+                          >
+                            Edit
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+                <details
+                  class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                  data-btn-close="Hide"
+                  data-group="accordion"
+                  id="questionnaire-accordion-2"
+                >
+                  <summary
+                    aria-controls="questionnaire-accordion-2"
+                    aria-expanded="false"
+                    class="ons-collapsible__heading ons-js-collapsible-heading"
+                    data-ga-action="Open panel"
+                    data-testid="questionnaire-accordion-2-heading"
+                    role="link"
+                    tabindex="0"
+                  >
+                    <div
+                      class="ons-collapsible__controls"
+                    >
+                      <h2
+                        class="ons-collapsible__title"
+                      >
+                        LMS2101_AC1
+                      </h2>
+                      <span
+                        class="ons-collapsible__icon"
+                      >
+                        <svg
+                          class="ons-svg-icon"
+                          focusable="false"
+                          viewBox="0 0 7.5 12.85"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                            transform="translate(-5.02 -1.59)"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </summary>
+                  <div
+                    aria-hidden="true"
+                    class="ons-collapsible__content ons-js-collapsible-content"
+                    data-testid="questionnaire-accordion-2-content"
+                    id="questionnaire-accordion-2-content"
+                  >
+                    <dl
+                      class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                      data-testid="QuestionnaireList"
+                      style="padding: 0px 0px 15px 5px;"
+                      title="Questionnares"
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Field period:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2021-01-01T00:00:00
+                        </strong>
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Cases Allocated:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          3
+                        </strong>
+                      </dd>
+                    </dl>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <a
+                          class="allocate"
+                          href="/"
+                        >
+                          10001012
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
+                          >
+                            10001012
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
+                          >
+                            Edit
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
+                          >
+                            10001013
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
+                          >
+                            Edit
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
             </div>
           </details>
           <details
@@ -286,39 +689,174 @@ exports[`Given there are surveys available in blaise should render the editor pa
               data-testid="survey-accordion-1-content"
               id="survey-accordion-1-content"
             >
-              <dl
-                class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                data-testid="QuestionnaireList"
-                style="padding: 0px 0px 15px 5px;"
-                title="Questionnares"
+              <br />
+              <div
+                class="ons-accordion"
+                id="questionnaire-accordion"
               >
-                <dt
-                  class="ons-metadata__term ons-grid__col ons-col-4@m"
+                <button
+                  class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
+                  data-close-all="Hide all"
+                  data-group="accordion"
+                  data-testid="questionnaire-accordion-show-all"
+                  type="button"
                 >
-                  Questionnaire
-                </dt>
-                <dd
-                  class="ons-metadata__value ons-grid__col ons-col-8@m"
-                  style="font-weight: bold;"
-                >
-                  Cases allocated to me
-                </dd>
-                <dt
-                  class="ons-metadata__term ons-grid__col ons-col-4@m"
-                >
-                  <a
-                    href="/questionnaires/OPN2201A/cases"
-                    style="font-weight: normal;"
+                  <span
+                    class="ons-btn__inner ons-js-collapsible-all-inner"
                   >
-                    OPN2201A
-                  </a>
-                </dt>
-                <dd
-                  class="ons-metadata__value ons-grid__col ons-col-8@m"
+                    Show all
+                  </span>
+                </button>
+                <details
+                  class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                  data-btn-close="Hide"
+                  data-group="accordion"
+                  id="questionnaire-accordion-0"
                 >
-                  3
-                </dd>
-              </dl>
+                  <summary
+                    aria-controls="questionnaire-accordion-0"
+                    aria-expanded="false"
+                    class="ons-collapsible__heading ons-js-collapsible-heading"
+                    data-ga-action="Open panel"
+                    data-testid="questionnaire-accordion-0-heading"
+                    role="link"
+                    tabindex="0"
+                  >
+                    <div
+                      class="ons-collapsible__controls"
+                    >
+                      <h2
+                        class="ons-collapsible__title"
+                      >
+                        OPN2201A
+                      </h2>
+                      <span
+                        class="ons-collapsible__icon"
+                      >
+                        <svg
+                          class="ons-svg-icon"
+                          focusable="false"
+                          viewBox="0 0 7.5 12.85"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                            transform="translate(-5.02 -1.59)"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </summary>
+                  <div
+                    aria-hidden="true"
+                    class="ons-collapsible__content ons-js-collapsible-content"
+                    data-testid="questionnaire-accordion-0-content"
+                    id="questionnaire-accordion-0-content"
+                  >
+                    <dl
+                      class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                      data-testid="QuestionnaireList"
+                      style="padding: 0px 0px 15px 5px;"
+                      title="Questionnares"
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Field period:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2022-01-01T00:00:00
+                        </strong>
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Cases Allocated:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          3
+                        </strong>
+                      </dd>
+                    </dl>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <a
+                          class="allocate"
+                          href="/"
+                        >
+                          10001012
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
+                          >
+                            10001012
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
+                          >
+                            Edit
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    >
+                      <div
+                        class="ons-panel__body "
+                      >
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          <a
+                            class="case"
+                            href="/"
+                          >
+                            10001013
+                          </a>
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <a
+                            class="Edit"
+                            href="/"
+                          >
+                            Edit
+                          </a>
+                        </dd>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
             </div>
           </details>
         </div>
@@ -389,69 +927,472 @@ exports[`Given there are surveys available in blaise should render the editor pa
             data-testid="survey-accordion-0-content"
             id="survey-accordion-0-content"
           >
-            <dl
-              class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-              data-testid="QuestionnaireList"
-              style="padding: 0px 0px 15px 5px;"
-              title="Questionnares"
+            <br />
+            <div
+              class="ons-accordion"
+              id="questionnaire-accordion"
             >
-              <dt
-                class="ons-metadata__term ons-grid__col ons-col-4@m"
+              <button
+                class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
+                data-close-all="Hide all"
+                data-group="accordion"
+                data-testid="questionnaire-accordion-show-all"
+                type="button"
               >
-                Questionnaire
-              </dt>
-              <dd
-                class="ons-metadata__value ons-grid__col ons-col-8@m"
-                style="font-weight: bold;"
-              >
-                Cases allocated to me
-              </dd>
-              <dt
-                class="ons-metadata__term ons-grid__col ons-col-4@m"
-              >
-                <a
-                  href="/questionnaires/LMS2101_AA1/cases"
-                  style="font-weight: normal;"
+                <span
+                  class="ons-btn__inner ons-js-collapsible-all-inner"
                 >
-                  LMS2101_AA1
-                </a>
-              </dt>
-              <dd
-                class="ons-metadata__value ons-grid__col ons-col-8@m"
+                  Show all
+                </span>
+              </button>
+              <details
+                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                data-btn-close="Hide"
+                data-group="accordion"
+                id="questionnaire-accordion-0"
               >
-                3
-              </dd>
-              <dt
-                class="ons-metadata__term ons-grid__col ons-col-4@m"
-              >
-                <a
-                  href="/questionnaires/LMS2101_AB1/cases"
-                  style="font-weight: normal;"
+                <summary
+                  aria-controls="questionnaire-accordion-0"
+                  aria-expanded="false"
+                  class="ons-collapsible__heading ons-js-collapsible-heading"
+                  data-ga-action="Open panel"
+                  data-testid="questionnaire-accordion-0-heading"
+                  role="link"
+                  tabindex="0"
                 >
-                  LMS2101_AB1
-                </a>
-              </dt>
-              <dd
-                class="ons-metadata__value ons-grid__col ons-col-8@m"
-              >
-                1
-              </dd>
-              <dt
-                class="ons-metadata__term ons-grid__col ons-col-4@m"
-              >
-                <a
-                  href="/questionnaires/LMS2101_AC1/cases"
-                  style="font-weight: normal;"
+                  <div
+                    class="ons-collapsible__controls"
+                  >
+                    <h2
+                      class="ons-collapsible__title"
+                    >
+                      LMS2101_AA1
+                    </h2>
+                    <span
+                      class="ons-collapsible__icon"
+                    >
+                      <svg
+                        class="ons-svg-icon"
+                        focusable="false"
+                        viewBox="0 0 7.5 12.85"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                          transform="translate(-5.02 -1.59)"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </summary>
+                <div
+                  aria-hidden="true"
+                  class="ons-collapsible__content ons-js-collapsible-content"
+                  data-testid="questionnaire-accordion-0-content"
+                  id="questionnaire-accordion-0-content"
                 >
-                  LMS2101_AC1
-                </a>
-              </dt>
-              <dd
-                class="ons-metadata__value ons-grid__col ons-col-8@m"
+                  <dl
+                    class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                    data-testid="QuestionnaireList"
+                    style="padding: 0px 0px 15px 5px;"
+                    title="Questionnares"
+                  >
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Field period:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        2021-01-01T00:00:00
+                      </strong>
+                    </dd>
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Cases Allocated:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        3
+                      </strong>
+                    </dd>
+                  </dl>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <a
+                        class="allocate"
+                        href="/"
+                      >
+                        10001012
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
+                        >
+                          10001012
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
+                        >
+                          Edit
+                        </a>
+                      </dd>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
+                        >
+                          10001013
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
+                        >
+                          Edit
+                        </a>
+                      </dd>
+                    </div>
+                  </div>
+                </div>
+              </details>
+              <details
+                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                data-btn-close="Hide"
+                data-group="accordion"
+                id="questionnaire-accordion-1"
               >
-                0
-              </dd>
-            </dl>
+                <summary
+                  aria-controls="questionnaire-accordion-1"
+                  aria-expanded="false"
+                  class="ons-collapsible__heading ons-js-collapsible-heading"
+                  data-ga-action="Open panel"
+                  data-testid="questionnaire-accordion-1-heading"
+                  role="link"
+                  tabindex="0"
+                >
+                  <div
+                    class="ons-collapsible__controls"
+                  >
+                    <h2
+                      class="ons-collapsible__title"
+                    >
+                      LMS2101_AB1
+                    </h2>
+                    <span
+                      class="ons-collapsible__icon"
+                    >
+                      <svg
+                        class="ons-svg-icon"
+                        focusable="false"
+                        viewBox="0 0 7.5 12.85"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                          transform="translate(-5.02 -1.59)"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </summary>
+                <div
+                  aria-hidden="true"
+                  class="ons-collapsible__content ons-js-collapsible-content"
+                  data-testid="questionnaire-accordion-1-content"
+                  id="questionnaire-accordion-1-content"
+                >
+                  <dl
+                    class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                    data-testid="QuestionnaireList"
+                    style="padding: 0px 0px 15px 5px;"
+                    title="Questionnares"
+                  >
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Field period:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        2021-01-01T00:00:00
+                      </strong>
+                    </dd>
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Cases Allocated:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        3
+                      </strong>
+                    </dd>
+                  </dl>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <a
+                        class="allocate"
+                        href="/"
+                      >
+                        10001012
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
+                        >
+                          10001012
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
+                        >
+                          Edit
+                        </a>
+                      </dd>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
+                        >
+                          10001013
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
+                        >
+                          Edit
+                        </a>
+                      </dd>
+                    </div>
+                  </div>
+                </div>
+              </details>
+              <details
+                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                data-btn-close="Hide"
+                data-group="accordion"
+                id="questionnaire-accordion-2"
+              >
+                <summary
+                  aria-controls="questionnaire-accordion-2"
+                  aria-expanded="false"
+                  class="ons-collapsible__heading ons-js-collapsible-heading"
+                  data-ga-action="Open panel"
+                  data-testid="questionnaire-accordion-2-heading"
+                  role="link"
+                  tabindex="0"
+                >
+                  <div
+                    class="ons-collapsible__controls"
+                  >
+                    <h2
+                      class="ons-collapsible__title"
+                    >
+                      LMS2101_AC1
+                    </h2>
+                    <span
+                      class="ons-collapsible__icon"
+                    >
+                      <svg
+                        class="ons-svg-icon"
+                        focusable="false"
+                        viewBox="0 0 7.5 12.85"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                          transform="translate(-5.02 -1.59)"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </summary>
+                <div
+                  aria-hidden="true"
+                  class="ons-collapsible__content ons-js-collapsible-content"
+                  data-testid="questionnaire-accordion-2-content"
+                  id="questionnaire-accordion-2-content"
+                >
+                  <dl
+                    class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                    data-testid="QuestionnaireList"
+                    style="padding: 0px 0px 15px 5px;"
+                    title="Questionnares"
+                  >
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Field period:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        2021-01-01T00:00:00
+                      </strong>
+                    </dd>
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Cases Allocated:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        3
+                      </strong>
+                    </dd>
+                  </dl>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <a
+                        class="allocate"
+                        href="/"
+                      >
+                        10001012
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
+                        >
+                          10001012
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
+                        >
+                          Edit
+                        </a>
+                      </dd>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
+                        >
+                          10001013
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
+                        >
+                          Edit
+                        </a>
+                      </dd>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </div>
           </div>
         </details>
         <details
@@ -500,39 +1441,174 @@ exports[`Given there are surveys available in blaise should render the editor pa
             data-testid="survey-accordion-1-content"
             id="survey-accordion-1-content"
           >
-            <dl
-              class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-              data-testid="QuestionnaireList"
-              style="padding: 0px 0px 15px 5px;"
-              title="Questionnares"
+            <br />
+            <div
+              class="ons-accordion"
+              id="questionnaire-accordion"
             >
-              <dt
-                class="ons-metadata__term ons-grid__col ons-col-4@m"
+              <button
+                class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
+                data-close-all="Hide all"
+                data-group="accordion"
+                data-testid="questionnaire-accordion-show-all"
+                type="button"
               >
-                Questionnaire
-              </dt>
-              <dd
-                class="ons-metadata__value ons-grid__col ons-col-8@m"
-                style="font-weight: bold;"
-              >
-                Cases allocated to me
-              </dd>
-              <dt
-                class="ons-metadata__term ons-grid__col ons-col-4@m"
-              >
-                <a
-                  href="/questionnaires/OPN2201A/cases"
-                  style="font-weight: normal;"
+                <span
+                  class="ons-btn__inner ons-js-collapsible-all-inner"
                 >
-                  OPN2201A
-                </a>
-              </dt>
-              <dd
-                class="ons-metadata__value ons-grid__col ons-col-8@m"
+                  Show all
+                </span>
+              </button>
+              <details
+                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                data-btn-close="Hide"
+                data-group="accordion"
+                id="questionnaire-accordion-0"
               >
-                3
-              </dd>
-            </dl>
+                <summary
+                  aria-controls="questionnaire-accordion-0"
+                  aria-expanded="false"
+                  class="ons-collapsible__heading ons-js-collapsible-heading"
+                  data-ga-action="Open panel"
+                  data-testid="questionnaire-accordion-0-heading"
+                  role="link"
+                  tabindex="0"
+                >
+                  <div
+                    class="ons-collapsible__controls"
+                  >
+                    <h2
+                      class="ons-collapsible__title"
+                    >
+                      OPN2201A
+                    </h2>
+                    <span
+                      class="ons-collapsible__icon"
+                    >
+                      <svg
+                        class="ons-svg-icon"
+                        focusable="false"
+                        viewBox="0 0 7.5 12.85"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                          transform="translate(-5.02 -1.59)"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </summary>
+                <div
+                  aria-hidden="true"
+                  class="ons-collapsible__content ons-js-collapsible-content"
+                  data-testid="questionnaire-accordion-0-content"
+                  id="questionnaire-accordion-0-content"
+                >
+                  <dl
+                    class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                    data-testid="QuestionnaireList"
+                    style="padding: 0px 0px 15px 5px;"
+                    title="Questionnares"
+                  >
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Field period:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        2022-01-01T00:00:00
+                      </strong>
+                    </dd>
+                    <dt
+                      class="ons-description-list__term ons-grid__col ons-col-5@m"
+                    >
+                      Cases Allocated:
+                    </dt>
+                    <dd
+                      class="ons-description-list__value ons-grid__col ons-col-7@m"
+                    >
+                      <strong>
+                        3
+                      </strong>
+                    </dd>
+                  </dl>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <a
+                        class="allocate"
+                        href="/"
+                      >
+                        10001012
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
+                        >
+                          10001012
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
+                        >
+                          Edit
+                        </a>
+                      </dd>
+                    </div>
+                  </div>
+                  <div
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                  >
+                    <div
+                      class="ons-panel__body "
+                    >
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        <a
+                          class="case"
+                          href="/"
+                        >
+                          10001013
+                        </a>
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <a
+                          class="Edit"
+                          href="/"
+                        >
+                          Edit
+                        </a>
+                      </dd>
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </div>
           </div>
         </details>
       </div>

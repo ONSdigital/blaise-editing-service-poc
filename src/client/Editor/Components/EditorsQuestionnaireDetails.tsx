@@ -1,8 +1,13 @@
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { ONSPanel } from 'blaise-design-system-react-components';
+import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 
-export default function EditorsQuestionnairesList(): ReactElement {
+interface EditorsQuestionnairesDetailsProps {
+  questionnaire: QuestionnaireDetails;
+}
+
+export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQuestionnairesDetailsProps): ReactElement {
   return (
     <>
       <dl
@@ -11,6 +16,8 @@ export default function EditorsQuestionnairesList(): ReactElement {
         data-testid="QuestionnaireList"
         style={{ padding: '0 0 15px 5px' }}
       >
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Field period:</dt>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>{questionnaire.fieldPeriod}</strong></dd>
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Cases Allocated:</dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>3</strong></dd>
       </dl>

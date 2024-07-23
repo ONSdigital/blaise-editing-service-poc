@@ -3,8 +3,8 @@ import { User } from 'blaise-api-node-client';
 import AsyncContent from '../../Common/components/AsyncContent';
 import { Survey } from '../../../common/interfaces/surveyInterface';
 import getSurveys from '../../Common/api/NodeApi';
-import EditorSurveysList from '../Components/EditorSurveysList';
 import { useAsyncRequest } from '../../Common/hooks/useAsyncRequest';
+import SurveysList from '../../Common/components/SurveysList';
 
 interface SurveyProps {
   user: User;
@@ -23,7 +23,7 @@ export default function Surveys({ user }: SurveyProps) {
       </ONSPanel>
       <div data-testid="Surveys">
         <AsyncContent content={surveys}>
-          {(loadedSurveys) => <EditorSurveysList surveys={loadedSurveys} />}
+          {(loadedSurveys) => <SurveysList surveys={loadedSurveys} role={user.role} />}
         </AsyncContent>
       </div>
     </>
