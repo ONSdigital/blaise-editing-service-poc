@@ -73,8 +73,8 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
           {' '}
           case(s) in progress
         </dd>
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m"><Link className="allocate" to="/">The Thing:</Link></dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m" style={{ margin: '0 0 30px 0' }}><Link className="allocate" to="/">The Thing:</Link></dt>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m" style={{ margin: '0 0 30px 0' }}>
           <strong>0</strong>
           {' '}
           case(s) allocated
