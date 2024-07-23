@@ -6,5 +6,6 @@ export interface Survey {
 export interface QuestionnaireDetails {
   questionnaireName: string,
   numberOfCases: number,
-  questionnaireMonth: string,
+  fieldPeriod: string | null,
+  surveyTla: string | null,
 }

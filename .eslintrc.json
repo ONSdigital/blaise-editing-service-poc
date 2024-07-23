@@ -33,7 +33,7 @@
     "no-unused-vars": "error",
     "no-unreachable": "error",
     "no-spaced-func": "off",
-    "max-len": ["error", { "code": 180 }],
+    "max-len": ["error", { "code": 200 }],
     "import/no-extraneous-dependencies": [
       "error", {
          "devDependencies": true

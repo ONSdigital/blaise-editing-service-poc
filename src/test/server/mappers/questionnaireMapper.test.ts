@@ -2,24 +2,51 @@ import { Questionnaire } from 'blaise-api-node-client';
 import mapQuestionnaireDetails from '../../../server/mappers/questionnaireMapper';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 
-describe('Map a list of questionnaires', () => {
-  it('It should return a correctly mapped list of questionnaires', () => {
+describe('Map a questionnaire', () => {
+  it('It should return a correctly mapped questionnaire given all details are present', () => {
     // arrange
 
     const questionnaire: Questionnaire = {
       name: 'LMS2101_AA1',
       serverParkName: 'gusty',
       installDate: '2021-01-15T15:26:43.4233454+00:00',
-      status: 'Active',
+      fieldPeriod: '2021-01-01T00:00:00',
+      surveyTla: 'LMS',
       dataRecordCount: 3,
-      hasData: false,
-      active: false,
+      hasData: true,
+      active: true,
     };
 
     const expectedQuestionnaireDetails: QuestionnaireDetails = {
-      questionnaireName: questionnaire.name,
-      numberOfCases: questionnaire.dataRecordCount ?? 0,
-      questionnaireMonth: `${questionnaire.name.slice(5, 7)} - 20${questionnaire.name.slice(3, 5)}`,
+      questionnaireName: 'LMS2101_AA1',
+      numberOfCases: 3,
+      fieldPeriod: 'January 2021',
+      surveyTla: 'LMS',
+    };
+
+    // act
+    const result = mapQuestionnaireDetails(questionnaire);
+
+    // assert
+    expect(result).toEqual(expectedQuestionnaireDetails);
+  });
+
+  it('It should return a correctly mapped questionnaire given some details are missing', () => {
+    // arrange
+
+    const questionnaire: Questionnaire = {
+      name: 'LMS2101_AA1',
+      serverParkName: 'gusty',
+      installDate: '2021-01-15T15:26:43.4233454+00:00',
+      hasData: false,
+      active: true,
+    };
+
+    const expectedQuestionnaireDetails: QuestionnaireDetails = {
+      questionnaireName: 'LMS2101_AA1',
+      numberOfCases: 0,
+      fieldPeriod: 'N/A',
+      surveyTla: 'N/A',
     };
 
     // act

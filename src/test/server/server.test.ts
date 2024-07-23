@@ -54,6 +54,6 @@ describe('Render react pages as default route', () => {
     expect(result.error).toBeFalsy();
     expect(result.statusCode).toEqual(200);
     expect(result.type).toEqual('text/html');
-    expect(result.text).toContain('Web site created using create-react-app');
+    expect(result.text).toContain('Edit interview data and view statistics on editing progress');
   });
 });

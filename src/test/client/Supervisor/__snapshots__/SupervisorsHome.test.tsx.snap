@@ -127,33 +127,20 @@ exports[`Given there are surveys available in blaise should render the superviso
         <br />
         <div
           class="ons-accordion"
-          id="accordion"
+          id="survey-accordion"
         >
-          <button
-            class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
-            data-close-all="Hide all"
-            data-group="accordion"
-            data-testid="accordion-show-all"
-            type="button"
-          >
-            <span
-              class="ons-btn__inner ons-js-collapsible-all-inner"
-            >
-              Show all
-            </span>
-          </button>
           <details
             class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
             data-btn-close="Hide"
             data-group="accordion"
-            id="accordion-0"
+            id="survey-accordion-0"
           >
             <summary
-              aria-controls="accordion-0"
+              aria-controls="survey-accordion-0"
               aria-expanded="false"
               class="ons-collapsible__heading ons-js-collapsible-heading"
               data-ga-action="Open panel"
-              data-testid="accordion-0-heading"
+              data-testid="survey-accordion-0-heading"
               role="link"
               tabindex="0"
             >
@@ -185,19 +172,19 @@ exports[`Given there are surveys available in blaise should render the superviso
             <div
               aria-hidden="true"
               class="ons-collapsible__content ons-js-collapsible-content"
-              data-testid="accordion-0-content"
-              id="accordion-0-content"
+              data-testid="survey-accordion-0-content"
+              id="survey-accordion-0-content"
             >
               <br />
               <div
                 class="ons-accordion"
-                id="accordion"
+                id="questionnaire-accordion"
               >
                 <button
                   class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
                   data-close-all="Hide all"
                   data-group="accordion"
-                  data-testid="accordion-show-all"
+                  data-testid="questionnaire-accordion-show-all"
                   type="button"
                 >
                   <span
@@ -210,14 +197,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                   class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
                   data-btn-close="Hide"
                   data-group="accordion"
-                  id="accordion-0"
+                  id="questionnaire-accordion-0"
                 >
                   <summary
-                    aria-controls="accordion-0"
+                    aria-controls="questionnaire-accordion-0"
                     aria-expanded="false"
                     class="ons-collapsible__heading ons-js-collapsible-heading"
                     data-ga-action="Open panel"
-                    data-testid="accordion-0-heading"
+                    data-testid="questionnaire-accordion-0-heading"
                     role="link"
                     tabindex="0"
                   >
@@ -249,11 +236,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                   <div
                     aria-hidden="true"
                     class="ons-collapsible__content ons-js-collapsible-content"
-                    data-testid="accordion-0-content"
-                    id="accordion-0-content"
+                    data-testid="questionnaire-accordion-0-content"
+                    id="questionnaire-accordion-0-content"
                   >
                     <div
-                      style="margin: 0px 0px 0px 25px;"
+                      style="margin: 0px 0px 0px 2px; padding: 10px; background-color: rgb(231, 243, 236); border: 1px dotted;"
                     >
                       <dl
                         aria-label="Information about this business and its survey requirements"
@@ -263,12 +250,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Survey month:
+                          Field period:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          01 - 2021
+                          <strong>
+                            2021-01-01T00:00:00
+                          </strong>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -278,52 +267,171 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          100
+                          <strong>
+                            1000
+                          </strong>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Number of cases to assigned:
+                          Total number of cases allocated:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 1: 5
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          Editor 2: 10
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          Editor 3: 7
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          Editor 4: 7
+                          <strong>
+                            30
+                          </strong>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Number of cases completed:
+                          Doctor Doom:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 1: 2
+                          <strong>
+                            10
+                          </strong>
+                           
+                          case(s) assigned
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 2: 1
+                          <strong>
+                            5
+                          </strong>
+                           
+                          case(s) not started
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 3: 6
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) in progress
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) completed
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            1
+                          </strong>
+                           
+                          case(s) with queries
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Captain Fantastic:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            10
+                          </strong>
+                           
+                          case(s) assigned
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            5
+                          </strong>
+                           
+                          case(s) not started
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) in progress
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) completed
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            1
+                          </strong>
+                           
+                          case(s) with queries
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          The Thing:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            10
+                          </strong>
+                           
+                          case(s) assigned
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            5
+                          </strong>
+                           
+                          case(s) not started
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) in progress
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) completed
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            1
+                          </strong>
+                           
+                          case(s) with queries
                         </dd>
                       </dl>
                     </div>
@@ -333,14 +441,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                   class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
                   data-btn-close="Hide"
                   data-group="accordion"
-                  id="accordion-1"
+                  id="questionnaire-accordion-1"
                 >
                   <summary
-                    aria-controls="accordion-1"
+                    aria-controls="questionnaire-accordion-1"
                     aria-expanded="false"
                     class="ons-collapsible__heading ons-js-collapsible-heading"
                     data-ga-action="Open panel"
-                    data-testid="accordion-1-heading"
+                    data-testid="questionnaire-accordion-1-heading"
                     role="link"
                     tabindex="0"
                   >
@@ -372,11 +480,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                   <div
                     aria-hidden="true"
                     class="ons-collapsible__content ons-js-collapsible-content"
-                    data-testid="accordion-1-content"
-                    id="accordion-1-content"
+                    data-testid="questionnaire-accordion-1-content"
+                    id="questionnaire-accordion-1-content"
                   >
                     <div
-                      style="margin: 0px 0px 0px 25px;"
+                      style="margin: 0px 0px 0px 2px; padding: 10px; background-color: rgb(231, 243, 236); border: 1px dotted;"
                     >
                       <dl
                         aria-label="Information about this business and its survey requirements"
@@ -386,12 +494,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Survey month:
+                          Field period:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          01 - 2021
+                          <strong>
+                            2021-01-01T00:00:00
+                          </strong>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -401,52 +511,171 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          100
+                          <strong>
+                            1000
+                          </strong>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Number of cases to assigned:
+                          Total number of cases allocated:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 1: 5
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          Editor 2: 10
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          Editor 3: 7
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          Editor 4: 7
+                          <strong>
+                            30
+                          </strong>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Number of cases completed:
+                          Doctor Doom:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 1: 2
+                          <strong>
+                            10
+                          </strong>
+                           
+                          case(s) assigned
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 2: 1
+                          <strong>
+                            5
+                          </strong>
+                           
+                          case(s) not started
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 3: 6
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) in progress
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) completed
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            1
+                          </strong>
+                           
+                          case(s) with queries
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Captain Fantastic:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            10
+                          </strong>
+                           
+                          case(s) assigned
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            5
+                          </strong>
+                           
+                          case(s) not started
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) in progress
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) completed
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            1
+                          </strong>
+                           
+                          case(s) with queries
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          The Thing:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            10
+                          </strong>
+                           
+                          case(s) assigned
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            5
+                          </strong>
+                           
+                          case(s) not started
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) in progress
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) completed
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            1
+                          </strong>
+                           
+                          case(s) with queries
                         </dd>
                       </dl>
                     </div>
@@ -456,14 +685,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                   class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
                   data-btn-close="Hide"
                   data-group="accordion"
-                  id="accordion-2"
+                  id="questionnaire-accordion-2"
                 >
                   <summary
-                    aria-controls="accordion-2"
+                    aria-controls="questionnaire-accordion-2"
                     aria-expanded="false"
                     class="ons-collapsible__heading ons-js-collapsible-heading"
                     data-ga-action="Open panel"
-                    data-testid="accordion-2-heading"
+                    data-testid="questionnaire-accordion-2-heading"
                     role="link"
                     tabindex="0"
                   >
@@ -495,11 +724,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                   <div
                     aria-hidden="true"
                     class="ons-collapsible__content ons-js-collapsible-content"
-                    data-testid="accordion-2-content"
-                    id="accordion-2-content"
+                    data-testid="questionnaire-accordion-2-content"
+                    id="questionnaire-accordion-2-content"
                   >
                     <div
-                      style="margin: 0px 0px 0px 25px;"
+                      style="margin: 0px 0px 0px 2px; padding: 10px; background-color: rgb(231, 243, 236); border: 1px dotted;"
                     >
                       <dl
                         aria-label="Information about this business and its survey requirements"
@@ -509,12 +738,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Survey month:
+                          Field period:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          01 - 2021
+                          <strong>
+                            2021-01-01T00:00:00
+                          </strong>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -524,52 +755,171 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          100
+                          <strong>
+                            1000
+                          </strong>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Number of cases to assigned:
+                          Total number of cases allocated:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 1: 5
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          Editor 2: 10
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          Editor 3: 7
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          Editor 4: 7
+                          <strong>
+                            30
+                          </strong>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Number of cases completed:
+                          Doctor Doom:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 1: 2
+                          <strong>
+                            10
+                          </strong>
+                           
+                          case(s) assigned
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 2: 1
+                          <strong>
+                            5
+                          </strong>
+                           
+                          case(s) not started
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 3: 6
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) in progress
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) completed
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            1
+                          </strong>
+                           
+                          case(s) with queries
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Captain Fantastic:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            10
+                          </strong>
+                           
+                          case(s) assigned
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            5
+                          </strong>
+                           
+                          case(s) not started
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) in progress
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) completed
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            1
+                          </strong>
+                           
+                          case(s) with queries
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          The Thing:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            10
+                          </strong>
+                           
+                          case(s) assigned
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            5
+                          </strong>
+                           
+                          case(s) not started
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) in progress
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) completed
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            1
+                          </strong>
+                           
+                          case(s) with queries
                         </dd>
                       </dl>
                     </div>
@@ -582,14 +932,14 @@ exports[`Given there are surveys available in blaise should render the superviso
             class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
             data-btn-close="Hide"
             data-group="accordion"
-            id="accordion-1"
+            id="survey-accordion-1"
           >
             <summary
-              aria-controls="accordion-1"
+              aria-controls="survey-accordion-1"
               aria-expanded="false"
               class="ons-collapsible__heading ons-js-collapsible-heading"
               data-ga-action="Open panel"
-              data-testid="accordion-1-heading"
+              data-testid="survey-accordion-1-heading"
               role="link"
               tabindex="0"
             >
@@ -621,19 +971,19 @@ exports[`Given there are surveys available in blaise should render the superviso
             <div
               aria-hidden="true"
               class="ons-collapsible__content ons-js-collapsible-content"
-              data-testid="accordion-1-content"
-              id="accordion-1-content"
+              data-testid="survey-accordion-1-content"
+              id="survey-accordion-1-content"
             >
               <br />
               <div
                 class="ons-accordion"
-                id="accordion"
+                id="questionnaire-accordion"
               >
                 <button
                   class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
                   data-close-all="Hide all"
                   data-group="accordion"
-                  data-testid="accordion-show-all"
+                  data-testid="questionnaire-accordion-show-all"
                   type="button"
                 >
                   <span
@@ -646,14 +996,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                   class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
                   data-btn-close="Hide"
                   data-group="accordion"
-                  id="accordion-0"
+                  id="questionnaire-accordion-0"
                 >
                   <summary
-                    aria-controls="accordion-0"
+                    aria-controls="questionnaire-accordion-0"
                     aria-expanded="false"
                     class="ons-collapsible__heading ons-js-collapsible-heading"
                     data-ga-action="Open panel"
-                    data-testid="accordion-0-heading"
+                    data-testid="questionnaire-accordion-0-heading"
                     role="link"
                     tabindex="0"
                   >
@@ -685,11 +1035,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                   <div
                     aria-hidden="true"
                     class="ons-collapsible__content ons-js-collapsible-content"
-                    data-testid="accordion-0-content"
-                    id="accordion-0-content"
+                    data-testid="questionnaire-accordion-0-content"
+                    id="questionnaire-accordion-0-content"
                   >
                     <div
-                      style="margin: 0px 0px 0px 25px;"
+                      style="margin: 0px 0px 0px 2px; padding: 10px; background-color: rgb(231, 243, 236); border: 1px dotted;"
                     >
                       <dl
                         aria-label="Information about this business and its survey requirements"
@@ -699,12 +1049,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Survey month:
+                          Field period:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          01 - 2022
+                          <strong>
+                            2022-01-01T00:00:00
+                          </strong>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -714,52 +1066,171 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          100
+                          <strong>
+                            1000
+                          </strong>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Number of cases to assigned:
+                          Total number of cases allocated:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 1: 5
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          Editor 2: 10
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          Editor 3: 7
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          Editor 4: 7
+                          <strong>
+                            30
+                          </strong>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Number of cases completed:
+                          Doctor Doom:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 1: 2
+                          <strong>
+                            10
+                          </strong>
+                           
+                          case(s) assigned
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 2: 1
+                          <strong>
+                            5
+                          </strong>
+                           
+                          case(s) not started
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          Editor 3: 6
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) in progress
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) completed
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            1
+                          </strong>
+                           
+                          case(s) with queries
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Captain Fantastic:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            10
+                          </strong>
+                           
+                          case(s) assigned
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            5
+                          </strong>
+                           
+                          case(s) not started
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) in progress
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) completed
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            1
+                          </strong>
+                           
+                          case(s) with queries
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          The Thing:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            10
+                          </strong>
+                           
+                          case(s) assigned
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            5
+                          </strong>
+                           
+                          case(s) not started
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) in progress
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2
+                          </strong>
+                           
+                          case(s) completed
+                        </dd>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            1
+                          </strong>
+                           
+                          case(s) with queries
                         </dd>
                       </dl>
                     </div>
@@ -788,33 +1259,20 @@ exports[`Given there are surveys available in blaise should render the superviso
       <br />
       <div
         class="ons-accordion"
-        id="accordion"
+        id="survey-accordion"
       >
-        <button
-          class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
-          data-close-all="Hide all"
-          data-group="accordion"
-          data-testid="accordion-show-all"
-          type="button"
-        >
-          <span
-            class="ons-btn__inner ons-js-collapsible-all-inner"
-          >
-            Show all
-          </span>
-        </button>
         <details
           class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
           data-btn-close="Hide"
           data-group="accordion"
-          id="accordion-0"
+          id="survey-accordion-0"
         >
           <summary
-            aria-controls="accordion-0"
+            aria-controls="survey-accordion-0"
             aria-expanded="false"
             class="ons-collapsible__heading ons-js-collapsible-heading"
             data-ga-action="Open panel"
-            data-testid="accordion-0-heading"
+            data-testid="survey-accordion-0-heading"
             role="link"
             tabindex="0"
           >
@@ -846,19 +1304,19 @@ exports[`Given there are surveys available in blaise should render the superviso
           <div
             aria-hidden="true"
             class="ons-collapsible__content ons-js-collapsible-content"
-            data-testid="accordion-0-content"
-            id="accordion-0-content"
+            data-testid="survey-accordion-0-content"
+            id="survey-accordion-0-content"
           >
             <br />
             <div
               class="ons-accordion"
-              id="accordion"
+              id="questionnaire-accordion"
             >
               <button
                 class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
                 data-close-all="Hide all"
                 data-group="accordion"
-                data-testid="accordion-show-all"
+                data-testid="questionnaire-accordion-show-all"
                 type="button"
               >
                 <span
@@ -871,14 +1329,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                 class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
                 data-btn-close="Hide"
                 data-group="accordion"
-                id="accordion-0"
+                id="questionnaire-accordion-0"
               >
                 <summary
-                  aria-controls="accordion-0"
+                  aria-controls="questionnaire-accordion-0"
                   aria-expanded="false"
                   class="ons-collapsible__heading ons-js-collapsible-heading"
                   data-ga-action="Open panel"
-                  data-testid="accordion-0-heading"
+                  data-testid="questionnaire-accordion-0-heading"
                   role="link"
                   tabindex="0"
                 >
@@ -910,11 +1368,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                 <div
                   aria-hidden="true"
                   class="ons-collapsible__content ons-js-collapsible-content"
-                  data-testid="accordion-0-content"
-                  id="accordion-0-content"
+                  data-testid="questionnaire-accordion-0-content"
+                  id="questionnaire-accordion-0-content"
                 >
                   <div
-                    style="margin: 0px 0px 0px 25px;"
+                    style="margin: 0px 0px 0px 2px; padding: 10px; background-color: rgb(231, 243, 236); border: 1px dotted;"
                   >
                     <dl
                       aria-label="Information about this business and its survey requirements"
@@ -924,12 +1382,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Survey month:
+                        Field period:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        01 - 2021
+                        <strong>
+                          2021-01-01T00:00:00
+                        </strong>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -939,52 +1399,171 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        100
+                        <strong>
+                          1000
+                        </strong>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Number of cases to assigned:
+                        Total number of cases allocated:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 1: 5
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        Editor 2: 10
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        Editor 3: 7
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        Editor 4: 7
+                        <strong>
+                          30
+                        </strong>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Number of cases completed:
+                        Doctor Doom:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 1: 2
+                        <strong>
+                          10
+                        </strong>
+                         
+                        case(s) assigned
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 2: 1
+                        <strong>
+                          5
+                        </strong>
+                         
+                        case(s) not started
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 3: 6
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) in progress
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) completed
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          1
+                        </strong>
+                         
+                        case(s) with queries
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Captain Fantastic:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          10
+                        </strong>
+                         
+                        case(s) assigned
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          5
+                        </strong>
+                         
+                        case(s) not started
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) in progress
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) completed
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          1
+                        </strong>
+                         
+                        case(s) with queries
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        The Thing:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          10
+                        </strong>
+                         
+                        case(s) assigned
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          5
+                        </strong>
+                         
+                        case(s) not started
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) in progress
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) completed
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          1
+                        </strong>
+                         
+                        case(s) with queries
                       </dd>
                     </dl>
                   </div>
@@ -994,14 +1573,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                 class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
                 data-btn-close="Hide"
                 data-group="accordion"
-                id="accordion-1"
+                id="questionnaire-accordion-1"
               >
                 <summary
-                  aria-controls="accordion-1"
+                  aria-controls="questionnaire-accordion-1"
                   aria-expanded="false"
                   class="ons-collapsible__heading ons-js-collapsible-heading"
                   data-ga-action="Open panel"
-                  data-testid="accordion-1-heading"
+                  data-testid="questionnaire-accordion-1-heading"
                   role="link"
                   tabindex="0"
                 >
@@ -1033,11 +1612,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                 <div
                   aria-hidden="true"
                   class="ons-collapsible__content ons-js-collapsible-content"
-                  data-testid="accordion-1-content"
-                  id="accordion-1-content"
+                  data-testid="questionnaire-accordion-1-content"
+                  id="questionnaire-accordion-1-content"
                 >
                   <div
-                    style="margin: 0px 0px 0px 25px;"
+                    style="margin: 0px 0px 0px 2px; padding: 10px; background-color: rgb(231, 243, 236); border: 1px dotted;"
                   >
                     <dl
                       aria-label="Information about this business and its survey requirements"
@@ -1047,12 +1626,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Survey month:
+                        Field period:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        01 - 2021
+                        <strong>
+                          2021-01-01T00:00:00
+                        </strong>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -1062,52 +1643,171 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        100
+                        <strong>
+                          1000
+                        </strong>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Number of cases to assigned:
+                        Total number of cases allocated:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 1: 5
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        Editor 2: 10
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        Editor 3: 7
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        Editor 4: 7
+                        <strong>
+                          30
+                        </strong>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Number of cases completed:
+                        Doctor Doom:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 1: 2
+                        <strong>
+                          10
+                        </strong>
+                         
+                        case(s) assigned
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 2: 1
+                        <strong>
+                          5
+                        </strong>
+                         
+                        case(s) not started
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 3: 6
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) in progress
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) completed
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          1
+                        </strong>
+                         
+                        case(s) with queries
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Captain Fantastic:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          10
+                        </strong>
+                         
+                        case(s) assigned
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          5
+                        </strong>
+                         
+                        case(s) not started
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) in progress
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) completed
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          1
+                        </strong>
+                         
+                        case(s) with queries
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        The Thing:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          10
+                        </strong>
+                         
+                        case(s) assigned
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          5
+                        </strong>
+                         
+                        case(s) not started
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) in progress
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) completed
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          1
+                        </strong>
+                         
+                        case(s) with queries
                       </dd>
                     </dl>
                   </div>
@@ -1117,14 +1817,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                 class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
                 data-btn-close="Hide"
                 data-group="accordion"
-                id="accordion-2"
+                id="questionnaire-accordion-2"
               >
                 <summary
-                  aria-controls="accordion-2"
+                  aria-controls="questionnaire-accordion-2"
                   aria-expanded="false"
                   class="ons-collapsible__heading ons-js-collapsible-heading"
                   data-ga-action="Open panel"
-                  data-testid="accordion-2-heading"
+                  data-testid="questionnaire-accordion-2-heading"
                   role="link"
                   tabindex="0"
                 >
@@ -1156,11 +1856,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                 <div
                   aria-hidden="true"
                   class="ons-collapsible__content ons-js-collapsible-content"
-                  data-testid="accordion-2-content"
-                  id="accordion-2-content"
+                  data-testid="questionnaire-accordion-2-content"
+                  id="questionnaire-accordion-2-content"
                 >
                   <div
-                    style="margin: 0px 0px 0px 25px;"
+                    style="margin: 0px 0px 0px 2px; padding: 10px; background-color: rgb(231, 243, 236); border: 1px dotted;"
                   >
                     <dl
                       aria-label="Information about this business and its survey requirements"
@@ -1170,12 +1870,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Survey month:
+                        Field period:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        01 - 2021
+                        <strong>
+                          2021-01-01T00:00:00
+                        </strong>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -1185,52 +1887,171 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        100
+                        <strong>
+                          1000
+                        </strong>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Number of cases to assigned:
+                        Total number of cases allocated:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 1: 5
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        Editor 2: 10
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        Editor 3: 7
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        Editor 4: 7
+                        <strong>
+                          30
+                        </strong>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Number of cases completed:
+                        Doctor Doom:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 1: 2
+                        <strong>
+                          10
+                        </strong>
+                         
+                        case(s) assigned
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 2: 1
+                        <strong>
+                          5
+                        </strong>
+                         
+                        case(s) not started
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 3: 6
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) in progress
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) completed
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          1
+                        </strong>
+                         
+                        case(s) with queries
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Captain Fantastic:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          10
+                        </strong>
+                         
+                        case(s) assigned
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          5
+                        </strong>
+                         
+                        case(s) not started
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) in progress
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) completed
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          1
+                        </strong>
+                         
+                        case(s) with queries
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        The Thing:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          10
+                        </strong>
+                         
+                        case(s) assigned
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          5
+                        </strong>
+                         
+                        case(s) not started
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) in progress
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) completed
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          1
+                        </strong>
+                         
+                        case(s) with queries
                       </dd>
                     </dl>
                   </div>
@@ -1243,14 +2064,14 @@ exports[`Given there are surveys available in blaise should render the superviso
           class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
           data-btn-close="Hide"
           data-group="accordion"
-          id="accordion-1"
+          id="survey-accordion-1"
         >
           <summary
-            aria-controls="accordion-1"
+            aria-controls="survey-accordion-1"
             aria-expanded="false"
             class="ons-collapsible__heading ons-js-collapsible-heading"
             data-ga-action="Open panel"
-            data-testid="accordion-1-heading"
+            data-testid="survey-accordion-1-heading"
             role="link"
             tabindex="0"
           >
@@ -1282,19 +2103,19 @@ exports[`Given there are surveys available in blaise should render the superviso
           <div
             aria-hidden="true"
             class="ons-collapsible__content ons-js-collapsible-content"
-            data-testid="accordion-1-content"
-            id="accordion-1-content"
+            data-testid="survey-accordion-1-content"
+            id="survey-accordion-1-content"
           >
             <br />
             <div
               class="ons-accordion"
-              id="accordion"
+              id="questionnaire-accordion"
             >
               <button
                 class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
                 data-close-all="Hide all"
                 data-group="accordion"
-                data-testid="accordion-show-all"
+                data-testid="questionnaire-accordion-show-all"
                 type="button"
               >
                 <span
@@ -1307,14 +2128,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                 class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
                 data-btn-close="Hide"
                 data-group="accordion"
-                id="accordion-0"
+                id="questionnaire-accordion-0"
               >
                 <summary
-                  aria-controls="accordion-0"
+                  aria-controls="questionnaire-accordion-0"
                   aria-expanded="false"
                   class="ons-collapsible__heading ons-js-collapsible-heading"
                   data-ga-action="Open panel"
-                  data-testid="accordion-0-heading"
+                  data-testid="questionnaire-accordion-0-heading"
                   role="link"
                   tabindex="0"
                 >
@@ -1346,11 +2167,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                 <div
                   aria-hidden="true"
                   class="ons-collapsible__content ons-js-collapsible-content"
-                  data-testid="accordion-0-content"
-                  id="accordion-0-content"
+                  data-testid="questionnaire-accordion-0-content"
+                  id="questionnaire-accordion-0-content"
                 >
                   <div
-                    style="margin: 0px 0px 0px 25px;"
+                    style="margin: 0px 0px 0px 2px; padding: 10px; background-color: rgb(231, 243, 236); border: 1px dotted;"
                   >
                     <dl
                       aria-label="Information about this business and its survey requirements"
@@ -1360,12 +2181,14 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Survey month:
+                        Field period:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        01 - 2022
+                        <strong>
+                          2022-01-01T00:00:00
+                        </strong>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -1375,52 +2198,171 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        100
+                        <strong>
+                          1000
+                        </strong>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Number of cases to assigned:
+                        Total number of cases allocated:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 1: 5
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        Editor 2: 10
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        Editor 3: 7
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        Editor 4: 7
+                        <strong>
+                          30
+                        </strong>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Number of cases completed:
+                        Doctor Doom:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 1: 2
+                        <strong>
+                          10
+                        </strong>
+                         
+                        case(s) assigned
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 2: 1
+                        <strong>
+                          5
+                        </strong>
+                         
+                        case(s) not started
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        Editor 3: 6
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) in progress
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) completed
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          1
+                        </strong>
+                         
+                        case(s) with queries
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Captain Fantastic:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          10
+                        </strong>
+                         
+                        case(s) assigned
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          5
+                        </strong>
+                         
+                        case(s) not started
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) in progress
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) completed
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          1
+                        </strong>
+                         
+                        case(s) with queries
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        The Thing:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          10
+                        </strong>
+                         
+                        case(s) assigned
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          5
+                        </strong>
+                         
+                        case(s) not started
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) in progress
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2
+                        </strong>
+                         
+                        case(s) completed
+                      </dd>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          1
+                        </strong>
+                         
+                        case(s) with queries
                       </dd>
                     </dl>
                   </div>

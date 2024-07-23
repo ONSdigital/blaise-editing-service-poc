@@ -127,33 +127,20 @@ exports[`Given there are surveys available in blaise should render the editor pa
         <br />
         <div
           class="ons-accordion"
-          id="accordion"
+          id="survey-accordion"
         >
-          <button
-            class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
-            data-close-all="Hide all"
-            data-group="accordion"
-            data-testid="accordion-show-all"
-            type="button"
-          >
-            <span
-              class="ons-btn__inner ons-js-collapsible-all-inner"
-            >
-              Show all
-            </span>
-          </button>
           <details
             class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
             data-btn-close="Hide"
             data-group="accordion"
-            id="accordion-0"
+            id="survey-accordion-0"
           >
             <summary
-              aria-controls="accordion-0"
+              aria-controls="survey-accordion-0"
               aria-expanded="false"
               class="ons-collapsible__heading ons-js-collapsible-heading"
               data-ga-action="Open panel"
-              data-testid="accordion-0-heading"
+              data-testid="survey-accordion-0-heading"
               role="link"
               tabindex="0"
             >
@@ -185,8 +172,8 @@ exports[`Given there are surveys available in blaise should render the editor pa
             <div
               aria-hidden="true"
               class="ons-collapsible__content ons-js-collapsible-content"
-              data-testid="accordion-0-content"
-              id="accordion-0-content"
+              data-testid="survey-accordion-0-content"
+              id="survey-accordion-0-content"
             >
               <dl
                 class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
@@ -257,14 +244,14 @@ exports[`Given there are surveys available in blaise should render the editor pa
             class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
             data-btn-close="Hide"
             data-group="accordion"
-            id="accordion-1"
+            id="survey-accordion-1"
           >
             <summary
-              aria-controls="accordion-1"
+              aria-controls="survey-accordion-1"
               aria-expanded="false"
               class="ons-collapsible__heading ons-js-collapsible-heading"
               data-ga-action="Open panel"
-              data-testid="accordion-1-heading"
+              data-testid="survey-accordion-1-heading"
               role="link"
               tabindex="0"
             >
@@ -296,8 +283,8 @@ exports[`Given there are surveys available in blaise should render the editor pa
             <div
               aria-hidden="true"
               class="ons-collapsible__content ons-js-collapsible-content"
-              data-testid="accordion-1-content"
-              id="accordion-1-content"
+              data-testid="survey-accordion-1-content"
+              id="survey-accordion-1-content"
             >
               <dl
                 class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
@@ -354,33 +341,20 @@ exports[`Given there are surveys available in blaise should render the editor pa
       <br />
       <div
         class="ons-accordion"
-        id="accordion"
+        id="survey-accordion"
       >
-        <button
-          class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
-          data-close-all="Hide all"
-          data-group="accordion"
-          data-testid="accordion-show-all"
-          type="button"
-        >
-          <span
-            class="ons-btn__inner ons-js-collapsible-all-inner"
-          >
-            Show all
-          </span>
-        </button>
         <details
           class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
           data-btn-close="Hide"
           data-group="accordion"
-          id="accordion-0"
+          id="survey-accordion-0"
         >
           <summary
-            aria-controls="accordion-0"
+            aria-controls="survey-accordion-0"
             aria-expanded="false"
             class="ons-collapsible__heading ons-js-collapsible-heading"
             data-ga-action="Open panel"
-            data-testid="accordion-0-heading"
+            data-testid="survey-accordion-0-heading"
             role="link"
             tabindex="0"
           >
@@ -412,8 +386,8 @@ exports[`Given there are surveys available in blaise should render the editor pa
           <div
             aria-hidden="true"
             class="ons-collapsible__content ons-js-collapsible-content"
-            data-testid="accordion-0-content"
-            id="accordion-0-content"
+            data-testid="survey-accordion-0-content"
+            id="survey-accordion-0-content"
           >
             <dl
               class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
@@ -484,14 +458,14 @@ exports[`Given there are surveys available in blaise should render the editor pa
           class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
           data-btn-close="Hide"
           data-group="accordion"
-          id="accordion-1"
+          id="survey-accordion-1"
         >
           <summary
-            aria-controls="accordion-1"
+            aria-controls="survey-accordion-1"
             aria-expanded="false"
             class="ons-collapsible__heading ons-js-collapsible-heading"
             data-ga-action="Open panel"
-            data-testid="accordion-1-heading"
+            data-testid="survey-accordion-1-heading"
             role="link"
             tabindex="0"
           >
@@ -523,8 +497,8 @@ exports[`Given there are surveys available in blaise should render the editor pa
           <div
             aria-hidden="true"
             class="ons-collapsible__content ons-js-collapsible-content"
-            data-testid="accordion-1-content"
-            id="accordion-1-content"
+            data-testid="survey-accordion-1-content"
+            id="survey-accordion-1-content"
           >
             <dl
               class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"

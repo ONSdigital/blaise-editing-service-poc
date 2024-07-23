@@ -9,7 +9,7 @@ interface SurveysListProps {
 }
 
 function CreateContent(surveys:Survey[]):ExpandableContent[] {
-  return surveys.map(({ name, questionnaires }) => ({ title: name, content: <EditorsQuestionnaireList questionnaires={questionnaires} /> }));
+  return surveys.map(({ name, questionnaires }) => ({ title: name, content: <EditorsQuestionnaireList questionnaires={questionnaires} />, contentId: 'survey' }));
 }
 
 export default function SurveysList({ surveys }: SurveysListProps): ReactElement {
@@ -22,7 +22,7 @@ export default function SurveysList({ surveys }: SurveysListProps): ReactElement
   return (
     <>
       <br />
-      <Accordion ShowAllEnabled Expandables={CreateContent(surveys)} />
+      <Accordion ContentId="survey" Expandables={CreateContent(surveys)} />
     </>
   );
 }

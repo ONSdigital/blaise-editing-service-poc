@@ -57,11 +57,11 @@ describe('Given there are surveys available in blaise', () => {
 
     // assert
     surveyListMockObject.forEach((survey, surveyIndex) => {
-      const surveyListView = view.getByTestId(`accordion-${surveyIndex}-heading`);
+      const surveyListView = view.getByTestId(`survey-accordion-${surveyIndex}-heading`);
       expect(surveyListView).toHaveTextContent(survey.name);
 
       survey.questionnaires.forEach(({ questionnaireName, numberOfCases }) => {
-        const questionnaireListView = view.getByTestId(`accordion-${surveyIndex}-content`);
+        const questionnaireListView = view.getByTestId(`survey-accordion-${surveyIndex}-content`);
         expect(questionnaireListView).toHaveTextContent(questionnaireName);
         expect(questionnaireListView).toHaveTextContent(String(numberOfCases));
       });

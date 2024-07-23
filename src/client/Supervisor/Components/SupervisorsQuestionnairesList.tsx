@@ -9,14 +9,14 @@ interface SupervisorsQuestionnairesListProps {
 }
 
 function CreateContent(questionnaires:QuestionnaireDetails[]):ExpandableContent[] {
-  return questionnaires.map((questionnaire) => ({ title: questionnaire.questionnaireName, content: <SupervisorsQuestionnaireDetails questionnaire={questionnaire} /> }));
+  return questionnaires.map((questionnaire) => ({ title: questionnaire.questionnaireName, content: <SupervisorsQuestionnaireDetails questionnaire={questionnaire} />, contentId: 'questionnaire' }));
 }
 
 export default function SupervisorsQuestionnairesList({ questionnaires }: SupervisorsQuestionnairesListProps): ReactElement {
   return (
     <>
       <br />
-      <Accordion ShowAllEnabled Expandables={CreateContent(questionnaires)} />
+      <Accordion ContentId="questionnaire" ShowAllEnabled Expandables={CreateContent(questionnaires)} />
     </>
   );
 }

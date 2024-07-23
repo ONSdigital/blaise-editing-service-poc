@@ -7,26 +7,104 @@ interface SupervisorsQuestionnairesDetailsProps {
 
 export default function SupervisorsQuestionnaireDetails({ questionnaire }: SupervisorsQuestionnairesDetailsProps): ReactElement {
   return (
-    <div style={{ margin: '0 0 0 25px' }}>
+    <div style={{
+      margin: '0 0 0 2px', padding: '10px', backgroundColor: '#e7f3ec', border: '1px dotted',
+    }}
+    >
 
       <dl
         className="ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
         title="Information about this business and its survey requirements"
         aria-label="Information about this business and its survey requirements"
       >
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Survey month:</dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">{questionnaire.questionnaireMonth}</dd>
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Field period:</dt>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>{questionnaire.fieldPeriod}</strong></dd>
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Total number of cases:</dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">100</dd>
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases to assigned:</dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">Editor 1: 5</dd>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">Editor 2: 10</dd>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">Editor 3: 7</dd>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">Editor 4: 7</dd>
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases completed:</dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">Editor 1: 2</dd>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">Editor 2: 1</dd>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">Editor 3: 6</dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>1000</strong></dd>
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Total number of cases allocated:</dt>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>30</strong></dd>
+
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Doctor Doom:</dt>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>10</strong>
+          {' '}
+          case(s) assigned
+        </dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>5</strong>
+          {' '}
+          case(s) not started
+        </dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>2</strong>
+          {' '}
+          case(s) in progress
+        </dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>2</strong>
+          {' '}
+          case(s) completed
+        </dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>1</strong>
+          {' '}
+          case(s) with queries
+        </dd>
+
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Captain Fantastic:</dt>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>10</strong>
+          {' '}
+          case(s) assigned
+        </dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>5</strong>
+          {' '}
+          case(s) not started
+        </dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>2</strong>
+          {' '}
+          case(s) in progress
+        </dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>2</strong>
+          {' '}
+          case(s) completed
+        </dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>1</strong>
+          {' '}
+          case(s) with queries
+        </dd>
+
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">The Thing:</dt>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>10</strong>
+          {' '}
+          case(s) assigned
+        </dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>5</strong>
+          {' '}
+          case(s) not started
+        </dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>2</strong>
+          {' '}
+          case(s) in progress
+        </dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>2</strong>
+          {' '}
+          case(s) completed
+        </dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>1</strong>
+          {' '}
+          case(s) with queries
+        </dd>
+
       </dl>
     </div>
   );
