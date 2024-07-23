@@ -52,3 +52,6 @@ width: 40% !important;
 .ons-summary__item-title, .ons-summary__values  {
   flex: 2 !important;
 }
+
+a {color:#000 !important;  font-Weight: 'normal';}
+a:hover,a:visited { color:#000 !important; }
