@@ -19,11 +19,14 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
       >
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Field period:</dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>{questionnaire.fieldPeriod}</strong></dd>
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Total number of cases:</dt>
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases:</dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>1000</strong></dd>
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Total number of cases allocated:</dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>30</strong></dd>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><Link to="/">Allocate</Link></dd>
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases allocated:</dt>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
+          <strong>30</strong>
+          {' '}
+          <Link to="/">Allocate</Link>
+        </dd>
 
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m"><Link to="/">Doctor Doom:</Link></dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m">

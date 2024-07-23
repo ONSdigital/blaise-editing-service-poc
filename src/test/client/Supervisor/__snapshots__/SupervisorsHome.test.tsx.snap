@@ -262,7 +262,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Total number of cases:
+                          Number of cases:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -274,7 +274,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Total number of cases allocated:
+                          Number of cases allocated:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -282,11 +282,21 @@ exports[`Given there are surveys available in blaise should render the superviso
                           <strong>
                             30
                           </strong>
+                           
+                          <a
+                            href="/"
+                          >
+                            Allocate
+                          </a>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Doctor Doom:
+                          <a
+                            href="/"
+                          >
+                            Doctor Doom:
+                          </a>
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -295,7 +305,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                             10
                           </strong>
                            
-                          case(s) assigned
+                          case(s) allocated
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -336,22 +346,26 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Captain Fantastic:
+                          <a
+                            href="/"
+                          >
+                            Captain Fantastic:
+                          </a>
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            10
+                            5
                           </strong>
                            
-                          case(s) assigned
+                          case(s) allocated
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            5
+                            4
                           </strong>
                            
                           case(s) not started
@@ -360,78 +374,28 @@ exports[`Given there are surveys available in blaise should render the superviso
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            2
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) completed
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
                             1
                           </strong>
                            
-                          case(s) with queries
+                          case(s) in progress
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          The Thing:
+                          <a
+                            href="/"
+                          >
+                            The Thing:
+                          </a>
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            10
+                            0
                           </strong>
                            
-                          case(s) assigned
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            5
-                          </strong>
-                           
-                          case(s) not started
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) completed
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            1
-                          </strong>
-                           
-                          case(s) with queries
+                          case(s) allocated
                         </dd>
                       </dl>
                     </div>
@@ -506,7 +470,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Total number of cases:
+                          Number of cases:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -518,7 +482,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Total number of cases allocated:
+                          Number of cases allocated:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -526,11 +490,21 @@ exports[`Given there are surveys available in blaise should render the superviso
                           <strong>
                             30
                           </strong>
+                           
+                          <a
+                            href="/"
+                          >
+                            Allocate
+                          </a>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Doctor Doom:
+                          <a
+                            href="/"
+                          >
+                            Doctor Doom:
+                          </a>
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -539,7 +513,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                             10
                           </strong>
                            
-                          case(s) assigned
+                          case(s) allocated
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -580,22 +554,26 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Captain Fantastic:
+                          <a
+                            href="/"
+                          >
+                            Captain Fantastic:
+                          </a>
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            10
+                            5
                           </strong>
                            
-                          case(s) assigned
+                          case(s) allocated
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            5
+                            4
                           </strong>
                            
                           case(s) not started
@@ -604,78 +582,28 @@ exports[`Given there are surveys available in blaise should render the superviso
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            2
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) completed
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
                             1
                           </strong>
                            
-                          case(s) with queries
+                          case(s) in progress
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          The Thing:
+                          <a
+                            href="/"
+                          >
+                            The Thing:
+                          </a>
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            10
+                            0
                           </strong>
                            
-                          case(s) assigned
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            5
-                          </strong>
-                           
-                          case(s) not started
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) completed
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            1
-                          </strong>
-                           
-                          case(s) with queries
+                          case(s) allocated
                         </dd>
                       </dl>
                     </div>
@@ -750,7 +678,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Total number of cases:
+                          Number of cases:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -762,7 +690,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Total number of cases allocated:
+                          Number of cases allocated:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -770,11 +698,21 @@ exports[`Given there are surveys available in blaise should render the superviso
                           <strong>
                             30
                           </strong>
+                           
+                          <a
+                            href="/"
+                          >
+                            Allocate
+                          </a>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Doctor Doom:
+                          <a
+                            href="/"
+                          >
+                            Doctor Doom:
+                          </a>
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -783,7 +721,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                             10
                           </strong>
                            
-                          case(s) assigned
+                          case(s) allocated
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -824,22 +762,26 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Captain Fantastic:
+                          <a
+                            href="/"
+                          >
+                            Captain Fantastic:
+                          </a>
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            10
+                            5
                           </strong>
                            
-                          case(s) assigned
+                          case(s) allocated
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            5
+                            4
                           </strong>
                            
                           case(s) not started
@@ -848,78 +790,28 @@ exports[`Given there are surveys available in blaise should render the superviso
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            2
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) completed
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
                             1
                           </strong>
                            
-                          case(s) with queries
+                          case(s) in progress
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          The Thing:
+                          <a
+                            href="/"
+                          >
+                            The Thing:
+                          </a>
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            10
+                            0
                           </strong>
                            
-                          case(s) assigned
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            5
-                          </strong>
-                           
-                          case(s) not started
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) completed
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            1
-                          </strong>
-                           
-                          case(s) with queries
+                          case(s) allocated
                         </dd>
                       </dl>
                     </div>
@@ -1061,7 +953,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Total number of cases:
+                          Number of cases:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1073,7 +965,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Total number of cases allocated:
+                          Number of cases allocated:
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1081,11 +973,21 @@ exports[`Given there are surveys available in blaise should render the superviso
                           <strong>
                             30
                           </strong>
+                           
+                          <a
+                            href="/"
+                          >
+                            Allocate
+                          </a>
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Doctor Doom:
+                          <a
+                            href="/"
+                          >
+                            Doctor Doom:
+                          </a>
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1094,7 +996,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                             10
                           </strong>
                            
-                          case(s) assigned
+                          case(s) allocated
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1135,22 +1037,26 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          Captain Fantastic:
+                          <a
+                            href="/"
+                          >
+                            Captain Fantastic:
+                          </a>
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            10
+                            5
                           </strong>
                            
-                          case(s) assigned
+                          case(s) allocated
                         </dd>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            5
+                            4
                           </strong>
                            
                           case(s) not started
@@ -1159,78 +1065,28 @@ exports[`Given there are surveys available in blaise should render the superviso
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            2
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) completed
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
                             1
                           </strong>
                            
-                          case(s) with queries
+                          case(s) in progress
                         </dd>
                         <dt
                           class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          The Thing:
+                          <a
+                            href="/"
+                          >
+                            The Thing:
+                          </a>
                         </dt>
                         <dd
                           class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
                           <strong>
-                            10
+                            0
                           </strong>
                            
-                          case(s) assigned
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            5
-                          </strong>
-                           
-                          case(s) not started
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) in progress
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2
-                          </strong>
-                           
-                          case(s) completed
-                        </dd>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            1
-                          </strong>
-                           
-                          case(s) with queries
+                          case(s) allocated
                         </dd>
                       </dl>
                     </div>
@@ -1394,7 +1250,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Total number of cases:
+                        Number of cases:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1406,7 +1262,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Total number of cases allocated:
+                        Number of cases allocated:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1414,11 +1270,21 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <strong>
                           30
                         </strong>
+                         
+                        <a
+                          href="/"
+                        >
+                          Allocate
+                        </a>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Doctor Doom:
+                        <a
+                          href="/"
+                        >
+                          Doctor Doom:
+                        </a>
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1427,7 +1293,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                           10
                         </strong>
                          
-                        case(s) assigned
+                        case(s) allocated
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1468,22 +1334,26 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Captain Fantastic:
+                        <a
+                          href="/"
+                        >
+                          Captain Fantastic:
+                        </a>
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          10
+                          5
                         </strong>
                          
-                        case(s) assigned
+                        case(s) allocated
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          5
+                          4
                         </strong>
                          
                         case(s) not started
@@ -1492,78 +1362,28 @@ exports[`Given there are surveys available in blaise should render the superviso
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          2
-                        </strong>
-                         
-                        case(s) in progress
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2
-                        </strong>
-                         
-                        case(s) completed
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
                           1
                         </strong>
                          
-                        case(s) with queries
+                        case(s) in progress
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        The Thing:
+                        <a
+                          href="/"
+                        >
+                          The Thing:
+                        </a>
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          10
+                          0
                         </strong>
                          
-                        case(s) assigned
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          5
-                        </strong>
-                         
-                        case(s) not started
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2
-                        </strong>
-                         
-                        case(s) in progress
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2
-                        </strong>
-                         
-                        case(s) completed
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          1
-                        </strong>
-                         
-                        case(s) with queries
+                        case(s) allocated
                       </dd>
                     </dl>
                   </div>
@@ -1638,7 +1458,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Total number of cases:
+                        Number of cases:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1650,7 +1470,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Total number of cases allocated:
+                        Number of cases allocated:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1658,11 +1478,21 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <strong>
                           30
                         </strong>
+                         
+                        <a
+                          href="/"
+                        >
+                          Allocate
+                        </a>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Doctor Doom:
+                        <a
+                          href="/"
+                        >
+                          Doctor Doom:
+                        </a>
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1671,7 +1501,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                           10
                         </strong>
                          
-                        case(s) assigned
+                        case(s) allocated
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1712,22 +1542,26 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Captain Fantastic:
+                        <a
+                          href="/"
+                        >
+                          Captain Fantastic:
+                        </a>
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          10
+                          5
                         </strong>
                          
-                        case(s) assigned
+                        case(s) allocated
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          5
+                          4
                         </strong>
                          
                         case(s) not started
@@ -1736,78 +1570,28 @@ exports[`Given there are surveys available in blaise should render the superviso
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          2
-                        </strong>
-                         
-                        case(s) in progress
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2
-                        </strong>
-                         
-                        case(s) completed
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
                           1
                         </strong>
                          
-                        case(s) with queries
+                        case(s) in progress
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        The Thing:
+                        <a
+                          href="/"
+                        >
+                          The Thing:
+                        </a>
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          10
+                          0
                         </strong>
                          
-                        case(s) assigned
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          5
-                        </strong>
-                         
-                        case(s) not started
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2
-                        </strong>
-                         
-                        case(s) in progress
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2
-                        </strong>
-                         
-                        case(s) completed
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          1
-                        </strong>
-                         
-                        case(s) with queries
+                        case(s) allocated
                       </dd>
                     </dl>
                   </div>
@@ -1882,7 +1666,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Total number of cases:
+                        Number of cases:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1894,7 +1678,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Total number of cases allocated:
+                        Number of cases allocated:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1902,11 +1686,21 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <strong>
                           30
                         </strong>
+                         
+                        <a
+                          href="/"
+                        >
+                          Allocate
+                        </a>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Doctor Doom:
+                        <a
+                          href="/"
+                        >
+                          Doctor Doom:
+                        </a>
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1915,7 +1709,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                           10
                         </strong>
                          
-                        case(s) assigned
+                        case(s) allocated
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -1956,22 +1750,26 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Captain Fantastic:
+                        <a
+                          href="/"
+                        >
+                          Captain Fantastic:
+                        </a>
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          10
+                          5
                         </strong>
                          
-                        case(s) assigned
+                        case(s) allocated
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          5
+                          4
                         </strong>
                          
                         case(s) not started
@@ -1980,78 +1778,28 @@ exports[`Given there are surveys available in blaise should render the superviso
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          2
-                        </strong>
-                         
-                        case(s) in progress
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2
-                        </strong>
-                         
-                        case(s) completed
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
                           1
                         </strong>
                          
-                        case(s) with queries
+                        case(s) in progress
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        The Thing:
+                        <a
+                          href="/"
+                        >
+                          The Thing:
+                        </a>
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          10
+                          0
                         </strong>
                          
-                        case(s) assigned
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          5
-                        </strong>
-                         
-                        case(s) not started
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2
-                        </strong>
-                         
-                        case(s) in progress
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2
-                        </strong>
-                         
-                        case(s) completed
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          1
-                        </strong>
-                         
-                        case(s) with queries
+                        case(s) allocated
                       </dd>
                     </dl>
                   </div>
@@ -2193,7 +1941,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Total number of cases:
+                        Number of cases:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -2205,7 +1953,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Total number of cases allocated:
+                        Number of cases allocated:
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -2213,11 +1961,21 @@ exports[`Given there are surveys available in blaise should render the superviso
                         <strong>
                           30
                         </strong>
+                         
+                        <a
+                          href="/"
+                        >
+                          Allocate
+                        </a>
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Doctor Doom:
+                        <a
+                          href="/"
+                        >
+                          Doctor Doom:
+                        </a>
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -2226,7 +1984,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                           10
                         </strong>
                          
-                        case(s) assigned
+                        case(s) allocated
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
@@ -2267,22 +2025,26 @@ exports[`Given there are surveys available in blaise should render the superviso
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        Captain Fantastic:
+                        <a
+                          href="/"
+                        >
+                          Captain Fantastic:
+                        </a>
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          10
+                          5
                         </strong>
                          
-                        case(s) assigned
+                        case(s) allocated
                       </dd>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          5
+                          4
                         </strong>
                          
                         case(s) not started
@@ -2291,78 +2053,28 @@ exports[`Given there are surveys available in blaise should render the superviso
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          2
-                        </strong>
-                         
-                        case(s) in progress
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2
-                        </strong>
-                         
-                        case(s) completed
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
                           1
                         </strong>
                          
-                        case(s) with queries
+                        case(s) in progress
                       </dd>
                       <dt
                         class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        The Thing:
+                        <a
+                          href="/"
+                        >
+                          The Thing:
+                        </a>
                       </dt>
                       <dd
                         class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
                         <strong>
-                          10
+                          0
                         </strong>
                          
-                        case(s) assigned
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          5
-                        </strong>
-                         
-                        case(s) not started
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2
-                        </strong>
-                         
-                        case(s) in progress
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2
-                        </strong>
-                         
-                        case(s) completed
-                      </dd>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          1
-                        </strong>
-                         
-                        case(s) with queries
+                        case(s) allocated
                       </dd>
                     </dl>
                   </div>
