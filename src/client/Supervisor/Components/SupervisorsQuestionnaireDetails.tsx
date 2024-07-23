@@ -25,10 +25,10 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
           <strong>30</strong>
           {' '}
-          <Link to="/">(Allocate)</Link>
+          <Link className="allocate" to="/">(Allocate)</Link>
         </dd>
 
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m"><Link to="/">Doctor Doom:</Link></dt>
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m"><Link className="allocate" to="/">Doctor Doom:</Link></dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
           <strong>10</strong>
           {' '}
@@ -55,7 +55,7 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
           case(s) with queries
         </dd>
 
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m"><Link to="/">Captain Fantastic:</Link></dt>
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m"><Link className="allocate" to="/">Captain Fantastic:</Link></dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
           <strong>5</strong>
           {' '}
@@ -71,7 +71,7 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
           {' '}
           case(s) in progress
         </dd>
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m"><Link to="/">The Thing:</Link></dt>
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m"><Link className="allocate" to="/">The Thing:</Link></dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
           <strong>0</strong>
           {' '}

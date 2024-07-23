@@ -53,5 +53,6 @@ width: 40% !important;
   flex: 2 !important;
 }
 
-a {color:#000 !important;  font-Weight: 'normal';}
-a:hover,a:visited { color:#000 !important; }
+ a.allocate:link {color:#000;  font-Weight: 'normal';}
+ a.allocate:hover {color:#000;  font-Weight: 'normal';}
+ a.allocate:visited {color:#000;  font-Weight: 'normal';}
