@@ -61,7 +61,7 @@ export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQ
                 In Progress
               </td>
               <td className="ons-table__cell links">
-                <Link className="Edit" to="/">Summary</Link>
+                <Link className="Edit" to="/summary">Summary</Link>
                 {' | '}
                 <Link className="Edit" to="/">Edit</Link>
               </td>
