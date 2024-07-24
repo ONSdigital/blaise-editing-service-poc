@@ -4,7 +4,7 @@ import { ReactElement } from 'react';
 export default function CaseSummary(): ReactElement {
   return (
     <>
-      <ONSPanel spacious status="info">
+      <ONSPanel status="info">
         Case summary for
         {' '}
         <strong>10001011</strong>
@@ -15,7 +15,7 @@ export default function CaseSummary(): ReactElement {
       </ONSPanel>
       <dl
         className="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-        style={{ margin: '2% 10% 2% 10%' }}
+        style={{ margin: '2% 5% 2% 5%' }}
         title="summary"
       >
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">CaseId:</dt>
@@ -33,7 +33,7 @@ export default function CaseSummary(): ReactElement {
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Outcome code:</dt>
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m">110</dd>
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Household size:</dt>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">4</dd>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">3</dd>
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Respondents:</dt>
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m" key="Test Person 1">
           Test Person 1
