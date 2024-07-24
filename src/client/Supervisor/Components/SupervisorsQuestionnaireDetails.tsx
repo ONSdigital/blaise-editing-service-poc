@@ -25,7 +25,7 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
           <strong>970</strong>
           {' '}
-          <Link className="allocate" to="/">(Allocate)</Link>
+          <Link className="allocate" to="/allocate">(Allocate)</Link>
         </dd>
 
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m" style={{ margin: '50px 0 0 0' }}>
