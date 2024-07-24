@@ -10,7 +10,9 @@ interface SurveysListProps {
 }
 
 function CreateContent(surveys:Survey[], role:string):ExpandableContent[] {
-  return surveys.map(({ name, questionnaires }) => ({ title: name, content: <QuestionnairesList questionnaires={questionnaires} role={role} />, contentId: 'survey' }));
+  return surveys.map(({ name, questionnaires }) => ({
+    title: name, content: <QuestionnairesList questionnaires={questionnaires} role={role} />, contentId: 'survey', panelsOpen: true,
+  }));
 }
 
 export default function SurveysList({ surveys, role }: SurveysListProps): ReactElement {

@@ -11,7 +11,7 @@ exports[`Given there are no surveys available in blaise should render the page c
         <div
           class="ons-panel__body "
         >
-          Bonjour tout le monde Jake Bullet
+          Welcome to the editing service.
         </div>
       </div>
       <div
@@ -36,7 +36,7 @@ exports[`Given there are no surveys available in blaise should render the page c
       <div
         class="ons-panel__body "
       >
-        Bonjour tout le monde Jake Bullet
+        Welcome to the editing service.
       </div>
     </div>
     <div
@@ -118,7 +118,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
         <div
           class="ons-panel__body "
         >
-          Bonjour tout le monde Jake Bullet
+          Welcome to the editing service.
         </div>
       </div>
       <div
@@ -1214,7 +1214,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
       <div
         class="ons-panel__body "
       >
-        Bonjour tout le monde Jake Bullet
+        Welcome to the editing service.
       </div>
     </div>
     <div
@@ -2367,7 +2367,7 @@ exports[`Given there the blaise rest api is not available should render the page
         <div
           class="ons-panel__body "
         >
-          Bonjour tout le monde Jake Bullet
+          Welcome to the editing service.
         </div>
       </div>
       <div
@@ -2392,7 +2392,7 @@ exports[`Given there the blaise rest api is not available should render the page
       <div
         class="ons-panel__body "
       >
-        Bonjour tout le monde Jake Bullet
+        Welcome to the editing service.
       </div>
     </div>
     <div

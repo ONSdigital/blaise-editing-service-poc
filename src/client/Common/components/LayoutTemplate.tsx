@@ -18,8 +18,8 @@ export default function LayoutTemplate({ children, showSignOutButton, signOut }:
   const navigationLinks = [
     {
       endpoint: '/',
-      id: 'surveys',
-      label: 'Surveys',
+      id: 'Home',
+      label: 'Home',
     },
   ];
 
