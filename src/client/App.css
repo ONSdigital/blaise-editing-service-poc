@@ -53,6 +53,18 @@ width: 40% !important;
   flex: 2 !important;
 }
 
+.ons-table__cell.status {
+  text-align: center;
+}
+
+.ons-table__cell.links {
+  text-align: right;
+}
+
  a.allocate:link {color:#000;  font-Weight: 'normal';}
  a.allocate:hover {color:#000;  font-Weight: 'normal';}
  a.allocate:visited {color:#000;  font-Weight: 'normal';}
+ 
+ a.case:link {color:#000;  font-Weight: 'normal';}
+ a.case:hover {color:#000;  font-Weight: 'normal';}
+ a.case:visited {color:#000;  font-Weight: 'normal';}

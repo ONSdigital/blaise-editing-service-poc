@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
-import { ONSPanel } from 'blaise-design-system-react-components';
+import { ONSPanel, ONSTable } from 'blaise-design-system-react-components';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 
 interface EditorsQuestionnairesDetailsProps {
@@ -18,19 +18,68 @@ export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQ
       >
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Field period:</dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>{questionnaire.fieldPeriod}</strong></dd>
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Cases Allocated:</dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>3</strong></dd>
       </dl>
       <ONSPanel status="info">
-        <Link className="allocate" to="/">10001012</Link>
-      </ONSPanel>
-      <ONSPanel status="info">
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m"><Link className="case" to="/">10001012</Link></dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><Link className="Edit" to="/">Edit</Link></dd>
-      </ONSPanel>
-      <ONSPanel status="info">
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m"><Link className="case" to="/">10001013</Link></dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><Link className="Edit" to="/">Edit</Link></dd>
+        <ONSTable
+          columns={[
+            'Case ID',
+            '',
+            '',
+          ]}
+        >
+          <>
+            <tr
+              className="ons-table__row"
+              data-testid="questionnaire-table-row"
+            >
+              <td className="ons-table__cell">
+                10001011
+              </td>
+              <td className="ons-table__cell status">
+                In Progress
+              </td>
+              <td className="ons-table__cell links">
+                <Link className="Edit" to="/">Summary</Link>
+                {' | '}
+                <Link className="Edit" to="/">Edit</Link>
+              </td>
+            </tr>
+
+            <tr
+              className="ons-table__row"
+              data-testid="questionnaire-table-row2"
+            >
+              <td className="ons-table__cell">
+                10001012
+              </td>
+              <td className="ons-table__cell status">
+                Complete
+              </td>
+              <td className="ons-table__cell links">
+                <Link className="Edit" to="/">Summary</Link>
+                {' | '}
+                <Link className="Edit" to="/">Edit</Link>
+              </td>
+            </tr>
+
+            <tr
+              className="ons-table__row"
+              data-testid="questionnaire-table-row3"
+            >
+              <td className="ons-table__cell">
+                10001013
+              </td>
+              <td className="ons-table__cell status">
+                Not Started
+              </td>
+              <td className="ons-table__cell links">
+                <Link className="Edit" to="/">Summary</Link>
+                {' | '}
+                <Link className="Edit" to="/">Edit</Link>
+              </td>
+            </tr>
+          </>
+        </ONSTable>
       </ONSPanel>
     </>
   );
