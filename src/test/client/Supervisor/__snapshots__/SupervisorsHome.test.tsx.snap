@@ -245,19 +245,51 @@ exports[`Given there are surveys available in blaise should render the superviso
                       style="padding: 0px 0px 15px 5px;"
                       title="Questionnares"
                     >
-                      <dt
-                        class="ons-description-list__term ons-grid__col ons-col-5@m"
-                      >
-                        Field period:
-                      </dt>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2021-01-01T00:00:00
-                        </strong>
-                      </dd>
+                      Total cases:
+                       
+                      3
                     </dl>
+                    <div>
+                      <label
+                        class="ons-label"
+                        for="filter-cases"
+                      >
+                        Filter cases
+                         
+                      </label>
+                      <select
+                        class="ons-input "
+                        id="filter-cases"
+                        name="select"
+                      >
+                        <option
+                          data-testid="select-filter-cases"
+                          disabled=""
+                          value=""
+                        >
+                          Select an option
+                        </option>
+                        <option
+                          data-testid="option-filter-cases-in-progress"
+                          selected=""
+                          value="in-progress"
+                        >
+                          In Progress
+                        </option>
+                        <option
+                          data-testid="option-filter-cases-complete"
+                          value="complete"
+                        >
+                          Complete
+                        </option>
+                        <option
+                          data-testid="option-filter-cases-not-started"
+                          value="not-started"
+                        >
+                          Not Started
+                        </option>
+                      </select>
+                    </div>
                     <div
                       class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                     >
@@ -282,7 +314,15 @@ exports[`Given there are surveys available in blaise should render the superviso
                               <th
                                 class="ons-table__header"
                                 scope="col"
-                              />
+                              >
+                                Status
+                              </th>
+                              <th
+                                class="ons-table__header"
+                                scope="col"
+                              >
+                                Outcome
+                              </th>
                               <th
                                 class="ons-table__header"
                                 scope="col"
@@ -305,6 +345,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 class="ons-table__cell status"
                               >
                                 In Progress
+                              </td>
+                              <td
+                                class="ons-table__cell "
+                              >
+                                110
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -339,6 +384,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 Complete
                               </td>
                               <td
+                                class="ons-table__cell "
+                              >
+                                120
+                              </td>
+                              <td
                                 class="ons-table__cell links"
                               >
                                 <a
@@ -369,6 +419,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 class="ons-table__cell status"
                               >
                                 Not Started
+                              </td>
+                              <td
+                                class="ons-table__cell "
+                              >
+                                130
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -446,19 +501,51 @@ exports[`Given there are surveys available in blaise should render the superviso
                       style="padding: 0px 0px 15px 5px;"
                       title="Questionnares"
                     >
-                      <dt
-                        class="ons-description-list__term ons-grid__col ons-col-5@m"
-                      >
-                        Field period:
-                      </dt>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2021-01-01T00:00:00
-                        </strong>
-                      </dd>
+                      Total cases:
+                       
+                      1
                     </dl>
+                    <div>
+                      <label
+                        class="ons-label"
+                        for="filter-cases"
+                      >
+                        Filter cases
+                         
+                      </label>
+                      <select
+                        class="ons-input "
+                        id="filter-cases"
+                        name="select"
+                      >
+                        <option
+                          data-testid="select-filter-cases"
+                          disabled=""
+                          value=""
+                        >
+                          Select an option
+                        </option>
+                        <option
+                          data-testid="option-filter-cases-in-progress"
+                          selected=""
+                          value="in-progress"
+                        >
+                          In Progress
+                        </option>
+                        <option
+                          data-testid="option-filter-cases-complete"
+                          value="complete"
+                        >
+                          Complete
+                        </option>
+                        <option
+                          data-testid="option-filter-cases-not-started"
+                          value="not-started"
+                        >
+                          Not Started
+                        </option>
+                      </select>
+                    </div>
                     <div
                       class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                     >
@@ -483,7 +570,15 @@ exports[`Given there are surveys available in blaise should render the superviso
                               <th
                                 class="ons-table__header"
                                 scope="col"
-                              />
+                              >
+                                Status
+                              </th>
+                              <th
+                                class="ons-table__header"
+                                scope="col"
+                              >
+                                Outcome
+                              </th>
                               <th
                                 class="ons-table__header"
                                 scope="col"
@@ -506,6 +601,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 class="ons-table__cell status"
                               >
                                 In Progress
+                              </td>
+                              <td
+                                class="ons-table__cell "
+                              >
+                                110
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -540,6 +640,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 Complete
                               </td>
                               <td
+                                class="ons-table__cell "
+                              >
+                                120
+                              </td>
+                              <td
                                 class="ons-table__cell links"
                               >
                                 <a
@@ -570,6 +675,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 class="ons-table__cell status"
                               >
                                 Not Started
+                              </td>
+                              <td
+                                class="ons-table__cell "
+                              >
+                                130
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -647,19 +757,51 @@ exports[`Given there are surveys available in blaise should render the superviso
                       style="padding: 0px 0px 15px 5px;"
                       title="Questionnares"
                     >
-                      <dt
-                        class="ons-description-list__term ons-grid__col ons-col-5@m"
-                      >
-                        Field period:
-                      </dt>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2021-01-01T00:00:00
-                        </strong>
-                      </dd>
+                      Total cases:
+                       
+                      0
                     </dl>
+                    <div>
+                      <label
+                        class="ons-label"
+                        for="filter-cases"
+                      >
+                        Filter cases
+                         
+                      </label>
+                      <select
+                        class="ons-input "
+                        id="filter-cases"
+                        name="select"
+                      >
+                        <option
+                          data-testid="select-filter-cases"
+                          disabled=""
+                          value=""
+                        >
+                          Select an option
+                        </option>
+                        <option
+                          data-testid="option-filter-cases-in-progress"
+                          selected=""
+                          value="in-progress"
+                        >
+                          In Progress
+                        </option>
+                        <option
+                          data-testid="option-filter-cases-complete"
+                          value="complete"
+                        >
+                          Complete
+                        </option>
+                        <option
+                          data-testid="option-filter-cases-not-started"
+                          value="not-started"
+                        >
+                          Not Started
+                        </option>
+                      </select>
+                    </div>
                     <div
                       class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                     >
@@ -684,7 +826,15 @@ exports[`Given there are surveys available in blaise should render the superviso
                               <th
                                 class="ons-table__header"
                                 scope="col"
-                              />
+                              >
+                                Status
+                              </th>
+                              <th
+                                class="ons-table__header"
+                                scope="col"
+                              >
+                                Outcome
+                              </th>
                               <th
                                 class="ons-table__header"
                                 scope="col"
@@ -707,6 +857,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 class="ons-table__cell status"
                               >
                                 In Progress
+                              </td>
+                              <td
+                                class="ons-table__cell "
+                              >
+                                110
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -741,6 +896,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 Complete
                               </td>
                               <td
+                                class="ons-table__cell "
+                              >
+                                120
+                              </td>
+                              <td
                                 class="ons-table__cell links"
                               >
                                 <a
@@ -771,6 +931,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 class="ons-table__cell status"
                               >
                                 Not Started
+                              </td>
+                              <td
+                                class="ons-table__cell "
+                              >
+                                130
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -915,19 +1080,51 @@ exports[`Given there are surveys available in blaise should render the superviso
                       style="padding: 0px 0px 15px 5px;"
                       title="Questionnares"
                     >
-                      <dt
-                        class="ons-description-list__term ons-grid__col ons-col-5@m"
-                      >
-                        Field period:
-                      </dt>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2022-01-01T00:00:00
-                        </strong>
-                      </dd>
+                      Total cases:
+                       
+                      3
                     </dl>
+                    <div>
+                      <label
+                        class="ons-label"
+                        for="filter-cases"
+                      >
+                        Filter cases
+                         
+                      </label>
+                      <select
+                        class="ons-input "
+                        id="filter-cases"
+                        name="select"
+                      >
+                        <option
+                          data-testid="select-filter-cases"
+                          disabled=""
+                          value=""
+                        >
+                          Select an option
+                        </option>
+                        <option
+                          data-testid="option-filter-cases-in-progress"
+                          selected=""
+                          value="in-progress"
+                        >
+                          In Progress
+                        </option>
+                        <option
+                          data-testid="option-filter-cases-complete"
+                          value="complete"
+                        >
+                          Complete
+                        </option>
+                        <option
+                          data-testid="option-filter-cases-not-started"
+                          value="not-started"
+                        >
+                          Not Started
+                        </option>
+                      </select>
+                    </div>
                     <div
                       class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                     >
@@ -952,7 +1149,15 @@ exports[`Given there are surveys available in blaise should render the superviso
                               <th
                                 class="ons-table__header"
                                 scope="col"
-                              />
+                              >
+                                Status
+                              </th>
+                              <th
+                                class="ons-table__header"
+                                scope="col"
+                              >
+                                Outcome
+                              </th>
                               <th
                                 class="ons-table__header"
                                 scope="col"
@@ -975,6 +1180,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 class="ons-table__cell status"
                               >
                                 In Progress
+                              </td>
+                              <td
+                                class="ons-table__cell "
+                              >
+                                110
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -1009,6 +1219,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 Complete
                               </td>
                               <td
+                                class="ons-table__cell "
+                              >
+                                120
+                              </td>
+                              <td
                                 class="ons-table__cell links"
                               >
                                 <a
@@ -1039,6 +1254,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 class="ons-table__cell status"
                               >
                                 Not Started
+                              </td>
+                              <td
+                                class="ons-table__cell "
+                              >
+                                130
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -1205,19 +1425,51 @@ exports[`Given there are surveys available in blaise should render the superviso
                     style="padding: 0px 0px 15px 5px;"
                     title="Questionnares"
                   >
-                    <dt
-                      class="ons-description-list__term ons-grid__col ons-col-5@m"
-                    >
-                      Field period:
-                    </dt>
-                    <dd
-                      class="ons-description-list__value ons-grid__col ons-col-7@m"
-                    >
-                      <strong>
-                        2021-01-01T00:00:00
-                      </strong>
-                    </dd>
+                    Total cases:
+                     
+                    3
                   </dl>
+                  <div>
+                    <label
+                      class="ons-label"
+                      for="filter-cases"
+                    >
+                      Filter cases
+                       
+                    </label>
+                    <select
+                      class="ons-input "
+                      id="filter-cases"
+                      name="select"
+                    >
+                      <option
+                        data-testid="select-filter-cases"
+                        disabled=""
+                        value=""
+                      >
+                        Select an option
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-in-progress"
+                        selected=""
+                        value="in-progress"
+                      >
+                        In Progress
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-complete"
+                        value="complete"
+                      >
+                        Complete
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-not-started"
+                        value="not-started"
+                      >
+                        Not Started
+                      </option>
+                    </select>
+                  </div>
                   <div
                     class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                   >
@@ -1242,7 +1494,15 @@ exports[`Given there are surveys available in blaise should render the superviso
                             <th
                               class="ons-table__header"
                               scope="col"
-                            />
+                            >
+                              Status
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
+                            >
+                              Outcome
+                            </th>
                             <th
                               class="ons-table__header"
                               scope="col"
@@ -1265,6 +1525,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                               class="ons-table__cell status"
                             >
                               In Progress
+                            </td>
+                            <td
+                              class="ons-table__cell "
+                            >
+                              110
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1299,6 +1564,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                               Complete
                             </td>
                             <td
+                              class="ons-table__cell "
+                            >
+                              120
+                            </td>
+                            <td
                               class="ons-table__cell links"
                             >
                               <a
@@ -1329,6 +1599,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                               class="ons-table__cell status"
                             >
                               Not Started
+                            </td>
+                            <td
+                              class="ons-table__cell "
+                            >
+                              130
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1406,19 +1681,51 @@ exports[`Given there are surveys available in blaise should render the superviso
                     style="padding: 0px 0px 15px 5px;"
                     title="Questionnares"
                   >
-                    <dt
-                      class="ons-description-list__term ons-grid__col ons-col-5@m"
-                    >
-                      Field period:
-                    </dt>
-                    <dd
-                      class="ons-description-list__value ons-grid__col ons-col-7@m"
-                    >
-                      <strong>
-                        2021-01-01T00:00:00
-                      </strong>
-                    </dd>
+                    Total cases:
+                     
+                    1
                   </dl>
+                  <div>
+                    <label
+                      class="ons-label"
+                      for="filter-cases"
+                    >
+                      Filter cases
+                       
+                    </label>
+                    <select
+                      class="ons-input "
+                      id="filter-cases"
+                      name="select"
+                    >
+                      <option
+                        data-testid="select-filter-cases"
+                        disabled=""
+                        value=""
+                      >
+                        Select an option
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-in-progress"
+                        selected=""
+                        value="in-progress"
+                      >
+                        In Progress
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-complete"
+                        value="complete"
+                      >
+                        Complete
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-not-started"
+                        value="not-started"
+                      >
+                        Not Started
+                      </option>
+                    </select>
+                  </div>
                   <div
                     class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                   >
@@ -1443,7 +1750,15 @@ exports[`Given there are surveys available in blaise should render the superviso
                             <th
                               class="ons-table__header"
                               scope="col"
-                            />
+                            >
+                              Status
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
+                            >
+                              Outcome
+                            </th>
                             <th
                               class="ons-table__header"
                               scope="col"
@@ -1466,6 +1781,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                               class="ons-table__cell status"
                             >
                               In Progress
+                            </td>
+                            <td
+                              class="ons-table__cell "
+                            >
+                              110
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1500,6 +1820,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                               Complete
                             </td>
                             <td
+                              class="ons-table__cell "
+                            >
+                              120
+                            </td>
+                            <td
                               class="ons-table__cell links"
                             >
                               <a
@@ -1530,6 +1855,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                               class="ons-table__cell status"
                             >
                               Not Started
+                            </td>
+                            <td
+                              class="ons-table__cell "
+                            >
+                              130
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1607,19 +1937,51 @@ exports[`Given there are surveys available in blaise should render the superviso
                     style="padding: 0px 0px 15px 5px;"
                     title="Questionnares"
                   >
-                    <dt
-                      class="ons-description-list__term ons-grid__col ons-col-5@m"
-                    >
-                      Field period:
-                    </dt>
-                    <dd
-                      class="ons-description-list__value ons-grid__col ons-col-7@m"
-                    >
-                      <strong>
-                        2021-01-01T00:00:00
-                      </strong>
-                    </dd>
+                    Total cases:
+                     
+                    0
                   </dl>
+                  <div>
+                    <label
+                      class="ons-label"
+                      for="filter-cases"
+                    >
+                      Filter cases
+                       
+                    </label>
+                    <select
+                      class="ons-input "
+                      id="filter-cases"
+                      name="select"
+                    >
+                      <option
+                        data-testid="select-filter-cases"
+                        disabled=""
+                        value=""
+                      >
+                        Select an option
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-in-progress"
+                        selected=""
+                        value="in-progress"
+                      >
+                        In Progress
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-complete"
+                        value="complete"
+                      >
+                        Complete
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-not-started"
+                        value="not-started"
+                      >
+                        Not Started
+                      </option>
+                    </select>
+                  </div>
                   <div
                     class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                   >
@@ -1644,7 +2006,15 @@ exports[`Given there are surveys available in blaise should render the superviso
                             <th
                               class="ons-table__header"
                               scope="col"
-                            />
+                            >
+                              Status
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
+                            >
+                              Outcome
+                            </th>
                             <th
                               class="ons-table__header"
                               scope="col"
@@ -1667,6 +2037,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                               class="ons-table__cell status"
                             >
                               In Progress
+                            </td>
+                            <td
+                              class="ons-table__cell "
+                            >
+                              110
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1701,6 +2076,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                               Complete
                             </td>
                             <td
+                              class="ons-table__cell "
+                            >
+                              120
+                            </td>
+                            <td
                               class="ons-table__cell links"
                             >
                               <a
@@ -1731,6 +2111,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                               class="ons-table__cell status"
                             >
                               Not Started
+                            </td>
+                            <td
+                              class="ons-table__cell "
+                            >
+                              130
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1875,19 +2260,51 @@ exports[`Given there are surveys available in blaise should render the superviso
                     style="padding: 0px 0px 15px 5px;"
                     title="Questionnares"
                   >
-                    <dt
-                      class="ons-description-list__term ons-grid__col ons-col-5@m"
-                    >
-                      Field period:
-                    </dt>
-                    <dd
-                      class="ons-description-list__value ons-grid__col ons-col-7@m"
-                    >
-                      <strong>
-                        2022-01-01T00:00:00
-                      </strong>
-                    </dd>
+                    Total cases:
+                     
+                    3
                   </dl>
+                  <div>
+                    <label
+                      class="ons-label"
+                      for="filter-cases"
+                    >
+                      Filter cases
+                       
+                    </label>
+                    <select
+                      class="ons-input "
+                      id="filter-cases"
+                      name="select"
+                    >
+                      <option
+                        data-testid="select-filter-cases"
+                        disabled=""
+                        value=""
+                      >
+                        Select an option
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-in-progress"
+                        selected=""
+                        value="in-progress"
+                      >
+                        In Progress
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-complete"
+                        value="complete"
+                      >
+                        Complete
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-not-started"
+                        value="not-started"
+                      >
+                        Not Started
+                      </option>
+                    </select>
+                  </div>
                   <div
                     class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                   >
@@ -1912,7 +2329,15 @@ exports[`Given there are surveys available in blaise should render the superviso
                             <th
                               class="ons-table__header"
                               scope="col"
-                            />
+                            >
+                              Status
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
+                            >
+                              Outcome
+                            </th>
                             <th
                               class="ons-table__header"
                               scope="col"
@@ -1935,6 +2360,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                               class="ons-table__cell status"
                             >
                               In Progress
+                            </td>
+                            <td
+                              class="ons-table__cell "
+                            >
+                              110
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1969,6 +2399,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                               Complete
                             </td>
                             <td
+                              class="ons-table__cell "
+                            >
+                              120
+                            </td>
+                            <td
                               class="ons-table__cell links"
                             >
                               <a
@@ -1999,6 +2434,11 @@ exports[`Given there are surveys available in blaise should render the superviso
                               class="ons-table__cell status"
                             >
                               Not Started
+                            </td>
+                            <td
+                              class="ons-table__cell "
+                            >
+                              130
                             </td>
                             <td
                               class="ons-table__cell links"
