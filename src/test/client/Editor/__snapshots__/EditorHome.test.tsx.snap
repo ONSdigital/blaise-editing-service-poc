@@ -320,12 +320,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               <th
                                 class="ons-table__header"
                                 scope="col"
-                              >
-                                Outcome
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
                               />
                             </tr>
                           </thead>
@@ -345,11 +339,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 class="ons-table__cell status"
                               >
                                 In Progress
-                              </td>
-                              <td
-                                class="ons-table__cell "
-                              >
-                                110
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -384,11 +373,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 Complete
                               </td>
                               <td
-                                class="ons-table__cell "
-                              >
-                                120
-                              </td>
-                              <td
                                 class="ons-table__cell links"
                               >
                                 <a
@@ -419,11 +403,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 class="ons-table__cell status"
                               >
                                 Not Started
-                              </td>
-                              <td
-                                class="ons-table__cell "
-                              >
-                                130
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -576,12 +555,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               <th
                                 class="ons-table__header"
                                 scope="col"
-                              >
-                                Outcome
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
                               />
                             </tr>
                           </thead>
@@ -601,11 +574,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 class="ons-table__cell status"
                               >
                                 In Progress
-                              </td>
-                              <td
-                                class="ons-table__cell "
-                              >
-                                110
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -640,11 +608,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 Complete
                               </td>
                               <td
-                                class="ons-table__cell "
-                              >
-                                120
-                              </td>
-                              <td
                                 class="ons-table__cell links"
                               >
                                 <a
@@ -675,11 +638,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 class="ons-table__cell status"
                               >
                                 Not Started
-                              </td>
-                              <td
-                                class="ons-table__cell "
-                              >
-                                130
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -832,12 +790,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               <th
                                 class="ons-table__header"
                                 scope="col"
-                              >
-                                Outcome
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
                               />
                             </tr>
                           </thead>
@@ -857,11 +809,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 class="ons-table__cell status"
                               >
                                 In Progress
-                              </td>
-                              <td
-                                class="ons-table__cell "
-                              >
-                                110
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -896,11 +843,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 Complete
                               </td>
                               <td
-                                class="ons-table__cell "
-                              >
-                                120
-                              </td>
-                              <td
                                 class="ons-table__cell links"
                               >
                                 <a
@@ -931,11 +873,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 class="ons-table__cell status"
                               >
                                 Not Started
-                              </td>
-                              <td
-                                class="ons-table__cell "
-                              >
-                                130
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -1155,12 +1092,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               <th
                                 class="ons-table__header"
                                 scope="col"
-                              >
-                                Outcome
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
                               />
                             </tr>
                           </thead>
@@ -1180,11 +1111,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 class="ons-table__cell status"
                               >
                                 In Progress
-                              </td>
-                              <td
-                                class="ons-table__cell "
-                              >
-                                110
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -1219,11 +1145,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 Complete
                               </td>
                               <td
-                                class="ons-table__cell "
-                              >
-                                120
-                              </td>
-                              <td
                                 class="ons-table__cell links"
                               >
                                 <a
@@ -1254,11 +1175,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 class="ons-table__cell status"
                               >
                                 Not Started
-                              </td>
-                              <td
-                                class="ons-table__cell "
-                              >
-                                130
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -1500,12 +1416,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             <th
                               class="ons-table__header"
                               scope="col"
-                            >
-                              Outcome
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
                             />
                           </tr>
                         </thead>
@@ -1525,11 +1435,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               class="ons-table__cell status"
                             >
                               In Progress
-                            </td>
-                            <td
-                              class="ons-table__cell "
-                            >
-                              110
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1564,11 +1469,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               Complete
                             </td>
                             <td
-                              class="ons-table__cell "
-                            >
-                              120
-                            </td>
-                            <td
                               class="ons-table__cell links"
                             >
                               <a
@@ -1599,11 +1499,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               class="ons-table__cell status"
                             >
                               Not Started
-                            </td>
-                            <td
-                              class="ons-table__cell "
-                            >
-                              130
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1756,12 +1651,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             <th
                               class="ons-table__header"
                               scope="col"
-                            >
-                              Outcome
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
                             />
                           </tr>
                         </thead>
@@ -1781,11 +1670,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               class="ons-table__cell status"
                             >
                               In Progress
-                            </td>
-                            <td
-                              class="ons-table__cell "
-                            >
-                              110
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1820,11 +1704,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               Complete
                             </td>
                             <td
-                              class="ons-table__cell "
-                            >
-                              120
-                            </td>
-                            <td
                               class="ons-table__cell links"
                             >
                               <a
@@ -1855,11 +1734,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               class="ons-table__cell status"
                             >
                               Not Started
-                            </td>
-                            <td
-                              class="ons-table__cell "
-                            >
-                              130
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -2012,12 +1886,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             <th
                               class="ons-table__header"
                               scope="col"
-                            >
-                              Outcome
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
                             />
                           </tr>
                         </thead>
@@ -2037,11 +1905,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               class="ons-table__cell status"
                             >
                               In Progress
-                            </td>
-                            <td
-                              class="ons-table__cell "
-                            >
-                              110
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -2076,11 +1939,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               Complete
                             </td>
                             <td
-                              class="ons-table__cell "
-                            >
-                              120
-                            </td>
-                            <td
                               class="ons-table__cell links"
                             >
                               <a
@@ -2111,11 +1969,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               class="ons-table__cell status"
                             >
                               Not Started
-                            </td>
-                            <td
-                              class="ons-table__cell "
-                            >
-                              130
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -2335,12 +2188,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             <th
                               class="ons-table__header"
                               scope="col"
-                            >
-                              Outcome
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
                             />
                           </tr>
                         </thead>
@@ -2360,11 +2207,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               class="ons-table__cell status"
                             >
                               In Progress
-                            </td>
-                            <td
-                              class="ons-table__cell "
-                            >
-                              110
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -2399,11 +2241,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               Complete
                             </td>
                             <td
-                              class="ons-table__cell "
-                            >
-                              120
-                            </td>
-                            <td
                               class="ons-table__cell links"
                             >
                               <a
@@ -2434,11 +2271,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               class="ons-table__cell status"
                             >
                               Not Started
-                            </td>
-                            <td
-                              class="ons-table__cell "
-                            >
-                              130
                             </td>
                             <td
                               class="ons-table__cell links"
