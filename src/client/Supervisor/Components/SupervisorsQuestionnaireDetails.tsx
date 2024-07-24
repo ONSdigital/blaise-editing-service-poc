@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
-import { ONSPanel } from 'blaise-design-system-react-components';
+import { ONSPanel, ONSTable } from 'blaise-design-system-react-components';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 
 interface SupervisorsQuestionnairesDetailsProps {
@@ -9,11 +9,12 @@ interface SupervisorsQuestionnairesDetailsProps {
 
 export default function SupervisorsQuestionnaireDetails({ questionnaire }: SupervisorsQuestionnairesDetailsProps): ReactElement {
   return (
-    <ONSPanel status="info">
+    <>
       <dl
-        className="ons-description-list ons-description-list__items ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-        title="Information about this business and its survey requirements"
-        aria-label="Information about this business and its survey requirements"
+        className="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+        title="Questionnares"
+        data-testid="QuestionnaireList"
+        style={{ padding: '0 0 15px 5px' }}
       >
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Field period:</dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>{questionnaire.fieldPeriod}</strong></dd>
@@ -22,64 +23,77 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases allocated:</dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>30</strong></dd>
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases not allocated:</dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
-          <strong>970</strong>
-          {' '}
-          <Link className="allocate" to="/allocate">(Allocate)</Link>
-        </dd>
-
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m" style={{ margin: '50px 0 0 0' }}>
-          <Link className="allocate" to="/">Doctor Doom:</Link>
-        </dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m" style={{ margin: '50px 0 0 0' }}>
-          <strong>10</strong>
-          {' '}
-          case(s) allocated
-        </dd>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
-          <strong>5</strong>
-          {' '}
-          case(s) not started
-        </dd>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
-          <strong>2</strong>
-          {' '}
-          case(s) in progress
-        </dd>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
-          <strong>2</strong>
-          {' '}
-          case(s) completed
-        </dd>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
-          <strong>1</strong>
-          {' '}
-          case(s) with queries
-        </dd>
-
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m"><Link className="allocate" to="/">Captain Fantastic:</Link></dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
-          <strong>5</strong>
-          {' '}
-          case(s) allocated
-        </dd>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
-          <strong>4</strong>
-          {' '}
-          case(s) not started
-        </dd>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">
-          <strong>1</strong>
-          {' '}
-          case(s) in progress
-        </dd>
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m" style={{ margin: '0 0 30px 0' }}><Link className="allocate" to="/">The Thing:</Link></dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m" style={{ margin: '0 0 30px 0' }}>
-          <strong>0</strong>
-          {' '}
-          case(s) allocated
-        </dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>970</strong></dd>
       </dl>
-    </ONSPanel>
+
+      <ONSPanel status="info">
+        <ONSTable
+          columns={[
+            'Editor',
+            'Allocated',
+            'Completed',
+            '',
+          ]}
+        >
+          <>
+            <tr
+              className="ons-table__row"
+              data-testid="questionnaire-table-row"
+            >
+              <td className="ons-table__cell">
+                <Link className="allocate" to="/">Doctor Doom:</Link>
+              </td>
+              <td className="ons-table__cell status">
+                10
+              </td>
+              <td className="ons-table__cell ">
+                5
+              </td>
+              <td className="ons-table__cell links">
+                <Link className="Edit" to="/allocate">Allocate</Link>
+                {' | '}
+                <Link className="Edit" to="/reallocate">Reallocate</Link>
+              </td>
+            </tr>
+            <tr
+              className="ons-table__row"
+              data-testid="questionnaire-table-row"
+            >
+              <td className="ons-table__cell">
+                <Link className="allocate" to="/">Captain Fantastic:</Link>
+              </td>
+              <td className="ons-table__cell status">
+                5
+              </td>
+              <td className="ons-table__cell ">
+                5
+              </td>
+              <td className="ons-table__cell links">
+                <Link className="Edit" to="/allocate">Allocate</Link>
+                {' | '}
+                <Link className="Edit" to="/reallocate">Reallocate</Link>
+              </td>
+            </tr>
+            <tr
+              className="ons-table__row"
+              data-testid="questionnaire-table-row"
+            >
+              <td className="ons-table__cell">
+                <Link className="allocate" to="/">The thing:</Link>
+              </td>
+              <td className="ons-table__cell status">
+                0
+              </td>
+              <td className="ons-table__cell " />
+              <td className="ons-table__cell links">
+                <Link className="Edit" to="/allocate">Allocate</Link>
+                {' | '}
+                <Link className="Edit" to="/reallocate">Reallocate</Link>
+              </td>
+            </tr>
+          </>
+        </ONSTable>
+      </ONSPanel>
+    </>
   );
 }
