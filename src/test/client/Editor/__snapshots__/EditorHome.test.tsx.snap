@@ -345,7 +345,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <a
                                   class="Edit"
-                                  href="/"
+                                  href="/summary"
                                 >
                                   Summary
                                 </a>
@@ -580,7 +580,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <a
                                   class="Edit"
-                                  href="/"
+                                  href="/summary"
                                 >
                                   Summary
                                 </a>
@@ -815,7 +815,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <a
                                   class="Edit"
-                                  href="/"
+                                  href="/summary"
                                 >
                                   Summary
                                 </a>
@@ -1117,7 +1117,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <a
                                   class="Edit"
-                                  href="/"
+                                  href="/summary"
                                 >
                                   Summary
                                 </a>
@@ -1441,7 +1441,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <a
                                 class="Edit"
-                                href="/"
+                                href="/summary"
                               >
                                 Summary
                               </a>
@@ -1676,7 +1676,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <a
                                 class="Edit"
-                                href="/"
+                                href="/summary"
                               >
                                 Summary
                               </a>
@@ -1911,7 +1911,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <a
                                 class="Edit"
-                                href="/"
+                                href="/summary"
                               >
                                 Summary
                               </a>
@@ -2213,7 +2213,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <a
                                 class="Edit"
-                                href="/"
+                                href="/summary"
                               >
                                 Summary
                               </a>
