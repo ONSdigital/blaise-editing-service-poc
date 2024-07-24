@@ -53,9 +53,6 @@ width: 40% !important;
   flex: 2 !important;
 }
 
-.ons-table__cell.status {
-  text-align: center;
-}
 
 .ons-table__cell.links {
   text-align: right;

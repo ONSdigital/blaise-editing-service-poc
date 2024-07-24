@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
-import { ONSPanel, ONSTable } from 'blaise-design-system-react-components';
+import { ONSPanel, ONSSelect, ONSTable } from 'blaise-design-system-react-components';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 
 interface EditorsQuestionnairesDetailsProps {
@@ -16,14 +16,37 @@ export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQ
         data-testid="QuestionnaireList"
         style={{ padding: '0 0 15px 5px' }}
       >
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Field period:</dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>{questionnaire.fieldPeriod}</strong></dd>
+        Total cases:
+        {' '}
+        {questionnaire.numberOfCases}
       </dl>
+      <ONSSelect
+        defaultValue="in-progress"
+        id="filter-cases"
+        label="Filter cases"
+        onChange={() => {}}
+        options={[
+          {
+            label: 'In Progress',
+            value: 'in-progress',
+          },
+          {
+            label: 'Complete',
+            value: 'complete',
+          },
+          {
+            label: 'Not Started',
+            value: 'not-started',
+          },
+        ]}
+        value=""
+      />
       <ONSPanel status="info">
         <ONSTable
           columns={[
             'Case ID',
-            '',
+            'Status',
+            'Outcome',
             '',
           ]}
         >
@@ -37,6 +60,9 @@ export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQ
               </td>
               <td className="ons-table__cell status">
                 In Progress
+              </td>
+              <td className="ons-table__cell ">
+                110
               </td>
               <td className="ons-table__cell links">
                 <Link className="Edit" to="/">Summary</Link>
@@ -55,6 +81,9 @@ export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQ
               <td className="ons-table__cell status">
                 Complete
               </td>
+              <td className="ons-table__cell ">
+                120
+              </td>
               <td className="ons-table__cell links">
                 <Link className="Edit" to="/">Summary</Link>
                 {' | '}
@@ -71,6 +100,9 @@ export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQ
               </td>
               <td className="ons-table__cell status">
                 Not Started
+              </td>
+              <td className="ons-table__cell ">
+                130
               </td>
               <td className="ons-table__cell links">
                 <Link className="Edit" to="/">Summary</Link>
