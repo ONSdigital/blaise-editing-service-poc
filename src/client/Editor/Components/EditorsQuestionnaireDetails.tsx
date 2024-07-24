@@ -46,7 +46,6 @@ export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQ
           columns={[
             'Case ID',
             'Status',
-            'Outcome',
             '',
           ]}
         >
@@ -61,11 +60,8 @@ export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQ
               <td className="ons-table__cell status">
                 In Progress
               </td>
-              <td className="ons-table__cell ">
-                110
-              </td>
               <td className="ons-table__cell links">
-                <Link className="Edit" to="/">Summary</Link>
+                <Link className="Edit" to="/summary">Summary</Link>
                 {' | '}
                 <Link className="Edit" to="/">Edit</Link>
               </td>
@@ -80,9 +76,6 @@ export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQ
               </td>
               <td className="ons-table__cell status">
                 Complete
-              </td>
-              <td className="ons-table__cell ">
-                120
               </td>
               <td className="ons-table__cell links">
                 <Link className="Edit" to="/">Summary</Link>
@@ -100,9 +93,6 @@ export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQ
               </td>
               <td className="ons-table__cell status">
                 Not Started
-              </td>
-              <td className="ons-table__cell ">
-                130
               </td>
               <td className="ons-table__cell links">
                 <Link className="Edit" to="/">Summary</Link>
