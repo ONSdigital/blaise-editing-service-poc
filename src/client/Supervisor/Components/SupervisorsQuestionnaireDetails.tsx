@@ -9,7 +9,7 @@ interface SupervisorsQuestionnairesDetailsProps {
 
 export default function SupervisorsQuestionnaireDetails({ questionnaire }: SupervisorsQuestionnairesDetailsProps): ReactElement {
   return (
-    <>
+    <div className="questionnaire">
       <dl
         className="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
         title="Questionnares"
@@ -93,7 +93,12 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
               <td className="ons-table__cell status">
                 0
               </td>
-              <td className="ons-table__cell " />
+              <td className="ons-table__cell ">
+                0
+              </td>
+              <td className="ons-table__cell ">
+                0
+              </td>
               <td className="ons-table__cell links">
                 <Link to="/allocate">Allocate</Link>
                 {' | '}
@@ -103,6 +108,6 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
           </>
         </ONSTable>
       </ONSPanel>
-    </>
+    </div>
   );
 }

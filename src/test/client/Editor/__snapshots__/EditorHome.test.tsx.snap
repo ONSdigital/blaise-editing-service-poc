@@ -240,6 +240,1123 @@ exports[`Given there are surveys available in blaise should render the editor pa
                     data-testid="questionnaire-accordion-0-content"
                     id="questionnaire-accordion-0-content"
                   >
+                    <div
+                      class="questionnaire"
+                    >
+                      <dl
+                        class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                        data-testid="QuestionnaireList"
+                        style="padding: 0px 0px 15px 5px;"
+                        title="Questionnares"
+                      >
+                        Total cases:
+                         
+                        3
+                      </dl>
+                      <div>
+                        <label
+                          class="ons-label"
+                          for="filter-cases"
+                        >
+                          Filter cases
+                           
+                        </label>
+                        <select
+                          class="ons-input "
+                          id="filter-cases"
+                          name="select"
+                        >
+                          <option
+                            data-testid="select-filter-cases"
+                            disabled=""
+                            value=""
+                          >
+                            Select an option
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-in-progress"
+                            selected=""
+                            value="in-progress"
+                          >
+                            In Progress
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-complete"
+                            value="complete"
+                          >
+                            Complete
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-not-started"
+                            value="not-started"
+                          >
+                            Not Started
+                          </option>
+                        </select>
+                      </div>
+                      <div
+                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                      >
+                        <div
+                          class="ons-panel__body "
+                        >
+                          <table
+                            class="ons-table"
+                          >
+                            <thead
+                              class="ons-table__head"
+                            >
+                              <tr
+                                class="ons-table__row"
+                              >
+                                <th
+                                  class="ons-table__header"
+                                  scope="col"
+                                >
+                                  Case ID
+                                </th>
+                                <th
+                                  class="ons-table__header"
+                                  scope="col"
+                                >
+                                  Status
+                                </th>
+                                <th
+                                  class="ons-table__header"
+                                  scope="col"
+                                />
+                              </tr>
+                            </thead>
+                            <tbody
+                              class="ons-table__body"
+                            >
+                              <tr
+                                class="ons-table__row"
+                                data-testid="questionnaire-table-row"
+                              >
+                                <td
+                                  class="ons-table__cell"
+                                >
+                                  10001011
+                                </td>
+                                <td
+                                  class="ons-table__cell status"
+                                >
+                                  In Progress
+                                </td>
+                                <td
+                                  class="ons-table__cell links"
+                                >
+                                  <a
+                                    class="Edit"
+                                    href="/summary"
+                                  >
+                                    Summary
+                                  </a>
+                                   | 
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Edit
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr
+                                class="ons-table__row"
+                                data-testid="questionnaire-table-row2"
+                              >
+                                <td
+                                  class="ons-table__cell"
+                                >
+                                  10001012
+                                </td>
+                                <td
+                                  class="ons-table__cell status"
+                                >
+                                  Complete
+                                </td>
+                                <td
+                                  class="ons-table__cell links"
+                                >
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Summary
+                                  </a>
+                                   | 
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Edit
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr
+                                class="ons-table__row"
+                                data-testid="questionnaire-table-row3"
+                              >
+                                <td
+                                  class="ons-table__cell"
+                                >
+                                  10001013
+                                </td>
+                                <td
+                                  class="ons-table__cell status"
+                                >
+                                  Not Started
+                                </td>
+                                <td
+                                  class="ons-table__cell links"
+                                >
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Summary
+                                  </a>
+                                   | 
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Edit
+                                  </a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+                <details
+                  class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                  data-btn-close="Hide"
+                  data-group="accordion"
+                  id="questionnaire-accordion-1"
+                >
+                  <summary
+                    aria-controls="questionnaire-accordion-1"
+                    aria-expanded="false"
+                    class="ons-collapsible__heading ons-js-collapsible-heading"
+                    data-ga-action="Open panel"
+                    data-testid="questionnaire-accordion-1-heading"
+                    role="link"
+                    tabindex="0"
+                  >
+                    <div
+                      class="ons-collapsible__controls"
+                    >
+                      <h2
+                        class="ons-collapsible__title"
+                      >
+                        LMS2101_AB1
+                      </h2>
+                      <span
+                        class="ons-collapsible__icon"
+                      >
+                        <svg
+                          class="ons-svg-icon"
+                          focusable="false"
+                          viewBox="0 0 7.5 12.85"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                            transform="translate(-5.02 -1.59)"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </summary>
+                  <div
+                    aria-hidden="true"
+                    class="ons-collapsible__content ons-js-collapsible-content"
+                    data-testid="questionnaire-accordion-1-content"
+                    id="questionnaire-accordion-1-content"
+                  >
+                    <div
+                      class="questionnaire"
+                    >
+                      <dl
+                        class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                        data-testid="QuestionnaireList"
+                        style="padding: 0px 0px 15px 5px;"
+                        title="Questionnares"
+                      >
+                        Total cases:
+                         
+                        1
+                      </dl>
+                      <div>
+                        <label
+                          class="ons-label"
+                          for="filter-cases"
+                        >
+                          Filter cases
+                           
+                        </label>
+                        <select
+                          class="ons-input "
+                          id="filter-cases"
+                          name="select"
+                        >
+                          <option
+                            data-testid="select-filter-cases"
+                            disabled=""
+                            value=""
+                          >
+                            Select an option
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-in-progress"
+                            selected=""
+                            value="in-progress"
+                          >
+                            In Progress
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-complete"
+                            value="complete"
+                          >
+                            Complete
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-not-started"
+                            value="not-started"
+                          >
+                            Not Started
+                          </option>
+                        </select>
+                      </div>
+                      <div
+                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                      >
+                        <div
+                          class="ons-panel__body "
+                        >
+                          <table
+                            class="ons-table"
+                          >
+                            <thead
+                              class="ons-table__head"
+                            >
+                              <tr
+                                class="ons-table__row"
+                              >
+                                <th
+                                  class="ons-table__header"
+                                  scope="col"
+                                >
+                                  Case ID
+                                </th>
+                                <th
+                                  class="ons-table__header"
+                                  scope="col"
+                                >
+                                  Status
+                                </th>
+                                <th
+                                  class="ons-table__header"
+                                  scope="col"
+                                />
+                              </tr>
+                            </thead>
+                            <tbody
+                              class="ons-table__body"
+                            >
+                              <tr
+                                class="ons-table__row"
+                                data-testid="questionnaire-table-row"
+                              >
+                                <td
+                                  class="ons-table__cell"
+                                >
+                                  10001011
+                                </td>
+                                <td
+                                  class="ons-table__cell status"
+                                >
+                                  In Progress
+                                </td>
+                                <td
+                                  class="ons-table__cell links"
+                                >
+                                  <a
+                                    class="Edit"
+                                    href="/summary"
+                                  >
+                                    Summary
+                                  </a>
+                                   | 
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Edit
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr
+                                class="ons-table__row"
+                                data-testid="questionnaire-table-row2"
+                              >
+                                <td
+                                  class="ons-table__cell"
+                                >
+                                  10001012
+                                </td>
+                                <td
+                                  class="ons-table__cell status"
+                                >
+                                  Complete
+                                </td>
+                                <td
+                                  class="ons-table__cell links"
+                                >
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Summary
+                                  </a>
+                                   | 
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Edit
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr
+                                class="ons-table__row"
+                                data-testid="questionnaire-table-row3"
+                              >
+                                <td
+                                  class="ons-table__cell"
+                                >
+                                  10001013
+                                </td>
+                                <td
+                                  class="ons-table__cell status"
+                                >
+                                  Not Started
+                                </td>
+                                <td
+                                  class="ons-table__cell links"
+                                >
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Summary
+                                  </a>
+                                   | 
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Edit
+                                  </a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+                <details
+                  class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                  data-btn-close="Hide"
+                  data-group="accordion"
+                  id="questionnaire-accordion-2"
+                >
+                  <summary
+                    aria-controls="questionnaire-accordion-2"
+                    aria-expanded="false"
+                    class="ons-collapsible__heading ons-js-collapsible-heading"
+                    data-ga-action="Open panel"
+                    data-testid="questionnaire-accordion-2-heading"
+                    role="link"
+                    tabindex="0"
+                  >
+                    <div
+                      class="ons-collapsible__controls"
+                    >
+                      <h2
+                        class="ons-collapsible__title"
+                      >
+                        LMS2101_AC1
+                      </h2>
+                      <span
+                        class="ons-collapsible__icon"
+                      >
+                        <svg
+                          class="ons-svg-icon"
+                          focusable="false"
+                          viewBox="0 0 7.5 12.85"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                            transform="translate(-5.02 -1.59)"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </summary>
+                  <div
+                    aria-hidden="true"
+                    class="ons-collapsible__content ons-js-collapsible-content"
+                    data-testid="questionnaire-accordion-2-content"
+                    id="questionnaire-accordion-2-content"
+                  >
+                    <div
+                      class="questionnaire"
+                    >
+                      <dl
+                        class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                        data-testid="QuestionnaireList"
+                        style="padding: 0px 0px 15px 5px;"
+                        title="Questionnares"
+                      >
+                        Total cases:
+                         
+                        0
+                      </dl>
+                      <div>
+                        <label
+                          class="ons-label"
+                          for="filter-cases"
+                        >
+                          Filter cases
+                           
+                        </label>
+                        <select
+                          class="ons-input "
+                          id="filter-cases"
+                          name="select"
+                        >
+                          <option
+                            data-testid="select-filter-cases"
+                            disabled=""
+                            value=""
+                          >
+                            Select an option
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-in-progress"
+                            selected=""
+                            value="in-progress"
+                          >
+                            In Progress
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-complete"
+                            value="complete"
+                          >
+                            Complete
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-not-started"
+                            value="not-started"
+                          >
+                            Not Started
+                          </option>
+                        </select>
+                      </div>
+                      <div
+                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                      >
+                        <div
+                          class="ons-panel__body "
+                        >
+                          <table
+                            class="ons-table"
+                          >
+                            <thead
+                              class="ons-table__head"
+                            >
+                              <tr
+                                class="ons-table__row"
+                              >
+                                <th
+                                  class="ons-table__header"
+                                  scope="col"
+                                >
+                                  Case ID
+                                </th>
+                                <th
+                                  class="ons-table__header"
+                                  scope="col"
+                                >
+                                  Status
+                                </th>
+                                <th
+                                  class="ons-table__header"
+                                  scope="col"
+                                />
+                              </tr>
+                            </thead>
+                            <tbody
+                              class="ons-table__body"
+                            >
+                              <tr
+                                class="ons-table__row"
+                                data-testid="questionnaire-table-row"
+                              >
+                                <td
+                                  class="ons-table__cell"
+                                >
+                                  10001011
+                                </td>
+                                <td
+                                  class="ons-table__cell status"
+                                >
+                                  In Progress
+                                </td>
+                                <td
+                                  class="ons-table__cell links"
+                                >
+                                  <a
+                                    class="Edit"
+                                    href="/summary"
+                                  >
+                                    Summary
+                                  </a>
+                                   | 
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Edit
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr
+                                class="ons-table__row"
+                                data-testid="questionnaire-table-row2"
+                              >
+                                <td
+                                  class="ons-table__cell"
+                                >
+                                  10001012
+                                </td>
+                                <td
+                                  class="ons-table__cell status"
+                                >
+                                  Complete
+                                </td>
+                                <td
+                                  class="ons-table__cell links"
+                                >
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Summary
+                                  </a>
+                                   | 
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Edit
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr
+                                class="ons-table__row"
+                                data-testid="questionnaire-table-row3"
+                              >
+                                <td
+                                  class="ons-table__cell"
+                                >
+                                  10001013
+                                </td>
+                                <td
+                                  class="ons-table__cell status"
+                                >
+                                  Not Started
+                                </td>
+                                <td
+                                  class="ons-table__cell links"
+                                >
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Summary
+                                  </a>
+                                   | 
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Edit
+                                  </a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </details>
+          <details
+            class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+            data-btn-close="Hide"
+            data-group="accordion"
+            id="survey-accordion-1"
+            open=""
+          >
+            <summary
+              aria-controls="survey-accordion-1"
+              aria-expanded="true"
+              class="ons-collapsible__heading ons-js-collapsible-heading"
+              data-ga-action="Close panel"
+              data-testid="survey-accordion-1-heading"
+              role="link"
+              tabindex="0"
+            >
+              <div
+                class="ons-collapsible__controls"
+              >
+                <h2
+                  class="ons-collapsible__title"
+                >
+                  OPN
+                </h2>
+                <span
+                  class="ons-collapsible__icon"
+                >
+                  <svg
+                    class="ons-svg-icon"
+                    focusable="false"
+                    viewBox="0 0 7.5 12.85"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                      transform="translate(-5.02 -1.59)"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </summary>
+            <div
+              aria-hidden="false"
+              class="ons-collapsible__content ons-js-collapsible-content"
+              data-testid="survey-accordion-1-content"
+              id="survey-accordion-1-content"
+            >
+              <br />
+              <div
+                class="ons-accordion"
+                id="questionnaire-accordion"
+              >
+                <button
+                  class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
+                  data-close-all="Hide all"
+                  data-group="accordion"
+                  data-testid="questionnaire-accordion-show-all"
+                  type="button"
+                >
+                  <span
+                    class="ons-btn__inner ons-js-collapsible-all-inner"
+                  >
+                    Show all
+                  </span>
+                </button>
+                <details
+                  class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                  data-btn-close="Hide"
+                  data-group="accordion"
+                  id="questionnaire-accordion-0"
+                >
+                  <summary
+                    aria-controls="questionnaire-accordion-0"
+                    aria-expanded="false"
+                    class="ons-collapsible__heading ons-js-collapsible-heading"
+                    data-ga-action="Open panel"
+                    data-testid="questionnaire-accordion-0-heading"
+                    role="link"
+                    tabindex="0"
+                  >
+                    <div
+                      class="ons-collapsible__controls"
+                    >
+                      <h2
+                        class="ons-collapsible__title"
+                      >
+                        OPN2201A
+                      </h2>
+                      <span
+                        class="ons-collapsible__icon"
+                      >
+                        <svg
+                          class="ons-svg-icon"
+                          focusable="false"
+                          viewBox="0 0 7.5 12.85"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                            transform="translate(-5.02 -1.59)"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </summary>
+                  <div
+                    aria-hidden="true"
+                    class="ons-collapsible__content ons-js-collapsible-content"
+                    data-testid="questionnaire-accordion-0-content"
+                    id="questionnaire-accordion-0-content"
+                  >
+                    <div
+                      class="questionnaire"
+                    >
+                      <dl
+                        class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                        data-testid="QuestionnaireList"
+                        style="padding: 0px 0px 15px 5px;"
+                        title="Questionnares"
+                      >
+                        Total cases:
+                         
+                        3
+                      </dl>
+                      <div>
+                        <label
+                          class="ons-label"
+                          for="filter-cases"
+                        >
+                          Filter cases
+                           
+                        </label>
+                        <select
+                          class="ons-input "
+                          id="filter-cases"
+                          name="select"
+                        >
+                          <option
+                            data-testid="select-filter-cases"
+                            disabled=""
+                            value=""
+                          >
+                            Select an option
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-in-progress"
+                            selected=""
+                            value="in-progress"
+                          >
+                            In Progress
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-complete"
+                            value="complete"
+                          >
+                            Complete
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-not-started"
+                            value="not-started"
+                          >
+                            Not Started
+                          </option>
+                        </select>
+                      </div>
+                      <div
+                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                      >
+                        <div
+                          class="ons-panel__body "
+                        >
+                          <table
+                            class="ons-table"
+                          >
+                            <thead
+                              class="ons-table__head"
+                            >
+                              <tr
+                                class="ons-table__row"
+                              >
+                                <th
+                                  class="ons-table__header"
+                                  scope="col"
+                                >
+                                  Case ID
+                                </th>
+                                <th
+                                  class="ons-table__header"
+                                  scope="col"
+                                >
+                                  Status
+                                </th>
+                                <th
+                                  class="ons-table__header"
+                                  scope="col"
+                                />
+                              </tr>
+                            </thead>
+                            <tbody
+                              class="ons-table__body"
+                            >
+                              <tr
+                                class="ons-table__row"
+                                data-testid="questionnaire-table-row"
+                              >
+                                <td
+                                  class="ons-table__cell"
+                                >
+                                  10001011
+                                </td>
+                                <td
+                                  class="ons-table__cell status"
+                                >
+                                  In Progress
+                                </td>
+                                <td
+                                  class="ons-table__cell links"
+                                >
+                                  <a
+                                    class="Edit"
+                                    href="/summary"
+                                  >
+                                    Summary
+                                  </a>
+                                   | 
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Edit
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr
+                                class="ons-table__row"
+                                data-testid="questionnaire-table-row2"
+                              >
+                                <td
+                                  class="ons-table__cell"
+                                >
+                                  10001012
+                                </td>
+                                <td
+                                  class="ons-table__cell status"
+                                >
+                                  Complete
+                                </td>
+                                <td
+                                  class="ons-table__cell links"
+                                >
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Summary
+                                  </a>
+                                   | 
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Edit
+                                  </a>
+                                </td>
+                              </tr>
+                              <tr
+                                class="ons-table__row"
+                                data-testid="questionnaire-table-row3"
+                              >
+                                <td
+                                  class="ons-table__cell"
+                                >
+                                  10001013
+                                </td>
+                                <td
+                                  class="ons-table__cell status"
+                                >
+                                  Not Started
+                                </td>
+                                <td
+                                  class="ons-table__cell links"
+                                >
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Summary
+                                  </a>
+                                   | 
+                                  <a
+                                    class="Edit"
+                                    href="/"
+                                  >
+                                    Edit
+                                  </a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+    >
+      <div
+        class="ons-panel__body "
+      >
+        Welcome to the editing service.
+      </div>
+    </div>
+    <div
+      data-testid="Surveys"
+    >
+      <br />
+      <div
+        class="ons-accordion"
+        id="survey-accordion"
+      >
+        <details
+          class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+          data-btn-close="Hide"
+          data-group="accordion"
+          id="survey-accordion-0"
+          open=""
+        >
+          <summary
+            aria-controls="survey-accordion-0"
+            aria-expanded="true"
+            class="ons-collapsible__heading ons-js-collapsible-heading"
+            data-ga-action="Close panel"
+            data-testid="survey-accordion-0-heading"
+            role="link"
+            tabindex="0"
+          >
+            <div
+              class="ons-collapsible__controls"
+            >
+              <h2
+                class="ons-collapsible__title"
+              >
+                LMS
+              </h2>
+              <span
+                class="ons-collapsible__icon"
+              >
+                <svg
+                  class="ons-svg-icon"
+                  focusable="false"
+                  viewBox="0 0 7.5 12.85"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                    transform="translate(-5.02 -1.59)"
+                  />
+                </svg>
+              </span>
+            </div>
+          </summary>
+          <div
+            aria-hidden="false"
+            class="ons-collapsible__content ons-js-collapsible-content"
+            data-testid="survey-accordion-0-content"
+            id="survey-accordion-0-content"
+          >
+            <br />
+            <div
+              class="ons-accordion"
+              id="questionnaire-accordion"
+            >
+              <button
+                class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
+                data-close-all="Hide all"
+                data-group="accordion"
+                data-testid="questionnaire-accordion-show-all"
+                type="button"
+              >
+                <span
+                  class="ons-btn__inner ons-js-collapsible-all-inner"
+                >
+                  Show all
+                </span>
+              </button>
+              <details
+                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                data-btn-close="Hide"
+                data-group="accordion"
+                id="questionnaire-accordion-0"
+              >
+                <summary
+                  aria-controls="questionnaire-accordion-0"
+                  aria-expanded="false"
+                  class="ons-collapsible__heading ons-js-collapsible-heading"
+                  data-ga-action="Open panel"
+                  data-testid="questionnaire-accordion-0-heading"
+                  role="link"
+                  tabindex="0"
+                >
+                  <div
+                    class="ons-collapsible__controls"
+                  >
+                    <h2
+                      class="ons-collapsible__title"
+                    >
+                      LMS2101_AA1
+                    </h2>
+                    <span
+                      class="ons-collapsible__icon"
+                    >
+                      <svg
+                        class="ons-svg-icon"
+                        focusable="false"
+                        viewBox="0 0 7.5 12.85"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                          transform="translate(-5.02 -1.59)"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </summary>
+                <div
+                  aria-hidden="true"
+                  class="ons-collapsible__content ons-js-collapsible-content"
+                  data-testid="questionnaire-accordion-0-content"
+                  id="questionnaire-accordion-0-content"
+                >
+                  <div
+                    class="questionnaire"
+                  >
                     <dl
                       class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
                       data-testid="QuestionnaireList"
@@ -428,52 +1545,56 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       </div>
                     </div>
                   </div>
-                </details>
-                <details
-                  class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                  data-btn-close="Hide"
-                  data-group="accordion"
-                  id="questionnaire-accordion-1"
+                </div>
+              </details>
+              <details
+                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                data-btn-close="Hide"
+                data-group="accordion"
+                id="questionnaire-accordion-1"
+              >
+                <summary
+                  aria-controls="questionnaire-accordion-1"
+                  aria-expanded="false"
+                  class="ons-collapsible__heading ons-js-collapsible-heading"
+                  data-ga-action="Open panel"
+                  data-testid="questionnaire-accordion-1-heading"
+                  role="link"
+                  tabindex="0"
                 >
-                  <summary
-                    aria-controls="questionnaire-accordion-1"
-                    aria-expanded="false"
-                    class="ons-collapsible__heading ons-js-collapsible-heading"
-                    data-ga-action="Open panel"
-                    data-testid="questionnaire-accordion-1-heading"
-                    role="link"
-                    tabindex="0"
-                  >
-                    <div
-                      class="ons-collapsible__controls"
-                    >
-                      <h2
-                        class="ons-collapsible__title"
-                      >
-                        LMS2101_AB1
-                      </h2>
-                      <span
-                        class="ons-collapsible__icon"
-                      >
-                        <svg
-                          class="ons-svg-icon"
-                          focusable="false"
-                          viewBox="0 0 7.5 12.85"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                            transform="translate(-5.02 -1.59)"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </summary>
                   <div
-                    aria-hidden="true"
-                    class="ons-collapsible__content ons-js-collapsible-content"
-                    data-testid="questionnaire-accordion-1-content"
-                    id="questionnaire-accordion-1-content"
+                    class="ons-collapsible__controls"
+                  >
+                    <h2
+                      class="ons-collapsible__title"
+                    >
+                      LMS2101_AB1
+                    </h2>
+                    <span
+                      class="ons-collapsible__icon"
+                    >
+                      <svg
+                        class="ons-svg-icon"
+                        focusable="false"
+                        viewBox="0 0 7.5 12.85"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                          transform="translate(-5.02 -1.59)"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </summary>
+                <div
+                  aria-hidden="true"
+                  class="ons-collapsible__content ons-js-collapsible-content"
+                  data-testid="questionnaire-accordion-1-content"
+                  id="questionnaire-accordion-1-content"
+                >
+                  <div
+                    class="questionnaire"
                   >
                     <dl
                       class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
@@ -663,52 +1784,56 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       </div>
                     </div>
                   </div>
-                </details>
-                <details
-                  class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                  data-btn-close="Hide"
-                  data-group="accordion"
-                  id="questionnaire-accordion-2"
+                </div>
+              </details>
+              <details
+                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                data-btn-close="Hide"
+                data-group="accordion"
+                id="questionnaire-accordion-2"
+              >
+                <summary
+                  aria-controls="questionnaire-accordion-2"
+                  aria-expanded="false"
+                  class="ons-collapsible__heading ons-js-collapsible-heading"
+                  data-ga-action="Open panel"
+                  data-testid="questionnaire-accordion-2-heading"
+                  role="link"
+                  tabindex="0"
                 >
-                  <summary
-                    aria-controls="questionnaire-accordion-2"
-                    aria-expanded="false"
-                    class="ons-collapsible__heading ons-js-collapsible-heading"
-                    data-ga-action="Open panel"
-                    data-testid="questionnaire-accordion-2-heading"
-                    role="link"
-                    tabindex="0"
-                  >
-                    <div
-                      class="ons-collapsible__controls"
-                    >
-                      <h2
-                        class="ons-collapsible__title"
-                      >
-                        LMS2101_AC1
-                      </h2>
-                      <span
-                        class="ons-collapsible__icon"
-                      >
-                        <svg
-                          class="ons-svg-icon"
-                          focusable="false"
-                          viewBox="0 0 7.5 12.85"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                            transform="translate(-5.02 -1.59)"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </summary>
                   <div
-                    aria-hidden="true"
-                    class="ons-collapsible__content ons-js-collapsible-content"
-                    data-testid="questionnaire-accordion-2-content"
-                    id="questionnaire-accordion-2-content"
+                    class="ons-collapsible__controls"
+                  >
+                    <h2
+                      class="ons-collapsible__title"
+                    >
+                      LMS2101_AC1
+                    </h2>
+                    <span
+                      class="ons-collapsible__icon"
+                    >
+                      <svg
+                        class="ons-svg-icon"
+                        focusable="false"
+                        viewBox="0 0 7.5 12.85"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                          transform="translate(-5.02 -1.59)"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </summary>
+                <div
+                  aria-hidden="true"
+                  class="ons-collapsible__content ons-js-collapsible-content"
+                  data-testid="questionnaire-accordion-2-content"
+                  id="questionnaire-accordion-2-content"
+                >
+                  <div
+                    class="questionnaire"
                   >
                     <dl
                       class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
@@ -898,120 +2023,124 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       </div>
                     </div>
                   </div>
-                </details>
-              </div>
+                </div>
+              </details>
             </div>
-          </details>
-          <details
-            class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-            data-btn-close="Hide"
-            data-group="accordion"
-            id="survey-accordion-1"
-            open=""
+          </div>
+        </details>
+        <details
+          class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+          data-btn-close="Hide"
+          data-group="accordion"
+          id="survey-accordion-1"
+          open=""
+        >
+          <summary
+            aria-controls="survey-accordion-1"
+            aria-expanded="true"
+            class="ons-collapsible__heading ons-js-collapsible-heading"
+            data-ga-action="Close panel"
+            data-testid="survey-accordion-1-heading"
+            role="link"
+            tabindex="0"
           >
-            <summary
-              aria-controls="survey-accordion-1"
-              aria-expanded="true"
-              class="ons-collapsible__heading ons-js-collapsible-heading"
-              data-ga-action="Close panel"
-              data-testid="survey-accordion-1-heading"
-              role="link"
-              tabindex="0"
-            >
-              <div
-                class="ons-collapsible__controls"
-              >
-                <h2
-                  class="ons-collapsible__title"
-                >
-                  OPN
-                </h2>
-                <span
-                  class="ons-collapsible__icon"
-                >
-                  <svg
-                    class="ons-svg-icon"
-                    focusable="false"
-                    viewBox="0 0 7.5 12.85"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                      transform="translate(-5.02 -1.59)"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </summary>
             <div
-              aria-hidden="false"
-              class="ons-collapsible__content ons-js-collapsible-content"
-              data-testid="survey-accordion-1-content"
-              id="survey-accordion-1-content"
+              class="ons-collapsible__controls"
             >
-              <br />
-              <div
-                class="ons-accordion"
-                id="questionnaire-accordion"
+              <h2
+                class="ons-collapsible__title"
               >
-                <button
-                  class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
-                  data-close-all="Hide all"
-                  data-group="accordion"
-                  data-testid="questionnaire-accordion-show-all"
-                  type="button"
+                OPN
+              </h2>
+              <span
+                class="ons-collapsible__icon"
+              >
+                <svg
+                  class="ons-svg-icon"
+                  focusable="false"
+                  viewBox="0 0 7.5 12.85"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <span
-                    class="ons-btn__inner ons-js-collapsible-all-inner"
-                  >
-                    Show all
-                  </span>
-                </button>
-                <details
-                  class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                  data-btn-close="Hide"
-                  data-group="accordion"
-                  id="questionnaire-accordion-0"
+                  <path
+                    d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                    transform="translate(-5.02 -1.59)"
+                  />
+                </svg>
+              </span>
+            </div>
+          </summary>
+          <div
+            aria-hidden="false"
+            class="ons-collapsible__content ons-js-collapsible-content"
+            data-testid="survey-accordion-1-content"
+            id="survey-accordion-1-content"
+          >
+            <br />
+            <div
+              class="ons-accordion"
+              id="questionnaire-accordion"
+            >
+              <button
+                class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
+                data-close-all="Hide all"
+                data-group="accordion"
+                data-testid="questionnaire-accordion-show-all"
+                type="button"
+              >
+                <span
+                  class="ons-btn__inner ons-js-collapsible-all-inner"
                 >
-                  <summary
-                    aria-controls="questionnaire-accordion-0"
-                    aria-expanded="false"
-                    class="ons-collapsible__heading ons-js-collapsible-heading"
-                    data-ga-action="Open panel"
-                    data-testid="questionnaire-accordion-0-heading"
-                    role="link"
-                    tabindex="0"
-                  >
-                    <div
-                      class="ons-collapsible__controls"
-                    >
-                      <h2
-                        class="ons-collapsible__title"
-                      >
-                        OPN2201A
-                      </h2>
-                      <span
-                        class="ons-collapsible__icon"
-                      >
-                        <svg
-                          class="ons-svg-icon"
-                          focusable="false"
-                          viewBox="0 0 7.5 12.85"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                            transform="translate(-5.02 -1.59)"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </summary>
+                  Show all
+                </span>
+              </button>
+              <details
+                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
+                data-btn-close="Hide"
+                data-group="accordion"
+                id="questionnaire-accordion-0"
+              >
+                <summary
+                  aria-controls="questionnaire-accordion-0"
+                  aria-expanded="false"
+                  class="ons-collapsible__heading ons-js-collapsible-heading"
+                  data-ga-action="Open panel"
+                  data-testid="questionnaire-accordion-0-heading"
+                  role="link"
+                  tabindex="0"
+                >
                   <div
-                    aria-hidden="true"
-                    class="ons-collapsible__content ons-js-collapsible-content"
-                    data-testid="questionnaire-accordion-0-content"
-                    id="questionnaire-accordion-0-content"
+                    class="ons-collapsible__controls"
+                  >
+                    <h2
+                      class="ons-collapsible__title"
+                    >
+                      OPN2201A
+                    </h2>
+                    <span
+                      class="ons-collapsible__icon"
+                    >
+                      <svg
+                        class="ons-svg-icon"
+                        focusable="false"
+                        viewBox="0 0 7.5 12.85"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
+                          transform="translate(-5.02 -1.59)"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </summary>
+                <div
+                  aria-hidden="true"
+                  class="ons-collapsible__content ons-js-collapsible-content"
+                  data-testid="questionnaire-accordion-0-content"
+                  id="questionnaire-accordion-0-content"
+                >
+                  <div
+                    class="questionnaire"
                   >
                     <dl
                       class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
@@ -1199,1103 +2328,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </tbody>
                         </table>
                       </div>
-                    </div>
-                  </div>
-                </details>
-              </div>
-            </div>
-          </details>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
-    >
-      <div
-        class="ons-panel__body "
-      >
-        Welcome to the editing service.
-      </div>
-    </div>
-    <div
-      data-testid="Surveys"
-    >
-      <br />
-      <div
-        class="ons-accordion"
-        id="survey-accordion"
-      >
-        <details
-          class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-          data-btn-close="Hide"
-          data-group="accordion"
-          id="survey-accordion-0"
-          open=""
-        >
-          <summary
-            aria-controls="survey-accordion-0"
-            aria-expanded="true"
-            class="ons-collapsible__heading ons-js-collapsible-heading"
-            data-ga-action="Close panel"
-            data-testid="survey-accordion-0-heading"
-            role="link"
-            tabindex="0"
-          >
-            <div
-              class="ons-collapsible__controls"
-            >
-              <h2
-                class="ons-collapsible__title"
-              >
-                LMS
-              </h2>
-              <span
-                class="ons-collapsible__icon"
-              >
-                <svg
-                  class="ons-svg-icon"
-                  focusable="false"
-                  viewBox="0 0 7.5 12.85"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                    transform="translate(-5.02 -1.59)"
-                  />
-                </svg>
-              </span>
-            </div>
-          </summary>
-          <div
-            aria-hidden="false"
-            class="ons-collapsible__content ons-js-collapsible-content"
-            data-testid="survey-accordion-0-content"
-            id="survey-accordion-0-content"
-          >
-            <br />
-            <div
-              class="ons-accordion"
-              id="questionnaire-accordion"
-            >
-              <button
-                class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
-                data-close-all="Hide all"
-                data-group="accordion"
-                data-testid="questionnaire-accordion-show-all"
-                type="button"
-              >
-                <span
-                  class="ons-btn__inner ons-js-collapsible-all-inner"
-                >
-                  Show all
-                </span>
-              </button>
-              <details
-                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                data-btn-close="Hide"
-                data-group="accordion"
-                id="questionnaire-accordion-0"
-              >
-                <summary
-                  aria-controls="questionnaire-accordion-0"
-                  aria-expanded="false"
-                  class="ons-collapsible__heading ons-js-collapsible-heading"
-                  data-ga-action="Open panel"
-                  data-testid="questionnaire-accordion-0-heading"
-                  role="link"
-                  tabindex="0"
-                >
-                  <div
-                    class="ons-collapsible__controls"
-                  >
-                    <h2
-                      class="ons-collapsible__title"
-                    >
-                      LMS2101_AA1
-                    </h2>
-                    <span
-                      class="ons-collapsible__icon"
-                    >
-                      <svg
-                        class="ons-svg-icon"
-                        focusable="false"
-                        viewBox="0 0 7.5 12.85"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                          transform="translate(-5.02 -1.59)"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </summary>
-                <div
-                  aria-hidden="true"
-                  class="ons-collapsible__content ons-js-collapsible-content"
-                  data-testid="questionnaire-accordion-0-content"
-                  id="questionnaire-accordion-0-content"
-                >
-                  <dl
-                    class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                    data-testid="QuestionnaireList"
-                    style="padding: 0px 0px 15px 5px;"
-                    title="Questionnares"
-                  >
-                    Total cases:
-                     
-                    3
-                  </dl>
-                  <div>
-                    <label
-                      class="ons-label"
-                      for="filter-cases"
-                    >
-                      Filter cases
-                       
-                    </label>
-                    <select
-                      class="ons-input "
-                      id="filter-cases"
-                      name="select"
-                    >
-                      <option
-                        data-testid="select-filter-cases"
-                        disabled=""
-                        value=""
-                      >
-                        Select an option
-                      </option>
-                      <option
-                        data-testid="option-filter-cases-in-progress"
-                        selected=""
-                        value="in-progress"
-                      >
-                        In Progress
-                      </option>
-                      <option
-                        data-testid="option-filter-cases-complete"
-                        value="complete"
-                      >
-                        Complete
-                      </option>
-                      <option
-                        data-testid="option-filter-cases-not-started"
-                        value="not-started"
-                      >
-                        Not Started
-                      </option>
-                    </select>
-                  </div>
-                  <div
-                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
-                  >
-                    <div
-                      class="ons-panel__body "
-                    >
-                      <table
-                        class="ons-table"
-                      >
-                        <thead
-                          class="ons-table__head"
-                        >
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Case ID
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Status
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            />
-                          </tr>
-                        </thead>
-                        <tbody
-                          class="ons-table__body"
-                        >
-                          <tr
-                            class="ons-table__row"
-                            data-testid="questionnaire-table-row"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              10001011
-                            </td>
-                            <td
-                              class="ons-table__cell status"
-                            >
-                              In Progress
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <a
-                                class="Edit"
-                                href="/summary"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                            data-testid="questionnaire-table-row2"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              10001012
-                            </td>
-                            <td
-                              class="ons-table__cell status"
-                            >
-                              Complete
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                            data-testid="questionnaire-table-row3"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              10001013
-                            </td>
-                            <td
-                              class="ons-table__cell status"
-                            >
-                              Not Started
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </details>
-              <details
-                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                data-btn-close="Hide"
-                data-group="accordion"
-                id="questionnaire-accordion-1"
-              >
-                <summary
-                  aria-controls="questionnaire-accordion-1"
-                  aria-expanded="false"
-                  class="ons-collapsible__heading ons-js-collapsible-heading"
-                  data-ga-action="Open panel"
-                  data-testid="questionnaire-accordion-1-heading"
-                  role="link"
-                  tabindex="0"
-                >
-                  <div
-                    class="ons-collapsible__controls"
-                  >
-                    <h2
-                      class="ons-collapsible__title"
-                    >
-                      LMS2101_AB1
-                    </h2>
-                    <span
-                      class="ons-collapsible__icon"
-                    >
-                      <svg
-                        class="ons-svg-icon"
-                        focusable="false"
-                        viewBox="0 0 7.5 12.85"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                          transform="translate(-5.02 -1.59)"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </summary>
-                <div
-                  aria-hidden="true"
-                  class="ons-collapsible__content ons-js-collapsible-content"
-                  data-testid="questionnaire-accordion-1-content"
-                  id="questionnaire-accordion-1-content"
-                >
-                  <dl
-                    class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                    data-testid="QuestionnaireList"
-                    style="padding: 0px 0px 15px 5px;"
-                    title="Questionnares"
-                  >
-                    Total cases:
-                     
-                    1
-                  </dl>
-                  <div>
-                    <label
-                      class="ons-label"
-                      for="filter-cases"
-                    >
-                      Filter cases
-                       
-                    </label>
-                    <select
-                      class="ons-input "
-                      id="filter-cases"
-                      name="select"
-                    >
-                      <option
-                        data-testid="select-filter-cases"
-                        disabled=""
-                        value=""
-                      >
-                        Select an option
-                      </option>
-                      <option
-                        data-testid="option-filter-cases-in-progress"
-                        selected=""
-                        value="in-progress"
-                      >
-                        In Progress
-                      </option>
-                      <option
-                        data-testid="option-filter-cases-complete"
-                        value="complete"
-                      >
-                        Complete
-                      </option>
-                      <option
-                        data-testid="option-filter-cases-not-started"
-                        value="not-started"
-                      >
-                        Not Started
-                      </option>
-                    </select>
-                  </div>
-                  <div
-                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
-                  >
-                    <div
-                      class="ons-panel__body "
-                    >
-                      <table
-                        class="ons-table"
-                      >
-                        <thead
-                          class="ons-table__head"
-                        >
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Case ID
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Status
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            />
-                          </tr>
-                        </thead>
-                        <tbody
-                          class="ons-table__body"
-                        >
-                          <tr
-                            class="ons-table__row"
-                            data-testid="questionnaire-table-row"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              10001011
-                            </td>
-                            <td
-                              class="ons-table__cell status"
-                            >
-                              In Progress
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <a
-                                class="Edit"
-                                href="/summary"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                            data-testid="questionnaire-table-row2"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              10001012
-                            </td>
-                            <td
-                              class="ons-table__cell status"
-                            >
-                              Complete
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                            data-testid="questionnaire-table-row3"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              10001013
-                            </td>
-                            <td
-                              class="ons-table__cell status"
-                            >
-                              Not Started
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </details>
-              <details
-                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                data-btn-close="Hide"
-                data-group="accordion"
-                id="questionnaire-accordion-2"
-              >
-                <summary
-                  aria-controls="questionnaire-accordion-2"
-                  aria-expanded="false"
-                  class="ons-collapsible__heading ons-js-collapsible-heading"
-                  data-ga-action="Open panel"
-                  data-testid="questionnaire-accordion-2-heading"
-                  role="link"
-                  tabindex="0"
-                >
-                  <div
-                    class="ons-collapsible__controls"
-                  >
-                    <h2
-                      class="ons-collapsible__title"
-                    >
-                      LMS2101_AC1
-                    </h2>
-                    <span
-                      class="ons-collapsible__icon"
-                    >
-                      <svg
-                        class="ons-svg-icon"
-                        focusable="false"
-                        viewBox="0 0 7.5 12.85"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                          transform="translate(-5.02 -1.59)"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </summary>
-                <div
-                  aria-hidden="true"
-                  class="ons-collapsible__content ons-js-collapsible-content"
-                  data-testid="questionnaire-accordion-2-content"
-                  id="questionnaire-accordion-2-content"
-                >
-                  <dl
-                    class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                    data-testid="QuestionnaireList"
-                    style="padding: 0px 0px 15px 5px;"
-                    title="Questionnares"
-                  >
-                    Total cases:
-                     
-                    0
-                  </dl>
-                  <div>
-                    <label
-                      class="ons-label"
-                      for="filter-cases"
-                    >
-                      Filter cases
-                       
-                    </label>
-                    <select
-                      class="ons-input "
-                      id="filter-cases"
-                      name="select"
-                    >
-                      <option
-                        data-testid="select-filter-cases"
-                        disabled=""
-                        value=""
-                      >
-                        Select an option
-                      </option>
-                      <option
-                        data-testid="option-filter-cases-in-progress"
-                        selected=""
-                        value="in-progress"
-                      >
-                        In Progress
-                      </option>
-                      <option
-                        data-testid="option-filter-cases-complete"
-                        value="complete"
-                      >
-                        Complete
-                      </option>
-                      <option
-                        data-testid="option-filter-cases-not-started"
-                        value="not-started"
-                      >
-                        Not Started
-                      </option>
-                    </select>
-                  </div>
-                  <div
-                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
-                  >
-                    <div
-                      class="ons-panel__body "
-                    >
-                      <table
-                        class="ons-table"
-                      >
-                        <thead
-                          class="ons-table__head"
-                        >
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Case ID
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Status
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            />
-                          </tr>
-                        </thead>
-                        <tbody
-                          class="ons-table__body"
-                        >
-                          <tr
-                            class="ons-table__row"
-                            data-testid="questionnaire-table-row"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              10001011
-                            </td>
-                            <td
-                              class="ons-table__cell status"
-                            >
-                              In Progress
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <a
-                                class="Edit"
-                                href="/summary"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                            data-testid="questionnaire-table-row2"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              10001012
-                            </td>
-                            <td
-                              class="ons-table__cell status"
-                            >
-                              Complete
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                            data-testid="questionnaire-table-row3"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              10001013
-                            </td>
-                            <td
-                              class="ons-table__cell status"
-                            >
-                              Not Started
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </details>
-            </div>
-          </div>
-        </details>
-        <details
-          class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-          data-btn-close="Hide"
-          data-group="accordion"
-          id="survey-accordion-1"
-          open=""
-        >
-          <summary
-            aria-controls="survey-accordion-1"
-            aria-expanded="true"
-            class="ons-collapsible__heading ons-js-collapsible-heading"
-            data-ga-action="Close panel"
-            data-testid="survey-accordion-1-heading"
-            role="link"
-            tabindex="0"
-          >
-            <div
-              class="ons-collapsible__controls"
-            >
-              <h2
-                class="ons-collapsible__title"
-              >
-                OPN
-              </h2>
-              <span
-                class="ons-collapsible__icon"
-              >
-                <svg
-                  class="ons-svg-icon"
-                  focusable="false"
-                  viewBox="0 0 7.5 12.85"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                    transform="translate(-5.02 -1.59)"
-                  />
-                </svg>
-              </span>
-            </div>
-          </summary>
-          <div
-            aria-hidden="false"
-            class="ons-collapsible__content ons-js-collapsible-content"
-            data-testid="survey-accordion-1-content"
-            id="survey-accordion-1-content"
-          >
-            <br />
-            <div
-              class="ons-accordion"
-              id="questionnaire-accordion"
-            >
-              <button
-                class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
-                data-close-all="Hide all"
-                data-group="accordion"
-                data-testid="questionnaire-accordion-show-all"
-                type="button"
-              >
-                <span
-                  class="ons-btn__inner ons-js-collapsible-all-inner"
-                >
-                  Show all
-                </span>
-              </button>
-              <details
-                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                data-btn-close="Hide"
-                data-group="accordion"
-                id="questionnaire-accordion-0"
-              >
-                <summary
-                  aria-controls="questionnaire-accordion-0"
-                  aria-expanded="false"
-                  class="ons-collapsible__heading ons-js-collapsible-heading"
-                  data-ga-action="Open panel"
-                  data-testid="questionnaire-accordion-0-heading"
-                  role="link"
-                  tabindex="0"
-                >
-                  <div
-                    class="ons-collapsible__controls"
-                  >
-                    <h2
-                      class="ons-collapsible__title"
-                    >
-                      OPN2201A
-                    </h2>
-                    <span
-                      class="ons-collapsible__icon"
-                    >
-                      <svg
-                        class="ons-svg-icon"
-                        focusable="false"
-                        viewBox="0 0 7.5 12.85"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                          transform="translate(-5.02 -1.59)"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </summary>
-                <div
-                  aria-hidden="true"
-                  class="ons-collapsible__content ons-js-collapsible-content"
-                  data-testid="questionnaire-accordion-0-content"
-                  id="questionnaire-accordion-0-content"
-                >
-                  <dl
-                    class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                    data-testid="QuestionnaireList"
-                    style="padding: 0px 0px 15px 5px;"
-                    title="Questionnares"
-                  >
-                    Total cases:
-                     
-                    3
-                  </dl>
-                  <div>
-                    <label
-                      class="ons-label"
-                      for="filter-cases"
-                    >
-                      Filter cases
-                       
-                    </label>
-                    <select
-                      class="ons-input "
-                      id="filter-cases"
-                      name="select"
-                    >
-                      <option
-                        data-testid="select-filter-cases"
-                        disabled=""
-                        value=""
-                      >
-                        Select an option
-                      </option>
-                      <option
-                        data-testid="option-filter-cases-in-progress"
-                        selected=""
-                        value="in-progress"
-                      >
-                        In Progress
-                      </option>
-                      <option
-                        data-testid="option-filter-cases-complete"
-                        value="complete"
-                      >
-                        Complete
-                      </option>
-                      <option
-                        data-testid="option-filter-cases-not-started"
-                        value="not-started"
-                      >
-                        Not Started
-                      </option>
-                    </select>
-                  </div>
-                  <div
-                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
-                  >
-                    <div
-                      class="ons-panel__body "
-                    >
-                      <table
-                        class="ons-table"
-                      >
-                        <thead
-                          class="ons-table__head"
-                        >
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Case ID
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Status
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            />
-                          </tr>
-                        </thead>
-                        <tbody
-                          class="ons-table__body"
-                        >
-                          <tr
-                            class="ons-table__row"
-                            data-testid="questionnaire-table-row"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              10001011
-                            </td>
-                            <td
-                              class="ons-table__cell status"
-                            >
-                              In Progress
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <a
-                                class="Edit"
-                                href="/summary"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                            data-testid="questionnaire-table-row2"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              10001012
-                            </td>
-                            <td
-                              class="ons-table__cell status"
-                            >
-                              Complete
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                            data-testid="questionnaire-table-row3"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              10001013
-                            </td>
-                            <td
-                              class="ons-table__cell status"
-                            >
-                              Not Started
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
                     </div>
                   </div>
                 </div>

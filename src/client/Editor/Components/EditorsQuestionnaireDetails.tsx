@@ -9,7 +9,7 @@ interface EditorsQuestionnairesDetailsProps {
 
 export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQuestionnairesDetailsProps): ReactElement {
   return (
-    <>
+    <div className="questionnaire">
       <dl
         className="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
         title="Questionnares"
@@ -103,6 +103,6 @@ export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQ
           </>
         </ONSTable>
       </ONSPanel>
-    </>
+    </div>
   );
 }
