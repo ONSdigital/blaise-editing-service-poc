@@ -17,15 +17,15 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
         style={{ padding: '0 0 15px 5px' }}
       >
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Field period:</dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>{questionnaire.fieldPeriod}</strong></dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">{questionnaire.fieldPeriod}</dd>
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Total number of cases:</dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>1000</strong></dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">1000</dd>
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases not allocated:</dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>970</strong></dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">970</dd>
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases allocated:</dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>25</strong></dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">25</dd>
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases completed:</dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>9</strong></dd>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m">9</dd>
       </dl>
 
       <ONSPanel status="info">
