@@ -134,12 +134,13 @@ exports[`Given there are surveys available in blaise should render the superviso
             data-btn-close="Hide"
             data-group="accordion"
             id="survey-accordion-0"
+            open=""
           >
             <summary
               aria-controls="survey-accordion-0"
-              aria-expanded="false"
+              aria-expanded="true"
               class="ons-collapsible__heading ons-js-collapsible-heading"
-              data-ga-action="Open panel"
+              data-ga-action="Close panel"
               data-testid="survey-accordion-0-heading"
               role="link"
               tabindex="0"
@@ -170,7 +171,7 @@ exports[`Given there are surveys available in blaise should render the superviso
               </div>
             </summary>
             <div
-              aria-hidden="true"
+              aria-hidden="false"
               class="ons-collapsible__content ons-js-collapsible-content"
               data-testid="survey-accordion-0-content"
               id="survey-accordion-0-content"
@@ -906,12 +907,13 @@ exports[`Given there are surveys available in blaise should render the superviso
             data-btn-close="Hide"
             data-group="accordion"
             id="survey-accordion-1"
+            open=""
           >
             <summary
               aria-controls="survey-accordion-1"
-              aria-expanded="false"
+              aria-expanded="true"
               class="ons-collapsible__heading ons-js-collapsible-heading"
-              data-ga-action="Open panel"
+              data-ga-action="Close panel"
               data-testid="survey-accordion-1-heading"
               role="link"
               tabindex="0"
@@ -942,7 +944,7 @@ exports[`Given there are surveys available in blaise should render the superviso
               </div>
             </summary>
             <div
-              aria-hidden="true"
+              aria-hidden="false"
               class="ons-collapsible__content ons-js-collapsible-content"
               data-testid="survey-accordion-1-content"
               id="survey-accordion-1-content"
@@ -1230,12 +1232,13 @@ exports[`Given there are surveys available in blaise should render the superviso
           data-btn-close="Hide"
           data-group="accordion"
           id="survey-accordion-0"
+          open=""
         >
           <summary
             aria-controls="survey-accordion-0"
-            aria-expanded="false"
+            aria-expanded="true"
             class="ons-collapsible__heading ons-js-collapsible-heading"
-            data-ga-action="Open panel"
+            data-ga-action="Close panel"
             data-testid="survey-accordion-0-heading"
             role="link"
             tabindex="0"
@@ -1266,7 +1269,7 @@ exports[`Given there are surveys available in blaise should render the superviso
             </div>
           </summary>
           <div
-            aria-hidden="true"
+            aria-hidden="false"
             class="ons-collapsible__content ons-js-collapsible-content"
             data-testid="survey-accordion-0-content"
             id="survey-accordion-0-content"
@@ -2002,12 +2005,13 @@ exports[`Given there are surveys available in blaise should render the superviso
           data-btn-close="Hide"
           data-group="accordion"
           id="survey-accordion-1"
+          open=""
         >
           <summary
             aria-controls="survey-accordion-1"
-            aria-expanded="false"
+            aria-expanded="true"
             class="ons-collapsible__heading ons-js-collapsible-heading"
-            data-ga-action="Open panel"
+            data-ga-action="Close panel"
             data-testid="survey-accordion-1-heading"
             role="link"
             tabindex="0"
@@ -2038,7 +2042,7 @@ exports[`Given there are surveys available in blaise should render the superviso
             </div>
           </summary>
           <div
-            aria-hidden="true"
+            aria-hidden="false"
             class="ons-collapsible__content ons-js-collapsible-content"
             data-testid="survey-accordion-1-content"
             id="survey-accordion-1-content"

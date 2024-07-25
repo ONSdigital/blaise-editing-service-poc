@@ -58,6 +58,10 @@ width: 40% !important;
   text-align: right;
 }
 
+a.nav:link {color:#000;  font-Weight: 'normal';}
+a.nav:hover {color:#000;  font-Weight: 'normal';}
+a.nav:visited {color:#000;  font-Weight: 'normal';}
+
  a.allocate:link {color:#000;  font-Weight: 'normal';}
  a.allocate:hover {color:#000;  font-Weight: 'normal';}
  a.allocate:visited {color:#000;  font-Weight: 'normal';}

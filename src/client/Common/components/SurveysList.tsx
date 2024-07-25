@@ -11,7 +11,7 @@ interface SurveysListProps {
 
 function CreateContent(surveys:Survey[], role:string):ExpandableContent[] {
   return surveys.map(({ name, questionnaires }) => ({
-    title: name, content: <QuestionnairesList questionnaires={questionnaires} role={role} />, contentId: 'survey', panelsOpen: true,
+    title: name, content: <QuestionnairesList questionnaires={questionnaires} role={role} />, contentId: 'survey',
   }));
 }
 
@@ -25,7 +25,7 @@ export default function SurveysList({ surveys, role }: SurveysListProps): ReactE
   return (
     <>
       <br />
-      <Accordion ContentId="survey" Expandables={CreateContent(surveys, role)} />
+      <Accordion ContentId="survey" Expandables={CreateContent(surveys, role)} Expanded />
     </>
   );
 }

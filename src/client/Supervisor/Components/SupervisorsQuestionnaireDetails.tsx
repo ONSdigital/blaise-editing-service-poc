@@ -41,7 +41,7 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
               data-testid="questionnaire-table-row"
             >
               <td className="ons-table__cell">
-                <Link className="allocate" to="/">Doctor Doom:</Link>
+                <Link to="/">Doctor Doom:</Link>
               </td>
               <td className="ons-table__cell status">
                 10
@@ -50,9 +50,9 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
                 5
               </td>
               <td className="ons-table__cell links">
-                <Link className="Edit" to="/allocate">Allocate</Link>
+                <Link to="/allocate">Allocate</Link>
                 {' | '}
-                <Link className="Edit" to="/reallocate">Reallocate</Link>
+                <Link to="/reallocate">Reallocate</Link>
               </td>
             </tr>
             <tr
@@ -60,7 +60,7 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
               data-testid="questionnaire-table-row"
             >
               <td className="ons-table__cell">
-                <Link className="allocate" to="/">Captain Fantastic:</Link>
+                <Link to="/">Captain Fantastic:</Link>
               </td>
               <td className="ons-table__cell status">
                 5
@@ -69,9 +69,9 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
                 5
               </td>
               <td className="ons-table__cell links">
-                <Link className="Edit" to="/allocate">Allocate</Link>
+                <Link to="/allocate">Allocate</Link>
                 {' | '}
-                <Link className="Edit" to="/reallocate">Reallocate</Link>
+                <Link to="/reallocate">Reallocate</Link>
               </td>
             </tr>
             <tr
@@ -79,16 +79,16 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
               data-testid="questionnaire-table-row"
             >
               <td className="ons-table__cell">
-                <Link className="allocate" to="/">The thing:</Link>
+                <Link to="/">The thing:</Link>
               </td>
               <td className="ons-table__cell status">
                 0
               </td>
               <td className="ons-table__cell " />
               <td className="ons-table__cell links">
-                <Link className="Edit" to="/allocate">Allocate</Link>
+                <Link to="/allocate">Allocate</Link>
                 {' | '}
-                <Link className="Edit" to="/reallocate">Reallocate</Link>
+                <Link to="/reallocate">Reallocate</Link>
               </td>
             </tr>
           </>
