@@ -243,37 +243,45 @@ exports[`Given there are surveys available in blaise should render the editor pa
                     <div
                       class="questionnaire"
                     >
-                      <dl
-                        class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                        data-testid="QuestionnaireList"
-                        style="padding: 0px 0px 15px 5px;"
-                        title="Questionnares"
+                      <div
+                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                       >
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        <div
+                          class="ons-panel__body "
                         >
-                          Field period:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2021-01-01T00:00:00
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          Cases assigned to me:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            3
-                          </strong>
-                        </dd>
-                      </dl>
+                          <dl
+                            class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                            data-testid="QuestionnaireList"
+                            style="padding: 0px 0px 15px 5px;"
+                            title="Questionnares"
+                          >
+                            <dt
+                              class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            >
+                              Field period:
+                            </dt>
+                            <dd
+                              class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            >
+                              <strong>
+                                2021-01-01T00:00:00
+                              </strong>
+                            </dd>
+                            <dt
+                              class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            >
+                              Cases assigned to me:
+                            </dt>
+                            <dd
+                              class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            >
+                              <strong>
+                                3
+                              </strong>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
                       <div>
                         <label
                           class="ons-label"
@@ -315,142 +323,134 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </option>
                         </select>
                       </div>
-                      <div
-                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                      <table
+                        class="ons-table"
                       >
-                        <div
-                          class="ons-panel__body "
+                        <thead
+                          class="ons-table__head"
                         >
-                          <table
-                            class="ons-table"
+                          <tr
+                            class="ons-table__row"
                           >
-                            <thead
-                              class="ons-table__head"
+                            <th
+                              class="ons-table__header"
+                              scope="col"
                             >
-                              <tr
-                                class="ons-table__row"
-                              >
-                                <th
-                                  class="ons-table__header"
-                                  scope="col"
-                                >
-                                  Case ID
-                                </th>
-                                <th
-                                  class="ons-table__header"
-                                  scope="col"
-                                >
-                                  Status
-                                </th>
-                                <th
-                                  class="ons-table__header"
-                                  scope="col"
-                                />
-                              </tr>
-                            </thead>
-                            <tbody
-                              class="ons-table__body"
+                              Case ID
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
                             >
-                              <tr
-                                class="ons-table__row"
-                                data-testid="questionnaire-table-row"
+                              Status
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
+                            />
+                          </tr>
+                        </thead>
+                        <tbody
+                          class="ons-table__body"
+                        >
+                          <tr
+                            class="ons-table__row"
+                            data-testid="questionnaire-table-row"
+                          >
+                            <td
+                              class="ons-table__cell"
+                            >
+                              10001011
+                            </td>
+                            <td
+                              class="ons-table__cell status"
+                            >
+                              In Progress
+                            </td>
+                            <td
+                              class="ons-table__cell links"
+                            >
+                              <a
+                                class="Edit"
+                                href="/summary"
                               >
-                                <td
-                                  class="ons-table__cell"
-                                >
-                                  10001011
-                                </td>
-                                <td
-                                  class="ons-table__cell status"
-                                >
-                                  In Progress
-                                </td>
-                                <td
-                                  class="ons-table__cell links"
-                                >
-                                  <a
-                                    class="Edit"
-                                    href="/summary"
-                                  >
-                                    Summary
-                                  </a>
-                                   | 
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Edit
-                                  </a>
-                                </td>
-                              </tr>
-                              <tr
-                                class="ons-table__row"
-                                data-testid="questionnaire-table-row2"
+                                Summary
+                              </a>
+                               | 
+                              <a
+                                class="Edit"
+                                href="/"
                               >
-                                <td
-                                  class="ons-table__cell"
-                                >
-                                  10001012
-                                </td>
-                                <td
-                                  class="ons-table__cell status"
-                                >
-                                  Complete
-                                </td>
-                                <td
-                                  class="ons-table__cell links"
-                                >
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Summary
-                                  </a>
-                                   | 
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Edit
-                                  </a>
-                                </td>
-                              </tr>
-                              <tr
-                                class="ons-table__row"
-                                data-testid="questionnaire-table-row3"
+                                Edit
+                              </a>
+                            </td>
+                          </tr>
+                          <tr
+                            class="ons-table__row"
+                            data-testid="questionnaire-table-row2"
+                          >
+                            <td
+                              class="ons-table__cell"
+                            >
+                              10001012
+                            </td>
+                            <td
+                              class="ons-table__cell status"
+                            >
+                              Complete
+                            </td>
+                            <td
+                              class="ons-table__cell links"
+                            >
+                              <a
+                                class="Edit"
+                                href="/"
                               >
-                                <td
-                                  class="ons-table__cell"
-                                >
-                                  10001013
-                                </td>
-                                <td
-                                  class="ons-table__cell status"
-                                >
-                                  Not Started
-                                </td>
-                                <td
-                                  class="ons-table__cell links"
-                                >
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Summary
-                                  </a>
-                                   | 
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Edit
-                                  </a>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
+                                Summary
+                              </a>
+                               | 
+                              <a
+                                class="Edit"
+                                href="/"
+                              >
+                                Edit
+                              </a>
+                            </td>
+                          </tr>
+                          <tr
+                            class="ons-table__row"
+                            data-testid="questionnaire-table-row3"
+                          >
+                            <td
+                              class="ons-table__cell"
+                            >
+                              10001013
+                            </td>
+                            <td
+                              class="ons-table__cell status"
+                            >
+                              Not Started
+                            </td>
+                            <td
+                              class="ons-table__cell links"
+                            >
+                              <a
+                                class="Edit"
+                                href="/"
+                              >
+                                Summary
+                              </a>
+                               | 
+                              <a
+                                class="Edit"
+                                href="/"
+                              >
+                                Edit
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </details>
@@ -503,37 +503,45 @@ exports[`Given there are surveys available in blaise should render the editor pa
                     <div
                       class="questionnaire"
                     >
-                      <dl
-                        class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                        data-testid="QuestionnaireList"
-                        style="padding: 0px 0px 15px 5px;"
-                        title="Questionnares"
+                      <div
+                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                       >
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        <div
+                          class="ons-panel__body "
                         >
-                          Field period:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2021-01-01T00:00:00
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          Cases assigned to me:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            3
-                          </strong>
-                        </dd>
-                      </dl>
+                          <dl
+                            class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                            data-testid="QuestionnaireList"
+                            style="padding: 0px 0px 15px 5px;"
+                            title="Questionnares"
+                          >
+                            <dt
+                              class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            >
+                              Field period:
+                            </dt>
+                            <dd
+                              class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            >
+                              <strong>
+                                2021-01-01T00:00:00
+                              </strong>
+                            </dd>
+                            <dt
+                              class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            >
+                              Cases assigned to me:
+                            </dt>
+                            <dd
+                              class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            >
+                              <strong>
+                                3
+                              </strong>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
                       <div>
                         <label
                           class="ons-label"
@@ -575,142 +583,134 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </option>
                         </select>
                       </div>
-                      <div
-                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                      <table
+                        class="ons-table"
                       >
-                        <div
-                          class="ons-panel__body "
+                        <thead
+                          class="ons-table__head"
                         >
-                          <table
-                            class="ons-table"
+                          <tr
+                            class="ons-table__row"
                           >
-                            <thead
-                              class="ons-table__head"
+                            <th
+                              class="ons-table__header"
+                              scope="col"
                             >
-                              <tr
-                                class="ons-table__row"
-                              >
-                                <th
-                                  class="ons-table__header"
-                                  scope="col"
-                                >
-                                  Case ID
-                                </th>
-                                <th
-                                  class="ons-table__header"
-                                  scope="col"
-                                >
-                                  Status
-                                </th>
-                                <th
-                                  class="ons-table__header"
-                                  scope="col"
-                                />
-                              </tr>
-                            </thead>
-                            <tbody
-                              class="ons-table__body"
+                              Case ID
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
                             >
-                              <tr
-                                class="ons-table__row"
-                                data-testid="questionnaire-table-row"
+                              Status
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
+                            />
+                          </tr>
+                        </thead>
+                        <tbody
+                          class="ons-table__body"
+                        >
+                          <tr
+                            class="ons-table__row"
+                            data-testid="questionnaire-table-row"
+                          >
+                            <td
+                              class="ons-table__cell"
+                            >
+                              10001011
+                            </td>
+                            <td
+                              class="ons-table__cell status"
+                            >
+                              In Progress
+                            </td>
+                            <td
+                              class="ons-table__cell links"
+                            >
+                              <a
+                                class="Edit"
+                                href="/summary"
                               >
-                                <td
-                                  class="ons-table__cell"
-                                >
-                                  10001011
-                                </td>
-                                <td
-                                  class="ons-table__cell status"
-                                >
-                                  In Progress
-                                </td>
-                                <td
-                                  class="ons-table__cell links"
-                                >
-                                  <a
-                                    class="Edit"
-                                    href="/summary"
-                                  >
-                                    Summary
-                                  </a>
-                                   | 
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Edit
-                                  </a>
-                                </td>
-                              </tr>
-                              <tr
-                                class="ons-table__row"
-                                data-testid="questionnaire-table-row2"
+                                Summary
+                              </a>
+                               | 
+                              <a
+                                class="Edit"
+                                href="/"
                               >
-                                <td
-                                  class="ons-table__cell"
-                                >
-                                  10001012
-                                </td>
-                                <td
-                                  class="ons-table__cell status"
-                                >
-                                  Complete
-                                </td>
-                                <td
-                                  class="ons-table__cell links"
-                                >
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Summary
-                                  </a>
-                                   | 
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Edit
-                                  </a>
-                                </td>
-                              </tr>
-                              <tr
-                                class="ons-table__row"
-                                data-testid="questionnaire-table-row3"
+                                Edit
+                              </a>
+                            </td>
+                          </tr>
+                          <tr
+                            class="ons-table__row"
+                            data-testid="questionnaire-table-row2"
+                          >
+                            <td
+                              class="ons-table__cell"
+                            >
+                              10001012
+                            </td>
+                            <td
+                              class="ons-table__cell status"
+                            >
+                              Complete
+                            </td>
+                            <td
+                              class="ons-table__cell links"
+                            >
+                              <a
+                                class="Edit"
+                                href="/"
                               >
-                                <td
-                                  class="ons-table__cell"
-                                >
-                                  10001013
-                                </td>
-                                <td
-                                  class="ons-table__cell status"
-                                >
-                                  Not Started
-                                </td>
-                                <td
-                                  class="ons-table__cell links"
-                                >
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Summary
-                                  </a>
-                                   | 
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Edit
-                                  </a>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
+                                Summary
+                              </a>
+                               | 
+                              <a
+                                class="Edit"
+                                href="/"
+                              >
+                                Edit
+                              </a>
+                            </td>
+                          </tr>
+                          <tr
+                            class="ons-table__row"
+                            data-testid="questionnaire-table-row3"
+                          >
+                            <td
+                              class="ons-table__cell"
+                            >
+                              10001013
+                            </td>
+                            <td
+                              class="ons-table__cell status"
+                            >
+                              Not Started
+                            </td>
+                            <td
+                              class="ons-table__cell links"
+                            >
+                              <a
+                                class="Edit"
+                                href="/"
+                              >
+                                Summary
+                              </a>
+                               | 
+                              <a
+                                class="Edit"
+                                href="/"
+                              >
+                                Edit
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </details>
@@ -763,37 +763,45 @@ exports[`Given there are surveys available in blaise should render the editor pa
                     <div
                       class="questionnaire"
                     >
-                      <dl
-                        class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                        data-testid="QuestionnaireList"
-                        style="padding: 0px 0px 15px 5px;"
-                        title="Questionnares"
+                      <div
+                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                       >
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        <div
+                          class="ons-panel__body "
                         >
-                          Field period:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2021-01-01T00:00:00
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          Cases assigned to me:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            3
-                          </strong>
-                        </dd>
-                      </dl>
+                          <dl
+                            class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                            data-testid="QuestionnaireList"
+                            style="padding: 0px 0px 15px 5px;"
+                            title="Questionnares"
+                          >
+                            <dt
+                              class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            >
+                              Field period:
+                            </dt>
+                            <dd
+                              class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            >
+                              <strong>
+                                2021-01-01T00:00:00
+                              </strong>
+                            </dd>
+                            <dt
+                              class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            >
+                              Cases assigned to me:
+                            </dt>
+                            <dd
+                              class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            >
+                              <strong>
+                                3
+                              </strong>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
                       <div>
                         <label
                           class="ons-label"
@@ -835,142 +843,134 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </option>
                         </select>
                       </div>
-                      <div
-                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                      <table
+                        class="ons-table"
                       >
-                        <div
-                          class="ons-panel__body "
+                        <thead
+                          class="ons-table__head"
                         >
-                          <table
-                            class="ons-table"
+                          <tr
+                            class="ons-table__row"
                           >
-                            <thead
-                              class="ons-table__head"
+                            <th
+                              class="ons-table__header"
+                              scope="col"
                             >
-                              <tr
-                                class="ons-table__row"
-                              >
-                                <th
-                                  class="ons-table__header"
-                                  scope="col"
-                                >
-                                  Case ID
-                                </th>
-                                <th
-                                  class="ons-table__header"
-                                  scope="col"
-                                >
-                                  Status
-                                </th>
-                                <th
-                                  class="ons-table__header"
-                                  scope="col"
-                                />
-                              </tr>
-                            </thead>
-                            <tbody
-                              class="ons-table__body"
+                              Case ID
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
                             >
-                              <tr
-                                class="ons-table__row"
-                                data-testid="questionnaire-table-row"
+                              Status
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
+                            />
+                          </tr>
+                        </thead>
+                        <tbody
+                          class="ons-table__body"
+                        >
+                          <tr
+                            class="ons-table__row"
+                            data-testid="questionnaire-table-row"
+                          >
+                            <td
+                              class="ons-table__cell"
+                            >
+                              10001011
+                            </td>
+                            <td
+                              class="ons-table__cell status"
+                            >
+                              In Progress
+                            </td>
+                            <td
+                              class="ons-table__cell links"
+                            >
+                              <a
+                                class="Edit"
+                                href="/summary"
                               >
-                                <td
-                                  class="ons-table__cell"
-                                >
-                                  10001011
-                                </td>
-                                <td
-                                  class="ons-table__cell status"
-                                >
-                                  In Progress
-                                </td>
-                                <td
-                                  class="ons-table__cell links"
-                                >
-                                  <a
-                                    class="Edit"
-                                    href="/summary"
-                                  >
-                                    Summary
-                                  </a>
-                                   | 
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Edit
-                                  </a>
-                                </td>
-                              </tr>
-                              <tr
-                                class="ons-table__row"
-                                data-testid="questionnaire-table-row2"
+                                Summary
+                              </a>
+                               | 
+                              <a
+                                class="Edit"
+                                href="/"
                               >
-                                <td
-                                  class="ons-table__cell"
-                                >
-                                  10001012
-                                </td>
-                                <td
-                                  class="ons-table__cell status"
-                                >
-                                  Complete
-                                </td>
-                                <td
-                                  class="ons-table__cell links"
-                                >
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Summary
-                                  </a>
-                                   | 
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Edit
-                                  </a>
-                                </td>
-                              </tr>
-                              <tr
-                                class="ons-table__row"
-                                data-testid="questionnaire-table-row3"
+                                Edit
+                              </a>
+                            </td>
+                          </tr>
+                          <tr
+                            class="ons-table__row"
+                            data-testid="questionnaire-table-row2"
+                          >
+                            <td
+                              class="ons-table__cell"
+                            >
+                              10001012
+                            </td>
+                            <td
+                              class="ons-table__cell status"
+                            >
+                              Complete
+                            </td>
+                            <td
+                              class="ons-table__cell links"
+                            >
+                              <a
+                                class="Edit"
+                                href="/"
                               >
-                                <td
-                                  class="ons-table__cell"
-                                >
-                                  10001013
-                                </td>
-                                <td
-                                  class="ons-table__cell status"
-                                >
-                                  Not Started
-                                </td>
-                                <td
-                                  class="ons-table__cell links"
-                                >
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Summary
-                                  </a>
-                                   | 
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Edit
-                                  </a>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
+                                Summary
+                              </a>
+                               | 
+                              <a
+                                class="Edit"
+                                href="/"
+                              >
+                                Edit
+                              </a>
+                            </td>
+                          </tr>
+                          <tr
+                            class="ons-table__row"
+                            data-testid="questionnaire-table-row3"
+                          >
+                            <td
+                              class="ons-table__cell"
+                            >
+                              10001013
+                            </td>
+                            <td
+                              class="ons-table__cell status"
+                            >
+                              Not Started
+                            </td>
+                            <td
+                              class="ons-table__cell links"
+                            >
+                              <a
+                                class="Edit"
+                                href="/"
+                              >
+                                Summary
+                              </a>
+                               | 
+                              <a
+                                class="Edit"
+                                href="/"
+                              >
+                                Edit
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </details>
@@ -1091,37 +1091,45 @@ exports[`Given there are surveys available in blaise should render the editor pa
                     <div
                       class="questionnaire"
                     >
-                      <dl
-                        class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                        data-testid="QuestionnaireList"
-                        style="padding: 0px 0px 15px 5px;"
-                        title="Questionnares"
+                      <div
+                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                       >
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        <div
+                          class="ons-panel__body "
                         >
-                          Field period:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            2022-01-01T00:00:00
-                          </strong>
-                        </dd>
-                        <dt
-                          class="ons-description-list__term ons-grid__col ons-col-5@m"
-                        >
-                          Cases assigned to me:
-                        </dt>
-                        <dd
-                          class="ons-description-list__value ons-grid__col ons-col-7@m"
-                        >
-                          <strong>
-                            3
-                          </strong>
-                        </dd>
-                      </dl>
+                          <dl
+                            class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                            data-testid="QuestionnaireList"
+                            style="padding: 0px 0px 15px 5px;"
+                            title="Questionnares"
+                          >
+                            <dt
+                              class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            >
+                              Field period:
+                            </dt>
+                            <dd
+                              class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            >
+                              <strong>
+                                2022-01-01T00:00:00
+                              </strong>
+                            </dd>
+                            <dt
+                              class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            >
+                              Cases assigned to me:
+                            </dt>
+                            <dd
+                              class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            >
+                              <strong>
+                                3
+                              </strong>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
                       <div>
                         <label
                           class="ons-label"
@@ -1163,142 +1171,134 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </option>
                         </select>
                       </div>
-                      <div
-                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                      <table
+                        class="ons-table"
                       >
-                        <div
-                          class="ons-panel__body "
+                        <thead
+                          class="ons-table__head"
                         >
-                          <table
-                            class="ons-table"
+                          <tr
+                            class="ons-table__row"
                           >
-                            <thead
-                              class="ons-table__head"
+                            <th
+                              class="ons-table__header"
+                              scope="col"
                             >
-                              <tr
-                                class="ons-table__row"
-                              >
-                                <th
-                                  class="ons-table__header"
-                                  scope="col"
-                                >
-                                  Case ID
-                                </th>
-                                <th
-                                  class="ons-table__header"
-                                  scope="col"
-                                >
-                                  Status
-                                </th>
-                                <th
-                                  class="ons-table__header"
-                                  scope="col"
-                                />
-                              </tr>
-                            </thead>
-                            <tbody
-                              class="ons-table__body"
+                              Case ID
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
                             >
-                              <tr
-                                class="ons-table__row"
-                                data-testid="questionnaire-table-row"
+                              Status
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
+                            />
+                          </tr>
+                        </thead>
+                        <tbody
+                          class="ons-table__body"
+                        >
+                          <tr
+                            class="ons-table__row"
+                            data-testid="questionnaire-table-row"
+                          >
+                            <td
+                              class="ons-table__cell"
+                            >
+                              10001011
+                            </td>
+                            <td
+                              class="ons-table__cell status"
+                            >
+                              In Progress
+                            </td>
+                            <td
+                              class="ons-table__cell links"
+                            >
+                              <a
+                                class="Edit"
+                                href="/summary"
                               >
-                                <td
-                                  class="ons-table__cell"
-                                >
-                                  10001011
-                                </td>
-                                <td
-                                  class="ons-table__cell status"
-                                >
-                                  In Progress
-                                </td>
-                                <td
-                                  class="ons-table__cell links"
-                                >
-                                  <a
-                                    class="Edit"
-                                    href="/summary"
-                                  >
-                                    Summary
-                                  </a>
-                                   | 
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Edit
-                                  </a>
-                                </td>
-                              </tr>
-                              <tr
-                                class="ons-table__row"
-                                data-testid="questionnaire-table-row2"
+                                Summary
+                              </a>
+                               | 
+                              <a
+                                class="Edit"
+                                href="/"
                               >
-                                <td
-                                  class="ons-table__cell"
-                                >
-                                  10001012
-                                </td>
-                                <td
-                                  class="ons-table__cell status"
-                                >
-                                  Complete
-                                </td>
-                                <td
-                                  class="ons-table__cell links"
-                                >
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Summary
-                                  </a>
-                                   | 
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Edit
-                                  </a>
-                                </td>
-                              </tr>
-                              <tr
-                                class="ons-table__row"
-                                data-testid="questionnaire-table-row3"
+                                Edit
+                              </a>
+                            </td>
+                          </tr>
+                          <tr
+                            class="ons-table__row"
+                            data-testid="questionnaire-table-row2"
+                          >
+                            <td
+                              class="ons-table__cell"
+                            >
+                              10001012
+                            </td>
+                            <td
+                              class="ons-table__cell status"
+                            >
+                              Complete
+                            </td>
+                            <td
+                              class="ons-table__cell links"
+                            >
+                              <a
+                                class="Edit"
+                                href="/"
                               >
-                                <td
-                                  class="ons-table__cell"
-                                >
-                                  10001013
-                                </td>
-                                <td
-                                  class="ons-table__cell status"
-                                >
-                                  Not Started
-                                </td>
-                                <td
-                                  class="ons-table__cell links"
-                                >
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Summary
-                                  </a>
-                                   | 
-                                  <a
-                                    class="Edit"
-                                    href="/"
-                                  >
-                                    Edit
-                                  </a>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
+                                Summary
+                              </a>
+                               | 
+                              <a
+                                class="Edit"
+                                href="/"
+                              >
+                                Edit
+                              </a>
+                            </td>
+                          </tr>
+                          <tr
+                            class="ons-table__row"
+                            data-testid="questionnaire-table-row3"
+                          >
+                            <td
+                              class="ons-table__cell"
+                            >
+                              10001013
+                            </td>
+                            <td
+                              class="ons-table__cell status"
+                            >
+                              Not Started
+                            </td>
+                            <td
+                              class="ons-table__cell links"
+                            >
+                              <a
+                                class="Edit"
+                                href="/"
+                              >
+                                Summary
+                              </a>
+                               | 
+                              <a
+                                class="Edit"
+                                href="/"
+                              >
+                                Edit
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </details>
@@ -1441,37 +1441,45 @@ exports[`Given there are surveys available in blaise should render the editor pa
                   <div
                     class="questionnaire"
                   >
-                    <dl
-                      class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                      data-testid="QuestionnaireList"
-                      style="padding: 0px 0px 15px 5px;"
-                      title="Questionnares"
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                     >
-                      <dt
-                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      <div
+                        class="ons-panel__body "
                       >
-                        Field period:
-                      </dt>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2021-01-01T00:00:00
-                        </strong>
-                      </dd>
-                      <dt
-                        class="ons-description-list__term ons-grid__col ons-col-5@m"
-                      >
-                        Cases assigned to me:
-                      </dt>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          3
-                        </strong>
-                      </dd>
-                    </dl>
+                        <dl
+                          class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                          data-testid="QuestionnaireList"
+                          style="padding: 0px 0px 15px 5px;"
+                          title="Questionnares"
+                        >
+                          <dt
+                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          >
+                            Field period:
+                          </dt>
+                          <dd
+                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          >
+                            <strong>
+                              2021-01-01T00:00:00
+                            </strong>
+                          </dd>
+                          <dt
+                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          >
+                            Cases assigned to me:
+                          </dt>
+                          <dd
+                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          >
+                            <strong>
+                              3
+                            </strong>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
                     <div>
                       <label
                         class="ons-label"
@@ -1513,142 +1521,134 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         </option>
                       </select>
                     </div>
-                    <div
-                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    <table
+                      class="ons-table"
                     >
-                      <div
-                        class="ons-panel__body "
+                      <thead
+                        class="ons-table__head"
                       >
-                        <table
-                          class="ons-table"
+                        <tr
+                          class="ons-table__row"
                         >
-                          <thead
-                            class="ons-table__head"
+                          <th
+                            class="ons-table__header"
+                            scope="col"
                           >
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Case ID
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Status
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              />
-                            </tr>
-                          </thead>
-                          <tbody
-                            class="ons-table__body"
+                            Case ID
+                          </th>
+                          <th
+                            class="ons-table__header"
+                            scope="col"
                           >
-                            <tr
-                              class="ons-table__row"
-                              data-testid="questionnaire-table-row"
+                            Status
+                          </th>
+                          <th
+                            class="ons-table__header"
+                            scope="col"
+                          />
+                        </tr>
+                      </thead>
+                      <tbody
+                        class="ons-table__body"
+                      >
+                        <tr
+                          class="ons-table__row"
+                          data-testid="questionnaire-table-row"
+                        >
+                          <td
+                            class="ons-table__cell"
+                          >
+                            10001011
+                          </td>
+                          <td
+                            class="ons-table__cell status"
+                          >
+                            In Progress
+                          </td>
+                          <td
+                            class="ons-table__cell links"
+                          >
+                            <a
+                              class="Edit"
+                              href="/summary"
                             >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                10001011
-                              </td>
-                              <td
-                                class="ons-table__cell status"
-                              >
-                                In Progress
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <a
-                                  class="Edit"
-                                  href="/summary"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                              data-testid="questionnaire-table-row2"
+                              Summary
+                            </a>
+                             | 
+                            <a
+                              class="Edit"
+                              href="/"
                             >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                10001012
-                              </td>
-                              <td
-                                class="ons-table__cell status"
-                              >
-                                Complete
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                              data-testid="questionnaire-table-row3"
+                              Edit
+                            </a>
+                          </td>
+                        </tr>
+                        <tr
+                          class="ons-table__row"
+                          data-testid="questionnaire-table-row2"
+                        >
+                          <td
+                            class="ons-table__cell"
+                          >
+                            10001012
+                          </td>
+                          <td
+                            class="ons-table__cell status"
+                          >
+                            Complete
+                          </td>
+                          <td
+                            class="ons-table__cell links"
+                          >
+                            <a
+                              class="Edit"
+                              href="/"
                             >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                10001013
-                              </td>
-                              <td
-                                class="ons-table__cell status"
-                              >
-                                Not Started
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
+                              Summary
+                            </a>
+                             | 
+                            <a
+                              class="Edit"
+                              href="/"
+                            >
+                              Edit
+                            </a>
+                          </td>
+                        </tr>
+                        <tr
+                          class="ons-table__row"
+                          data-testid="questionnaire-table-row3"
+                        >
+                          <td
+                            class="ons-table__cell"
+                          >
+                            10001013
+                          </td>
+                          <td
+                            class="ons-table__cell status"
+                          >
+                            Not Started
+                          </td>
+                          <td
+                            class="ons-table__cell links"
+                          >
+                            <a
+                              class="Edit"
+                              href="/"
+                            >
+                              Summary
+                            </a>
+                             | 
+                            <a
+                              class="Edit"
+                              href="/"
+                            >
+                              Edit
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </details>
@@ -1701,37 +1701,45 @@ exports[`Given there are surveys available in blaise should render the editor pa
                   <div
                     class="questionnaire"
                   >
-                    <dl
-                      class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                      data-testid="QuestionnaireList"
-                      style="padding: 0px 0px 15px 5px;"
-                      title="Questionnares"
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                     >
-                      <dt
-                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      <div
+                        class="ons-panel__body "
                       >
-                        Field period:
-                      </dt>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2021-01-01T00:00:00
-                        </strong>
-                      </dd>
-                      <dt
-                        class="ons-description-list__term ons-grid__col ons-col-5@m"
-                      >
-                        Cases assigned to me:
-                      </dt>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          3
-                        </strong>
-                      </dd>
-                    </dl>
+                        <dl
+                          class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                          data-testid="QuestionnaireList"
+                          style="padding: 0px 0px 15px 5px;"
+                          title="Questionnares"
+                        >
+                          <dt
+                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          >
+                            Field period:
+                          </dt>
+                          <dd
+                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          >
+                            <strong>
+                              2021-01-01T00:00:00
+                            </strong>
+                          </dd>
+                          <dt
+                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          >
+                            Cases assigned to me:
+                          </dt>
+                          <dd
+                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          >
+                            <strong>
+                              3
+                            </strong>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
                     <div>
                       <label
                         class="ons-label"
@@ -1773,142 +1781,134 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         </option>
                       </select>
                     </div>
-                    <div
-                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    <table
+                      class="ons-table"
                     >
-                      <div
-                        class="ons-panel__body "
+                      <thead
+                        class="ons-table__head"
                       >
-                        <table
-                          class="ons-table"
+                        <tr
+                          class="ons-table__row"
                         >
-                          <thead
-                            class="ons-table__head"
+                          <th
+                            class="ons-table__header"
+                            scope="col"
                           >
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Case ID
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Status
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              />
-                            </tr>
-                          </thead>
-                          <tbody
-                            class="ons-table__body"
+                            Case ID
+                          </th>
+                          <th
+                            class="ons-table__header"
+                            scope="col"
                           >
-                            <tr
-                              class="ons-table__row"
-                              data-testid="questionnaire-table-row"
+                            Status
+                          </th>
+                          <th
+                            class="ons-table__header"
+                            scope="col"
+                          />
+                        </tr>
+                      </thead>
+                      <tbody
+                        class="ons-table__body"
+                      >
+                        <tr
+                          class="ons-table__row"
+                          data-testid="questionnaire-table-row"
+                        >
+                          <td
+                            class="ons-table__cell"
+                          >
+                            10001011
+                          </td>
+                          <td
+                            class="ons-table__cell status"
+                          >
+                            In Progress
+                          </td>
+                          <td
+                            class="ons-table__cell links"
+                          >
+                            <a
+                              class="Edit"
+                              href="/summary"
                             >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                10001011
-                              </td>
-                              <td
-                                class="ons-table__cell status"
-                              >
-                                In Progress
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <a
-                                  class="Edit"
-                                  href="/summary"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                              data-testid="questionnaire-table-row2"
+                              Summary
+                            </a>
+                             | 
+                            <a
+                              class="Edit"
+                              href="/"
                             >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                10001012
-                              </td>
-                              <td
-                                class="ons-table__cell status"
-                              >
-                                Complete
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                              data-testid="questionnaire-table-row3"
+                              Edit
+                            </a>
+                          </td>
+                        </tr>
+                        <tr
+                          class="ons-table__row"
+                          data-testid="questionnaire-table-row2"
+                        >
+                          <td
+                            class="ons-table__cell"
+                          >
+                            10001012
+                          </td>
+                          <td
+                            class="ons-table__cell status"
+                          >
+                            Complete
+                          </td>
+                          <td
+                            class="ons-table__cell links"
+                          >
+                            <a
+                              class="Edit"
+                              href="/"
                             >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                10001013
-                              </td>
-                              <td
-                                class="ons-table__cell status"
-                              >
-                                Not Started
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
+                              Summary
+                            </a>
+                             | 
+                            <a
+                              class="Edit"
+                              href="/"
+                            >
+                              Edit
+                            </a>
+                          </td>
+                        </tr>
+                        <tr
+                          class="ons-table__row"
+                          data-testid="questionnaire-table-row3"
+                        >
+                          <td
+                            class="ons-table__cell"
+                          >
+                            10001013
+                          </td>
+                          <td
+                            class="ons-table__cell status"
+                          >
+                            Not Started
+                          </td>
+                          <td
+                            class="ons-table__cell links"
+                          >
+                            <a
+                              class="Edit"
+                              href="/"
+                            >
+                              Summary
+                            </a>
+                             | 
+                            <a
+                              class="Edit"
+                              href="/"
+                            >
+                              Edit
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </details>
@@ -1961,37 +1961,45 @@ exports[`Given there are surveys available in blaise should render the editor pa
                   <div
                     class="questionnaire"
                   >
-                    <dl
-                      class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                      data-testid="QuestionnaireList"
-                      style="padding: 0px 0px 15px 5px;"
-                      title="Questionnares"
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                     >
-                      <dt
-                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      <div
+                        class="ons-panel__body "
                       >
-                        Field period:
-                      </dt>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2021-01-01T00:00:00
-                        </strong>
-                      </dd>
-                      <dt
-                        class="ons-description-list__term ons-grid__col ons-col-5@m"
-                      >
-                        Cases assigned to me:
-                      </dt>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          3
-                        </strong>
-                      </dd>
-                    </dl>
+                        <dl
+                          class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                          data-testid="QuestionnaireList"
+                          style="padding: 0px 0px 15px 5px;"
+                          title="Questionnares"
+                        >
+                          <dt
+                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          >
+                            Field period:
+                          </dt>
+                          <dd
+                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          >
+                            <strong>
+                              2021-01-01T00:00:00
+                            </strong>
+                          </dd>
+                          <dt
+                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          >
+                            Cases assigned to me:
+                          </dt>
+                          <dd
+                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          >
+                            <strong>
+                              3
+                            </strong>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
                     <div>
                       <label
                         class="ons-label"
@@ -2033,142 +2041,134 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         </option>
                       </select>
                     </div>
-                    <div
-                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    <table
+                      class="ons-table"
                     >
-                      <div
-                        class="ons-panel__body "
+                      <thead
+                        class="ons-table__head"
                       >
-                        <table
-                          class="ons-table"
+                        <tr
+                          class="ons-table__row"
                         >
-                          <thead
-                            class="ons-table__head"
+                          <th
+                            class="ons-table__header"
+                            scope="col"
                           >
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Case ID
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Status
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              />
-                            </tr>
-                          </thead>
-                          <tbody
-                            class="ons-table__body"
+                            Case ID
+                          </th>
+                          <th
+                            class="ons-table__header"
+                            scope="col"
                           >
-                            <tr
-                              class="ons-table__row"
-                              data-testid="questionnaire-table-row"
+                            Status
+                          </th>
+                          <th
+                            class="ons-table__header"
+                            scope="col"
+                          />
+                        </tr>
+                      </thead>
+                      <tbody
+                        class="ons-table__body"
+                      >
+                        <tr
+                          class="ons-table__row"
+                          data-testid="questionnaire-table-row"
+                        >
+                          <td
+                            class="ons-table__cell"
+                          >
+                            10001011
+                          </td>
+                          <td
+                            class="ons-table__cell status"
+                          >
+                            In Progress
+                          </td>
+                          <td
+                            class="ons-table__cell links"
+                          >
+                            <a
+                              class="Edit"
+                              href="/summary"
                             >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                10001011
-                              </td>
-                              <td
-                                class="ons-table__cell status"
-                              >
-                                In Progress
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <a
-                                  class="Edit"
-                                  href="/summary"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                              data-testid="questionnaire-table-row2"
+                              Summary
+                            </a>
+                             | 
+                            <a
+                              class="Edit"
+                              href="/"
                             >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                10001012
-                              </td>
-                              <td
-                                class="ons-table__cell status"
-                              >
-                                Complete
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                              data-testid="questionnaire-table-row3"
+                              Edit
+                            </a>
+                          </td>
+                        </tr>
+                        <tr
+                          class="ons-table__row"
+                          data-testid="questionnaire-table-row2"
+                        >
+                          <td
+                            class="ons-table__cell"
+                          >
+                            10001012
+                          </td>
+                          <td
+                            class="ons-table__cell status"
+                          >
+                            Complete
+                          </td>
+                          <td
+                            class="ons-table__cell links"
+                          >
+                            <a
+                              class="Edit"
+                              href="/"
                             >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                10001013
-                              </td>
-                              <td
-                                class="ons-table__cell status"
-                              >
-                                Not Started
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
+                              Summary
+                            </a>
+                             | 
+                            <a
+                              class="Edit"
+                              href="/"
+                            >
+                              Edit
+                            </a>
+                          </td>
+                        </tr>
+                        <tr
+                          class="ons-table__row"
+                          data-testid="questionnaire-table-row3"
+                        >
+                          <td
+                            class="ons-table__cell"
+                          >
+                            10001013
+                          </td>
+                          <td
+                            class="ons-table__cell status"
+                          >
+                            Not Started
+                          </td>
+                          <td
+                            class="ons-table__cell links"
+                          >
+                            <a
+                              class="Edit"
+                              href="/"
+                            >
+                              Summary
+                            </a>
+                             | 
+                            <a
+                              class="Edit"
+                              href="/"
+                            >
+                              Edit
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </details>
@@ -2289,37 +2289,45 @@ exports[`Given there are surveys available in blaise should render the editor pa
                   <div
                     class="questionnaire"
                   >
-                    <dl
-                      class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                      data-testid="QuestionnaireList"
-                      style="padding: 0px 0px 15px 5px;"
-                      title="Questionnares"
+                    <div
+                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                     >
-                      <dt
-                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      <div
+                        class="ons-panel__body "
                       >
-                        Field period:
-                      </dt>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          2022-01-01T00:00:00
-                        </strong>
-                      </dd>
-                      <dt
-                        class="ons-description-list__term ons-grid__col ons-col-5@m"
-                      >
-                        Cases assigned to me:
-                      </dt>
-                      <dd
-                        class="ons-description-list__value ons-grid__col ons-col-7@m"
-                      >
-                        <strong>
-                          3
-                        </strong>
-                      </dd>
-                    </dl>
+                        <dl
+                          class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                          data-testid="QuestionnaireList"
+                          style="padding: 0px 0px 15px 5px;"
+                          title="Questionnares"
+                        >
+                          <dt
+                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          >
+                            Field period:
+                          </dt>
+                          <dd
+                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          >
+                            <strong>
+                              2022-01-01T00:00:00
+                            </strong>
+                          </dd>
+                          <dt
+                            class="ons-description-list__term ons-grid__col ons-col-5@m"
+                          >
+                            Cases assigned to me:
+                          </dt>
+                          <dd
+                            class="ons-description-list__value ons-grid__col ons-col-7@m"
+                          >
+                            <strong>
+                              3
+                            </strong>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
                     <div>
                       <label
                         class="ons-label"
@@ -2361,142 +2369,134 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         </option>
                       </select>
                     </div>
-                    <div
-                      class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                    <table
+                      class="ons-table"
                     >
-                      <div
-                        class="ons-panel__body "
+                      <thead
+                        class="ons-table__head"
                       >
-                        <table
-                          class="ons-table"
+                        <tr
+                          class="ons-table__row"
                         >
-                          <thead
-                            class="ons-table__head"
+                          <th
+                            class="ons-table__header"
+                            scope="col"
                           >
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Case ID
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Status
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              />
-                            </tr>
-                          </thead>
-                          <tbody
-                            class="ons-table__body"
+                            Case ID
+                          </th>
+                          <th
+                            class="ons-table__header"
+                            scope="col"
                           >
-                            <tr
-                              class="ons-table__row"
-                              data-testid="questionnaire-table-row"
+                            Status
+                          </th>
+                          <th
+                            class="ons-table__header"
+                            scope="col"
+                          />
+                        </tr>
+                      </thead>
+                      <tbody
+                        class="ons-table__body"
+                      >
+                        <tr
+                          class="ons-table__row"
+                          data-testid="questionnaire-table-row"
+                        >
+                          <td
+                            class="ons-table__cell"
+                          >
+                            10001011
+                          </td>
+                          <td
+                            class="ons-table__cell status"
+                          >
+                            In Progress
+                          </td>
+                          <td
+                            class="ons-table__cell links"
+                          >
+                            <a
+                              class="Edit"
+                              href="/summary"
                             >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                10001011
-                              </td>
-                              <td
-                                class="ons-table__cell status"
-                              >
-                                In Progress
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <a
-                                  class="Edit"
-                                  href="/summary"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                              data-testid="questionnaire-table-row2"
+                              Summary
+                            </a>
+                             | 
+                            <a
+                              class="Edit"
+                              href="/"
                             >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                10001012
-                              </td>
-                              <td
-                                class="ons-table__cell status"
-                              >
-                                Complete
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                              data-testid="questionnaire-table-row3"
+                              Edit
+                            </a>
+                          </td>
+                        </tr>
+                        <tr
+                          class="ons-table__row"
+                          data-testid="questionnaire-table-row2"
+                        >
+                          <td
+                            class="ons-table__cell"
+                          >
+                            10001012
+                          </td>
+                          <td
+                            class="ons-table__cell status"
+                          >
+                            Complete
+                          </td>
+                          <td
+                            class="ons-table__cell links"
+                          >
+                            <a
+                              class="Edit"
+                              href="/"
                             >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                10001013
-                              </td>
-                              <td
-                                class="ons-table__cell status"
-                              >
-                                Not Started
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
+                              Summary
+                            </a>
+                             | 
+                            <a
+                              class="Edit"
+                              href="/"
+                            >
+                              Edit
+                            </a>
+                          </td>
+                        </tr>
+                        <tr
+                          class="ons-table__row"
+                          data-testid="questionnaire-table-row3"
+                        >
+                          <td
+                            class="ons-table__cell"
+                          >
+                            10001013
+                          </td>
+                          <td
+                            class="ons-table__cell status"
+                          >
+                            Not Started
+                          </td>
+                          <td
+                            class="ons-table__cell links"
+                          >
+                            <a
+                              class="Edit"
+                              href="/"
+                            >
+                              Summary
+                            </a>
+                             | 
+                            <a
+                              class="Edit"
+                              href="/"
+                            >
+                              Edit
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </details>
