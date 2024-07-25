@@ -20,10 +20,12 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>{questionnaire.fieldPeriod}</strong></dd>
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Total number of cases:</dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>1000</strong></dd>
-        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases allocated:</dt>
-        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>30</strong></dd>
         <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases not allocated:</dt>
         <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>970</strong></dd>
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases allocated:</dt>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>25</strong></dd>
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases completed:</dt>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>9</strong></dd>
       </dl>
 
       <ONSPanel status="info">
@@ -32,6 +34,7 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
             'Editor',
             'Allocated',
             'Completed',
+            'Queried',
             '',
           ]}
         >
@@ -48,6 +51,9 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
               </td>
               <td className="ons-table__cell ">
                 5
+              </td>
+              <td className="ons-table__cell ">
+                0
               </td>
               <td className="ons-table__cell links">
                 <Link to="/allocate">Allocate</Link>
@@ -66,7 +72,10 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
                 5
               </td>
               <td className="ons-table__cell ">
-                5
+                4
+              </td>
+              <td className="ons-table__cell ">
+                1
               </td>
               <td className="ons-table__cell links">
                 <Link to="/allocate">Allocate</Link>
