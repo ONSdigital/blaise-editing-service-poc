@@ -16,9 +16,11 @@ export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQ
         data-testid="QuestionnaireList"
         style={{ padding: '0 0 15px 5px' }}
       >
-        Total cases:
-        {' '}
-        {questionnaire.numberOfCases}
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Field period:</dt>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>{questionnaire.fieldPeriod}</strong></dd>
+        <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Cases assigned to me:</dt>
+        <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>3</strong></dd>
+
       </dl>
       <ONSSelect
         defaultValue="in-progress"

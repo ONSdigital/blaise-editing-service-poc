@@ -249,9 +249,30 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         style="padding: 0px 0px 15px 5px;"
                         title="Questionnares"
                       >
-                        Total cases:
-                         
-                        3
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Field period:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2021-01-01T00:00:00
+                          </strong>
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Cases assigned to me:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            3
+                          </strong>
+                        </dd>
                       </dl>
                       <div>
                         <label
@@ -488,9 +509,30 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         style="padding: 0px 0px 15px 5px;"
                         title="Questionnares"
                       >
-                        Total cases:
-                         
-                        1
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Field period:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2021-01-01T00:00:00
+                          </strong>
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Cases assigned to me:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            3
+                          </strong>
+                        </dd>
                       </dl>
                       <div>
                         <label
@@ -727,9 +769,30 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         style="padding: 0px 0px 15px 5px;"
                         title="Questionnares"
                       >
-                        Total cases:
-                         
-                        0
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Field period:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2021-01-01T00:00:00
+                          </strong>
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Cases assigned to me:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            3
+                          </strong>
+                        </dd>
                       </dl>
                       <div>
                         <label
@@ -1034,9 +1097,30 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         style="padding: 0px 0px 15px 5px;"
                         title="Questionnares"
                       >
-                        Total cases:
-                         
-                        3
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Field period:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            2022-01-01T00:00:00
+                          </strong>
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Cases assigned to me:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            3
+                          </strong>
+                        </dd>
                       </dl>
                       <div>
                         <label
@@ -1363,9 +1447,30 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       style="padding: 0px 0px 15px 5px;"
                       title="Questionnares"
                     >
-                      Total cases:
-                       
-                      3
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Field period:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2021-01-01T00:00:00
+                        </strong>
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Cases assigned to me:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          3
+                        </strong>
+                      </dd>
                     </dl>
                     <div>
                       <label
@@ -1602,9 +1707,30 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       style="padding: 0px 0px 15px 5px;"
                       title="Questionnares"
                     >
-                      Total cases:
-                       
-                      1
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Field period:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2021-01-01T00:00:00
+                        </strong>
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Cases assigned to me:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          3
+                        </strong>
+                      </dd>
                     </dl>
                     <div>
                       <label
@@ -1841,9 +1967,30 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       style="padding: 0px 0px 15px 5px;"
                       title="Questionnares"
                     >
-                      Total cases:
-                       
-                      0
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Field period:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2021-01-01T00:00:00
+                        </strong>
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Cases assigned to me:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          3
+                        </strong>
+                      </dd>
                     </dl>
                     <div>
                       <label
@@ -2148,9 +2295,30 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       style="padding: 0px 0px 15px 5px;"
                       title="Questionnares"
                     >
-                      Total cases:
-                       
-                      3
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Field period:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          2022-01-01T00:00:00
+                        </strong>
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Cases assigned to me:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          3
+                        </strong>
+                      </dd>
                     </dl>
                     <div>
                       <label
