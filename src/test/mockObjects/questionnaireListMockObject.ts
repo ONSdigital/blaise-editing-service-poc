@@ -14,11 +14,11 @@ export const questionnaire1Mock: Questionnaire = {
 };
 
 export const questionnaire2Mock: Questionnaire = {
-  name: 'LMS2101_AB1',
+  name: 'FRS2504A',
   serverParkName: 'gusty',
   installDate: '2021-02-15T15:26:43.4233454+00:00',
   fieldPeriod: '2021-01-01T00:00:00',
-  surveyTla: 'LMS',
+  surveyTla: 'FRS',
   status: 'Active',
   dataRecordCount: 1,
   hasData: false,
@@ -57,31 +57,31 @@ export const questionnaireListMockObject: Questionnaire[] = [
 ];
 
 export const questionnaireDetails1MockObject: QuestionnaireDetails = {
-  questionnaireName: questionnaire1Mock.name,
-  numberOfCases: questionnaire1Mock.dataRecordCount ?? 0,
-  fieldPeriod: questionnaire1Mock.fieldPeriod ?? null,
-  surveyTla: questionnaire1Mock.surveyTla ?? 'N/A',
+  questionnaireName: 'LMS2101_AA1',
+  numberOfCases: 3,
+  fieldPeriod: 'January 2021',
+  surveyTla: 'LMS',
 };
 
 export const questionnaireDetails2MockObject: QuestionnaireDetails = {
-  questionnaireName: questionnaire2Mock.name,
-  numberOfCases: questionnaire2Mock.dataRecordCount ?? 0,
-  fieldPeriod: questionnaire2Mock.fieldPeriod ?? null,
-  surveyTla: questionnaire2Mock.surveyTla ?? 'N/A',
+  questionnaireName: 'FRS2504A',
+  numberOfCases: 1,
+  fieldPeriod: 'January 2021',
+  surveyTla: 'FRS',
 };
 
 export const questionnaireDetails3MockObject: QuestionnaireDetails = {
-  questionnaireName: questionnaire3Mock.name,
-  numberOfCases: questionnaire3Mock.dataRecordCount ?? 0,
-  fieldPeriod: questionnaire3Mock.fieldPeriod ?? null,
-  surveyTla: questionnaire3Mock.surveyTla ?? 'N/A',
+  questionnaireName: 'LMS2101_AC1',
+  numberOfCases: 0,
+  fieldPeriod: 'January 2021',
+  surveyTla: 'LMS',
 };
 
 export const questionnaireDetails4MockObject: QuestionnaireDetails = {
-  questionnaireName: questionnaire4Mock.name,
-  numberOfCases: questionnaire4Mock.dataRecordCount ?? 0,
-  fieldPeriod: questionnaire4Mock.fieldPeriod ?? null,
-  surveyTla: questionnaire4Mock.surveyTla ?? 'N/A',
+  questionnaireName: 'OPN2201A',
+  numberOfCases: 3,
+  fieldPeriod: 'January 2022',
+  surveyTla: 'OPN',
 };
 
 export const questionnaireDetailsListMockObject: QuestionnaireDetails[] = [
@@ -90,3 +90,10 @@ export const questionnaireDetailsListMockObject: QuestionnaireDetails[] = [
   questionnaireDetails3MockObject,
   questionnaireDetails4MockObject,
 ];
+
+export const editQuestionnaireDetailsMockObject: QuestionnaireDetails[] = [{
+  questionnaireName: 'FRS2504A',
+  numberOfCases: 1,
+  fieldPeriod: 'January 2021',
+  surveyTla: 'FRS',
+}];

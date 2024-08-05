@@ -1,4 +1,4 @@
-import BlaiseClient, { Questionnaire } from 'blaise-api-node-client';
+import BlaiseClient, { EditingDetails, Questionnaire } from 'blaise-api-node-client';
 import { ServerConfiguration } from '../interfaces/serverConfigurationInterface';
 import { QuestionnaireDetails } from '../../common/interfaces/surveyInterface';
 import mapQuestionnaireDetails from '../mappers/questionnaireMapper';
@@ -20,6 +20,11 @@ export default class BlaiseApi {
     questionnaires.forEach((questionnaire : Questionnaire) => {
       questionnaireDetailsList.push(mapQuestionnaireDetails(questionnaire));
     });
-    return questionnaireDetailsList;
+    const editQuestionnaireDetailsList = questionnaireDetailsList.filter((questionnaire) => questionnaire.surveyTla === 'FRS');
+    return editQuestionnaireDetailsList;
+  }
+
+  async getEditingDetails(questionnaire: string): Promise<EditingDetails[]> {
+    return this.blaiseApiClient.getEditingDetails(this.config.ServerPark, questionnaire);
   }
 }

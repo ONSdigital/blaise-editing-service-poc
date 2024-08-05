@@ -1,7 +1,7 @@
-import BlaiseApiClient from 'blaise-api-node-client';
+import BlaiseApiClient, { EditingDetailsListMockObject } from 'blaise-api-node-client';
 import { IMock, Mock, Times } from 'typemoq';
 import BlaiseApi from '../../../server/api/BlaiseApi';
-import { questionnaireListMockObject } from '../../mockObjects/questionnaireListMockObject';
+import { editQuestionnaireDetailsMockObject, questionnaireListMockObject } from '../../mockObjects/questionnaireListMockObject';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
 
 // create fake config
@@ -27,5 +27,33 @@ describe('getQuestionnaires from Blaise', () => {
 
     // assert
     blaiseApiClientMock.verify((client) => client.getQuestionnaires(configFake.ServerPark), Times.once());
+  });
+
+  it('Should return an expected list of questionnaires for editing', async () => {
+    // arrange
+    blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => questionnaireListMockObject.filter((q) => q.surveyTla === 'FRS'));
+
+    // act
+    const result = await sut.getQuestionnaires();
+
+    // assert
+    expect(result).toEqual(editQuestionnaireDetailsMockObject);
+  });
+});
+
+describe('editingDetails from Blaise', () => {
+  beforeEach(() => {
+    blaiseApiClientMock.reset();
+  });
+  it('Should call getEditingDetails for a given questionnaire', async () => {
+    // arrange
+    const questionnaire = 'FRS2504A';
+    blaiseApiClientMock.setup((client) => client.getEditingDetails(configFake.ServerPark, questionnaire)).returns(async () => EditingDetailsListMockObject);
+
+    // act
+    await sut.getEditingDetails(questionnaire);
+
+    // assert
+    blaiseApiClientMock.verify((client) => client.getEditingDetails(configFake.ServerPark, questionnaire), Times.once());
   });
 });
