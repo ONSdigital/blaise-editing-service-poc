@@ -1,8 +1,6 @@
 import express, { Request, Response } from 'express';
 import { Controller } from '../interfaces/controllerInterface';
 import notFound from '../helpers/axiosHelper';
-import { Survey } from '../../common/interfaces/surveyInterface';
-import mapSurveys from '../mappers/surveyMapper';
 import BlaiseApi from '../api/BlaiseApi';
 import { EditingDetails } from 'blaise-api-node-client';
 
@@ -19,7 +17,7 @@ export default class SurveyController implements Controller {
     return router.get('/api/edit/:questionnaireName/editingDetails', this.getEditingDetails);
   }
 
-  async getEditingDetails(request: Request<{ questionnaireName:string }, {}, {}, {}>, response: Response<EditingDetails[]>) {
+  async getEditingDetails(request: Request<{ questionnaireName:string }>, response: Response<EditingDetails[]>) {
     const { questionnaireName } = request.params;
     try {
       const editingDetailsList = await this.blaiseApi.getEditingDetails(questionnaireName);
