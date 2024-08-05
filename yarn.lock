@@ -5845,7 +5845,7 @@ bl@^4.0.3, bl@^4.1.0:
 
 "blaise-api-node-client@git+https://github.com/ONSdigital/blaise-api-node-client#1.1.0", "blaise-api-node-client@https://github.com/ONSdigital/blaise-api-node-client#frs-uplift":
   version "1.0.0"
-  resolved "https://github.com/ONSdigital/blaise-api-node-client#ee3fdaa498f61a7ae3f42b2e94c8201e3893e842"
+  resolved "https://github.com/ONSdigital/blaise-api-node-client#81453a8e6b44791bcf8001d53bcbb1108a05fc58"
   dependencies:
     "@babel/preset-env" "^7.14.7"
     axios "^0.21.1"
