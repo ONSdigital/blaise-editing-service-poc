@@ -1,34 +1,34 @@
-import { CaseOutcome, EditedStatus, EditingDetails } from "blaise-api-node-client";
+import { CaseOutcome, EditedStatus, CaseEditInformation } from "blaise-api-node-client";
 
-export const editingDetailsMockObject1: EditingDetails = {
+export const caseEditInformationMockObject1: CaseEditInformation = {
   primaryKey: '10001011',
   outcome: CaseOutcome.Completed,
   assignedTo: 'Rich',
   editedStatus: EditedStatus.Finished,
   interviewer: '',
 };
-export const editingDetailsMockObject2: EditingDetails = {
+export const caseEditInformationMockObject2: CaseEditInformation = {
   primaryKey: '10001012',
   outcome: CaseOutcome.Completed,
   assignedTo: 'bob',
   editedStatus: EditedStatus.NotStarted,
   interviewer: '',
 };
-export const editingDetailsMockObject3: EditingDetails = {
+export const caseEditInformationMockObject3: CaseEditInformation = {
   primaryKey: '10001013',
   outcome: CaseOutcome.Partial,
   assignedTo: 'Julie',
   editedStatus: EditedStatus.Query,
   interviewer: '',
 };
-export const editingDetailsMockObject4: EditingDetails = {
+export const caseEditInformationMockObject4: CaseEditInformation = {
   primaryKey: '10001014',
   outcome: CaseOutcome.CompletedNudge,
   assignedTo: 'Sarah',
   editedStatus: EditedStatus.Started,
   interviewer: '',
 };
-export const editingDetailsMockObject5: EditingDetails = {
+export const caseEditInformationMockObject5: CaseEditInformation = {
   primaryKey: '10001015',
   outcome: CaseOutcome.Completed,
   assignedTo: 'rich',
@@ -36,10 +36,10 @@ export const editingDetailsMockObject5: EditingDetails = {
   interviewer: '',
 };
 
-export const editingDetailsListMockObject: EditingDetails[] = [
-  editingDetailsMockObject1,
-  editingDetailsMockObject2,
-  editingDetailsMockObject3,
-  editingDetailsMockObject4,
-  editingDetailsMockObject5,
+export const CaseEditInformationListMockObject: CaseEditInformation[] = [
+  caseEditInformationMockObject1,
+  caseEditInformationMockObject2,
+  caseEditInformationMockObject3,
+  caseEditInformationMockObject4,
+  caseEditInformationMockObject5,
 ]

@@ -2,25 +2,25 @@ import express, { Request, Response } from 'express';
 import { Controller } from '../interfaces/controllerInterface';
 import notFound from '../helpers/axiosHelper';
 import BlaiseApi from '../api/BlaiseApi';
-import { EditingDetails } from 'blaise-api-node-client';
+import { CaseEditInformation } from 'blaise-api-node-client';
 
-export default class SurveyController implements Controller {
+export default class CaseController implements Controller {
   blaiseApi: BlaiseApi;
 
   constructor(blaiseApi: BlaiseApi) {
     this.blaiseApi = blaiseApi;
-    this.getEditingDetails = this.getEditingDetails.bind(this);
+    this.getCaseEditInformation = this.getCaseEditInformation.bind(this);
   }
 
   getRoutes() {
     const router = express.Router();
-    return router.get('/api/edit/:questionnaireName/editingDetails', this.getEditingDetails);
+    return router.get('/api/:questionnaireName/cases/edit', this.getCaseEditInformation);
   }
 
-  async getEditingDetails(request: Request<{ questionnaireName:string }>, response: Response<EditingDetails[]>) {
+  async getCaseEditInformation(request: Request<{ questionnaireName:string }>, response: Response<CaseEditInformation[]>) {
     const { questionnaireName } = request.params;
     try {
-      const editingDetailsList = await this.blaiseApi.getEditingDetails(questionnaireName);
+      const editingDetailsList = await this.blaiseApi.getCaseEditInformation(questionnaireName);
 
       return response.status(200).json(editingDetailsList);
     } catch (error: unknown) {

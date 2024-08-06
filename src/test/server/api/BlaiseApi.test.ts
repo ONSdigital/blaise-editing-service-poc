@@ -1,4 +1,4 @@
-import BlaiseApiClient, { EditingDetailsListMockObject } from 'blaise-api-node-client';
+import BlaiseApiClient, { CaseEditInformationListMockObject } from 'blaise-api-node-client';
 import { IMock, Mock, Times } from 'typemoq';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import { editQuestionnaireDetailsMockObject, questionnaireListMockObject } from '../../mockObjects/questionnaireListMockObject';
@@ -48,12 +48,12 @@ describe('editingDetails from Blaise', () => {
   it('Should call getEditingDetails for a given questionnaire', async () => {
     // arrange
     const questionnaire = 'FRS2504A';
-    blaiseApiClientMock.setup((client) => client.getEditingDetails(configFake.ServerPark, questionnaire)).returns(async () => EditingDetailsListMockObject);
+    blaiseApiClientMock.setup((client) => client.getCaseEditInformation(configFake.ServerPark, questionnaire)).returns(async () => CaseEditInformationListMockObject);
 
     // act
-    await sut.getEditingDetails(questionnaire);
+    await sut.getCaseEditInformation(questionnaire);
 
     // assert
-    blaiseApiClientMock.verify((client) => client.getEditingDetails(configFake.ServerPark, questionnaire), Times.once());
+    blaiseApiClientMock.verify((client) => client.getCaseEditInformation(configFake.ServerPark, questionnaire), Times.once());
   });
 });
