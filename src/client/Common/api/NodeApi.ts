@@ -15,6 +15,10 @@ async function getDataFromNode<T>(url: string, notFoundError: string): Promise<T
   }
 }
 
-export default async function getSurveys(): Promise<Survey[]> {
+export async function getSurveys(): Promise<Survey[]> {
   return getDataFromNode('/api/surveys', 'Unable to find surveys, please contact Richmond Rice');
+}
+
+export async function getCaseEditInformation(questionnaireName: string): Promise<Survey[]> {
+  return getDataFromNode(`/api/${questionnaireName}/cases/edit`, 'Unable to find case edit information, please contact Richmond Rice');
 }
