@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { ONSPanel, ONSSelect, ONSTable } from 'blaise-design-system-react-components';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
+import EditorInformationMockObject from '../../../test/client/MockObjects/CaseMockObject';
 
 interface EditorsQuestionnairesDetailsProps {
   questionnaire: QuestionnaireDetails;
@@ -20,7 +21,7 @@ export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQ
           <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Field period:</dt>
           <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>{questionnaire.fieldPeriod}</strong></dd>
           <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Cases assigned to me:</dt>
-          <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>3</strong></dd>
+          <dd className="ons-description-list__value ons-grid__col ons-col-7@m"><strong>{EditorInformationMockObject.numberOfCasesAllocated}</strong></dd>
 
         </dl>
       </ONSPanel>
@@ -54,56 +55,25 @@ export default function EditorsQuestionnairesDetails({ questionnaire }: EditorsQ
         ]}
       >
         <>
-          <tr
-            className="ons-table__row"
-            data-testid="questionnaire-table-row"
-          >
-            <td className="ons-table__cell">
-              10001011
-            </td>
-            <td className="ons-table__cell status">
-              In Progress
-            </td>
-            <td className="ons-table__cell links">
-              <Link className="Edit" to="/summary">Summary</Link>
-              {' | '}
-              <Link className="Edit" to="/">Edit</Link>
-            </td>
-          </tr>
+          {EditorInformationMockObject.Cases.map((caseDetails) => (
+            <tr
+              className="ons-table__row"
+              data-testid={`questionnaire-table-row-${caseDetails.CaseId}`}
+            >
+              <td className="ons-table__cell">
+                {caseDetails.CaseId}
+              </td>
+              <td className="ons-table__cell status">
+                {caseDetails.EditStatus}
+              </td>
+              <td className="ons-table__cell links">
+                <Link className="Edit" to="/summary">Summary</Link>
+                {' | '}
+                <Link className="Edit" to="/">Edit</Link>
+              </td>
+            </tr>
+          ))}
 
-          <tr
-            className="ons-table__row"
-            data-testid="questionnaire-table-row2"
-          >
-            <td className="ons-table__cell">
-              10001012
-            </td>
-            <td className="ons-table__cell status">
-              Complete
-            </td>
-            <td className="ons-table__cell links">
-              <Link className="Edit" to="/">Summary</Link>
-              {' | '}
-              <Link className="Edit" to="/">Edit</Link>
-            </td>
-          </tr>
-
-          <tr
-            className="ons-table__row"
-            data-testid="questionnaire-table-row3"
-          >
-            <td className="ons-table__cell">
-              10001013
-            </td>
-            <td className="ons-table__cell status">
-              Not Started
-            </td>
-            <td className="ons-table__cell links">
-              <Link className="Edit" to="/">Summary</Link>
-              {' | '}
-              <Link className="Edit" to="/">Edit</Link>
-            </td>
-          </tr>
         </>
       </ONSTable>
 

@@ -1,5 +1,14 @@
 import { CaseOutcome } from 'blaise-api-node-client';
 
+export interface EditorInformation {
+  numberOfCasesAllocated: number,
+  Cases: {
+    CaseId: string,
+    EditStatus: string
+  }[]
+
+}
+
 export interface CaseDetails {
   CaseId: string,
   CaseStatus: CaseOutcome,
