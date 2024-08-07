@@ -1,8 +1,8 @@
 import express, { Request, Response } from 'express';
+import { CaseEditInformation } from 'blaise-api-node-client';
 import { Controller } from '../interfaces/controllerInterface';
 import notFound from '../helpers/axiosHelper';
 import BlaiseApi from '../api/BlaiseApi';
-import { CaseEditInformation } from 'blaise-api-node-client';
 
 export default class CaseController implements Controller {
   blaiseApi: BlaiseApi;

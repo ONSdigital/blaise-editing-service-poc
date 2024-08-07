@@ -1,4 +1,4 @@
-import { CaseOutcome, EditedStatus, CaseEditInformation } from "blaise-api-node-client";
+import { CaseOutcome, EditedStatus, CaseEditInformation } from 'blaise-api-node-client';
 
 export const caseEditInformationMockObject1: CaseEditInformation = {
   primaryKey: '10001011',
@@ -42,4 +42,4 @@ export const CaseEditInformationListMockObject: CaseEditInformation[] = [
   caseEditInformationMockObject3,
   caseEditInformationMockObject4,
   caseEditInformationMockObject5,
-]
+];

@@ -46,7 +46,7 @@ describe('Get case edit information tests', () => {
 
   it('It should return a 500 response when a call is made to retrieve a list of editing details and the rest api is not availiable', async () => {
     // arrange
-    
+
     const axiosError = createAxiosError(500);
 
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(axiosError));

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import surveyListMockObject from '../../../mockObjects/surveyListMockObject';
-import {getSurveys, getCaseEditInformation} from '../../../../client/Common/api/NodeApi';
+import { getSurveys, getCaseEditInformation } from '../../../../client/Common/api/NodeApi';
 import { CaseEditInformationListMockObject } from '../../../mockObjects/CaseMockObject';
 
 // use axios mock adapter

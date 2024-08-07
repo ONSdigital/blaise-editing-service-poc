@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { CaseEditInformation } from 'blaise-api-node-client';
 import notFound from '../../../server/helpers/axiosHelper';
 import { Survey } from '../../../common/interfaces/surveyInterface';
 
@@ -19,6 +20,6 @@ export async function getSurveys(): Promise<Survey[]> {
   return getDataFromNode('/api/surveys', 'Unable to find surveys, please contact Richmond Rice');
 }
 
-export async function getCaseEditInformation(questionnaireName: string): Promise<Survey[]> {
+export async function getCaseEditInformation(questionnaireName: string): Promise<CaseEditInformation[]> {
   return getDataFromNode(`/api/${questionnaireName}/cases/edit`, 'Unable to find case edit information, please contact Richmond Rice');
 }
