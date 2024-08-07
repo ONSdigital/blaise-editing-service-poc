@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { ONSPanel, ONSSelect, ONSTable } from 'blaise-design-system-react-components';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
-import EditorInformationMockObject from '../../../test/client/MockObjects/CaseMockObject';
+import { EditorInformationMockObject } from '../../../test/client/MockObjects/CaseMockObject';
 
 interface EditorsQuestionnairesDetailsProps {
   questionnaire: QuestionnaireDetails;

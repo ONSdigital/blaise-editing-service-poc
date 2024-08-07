@@ -6,7 +6,19 @@ export interface EditorInformation {
     CaseId: string,
     EditStatus: string
   }[]
+}
 
+export interface SupervisorInformation {
+  TotalNumberOfCases: number,
+  NumberOfCasesNotAllocated: number,
+  NumberOfCasesAllocated: number,
+  NumberOfCasesCompleted: number,
+  Editors: {
+    EditorName: string,
+    NumberOfCasesAllocated: number,
+    NumberOfCasesCompleted: number,
+    NumberOfCasesQueried: number
+  }[]
 }
 
 export interface CaseDetails {

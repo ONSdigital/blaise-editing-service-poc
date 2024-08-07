@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { ONSPanel, ONSTable } from 'blaise-design-system-react-components';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
+import { SupervisorInformationMockObject } from '../../../test/client/MockObjects/CaseMockObject';
 
 interface SupervisorsQuestionnairesDetailsProps {
   questionnaire: QuestionnaireDetails;
@@ -20,13 +21,13 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
           <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Field period:</dt>
           <dd className="ons-description-list__value ons-grid__col ons-col-7@m">{questionnaire.fieldPeriod}</dd>
           <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Total number of cases:</dt>
-          <dd className="ons-description-list__value ons-grid__col ons-col-7@m">1000</dd>
+          <dd className="ons-description-list__value ons-grid__col ons-col-7@m">{SupervisorInformationMockObject.TotalNumberOfCases}</dd>
           <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases not allocated:</dt>
-          <dd className="ons-description-list__value ons-grid__col ons-col-7@m">970</dd>
+          <dd className="ons-description-list__value ons-grid__col ons-col-7@m">{SupervisorInformationMockObject.NumberOfCasesNotAllocated}</dd>
           <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases allocated:</dt>
-          <dd className="ons-description-list__value ons-grid__col ons-col-7@m">25</dd>
+          <dd className="ons-description-list__value ons-grid__col ons-col-7@m">{SupervisorInformationMockObject.NumberOfCasesAllocated}</dd>
           <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Number of cases completed:</dt>
-          <dd className="ons-description-list__value ons-grid__col ons-col-7@m">9</dd>
+          <dd className="ons-description-list__value ons-grid__col ons-col-7@m">{SupervisorInformationMockObject.NumberOfCasesCompleted}</dd>
         </dl>
       </ONSPanel>
 
@@ -40,75 +41,35 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
         ]}
       >
         <>
-          <tr
-            className="ons-table__row"
-            data-testid="questionnaire-table-row"
-          >
-            <td className="ons-table__cell">
-              <Link to="/">Doctor Doom:</Link>
-            </td>
-            <td className="ons-table__cell status">
-              10
-            </td>
-            <td className="ons-table__cell ">
-              5
-            </td>
-            <td className="ons-table__cell ">
-              0
-            </td>
-            <td className="ons-table__cell links">
-              <Link to="/allocate">Allocate</Link>
-              {' | '}
-              <Link to="/reallocate">Reallocate</Link>
-            </td>
-          </tr>
-          <tr
-            className="ons-table__row"
-            data-testid="questionnaire-table-row"
-          >
-            <td className="ons-table__cell">
-              <Link to="/">Captain Fantastic:</Link>
-            </td>
-            <td className="ons-table__cell status">
-              5
-            </td>
-            <td className="ons-table__cell ">
-              4
-            </td>
-            <td className="ons-table__cell ">
-              1
-            </td>
-            <td className="ons-table__cell links">
-              <Link to="/allocate">Allocate</Link>
-              {' | '}
-              <Link to="/reallocate">Reallocate</Link>
-            </td>
-          </tr>
-          <tr
-            className="ons-table__row"
-            data-testid="questionnaire-table-row"
-          >
-            <td className="ons-table__cell">
-              <Link to="/">The thing:</Link>
-            </td>
-            <td className="ons-table__cell status">
-              0
-            </td>
-            <td className="ons-table__cell ">
-              0
-            </td>
-            <td className="ons-table__cell ">
-              0
-            </td>
-            <td className="ons-table__cell links">
-              <Link to="/allocate">Allocate</Link>
-              {' | '}
-              <Link to="/reallocate">Reallocate</Link>
-            </td>
-          </tr>
+          {SupervisorInformationMockObject.Editors.map((editor) => (
+            <tr
+              className="ons-table__row"
+              data-testid="questionnaire-table-row"
+            >
+              <td className="ons-table__cell">
+                <Link to="/">
+                  {editor.EditorName}
+                  :
+                </Link>
+              </td>
+              <td className="ons-table__cell status">
+                {editor.NumberOfCasesAllocated}
+              </td>
+              <td className="ons-table__cell ">
+                {editor.NumberOfCasesCompleted}
+              </td>
+              <td className="ons-table__cell ">
+                {editor.NumberOfCasesQueried}
+              </td>
+              <td className="ons-table__cell links">
+                <Link to="/allocate">Allocate</Link>
+                {' | '}
+                <Link to="/reallocate">Reallocate</Link>
+              </td>
+            </tr>
+          ))}
         </>
       </ONSTable>
-
     </div>
   );
 }
