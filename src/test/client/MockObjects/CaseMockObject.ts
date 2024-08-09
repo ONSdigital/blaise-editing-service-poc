@@ -1,26 +1,27 @@
+import { EditedStatus } from 'blaise-api-node-client';
 import { EditorInformation } from '../../../common/interfaces/caseInterface';
 
 const EditorInformationMockObject: EditorInformation = {
   numberOfCasesAllocated: 5,
   Cases: [{
     CaseId: '10001011',
-    EditStatus: 'Completed',
+    EditStatus: EditedStatus.Finished,
   },
   {
     CaseId: '10001012',
-    EditStatus: 'In Progress',
+    EditStatus: EditedStatus.Started,
   },
   {
     CaseId: '10001013',
-    EditStatus: 'Not Started',
+    EditStatus: EditedStatus.NotStarted,
   },
   {
     CaseId: '10001014',
-    EditStatus: 'Completed',
+    EditStatus: EditedStatus.Finished,
   },
   {
     CaseId: '10001015',
-    EditStatus: 'Completed',
+    EditStatus: EditedStatus.Finished,
   },
   ],
 };

@@ -14,13 +14,6 @@ describe('Map editor informaiton', () => {
       interviewer: '',
     },
     {
-      primaryKey: '10001012',
-      outcome: CaseOutcome.Completed,
-      assignedTo: 'Dave',
-      editedStatus: EditedStatus.NotStarted,
-      interviewer: '',
-    },
-    {
       primaryKey: '10001013',
       outcome: CaseOutcome.Completed,
       assignedTo: 'Rich',
@@ -33,11 +26,11 @@ describe('Map editor informaiton', () => {
       numberOfCasesAllocated: 2,
       Cases: [{
         CaseId: '10001011',
-        EditStatus: 'Not Started',
+        EditStatus: EditedStatus.NotStarted,
       },
       {
         CaseId: '10001013',
-        EditStatus: 'Started',
+        EditStatus: EditedStatus.Started,
       }],
     };
 

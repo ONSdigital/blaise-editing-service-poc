@@ -42,7 +42,7 @@ describe('Given there is a survey and cases avalible for an editor', () => {
     expect(expectedView).toHaveTextContent(EditorInformationMockObject.numberOfCasesAllocated.toString());
     EditorInformationMockObject.Cases.forEach((caseDetails) => {
       expect(expectedView).toHaveTextContent(caseDetails.CaseId);
-      expect(expectedView).toHaveTextContent(caseDetails.EditStatus);
+      expect(expectedView).toHaveTextContent(caseDetails.EditStatus.toString());
     });
   });
 });

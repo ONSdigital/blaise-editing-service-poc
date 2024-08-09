@@ -131,7 +131,7 @@ exports[`Given there is a survey and cases avalible for an editor should display
               <td
                 class="ons-table__cell status"
               >
-                Completed
+                3
               </td>
               <td
                 class="ons-table__cell links"
@@ -163,7 +163,7 @@ exports[`Given there is a survey and cases avalible for an editor should display
               <td
                 class="ons-table__cell status"
               >
-                In Progress
+                1
               </td>
               <td
                 class="ons-table__cell links"
@@ -195,7 +195,7 @@ exports[`Given there is a survey and cases avalible for an editor should display
               <td
                 class="ons-table__cell status"
               >
-                Not Started
+                0
               </td>
               <td
                 class="ons-table__cell links"
@@ -227,7 +227,7 @@ exports[`Given there is a survey and cases avalible for an editor should display
               <td
                 class="ons-table__cell status"
               >
-                Completed
+                3
               </td>
               <td
                 class="ons-table__cell links"
@@ -259,7 +259,7 @@ exports[`Given there is a survey and cases avalible for an editor should display
               <td
                 class="ons-table__cell status"
               >
-                Completed
+                3
               </td>
               <td
                 class="ons-table__cell links"
@@ -411,7 +411,7 @@ exports[`Given there is a survey and cases avalible for an editor should display
             <td
               class="ons-table__cell status"
             >
-              Completed
+              3
             </td>
             <td
               class="ons-table__cell links"
@@ -443,7 +443,7 @@ exports[`Given there is a survey and cases avalible for an editor should display
             <td
               class="ons-table__cell status"
             >
-              In Progress
+              1
             </td>
             <td
               class="ons-table__cell links"
@@ -475,7 +475,7 @@ exports[`Given there is a survey and cases avalible for an editor should display
             <td
               class="ons-table__cell status"
             >
-              Not Started
+              0
             </td>
             <td
               class="ons-table__cell links"
@@ -507,7 +507,7 @@ exports[`Given there is a survey and cases avalible for an editor should display
             <td
               class="ons-table__cell status"
             >
-              Completed
+              3
             </td>
             <td
               class="ons-table__cell links"
@@ -539,7 +539,7 @@ exports[`Given there is a survey and cases avalible for an editor should display
             <td
               class="ons-table__cell status"
             >
-              Completed
+              3
             </td>
             <td
               class="ons-table__cell links"
