@@ -1,19 +1,19 @@
 import { CaseEditInformation } from 'blaise-api-node-client';
 import { EditorInformation } from '../../common/interfaces/caseInterface';
 
-export default function mapEditorInformaiton(caseEditInformationList: CaseEditInformation[], username: string): EditorInformation {
+export default function mapEditorInformaiton(caseEditInformationList: CaseEditInformation[]): EditorInformation {
   const cases:{
     CaseId: string,
     EditStatus: string
   }[] = [];
 
   caseEditInformationList.forEach((caseEditInformation) => {
-    if (caseEditInformation.assignedTo === username) {
-      cases.push({
-        CaseId: caseEditInformation.primaryKey,
-        EditStatus: caseEditInformation.editedStatus.toString(),
-      });
-    }
+
+    cases.push({
+      CaseId: caseEditInformation.primaryKey,
+      EditStatus: caseEditInformation.editedStatus.toString(),
+    });
+    
   });
 
   const numberOfCasesAllocated = cases.length;

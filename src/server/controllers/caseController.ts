@@ -23,7 +23,8 @@ export default class CaseController implements Controller {
     const { username } = request.query;
     try {
       const caseEditInformationList = await this.blaiseApi.getCaseEditInformation(questionnaireName);
-      const ediorInformaiton = mapEditorInformaiton(caseEditInformationList, username);
+      const filteredCaseEditInformationList = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo === username);
+      const ediorInformaiton = mapEditorInformaiton(filteredCaseEditInformationList);
       return response.status(200).json(ediorInformaiton);
     } catch (error: unknown) {
       if (notFound(error)) {
