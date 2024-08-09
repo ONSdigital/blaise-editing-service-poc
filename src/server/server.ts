@@ -27,6 +27,10 @@ export default function nodeServer(config: ConfigurationProvider, blaiseApi: Bla
   const caseController = new CaseController(blaiseApi);
   server.use('/', caseController.getRoutes());
 
+  //supervisor routing
+  const supervisorController = new SurveyController(blaiseApi);
+  server.use('/', supervisorController.getRoutes());
+
   // login routing
   const auth = new Auth(config);
   const loginHandler = newLoginHandler(auth, blaiseApi.blaiseApiClient);
