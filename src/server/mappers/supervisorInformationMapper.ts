@@ -21,7 +21,7 @@ export default function mapSupervisorInformaiton(caseEditInformationList: CaseEd
       foundEditor.NumberOfCasesAllocated += 1;
       foundEditor.NumberOfCasesCompleted += caseEditInformation.editedStatus === EditedStatus.Finished ? 1 : 0;
       foundEditor.NumberOfCasesQueried += caseEditInformation.editedStatus === EditedStatus.Query ? 1 : 0;
-    } else {
+    } else if (caseEditInformation.assignedTo !== '') {
       Editors.push({
         EditorName: caseEditInformation.assignedTo,
         NumberOfCasesAllocated: 1,
