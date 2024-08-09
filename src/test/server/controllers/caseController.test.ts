@@ -4,7 +4,7 @@ import nodeServer from '../../../server/server';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
-import { CaseEditInformationListMockObject } from '../../mockObjects/CaseMockObject';
+import { CaseEditInformationListMockObject, MappedEditorInformationRichMockObject } from '../../mockObjects/CaseMockObject';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
@@ -28,6 +28,7 @@ describe('Get case edit information tests', () => {
   });
 
   const questionnaireName = 'FRS2504A';
+  const username = 'Rich';
 
   it('When given a valid quetsionnaire It should return a 200 response with an expected list of editing details', async () => {
     // arrange
@@ -36,11 +37,11 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => CaseEditInformationListMockObject);
 
     // act
-    const response: Response = await sut.get(`/api/${questionnaireName}/cases/edit`);
+    const response: Response = await sut.get(`/api/${questionnaireName}/cases/edit?username=${username}`);
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual(CaseEditInformationListMockObject);
+    expect(response.body).toEqual(MappedEditorInformationRichMockObject);
     blaiseApiMock.verify((api) => api.getCaseEditInformation(questionnaireName), Times.once());
   });
 
@@ -52,7 +53,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(axiosError));
 
     // act
-    const response: Response = await sut.get(`/api/${questionnaireName}/cases/edit`);
+    const response: Response = await sut.get(`/api/${questionnaireName}/cases/edit?username=${username}`);
 
     // assert
     expect(response.status).toEqual(500);
@@ -65,7 +66,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(apiClientError));
 
     // act
-    const response: Response = await sut.get(`/api/${questionnaireName}/cases/edit`);
+    const response: Response = await sut.get(`/api/${questionnaireName}/cases/edit?username=${username}`);
 
     // assert
     expect(response.status).toEqual(500);
@@ -78,7 +79,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(axiosError));
 
     // act
-    const response: Response = await sut.get(`/api/${questionnaireName}/cases/edit`);
+    const response: Response = await sut.get(`/api/${questionnaireName}/cases/edit?username=${username}`);
 
     // assert
     expect(response.status).toEqual(404);

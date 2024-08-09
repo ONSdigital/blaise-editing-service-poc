@@ -107,7 +107,7 @@ exports[`Given there are no surveys available in blaise should render the page c
 }
 `;
 
-exports[`Given there are surveys available in blaise should render the supervisor page correctly when surveys are returned 1`] = `
+exports[`Given there are surveys available in blaise should render the editor page correctly when surveys are returned 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>

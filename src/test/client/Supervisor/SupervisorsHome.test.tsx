@@ -1,10 +1,12 @@
 import { render, act, RenderResult } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import surveyListMockObject from '../../mockObjects/surveyListMockObject';
 import userMockObject from '../../mockObjects/userMockObject';
-import { getSurveys } from '../../../client/Common/api/NodeApi';
+import { getEditorCaseInformation, getSurveys } from '../../../client/Common/api/NodeApi';
 import { Survey } from '../../../common/interfaces/surveyInterface';
 import SupervisorsHome from '../../../client/Supervisor/Pages/SupervisorsHome';
+import { EditorInformation } from '../../../common/interfaces/caseInterface';
+import { EditorInformationMockObject } from '../MockObjects/CaseMockObject';
+import { FilteredSurveyListMockObject } from '../MockObjects/EditorMockObjects';
 
 // set global vars
 const userRole:string = 'Supervisor';
@@ -13,14 +15,17 @@ let view:RenderResult;
 // set mocks
 jest.mock('../../../client/Common/api/NodeApi');
 const getSurveysMock = getSurveys as jest.Mock<Promise<Survey[]>>;
+const getEditorCaseInformationMock = getEditorCaseInformation as jest.Mock<Promise<EditorInformation>>;
 
 describe('Given there are surveys available in blaise', () => {
   beforeEach(() => {
-    getSurveysMock.mockImplementation(() => Promise.resolve(surveyListMockObject));
+    getSurveysMock.mockImplementation(() => Promise.resolve(FilteredSurveyListMockObject));
+    getEditorCaseInformationMock.mockImplementation(() => Promise.resolve(EditorInformationMockObject));
   });
 
   afterEach(() => {
     getSurveysMock.mockReset();
+    getEditorCaseInformationMock.mockReset();
   });
 
   it('should render the supervisor page correctly when surveys are returned', async () => {
@@ -56,7 +61,7 @@ describe('Given there are surveys available in blaise', () => {
     });
 
     // assert
-    surveyListMockObject.forEach((survey, surveyIndex) => {
+    FilteredSurveyListMockObject.forEach((survey, surveyIndex) => {
       const surveyListView = view.getByTestId(`survey-accordion-${surveyIndex}-heading`);
       expect(surveyListView).toHaveTextContent(survey.name);
 

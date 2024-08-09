@@ -21,7 +21,7 @@ export default function Surveys({ user }: SurveyProps) {
       </ONSPanel>
       <div data-testid="Surveys">
         <AsyncContent content={surveys}>
-          {(loadedSurveys) => <SurveysList surveys={loadedSurveys} role={user.role} />}
+          {(loadedSurveys) => <SurveysList surveys={loadedSurveys} user={user} />}
         </AsyncContent>
       </div>
     </>

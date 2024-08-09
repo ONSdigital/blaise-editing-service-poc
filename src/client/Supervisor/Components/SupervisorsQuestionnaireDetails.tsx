@@ -45,6 +45,7 @@ export default function SupervisorsQuestionnaireDetails({ questionnaire }: Super
             <tr
               className="ons-table__row"
               data-testid="questionnaire-table-row"
+              key={editor.EditorName}
             >
               <td className="ons-table__cell">
                 <Link to="/">

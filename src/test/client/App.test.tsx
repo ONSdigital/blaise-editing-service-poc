@@ -3,11 +3,13 @@ import {
 } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { Authenticate } from 'blaise-login-react-client';
-import surveyListMockObject from '../mockObjects/surveyListMockObject';
-import { getSurveys } from '../../client/Common/api/NodeApi';
+import { getEditorCaseInformation, getSurveys } from '../../client/Common/api/NodeApi';
 import { Survey } from '../../common/interfaces/surveyInterface';
 import userMockObject from '../mockObjects/userMockObject';
 import App from '../../client/App';
+import { EditorInformationMockObject } from './MockObjects/CaseMockObject';
+import { EditorInformation } from '../../common/interfaces/caseInterface';
+import { FilteredSurveyListMockObject } from './MockObjects/EditorMockObjects';
 
 // set global variables
 const validUserRoles:string[] = ['SVT_Supervisor', 'SVT_Editor'];
@@ -20,14 +22,17 @@ Authenticate.prototype.render = MockAuthenticate.prototype.render;
 
 jest.mock('../../client/Common/api/NodeApi');
 const getSurveysMock = getSurveys as jest.Mock<Promise<Survey[]>>;
+const getEditorCaseInformationMock = getEditorCaseInformation as jest.Mock<Promise<EditorInformation>>;
 
 describe('Renders the correct screen depending if the user has recently logged in', () => {
   beforeEach(() => {
-    getSurveysMock.mockImplementation(() => Promise.resolve(surveyListMockObject));
+    getSurveysMock.mockImplementation(() => Promise.resolve(FilteredSurveyListMockObject));
+    getEditorCaseInformationMock.mockImplementation(() => Promise.resolve(EditorInformationMockObject));
   });
 
   afterEach(() => {
     getSurveysMock.mockReset();
+    getEditorCaseInformationMock.mockReset();
   });
 
   it('Should display a message asking the user to enter their Blaise user credentials if they are not logged in', async () => {
