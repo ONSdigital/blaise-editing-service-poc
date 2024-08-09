@@ -6,6 +6,7 @@ import SurveyController from './controllers/surveyController';
 import ConfigurationProvider from './configuration/ServerConfigurationProvider';
 import BlaiseApi from './api/BlaiseApi';
 import CaseController from './controllers/caseController';
+import SupervisorController from './controllers/supervisorController';
 
 const cors = require('cors');
 
@@ -27,8 +28,8 @@ export default function nodeServer(config: ConfigurationProvider, blaiseApi: Bla
   const caseController = new CaseController(blaiseApi);
   server.use('/', caseController.getRoutes());
 
-  //supervisor routing
-  const supervisorController = new SurveyController(blaiseApi);
+  // supervisor routing
+  const supervisorController = new SupervisorController(blaiseApi);
   server.use('/', supervisorController.getRoutes());
 
   // login routing

@@ -2,7 +2,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import surveyListMockObject from '../../../mockObjects/surveyListMockObject';
 import { getSurveys, getEditorCaseInformation } from '../../../../client/Common/api/NodeApi';
-import { EditorInformationMockObject } from '../../MockObjects/CaseMockObject';
+import EditorInformationMockObject from '../../MockObjects/CaseMockObject';
 
 // use axios mock adapter
 const axiosMock = new MockAdapter(axios, { onNoMatch: 'throwException' });

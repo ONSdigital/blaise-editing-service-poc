@@ -1,39 +1,39 @@
-import { CaseOutcome, CaseEditInformation } from 'blaise-api-node-client';
+import { CaseOutcome, CaseEditInformation, EditedStatus } from 'blaise-api-node-client';
 import { EditorInformation } from '../../common/interfaces/caseInterface';
 
 export const caseEditInformationMockObject1: CaseEditInformation = {
   primaryKey: '10001011',
   outcome: CaseOutcome.Completed,
   assignedTo: 'Rich',
-  editedStatus: 'Finished',
+  editedStatus: EditedStatus.Finished,
   interviewer: '',
 };
 export const caseEditInformationMockObject2: CaseEditInformation = {
   primaryKey: '10001012',
   outcome: CaseOutcome.Completed,
   assignedTo: 'bob',
-  editedStatus: 'Not Started',
+  editedStatus: EditedStatus.NotStarted,
   interviewer: '',
 };
 export const caseEditInformationMockObject3: CaseEditInformation = {
   primaryKey: '10001013',
   outcome: CaseOutcome.Partial,
   assignedTo: 'Julie',
-  editedStatus: 'Query',
+  editedStatus: EditedStatus.Query,
   interviewer: '',
 };
 export const caseEditInformationMockObject4: CaseEditInformation = {
   primaryKey: '10001014',
   outcome: CaseOutcome.CompletedNudge,
   assignedTo: 'Sarah',
-  editedStatus: 'Started',
+  editedStatus: EditedStatus.Started,
   interviewer: '',
 };
 export const caseEditInformationMockObject5: CaseEditInformation = {
   primaryKey: '10001015',
   outcome: CaseOutcome.Completed,
   assignedTo: 'Rich',
-  editedStatus: 'Started',
+  editedStatus: EditedStatus.Started,
   interviewer: '',
 };
 

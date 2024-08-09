@@ -1,33 +1,32 @@
-import { CaseEditInformation } from 'blaise-api-node-client';
+import { CaseEditInformation, EditedStatus } from 'blaise-api-node-client';
 import { SupervisorInformation } from '../../common/interfaces/caseInterface';
 
 export default function mapSupervisorInformaiton(caseEditInformationList: CaseEditInformation[]): SupervisorInformation {
-
   const TotalNumberOfCases = caseEditInformationList.length;
-  const NumberOfCasesNotAllocated = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo === "").length;
-  const NumberOfCasesAllocated = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo !== "").length;
-  const NumberOfCasesCompleted = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.editedStatus === "Complete").length;
+  const NumberOfCasesNotAllocated = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo === '').length;
+  const NumberOfCasesAllocated = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo !== '').length;
+  const NumberOfCasesCompleted = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.editedStatus === EditedStatus.Finished).length;
 
   const Editors: {
     EditorName: string,
     NumberOfCasesAllocated: number,
     NumberOfCasesCompleted: number,
     NumberOfCasesQueried: number
-  }[] = []
+  }[] = [];
 
   caseEditInformationList.forEach((caseEditInformation) => {
-    const editor = Editors.find(editor => editor.EditorName === caseEditInformation.assignedTo);
+    const foundEditor = Editors.find((editor) => editor.EditorName === caseEditInformation.assignedTo);
 
-    if (editor) {
-      editor.NumberOfCasesAllocated += 1;
-      editor.NumberOfCasesCompleted += caseEditInformation.editedStatus === "Complete" ? 1 : 0;
-      editor.NumberOfCasesQueried += caseEditInformation.editedStatus === "Queried" ? 1 : 0;
+    if (foundEditor) {
+      foundEditor.NumberOfCasesAllocated += 1;
+      foundEditor.NumberOfCasesCompleted += caseEditInformation.editedStatus === EditedStatus.Finished ? 1 : 0;
+      foundEditor.NumberOfCasesQueried += caseEditInformation.editedStatus === EditedStatus.Query ? 1 : 0;
     } else {
       Editors.push({
         EditorName: caseEditInformation.assignedTo,
         NumberOfCasesAllocated: 1,
-        NumberOfCasesCompleted: caseEditInformation.editedStatus === "Complete" ? 1 : 0,
-        NumberOfCasesQueried: caseEditInformation.editedStatus === "Queried" ? 1 : 0,
+        NumberOfCasesCompleted: caseEditInformation.editedStatus === EditedStatus.Finished ? 1 : 0,
+        NumberOfCasesQueried: caseEditInformation.editedStatus === EditedStatus.Query ? 1 : 0,
       });
     }
   });

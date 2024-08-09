@@ -5,7 +5,7 @@ import BlaiseApi from '../api/BlaiseApi';
 import { SupervisorInformation } from '../../common/interfaces/caseInterface';
 import mapSupervisorInformaiton from '../mappers/supervisorInformationMapper';
 
-export default class CaseController implements Controller {
+export default class SupervisorController implements Controller {
   blaiseApi: BlaiseApi;
 
   constructor(blaiseApi: BlaiseApi) {

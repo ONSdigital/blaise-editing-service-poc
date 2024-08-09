@@ -1,6 +1,6 @@
-import { SupervisorInformation } from "../../../common/interfaces/caseInterface";
+import { SupervisorInformation } from '../../../common/interfaces/caseInterface';
 
-export const SupervisorInformationMockObject: SupervisorInformation = {
+const SupervisorInformationMockObject: SupervisorInformation = {
   TotalNumberOfCases: 1000,
   NumberOfCasesNotAllocated: 970,
   NumberOfCasesAllocated: 25,
@@ -27,3 +27,4 @@ export const SupervisorInformationMockObject: SupervisorInformation = {
   ],
 };
 
+export default SupervisorInformationMockObject;

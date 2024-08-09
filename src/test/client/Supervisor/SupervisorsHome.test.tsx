@@ -5,7 +5,7 @@ import { getEditorCaseInformation, getSurveys } from '../../../client/Common/api
 import { Survey } from '../../../common/interfaces/surveyInterface';
 import SupervisorsHome from '../../../client/Supervisor/Pages/SupervisorsHome';
 import { EditorInformation } from '../../../common/interfaces/caseInterface';
-import { EditorInformationMockObject } from '../MockObjects/CaseMockObject';
+import EditorInformationMockObject from '../MockObjects/CaseMockObject';
 import { FilteredSurveyListMockObject } from '../MockObjects/EditorMockObjects';
 
 // set global vars
