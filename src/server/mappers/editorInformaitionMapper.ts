@@ -8,12 +8,10 @@ export default function mapEditorInformaiton(caseEditInformationList: CaseEditIn
   }[] = [];
 
   caseEditInformationList.forEach((caseEditInformation) => {
-
     cases.push({
       CaseId: caseEditInformation.primaryKey,
       EditStatus: caseEditInformation.editedStatus.toString(),
     });
-    
   });
 
   const numberOfCasesAllocated = cases.length;
