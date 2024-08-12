@@ -10,6 +10,7 @@ env_variables:
   PROJECT_ID: _PROJECT_ID
   SERVER_PARK: _SERVER_PARK
   ROLES: _ROLES
+  SURVEYS: _SURVEYS
 
 basic_scaling:
   idle_timeout: 10m

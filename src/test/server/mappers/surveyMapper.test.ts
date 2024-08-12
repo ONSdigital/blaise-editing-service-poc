@@ -1,67 +1,33 @@
+import { QuestionnaireDetails, Survey } from '../../../common/interfaces/surveyInterface';
 import mapSurveys from '../../../server/mappers/surveyMapper';
+import { frsQuestionnaireDetails1MockObject, frsQuestionnaireDetails2MockObject, lmsQuestionnaireDetailsMockObject, opnQuestionnaireDetailsMockObject } from '../../mockObjects/questionnaireListMockObject';
 
 describe('Map questionnaire list to survey list', () => {
-  it('Should map a list of questionnaires to an expected list of surveys', () => {
+  it('Should return expected list of surveys', () => {
     // arrange
     const questionnaireDetailsList = [
-      {
-        questionnaireName: 'LMS2101_AA1',
-        numberOfCases: 3,
-        fieldPeriod: '2021-01-01T00:00:00',
-        surveyTla: 'LMS',
-      },
-      {
-        questionnaireName: 'LMS2101_AB1',
-        numberOfCases: 1,
-        fieldPeriod: '2021-01-01T00:00:00',
-        surveyTla: 'LMS',
-      },
-      {
-        questionnaireName: 'LMS2101_AC1',
-        numberOfCases: 0,
-        fieldPeriod: '2021-01-01T00:00:00',
-        surveyTla: 'LMS',
-      },
-      {
-        questionnaireName: 'OPN2201A',
-        numberOfCases: 3,
-        fieldPeriod: '2022-01-01T00:00:00',
-        surveyTla: 'OPN',
-      },
+      lmsQuestionnaireDetailsMockObject,
+      frsQuestionnaireDetails1MockObject,
+      frsQuestionnaireDetails2MockObject,
+      opnQuestionnaireDetailsMockObject
     ];
 
     const expectedSurveys = [
       {
         name: 'LMS',
         questionnaires:
-      [{
-        questionnaireName: 'LMS2101_AA1',
-        numberOfCases: 3,
-        fieldPeriod: '2021-01-01T00:00:00',
-        surveyTla: 'LMS',
-      },
+      [lmsQuestionnaireDetailsMockObject],
+      },      
       {
-        questionnaireName: 'LMS2101_AB1',
-        numberOfCases: 1,
-        fieldPeriod: '2021-01-01T00:00:00',
-        surveyTla: 'LMS',
-      },
-      {
-        questionnaireName: 'LMS2101_AC1',
-        numberOfCases: 0,
-        fieldPeriod: '2021-01-01T00:00:00',
-        surveyTla: 'LMS',
-      }],
+        name: 'FRS',
+        questionnaires:
+      [frsQuestionnaireDetails1MockObject, frsQuestionnaireDetails2MockObject],
       },
       {
         name: 'OPN',
-        questionnaires: [{
-          questionnaireName: 'OPN2201A',
-          numberOfCases: 3,
-          fieldPeriod: '2022-01-01T00:00:00',
-          surveyTla: 'OPN',
-        }],
-      },
+        questionnaires:
+      [opnQuestionnaireDetailsMockObject],
+      },      
     ];
 
     // act
@@ -70,4 +36,17 @@ describe('Map questionnaire list to survey list', () => {
     // assert
     expect(surveys).toEqual(expectedSurveys);
   });
+
+  it('Should return an empty list if no surveys are found', () => {
+    // arrange
+    const questionnaireDetailsList: QuestionnaireDetails[] = [];
+
+    const expectedSurveys: Survey[] = [];
+
+    // act
+    const surveys = mapSurveys(questionnaireDetailsList);
+
+    // assert
+    expect(surveys).toEqual(expectedSurveys);
+  });  
 });

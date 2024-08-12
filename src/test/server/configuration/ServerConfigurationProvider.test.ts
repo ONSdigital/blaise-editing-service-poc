@@ -9,8 +9,10 @@ const serverPark = 'gusty';
 const externalWebUrl = 'cati.blaise.com';
 const sessionSecret = 'richlikesricecakes';
 const sessionTimeout = '12h';
-const roles = 'DST';
-const rolesArray = ['DST'];
+const roles = 'SVT_Supervisor,SVT_Editor';
+const rolesList = ['SVT_Supervisor', 'SVT_Editor'];
+const surveys = 'FRS';
+const surveysList = ['FRS']
 
 describe('Configuration file tests', () => {
   beforeEach(() => {
@@ -86,6 +88,7 @@ describe('Authentication file tests', () => {
     process.env['SESSION_SECRET'] = sessionSecret;
     process.env['SESSION_TIMEOUT'] = sessionTimeout;
     process.env['ROLES'] = roles;
+    process.env['SURVEYS'] = surveys;
     process.env['BLAISE_API_URL'] = blaiseApiUrl;
   });
 
@@ -100,7 +103,8 @@ describe('Authentication file tests', () => {
     // assert
     expect(sut.SessionSecret).toEqual(sessionSecret);
     expect(sut.SessionTimeout).toEqual(sessionTimeout);
-    expect(sut.Roles).toEqual(rolesArray);
+    expect(sut.Roles).toEqual(rolesList);
+    expect(sut.Surveys).toEqual(surveysList);
     expect(sut.BlaiseApiUrl).toEqual(`http://${blaiseApiUrl}`);
   });
 
@@ -123,19 +127,29 @@ describe('Authentication file tests', () => {
     const sut = new ServerConfigurationProvider();
 
     // assert
-    expect(sut.SessionTimeout).toEqual('12h');
+    expect(sut.SessionTimeout).toEqual(sut.DefaultSessionTimeout);
   });
 
-  it.each([undefined, ''])('should return all roles if a role empty or does not exist', (value) => {
+  it.each([undefined, '', '_ROLES'])('should return default roles if roles is empty or does not exist', (value) => {
     // arrange
     process.env['ROLES'] = value;
 
     // act
     const sut = new ServerConfigurationProvider();
-    const allRoles = ['SVT_Supervisor', 'SVT_Editor'];
 
     // assert
-    expect(sut.Roles).toEqual(allRoles);
+    expect(sut.Roles).toEqual(sut.DefaultRoles);
+  });
+
+  it.each([undefined, '', '_SURVEYS'])('should return default surveys if surveys is empty or does not exist', (value) => {
+    // arrange
+    process.env['SURVEYS'] = value;
+
+    // act
+    const sut = new ServerConfigurationProvider();
+
+    // assert
+    expect(sut.Surveys).toEqual(sut.DefaultSurveys);
   });
 
   it.each([undefined, '', '  ', '   '])('should throw an error if BLAISE_API_URL is empty or does not exist', (value) => {

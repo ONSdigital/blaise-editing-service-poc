@@ -8,7 +8,7 @@ export default function mapSurveys(questionnaires: QuestionnaireDetails[]): Surv
 
     if (surveyElement === undefined) {
       surveys.push({
-        name: questionnaire.surveyTla ?? 'N/A',
+        name: questionnaire.surveyTla,
         questionnaires: [questionnaire],
       });
     } else {

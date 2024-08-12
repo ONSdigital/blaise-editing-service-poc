@@ -21,7 +21,7 @@ export default function nodeServer(config: ConfigurationProvider, blaiseApi: Bla
   server.use('/static', express.static(path.join(__dirname, `${config.BuildFolder}/static`)));
 
   // survey routing
-  const surveyController = new SurveyController(blaiseApi);
+  const surveyController = new SurveyController(blaiseApi, config);
   server.use('/', surveyController.getRoutes());
 
   // case routing

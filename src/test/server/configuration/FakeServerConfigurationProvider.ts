@@ -17,6 +17,14 @@ export default class FakeServerConfigurationProvider implements ServerConfigurat
 
   Roles: string[];
 
+  Surveys: string[]
+
+  DefaultSessionTimeout: string = '12h';
+
+  DefaultRoles: string[] =  ['SVT_Supervisor', 'SVT_Editor'];
+
+  DefaultSurveys: string[] = ['FRS'];    
+
   constructor(
     blaiseApiUrl?: string,
     buildFolder?: string,
@@ -26,14 +34,16 @@ export default class FakeServerConfigurationProvider implements ServerConfigurat
     sessionSecret?: string,
     sessionTimeout?: string,
     roles?: string[],
-  ) {
+    surveys?: string[],
+  ) {    
     this.BlaiseApiUrl = blaiseApiUrl ?? 'restapi.blaise.com';
     this.BuildFolder = buildFolder ?? 'dist';
     this.Port = port ?? 5000;
     this.ServerPark = serverPark ?? 'gusty';
     this.ExternalWebUrl = externalWebUrl ?? 'cati.blaise.com';
-    this.SessionSecret = sessionSecret ?? 'richlikesricecakes';
-    this.SessionTimeout = sessionTimeout ?? '12h';
-    this.Roles = roles ?? ['DST'];
+    this.SessionSecret = sessionSecret ?? 'richlikesricecakes';    
+    this.SessionTimeout = sessionTimeout ?? this.DefaultSessionTimeout;
+    this.Roles = roles ?? this.DefaultRoles;
+    this.Surveys = surveys ?? this.DefaultSurveys
   }
 }

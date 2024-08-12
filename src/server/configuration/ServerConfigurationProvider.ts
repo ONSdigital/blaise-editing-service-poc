@@ -2,10 +2,11 @@ import { AuthConfig } from 'blaise-login-react-server';
 import { ServerConfiguration } from '../interfaces/serverConfigurationInterface';
 import {
   fixUrl, generateSessionSecret,
-  getNumberOrThrowError, getStringOrSetDefault, getStringOrThrowError, loadRoles,
+  getNumberOrThrowError, getStringOrSetDefault, getStringOrThrowError, GetListOrSetDefault,
 } from '../helpers/configurationHelper';
+import { SurveyConfiguration } from '../interfaces/surveyConfigurationInterface';
 
-export default class ServerConfigurationProvider implements ServerConfiguration, AuthConfig {
+export default class ServerConfigurationProvider implements SurveyConfiguration, ServerConfiguration, AuthConfig {
   BlaiseApiUrl: string;
 
   BuildFolder: string;
@@ -22,6 +23,14 @@ export default class ServerConfigurationProvider implements ServerConfiguration,
 
   Roles: string[];
 
+  Surveys: string[];
+
+  DefaultSessionTimeout: string = '12h'
+
+  DefaultRoles: string[] = ['SVT_Supervisor', 'SVT_Editor'];
+
+  DefaultSurveys: string[] = ['FRS']
+
   constructor() {
     const {
       BLAISE_API_URL,
@@ -31,6 +40,7 @@ export default class ServerConfigurationProvider implements ServerConfiguration,
       SESSION_SECRET,
       SESSION_TIMEOUT,
       ROLES,
+      SURVEYS,
     } = process.env;
 
     this.BuildFolder = '../../build';
@@ -45,8 +55,10 @@ export default class ServerConfigurationProvider implements ServerConfiguration,
 
     this.SessionSecret = generateSessionSecret(SESSION_SECRET);
 
-    this.SessionTimeout = getStringOrSetDefault(SESSION_TIMEOUT, '12h');
+    this.SessionTimeout = getStringOrSetDefault(SESSION_TIMEOUT, this.DefaultSessionTimeout);
 
-    this.Roles = loadRoles(ROLES);
+    this.Roles = GetListOrSetDefault(ROLES, this.DefaultRoles);
+
+    this.Surveys = GetListOrSetDefault(SURVEYS, this.DefaultSurveys)
   }
 }

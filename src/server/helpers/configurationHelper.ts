@@ -23,11 +23,11 @@ export function getNumberOrThrowError(variable: string | undefined, variableName
   return +value;
 }
 
-export function loadRoles(roles: string | undefined): string[] {
-  if (!roles || roles === '' || roles === '_ROLES') {
-    return ['SVT_Supervisor', 'SVT_Editor'];
+export function GetListOrSetDefault(variable: string | undefined, defaultValues: string[]): string[] {
+  if (!variable || variable === '' || variable.startsWith('_')) {
+    return defaultValues;
   }
-  return roles.split(',');
+  return variable.split(',');
 }
 
 export function generateSessionSecret(secret: string | undefined): string {

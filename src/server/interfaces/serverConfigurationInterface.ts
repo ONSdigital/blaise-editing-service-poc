@@ -3,5 +3,5 @@ export interface ServerConfiguration {
   BuildFolder: string;
   Port: number;
   ServerPark: string;
-  ExternalWebUrl: string;
+  ExternalWebUrl: string;  
 }

@@ -1,15 +1,18 @@
 import express, { Request, Response } from 'express';
 import { Controller } from '../interfaces/controllerInterface';
 import notFound from '../helpers/axiosHelper';
-import { Survey } from '../../common/interfaces/surveyInterface';
+import { QuestionnaireDetails, Survey } from '../../common/interfaces/surveyInterface';
 import mapSurveys from '../mappers/surveyMapper';
 import BlaiseApi from '../api/BlaiseApi';
+import { SurveyConfiguration } from '../interfaces/surveyConfigurationInterface';
 
 export default class SurveyController implements Controller {
   blaiseApi: BlaiseApi;
+  configuration: SurveyConfiguration;
 
-  constructor(blaiseApi: BlaiseApi) {
+  constructor(blaiseApi: BlaiseApi, surveyConfiguration: SurveyConfiguration) {
     this.blaiseApi = blaiseApi;
+    this.configuration = surveyConfiguration;
     this.getSurveys = this.getSurveys.bind(this);
   }
 
@@ -20,8 +23,8 @@ export default class SurveyController implements Controller {
 
   async getSurveys(_request: Request, response: Response<Survey[]>) {
     try {
-      const questionnaires = await this.blaiseApi.getQuestionnaires();
-      const surveys = mapSurveys(questionnaires);
+      const questionnaires = await this.GetSupportedQuestionnaires();
+      const surveys = mapSurveys(questionnaires ?? []);
 
       return response.status(200).json(surveys);
     } catch (error: unknown) {
@@ -30,5 +33,10 @@ export default class SurveyController implements Controller {
       }
       return response.status(500).json();
     }
+  }
+
+  async GetSupportedQuestionnaires(): Promise<QuestionnaireDetails[]> {
+    const questionnaires = await this.blaiseApi.getQuestionnaires();
+    return questionnaires.filter(q => this.configuration.Surveys.includes(q.surveyTla));
   }
 }

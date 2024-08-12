@@ -16,12 +16,13 @@ export default class BlaiseApi {
 
   async getQuestionnaires(): Promise<QuestionnaireDetails[]> {
     const questionnaires = await this.blaiseApiClient.getQuestionnaires(this.config.ServerPark);
+
     const questionnaireDetailsList: QuestionnaireDetails[] = [];
     questionnaires.forEach((questionnaire : Questionnaire) => {
       questionnaireDetailsList.push(mapQuestionnaireDetails(questionnaire));
     });
-    const editQuestionnaireDetailsList = questionnaireDetailsList.filter((questionnaire) => questionnaire.surveyTla === 'FRS');
-    return editQuestionnaireDetailsList;
+
+    return questionnaireDetailsList
   }
 
   async getCaseEditInformation(questionnaire: string): Promise<CaseEditInformation[]> {
