@@ -1,12 +1,13 @@
 import { render, act, RenderResult } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import userMockObject from '../../mockObjects/userMockObject';
-import { getEditorCaseInformation, getSurveys } from '../../../client/Common/api/NodeApi';
+import { getEditorCaseInformation, getSupervisorEditorInformation, getSurveys } from '../../../client/Common/api/NodeApi';
 import { Survey } from '../../../common/interfaces/surveyInterface';
 import SupervisorsHome from '../../../client/Supervisor/Pages/SupervisorsHome';
+import { EditorInformationMockObject, FilteredSurveyListMockObject } from '../MockObjects/EditorMockObjects';
+import { SupervisorInformation } from '../../../common/interfaces/supervisorInterface';
+import SupervisorInformationMockObject from '../MockObjects/SupervisorMockObjects';
 import { EditorInformation } from '../../../common/interfaces/editorInterface';
-import EditorInformationMockObject from '../MockObjects/CaseMockObject';
-import { FilteredSurveyListMockObject } from '../MockObjects/EditorMockObjects';
 
 // set global vars
 const userRole:string = 'Supervisor';
@@ -15,16 +16,19 @@ let view:RenderResult;
 // set mocks
 jest.mock('../../../client/Common/api/NodeApi');
 const getSurveysMock = getSurveys as jest.Mock<Promise<Survey[]>>;
+const getSupervisorCaseInformationMock = getSupervisorEditorInformation as jest.Mock<Promise<SupervisorInformation>>;
 const getEditorCaseInformationMock = getEditorCaseInformation as jest.Mock<Promise<EditorInformation>>;
 
 describe('Given there are surveys available in blaise', () => {
   beforeEach(() => {
     getSurveysMock.mockImplementation(() => Promise.resolve(FilteredSurveyListMockObject));
+    getSupervisorCaseInformationMock.mockImplementation(() => Promise.resolve(SupervisorInformationMockObject));
     getEditorCaseInformationMock.mockImplementation(() => Promise.resolve(EditorInformationMockObject));
   });
 
   afterEach(() => {
     getSurveysMock.mockReset();
+    getSupervisorCaseInformationMock.mockReset();
     getEditorCaseInformationMock.mockReset();
   });
 
@@ -65,14 +69,15 @@ describe('Given there are surveys available in blaise', () => {
       const surveyListView = view.getByTestId(`survey-accordion-${surveyIndex}-heading`);
       expect(surveyListView).toHaveTextContent(survey.name);
 
-      survey.questionnaires.forEach(({ questionnaireName, numberOfCases }) => {
+      survey.questionnaires.forEach(({ questionnaireName }) => {
         const questionnaireListView = view.getByTestId(`survey-accordion-${surveyIndex}-content`);
+        
         expect(questionnaireListView).toHaveTextContent(questionnaireName);
-        if (numberOfCases === 0) {
-          // TODO expect(questionnaireListView).toHaveTextContent('Not signed off for editing yet');
-        }
+
+        //const questionnaireView = view.getByTestId(`${questionnaireName}-supervisor-Content`);
       });
     });
+    
   });
 });
 

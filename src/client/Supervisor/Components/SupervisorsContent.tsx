@@ -16,7 +16,7 @@ export default function SupervisorsContent({ questionnaire, supervisorInformatio
         <dl
           className="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
           title="Questionnares"
-          data-testid="QuestionnaireList"
+          data-testid={`${questionnaire.questionnaireName}-supervisor-Content`}
           style={{ padding: '0 0 15px 5px' }}
         >
           <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Field period:</dt>
@@ -45,7 +45,7 @@ export default function SupervisorsContent({ questionnaire, supervisorInformatio
           {supervisorInformation.Editors.map((editor) => (
             <tr
               className="ons-table__row"
-              data-testid="questionnaire-table-row"
+              data-testid={`editor-table-row-${editor.EditorName}`}
               key={editor.EditorName}
             >
               <td className="ons-table__cell">
