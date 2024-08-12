@@ -8,6 +8,7 @@ import { SurveyConfiguration } from '../interfaces/surveyConfigurationInterface'
 
 export default class SurveyController implements Controller {
   blaiseApi: BlaiseApi;
+
   configuration: SurveyConfiguration;
 
   constructor(blaiseApi: BlaiseApi, surveyConfiguration: SurveyConfiguration) {
@@ -37,6 +38,6 @@ export default class SurveyController implements Controller {
 
   async GetSupportedQuestionnaires(): Promise<QuestionnaireDetails[]> {
     const questionnaires = await this.blaiseApi.getQuestionnaires();
-    return questionnaires.filter(q => this.configuration.Surveys.includes(q.surveyTla));
+    return questionnaires.filter((q) => this.configuration.Surveys.includes(q.surveyTla));
   }
 }

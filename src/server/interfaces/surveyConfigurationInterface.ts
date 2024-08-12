@@ -1,4 +1,3 @@
 export interface SurveyConfiguration {
-    Surveys: string[];
-  }
-  
+  Surveys: string[];
+}

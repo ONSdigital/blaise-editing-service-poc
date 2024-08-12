@@ -12,7 +12,7 @@ const sessionTimeout = '12h';
 const roles = 'SVT_Supervisor,SVT_Editor';
 const rolesList = ['SVT_Supervisor', 'SVT_Editor'];
 const surveys = 'FRS';
-const surveysList = ['FRS']
+const surveysList = ['FRS'];
 
 describe('Configuration file tests', () => {
   beforeEach(() => {

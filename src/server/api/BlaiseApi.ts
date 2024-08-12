@@ -22,7 +22,7 @@ export default class BlaiseApi {
       questionnaireDetailsList.push(mapQuestionnaireDetails(questionnaire));
     });
 
-    return questionnaireDetailsList
+    return questionnaireDetailsList;
   }
 
   async getCaseEditInformation(questionnaire: string): Promise<CaseEditInformation[]> {

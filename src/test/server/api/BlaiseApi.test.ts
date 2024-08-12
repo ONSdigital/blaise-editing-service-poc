@@ -1,7 +1,7 @@
 import BlaiseApiClient, { CaseEditInformationListMockObject } from 'blaise-api-node-client';
 import { IMock, Mock, Times } from 'typemoq';
 import BlaiseApi from '../../../server/api/BlaiseApi';
-import {questionnaireDetailsListMockObject, questionnaireListMockObject } from '../../mockObjects/questionnaireListMockObject';
+import { questionnaireDetailsListMockObject, questionnaireListMockObject } from '../../mockObjects/questionnaireListMockObject';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
 
 // create fake config

@@ -1,6 +1,8 @@
 import { QuestionnaireDetails, Survey } from '../../../common/interfaces/surveyInterface';
 import mapSurveys from '../../../server/mappers/surveyMapper';
-import { frsQuestionnaireDetails1MockObject, frsQuestionnaireDetails2MockObject, lmsQuestionnaireDetailsMockObject, opnQuestionnaireDetailsMockObject } from '../../mockObjects/questionnaireListMockObject';
+import {
+  frsQuestionnaireDetails1MockObject, frsQuestionnaireDetails2MockObject, lmsQuestionnaireDetailsMockObject, opnQuestionnaireDetailsMockObject,
+} from '../../mockObjects/questionnaireListMockObject';
 
 describe('Map questionnaire list to survey list', () => {
   it('Should return expected list of surveys', () => {
@@ -9,7 +11,7 @@ describe('Map questionnaire list to survey list', () => {
       lmsQuestionnaireDetailsMockObject,
       frsQuestionnaireDetails1MockObject,
       frsQuestionnaireDetails2MockObject,
-      opnQuestionnaireDetailsMockObject
+      opnQuestionnaireDetailsMockObject,
     ];
 
     const expectedSurveys = [
@@ -17,7 +19,7 @@ describe('Map questionnaire list to survey list', () => {
         name: 'LMS',
         questionnaires:
       [lmsQuestionnaireDetailsMockObject],
-      },      
+      },
       {
         name: 'FRS',
         questionnaires:
@@ -27,7 +29,7 @@ describe('Map questionnaire list to survey list', () => {
         name: 'OPN',
         questionnaires:
       [opnQuestionnaireDetailsMockObject],
-      },      
+      },
     ];
 
     // act
@@ -48,5 +50,5 @@ describe('Map questionnaire list to survey list', () => {
 
     // assert
     expect(surveys).toEqual(expectedSurveys);
-  });  
+  });
 });

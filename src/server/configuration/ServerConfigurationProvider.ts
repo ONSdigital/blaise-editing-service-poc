@@ -25,11 +25,11 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
 
   Surveys: string[];
 
-  DefaultSessionTimeout: string = '12h'
+  DefaultSessionTimeout: string = '12h';
 
   DefaultRoles: string[] = ['SVT_Supervisor', 'SVT_Editor'];
 
-  DefaultSurveys: string[] = ['FRS']
+  DefaultSurveys: string[] = ['FRS'];
 
   constructor() {
     const {
@@ -59,6 +59,6 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
 
     this.Roles = GetListOrSetDefault(ROLES, this.DefaultRoles);
 
-    this.Surveys = GetListOrSetDefault(SURVEYS, this.DefaultSurveys)
+    this.Surveys = GetListOrSetDefault(SURVEYS, this.DefaultSurveys);
   }
 }
