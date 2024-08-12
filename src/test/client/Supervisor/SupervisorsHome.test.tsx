@@ -69,7 +69,7 @@ describe('Given there are surveys available in blaise', () => {
         const questionnaireListView = view.getByTestId(`survey-accordion-${surveyIndex}-content`);
         expect(questionnaireListView).toHaveTextContent(questionnaireName);
         if (numberOfCases === 0) {
-          // expect(questionnaireListView).toHaveTextContent('Not signed off for editing yet');
+          // TODO expect(questionnaireListView).toHaveTextContent('Not signed off for editing yet');
         }
       });
     });
