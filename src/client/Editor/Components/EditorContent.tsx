@@ -1,7 +1,7 @@
 import { ONSPanel, ONSSelect, ONSTable } from 'blaise-design-system-react-components';
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
-import { EditorInformation } from '../../../common/interfaces/caseInterface';
+import { EditorInformation } from '../../../common/interfaces/editorInterface';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 
 interface EditorsContentProps {

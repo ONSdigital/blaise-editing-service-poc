@@ -1,25 +1,4 @@
-import { CaseOutcome, EditedStatus } from 'blaise-api-node-client';
-
-export interface EditorInformation {
-  numberOfCasesAllocated: number,
-  Cases: {
-    CaseId: string,
-    EditStatus: EditedStatus
-  }[]
-}
-
-export interface SupervisorInformation {
-  TotalNumberOfCases: number,
-  NumberOfCasesNotAllocated: number,
-  NumberOfCasesAllocated: number,
-  NumberOfCasesCompleted: number,
-  Editors: {
-    EditorName: string,
-    NumberOfCasesAllocated: number,
-    NumberOfCasesCompleted: number,
-    NumberOfCasesQueried: number
-  }[]
-}
+import { CaseOutcome } from 'blaise-api-node-client';
 
 export interface CaseDetails {
   CaseId: string,

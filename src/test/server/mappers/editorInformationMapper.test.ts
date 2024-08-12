@@ -1,6 +1,6 @@
 import { CaseEditInformation, CaseOutcome, EditedStatus } from 'blaise-api-node-client';
-import { EditorInformation } from '../../../common/interfaces/caseInterface';
 import mapEditorInformaiton from '../../../server/mappers/editorInformaitionMapper';
+import { EditorInformation } from '../../../common/interfaces/editorInterface';
 
 describe('Map editor informaiton', () => {
   it('It should return a correctly mapped editor informaito given all details are present', () => {

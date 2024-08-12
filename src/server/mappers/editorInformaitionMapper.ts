@@ -1,5 +1,5 @@
 import { CaseEditInformation, EditedStatus } from 'blaise-api-node-client';
-import { EditorInformation } from '../../common/interfaces/caseInterface';
+import { EditorInformation } from '../../common/interfaces/editorInterface';
 
 export default function mapEditorInformaiton(caseEditInformationList: CaseEditInformation[]): EditorInformation {
   const cases:{
@@ -15,10 +15,8 @@ export default function mapEditorInformaiton(caseEditInformationList: CaseEditIn
   });
 
   const numberOfCasesAllocated = cases.length;
-  const editorInformation: EditorInformation = {
+  return {
     numberOfCasesAllocated,
     Cases: cases,
   };
-
-  return editorInformation;
 }

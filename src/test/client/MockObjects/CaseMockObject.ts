@@ -1,5 +1,5 @@
 import { EditedStatus } from 'blaise-api-node-client';
-import { EditorInformation } from '../../../common/interfaces/caseInterface';
+import { EditorInformation } from '../../../common/interfaces/editorInterface';
 
 const EditorInformationMockObject: EditorInformation = {
   numberOfCasesAllocated: 5,

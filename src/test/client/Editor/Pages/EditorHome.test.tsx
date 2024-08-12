@@ -4,7 +4,7 @@ import userMockObject from '../../../mockObjects/userMockObject';
 import { getEditorCaseInformation, getSurveys } from '../../../../client/Common/api/NodeApi';
 import { Survey } from '../../../../common/interfaces/surveyInterface';
 import EditorHome from '../../../../client/Editor/Pages/EditorHome';
-import { EditorInformation } from '../../../../common/interfaces/caseInterface';
+import { EditorInformation } from '../../../../common/interfaces/editorInterface';
 import { EditorInformationMockObject, FilteredSurveyListMockObject } from '../../MockObjects/EditorMockObjects';
 
 // set global vars

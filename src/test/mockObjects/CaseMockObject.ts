@@ -1,5 +1,5 @@
 import { CaseOutcome, CaseEditInformation, EditedStatus } from 'blaise-api-node-client';
-import { EditorInformation } from '../../common/interfaces/caseInterface';
+import { EditorInformation } from '../../common/interfaces/editorInterface';
 
 export const caseEditInformationMockObject1: CaseEditInformation = {
   primaryKey: '10001011',

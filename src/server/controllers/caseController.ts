@@ -3,7 +3,7 @@ import { Controller } from '../interfaces/controllerInterface';
 import notFound from '../helpers/axiosHelper';
 import BlaiseApi from '../api/BlaiseApi';
 import mapEditorInformaiton from '../mappers/editorInformaitionMapper';
-import { EditorInformation } from '../../common/interfaces/caseInterface';
+import { EditorInformation } from '../../common/interfaces/editorInterface';
 
 export default class CaseController implements Controller {
   blaiseApi: BlaiseApi;

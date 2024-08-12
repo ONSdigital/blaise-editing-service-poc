@@ -1,7 +1,9 @@
 import axios from 'axios';
 import notFound from '../../../server/helpers/axiosHelper';
 import { Survey } from '../../../common/interfaces/surveyInterface';
-import { EditorInformation, SupervisorInformation } from '../../../common/interfaces/caseInterface';
+
+import { SupervisorInformation } from '../../../common/interfaces/supervisorInterface';
+import { EditorInformation } from '../../../common/interfaces/editorInterface';
 
 async function getDataFromNode<T>(url: string, notFoundError: string): Promise<T> {
   try {

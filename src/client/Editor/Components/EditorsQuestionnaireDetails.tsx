@@ -4,7 +4,7 @@ import { useAsyncRequestWithTwoParams } from '../../Common/hooks/useAsyncRequest
 import { getEditorCaseInformation } from '../../Common/api/NodeApi';
 import AsyncContent from '../../Common/components/AsyncContent';
 import EditorContent from './EditorContent';
-import { EditorInformation } from '../../../common/interfaces/caseInterface';
+import { EditorInformation } from '../../../common/interfaces/editorInterface';
 
 interface EditorsQuestionnairesDetailsProps {
   questionnaire: QuestionnaireDetails;

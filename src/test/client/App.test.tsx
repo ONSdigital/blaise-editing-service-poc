@@ -8,9 +8,10 @@ import { Survey } from '../../common/interfaces/surveyInterface';
 import userMockObject from '../mockObjects/userMockObject';
 import App from '../../client/App';
 import EditorInformationMockObject from './MockObjects/CaseMockObject';
-import { EditorInformation, SupervisorInformation } from '../../common/interfaces/caseInterface';
 import { FilteredSurveyListMockObject } from './MockObjects/EditorMockObjects';
 import SupervisorInformationMockObject from './MockObjects/SupervisorMockObjects';
+import { EditorInformation } from '../../common/interfaces/editorInterface';
+import { SupervisorInformation } from '../../common/interfaces/supervisorInterface';
 
 // set global variables
 const validUserRoles:string[] = ['SVT_Supervisor', 'SVT_Editor'];

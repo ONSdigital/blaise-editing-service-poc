@@ -1,5 +1,5 @@
 import { CaseEditInformation, EditedStatus } from 'blaise-api-node-client';
-import { SupervisorInformation } from '../../common/interfaces/caseInterface';
+import { SupervisorEditorInformation, SupervisorInformation } from '../../common/interfaces/supervisorInterface';
 
 export default function mapSupervisorInformaiton(caseEditInformationList: CaseEditInformation[]): SupervisorInformation {
   const TotalNumberOfCases = caseEditInformationList.length;
@@ -7,12 +7,7 @@ export default function mapSupervisorInformaiton(caseEditInformationList: CaseEd
   const NumberOfCasesAllocated = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo !== '').length;
   const NumberOfCasesCompleted = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.editedStatus === EditedStatus.Finished).length;
 
-  const Editors: {
-    EditorName: string,
-    NumberOfCasesAllocated: number,
-    NumberOfCasesCompleted: number,
-    NumberOfCasesQueried: number
-  }[] = [];
+  const Editors: SupervisorEditorInformation[] = [];
 
   caseEditInformationList.forEach((caseEditInformation) => {
     const foundEditor = Editors.find((editor) => editor.EditorName === caseEditInformation.assignedTo);
@@ -31,13 +26,11 @@ export default function mapSupervisorInformaiton(caseEditInformationList: CaseEd
     }
   });
 
-  const supervisorInformation: SupervisorInformation = {
+  return {
     TotalNumberOfCases,
     NumberOfCasesNotAllocated,
     NumberOfCasesAllocated,
     NumberOfCasesCompleted,
     Editors,
   };
-
-  return supervisorInformation;
 }

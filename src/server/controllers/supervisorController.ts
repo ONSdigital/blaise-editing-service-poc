@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import { Controller } from '../interfaces/controllerInterface';
 import notFound from '../helpers/axiosHelper';
 import BlaiseApi from '../api/BlaiseApi';
-import { SupervisorInformation } from '../../common/interfaces/caseInterface';
+import { SupervisorInformation } from '../../common/interfaces/supervisorInterface';
 import mapSupervisorInformaiton from '../mappers/supervisorInformationMapper';
 
 export default class SupervisorController implements Controller {

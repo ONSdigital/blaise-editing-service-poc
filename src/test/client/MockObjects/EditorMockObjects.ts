@@ -1,5 +1,5 @@
 import { EditedStatus } from 'blaise-api-node-client';
-import { EditorInformation } from '../../../common/interfaces/caseInterface';
+import { EditorInformation } from '../../../common/interfaces/editorInterface';
 import { Survey } from '../../../common/interfaces/surveyInterface';
 
 export const EditorInformationMockObject: EditorInformation = {
