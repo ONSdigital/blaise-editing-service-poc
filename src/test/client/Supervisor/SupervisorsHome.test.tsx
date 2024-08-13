@@ -1,35 +1,32 @@
 import { render, act, RenderResult } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import userMockObject from '../../mockObjects/userMockObject';
-import { getEditorCaseInformation, getSupervisorEditorInformation, getSurveys } from '../../../client/Common/api/NodeApi';
+import { getSupervisorEditorInformation, getSurveys } from '../../../client/Common/api/NodeApi';
 import { Survey } from '../../../common/interfaces/surveyInterface';
 import SupervisorsHome from '../../../client/Supervisor/Pages/SupervisorsHome';
-import { EditorInformationMockObject, FilteredSurveyListMockObject } from '../MockObjects/EditorMockObjects';
+import { FilteredSurveyListMockObject } from '../MockObjects/EditorMockObjects';
 import { SupervisorInformation } from '../../../common/interfaces/supervisorInterface';
 import SupervisorInformationMockObject from '../MockObjects/SupervisorMockObjects';
-import { EditorInformation } from '../../../common/interfaces/editorInterface';
+import UserRole from '../../../client/Common/enums/UserRole';
 
 // set global vars
-const userRole:string = 'Supervisor';
+const userRole:string = UserRole.SVT_Supervisor;
 let view:RenderResult;
 
 // set mocks
 jest.mock('../../../client/Common/api/NodeApi');
 const getSurveysMock = getSurveys as jest.Mock<Promise<Survey[]>>;
 const getSupervisorCaseInformationMock = getSupervisorEditorInformation as jest.Mock<Promise<SupervisorInformation>>;
-const getEditorCaseInformationMock = getEditorCaseInformation as jest.Mock<Promise<EditorInformation>>;
 
 describe('Given there are surveys available in blaise', () => {
   beforeEach(() => {
     getSurveysMock.mockImplementation(() => Promise.resolve(FilteredSurveyListMockObject));
     getSupervisorCaseInformationMock.mockImplementation(() => Promise.resolve(SupervisorInformationMockObject));
-    getEditorCaseInformationMock.mockImplementation(() => Promise.resolve(EditorInformationMockObject));
   });
 
   afterEach(() => {
     getSurveysMock.mockReset();
     getSupervisorCaseInformationMock.mockReset();
-    getEditorCaseInformationMock.mockReset();
   });
 
   it('should render the supervisor page correctly when surveys are returned', async () => {
@@ -50,7 +47,7 @@ describe('Given there are surveys available in blaise', () => {
     expect(view).toMatchSnapshot();
   });
 
-  it('should display a list of the expected surveys', async () => {
+  it('should display the expected survey details', async () => {
     // arrange
     const user = userMockObject;
     user.role = userRole;
@@ -69,15 +66,29 @@ describe('Given there are surveys available in blaise', () => {
       const surveyListView = view.getByTestId(`survey-accordion-${surveyIndex}-heading`);
       expect(surveyListView).toHaveTextContent(survey.name);
 
+      const questionnaireListView = view.getByTestId(`survey-accordion-${surveyIndex}-content`);
       survey.questionnaires.forEach(({ questionnaireName }) => {
-        const questionnaireListView = view.getByTestId(`survey-accordion-${surveyIndex}-content`);
-        
         expect(questionnaireListView).toHaveTextContent(questionnaireName);
 
-        //const questionnaireView = view.getByTestId(`${questionnaireName}-supervisor-Content`);
+        const questionnaireView = view.getByTestId(`${questionnaireName}-supervisor-Content`);
+        expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject.TotalNumberOfCases));
+        expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject.NumberOfCasesNotAllocated));
+        expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject.NumberOfCasesAllocated));
+        expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject.NumberOfCasesCompleted));
+
+        const editorRows = view.getAllByLabelText('Editor');
+        const numberOfCasesAllocatedRows = view.getAllByLabelText('NumberOfCasesAllocated');
+        const numberOfCasesCompleted = view.getAllByLabelText('NumberOfCasesCompleted');
+        const numberOfCasesQueried = view.getAllByLabelText('NumberOfCasesQueried');
+
+        SupervisorInformationMockObject.Editors.forEach((editor, index) => {
+          expect(editorRows[index]).toHaveTextContent(editor.EditorName);
+          expect(numberOfCasesAllocatedRows[index]).toHaveTextContent(String(editor.NumberOfCasesAllocated));
+          expect(numberOfCasesCompleted[index]).toHaveTextContent(String(editor.NumberOfCasesCompleted));
+          expect(numberOfCasesQueried[index]).toHaveTextContent(String(editor.NumberOfCasesQueried));
+        });
       });
     });
-    
   });
 });
 

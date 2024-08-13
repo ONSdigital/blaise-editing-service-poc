@@ -40,27 +40,27 @@ export default function SupervisorsContent({ questionnaire, supervisorInformatio
           'Queried',
           '',
         ]}
+        tableID={`${questionnaire.questionnaireName}-editor-table`}
       >
         <>
           {supervisorInformation.Editors.map((editor) => (
             <tr
               className="ons-table__row"
-              data-testid={`editor-table-row-${editor.EditorName}`}
               key={editor.EditorName}
             >
-              <td className="ons-table__cell">
+              <td className="ons-table__cell" aria-label="Editor">
                 <Link to="/">
                   {editor.EditorName}
                   :
                 </Link>
               </td>
-              <td className="ons-table__cell status">
+              <td className="ons-table__cell status" aria-label="NumberOfCasesAllocated">
                 {editor.NumberOfCasesAllocated}
               </td>
-              <td className="ons-table__cell ">
+              <td className="ons-table__cell " aria-label="NumberOfCasesCompleted">
                 {editor.NumberOfCasesCompleted}
               </td>
-              <td className="ons-table__cell ">
+              <td className="ons-table__cell " aria-label="NumberOfCasesQueried">
                 {editor.NumberOfCasesQueried}
               </td>
               <td className="ons-table__cell links">

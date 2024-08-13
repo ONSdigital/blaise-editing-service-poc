@@ -245,8 +245,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                       data-testid="questionnaire"
                     >
                       <div
-                        class="editorContent"
-                        data-testid="FRS2504A-editorContent"
+                        class="questionnaire"
                       >
                         <div
                           class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
@@ -256,9 +255,9 @@ exports[`Given there are surveys available in blaise should render the superviso
                           >
                             <dl
                               class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                              data-testid="editorContent-dl"
+                              data-testid="FRS2504A-supervisor-Content"
                               style="padding: 0px 0px 15px 5px;"
-                              title="editorContent"
+                              title="Questionnares"
                             >
                               <dt
                                 class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -268,68 +267,55 @@ exports[`Given there are surveys available in blaise should render the superviso
                               <dd
                                 class="ons-description-list__value ons-grid__col ons-col-7@m"
                               >
-                                <strong>
-                                  April 2025
-                                </strong>
+                                April 2025
                               </dd>
                               <dt
                                 class="ons-description-list__term ons-grid__col ons-col-5@m"
                               >
-                                Cases assigned to me:
+                                Total number of cases:
                               </dt>
                               <dd
                                 class="ons-description-list__value ons-grid__col ons-col-7@m"
                               >
-                                <strong>
-                                  5
-                                </strong>
+                                1000
+                              </dd>
+                              <dt
+                                class="ons-description-list__term ons-grid__col ons-col-5@m"
+                              >
+                                Number of cases not allocated:
+                              </dt>
+                              <dd
+                                class="ons-description-list__value ons-grid__col ons-col-7@m"
+                              >
+                                970
+                              </dd>
+                              <dt
+                                class="ons-description-list__term ons-grid__col ons-col-5@m"
+                              >
+                                Number of cases allocated:
+                              </dt>
+                              <dd
+                                class="ons-description-list__value ons-grid__col ons-col-7@m"
+                              >
+                                25
+                              </dd>
+                              <dt
+                                class="ons-description-list__term ons-grid__col ons-col-5@m"
+                              >
+                                Number of cases completed:
+                              </dt>
+                              <dd
+                                class="ons-description-list__value ons-grid__col ons-col-7@m"
+                              >
+                                9
                               </dd>
                             </dl>
                           </div>
                         </div>
-                        <div>
-                          <label
-                            class="ons-label"
-                            for="filter-cases"
-                          >
-                            Filter cases
-                             
-                          </label>
-                          <select
-                            class="ons-input "
-                            id="filter-cases"
-                            name="select"
-                          >
-                            <option
-                              data-testid="select-filter-cases"
-                              disabled=""
-                              value=""
-                            >
-                              Select an option
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-in-progress"
-                              selected=""
-                              value="in-progress"
-                            >
-                              In Progress
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-complete"
-                              value="complete"
-                            >
-                              Complete
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-not-started"
-                              value="not-started"
-                            >
-                              Not Started
-                            </option>
-                          </select>
-                        </div>
                         <table
                           class="ons-table"
+                          data-testid="FRS2504A-editor-table"
+                          id="FRS2504A-editor-table"
                         >
                           <thead
                             class="ons-table__head"
@@ -341,13 +327,25 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 class="ons-table__header"
                                 scope="col"
                               >
-                                Case ID
+                                Editor
                               </th>
                               <th
                                 class="ons-table__header"
                                 scope="col"
                               >
-                                Status
+                                Allocated
+                              </th>
+                              <th
+                                class="ons-table__header"
+                                scope="col"
+                              >
+                                Completed
+                              </th>
+                              <th
+                                class="ons-table__header"
+                                scope="col"
+                              >
+                                Queried
                               </th>
                               <th
                                 class="ons-table__header"
@@ -360,79 +358,33 @@ exports[`Given there are surveys available in blaise should render the superviso
                           >
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001011"
                             >
                               <td
+                                aria-label="Editor"
                                 class="ons-table__cell"
                               >
-                                10001011
-                              </td>
-                              <td
-                                class="ons-table__cell status"
-                              >
-                                3
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
                                 <a
-                                  class="Edit"
-                                  href="/summary"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
                                   href="/"
                                 >
-                                  Edit
+                                  Doctor Doom
+                                  :
                                 </a>
                               </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                              data-testid="case-table-row-10001012"
-                            >
                               <td
-                                class="ons-table__cell"
-                              >
-                                10001012
-                              </td>
-                              <td
+                                aria-label="NumberOfCasesAllocated"
                                 class="ons-table__cell status"
                               >
-                                1
+                                10
                               </td>
                               <td
-                                class="ons-table__cell links"
+                                aria-label="NumberOfCasesCompleted"
+                                class="ons-table__cell "
                               >
-                                <a
-                                  class="Edit"
-                                  href="/summary"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                              data-testid="case-table-row-10001013"
-                            >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                10001013
+                                5
                               </td>
                               <td
-                                class="ons-table__cell status"
+                                aria-label="NumberOfCasesQueried"
+                                class="ons-table__cell "
                               >
                                 0
                               </td>
@@ -440,81 +392,111 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 class="ons-table__cell links"
                               >
                                 <a
-                                  class="Edit"
-                                  href="/summary"
+                                  href="/allocate"
                                 >
-                                  Summary
+                                  Allocate
                                 </a>
                                  | 
                                 <a
-                                  class="Edit"
-                                  href="/"
+                                  href="/reallocate"
                                 >
-                                  Edit
+                                  Reallocate
                                 </a>
                               </td>
                             </tr>
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001014"
                             >
                               <td
+                                aria-label="Editor"
                                 class="ons-table__cell"
                               >
-                                10001014
+                                <a
+                                  href="/"
+                                >
+                                  Doctor Strange
+                                  :
+                                </a>
                               </td>
                               <td
+                                aria-label="NumberOfCasesAllocated"
                                 class="ons-table__cell status"
                               >
-                                3
+                                15
+                              </td>
+                              <td
+                                aria-label="NumberOfCasesCompleted"
+                                class="ons-table__cell "
+                              >
+                                4
+                              </td>
+                              <td
+                                aria-label="NumberOfCasesQueried"
+                                class="ons-table__cell "
+                              >
+                                1
                               </td>
                               <td
                                 class="ons-table__cell links"
                               >
                                 <a
-                                  class="Edit"
-                                  href="/summary"
+                                  href="/allocate"
                                 >
-                                  Summary
+                                  Allocate
                                 </a>
                                  | 
                                 <a
-                                  class="Edit"
-                                  href="/"
+                                  href="/reallocate"
                                 >
-                                  Edit
+                                  Reallocate
                                 </a>
                               </td>
                             </tr>
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001015"
                             >
                               <td
+                                aria-label="Editor"
                                 class="ons-table__cell"
                               >
-                                10001015
+                                <a
+                                  href="/"
+                                >
+                                  Doctor Who
+                                  :
+                                </a>
                               </td>
                               <td
+                                aria-label="NumberOfCasesAllocated"
                                 class="ons-table__cell status"
                               >
-                                3
+                                0
+                              </td>
+                              <td
+                                aria-label="NumberOfCasesCompleted"
+                                class="ons-table__cell "
+                              >
+                                0
+                              </td>
+                              <td
+                                aria-label="NumberOfCasesQueried"
+                                class="ons-table__cell "
+                              >
+                                0
                               </td>
                               <td
                                 class="ons-table__cell links"
                               >
                                 <a
-                                  class="Edit"
-                                  href="/summary"
+                                  href="/allocate"
                                 >
-                                  Summary
+                                  Allocate
                                 </a>
                                  | 
                                 <a
-                                  class="Edit"
-                                  href="/"
+                                  href="/reallocate"
                                 >
-                                  Edit
+                                  Reallocate
                                 </a>
                               </td>
                             </tr>
@@ -575,8 +557,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                       data-testid="questionnaire"
                     >
                       <div
-                        class="editorContent"
-                        data-testid="FRS2505A-editorContent"
+                        class="questionnaire"
                       >
                         <div
                           class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
@@ -586,9 +567,9 @@ exports[`Given there are surveys available in blaise should render the superviso
                           >
                             <dl
                               class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                              data-testid="editorContent-dl"
+                              data-testid="FRS2505A-supervisor-Content"
                               style="padding: 0px 0px 15px 5px;"
-                              title="editorContent"
+                              title="Questionnares"
                             >
                               <dt
                                 class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -598,68 +579,55 @@ exports[`Given there are surveys available in blaise should render the superviso
                               <dd
                                 class="ons-description-list__value ons-grid__col ons-col-7@m"
                               >
-                                <strong>
-                                  May 2025
-                                </strong>
+                                May 2025
                               </dd>
                               <dt
                                 class="ons-description-list__term ons-grid__col ons-col-5@m"
                               >
-                                Cases assigned to me:
+                                Total number of cases:
                               </dt>
                               <dd
                                 class="ons-description-list__value ons-grid__col ons-col-7@m"
                               >
-                                <strong>
-                                  5
-                                </strong>
+                                1000
+                              </dd>
+                              <dt
+                                class="ons-description-list__term ons-grid__col ons-col-5@m"
+                              >
+                                Number of cases not allocated:
+                              </dt>
+                              <dd
+                                class="ons-description-list__value ons-grid__col ons-col-7@m"
+                              >
+                                970
+                              </dd>
+                              <dt
+                                class="ons-description-list__term ons-grid__col ons-col-5@m"
+                              >
+                                Number of cases allocated:
+                              </dt>
+                              <dd
+                                class="ons-description-list__value ons-grid__col ons-col-7@m"
+                              >
+                                25
+                              </dd>
+                              <dt
+                                class="ons-description-list__term ons-grid__col ons-col-5@m"
+                              >
+                                Number of cases completed:
+                              </dt>
+                              <dd
+                                class="ons-description-list__value ons-grid__col ons-col-7@m"
+                              >
+                                9
                               </dd>
                             </dl>
                           </div>
                         </div>
-                        <div>
-                          <label
-                            class="ons-label"
-                            for="filter-cases"
-                          >
-                            Filter cases
-                             
-                          </label>
-                          <select
-                            class="ons-input "
-                            id="filter-cases"
-                            name="select"
-                          >
-                            <option
-                              data-testid="select-filter-cases"
-                              disabled=""
-                              value=""
-                            >
-                              Select an option
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-in-progress"
-                              selected=""
-                              value="in-progress"
-                            >
-                              In Progress
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-complete"
-                              value="complete"
-                            >
-                              Complete
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-not-started"
-                              value="not-started"
-                            >
-                              Not Started
-                            </option>
-                          </select>
-                        </div>
                         <table
                           class="ons-table"
+                          data-testid="FRS2505A-editor-table"
+                          id="FRS2505A-editor-table"
                         >
                           <thead
                             class="ons-table__head"
@@ -671,13 +639,25 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 class="ons-table__header"
                                 scope="col"
                               >
-                                Case ID
+                                Editor
                               </th>
                               <th
                                 class="ons-table__header"
                                 scope="col"
                               >
-                                Status
+                                Allocated
+                              </th>
+                              <th
+                                class="ons-table__header"
+                                scope="col"
+                              >
+                                Completed
+                              </th>
+                              <th
+                                class="ons-table__header"
+                                scope="col"
+                              >
+                                Queried
                               </th>
                               <th
                                 class="ons-table__header"
@@ -690,79 +670,33 @@ exports[`Given there are surveys available in blaise should render the superviso
                           >
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001011"
                             >
                               <td
+                                aria-label="Editor"
                                 class="ons-table__cell"
                               >
-                                10001011
-                              </td>
-                              <td
-                                class="ons-table__cell status"
-                              >
-                                3
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
                                 <a
-                                  class="Edit"
-                                  href="/summary"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
                                   href="/"
                                 >
-                                  Edit
+                                  Doctor Doom
+                                  :
                                 </a>
                               </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                              data-testid="case-table-row-10001012"
-                            >
                               <td
-                                class="ons-table__cell"
-                              >
-                                10001012
-                              </td>
-                              <td
+                                aria-label="NumberOfCasesAllocated"
                                 class="ons-table__cell status"
                               >
-                                1
+                                10
                               </td>
                               <td
-                                class="ons-table__cell links"
+                                aria-label="NumberOfCasesCompleted"
+                                class="ons-table__cell "
                               >
-                                <a
-                                  class="Edit"
-                                  href="/summary"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                              data-testid="case-table-row-10001013"
-                            >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                10001013
+                                5
                               </td>
                               <td
-                                class="ons-table__cell status"
+                                aria-label="NumberOfCasesQueried"
+                                class="ons-table__cell "
                               >
                                 0
                               </td>
@@ -770,81 +704,111 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 class="ons-table__cell links"
                               >
                                 <a
-                                  class="Edit"
-                                  href="/summary"
+                                  href="/allocate"
                                 >
-                                  Summary
+                                  Allocate
                                 </a>
                                  | 
                                 <a
-                                  class="Edit"
-                                  href="/"
+                                  href="/reallocate"
                                 >
-                                  Edit
+                                  Reallocate
                                 </a>
                               </td>
                             </tr>
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001014"
                             >
                               <td
+                                aria-label="Editor"
                                 class="ons-table__cell"
                               >
-                                10001014
+                                <a
+                                  href="/"
+                                >
+                                  Doctor Strange
+                                  :
+                                </a>
                               </td>
                               <td
+                                aria-label="NumberOfCasesAllocated"
                                 class="ons-table__cell status"
                               >
-                                3
+                                15
+                              </td>
+                              <td
+                                aria-label="NumberOfCasesCompleted"
+                                class="ons-table__cell "
+                              >
+                                4
+                              </td>
+                              <td
+                                aria-label="NumberOfCasesQueried"
+                                class="ons-table__cell "
+                              >
+                                1
                               </td>
                               <td
                                 class="ons-table__cell links"
                               >
                                 <a
-                                  class="Edit"
-                                  href="/summary"
+                                  href="/allocate"
                                 >
-                                  Summary
+                                  Allocate
                                 </a>
                                  | 
                                 <a
-                                  class="Edit"
-                                  href="/"
+                                  href="/reallocate"
                                 >
-                                  Edit
+                                  Reallocate
                                 </a>
                               </td>
                             </tr>
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001015"
                             >
                               <td
+                                aria-label="Editor"
                                 class="ons-table__cell"
                               >
-                                10001015
+                                <a
+                                  href="/"
+                                >
+                                  Doctor Who
+                                  :
+                                </a>
                               </td>
                               <td
+                                aria-label="NumberOfCasesAllocated"
                                 class="ons-table__cell status"
                               >
-                                3
+                                0
+                              </td>
+                              <td
+                                aria-label="NumberOfCasesCompleted"
+                                class="ons-table__cell "
+                              >
+                                0
+                              </td>
+                              <td
+                                aria-label="NumberOfCasesQueried"
+                                class="ons-table__cell "
+                              >
+                                0
                               </td>
                               <td
                                 class="ons-table__cell links"
                               >
                                 <a
-                                  class="Edit"
-                                  href="/summary"
+                                  href="/allocate"
                                 >
-                                  Summary
+                                  Allocate
                                 </a>
                                  | 
                                 <a
-                                  class="Edit"
-                                  href="/"
+                                  href="/reallocate"
                                 >
-                                  Edit
+                                  Reallocate
                                 </a>
                               </td>
                             </tr>
@@ -995,8 +959,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                     data-testid="questionnaire"
                   >
                     <div
-                      class="editorContent"
-                      data-testid="FRS2504A-editorContent"
+                      class="questionnaire"
                     >
                       <div
                         class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
@@ -1006,9 +969,9 @@ exports[`Given there are surveys available in blaise should render the superviso
                         >
                           <dl
                             class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                            data-testid="editorContent-dl"
+                            data-testid="FRS2504A-supervisor-Content"
                             style="padding: 0px 0px 15px 5px;"
-                            title="editorContent"
+                            title="Questionnares"
                           >
                             <dt
                               class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -1018,68 +981,55 @@ exports[`Given there are surveys available in blaise should render the superviso
                             <dd
                               class="ons-description-list__value ons-grid__col ons-col-7@m"
                             >
-                              <strong>
-                                April 2025
-                              </strong>
+                              April 2025
                             </dd>
                             <dt
                               class="ons-description-list__term ons-grid__col ons-col-5@m"
                             >
-                              Cases assigned to me:
+                              Total number of cases:
                             </dt>
                             <dd
                               class="ons-description-list__value ons-grid__col ons-col-7@m"
                             >
-                              <strong>
-                                5
-                              </strong>
+                              1000
+                            </dd>
+                            <dt
+                              class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            >
+                              Number of cases not allocated:
+                            </dt>
+                            <dd
+                              class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            >
+                              970
+                            </dd>
+                            <dt
+                              class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            >
+                              Number of cases allocated:
+                            </dt>
+                            <dd
+                              class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            >
+                              25
+                            </dd>
+                            <dt
+                              class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            >
+                              Number of cases completed:
+                            </dt>
+                            <dd
+                              class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            >
+                              9
                             </dd>
                           </dl>
                         </div>
                       </div>
-                      <div>
-                        <label
-                          class="ons-label"
-                          for="filter-cases"
-                        >
-                          Filter cases
-                           
-                        </label>
-                        <select
-                          class="ons-input "
-                          id="filter-cases"
-                          name="select"
-                        >
-                          <option
-                            data-testid="select-filter-cases"
-                            disabled=""
-                            value=""
-                          >
-                            Select an option
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-in-progress"
-                            selected=""
-                            value="in-progress"
-                          >
-                            In Progress
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-complete"
-                            value="complete"
-                          >
-                            Complete
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-not-started"
-                            value="not-started"
-                          >
-                            Not Started
-                          </option>
-                        </select>
-                      </div>
                       <table
                         class="ons-table"
+                        data-testid="FRS2504A-editor-table"
+                        id="FRS2504A-editor-table"
                       >
                         <thead
                           class="ons-table__head"
@@ -1091,13 +1041,25 @@ exports[`Given there are surveys available in blaise should render the superviso
                               class="ons-table__header"
                               scope="col"
                             >
-                              Case ID
+                              Editor
                             </th>
                             <th
                               class="ons-table__header"
                               scope="col"
                             >
-                              Status
+                              Allocated
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
+                            >
+                              Completed
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
+                            >
+                              Queried
                             </th>
                             <th
                               class="ons-table__header"
@@ -1110,79 +1072,33 @@ exports[`Given there are surveys available in blaise should render the superviso
                         >
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001011"
                           >
                             <td
+                              aria-label="Editor"
                               class="ons-table__cell"
                             >
-                              10001011
-                            </td>
-                            <td
-                              class="ons-table__cell status"
-                            >
-                              3
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
                               <a
-                                class="Edit"
-                                href="/summary"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
                                 href="/"
                               >
-                                Edit
+                                Doctor Doom
+                                :
                               </a>
                             </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                            data-testid="case-table-row-10001012"
-                          >
                             <td
-                              class="ons-table__cell"
-                            >
-                              10001012
-                            </td>
-                            <td
+                              aria-label="NumberOfCasesAllocated"
                               class="ons-table__cell status"
                             >
-                              1
+                              10
                             </td>
                             <td
-                              class="ons-table__cell links"
+                              aria-label="NumberOfCasesCompleted"
+                              class="ons-table__cell "
                             >
-                              <a
-                                class="Edit"
-                                href="/summary"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                            data-testid="case-table-row-10001013"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              10001013
+                              5
                             </td>
                             <td
-                              class="ons-table__cell status"
+                              aria-label="NumberOfCasesQueried"
+                              class="ons-table__cell "
                             >
                               0
                             </td>
@@ -1190,81 +1106,111 @@ exports[`Given there are surveys available in blaise should render the superviso
                               class="ons-table__cell links"
                             >
                               <a
-                                class="Edit"
-                                href="/summary"
+                                href="/allocate"
                               >
-                                Summary
+                                Allocate
                               </a>
                                | 
                               <a
-                                class="Edit"
-                                href="/"
+                                href="/reallocate"
                               >
-                                Edit
+                                Reallocate
                               </a>
                             </td>
                           </tr>
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001014"
                           >
                             <td
+                              aria-label="Editor"
                               class="ons-table__cell"
                             >
-                              10001014
+                              <a
+                                href="/"
+                              >
+                                Doctor Strange
+                                :
+                              </a>
                             </td>
                             <td
+                              aria-label="NumberOfCasesAllocated"
                               class="ons-table__cell status"
                             >
-                              3
+                              15
+                            </td>
+                            <td
+                              aria-label="NumberOfCasesCompleted"
+                              class="ons-table__cell "
+                            >
+                              4
+                            </td>
+                            <td
+                              aria-label="NumberOfCasesQueried"
+                              class="ons-table__cell "
+                            >
+                              1
                             </td>
                             <td
                               class="ons-table__cell links"
                             >
                               <a
-                                class="Edit"
-                                href="/summary"
+                                href="/allocate"
                               >
-                                Summary
+                                Allocate
                               </a>
                                | 
                               <a
-                                class="Edit"
-                                href="/"
+                                href="/reallocate"
                               >
-                                Edit
+                                Reallocate
                               </a>
                             </td>
                           </tr>
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001015"
                           >
                             <td
+                              aria-label="Editor"
                               class="ons-table__cell"
                             >
-                              10001015
+                              <a
+                                href="/"
+                              >
+                                Doctor Who
+                                :
+                              </a>
                             </td>
                             <td
+                              aria-label="NumberOfCasesAllocated"
                               class="ons-table__cell status"
                             >
-                              3
+                              0
+                            </td>
+                            <td
+                              aria-label="NumberOfCasesCompleted"
+                              class="ons-table__cell "
+                            >
+                              0
+                            </td>
+                            <td
+                              aria-label="NumberOfCasesQueried"
+                              class="ons-table__cell "
+                            >
+                              0
                             </td>
                             <td
                               class="ons-table__cell links"
                             >
                               <a
-                                class="Edit"
-                                href="/summary"
+                                href="/allocate"
                               >
-                                Summary
+                                Allocate
                               </a>
                                | 
                               <a
-                                class="Edit"
-                                href="/"
+                                href="/reallocate"
                               >
-                                Edit
+                                Reallocate
                               </a>
                             </td>
                           </tr>
@@ -1325,8 +1271,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                     data-testid="questionnaire"
                   >
                     <div
-                      class="editorContent"
-                      data-testid="FRS2505A-editorContent"
+                      class="questionnaire"
                     >
                       <div
                         class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
@@ -1336,9 +1281,9 @@ exports[`Given there are surveys available in blaise should render the superviso
                         >
                           <dl
                             class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                            data-testid="editorContent-dl"
+                            data-testid="FRS2505A-supervisor-Content"
                             style="padding: 0px 0px 15px 5px;"
-                            title="editorContent"
+                            title="Questionnares"
                           >
                             <dt
                               class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -1348,68 +1293,55 @@ exports[`Given there are surveys available in blaise should render the superviso
                             <dd
                               class="ons-description-list__value ons-grid__col ons-col-7@m"
                             >
-                              <strong>
-                                May 2025
-                              </strong>
+                              May 2025
                             </dd>
                             <dt
                               class="ons-description-list__term ons-grid__col ons-col-5@m"
                             >
-                              Cases assigned to me:
+                              Total number of cases:
                             </dt>
                             <dd
                               class="ons-description-list__value ons-grid__col ons-col-7@m"
                             >
-                              <strong>
-                                5
-                              </strong>
+                              1000
+                            </dd>
+                            <dt
+                              class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            >
+                              Number of cases not allocated:
+                            </dt>
+                            <dd
+                              class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            >
+                              970
+                            </dd>
+                            <dt
+                              class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            >
+                              Number of cases allocated:
+                            </dt>
+                            <dd
+                              class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            >
+                              25
+                            </dd>
+                            <dt
+                              class="ons-description-list__term ons-grid__col ons-col-5@m"
+                            >
+                              Number of cases completed:
+                            </dt>
+                            <dd
+                              class="ons-description-list__value ons-grid__col ons-col-7@m"
+                            >
+                              9
                             </dd>
                           </dl>
                         </div>
                       </div>
-                      <div>
-                        <label
-                          class="ons-label"
-                          for="filter-cases"
-                        >
-                          Filter cases
-                           
-                        </label>
-                        <select
-                          class="ons-input "
-                          id="filter-cases"
-                          name="select"
-                        >
-                          <option
-                            data-testid="select-filter-cases"
-                            disabled=""
-                            value=""
-                          >
-                            Select an option
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-in-progress"
-                            selected=""
-                            value="in-progress"
-                          >
-                            In Progress
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-complete"
-                            value="complete"
-                          >
-                            Complete
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-not-started"
-                            value="not-started"
-                          >
-                            Not Started
-                          </option>
-                        </select>
-                      </div>
                       <table
                         class="ons-table"
+                        data-testid="FRS2505A-editor-table"
+                        id="FRS2505A-editor-table"
                       >
                         <thead
                           class="ons-table__head"
@@ -1421,13 +1353,25 @@ exports[`Given there are surveys available in blaise should render the superviso
                               class="ons-table__header"
                               scope="col"
                             >
-                              Case ID
+                              Editor
                             </th>
                             <th
                               class="ons-table__header"
                               scope="col"
                             >
-                              Status
+                              Allocated
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
+                            >
+                              Completed
+                            </th>
+                            <th
+                              class="ons-table__header"
+                              scope="col"
+                            >
+                              Queried
                             </th>
                             <th
                               class="ons-table__header"
@@ -1440,79 +1384,33 @@ exports[`Given there are surveys available in blaise should render the superviso
                         >
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001011"
                           >
                             <td
+                              aria-label="Editor"
                               class="ons-table__cell"
                             >
-                              10001011
-                            </td>
-                            <td
-                              class="ons-table__cell status"
-                            >
-                              3
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
                               <a
-                                class="Edit"
-                                href="/summary"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
                                 href="/"
                               >
-                                Edit
+                                Doctor Doom
+                                :
                               </a>
                             </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                            data-testid="case-table-row-10001012"
-                          >
                             <td
-                              class="ons-table__cell"
-                            >
-                              10001012
-                            </td>
-                            <td
+                              aria-label="NumberOfCasesAllocated"
                               class="ons-table__cell status"
                             >
-                              1
+                              10
                             </td>
                             <td
-                              class="ons-table__cell links"
+                              aria-label="NumberOfCasesCompleted"
+                              class="ons-table__cell "
                             >
-                              <a
-                                class="Edit"
-                                href="/summary"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                            data-testid="case-table-row-10001013"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              10001013
+                              5
                             </td>
                             <td
-                              class="ons-table__cell status"
+                              aria-label="NumberOfCasesQueried"
+                              class="ons-table__cell "
                             >
                               0
                             </td>
@@ -1520,81 +1418,111 @@ exports[`Given there are surveys available in blaise should render the superviso
                               class="ons-table__cell links"
                             >
                               <a
-                                class="Edit"
-                                href="/summary"
+                                href="/allocate"
                               >
-                                Summary
+                                Allocate
                               </a>
                                | 
                               <a
-                                class="Edit"
-                                href="/"
+                                href="/reallocate"
                               >
-                                Edit
+                                Reallocate
                               </a>
                             </td>
                           </tr>
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001014"
                           >
                             <td
+                              aria-label="Editor"
                               class="ons-table__cell"
                             >
-                              10001014
+                              <a
+                                href="/"
+                              >
+                                Doctor Strange
+                                :
+                              </a>
                             </td>
                             <td
+                              aria-label="NumberOfCasesAllocated"
                               class="ons-table__cell status"
                             >
-                              3
+                              15
+                            </td>
+                            <td
+                              aria-label="NumberOfCasesCompleted"
+                              class="ons-table__cell "
+                            >
+                              4
+                            </td>
+                            <td
+                              aria-label="NumberOfCasesQueried"
+                              class="ons-table__cell "
+                            >
+                              1
                             </td>
                             <td
                               class="ons-table__cell links"
                             >
                               <a
-                                class="Edit"
-                                href="/summary"
+                                href="/allocate"
                               >
-                                Summary
+                                Allocate
                               </a>
                                | 
                               <a
-                                class="Edit"
-                                href="/"
+                                href="/reallocate"
                               >
-                                Edit
+                                Reallocate
                               </a>
                             </td>
                           </tr>
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001015"
                           >
                             <td
+                              aria-label="Editor"
                               class="ons-table__cell"
                             >
-                              10001015
+                              <a
+                                href="/"
+                              >
+                                Doctor Who
+                                :
+                              </a>
                             </td>
                             <td
+                              aria-label="NumberOfCasesAllocated"
                               class="ons-table__cell status"
                             >
-                              3
+                              0
+                            </td>
+                            <td
+                              aria-label="NumberOfCasesCompleted"
+                              class="ons-table__cell "
+                            >
+                              0
+                            </td>
+                            <td
+                              aria-label="NumberOfCasesQueried"
+                              class="ons-table__cell "
+                            >
+                              0
                             </td>
                             <td
                               class="ons-table__cell links"
                             >
                               <a
-                                class="Edit"
-                                href="/summary"
+                                href="/allocate"
                               >
-                                Summary
+                                Allocate
                               </a>
                                | 
                               <a
-                                class="Edit"
-                                href="/"
+                                href="/reallocate"
                               >
-                                Edit
+                                Reallocate
                               </a>
                             </td>
                           </tr>
