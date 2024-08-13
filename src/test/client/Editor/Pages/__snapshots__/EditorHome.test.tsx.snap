@@ -330,6 +330,8 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         </div>
                         <table
                           class="ons-table"
+                          data-testid="FRS2504A-Case-table"
+                          id="FRS2504A-Case-table"
                         >
                           <thead
                             class="ons-table__head"
@@ -360,14 +362,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           >
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001011"
                             >
                               <td
+                                aria-label="CaseID"
                                 class="ons-table__cell"
                               >
                                 10001011
                               </td>
                               <td
+                                aria-label="EditStatus"
                                 class="ons-table__cell status"
                               >
                                 3
@@ -392,14 +395,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             </tr>
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001012"
                             >
                               <td
+                                aria-label="CaseID"
                                 class="ons-table__cell"
                               >
                                 10001012
                               </td>
                               <td
+                                aria-label="EditStatus"
                                 class="ons-table__cell status"
                               >
                                 1
@@ -424,14 +428,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             </tr>
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001013"
                             >
                               <td
+                                aria-label="CaseID"
                                 class="ons-table__cell"
                               >
                                 10001013
                               </td>
                               <td
+                                aria-label="EditStatus"
                                 class="ons-table__cell status"
                               >
                                 0
@@ -456,14 +461,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             </tr>
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001014"
                             >
                               <td
+                                aria-label="CaseID"
                                 class="ons-table__cell"
                               >
                                 10001014
                               </td>
                               <td
+                                aria-label="EditStatus"
                                 class="ons-table__cell status"
                               >
                                 3
@@ -488,14 +494,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             </tr>
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001015"
                             >
                               <td
+                                aria-label="CaseID"
                                 class="ons-table__cell"
                               >
                                 10001015
                               </td>
                               <td
+                                aria-label="EditStatus"
                                 class="ons-table__cell status"
                               >
                                 3
@@ -660,6 +667,8 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         </div>
                         <table
                           class="ons-table"
+                          data-testid="FRS2505A-Case-table"
+                          id="FRS2505A-Case-table"
                         >
                           <thead
                             class="ons-table__head"
@@ -690,14 +699,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           >
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001011"
                             >
                               <td
+                                aria-label="CaseID"
                                 class="ons-table__cell"
                               >
                                 10001011
                               </td>
                               <td
+                                aria-label="EditStatus"
                                 class="ons-table__cell status"
                               >
                                 3
@@ -722,14 +732,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             </tr>
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001012"
                             >
                               <td
+                                aria-label="CaseID"
                                 class="ons-table__cell"
                               >
                                 10001012
                               </td>
                               <td
+                                aria-label="EditStatus"
                                 class="ons-table__cell status"
                               >
                                 1
@@ -754,14 +765,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             </tr>
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001013"
                             >
                               <td
+                                aria-label="CaseID"
                                 class="ons-table__cell"
                               >
                                 10001013
                               </td>
                               <td
+                                aria-label="EditStatus"
                                 class="ons-table__cell status"
                               >
                                 0
@@ -786,14 +798,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             </tr>
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001014"
                             >
                               <td
+                                aria-label="CaseID"
                                 class="ons-table__cell"
                               >
                                 10001014
                               </td>
                               <td
+                                aria-label="EditStatus"
                                 class="ons-table__cell status"
                               >
                                 3
@@ -818,14 +831,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             </tr>
                             <tr
                               class="ons-table__row"
-                              data-testid="case-table-row-10001015"
                             >
                               <td
+                                aria-label="CaseID"
                                 class="ons-table__cell"
                               >
                                 10001015
                               </td>
                               <td
+                                aria-label="EditStatus"
                                 class="ons-table__cell status"
                               >
                                 3
@@ -1080,6 +1094,8 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       </div>
                       <table
                         class="ons-table"
+                        data-testid="FRS2504A-Case-table"
+                        id="FRS2504A-Case-table"
                       >
                         <thead
                           class="ons-table__head"
@@ -1110,14 +1126,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         >
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001011"
                           >
                             <td
+                              aria-label="CaseID"
                               class="ons-table__cell"
                             >
                               10001011
                             </td>
                             <td
+                              aria-label="EditStatus"
                               class="ons-table__cell status"
                             >
                               3
@@ -1142,14 +1159,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </tr>
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001012"
                           >
                             <td
+                              aria-label="CaseID"
                               class="ons-table__cell"
                             >
                               10001012
                             </td>
                             <td
+                              aria-label="EditStatus"
                               class="ons-table__cell status"
                             >
                               1
@@ -1174,14 +1192,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </tr>
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001013"
                           >
                             <td
+                              aria-label="CaseID"
                               class="ons-table__cell"
                             >
                               10001013
                             </td>
                             <td
+                              aria-label="EditStatus"
                               class="ons-table__cell status"
                             >
                               0
@@ -1206,14 +1225,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </tr>
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001014"
                           >
                             <td
+                              aria-label="CaseID"
                               class="ons-table__cell"
                             >
                               10001014
                             </td>
                             <td
+                              aria-label="EditStatus"
                               class="ons-table__cell status"
                             >
                               3
@@ -1238,14 +1258,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </tr>
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001015"
                           >
                             <td
+                              aria-label="CaseID"
                               class="ons-table__cell"
                             >
                               10001015
                             </td>
                             <td
+                              aria-label="EditStatus"
                               class="ons-table__cell status"
                             >
                               3
@@ -1410,6 +1431,8 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       </div>
                       <table
                         class="ons-table"
+                        data-testid="FRS2505A-Case-table"
+                        id="FRS2505A-Case-table"
                       >
                         <thead
                           class="ons-table__head"
@@ -1440,14 +1463,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         >
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001011"
                           >
                             <td
+                              aria-label="CaseID"
                               class="ons-table__cell"
                             >
                               10001011
                             </td>
                             <td
+                              aria-label="EditStatus"
                               class="ons-table__cell status"
                             >
                               3
@@ -1472,14 +1496,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </tr>
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001012"
                           >
                             <td
+                              aria-label="CaseID"
                               class="ons-table__cell"
                             >
                               10001012
                             </td>
                             <td
+                              aria-label="EditStatus"
                               class="ons-table__cell status"
                             >
                               1
@@ -1504,14 +1529,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </tr>
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001013"
                           >
                             <td
+                              aria-label="CaseID"
                               class="ons-table__cell"
                             >
                               10001013
                             </td>
                             <td
+                              aria-label="EditStatus"
                               class="ons-table__cell status"
                             >
                               0
@@ -1536,14 +1562,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </tr>
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001014"
                           >
                             <td
+                              aria-label="CaseID"
                               class="ons-table__cell"
                             >
                               10001014
                             </td>
                             <td
+                              aria-label="EditStatus"
                               class="ons-table__cell status"
                             >
                               3
@@ -1568,14 +1595,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </tr>
                           <tr
                             class="ons-table__row"
-                            data-testid="case-table-row-10001015"
                           >
                             <td
+                              aria-label="CaseID"
                               class="ons-table__cell"
                             >
                               10001015
                             </td>
                             <td
+                              aria-label="EditStatus"
                               class="ons-table__cell status"
                             >
                               3

@@ -62,11 +62,21 @@ describe('Given there are surveys available in blaise', () => {
     FilteredSurveyListMockObject.forEach((survey, surveyIndex) => {
       const surveyListView = view.getByTestId(`survey-accordion-${surveyIndex}-heading`);
       expect(surveyListView).toHaveTextContent(survey.name);
-
-      survey.questionnaires.forEach(({ questionnaireName, numberOfCases }) => {
-        const questionnaireListView = view.getByTestId(`survey-accordion-${surveyIndex}-content`);
+      const questionnaireListView = view.getByTestId(`survey-accordion-${surveyIndex}-content`);
+      survey.questionnaires.forEach(({ questionnaireName, fieldPeriod, numberOfCases }) => {
         expect(questionnaireListView).toHaveTextContent(questionnaireName);
-        expect(questionnaireListView).toHaveTextContent(String(numberOfCases));
+
+        const questionnaireView = view.getByTestId(`${questionnaireName}-editorContent`);
+        expect(questionnaireView).toHaveTextContent(String(fieldPeriod));
+        expect(questionnaireView).toHaveTextContent(String(numberOfCases));
+
+        const caseRows = view.getAllByLabelText('CaseID');
+        const editStatusRows = view.getAllByLabelText('EditStatus');
+        
+        EditorInformationMockObject.Cases.forEach((caseDetails, caseIndex) => {
+          expect(caseRows[caseIndex]).toHaveTextContent(caseDetails.CaseId);
+          expect(editStatusRows[caseIndex]).toHaveTextContent(String(caseDetails.EditStatus));
+        });
       });
     });
   });

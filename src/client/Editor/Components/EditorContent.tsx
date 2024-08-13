@@ -54,18 +54,18 @@ export default function EditorContent({ editorInformation, questionnaire }: Edit
           'Status',
           '',
         ]}
+        tableID={`${questionnaire.questionnaireName}-Case-table`}
       >
         <>
           {editorInformation.Cases.map((caseDetails) => (
             <tr
               className="ons-table__row"
-              data-testid={`case-table-row-${caseDetails.CaseId}`}
               key={caseDetails.CaseId}
             >
-              <td className="ons-table__cell">
+              <td className="ons-table__cell" aria-label="CaseID">
                 {caseDetails.CaseId}
               </td>
-              <td className="ons-table__cell status">
+              <td className="ons-table__cell status" aria-label="EditStatus">
                 {caseDetails.EditStatus}
               </td>
               <td className="ons-table__cell links">
