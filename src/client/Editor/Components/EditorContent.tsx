@@ -62,10 +62,10 @@ export default function EditorContent({ editorInformation, questionnaire }: Edit
               className="ons-table__row"
               key={caseDetails.CaseId}
             >
-              <td className="ons-table__cell" aria-label="CaseID">
+              <td className="ons-table__cell" aria-label={`${questionnaire.questionnaireName}-CaseID`}>
                 {caseDetails.CaseId}
               </td>
-              <td className="ons-table__cell status" aria-label="EditStatus">
+              <td className="ons-table__cell status" aria-label={`${questionnaire.questionnaireName}-EditStatus`}>
                 {caseDetails.EditStatus}
               </td>
               <td className="ons-table__cell links">

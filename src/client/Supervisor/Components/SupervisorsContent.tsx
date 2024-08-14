@@ -48,19 +48,19 @@ export default function SupervisorsContent({ questionnaire, supervisorInformatio
               className="ons-table__row"
               key={editor.EditorName}
             >
-              <td className="ons-table__cell" aria-label="Editor">
+              <td className="ons-table__cell" aria-label={`${questionnaire.questionnaireName}-Editor`}>
                 <Link to="/">
                   {editor.EditorName}
                   :
                 </Link>
               </td>
-              <td className="ons-table__cell status" aria-label="NumberOfCasesAllocated">
+              <td className="ons-table__cell status" aria-label={`${questionnaire.questionnaireName}-NumberOfCasesAllocated`}>
                 {editor.NumberOfCasesAllocated}
               </td>
-              <td className="ons-table__cell " aria-label="NumberOfCasesCompleted">
+              <td className="ons-table__cell " aria-label={`${questionnaire.questionnaireName}-NumberOfCasesCompleted`}>
                 {editor.NumberOfCasesCompleted}
               </td>
-              <td className="ons-table__cell " aria-label="NumberOfCasesQueried">
+              <td className="ons-table__cell " aria-label={`${questionnaire.questionnaireName}-NumberOfCasesQueried`}>
                 {editor.NumberOfCasesQueried}
               </td>
               <td className="ons-table__cell links">

@@ -70,9 +70,9 @@ describe('Given there are surveys available in blaise', () => {
         expect(questionnaireView).toHaveTextContent(String(fieldPeriod));
         expect(questionnaireView).toHaveTextContent(String(numberOfCases));
 
-        const caseRows = view.getAllByLabelText('CaseID');
-        const editStatusRows = view.getAllByLabelText('EditStatus');
-        
+        const caseRows = view.getAllByLabelText(`${questionnaireName}-CaseID`);
+        const editStatusRows = view.getAllByLabelText(`${questionnaireName}-EditStatus`);
+
         EditorInformationMockObject.Cases.forEach((caseDetails, caseIndex) => {
           expect(caseRows[caseIndex]).toHaveTextContent(caseDetails.CaseId);
           expect(editStatusRows[caseIndex]).toHaveTextContent(String(caseDetails.EditStatus));

@@ -76,10 +76,10 @@ describe('Given there are surveys available in blaise', () => {
         expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject.NumberOfCasesAllocated));
         expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject.NumberOfCasesCompleted));
 
-        const editorRows = view.getAllByLabelText('Editor');
-        const numberOfCasesAllocatedRows = view.getAllByLabelText('NumberOfCasesAllocated');
-        const numberOfCasesCompleted = view.getAllByLabelText('NumberOfCasesCompleted');
-        const numberOfCasesQueried = view.getAllByLabelText('NumberOfCasesQueried');
+        const editorRows = view.getAllByLabelText(`${questionnaireName}-Editor`);
+        const numberOfCasesAllocatedRows = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesAllocated`);
+        const numberOfCasesCompleted = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesCompleted`);
+        const numberOfCasesQueried = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesQueried`);
 
         SupervisorInformationMockObject.Editors.forEach((editor, index) => {
           expect(editorRows[index]).toHaveTextContent(editor.EditorName);
