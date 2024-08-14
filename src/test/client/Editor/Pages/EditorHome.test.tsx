@@ -5,7 +5,8 @@ import { getEditorCaseInformation, getSurveys } from '../../../../client/Common/
 import { Survey } from '../../../../common/interfaces/surveyInterface';
 import EditorHome from '../../../../client/Editor/Pages/EditorHome';
 import { EditorInformation } from '../../../../common/interfaces/editorInterface';
-import { EditorInformationMockObject, FilteredSurveyListMockObject } from '../../MockObjects/EditorMockObjects';
+import FilteredSurveyListMockObject from '../../MockObjects/SurveyMockObjects';
+import EditorInformationMockObject from '../../MockObjects/CaseMockObject';
 
 // set global vars
 const userRole:string = 'Editor';

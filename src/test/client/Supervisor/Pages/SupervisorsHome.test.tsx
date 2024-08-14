@@ -4,10 +4,10 @@ import userMockObject from '../../../mockObjects/userMockObject';
 import { getSupervisorEditorInformation, getSurveys } from '../../../../client/Common/api/NodeApi';
 import { Survey } from '../../../../common/interfaces/surveyInterface';
 import SupervisorsHome from '../../../../client/Supervisor/Pages/SupervisorsHome';
-import { FilteredSurveyListMockObject } from '../../MockObjects/EditorMockObjects';
 import { SupervisorInformation } from '../../../../common/interfaces/supervisorInterface';
-import SupervisorInformationMockObject from '../../MockObjects/SupervisorMockObjects';
 import UserRole from '../../../../client/Common/enums/UserRole';
+import FilteredSurveyListMockObject from '../../MockObjects/SurveyMockObjects';
+import SupervisorInformationMockObject from '../../MockObjects/SupervisorMockObjects';
 
 // set global vars
 const userRole:string = UserRole.SVT_Supervisor;

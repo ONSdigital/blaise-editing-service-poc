@@ -8,7 +8,7 @@ import { Survey } from '../../common/interfaces/surveyInterface';
 import userMockObject from '../mockObjects/userMockObject';
 import App from '../../client/App';
 import EditorInformationMockObject from './MockObjects/CaseMockObject';
-import { FilteredSurveyListMockObject } from './MockObjects/EditorMockObjects';
+import FilteredSurveyListMockObject from './MockObjects/SurveyMockObjects';
 import SupervisorInformationMockObject from './MockObjects/SupervisorMockObjects';
 import { EditorInformation } from '../../common/interfaces/editorInterface';
 import { SupervisorInformation } from '../../common/interfaces/supervisorInterface';
