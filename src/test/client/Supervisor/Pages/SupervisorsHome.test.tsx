@@ -7,7 +7,7 @@ import SupervisorsHome from '../../../../client/Supervisor/Pages/SupervisorsHome
 import { SupervisorInformation } from '../../../../common/interfaces/supervisorInterface';
 import UserRole from '../../../../client/Common/enums/UserRole';
 import FilteredSurveyListMockObject from '../../MockObjects/SurveyMockObjects';
-import SupervisorInformationMockObject from '../../MockObjects/SupervisorMockObjects';
+import { SupervisorInformationMockObject1, SupervisorInformationMockObject2 } from '../../MockObjects/SupervisorMockObjects';
 
 // set global vars
 const userRole:string = UserRole.SVT_Supervisor;
@@ -21,7 +21,8 @@ const getSupervisorCaseInformationMock = getSupervisorEditorInformation as jest.
 describe('Given there are surveys available in blaise', () => {
   beforeEach(() => {
     getSurveysMock.mockImplementation(() => Promise.resolve(FilteredSurveyListMockObject));
-    getSupervisorCaseInformationMock.mockImplementation(() => Promise.resolve(SupervisorInformationMockObject));
+    getSupervisorCaseInformationMock.mockReturnValueOnce(Promise.resolve(SupervisorInformationMockObject1))
+      .mockReturnValueOnce(Promise.resolve(SupervisorInformationMockObject2));
   });
 
   afterEach(() => {
@@ -67,26 +68,48 @@ describe('Given there are surveys available in blaise', () => {
       expect(surveyListView).toHaveTextContent(survey.name);
 
       const questionnaireListView = view.getByTestId(`survey-accordion-${surveyIndex}-content`);
-      survey.questionnaires.forEach(({ questionnaireName }) => {
+      survey.questionnaires.forEach(({ questionnaireName }, QuestionnaireIndex) => {
         expect(questionnaireListView).toHaveTextContent(questionnaireName);
 
-        const questionnaireView = view.getByTestId(`${questionnaireName}-supervisor-Content`);
-        expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject.TotalNumberOfCases));
-        expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject.NumberOfCasesNotAllocated));
-        expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject.NumberOfCasesAllocated));
-        expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject.NumberOfCasesCompleted));
+        if (QuestionnaireIndex === 0) {
+          const questionnaireView = view.getByTestId(`${questionnaireName}-supervisor-Content`);
+          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject1.TotalNumberOfCases));
+          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject1.NumberOfCasesNotAllocated));
+          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject1.NumberOfCasesAllocated));
+          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject1.NumberOfCasesCompleted));
 
-        const editorRows = view.getAllByLabelText(`${questionnaireName}-Editor`);
-        const numberOfCasesAllocatedRows = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesAllocated`);
-        const numberOfCasesCompleted = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesCompleted`);
-        const numberOfCasesQueried = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesQueried`);
+          const editorRows = view.getAllByLabelText(`${questionnaireName}-Editor`);
+          const numberOfCasesAllocatedRows = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesAllocated`);
+          const numberOfCasesCompleted = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesCompleted`);
+          const numberOfCasesQueried = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesQueried`);
 
-        SupervisorInformationMockObject.Editors.forEach((editor, index) => {
-          expect(editorRows[index]).toHaveTextContent(editor.EditorName);
-          expect(numberOfCasesAllocatedRows[index]).toHaveTextContent(String(editor.NumberOfCasesAllocated));
-          expect(numberOfCasesCompleted[index]).toHaveTextContent(String(editor.NumberOfCasesCompleted));
-          expect(numberOfCasesQueried[index]).toHaveTextContent(String(editor.NumberOfCasesQueried));
-        });
+          SupervisorInformationMockObject1.Editors.forEach((editor, index) => {
+            expect(editorRows[index]).toHaveTextContent(editor.EditorName);
+            expect(numberOfCasesAllocatedRows[index]).toHaveTextContent(String(editor.NumberOfCasesAllocated));
+            expect(numberOfCasesCompleted[index]).toHaveTextContent(String(editor.NumberOfCasesCompleted));
+            expect(numberOfCasesQueried[index]).toHaveTextContent(String(editor.NumberOfCasesQueried));
+          });
+        }
+
+        if (QuestionnaireIndex === 1) {
+          const questionnaireView = view.getByTestId(`${questionnaireName}-supervisor-Content`);
+          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject2.TotalNumberOfCases));
+          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject2.NumberOfCasesNotAllocated));
+          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject2.NumberOfCasesAllocated));
+          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject2.NumberOfCasesCompleted));
+
+          const editorRows = view.getAllByLabelText(`${questionnaireName}-Editor`);
+          const numberOfCasesAllocatedRows = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesAllocated`);
+          const numberOfCasesCompleted = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesCompleted`);
+          const numberOfCasesQueried = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesQueried`);
+
+          SupervisorInformationMockObject2.Editors.forEach((editor, index) => {
+            expect(editorRows[index]).toHaveTextContent(editor.EditorName);
+            expect(numberOfCasesAllocatedRows[index]).toHaveTextContent(String(editor.NumberOfCasesAllocated));
+            expect(numberOfCasesCompleted[index]).toHaveTextContent(String(editor.NumberOfCasesCompleted));
+            expect(numberOfCasesQueried[index]).toHaveTextContent(String(editor.NumberOfCasesQueried));
+          });
+        }
       });
     });
   });

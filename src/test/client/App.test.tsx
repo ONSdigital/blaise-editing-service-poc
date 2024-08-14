@@ -7,11 +7,11 @@ import { getEditorCaseInformation, getSupervisorEditorInformation, getSurveys } 
 import { Survey } from '../../common/interfaces/surveyInterface';
 import userMockObject from '../mockObjects/userMockObject';
 import App from '../../client/App';
-import EditorInformationMockObject from './MockObjects/CaseMockObject';
-import FilteredSurveyListMockObject from './MockObjects/SurveyMockObjects';
-import SupervisorInformationMockObject from './MockObjects/SupervisorMockObjects';
+import { SupervisorInformationMockObject1, SupervisorInformationMockObject2 } from './MockObjects/SupervisorMockObjects';
 import { EditorInformation } from '../../common/interfaces/editorInterface';
 import { SupervisorInformation } from '../../common/interfaces/supervisorInterface';
+import FilteredSurveyListMockObject from './MockObjects/SurveyMockObjects';
+import { EditorInformationMockObject1, EditorInformationMockObject2 } from './MockObjects/EditorMockObjects';
 
 // set global variables
 const validUserRoles:string[] = ['SVT_Supervisor', 'SVT_Editor'];
@@ -30,8 +30,10 @@ const getSupervisorEditorInformationMock = getSupervisorEditorInformation as jes
 describe('Renders the correct screen depending if the user has recently logged in', () => {
   beforeEach(() => {
     getSurveysMock.mockImplementation(() => Promise.resolve(FilteredSurveyListMockObject));
-    getEditorCaseInformationMock.mockImplementation(() => Promise.resolve(EditorInformationMockObject));
-    getSupervisorEditorInformationMock.mockImplementation(() => Promise.resolve(SupervisorInformationMockObject));
+    getEditorCaseInformationMock.mockReturnValueOnce(Promise.resolve(EditorInformationMockObject1))
+      .mockReturnValueOnce(Promise.resolve(EditorInformationMockObject2));
+    getSupervisorEditorInformationMock.mockReturnValueOnce(Promise.resolve(SupervisorInformationMockObject1))
+      .mockReturnValueOnce(Promise.resolve(SupervisorInformationMockObject2));
   });
 
   afterEach(() => {

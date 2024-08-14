@@ -6,7 +6,7 @@ import { Survey } from '../../../../common/interfaces/surveyInterface';
 import EditorHome from '../../../../client/Editor/Pages/EditorHome';
 import { EditorInformation } from '../../../../common/interfaces/editorInterface';
 import FilteredSurveyListMockObject from '../../MockObjects/SurveyMockObjects';
-import EditorInformationMockObject from '../../MockObjects/CaseMockObject';
+import { EditorInformationMockObject1, EditorInformationMockObject2 } from '../../MockObjects/EditorMockObjects';
 
 // set global vars
 const userRole:string = 'Editor';
@@ -20,8 +20,10 @@ const getEditorCaseInformationMock = getEditorCaseInformation as jest.Mock<Promi
 describe('Given there are surveys available in blaise', () => {
   beforeEach(() => {
     getSurveysMock.mockImplementation(() => Promise.resolve(FilteredSurveyListMockObject));
-    getEditorCaseInformationMock.mockImplementation(() => Promise.resolve(EditorInformationMockObject));
+    getEditorCaseInformationMock.mockReturnValueOnce(Promise.resolve(EditorInformationMockObject1))
+      .mockReturnValueOnce(Promise.resolve(EditorInformationMockObject2));
   });
+
   afterEach(() => {
     getSurveysMock.mockReset();
     getEditorCaseInformationMock.mockReset();
@@ -64,7 +66,7 @@ describe('Given there are surveys available in blaise', () => {
       const surveyListView = view.getByTestId(`survey-accordion-${surveyIndex}-heading`);
       expect(surveyListView).toHaveTextContent(survey.name);
       const questionnaireListView = view.getByTestId(`survey-accordion-${surveyIndex}-content`);
-      survey.questionnaires.forEach(({ questionnaireName, fieldPeriod, numberOfCases }) => {
+      survey.questionnaires.forEach(({ questionnaireName, fieldPeriod, numberOfCases }, questionaireIndex) => {
         expect(questionnaireListView).toHaveTextContent(questionnaireName);
 
         const questionnaireView = view.getByTestId(`${questionnaireName}-editorContent`);
@@ -74,10 +76,18 @@ describe('Given there are surveys available in blaise', () => {
         const caseRows = view.getAllByLabelText(`${questionnaireName}-CaseID`);
         const editStatusRows = view.getAllByLabelText(`${questionnaireName}-EditStatus`);
 
-        EditorInformationMockObject.Cases.forEach((caseDetails, caseIndex) => {
-          expect(caseRows[caseIndex]).toHaveTextContent(caseDetails.CaseId);
-          expect(editStatusRows[caseIndex]).toHaveTextContent(String(caseDetails.EditStatus));
-        });
+        if (questionaireIndex === 0) {
+          EditorInformationMockObject1.Cases.forEach((caseDetails, caseIndex) => {
+            expect(caseRows[caseIndex]).toHaveTextContent(caseDetails.CaseId);
+            expect(editStatusRows[caseIndex]).toHaveTextContent(String(caseDetails.EditStatus));
+          });
+        }
+        if (questionaireIndex === 1) {
+          EditorInformationMockObject2.Cases.forEach((caseDetails, caseIndex) => {
+            expect(caseRows[caseIndex]).toHaveTextContent(caseDetails.CaseId);
+            expect(editStatusRows[caseIndex]).toHaveTextContent(String(caseDetails.EditStatus));
+          });
+        }
       });
     });
   });

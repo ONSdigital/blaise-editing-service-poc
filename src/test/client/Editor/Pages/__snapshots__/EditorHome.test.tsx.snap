@@ -618,7 +618,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 class="ons-description-list__value ons-grid__col ons-col-7@m"
                               >
                                 <strong>
-                                  5
+                                  4
                                 </strong>
                               </dd>
                             </dl>
@@ -704,7 +704,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2505A-CaseID"
                                 class="ons-table__cell"
                               >
-                                10001011
+                                20001011
                               </td>
                               <td
                                 aria-label="FRS2505A-EditStatus"
@@ -737,7 +737,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2505A-CaseID"
                                 class="ons-table__cell"
                               >
-                                10001012
+                                20001012
                               </td>
                               <td
                                 aria-label="FRS2505A-EditStatus"
@@ -770,7 +770,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2505A-CaseID"
                                 class="ons-table__cell"
                               >
-                                10001013
+                                20001013
                               </td>
                               <td
                                 aria-label="FRS2505A-EditStatus"
@@ -803,40 +803,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2505A-CaseID"
                                 class="ons-table__cell"
                               >
-                                10001014
-                              </td>
-                              <td
-                                aria-label="FRS2505A-EditStatus"
-                                class="ons-table__cell status"
-                              >
-                                3
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <a
-                                  class="Edit"
-                                  href="/summary"
-                                >
-                                  Summary
-                                </a>
-                                 | 
-                                <a
-                                  class="Edit"
-                                  href="/"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2505A-CaseID"
-                                class="ons-table__cell"
-                              >
-                                10001015
+                                20001014
                               </td>
                               <td
                                 aria-label="FRS2505A-EditStatus"
@@ -1382,7 +1349,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               class="ons-description-list__value ons-grid__col ons-col-7@m"
                             >
                               <strong>
-                                5
+                                4
                               </strong>
                             </dd>
                           </dl>
@@ -1468,7 +1435,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2505A-CaseID"
                               class="ons-table__cell"
                             >
-                              10001011
+                              20001011
                             </td>
                             <td
                               aria-label="FRS2505A-EditStatus"
@@ -1501,7 +1468,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2505A-CaseID"
                               class="ons-table__cell"
                             >
-                              10001012
+                              20001012
                             </td>
                             <td
                               aria-label="FRS2505A-EditStatus"
@@ -1534,7 +1501,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2505A-CaseID"
                               class="ons-table__cell"
                             >
-                              10001013
+                              20001013
                             </td>
                             <td
                               aria-label="FRS2505A-EditStatus"
@@ -1567,40 +1534,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2505A-CaseID"
                               class="ons-table__cell"
                             >
-                              10001014
-                            </td>
-                            <td
-                              aria-label="FRS2505A-EditStatus"
-                              class="ons-table__cell status"
-                            >
-                              3
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <a
-                                class="Edit"
-                                href="/summary"
-                              >
-                                Summary
-                              </a>
-                               | 
-                              <a
-                                class="Edit"
-                                href="/"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2505A-CaseID"
-                              class="ons-table__cell"
-                            >
-                              10001015
+                              20001014
                             </td>
                             <td
                               aria-label="FRS2505A-EditStatus"

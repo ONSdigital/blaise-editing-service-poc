@@ -1,6 +1,6 @@
 import { Survey } from '../../../common/interfaces/surveyInterface';
 
-export const FilteredSurveyListMockObject :Survey[] = [{
+const FilteredSurveyListMockObject :Survey[] = [{
   name: 'FRS',
   questionnaires: [{
     questionnaireName: 'FRS2504A',

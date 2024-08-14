@@ -1,8 +1,8 @@
 import { SupervisorInformation } from '../../../common/interfaces/supervisorInterface';
 
-const SupervisorInformationMockObject: SupervisorInformation = {
+export const SupervisorInformationMockObject1: SupervisorInformation = {
   TotalNumberOfCases: 1000,
-  NumberOfCasesNotAllocated: 970,
+  NumberOfCasesNotAllocated: 966,
   NumberOfCasesAllocated: 25,
   NumberOfCasesCompleted: 9,
   Editors: [
@@ -27,4 +27,29 @@ const SupervisorInformationMockObject: SupervisorInformation = {
   ],
 };
 
-export default SupervisorInformationMockObject;
+export const SupervisorInformationMockObject2: SupervisorInformation = {
+  TotalNumberOfCases: 100,
+  NumberOfCasesNotAllocated: 80,
+  NumberOfCasesAllocated: 15,
+  NumberOfCasesCompleted: 5,
+  Editors: [
+    {
+      EditorName: 'Iron Man',
+      NumberOfCasesAllocated: 11,
+      NumberOfCasesCompleted: 2,
+      NumberOfCasesQueried: 1,
+    },
+    {
+      EditorName: 'Captain America',
+      NumberOfCasesAllocated: 4,
+      NumberOfCasesCompleted: 3,
+      NumberOfCasesQueried: 0,
+    },
+    {
+      EditorName: 'The Hulk',
+      NumberOfCasesAllocated: 0,
+      NumberOfCasesCompleted: 0,
+      NumberOfCasesQueried: 0,
+    },
+  ],
+};

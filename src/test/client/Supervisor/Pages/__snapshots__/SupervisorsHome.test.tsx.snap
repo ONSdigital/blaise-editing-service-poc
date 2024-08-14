@@ -287,7 +287,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                               <dd
                                 class="ons-description-list__value ons-grid__col ons-col-7@m"
                               >
-                                970
+                                966
                               </dd>
                               <dt
                                 class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -589,7 +589,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                               <dd
                                 class="ons-description-list__value ons-grid__col ons-col-7@m"
                               >
-                                1000
+                                100
                               </dd>
                               <dt
                                 class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -599,7 +599,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                               <dd
                                 class="ons-description-list__value ons-grid__col ons-col-7@m"
                               >
-                                970
+                                80
                               </dd>
                               <dt
                                 class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -609,7 +609,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                               <dd
                                 class="ons-description-list__value ons-grid__col ons-col-7@m"
                               >
-                                25
+                                15
                               </dd>
                               <dt
                                 class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -619,7 +619,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                               <dd
                                 class="ons-description-list__value ons-grid__col ons-col-7@m"
                               >
-                                9
+                                5
                               </dd>
                             </dl>
                           </div>
@@ -678,7 +678,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 <a
                                   href="/"
                                 >
-                                  Doctor Doom
+                                  Iron Man
                                   :
                                 </a>
                               </td>
@@ -686,61 +686,13 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 aria-label="FRS2505A-NumberOfCasesAllocated"
                                 class="ons-table__cell status"
                               >
-                                10
+                                11
                               </td>
                               <td
                                 aria-label="FRS2505A-NumberOfCasesCompleted"
                                 class="ons-table__cell "
                               >
-                                5
-                              </td>
-                              <td
-                                aria-label="FRS2505A-NumberOfCasesQueried"
-                                class="ons-table__cell "
-                              >
-                                0
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <a
-                                  href="/allocate"
-                                >
-                                  Allocate
-                                </a>
-                                 | 
-                                <a
-                                  href="/reallocate"
-                                >
-                                  Reallocate
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2505A-Editor"
-                                class="ons-table__cell"
-                              >
-                                <a
-                                  href="/"
-                                >
-                                  Doctor Strange
-                                  :
-                                </a>
-                              </td>
-                              <td
-                                aria-label="FRS2505A-NumberOfCasesAllocated"
-                                class="ons-table__cell status"
-                              >
-                                15
-                              </td>
-                              <td
-                                aria-label="FRS2505A-NumberOfCasesCompleted"
-                                class="ons-table__cell "
-                              >
-                                4
+                                2
                               </td>
                               <td
                                 aria-label="FRS2505A-NumberOfCasesQueried"
@@ -774,7 +726,55 @@ exports[`Given there are surveys available in blaise should render the superviso
                                 <a
                                   href="/"
                                 >
-                                  Doctor Who
+                                  Captain America
+                                  :
+                                </a>
+                              </td>
+                              <td
+                                aria-label="FRS2505A-NumberOfCasesAllocated"
+                                class="ons-table__cell status"
+                              >
+                                4
+                              </td>
+                              <td
+                                aria-label="FRS2505A-NumberOfCasesCompleted"
+                                class="ons-table__cell "
+                              >
+                                3
+                              </td>
+                              <td
+                                aria-label="FRS2505A-NumberOfCasesQueried"
+                                class="ons-table__cell "
+                              >
+                                0
+                              </td>
+                              <td
+                                class="ons-table__cell links"
+                              >
+                                <a
+                                  href="/allocate"
+                                >
+                                  Allocate
+                                </a>
+                                 | 
+                                <a
+                                  href="/reallocate"
+                                >
+                                  Reallocate
+                                </a>
+                              </td>
+                            </tr>
+                            <tr
+                              class="ons-table__row"
+                            >
+                              <td
+                                aria-label="FRS2505A-Editor"
+                                class="ons-table__cell"
+                              >
+                                <a
+                                  href="/"
+                                >
+                                  The Hulk
                                   :
                                 </a>
                               </td>
@@ -1001,7 +1001,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                             <dd
                               class="ons-description-list__value ons-grid__col ons-col-7@m"
                             >
-                              970
+                              966
                             </dd>
                             <dt
                               class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -1303,7 +1303,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                             <dd
                               class="ons-description-list__value ons-grid__col ons-col-7@m"
                             >
-                              1000
+                              100
                             </dd>
                             <dt
                               class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -1313,7 +1313,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                             <dd
                               class="ons-description-list__value ons-grid__col ons-col-7@m"
                             >
-                              970
+                              80
                             </dd>
                             <dt
                               class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -1323,7 +1323,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                             <dd
                               class="ons-description-list__value ons-grid__col ons-col-7@m"
                             >
-                              25
+                              15
                             </dd>
                             <dt
                               class="ons-description-list__term ons-grid__col ons-col-5@m"
@@ -1333,7 +1333,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                             <dd
                               class="ons-description-list__value ons-grid__col ons-col-7@m"
                             >
-                              9
+                              5
                             </dd>
                           </dl>
                         </div>
@@ -1392,7 +1392,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                               <a
                                 href="/"
                               >
-                                Doctor Doom
+                                Iron Man
                                 :
                               </a>
                             </td>
@@ -1400,61 +1400,13 @@ exports[`Given there are surveys available in blaise should render the superviso
                               aria-label="FRS2505A-NumberOfCasesAllocated"
                               class="ons-table__cell status"
                             >
-                              10
+                              11
                             </td>
                             <td
                               aria-label="FRS2505A-NumberOfCasesCompleted"
                               class="ons-table__cell "
                             >
-                              5
-                            </td>
-                            <td
-                              aria-label="FRS2505A-NumberOfCasesQueried"
-                              class="ons-table__cell "
-                            >
-                              0
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <a
-                                href="/allocate"
-                              >
-                                Allocate
-                              </a>
-                               | 
-                              <a
-                                href="/reallocate"
-                              >
-                                Reallocate
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2505A-Editor"
-                              class="ons-table__cell"
-                            >
-                              <a
-                                href="/"
-                              >
-                                Doctor Strange
-                                :
-                              </a>
-                            </td>
-                            <td
-                              aria-label="FRS2505A-NumberOfCasesAllocated"
-                              class="ons-table__cell status"
-                            >
-                              15
-                            </td>
-                            <td
-                              aria-label="FRS2505A-NumberOfCasesCompleted"
-                              class="ons-table__cell "
-                            >
-                              4
+                              2
                             </td>
                             <td
                               aria-label="FRS2505A-NumberOfCasesQueried"
@@ -1488,7 +1440,55 @@ exports[`Given there are surveys available in blaise should render the superviso
                               <a
                                 href="/"
                               >
-                                Doctor Who
+                                Captain America
+                                :
+                              </a>
+                            </td>
+                            <td
+                              aria-label="FRS2505A-NumberOfCasesAllocated"
+                              class="ons-table__cell status"
+                            >
+                              4
+                            </td>
+                            <td
+                              aria-label="FRS2505A-NumberOfCasesCompleted"
+                              class="ons-table__cell "
+                            >
+                              3
+                            </td>
+                            <td
+                              aria-label="FRS2505A-NumberOfCasesQueried"
+                              class="ons-table__cell "
+                            >
+                              0
+                            </td>
+                            <td
+                              class="ons-table__cell links"
+                            >
+                              <a
+                                href="/allocate"
+                              >
+                                Allocate
+                              </a>
+                               | 
+                              <a
+                                href="/reallocate"
+                              >
+                                Reallocate
+                              </a>
+                            </td>
+                          </tr>
+                          <tr
+                            class="ons-table__row"
+                          >
+                            <td
+                              aria-label="FRS2505A-Editor"
+                              class="ons-table__cell"
+                            >
+                              <a
+                                href="/"
+                              >
+                                The Hulk
                                 :
                               </a>
                             </td>
