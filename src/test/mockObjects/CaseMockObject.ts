@@ -1,5 +1,6 @@
 import { CaseOutcome, CaseEditInformation, EditedStatus } from 'blaise-api-node-client';
 import { EditorInformation } from '../../common/interfaces/editorInterface';
+import { SupervisorInformation } from '../../common/interfaces/supervisorInterface';
 
 export const caseEditInformationMockObject1: CaseEditInformation = {
   primaryKey: '10001011',
@@ -55,6 +56,39 @@ export const MappedEditorInformationRichMockObject: EditorInformation = {
     {
       CaseId: '10001015',
       EditStatus: EditedStatus.Started,
+    },
+  ],
+};
+
+export const MappedSupervisorInformationMockObject: SupervisorInformation = {
+  TotalNumberOfCases: 5,
+  NumberOfCasesNotAllocated: 0,
+  NumberOfCasesAllocated: 5,
+  NumberOfCasesCompleted: 1,
+  Editors: [
+    {
+      EditorName: 'Rich',
+      NumberOfCasesAllocated: 2,
+      NumberOfCasesCompleted: 1,
+      NumberOfCasesQueried: 0,
+    },
+    {
+      EditorName: 'bob',
+      NumberOfCasesAllocated: 1,
+      NumberOfCasesCompleted: 0,
+      NumberOfCasesQueried: 0,
+    },
+    {
+      EditorName: 'Julie',
+      NumberOfCasesAllocated: 1,
+      NumberOfCasesCompleted: 0,
+      NumberOfCasesQueried: 1,
+    },
+    {
+      EditorName: 'Sarah',
+      NumberOfCasesAllocated: 1,
+      NumberOfCasesCompleted: 0,
+      NumberOfCasesQueried: 0,
     },
   ],
 };
