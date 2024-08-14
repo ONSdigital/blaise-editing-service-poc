@@ -7,9 +7,10 @@ import EditorHome from '../../../../client/Editor/Pages/EditorHome';
 import { EditorInformation } from '../../../../common/interfaces/editorInterface';
 import FilteredSurveyListMockObject from '../../MockObjects/SurveyMockObjects';
 import { EditorInformationMockObject1, EditorInformationMockObject2 } from '../../MockObjects/EditorMockObjects';
+import UserRole from '../../../../client/Common/enums/UserRole';
 
 // set global vars
-const userRole:string = 'Editor';
+const userRole:string = UserRole.SVT_Editor;
 let view:RenderResult;
 
 // set mocks

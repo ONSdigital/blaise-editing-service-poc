@@ -1,4 +1,6 @@
-import { Footer, Header, NotProductionWarning } from 'blaise-design-system-react-components';
+import {
+  DefaultErrorBoundary, Footer, Header, NotProductionWarning,
+} from 'blaise-design-system-react-components';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -33,19 +35,21 @@ export default function LayoutTemplate({ children, showSignOutButton, signOut }:
         signOutButton={showSignOutButton}
         signOutFunction={() => { signOut(); navigate('/'); }}
       />
-      <div style={divStyle} className="ons-page__container ons-container" data-testid="app-content">
-        <Link
-          className="nav"
-          to=".."
-          onClick={(e) => {
-            e.preventDefault();
-            navigate(-1);
-          }}
-        >
-          {'< back'}
-        </Link>
-        {children}
-      </div>
+      <DefaultErrorBoundary>
+        <div style={divStyle} className="ons-page__container ons-container" data-testid="app-content">
+          <Link
+            className="nav"
+            to=".."
+            onClick={(e) => {
+              e.preventDefault();
+              navigate(-1);
+            }}
+          >
+            {'< back'}
+          </Link>
+          {children}
+        </div>
+      </DefaultErrorBoundary>
       <Footer />
     </>
   );
