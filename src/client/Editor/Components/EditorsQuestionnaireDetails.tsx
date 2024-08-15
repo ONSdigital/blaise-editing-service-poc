@@ -1,10 +1,10 @@
 import { ReactElement } from 'react';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 import { useAsyncRequestWithTwoParams } from '../../Common/hooks/useAsyncRequest';
-import { getEditorCaseInformation } from '../../Common/api/NodeApi';
+import { getEditorInformation } from '../../api/NodeApi';
 import AsyncContent from '../../Common/components/AsyncContent';
 import EditorContent from './EditorContent';
-import { EditorInformation } from '../../../common/interfaces/editorInterface';
+import { EditorInformation } from '../../Interfaces/editorInterface';
 
 interface EditorsQuestionnairesDetailsProps {
   questionnaire: QuestionnaireDetails;
@@ -12,7 +12,7 @@ interface EditorsQuestionnairesDetailsProps {
 }
 
 export default function EditorsQuestionnairesDetails({ questionnaire, username }: EditorsQuestionnairesDetailsProps): ReactElement {
-  const editorInformation = useAsyncRequestWithTwoParams<EditorInformation, string, string>(getEditorCaseInformation, questionnaire.questionnaireName, username);
+  const editorInformation = useAsyncRequestWithTwoParams<EditorInformation, string, string>(getEditorInformation, questionnaire.questionnaireName, username);
 
   return (
 

@@ -1,5 +1,5 @@
 import { CaseOutcome, CaseEditInformation, EditedStatus } from 'blaise-api-node-client';
-import { EditorInformation } from '../../common/interfaces/editorInterface';
+import { EditorInformation } from '../../client/Interfaces/editorInterface';
 import { SupervisorInformation } from '../../common/interfaces/supervisorInterface';
 
 export const caseEditInformationMockObject1: CaseEditInformation = {

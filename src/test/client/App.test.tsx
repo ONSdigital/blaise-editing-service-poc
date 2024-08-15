@@ -3,12 +3,12 @@ import {
 } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { Authenticate } from 'blaise-login-react-client';
-import { getEditorCaseInformation, getSupervisorEditorInformation, getSurveys } from '../../client/Common/api/NodeApi';
+import { getEditorInformation, getSupervisorEditorInformation, getSurveys } from '../../client/api/NodeApi';
 import { Survey } from '../../common/interfaces/surveyInterface';
 import userMockObject from '../mockObjects/userMockObject';
 import App from '../../client/App';
 import { SupervisorInformationMockObject1, SupervisorInformationMockObject2 } from './MockObjects/SupervisorMockObjects';
-import { EditorInformation } from '../../common/interfaces/editorInterface';
+import { EditorInformation } from '../../client/Interfaces/editorInterface';
 import { SupervisorInformation } from '../../common/interfaces/supervisorInterface';
 import FilteredSurveyListMockObject from './MockObjects/SurveyMockObjects';
 import { EditorInformationMockObject1, EditorInformationMockObject2 } from './MockObjects/EditorMockObjects';
@@ -22,15 +22,15 @@ jest.mock('blaise-login-react-client');
 const { MockAuthenticate } = jest.requireActual('blaise-login-react-client');
 Authenticate.prototype.render = MockAuthenticate.prototype.render;
 
-jest.mock('../../client/Common/api/NodeApi');
+jest.mock('../../client/api/NodeApi');
 const getSurveysMock = getSurveys as jest.Mock<Promise<Survey[]>>;
-const getEditorCaseInformationMock = getEditorCaseInformation as jest.Mock<Promise<EditorInformation>>;
+const getEditorInformationMock = getEditorInformation as jest.Mock<Promise<EditorInformation>>;
 const getSupervisorEditorInformationMock = getSupervisorEditorInformation as jest.Mock<Promise<SupervisorInformation>>;
 
 describe('Renders the correct screen depending if the user has recently logged in', () => {
   beforeEach(() => {
     getSurveysMock.mockImplementation(() => Promise.resolve(FilteredSurveyListMockObject));
-    getEditorCaseInformationMock.mockReturnValueOnce(Promise.resolve(EditorInformationMockObject1))
+    getEditorInformationMock.mockReturnValueOnce(Promise.resolve(EditorInformationMockObject1))
       .mockReturnValueOnce(Promise.resolve(EditorInformationMockObject2));
     getSupervisorEditorInformationMock.mockReturnValueOnce(Promise.resolve(SupervisorInformationMockObject1))
       .mockReturnValueOnce(Promise.resolve(SupervisorInformationMockObject2));
@@ -38,7 +38,7 @@ describe('Renders the correct screen depending if the user has recently logged i
 
   afterEach(() => {
     getSurveysMock.mockReset();
-    getEditorCaseInformationMock.mockReset();
+    getEditorInformationMock.mockReset();
     getSupervisorEditorInformationMock.mockReset();
   });
 

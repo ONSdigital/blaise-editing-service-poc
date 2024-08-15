@@ -1,7 +1,7 @@
 import { render, act, RenderResult } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import userMockObject from '../../../mockObjects/userMockObject';
-import { getSupervisorEditorInformation, getSurveys } from '../../../../client/Common/api/NodeApi';
+import { getSupervisorEditorInformation, getSurveys } from '../../../../client/api/NodeApi';
 import { Survey } from '../../../../common/interfaces/surveyInterface';
 import SupervisorsHome from '../../../../client/Supervisor/Pages/SupervisorsHome';
 import { SupervisorInformation } from '../../../../common/interfaces/supervisorInterface';
@@ -14,7 +14,7 @@ const userRole:string = UserRole.SVT_Supervisor;
 let view:RenderResult;
 
 // set mocks
-jest.mock('../../../../client/Common/api/NodeApi');
+jest.mock('../../../../client/api/NodeApi');
 const getSurveysMock = getSurveys as jest.Mock<Promise<Survey[]>>;
 const getSupervisorCaseInformationMock = getSupervisorEditorInformation as jest.Mock<Promise<SupervisorInformation>>;
 

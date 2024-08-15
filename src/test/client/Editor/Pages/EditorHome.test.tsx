@@ -1,10 +1,10 @@
 import { render, act, RenderResult } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import userMockObject from '../../../mockObjects/userMockObject';
-import { getEditorCaseInformation, getSurveys } from '../../../../client/Common/api/NodeApi';
+import { getEditorInformation, getSurveys } from '../../../../client/api/NodeApi';
 import { Survey } from '../../../../common/interfaces/surveyInterface';
 import EditorHome from '../../../../client/Editor/Pages/EditorHome';
-import { EditorInformation } from '../../../../common/interfaces/editorInterface';
+import { EditorInformation } from '../../../../client/Interfaces/editorInterface';
 import FilteredSurveyListMockObject from '../../MockObjects/SurveyMockObjects';
 import { EditorInformationMockObject1, EditorInformationMockObject2 } from '../../MockObjects/EditorMockObjects';
 import UserRole from '../../../../client/Common/enums/UserRole';
@@ -14,20 +14,20 @@ const userRole:string = UserRole.SVT_Editor;
 let view:RenderResult;
 
 // set mocks
-jest.mock('../../../../client/Common/api/NodeApi');
+jest.mock('../../../../client/api/NodeApi');
 const getSurveysMock = getSurveys as jest.Mock<Promise<Survey[]>>;
-const getEditorCaseInformationMock = getEditorCaseInformation as jest.Mock<Promise<EditorInformation>>;
+const getEditorInformationMock = getEditorInformation as jest.Mock<Promise<EditorInformation>>;
 
 describe('Given there are surveys available in blaise', () => {
   beforeEach(() => {
     getSurveysMock.mockImplementation(() => Promise.resolve(FilteredSurveyListMockObject));
-    getEditorCaseInformationMock.mockReturnValueOnce(Promise.resolve(EditorInformationMockObject1))
+    getEditorInformationMock.mockReturnValueOnce(Promise.resolve(EditorInformationMockObject1))
       .mockReturnValueOnce(Promise.resolve(EditorInformationMockObject2));
   });
 
   afterEach(() => {
     getSurveysMock.mockReset();
-    getEditorCaseInformationMock.mockReset();
+    getEditorInformationMock.mockReset();
   });
 
   it('should render the editor page correctly when surveys are returned', async () => {

@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 import { useAsyncRequestWithParam } from '../../Common/hooks/useAsyncRequest';
-import { getSupervisorEditorInformation } from '../../Common/api/NodeApi';
+import { getSupervisorEditorInformation } from '../../api/NodeApi';
 import AsyncContent from '../../Common/components/AsyncContent';
 import { SupervisorInformation } from '../../../common/interfaces/supervisorInterface';
 import SupervisorsContent from './SupervisorsContent';

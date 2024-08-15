@@ -4,7 +4,7 @@ import nodeServer from '../../../server/server';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
-import { CaseEditInformationListMockObject, MappedEditorInformationRichMockObject } from '../../mockObjects/CaseMockObject';
+import { CaseEditInformationListMockObject } from '../../mockObjects/CaseMockObject';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
@@ -30,7 +30,7 @@ describe('Get case edit information tests', () => {
   const questionnaireName = 'FRS2504A';
   const username = 'Rich';
 
-  it('When given a valid quetsionnaire It should return a 200 response with an expected list of editing details', async () => {
+  it('When given a valid quetsionnaire It should return a 200 response with an expected list of case edit details', async () => {
     // arrange
     // mock blaise client to return a list of questionnaires with allocation
 
@@ -41,7 +41,7 @@ describe('Get case edit information tests', () => {
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual(MappedEditorInformationRichMockObject);
+    expect(response.body).toEqual(CaseEditInformationListMockObject);
     blaiseApiMock.verify((api) => api.getCaseEditInformation(questionnaireName), Times.once());
   });
 
