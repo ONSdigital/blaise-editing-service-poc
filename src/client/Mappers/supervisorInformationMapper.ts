@@ -1,7 +1,8 @@
-import { CaseEditInformation, EditedStatus } from 'blaise-api-node-client';
-import { SupervisorEditorInformation, SupervisorInformation } from '../../common/interfaces/supervisorInterface';
+import { CaseEditInformation } from 'blaise-api-node-client/lib/cjs/interfaces/case';
+import EditedStatus from 'blaise-api-node-client/lib/cjs/enums/editedStatus';
+import { SupervisorEditorInformation, SupervisorInformation } from '../Interfaces/supervisorInterface';
 
-export default function mapSupervisorInformaiton(caseEditInformationList: CaseEditInformation[]): SupervisorInformation {
+export default function mapSupervisorInformation(caseEditInformationList: CaseEditInformation[]): SupervisorInformation {
   const TotalNumberOfCases = caseEditInformationList.length;
   const NumberOfCasesNotAllocated = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo === '').length;
   const NumberOfCasesAllocated = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo !== '').length;

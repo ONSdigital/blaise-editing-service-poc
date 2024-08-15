@@ -4,7 +4,7 @@ import userMockObject from '../../../mockObjects/userMockObject';
 import { getSupervisorEditorInformation, getSurveys } from '../../../../client/api/NodeApi';
 import { Survey } from '../../../../common/interfaces/surveyInterface';
 import SupervisorsHome from '../../../../client/Supervisor/Pages/SupervisorsHome';
-import { SupervisorInformation } from '../../../../common/interfaces/supervisorInterface';
+import { SupervisorInformation } from '../../../../client/Interfaces/supervisorInterface';
 import UserRole from '../../../../client/Common/enums/UserRole';
 import FilteredSurveyListMockObject from '../../MockObjects/SurveyMockObjects';
 import { SupervisorInformationMockObject1, SupervisorInformationMockObject2 } from '../../MockObjects/SupervisorMockObjects';

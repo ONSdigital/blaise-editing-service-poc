@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { ONSPanel, ONSTable } from 'blaise-design-system-react-components';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
-import { SupervisorInformation } from '../../../common/interfaces/supervisorInterface';
+import { SupervisorInformation } from '../../Interfaces/supervisorInterface';
 
 interface SupervisorsQuestionnairesDetailsProps {
   questionnaire: QuestionnaireDetails;

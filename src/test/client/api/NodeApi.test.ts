@@ -1,11 +1,10 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
+import { CaseEditInformation, CaseOutcome, EditedStatus } from 'blaise-api-node-client/lib/cjs/blaiseApiClient';
 import surveyListMockObject from '../../mockObjects/surveyListMockObject';
 import { getSurveys, getEditorInformation, getSupervisorEditorInformation } from '../../../client/api/NodeApi';
-import { SupervisorInformationMockObject1, SupervisorInformationMockObject2 } from '../MockObjects/SupervisorMockObjects';
-import { CaseEditInformationListMockObject } from '../../mockObjects/CaseMockObject';
-import {EditorInformation} from '../../../client/Interfaces/editorInterface'
-import { CaseEditInformation, CaseOutcome, EditedStatus } from 'blaise-api-node-client/lib/cjs/blaiseApiClient';
+import { EditorInformation } from '../../../client/Interfaces/editorInterface';
+import { SupervisorInformation } from '../../../client/Interfaces/supervisorInterface';
 
 // use axios mock adapter
 const axiosMock = new MockAdapter(axios, { onNoMatch: 'throwException' });
@@ -49,10 +48,10 @@ describe('GetSurveys from Blaise', () => {
 
 describe('getEditorInformation from Blaise', () => {
   const questionnaireName = 'FRS2201';
+  const userName = 'Rich';
 
   it('Should retrieve a list of case edit information with a 200 response', async () => {
     // arrange
-    const userName = 'Rich';
     const caseEditInformationListMock: CaseEditInformation[] = [{
       primaryKey: '10001011',
       outcome: CaseOutcome.Completed,
@@ -76,8 +75,8 @@ describe('getEditorInformation from Blaise', () => {
           EditStatus: EditedStatus.Finished,
         },
         {
-          CaseId: '10001015',
-          EditStatus: EditedStatus.Started,
+          CaseId: '10001012',
+          EditStatus: EditedStatus.NotStarted,
         },
       ],
     };
@@ -108,14 +107,15 @@ describe('getEditorInformation from Blaise', () => {
     }];
 
     const expectedEditorInformation: EditorInformation = {
-      numberOfCasesAllocated: 2,
+      numberOfCasesAllocated: 1,
       Cases: [
         {
-          CaseId: '10001015',
-          EditStatus: EditedStatus.Started,
+          CaseId: '10001012',
+          EditStatus: EditedStatus.NotStarted,
         },
       ],
     };
+
     axiosMock.onGet(`/api/${questionnaireName}/cases/edit`).reply(200, caseEditInformationListMock);
 
     // act
@@ -123,58 +123,96 @@ describe('getEditorInformation from Blaise', () => {
 
     // assert
     expect(result).toEqual(expectedEditorInformation);
-  });  
+  });
 
   it('Should throw the error "Unable to find case edit information, please contact Richmond Rice" when a 404 response is recieved', async () => {
     // arrange
-    axiosMock.onGet(`/api/${questionnaireName}/cases/edit?username=${username}`).reply(404, null);
+    axiosMock.onGet(`/api/${questionnaireName}/cases/edit`).reply(404, null);
 
     // act && assert
-    expect(getEditorInformation(questionnaireName, username)).rejects.toThrow('Unable to find case edit information, please contact Richmond Rice');
+    expect(getEditorInformation(questionnaireName, userName)).rejects.toThrow('Unable to find case edit information, please contact Richmond Rice');
   });
 
   it('Should throw the error "Unable to complete request, please try again in a few minutes" when a 500 response is recieved', async () => {
     // arrange
-    axiosMock.onGet(`/api/${questionnaireName}/cases/edit?username=${username}`).reply(500, null);
+    axiosMock.onGet(`/api/${questionnaireName}/cases/edit`).reply(500, null);
 
     // act && assert
-    expect(getEditorInformation(questionnaireName, username)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getEditorInformation(questionnaireName, userName)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 
   it('Should throw the error "Unable to complete request, please try again in a few minutes" when there is a network error', async () => {
     // arrange
-    axiosMock.onGet(`/api/${questionnaireName}/cases/edit?username=${username}`).networkError();
+    axiosMock.onGet(`/api/${questionnaireName}/cases/edit`).networkError();
 
     // act && assert
-    expect(getEditorInformation(questionnaireName, username)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getEditorInformation(questionnaireName, userName)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 });
 
 describe('getSupervisorEditorInformation from Blaise', () => {
   const questionnaireName = 'FRS2201';
 
-  it.each([SupervisorInformationMockObject1, SupervisorInformationMockObject2])('Should retrieve a list of case edit information with a 200 response', async (supervisorMock) => {
+  it('Should retrieve a list of case edit information with a 200 response', async () => {
     // arrange
-    axiosMock.onGet(`/api/${questionnaireName}/supervisor/edit`).reply(200, supervisorMock);
+    // arrange
+    const caseEditInformationListMock: CaseEditInformation[] = [{
+      primaryKey: '10001011',
+      outcome: CaseOutcome.Completed,
+      assignedTo: '',
+      editedStatus: EditedStatus.Finished,
+      interviewer: '',
+    },
+    {
+      primaryKey: '10001012',
+      outcome: CaseOutcome.Completed,
+      assignedTo: 'Rich',
+      editedStatus: EditedStatus.Finished,
+      interviewer: '',
+    },
+    {
+      primaryKey: '10001015',
+      outcome: CaseOutcome.Completed,
+      assignedTo: 'Rich',
+      editedStatus: EditedStatus.Query,
+      interviewer: '',
+    }];
+
+    const expectedSupervisorInformation: SupervisorInformation = {
+      TotalNumberOfCases: 3,
+      NumberOfCasesNotAllocated: 1,
+      NumberOfCasesAllocated: 2,
+      NumberOfCasesCompleted: 2,
+      Editors: [
+        {
+          EditorName: 'Rich',
+          NumberOfCasesAllocated: 2,
+          NumberOfCasesCompleted: 1,
+          NumberOfCasesQueried: 1,
+        },
+      ],
+    };
+
+    axiosMock.onGet(`/api/${questionnaireName}/cases/edit`).reply(200, caseEditInformationListMock);
 
     // act
     const result = await getSupervisorEditorInformation(questionnaireName);
 
     // assert
-    expect(result).toEqual(supervisorMock);
+    expect(result).toEqual(expectedSupervisorInformation);
   });
 
   it('Should throw the error "Unable to find supervisor information, please contact Richmond Rice" when a 404 response is recieved', async () => {
     // arrange
-    axiosMock.onGet(`/api/${questionnaireName}/supervisor/edit`).reply(404, null);
+    axiosMock.onGet(`/api/${questionnaireName}/cases/edit`).reply(404, null);
 
     // act && assert
-    expect(getSupervisorEditorInformation(questionnaireName)).rejects.toThrow('Unable to find supervisor information, please contact Richmond Rice');
+    expect(getSupervisorEditorInformation(questionnaireName)).rejects.toThrow('Unable to find case edit information, please contact Richmond Rice');
   });
 
   it('Should throw the error "Unable to complete request, please try again in a few minutes" when a 500 response is recieved', async () => {
     // arrange
-    axiosMock.onGet(`/api/${questionnaireName}/supervisor/edit`).reply(500, null);
+    axiosMock.onGet(`/api/${questionnaireName}/cases/edit`).reply(500, null);
 
     // act && assert
     expect(getSupervisorEditorInformation(questionnaireName)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
@@ -182,7 +220,7 @@ describe('getSupervisorEditorInformation from Blaise', () => {
 
   it('Should throw the error "Unable to complete request, please try again in a few minutes" when there is a network error', async () => {
     // arrange
-    axiosMock.onGet(`/api/${questionnaireName}/supervisor/edit`).networkError();
+    axiosMock.onGet(`/api/${questionnaireName}/cases/edit`).networkError();
 
     // act && assert
     expect(getSupervisorEditorInformation(questionnaireName)).rejects.toThrow('Unable to complete request, please try again in a few minutes');

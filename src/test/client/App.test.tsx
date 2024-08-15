@@ -9,7 +9,7 @@ import userMockObject from '../mockObjects/userMockObject';
 import App from '../../client/App';
 import { SupervisorInformationMockObject1, SupervisorInformationMockObject2 } from './MockObjects/SupervisorMockObjects';
 import { EditorInformation } from '../../client/Interfaces/editorInterface';
-import { SupervisorInformation } from '../../common/interfaces/supervisorInterface';
+import { SupervisorInformation } from '../../client/Interfaces/supervisorInterface';
 import FilteredSurveyListMockObject from './MockObjects/SurveyMockObjects';
 import { EditorInformationMockObject1, EditorInformationMockObject2 } from './MockObjects/EditorMockObjects';
 
