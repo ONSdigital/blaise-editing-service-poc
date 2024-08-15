@@ -3,7 +3,26 @@ import mapSupervisorInformaiton from '../../../client/Mappers/supervisorInformat
 import { SupervisorInformation } from '../../../client/Interfaces/supervisorInterface';
 
 describe('Map editor informaiton', () => {
-  it('It should return a correctly mapped editor informaito given all details are present', () => {
+  const editors = [{
+    name: 'Dave',
+    role: 'SVT_Editor',
+    serverParks: ['gusty'],
+    defaultServerPark: 'gusty',
+  },
+  {
+    name: 'Malcom',
+    role: 'SVT_Editor',
+    serverParks: ['gusty'],
+    defaultServerPark: 'gusty',
+  },
+  {
+    name: 'Rich',
+    role: 'SVT_Editor',
+    serverParks: ['gusty'],
+    defaultServerPark: 'gusty',
+  }];
+
+  it('It should return a correctly mapped editor information given all details are present', () => {
     // arrange
 
     const caseEditInformationList: CaseEditInformation[] = [{
@@ -34,23 +53,29 @@ describe('Map editor informaiton', () => {
       NumberOfCasesNotAllocated: 0,
       NumberOfCasesAllocated: 3,
       NumberOfCasesCompleted: 0,
-      Editors: [{
+      EditorInformation: [{
+        EditorName: 'Dave',
+        NumberOfCasesAllocated: 1,
+        NumberOfCasesCompleted: 0,
+        NumberOfCasesQueried: 1,
+      },
+      {
+        EditorName: 'Malcom',
+        NumberOfCasesAllocated: 0,
+        NumberOfCasesCompleted: 0,
+        NumberOfCasesQueried: 0,
+      },
+      {
         EditorName: 'Rich',
         NumberOfCasesAllocated: 2,
         NumberOfCasesCompleted: 0,
         NumberOfCasesQueried: 0,
       },
-      {
-        EditorName: 'Dave',
-        NumberOfCasesAllocated: 1,
-        NumberOfCasesCompleted: 0,
-        NumberOfCasesQueried: 1,
-      }],
-
+      ],
     };
 
     // act
-    const result = mapSupervisorInformaiton(caseEditInformationList);
+    const result = mapSupervisorInformaiton(caseEditInformationList, editors);
 
     // assert
     expect(result).toEqual(expectedSupervisorInformaiton);
@@ -87,23 +112,29 @@ describe('Map editor informaiton', () => {
       NumberOfCasesNotAllocated: 1,
       NumberOfCasesAllocated: 2,
       NumberOfCasesCompleted: 0,
-      Editors: [{
+      EditorInformation: [{
+        EditorName: 'Dave',
+        NumberOfCasesAllocated: 1,
+        NumberOfCasesCompleted: 0,
+        NumberOfCasesQueried: 1,
+      },
+      {
+        EditorName: 'Malcom',
+        NumberOfCasesAllocated: 0,
+        NumberOfCasesCompleted: 0,
+        NumberOfCasesQueried: 0,
+      },
+      {
         EditorName: 'Rich',
         NumberOfCasesAllocated: 1,
         NumberOfCasesCompleted: 0,
         NumberOfCasesQueried: 0,
       },
-      {
-        EditorName: 'Dave',
-        NumberOfCasesAllocated: 1,
-        NumberOfCasesCompleted: 0,
-        NumberOfCasesQueried: 1,
-      }],
-
+      ],
     };
 
     // act
-    const result = mapSupervisorInformaiton(caseEditInformationList);
+    const result = mapSupervisorInformaiton(caseEditInformationList, editors);
 
     // assert
     expect(result).toEqual(expectedSupervisorInformaiton);

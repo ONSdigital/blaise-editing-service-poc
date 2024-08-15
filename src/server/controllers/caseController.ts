@@ -14,7 +14,7 @@ export default class CaseController implements Controller {
 
   getRoutes() {
     const router = express.Router();
-    return router.get('/api/:questionnaireName/cases/edit', this.getCaseEditInformation);
+    return router.get('/api/questionnaire/:questionnaireName/cases/edit', this.getCaseEditInformation);
   }
 
   async getCaseEditInformation(request: Request<{ questionnaireName:string }>, response: Response<CaseEditInformation[]>) {

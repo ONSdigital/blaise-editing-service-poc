@@ -65,7 +65,7 @@ export const MappedSupervisorInformationMockObject: SupervisorInformation = {
   NumberOfCasesNotAllocated: 0,
   NumberOfCasesAllocated: 5,
   NumberOfCasesCompleted: 1,
-  Editors: [
+  EditorInformation: [
     {
       EditorName: 'Rich',
       NumberOfCasesAllocated: 2,

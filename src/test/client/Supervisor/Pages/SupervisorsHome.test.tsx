@@ -83,7 +83,7 @@ describe('Given there are surveys available in blaise', () => {
           const numberOfCasesCompleted = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesCompleted`);
           const numberOfCasesQueried = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesQueried`);
 
-          SupervisorInformationMockObject1.Editors.forEach((editor, index) => {
+          SupervisorInformationMockObject1.EditorInformation.forEach((editor, index) => {
             expect(editorRows[index]).toHaveTextContent(editor.EditorName);
             expect(numberOfCasesAllocatedRows[index]).toHaveTextContent(String(editor.NumberOfCasesAllocated));
             expect(numberOfCasesCompleted[index]).toHaveTextContent(String(editor.NumberOfCasesCompleted));
@@ -103,7 +103,7 @@ describe('Given there are surveys available in blaise', () => {
           const numberOfCasesCompleted = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesCompleted`);
           const numberOfCasesQueried = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesQueried`);
 
-          SupervisorInformationMockObject2.Editors.forEach((editor, index) => {
+          SupervisorInformationMockObject2.EditorInformation.forEach((editor, index) => {
             expect(editorRows[index]).toHaveTextContent(editor.EditorName);
             expect(numberOfCasesAllocatedRows[index]).toHaveTextContent(String(editor.NumberOfCasesAllocated));
             expect(numberOfCasesCompleted[index]).toHaveTextContent(String(editor.NumberOfCasesCompleted));

@@ -1,4 +1,4 @@
-import BlaiseClient, { CaseEditInformation, Questionnaire } from 'blaise-api-node-client';
+import BlaiseClient, { CaseEditInformation, Questionnaire, User } from 'blaise-api-node-client';
 import { ServerConfiguration } from '../interfaces/serverConfigurationInterface';
 import { QuestionnaireDetails } from '../../common/interfaces/surveyInterface';
 import mapQuestionnaireDetails from '../mappers/questionnaireMapper';
@@ -27,5 +27,9 @@ export default class BlaiseApi {
 
   async getCaseEditInformation(questionnaire: string): Promise<CaseEditInformation[]> {
     return this.blaiseApiClient.getCaseEditInformation(this.config.ServerPark, questionnaire);
+  }
+
+  async getUsers(): Promise<User[]> {
+    return this.blaiseApiClient.getUsers();
   }
 }

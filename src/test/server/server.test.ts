@@ -25,8 +25,8 @@ describe('All expected routes are registered', () => {
     const expectedEndpoints:Endpoint[] = [
       // needs to be in the same order they are added to the server
       { methods: ['GET'], middlewares: ['bound getSurveys'], path: '/api/surveys' },
-      { methods: ['GET'], middlewares: ['bound getCaseEditInformation'], path: '/api/:questionnaireName/cases/edit' },
-      { methods: ['GET'], middlewares: ['bound getSupervisorInformation'], path: '/api/:questionnaireName/supervisor/edit' },
+      { methods: ['GET'], middlewares: ['bound getCaseEditInformation'], path: '/api/questionnaire/:questionnaireName/cases/edit' },
+      { methods: ['GET'], middlewares: ['bound getUsers'], path: '/api/users' },
       { methods: ['GET'], middlewares: ['bound '], path: '/api/login/users/:username' },
       { methods: ['GET'], middlewares: ['bound '], path: '/api/login/current-user' },
       { methods: ['GET'], middlewares: ['bound '], path: '/api/login/users/:username/authorised' },

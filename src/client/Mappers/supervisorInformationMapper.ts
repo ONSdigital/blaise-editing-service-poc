@@ -1,37 +1,36 @@
 import { CaseEditInformation } from 'blaise-api-node-client/lib/cjs/interfaces/case';
 import EditedStatus from 'blaise-api-node-client/lib/cjs/enums/editedStatus';
+import { User } from 'blaise-api-node-client/lib/cjs/interfaces/user';
 import { SupervisorEditorInformation, SupervisorInformation } from '../Interfaces/supervisorInterface';
 
-export default function mapSupervisorInformation(caseEditInformationList: CaseEditInformation[]): SupervisorInformation {
-  const TotalNumberOfCases = caseEditInformationList.length;
-  const NumberOfCasesNotAllocated = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo === '').length;
-  const NumberOfCasesAllocated = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo !== '').length;
-  const NumberOfCasesCompleted = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.editedStatus === EditedStatus.Finished).length;
+function MapEditors(caseEditInformationList: CaseEditInformation[], editors: User[]): SupervisorEditorInformation[] {
+  const editorInformation: SupervisorEditorInformation[] = [];
 
-  const Editors: SupervisorEditorInformation[] = [];
+  editors.forEach((editor) => {
+    const casesAssignedToEditor = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo === editor.name);
 
-  caseEditInformationList.forEach((caseEditInformation) => {
-    const foundEditor = Editors.find((editor) => editor.EditorName === caseEditInformation.assignedTo);
-
-    if (foundEditor) {
-      foundEditor.NumberOfCasesAllocated += 1;
-      foundEditor.NumberOfCasesCompleted += caseEditInformation.editedStatus === EditedStatus.Finished ? 1 : 0;
-      foundEditor.NumberOfCasesQueried += caseEditInformation.editedStatus === EditedStatus.Query ? 1 : 0;
-    } else if (caseEditInformation.assignedTo !== '') {
-      Editors.push({
-        EditorName: caseEditInformation.assignedTo,
-        NumberOfCasesAllocated: 1,
-        NumberOfCasesCompleted: caseEditInformation.editedStatus === EditedStatus.Finished ? 1 : 0,
-        NumberOfCasesQueried: caseEditInformation.editedStatus === EditedStatus.Query ? 1 : 0,
-      });
-    }
+    editorInformation.push({
+      EditorName: editor.name,
+      NumberOfCasesAllocated: casesAssignedToEditor.length,
+      NumberOfCasesCompleted: casesAssignedToEditor.filter((caseEditInformation) => caseEditInformation.editedStatus === EditedStatus.Finished).length,
+      NumberOfCasesQueried: casesAssignedToEditor.filter((caseEditInformation) => caseEditInformation.editedStatus === EditedStatus.Query).length,
+    });
   });
+  return editorInformation;
+}
+
+export default function mapSupervisorInformation(caseEditInformationList: CaseEditInformation[], editors: User[]): SupervisorInformation {
+  const totalNumberOfCases = caseEditInformationList.length;
+  const numberOfCasesNotAllocated = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo === '').length;
+  const numberOfCasesAllocated = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo !== '').length;
+  const numberOfCasesCompleted = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.editedStatus === EditedStatus.Finished).length;
+  const editorInformation : SupervisorEditorInformation[] = MapEditors(caseEditInformationList, editors);
 
   return {
-    TotalNumberOfCases,
-    NumberOfCasesNotAllocated,
-    NumberOfCasesAllocated,
-    NumberOfCasesCompleted,
-    Editors,
+    TotalNumberOfCases: totalNumberOfCases,
+    NumberOfCasesNotAllocated: numberOfCasesNotAllocated,
+    NumberOfCasesAllocated: numberOfCasesAllocated,
+    NumberOfCasesCompleted: numberOfCasesCompleted,
+    EditorInformation: editorInformation,
   };
 }

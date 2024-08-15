@@ -5,7 +5,7 @@ export const SupervisorInformationMockObject1: SupervisorInformation = {
   NumberOfCasesNotAllocated: 966,
   NumberOfCasesAllocated: 25,
   NumberOfCasesCompleted: 9,
-  Editors: [
+  EditorInformation: [
     {
       EditorName: 'Doctor Doom',
       NumberOfCasesAllocated: 10,
@@ -32,7 +32,7 @@ export const SupervisorInformationMockObject2: SupervisorInformation = {
   NumberOfCasesNotAllocated: 80,
   NumberOfCasesAllocated: 15,
   NumberOfCasesCompleted: 5,
-  Editors: [
+  EditorInformation: [
     {
       EditorName: 'Iron Man',
       NumberOfCasesAllocated: 11,

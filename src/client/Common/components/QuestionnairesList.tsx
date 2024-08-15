@@ -13,7 +13,7 @@ function RenderQuestionnaireDetails(user:User, questionnaire:QuestionnaireDetail
   const { role, name } = user;
 
   if (role === UserRole.SVT_Supervisor) {
-    return <SupervisorsQuestionnaireDetails questionnaire={questionnaire} />;
+    return <SupervisorsQuestionnaireDetails questionnaire={questionnaire} userRole={UserRole.SVT_Editor} />;
   }
 
   if (role === UserRole.SVT_Editor) {

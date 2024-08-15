@@ -10,5 +10,5 @@ export interface SupervisorInformation {
   NumberOfCasesNotAllocated: number,
   NumberOfCasesAllocated: number,
   NumberOfCasesCompleted: number,
-  Editors: SupervisorEditorInformation[]
+  EditorInformation: SupervisorEditorInformation[]
 }

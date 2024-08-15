@@ -43,7 +43,7 @@ export default function SupervisorsContent({ questionnaire, supervisorInformatio
         tableID={`${questionnaire.questionnaireName}-editor-table`}
       >
         <>
-          {supervisorInformation.Editors.map((editor) => (
+          {supervisorInformation.EditorInformation.map((editor) => (
             <tr
               className="ons-table__row"
               key={editor.EditorName}

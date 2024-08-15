@@ -28,7 +28,6 @@ describe('Get case edit information tests', () => {
   });
 
   const questionnaireName = 'FRS2504A';
-  const username = 'Rich';
 
   it('When given a valid quetsionnaire It should return a 200 response with an expected list of case edit details', async () => {
     // arrange
@@ -37,7 +36,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => CaseEditInformationListMockObject);
 
     // act
-    const response: Response = await sut.get(`/api/${questionnaireName}/cases/edit?username=${username}`);
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit`);
 
     // assert
     expect(response.status).toEqual(200);
@@ -53,7 +52,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(axiosError));
 
     // act
-    const response: Response = await sut.get(`/api/${questionnaireName}/cases/edit?username=${username}`);
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit`);
 
     // assert
     expect(response.status).toEqual(500);
@@ -66,7 +65,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(apiClientError));
 
     // act
-    const response: Response = await sut.get(`/api/${questionnaireName}/cases/edit?username=${username}`);
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit`);
 
     // assert
     expect(response.status).toEqual(500);
@@ -79,7 +78,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(axiosError));
 
     // act
-    const response: Response = await sut.get(`/api/${questionnaireName}/cases/edit?username=${username}`);
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit`);
 
     // assert
     expect(response.status).toEqual(404);
