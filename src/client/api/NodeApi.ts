@@ -28,11 +28,11 @@ export async function getSurveys(): Promise<Survey[]> {
 }
 
 async function getCaseEditInformation(questionnaireName: string) {
+  // TODO Fix the URL upper
   return getDataFromNode<CaseEditInformation[]>(`/api/questionnaire/${questionnaireName.toUpperCase()}/cases/edit`, 'Unable to find case edit information, please contact Richmond Rice');
 }
 
 export async function getEditorInformation(questionnaireName: string, editorUsername:string): Promise<EditorInformation> {
-  // TODO Fix the URL upper
   const caseEditInformationList = await getCaseEditInformation(questionnaireName);
   const caseEditInformationListForEditor = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo === editorUsername);
 
@@ -40,7 +40,6 @@ export async function getEditorInformation(questionnaireName: string, editorUser
 }
 
 export async function getSupervisorEditorInformation(questionnaireName: string, userRole: UserRole): Promise<SupervisorInformation> {
-  // TODO Fix the URL upper
   const caseEditInformationList = await getCaseEditInformation(questionnaireName);
   const editorInformation = await getDataFromNode<User[]>(`/api/users?userRole=${userRole}`, 'Unable to find user information, please contact Richmond Rice');
 
