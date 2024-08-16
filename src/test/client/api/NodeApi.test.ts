@@ -1,6 +1,6 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
-import { CaseEditInformation, CaseOutcome, EditedStatus } from 'blaise-api-node-client/lib/cjs/blaiseApiClient';
+import { CaseEditInformation, CaseOutcome, EditedStatus, User } from 'blaise-api-node-client/lib/cjs/blaiseApiClient';
 import surveyListMockObject from '../../mockObjects/surveyListMockObject';
 import { getSurveys, getEditorInformation, getSupervisorEditorInformation } from '../../../client/api/NodeApi';
 import { EditorInformation } from '../../../client/Interfaces/editorInterface';
@@ -157,7 +157,7 @@ describe('getSupervisorEditorInformation from Blaise', () => {
 
   it('Should retrieve a list of case edit information with a 200 response', async () => {
     // arrange
-    const editorsListMock = [{
+    const editorsListMock: User[]= [{
       name: 'Rich',
       role: editorRole,
       serverParks: ['gusty'],
@@ -200,7 +200,7 @@ describe('getSupervisorEditorInformation from Blaise', () => {
     };
 
     axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit`).reply(200, caseEditInformationListMock)
-      .onGet('/api/users', { params: { userRole: editorRole } }).reply(200, editorsListMock);
+    axiosMock.onGet(`/api/users?userRole=${editorRole}`).reply(200, editorsListMock);
 
     // act
     const result = await getSupervisorEditorInformation(questionnaireName, editorRole);
