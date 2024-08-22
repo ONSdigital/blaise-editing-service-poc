@@ -6,6 +6,19 @@ import {
 } from '../helpers/configurationHelper';
 import { SurveyConfiguration } from '../interfaces/surveyConfigurationInterface';
 
+
+interface RoleSurveyFilter {
+  Role: string;
+  Surveys: SurveyCaseFilter[]
+}
+
+interface SurveyCaseFilter {
+  Survey: string
+  Organisations: string[];
+  Outcomes: string[]
+}
+
+
 export default class ServerConfigurationProvider implements SurveyConfiguration, ServerConfiguration, AuthConfig {
   BlaiseApiUrl: string;
 
@@ -30,6 +43,22 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
   DefaultRoles: string[] = ['SVT_Supervisor', 'SVT_Editor'];
 
   DefaultSurveys: string[] = ['FRS'];
+
+  RoleFilters: RoleSurveyFilter[] = [{
+    Role:'SVT_Supervisor',
+    Surveys: [{
+      Survey: 'FRS',
+      Organisations: ['ONS'],
+      Outcomes: ["110", "120", "130"]
+    }]},
+    {
+      Role:'SVT_Editor',
+      Surveys: [{
+        Survey: 'FRS',
+        Organisations: ['ONS'],
+        Outcomes: ["110", "120", "130"]
+      }]
+  }]
 
   constructor() {
     const {
