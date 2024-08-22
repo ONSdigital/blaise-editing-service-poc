@@ -4,7 +4,7 @@ import nodeServer from '../../../server/server';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
-import { CaseEditInformationListMockObject } from '../../mockObjects/CaseMockObject';
+import { CaseEditInformation, CaseOutcome, EditedStatus } from 'blaise-api-node-client';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
@@ -31,16 +31,83 @@ describe('Get case edit information tests', () => {
 
   it('When given a valid quetsionnaire It should return a 200 response with an expected list of case edit details', async () => {
     // arrange
-    // mock blaise client to return a list of questionnaires with allocation
+    const caseEditInformationListMockObject :  CaseEditInformation[] = [
+      {
+        primaryKey: '10001011',
+        outcome: CaseOutcome.Completed,
+        assignedTo: 'Rich',
+        editedStatus: EditedStatus.Finished,
+        interviewer: '',
+      },
+      {
+        primaryKey: '10001012',
+        outcome: CaseOutcome.Completed,
+        assignedTo: 'bob',
+        editedStatus: EditedStatus.NotStarted,
+        interviewer: '',
+      },
+      {
+        primaryKey: '10001013',
+        outcome: CaseOutcome.Partial,
+        assignedTo: 'Julie',
+        editedStatus: EditedStatus.Query,
+        interviewer: '',
+      },
+      {
+        primaryKey: '10001014',
+        outcome: CaseOutcome.CompletedNudge,
+        assignedTo: 'Sarah',
+        editedStatus: EditedStatus.Started,
+        interviewer: '',
+      },
+      {
+        primaryKey: '10001015',
+        outcome: CaseOutcome.Completed,
+        assignedTo: 'Rich',
+        editedStatus: EditedStatus.Started,
+        interviewer: '',
+      }
+    ];
 
-    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => CaseEditInformationListMockObject);
+    const filteredCaseEditInformationListMockObject :  CaseEditInformation[] = [
+      {
+        primaryKey: '10001011',
+        outcome: CaseOutcome.Completed,
+        assignedTo: 'Rich',
+        editedStatus: EditedStatus.Finished,
+        interviewer: '',
+      },
+      {
+        primaryKey: '10001015',
+        outcome: CaseOutcome.Completed,
+        assignedTo: 'Rich',
+        editedStatus: EditedStatus.Started,
+        interviewer: '',
+      },
+      {
+        primaryKey: '10001014',
+        outcome: CaseOutcome.CompletedNudge,
+        assignedTo: 'Sarah',
+        editedStatus: EditedStatus.Started,
+        interviewer: '',
+      },
+      {
+        primaryKey: '10001015',
+        outcome: CaseOutcome.Completed,
+        assignedTo: 'Rich',
+        editedStatus: EditedStatus.Started,
+        interviewer: '',
+      }
+    ];
+
+    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => caseEditInformationListMockObject);
 
     // act
     const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit`);
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual(CaseEditInformationListMockObject);
+    expect(response.body).toEqual(filteredCaseEditInformationListMockObject);
     blaiseApiMock.verify((api) => api.getCaseEditInformation(questionnaireName), Times.once());
   });
 

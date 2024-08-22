@@ -5,19 +5,8 @@ import {
   getNumberOrThrowError, getStringOrSetDefault, getStringOrThrowError, GetListOrSetDefault,
 } from '../helpers/configurationHelper';
 import { SurveyConfiguration } from '../interfaces/surveyConfigurationInterface';
-
-
-interface RoleSurveyFilter {
-  Role: string;
-  Surveys: SurveyCaseFilter[]
-}
-
-interface SurveyCaseFilter {
-  Survey: string
-  Organisations: string[];
-  Outcomes: string[]
-}
-
+import { RoleSurveyFilter } from '../interfaces/roleConfigurationInterface';
+import { CaseOutcome } from 'blaise-api-node-client';
 
 export default class ServerConfigurationProvider implements SurveyConfiguration, ServerConfiguration, AuthConfig {
   BlaiseApiUrl: string;
@@ -45,20 +34,21 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
   DefaultSurveys: string[] = ['FRS'];
 
   RoleFilters: RoleSurveyFilter[] = [{
-    Role:'SVT_Supervisor',
+    Role: 'SVT_Supervisor',
     Surveys: [{
       Survey: 'FRS',
       Organisations: ['ONS'],
-      Outcomes: ["110", "120", "130"]
-    }]},
-    {
-      Role:'SVT_Editor',
-      Surveys: [{
-        Survey: 'FRS',
-        Organisations: ['ONS'],
-        Outcomes: ["110", "120", "130"]
-      }]
-  }]
+      Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
+    }],
+  },
+  {
+    Role: 'SVT_Editor',
+    Surveys: [{
+      Survey: 'FRS',
+      Organisations: ['ONS'],
+      Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
+    }],
+  }];
 
   constructor() {
     const {
@@ -89,5 +79,7 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
     this.Roles = GetListOrSetDefault(ROLES, this.DefaultRoles);
 
     this.Surveys = GetListOrSetDefault(SURVEYS, this.DefaultSurveys);
+
+    this.RoleFilters = this.RoleFilters;
   }
 }

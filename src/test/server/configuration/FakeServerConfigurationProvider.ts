@@ -1,4 +1,6 @@
+import { CaseOutcome } from 'blaise-api-node-client';
 import ServerConfigurationProvider from '../../../server/configuration/ServerConfigurationProvider';
+import { RoleSurveyFilter } from '../../../server/interfaces/roleConfigurationInterface';
 
 export default class FakeServerConfigurationProvider implements ServerConfigurationProvider {
   BlaiseApiUrl: string;
@@ -25,6 +27,23 @@ export default class FakeServerConfigurationProvider implements ServerConfigurat
 
   DefaultSurveys: string[] = ['FRS'];
 
+  RoleFilters: RoleSurveyFilter[] = [{
+    Role: 'SVT_Supervisor',
+    Surveys: [{
+      Survey: 'FRS',
+      Organisations: ['ONS'],
+      Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
+    }],
+  },
+  {
+    Role: 'SVT_Editor',
+    Surveys: [{
+      Survey: 'FRS',
+      Organisations: ['ONS'],
+      Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
+    }],
+  }];
+
   constructor(
     blaiseApiUrl?: string,
     buildFolder?: string,
@@ -35,6 +54,7 @@ export default class FakeServerConfigurationProvider implements ServerConfigurat
     sessionTimeout?: string,
     roles?: string[],
     surveys?: string[],
+    RoleFilters?: RoleSurveyFilter[],
   ) {
     this.BlaiseApiUrl = blaiseApiUrl ?? 'restapi.blaise.com';
     this.BuildFolder = buildFolder ?? 'dist';
@@ -45,5 +65,6 @@ export default class FakeServerConfigurationProvider implements ServerConfigurat
     this.SessionTimeout = sessionTimeout ?? this.DefaultSessionTimeout;
     this.Roles = roles ?? this.DefaultRoles;
     this.Surveys = surveys ?? this.DefaultSurveys;
+    this.RoleFilters = RoleFilters ?? this.RoleFilters;
   }
 }
