@@ -27,22 +27,7 @@ export default class FakeServerConfigurationProvider implements ServerConfigurat
 
   DefaultSurveys: string[] = ['FRS'];
 
-  RoleFilters: RoleSurveyFilter[] = [{
-    Role: 'SVT_Supervisor',
-    Surveys: [{
-      Survey: 'FRS',
-      Organisations: ['ONS'],
-      Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
-    }],
-  },
-  {
-    Role: 'SVT_Editor',
-    Surveys: [{
-      Survey: 'FRS',
-      Organisations: ['ONS'],
-      Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
-    }],
-  }];
+  RoleFilters: RoleSurveyFilter[];
 
   constructor(
     blaiseApiUrl?: string,
@@ -65,6 +50,34 @@ export default class FakeServerConfigurationProvider implements ServerConfigurat
     this.SessionTimeout = sessionTimeout ?? this.DefaultSessionTimeout;
     this.Roles = roles ?? this.DefaultRoles;
     this.Surveys = surveys ?? this.DefaultSurveys;
-    this.RoleFilters = RoleFilters ?? this.RoleFilters;
+    this.RoleFilters = RoleFilters ?? [{
+      Role: 'SVT_Supervisor',
+      Surveys: [{
+        Survey: 'FRS',
+        Organisations: ['ONS'],
+        Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
+      }],
+    },
+    {
+      Role: 'SVT_Editor',
+      Surveys: [{
+        Survey: 'TEST',
+        Organisations: ['ONS'],
+        Outcomes: [],
+      },
+      {
+        Survey: 'FRS',
+        Organisations: ['ONS'],
+        Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
+      }],
+    },
+    {
+      Role: 'SVT_AllOutcomes',
+      Surveys: [{
+        Survey: 'FRS',
+        Organisations: ['ONS'],
+        Outcomes: [],
+      }],
+    }];
   }
 }

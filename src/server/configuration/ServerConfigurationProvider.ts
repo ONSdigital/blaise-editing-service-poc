@@ -1,4 +1,5 @@
 import { AuthConfig } from 'blaise-login-react-server';
+import { CaseOutcome } from 'blaise-api-node-client';
 import { ServerConfiguration } from '../interfaces/serverConfigurationInterface';
 import {
   fixUrl, generateSessionSecret,
@@ -6,7 +7,6 @@ import {
 } from '../helpers/configurationHelper';
 import { SurveyConfiguration } from '../interfaces/surveyConfigurationInterface';
 import { RoleSurveyFilter } from '../interfaces/roleConfigurationInterface';
-import { CaseOutcome } from 'blaise-api-node-client';
 
 export default class ServerConfigurationProvider implements SurveyConfiguration, ServerConfiguration, AuthConfig {
   BlaiseApiUrl: string;
@@ -33,22 +33,7 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
 
   DefaultSurveys: string[] = ['FRS'];
 
-  RoleFilters: RoleSurveyFilter[] = [{
-    Role: 'SVT_Supervisor',
-    Surveys: [{
-      Survey: 'FRS',
-      Organisations: ['ONS'],
-      Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
-    }],
-  },
-  {
-    Role: 'SVT_Editor',
-    Surveys: [{
-      Survey: 'FRS',
-      Organisations: ['ONS'],
-      Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
-    }],
-  }];
+  RoleFilters: RoleSurveyFilter[];
 
   constructor() {
     const {
@@ -80,6 +65,21 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
 
     this.Surveys = GetListOrSetDefault(SURVEYS, this.DefaultSurveys);
 
-    this.RoleFilters = this.RoleFilters;
+    this.RoleFilters = [{
+      Role: 'SVT_Supervisor',
+      Surveys: [{
+        Survey: 'FRS',
+        Organisations: ['ONS'],
+        Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
+      }],
+    },
+    {
+      Role: 'SVT_Editor',
+      Surveys: [{
+        Survey: 'FRS',
+        Organisations: ['ONS'],
+        Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
+      }],
+    }];
   }
 }

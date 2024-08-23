@@ -25,7 +25,7 @@ export default function nodeServer(config: ConfigurationProvider, blaiseApi: Bla
   server.use('/', surveyController.getRoutes());
 
   // case routing
-  const caseController = new CaseController(blaiseApi);
+  const caseController = new CaseController(blaiseApi, config);
   server.use('/', caseController.getRoutes());
 
   // User routing

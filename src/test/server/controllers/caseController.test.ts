@@ -1,10 +1,10 @@
 import supertest, { Response } from 'supertest';
 import { IMock, Mock, Times } from 'typemoq';
+import { CaseEditInformation, CaseOutcome, EditedStatus } from 'blaise-api-node-client';
 import nodeServer from '../../../server/server';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
-import { CaseEditInformation, CaseOutcome, EditedStatus } from 'blaise-api-node-client';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
@@ -18,6 +18,9 @@ const server = nodeServer(configFake, blaiseApiMock.object);
 // supertest will handle all http calls
 const sut = supertest(server);
 
+// Using Node.js `assert`
+// const assert = require('assert').strict;
+
 describe('Get case edit information tests', () => {
   beforeEach(() => {
     blaiseApiMock.reset();
@@ -28,10 +31,12 @@ describe('Get case edit information tests', () => {
   });
 
   const questionnaireName = 'FRS2504A';
+  const userRole = 'SVT_Editor';
+  const surveyTla = 'FRS';
 
-  it('When given a valid quetsionnaire It should return a 200 response with an expected list of case edit details', async () => {
+  it('When given a valid quetsionnaire, userRole and SurveyTLA It should return a 200 response with an expected filtered list of case edit details', async () => {
     // arrange
-    const caseEditInformationListMockObject :  CaseEditInformation[] = [
+    const caseEditInformationListMockObject : CaseEditInformation[] = [
       {
         primaryKey: '10001011',
         outcome: CaseOutcome.Completed,
@@ -66,10 +71,10 @@ describe('Get case edit information tests', () => {
         assignedTo: 'Rich',
         editedStatus: EditedStatus.Started,
         interviewer: '',
-      }
+      },
     ];
 
-    const filteredCaseEditInformationListMockObject :  CaseEditInformation[] = [
+    const filteredCaseEditInformationListMockObject : CaseEditInformation[] = [
       {
         primaryKey: '10001011',
         outcome: CaseOutcome.Completed,
@@ -78,10 +83,10 @@ describe('Get case edit information tests', () => {
         interviewer: '',
       },
       {
-        primaryKey: '10001015',
+        primaryKey: '10001012',
         outcome: CaseOutcome.Completed,
-        assignedTo: 'Rich',
-        editedStatus: EditedStatus.Started,
+        assignedTo: 'bob',
+        editedStatus: EditedStatus.NotStarted,
         interviewer: '',
       },
       {
@@ -97,13 +102,13 @@ describe('Get case edit information tests', () => {
         assignedTo: 'Rich',
         editedStatus: EditedStatus.Started,
         interviewer: '',
-      }
+      },
     ];
 
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => caseEditInformationListMockObject);
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit`);
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}&surveyTla=${surveyTla}`);
 
     // assert
     expect(response.status).toEqual(200);
@@ -111,15 +116,66 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.verify((api) => api.getCaseEditInformation(questionnaireName), Times.once());
   });
 
+  it('When the Outcome Filter list is empty It should return a 200 response with a list of all case edit details', async () => {
+    // arrange
+    const userRoleAll = 'SVT_AllOutcomes';
+    const caseEditInformationListMockObject : CaseEditInformation[] = [
+      {
+        primaryKey: '10001011',
+        outcome: CaseOutcome.Completed,
+        assignedTo: 'Rich',
+        editedStatus: EditedStatus.Finished,
+        interviewer: '',
+      },
+      {
+        primaryKey: '10001012',
+        outcome: CaseOutcome.Completed,
+        assignedTo: 'bob',
+        editedStatus: EditedStatus.NotStarted,
+        interviewer: '',
+      },
+      {
+        primaryKey: '10001013',
+        outcome: CaseOutcome.Partial,
+        assignedTo: 'Julie',
+        editedStatus: EditedStatus.Query,
+        interviewer: '',
+      },
+      {
+        primaryKey: '10001014',
+        outcome: CaseOutcome.CompletedNudge,
+        assignedTo: 'Sarah',
+        editedStatus: EditedStatus.Started,
+        interviewer: '',
+      },
+      {
+        primaryKey: '10001015',
+        outcome: CaseOutcome.Completed,
+        assignedTo: 'Rich',
+        editedStatus: EditedStatus.Started,
+        interviewer: '',
+      },
+    ];
+
+    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => caseEditInformationListMockObject);
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRoleAll}&surveyTla=${surveyTla}`);
+
+    // assert
+    expect(response.status).toEqual(200);
+    expect(response.body).toEqual(caseEditInformationListMockObject);
+    blaiseApiMock.verify((api) => api.getCaseEditInformation(questionnaireName), Times.once());
+  });
+
   it('It should return a 500 response when a call is made to retrieve a list of editing details and the rest api is not availiable', async () => {
     // arrange
-
     const axiosError = createAxiosError(500);
 
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(axiosError));
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit`);
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}&surveyTla=${surveyTla}`);
 
     // assert
     expect(response.status).toEqual(500);
@@ -132,7 +188,29 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(apiClientError));
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit`);
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}&surveyTla=${surveyTla}`);
+
+    // assert
+    expect(response.status).toEqual(500);
+  });
+
+  it.each(['', 'INVALIDROLE'])('It should return a 500 response when given an unknown userRole', async (userRoleInvalid) => {
+    // arrange
+    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => []);
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRoleInvalid}&surveyTla=${surveyTla}`);
+
+    // assert
+    expect(response.status).toEqual(500);
+  });
+
+  it.each(['', 'INVALIDSURVEYTLA'])('It should return a 500 response when given an unknown surveyTla', async (surveyTlaInvalid) => {
+    // arrange
+    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => []);
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}&surveyTla=${surveyTlaInvalid}`);
 
     // assert
     expect(response.status).toEqual(500);
@@ -145,7 +223,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(axiosError));
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit`);
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}&surveyTla=${surveyTla}`);
 
     // assert
     expect(response.status).toEqual(404);
