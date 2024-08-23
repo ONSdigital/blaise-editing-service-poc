@@ -194,6 +194,28 @@ describe('Get case edit information tests', () => {
     expect(response.status).toEqual(500);
   });
 
+  it('It should return a 500 response when CaseContorller is called without a userRole', async () => {
+    // arrange
+    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => []);
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?usurveyTla=${surveyTla}`);
+
+    // assert
+    expect(response.status).toEqual(500);
+  });
+
+  it('It should return a 500 response when CaseContorller is called without a SurveyTLA', async () => {
+    // arrange
+    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => []);
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
+
+    // assert
+    expect(response.status).toEqual(500);
+  });
+
   it.each(['', 'INVALIDROLE'])('It should return a 500 response when given an unknown userRole', async (userRoleInvalid) => {
     // arrange
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => []);
