@@ -40,7 +40,7 @@ export default class CaseController implements Controller {
 
   async GetCaseEditInformationForRole(questionnaireName:string, userRole: string): Promise<CaseEditInformation[]> {
     const surveyTla = questionnaireName.substring(0, 3);
-    const surveyConfig = this.GetSurveyConfigForRole(surveyTla, userRole);
+    const surveyConfig = this.config.getSurveyConfigForRole(surveyTla, userRole);
 
     const CaseEditInformationList = await this.blaiseApi.getCaseEditInformation(questionnaireName);
     const outcomesFilter = surveyConfig.Outcomes;
@@ -49,21 +49,5 @@ export default class CaseController implements Controller {
       return CaseEditInformationList.filter((caseEditInformation) => outcomesFilter.includes(caseEditInformation.outcome));
     }
     return CaseEditInformationList;
-  }
-
-  GetSurveyConfigForRole(surveyTla: string, userRole: string) {
-    const roleConfig = this.config.RoleConfiguration.find(({ Role }) => Role === userRole);
-
-    if (roleConfig === undefined) {
-      throw new Error(`Role ${userRole} not found in Role configuration`);
-    }
-
-    const surveyConfig = roleConfig.Surveys.find((survey) => survey.Survey === surveyTla);
-
-    if (surveyConfig === undefined) {
-      throw new Error(`No '${surveyTla}' survey configuration found for Role ${userRole}`);
-    }
-
-    return surveyConfig;
   }
 }

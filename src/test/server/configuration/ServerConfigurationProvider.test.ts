@@ -173,4 +173,15 @@ describe('Authentication file tests', () => {
     // assert
     expect(configuration).toThrowError('VM_EXTERNAL_WEB_URL has not been set or is set to an empty string');
   });
+
+  it.each(['SVT_Supervisor', 'SVT_Editor'])('should return survey configuration if a role exists', (role) => {
+    // arrange
+    const sut = new ServerConfigurationProvider();
+
+    // act
+    const result = sut.getSurveyConfigForRole("FRS", role)
+    
+    // assert
+    expect(result.Survey).toEqual("FRS");
+  });  
 });

@@ -60,3 +60,19 @@ export function getSurveys(roles: RoleConfiguration[]): string[] {
 
   return surveys;
 }
+
+export function getSurveyConfigForRole(roleConfiguration: RoleConfiguration[], surveyTla: string, userRole: string) {
+  const roleConfig = roleConfiguration.find(({ Role }) => Role === userRole);
+
+  if (roleConfig === undefined) {
+    throw new Error(`Role ${userRole} not found in Role configuration`);
+  }
+
+  const surveyConfig = roleConfig.Surveys.find((survey) => survey.Survey === surveyTla);
+
+  if (surveyConfig === undefined) {
+    throw new Error(`No '${surveyTla}' survey configuration found for Role ${userRole}`);
+  }
+
+  return surveyConfig;
+}

@@ -6,6 +6,7 @@ import {
   getNumberOrThrowError, getStringOrSetDefault, getStringOrThrowError, GetListOrSetDefault,
   getSurveys,
   getRoles,
+  getSurveyConfigForRole,
 } from '../helpers/configurationHelper';
 import { SurveyConfiguration } from '../interfaces/surveyConfigurationInterface';
 import { RoleConfiguration } from '../interfaces/roleConfigurationInterface';
@@ -78,5 +79,9 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
 
     this.Roles = GetListOrSetDefault(ROLES, getRoles(this.RoleConfiguration));
     this.Surveys = GetListOrSetDefault(SURVEYS, getSurveys(this.RoleConfiguration));
+  }
+
+  getSurveyConfigForRole(surveyTla: string, userRole: string) {
+    return getSurveyConfigForRole(this.RoleConfiguration, surveyTla, userRole);
   }
 }

@@ -1,6 +1,7 @@
 import { CaseOutcome } from 'blaise-api-node-client';
 import ServerConfigurationProvider from '../../../server/configuration/ServerConfigurationProvider';
 import { RoleConfiguration } from '../../../server/interfaces/roleConfigurationInterface';
+import { getSurveyConfigForRole } from '../../../server/helpers/configurationHelper';
 
 export default class FakeServerConfigurationProvider implements ServerConfigurationProvider {
   BlaiseApiUrl: string;
@@ -77,5 +78,9 @@ export default class FakeServerConfigurationProvider implements ServerConfigurat
         Outcomes: [],
       }],
     }];
+  }
+
+  getSurveyConfigForRole(surveyTla: string, userRole: string) {
+    return getSurveyConfigForRole(this.RoleConfiguration, surveyTla, userRole);
   }
 }
