@@ -130,7 +130,7 @@ describe('Authentication file tests', () => {
     expect(sut.SessionTimeout).toEqual(sut.DefaultSessionTimeout);
   });
 
-  it.each([undefined, '', '_ROLES'])('should return default roles if roles is empty or does not exist', (value) => {
+  it.each([undefined, '', '_ROLES'])('should return the roles listed in the role config if roles is empty or does not exist', (value) => {
     // arrange
     process.env['ROLES'] = value;
 
@@ -138,10 +138,10 @@ describe('Authentication file tests', () => {
     const sut = new ServerConfigurationProvider();
 
     // assert
-    expect(sut.Roles).toEqual(sut.DefaultRoles);
+    expect(sut.Roles).toEqual(['SVT_Supervisor', 'SVT_Editor']);
   });
 
-  it.each([undefined, '', '_SURVEYS'])('should return default surveys if surveys is empty or does not exist', (value) => {
+  it.each([undefined, '', '_SURVEYS'])('should return the surveys listed in the role config if surveys is empty or does not exist', (value) => {
     // arrange
     process.env['SURVEYS'] = value;
 
@@ -149,7 +149,7 @@ describe('Authentication file tests', () => {
     const sut = new ServerConfigurationProvider();
 
     // assert
-    expect(sut.Surveys).toEqual(sut.DefaultSurveys);
+    expect(sut.Surveys).toEqual(['FRS']);
   });
 
   it.each([undefined, '', '  ', '   '])('should throw an error if BLAISE_API_URL is empty or does not exist', (value) => {

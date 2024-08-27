@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { CaseEditInformation, CaseOutcome } from 'blaise-api-node-client';
+import { CaseEditInformation } from 'blaise-api-node-client';
 import { Controller } from '../interfaces/controllerInterface';
 import notFound from '../helpers/axiosHelper';
 import BlaiseApi from '../api/BlaiseApi';
@@ -21,36 +21,49 @@ export default class CaseController implements Controller {
     return router.get('/api/questionnaire/:questionnaireName/cases/edit', this.getCaseEditInformation);
   }
 
-  async getCaseEditInformation(request: Request<{ questionnaireName:string }, {}, {}, { userRole:string, surveyTla:string }>, response: Response<CaseEditInformation[]>) {
+  async getCaseEditInformation(request: Request<{ questionnaireName:string }, {}, {}, { userRole:string }>, response: Response<CaseEditInformation[]>) {
     const { questionnaireName } = request.params;
     const { userRole } = request.query;
-    const { surveyTla } = request.query;
 
     try {
-      const caseEditInformationList = await this.GetFilteredCaseEditInformation(questionnaireName, userRole, surveyTla);
+      const caseEditInformationList = await this.GetCaseEditInformationForRole(questionnaireName, userRole);
 
       return response.status(200).json(caseEditInformationList);
     } catch (error: unknown) {
       if (notFound(error)) {
         return response.status(404).json();
       }
+      console.log('error - ', error);
       return response.status(500).json();
     }
   }
 
-  async GetFilteredCaseEditInformation(questionnaireName:string, userRole: string, surveyTla:string): Promise<CaseEditInformation[]> {
+  async GetCaseEditInformationForRole(questionnaireName:string, userRole: string): Promise<CaseEditInformation[]> {
+    const surveyTla = questionnaireName.substring(0, 3);
+    const surveyConfig = this.GetSurveyConfigForRole(surveyTla, userRole);
+
     const CaseEditInformationList = await this.blaiseApi.getCaseEditInformation(questionnaireName);
+    const outcomesFilter = surveyConfig.Outcomes;
 
-    const OutcomesFilter: CaseOutcome[] | undefined = this.config.RoleFilters.filter((roleFilter) => roleFilter.Role === userRole)[0]
-      ?.Surveys.filter((surveys) => surveys.Survey === surveyTla)[0]?.Outcomes;
-
-    if (!OutcomesFilter) {
-      throw new Error(`Role ${userRole} with Survey ${surveyTla} not found in RoleFilters configuration`);
-    }
-
-    if (OutcomesFilter.length > 0) {
-      return CaseEditInformationList.filter((caseEditInformation) => OutcomesFilter.includes(caseEditInformation.outcome));
+    if (outcomesFilter.length > 0) {
+      return CaseEditInformationList.filter((caseEditInformation) => outcomesFilter.includes(caseEditInformation.outcome));
     }
     return CaseEditInformationList;
+  }
+
+  GetSurveyConfigForRole(surveyTla: string, userRole: string) {
+    const roleConfig = this.config.RoleConfiguration.find(({ Role }) => Role === userRole);
+
+    if (roleConfig === undefined) {
+      throw new Error(`Role ${userRole} not found in Role configuration`);
+    }
+
+    const surveyConfig = roleConfig.Surveys.find((survey) => survey.Survey === surveyTla);
+
+    if (surveyConfig === undefined) {
+      throw new Error(`No '${surveyTla}' survey configuration found for Role ${userRole}`);
+    }
+
+    return surveyConfig;
   }
 }

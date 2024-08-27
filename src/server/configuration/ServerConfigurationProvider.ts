@@ -4,9 +4,11 @@ import { ServerConfiguration } from '../interfaces/serverConfigurationInterface'
 import {
   fixUrl, generateSessionSecret,
   getNumberOrThrowError, getStringOrSetDefault, getStringOrThrowError, GetListOrSetDefault,
+  getSurveys,
+  getRoles,
 } from '../helpers/configurationHelper';
 import { SurveyConfiguration } from '../interfaces/surveyConfigurationInterface';
-import { RoleSurveyFilter } from '../interfaces/roleConfigurationInterface';
+import { RoleConfiguration } from '../interfaces/roleConfigurationInterface';
 
 export default class ServerConfigurationProvider implements SurveyConfiguration, ServerConfiguration, AuthConfig {
   BlaiseApiUrl: string;
@@ -29,11 +31,7 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
 
   DefaultSessionTimeout: string = '12h';
 
-  DefaultRoles: string[] = ['SVT_Supervisor', 'SVT_Editor'];
-
-  DefaultSurveys: string[] = ['FRS'];
-
-  RoleFilters: RoleSurveyFilter[];
+  RoleConfiguration: RoleConfiguration[];
 
   constructor() {
     const {
@@ -61,11 +59,7 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
 
     this.SessionTimeout = getStringOrSetDefault(SESSION_TIMEOUT, this.DefaultSessionTimeout);
 
-    this.Roles = GetListOrSetDefault(ROLES, this.DefaultRoles);
-
-    this.Surveys = GetListOrSetDefault(SURVEYS, this.DefaultSurveys);
-
-    this.RoleFilters = [{
+    this.RoleConfiguration = [{
       Role: 'SVT_Supervisor',
       Surveys: [{
         Survey: 'FRS',
@@ -81,5 +75,8 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
         Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
       }],
     }];
+
+    this.Roles = GetListOrSetDefault(ROLES, getRoles(this.RoleConfiguration));
+    this.Surveys = GetListOrSetDefault(SURVEYS, getSurveys(this.RoleConfiguration));
   }
 }

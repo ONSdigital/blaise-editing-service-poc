@@ -1,11 +1,11 @@
 import { CaseOutcome } from 'blaise-api-node-client';
 
-export interface RoleSurveyFilter {
+export interface RoleConfiguration {
   Role: string;
-  Surveys: SurveyCaseFilter[]
+  Surveys: SurveyCaseConfiguration[]
 }
 
-export interface SurveyCaseFilter {
+export interface SurveyCaseConfiguration {
   Survey: string
   Organisations: string[];
   Outcomes: CaseOutcome[]

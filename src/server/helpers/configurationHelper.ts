@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import { RoleConfiguration } from '../interfaces/roleConfigurationInterface';
 
 export function getStringOrThrowError(variable: string | undefined, variableName: string) {
   if (variable === undefined || variable.trim() === '') {
@@ -42,4 +43,20 @@ export function fixUrl(url: string): string {
     return url;
   }
   return `http://${url}`;
+}
+
+export function getRoles(roles: RoleConfiguration[]): string[] {
+  return roles.map((r) => r.Role);
+}
+
+export function getSurveys(roles: RoleConfiguration[]): string[] {
+  const surveys: string[] = [];
+
+  roles.forEach((role) => {
+    role.Surveys.forEach(({ Survey }) => {
+      if (surveys.indexOf(Survey) === -1) surveys.push(Survey);
+    });
+  });
+
+  return surveys;
 }

@@ -30,12 +30,11 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.reset();
   });
 
-  const questionnaireName = 'FRS2504A';
-  const userRole = 'SVT_Editor';
-  const surveyTla = 'FRS';
-
-  it('When given a valid quetsionnaire, userRole and SurveyTLA It should return a 200 response with an expected filtered list of case edit details', async () => {
+  it('should return a 200 response with an expected filtered list of case edit details When given a valid quetsionnaire and userRole', async () => {
     // arrange
+    const questionnaireName = 'FRS2504A';
+    const userRole = 'SVT_Editor';
+
     const caseEditInformationListMockObject : CaseEditInformation[] = [
       {
         primaryKey: '10001011',
@@ -108,7 +107,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => caseEditInformationListMockObject);
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}&surveyTla=${surveyTla}`);
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
 
     // assert
     expect(response.status).toEqual(200);
@@ -116,9 +115,10 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.verify((api) => api.getCaseEditInformation(questionnaireName), Times.once());
   });
 
-  it('When the Outcome Filter list is empty It should return a 200 response with a list of all case edit details', async () => {
+  it('should return a 200 response with a list of all case edit details When the Outcome Filter list is empty', async () => {
     // arrange
-    const userRoleAll = 'SVT_AllOutcomes';
+    const questionnaireName = 'FRS2504A';
+    const userRole = 'SVT_AllOutcomes';
     const caseEditInformationListMockObject : CaseEditInformation[] = [
       {
         primaryKey: '10001011',
@@ -160,7 +160,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => caseEditInformationListMockObject);
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRoleAll}&surveyTla=${surveyTla}`);
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
 
     // assert
     expect(response.status).toEqual(200);
@@ -168,46 +168,21 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.verify((api) => api.getCaseEditInformation(questionnaireName), Times.once());
   });
 
-  it('It should return a 500 response when a call is made to retrieve a list of editing details and the rest api is not availiable', async () => {
+  it('should return a 500 response if the users role is not configured for the survey', async () => {
     // arrange
-    const axiosError = createAxiosError(500);
+    const questionnaireName = 'FRS2504A';
+    const userRole = 'SVT_Supervisor'; // configured for LMS questionnaires only
+    const caseEditInformationListMockObject : CaseEditInformation[] = [
+      {
+        primaryKey: '10001011',
+        outcome: CaseOutcome.Completed,
+        assignedTo: 'Rich',
+        editedStatus: EditedStatus.Finished,
+        interviewer: '',
+      },
+    ];
 
-    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(axiosError));
-
-    // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}&surveyTla=${surveyTla}`);
-
-    // assert
-    expect(response.status).toEqual(500);
-  });
-
-  it('It should return a 500 response when the api client throws an error', async () => {
-    // arrange
-    const apiClientError = new Error();
-
-    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(apiClientError));
-
-    // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}&surveyTla=${surveyTla}`);
-
-    // assert
-    expect(response.status).toEqual(500);
-  });
-
-  it('It should return a 500 response when CaseContorller is called without a userRole', async () => {
-    // arrange
-    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => []);
-
-    // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?usurveyTla=${surveyTla}`);
-
-    // assert
-    expect(response.status).toEqual(500);
-  });
-
-  it('It should return a 500 response when CaseContorller is called without a SurveyTLA', async () => {
-    // arrange
-    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => []);
+    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => caseEditInformationListMockObject);
 
     // act
     const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
@@ -216,36 +191,75 @@ describe('Get case edit information tests', () => {
     expect(response.status).toEqual(500);
   });
 
-  it.each(['', 'INVALIDROLE'])('It should return a 500 response when given an unknown userRole', async (userRoleInvalid) => {
+  it('should return a 500 response when a call is made to retrieve a list of editing details and the rest api is not availiable', async () => {
     // arrange
-    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => []);
+    const questionnaireName = 'FRS2504A';
+    const userRole = 'SVT_Editor';
+
+    const axiosError = createAxiosError(500);
+
+    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(axiosError));
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRoleInvalid}&surveyTla=${surveyTla}`);
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
 
     // assert
     expect(response.status).toEqual(500);
   });
 
-  it.each(['', 'INVALIDSURVEYTLA'])('It should return a 500 response when given an unknown surveyTla', async (surveyTlaInvalid) => {
+  it('should return a 500 response when the api client throws an error', async () => {
     // arrange
-    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => []);
+    const questionnaireName = 'FRS2504A';
+    const userRole = 'SVT_Editor';
+
+    const apiClientError = new Error();
+
+    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(apiClientError));
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}&surveyTla=${surveyTlaInvalid}`);
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
 
     // assert
     expect(response.status).toEqual(500);
   });
 
-  it('It should return a 404 response when a call is made to retrieve a list of editing details and the client returns a 404 not found', async () => {
+  it('should return a 500 response when CaseContorller is called without a userRole', async () => {
     // arrange
+    const questionnaireName = 'FRS2504A';
+
+    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => []);
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit`);
+
+    // assert
+    expect(response.status).toEqual(500);
+  });
+
+  it.each(['', 'INVALIDROLE'])('should return a 500 response when given an unknown userRole', async (userRoleInvalid) => {
+    // arrange
+    const questionnaireName = 'FRS2504A';
+
+    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => []);
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRoleInvalid}`);
+
+    // assert
+    expect(response.status).toEqual(500);
+  });
+
+  it('should return a 404 response when a call is made to retrieve a list of editing details and the client returns a 404 not found', async () => {
+    // arrange
+    const questionnaireName = 'FRS2504A';
+    const userRole = 'SVT_Editor';
+
     const axiosError = createAxiosError(404);
 
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(axiosError));
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}&surveyTla=${surveyTla}`);
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
 
     // assert
     expect(response.status).toEqual(404);
