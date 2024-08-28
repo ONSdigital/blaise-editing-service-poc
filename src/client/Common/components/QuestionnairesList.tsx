@@ -13,11 +13,11 @@ function RenderQuestionnaireDetails(user:User, questionnaire:QuestionnaireDetail
   const { role, name } = user;
 
   if (role === UserRole.SVT_Supervisor) {
-    return <SupervisorsQuestionnaireDetails questionnaire={questionnaire} userRole={UserRole.SVT_Editor} />;
+    return <SupervisorsQuestionnaireDetails questionnaire={questionnaire} supervisorRole={UserRole.SVT_Supervisor} editorRole={UserRole.SVT_Editor} />;
   }
 
   if (role === UserRole.SVT_Editor) {
-    return <EditorsQuestionnaireDetails questionnaire={questionnaire} username={name} />;
+    return <EditorsQuestionnaireDetails questionnaire={questionnaire} username={name} editorRole={UserRole.SVT_Editor} />;
   }
 
   return <ErrorDetails error={new Error(`User role ${role} not recognised`)} />;

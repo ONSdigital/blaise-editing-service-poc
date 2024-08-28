@@ -27,21 +27,21 @@ export async function getSurveys(): Promise<Survey[]> {
   return getDataFromNode('/api/surveys', 'Unable to find surveys, please contact Richmond Rice');
 }
 
-async function getCaseEditInformation(questionnaireName: string) {
+async function getCaseEditInformation(questionnaireName: string, userRole: UserRole) {
   // TODO Fix the URL upper
-  return getDataFromNode<CaseEditInformation[]>(`/api/questionnaire/${questionnaireName.toUpperCase()}/cases/edit`, 'Unable to find case edit information, please contact Richmond Rice');
+  return getDataFromNode<CaseEditInformation[]>(`/api/questionnaire/${questionnaireName.toUpperCase()}/cases/edit?userRole=${userRole}`, 'Unable to find case edit information, please contact Richmond Rice');
 }
 
-export async function getEditorInformation(questionnaireName: string, editorUsername:string): Promise<EditorInformation> {
-  const caseEditInformationList = await getCaseEditInformation(questionnaireName);
+export async function getEditorInformation(questionnaireName: string, editorUsername:string, editorRole: UserRole): Promise<EditorInformation> {
+  const caseEditInformationList = await getCaseEditInformation(questionnaireName, editorRole);
   const caseEditInformationListForEditor = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo === editorUsername);
 
   return mapEditorInformation(caseEditInformationListForEditor);
 }
 
-export async function getSupervisorEditorInformation(questionnaireName: string, userRole: UserRole): Promise<SupervisorInformation> {
-  const caseEditInformationList = await getCaseEditInformation(questionnaireName);
-  const editorInformation = await getDataFromNode<User[]>(`/api/users?userRole=${userRole}`, 'Unable to find user information, please contact Richmond Rice');
+export async function getSupervisorEditorInformation(questionnaireName: string, supervisorRole: UserRole, editorRole: UserRole): Promise<SupervisorInformation> {
+  const caseEditInformationList = await getCaseEditInformation(questionnaireName, supervisorRole);
+  const editorInformation = await getDataFromNode<User[]>(`/api/users?userRole=${editorRole}`, 'Unable to find user information, please contact Richmond Rice');
 
   return mapSupervisorInformation(caseEditInformationList, editorInformation);
 }

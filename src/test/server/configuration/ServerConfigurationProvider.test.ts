@@ -179,9 +179,9 @@ describe('Authentication file tests', () => {
     const sut = new ServerConfigurationProvider();
 
     // act
-    const result = sut.getSurveyConfigForRole("FRS", role)
-    
+    const result = sut.getSurveyConfigForRole('FRS', role);
+
     // assert
-    expect(result.Survey).toEqual("FRS");
-  });  
+    expect(result.Survey).toEqual('FRS');
+  });
 });

@@ -52,6 +52,7 @@ describe('GetSurveys from Blaise', () => {
 describe('getEditorInformation from Blaise', () => {
   const questionnaireName = 'FRS2201';
   const userName = 'Rich';
+  const editorRole = UserRole.SVT_Editor;
 
   it('Should retrieve a list of case edit information with a 200 response', async () => {
     // arrange
@@ -83,10 +84,10 @@ describe('getEditorInformation from Blaise', () => {
         },
       ],
     };
-    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit`).reply(200, caseEditInformationListMock);
+    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${editorRole}`).reply(200, caseEditInformationListMock);
 
     // act
-    const result = await getEditorInformation(questionnaireName, userName);
+    const result = await getEditorInformation(questionnaireName, userName, editorRole);
 
     // assert
     expect(result).toEqual(expectedEditorInformation);
@@ -119,10 +120,10 @@ describe('getEditorInformation from Blaise', () => {
       ],
     };
 
-    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit`).reply(200, caseEditInformationListMock);
+    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${editorRole}`).reply(200, caseEditInformationListMock);
 
     // act
-    const result = await getEditorInformation(questionnaireName, 'Rich');
+    const result = await getEditorInformation(questionnaireName, userName, editorRole);
 
     // assert
     expect(result).toEqual(expectedEditorInformation);
@@ -130,31 +131,32 @@ describe('getEditorInformation from Blaise', () => {
 
   it('Should throw the error "Unable to find case edit information, please contact Richmond Rice" when a 404 response is recieved', async () => {
     // arrange
-    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit`).reply(404, null);
+    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${editorRole}`).reply(404, null);
 
     // act && assert
-    expect(getEditorInformation(questionnaireName, userName)).rejects.toThrow('Unable to find case edit information, please contact Richmond Rice');
+    expect(getEditorInformation(questionnaireName, userName, editorRole)).rejects.toThrow('Unable to find case edit information, please contact Richmond Rice');
   });
 
   it('Should throw the error "Unable to complete request, please try again in a few minutes" when a 500 response is recieved', async () => {
     // arrange
-    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit`).reply(500, null);
+    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${editorRole}`).reply(500, null);
 
     // act && assert
-    expect(getEditorInformation(questionnaireName, userName)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getEditorInformation(questionnaireName, userName, editorRole)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 
   it('Should throw the error "Unable to complete request, please try again in a few minutes" when there is a network error', async () => {
     // arrange
-    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit`).networkError();
+    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${editorRole}`).networkError();
 
     // act && assert
-    expect(getEditorInformation(questionnaireName, userName)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getEditorInformation(questionnaireName, userName, editorRole)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 });
 
 describe('getSupervisorEditorInformation from Blaise', () => {
   const questionnaireName = 'FRS2201';
+  const supervisorRole = UserRole.SVT_Supervisor;
   const editorRole = UserRole.SVT_Editor;
 
   it('Should retrieve a list of case edit information with a 200 response', async () => {
@@ -201,11 +203,11 @@ describe('getSupervisorEditorInformation from Blaise', () => {
       }],
     };
 
-    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit`).reply(200, caseEditInformationListMock);
+    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${supervisorRole}`).reply(200, caseEditInformationListMock);
     axiosMock.onGet(`/api/users?userRole=${editorRole}`).reply(200, editorsListMock);
 
     // act
-    const result = await getSupervisorEditorInformation(questionnaireName, editorRole);
+    const result = await getSupervisorEditorInformation(questionnaireName, supervisorRole, editorRole);
 
     // assert
     expect(result).toEqual(expectedSupervisorInformation);
@@ -213,25 +215,25 @@ describe('getSupervisorEditorInformation from Blaise', () => {
 
   it('Should throw the error "Unable to find supervisor information, please contact Richmond Rice" when a 404 response is recieved', async () => {
     // arrange
-    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit`).reply(404, null);
+    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${supervisorRole}`).reply(404, null);
 
     // act && assert
-    expect(getSupervisorEditorInformation(questionnaireName, editorRole)).rejects.toThrow('Unable to find case edit information, please contact Richmond Rice');
+    expect(getSupervisorEditorInformation(questionnaireName, supervisorRole, editorRole)).rejects.toThrow('Unable to find case edit information, please contact Richmond Rice');
   });
 
   it('Should throw the error "Unable to complete request, please try again in a few minutes" when a 500 response is recieved', async () => {
     // arrange
-    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit`).reply(500, null);
+    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${supervisorRole}`).reply(500, null);
 
     // act && assert
-    expect(getSupervisorEditorInformation(questionnaireName, editorRole)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getSupervisorEditorInformation(questionnaireName, supervisorRole, editorRole)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 
   it('Should throw the error "Unable to complete request, please try again in a few minutes" when there is a network error', async () => {
     // arrange
-    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit`).networkError();
+    axiosMock.onGet(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${supervisorRole}`).networkError();
 
     // act && assert
-    expect(getSupervisorEditorInformation(questionnaireName, editorRole)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getSupervisorEditorInformation(questionnaireName, supervisorRole, editorRole)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 });
