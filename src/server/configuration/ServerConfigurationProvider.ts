@@ -65,7 +65,7 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
       Surveys: [{
         Survey: 'FRS',
         Organisations: ['ONS'],
-        Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
+        Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge, CaseOutcome.CompletedProxy],
       }],
     },
     {
@@ -73,7 +73,7 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
       Surveys: [{
         Survey: 'FRS',
         Organisations: ['ONS'],
-        Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
+        Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge, CaseOutcome.CompletedProxy],
       }],
     }];
 

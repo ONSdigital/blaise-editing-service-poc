@@ -1,3 +1,4 @@
+import { CaseOutcome } from 'blaise-api-node-client';
 import ServerConfigurationProvider from '../../../server/configuration/ServerConfigurationProvider';
 
 /* eslint-disable no-new */
@@ -174,7 +175,7 @@ describe('Authentication file tests', () => {
     expect(configuration).toThrowError('VM_EXTERNAL_WEB_URL has not been set or is set to an empty string');
   });
 
-  it.each(['SVT_Supervisor', 'SVT_Editor'])('should return survey configuration if a role exists', (role) => {
+  it.each(['SVT_Supervisor', 'SVT_Editor'])('should return the expected survey configuration for FRS', (role) => {
     // arrange
     const sut = new ServerConfigurationProvider();
 
@@ -183,5 +184,6 @@ describe('Authentication file tests', () => {
 
     // assert
     expect(result.Survey).toEqual('FRS');
-  });
+    expect(result.Outcomes).toEqual([CaseOutcome.Completed, CaseOutcome.CompletedNudge, CaseOutcome.CompletedProxy]);
+  });  
 });
