@@ -1,4 +1,5 @@
 import { CaseEditInformation, CaseOutcome, EditedStatus } from 'blaise-api-node-client';
+import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
 import mapSupervisorInformaiton from '../../../client/Mappers/supervisorInformationMapper';
 import { SupervisorInformation } from '../../../client/Interfaces/supervisorInterface';
 
@@ -29,22 +30,25 @@ describe('Map editor informaiton', () => {
       primaryKey: '10001011',
       outcome: CaseOutcome.Completed,
       assignedTo: 'Rich',
-      editedStatus: EditedStatus.NotStarted,
       interviewer: '',
+      editedStatus: EditedStatus.NotStarted,
+      organisation: Organisation.ONS,
     },
     {
       primaryKey: '10001012',
       outcome: CaseOutcome.Completed,
       assignedTo: 'Dave',
-      editedStatus: EditedStatus.Query,
       interviewer: '',
+      editedStatus: EditedStatus.Query,
+      organisation: Organisation.ONS,
     },
     {
       primaryKey: '10001013',
       outcome: CaseOutcome.Completed,
       assignedTo: 'Rich',
-      editedStatus: EditedStatus.Started,
       interviewer: '',
+      editedStatus: EditedStatus.Started,
+      organisation: Organisation.ONS,
     },
     ];
 
@@ -88,22 +92,25 @@ describe('Map editor informaiton', () => {
       primaryKey: '10001011',
       outcome: CaseOutcome.Completed,
       assignedTo: 'Rich',
-      editedStatus: EditedStatus.NotStarted,
       interviewer: '',
+      editedStatus: EditedStatus.NotStarted,
+      organisation: Organisation.ONS,
     },
     {
       primaryKey: '10001012',
       outcome: CaseOutcome.Completed,
       assignedTo: 'Dave',
-      editedStatus: EditedStatus.Query,
       interviewer: '',
+      editedStatus: EditedStatus.Query,
+      organisation: Organisation.ONS,
     },
     {
       primaryKey: '10001013',
       outcome: CaseOutcome.Completed,
       assignedTo: '',
-      editedStatus: EditedStatus.NotStarted,
       interviewer: '',
+      editedStatus: EditedStatus.NotStarted,
+      organisation: Organisation.ONS,
     },
     ];
 

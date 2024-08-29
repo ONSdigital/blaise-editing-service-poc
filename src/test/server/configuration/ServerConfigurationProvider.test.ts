@@ -185,5 +185,5 @@ describe('Authentication file tests', () => {
     // assert
     expect(result.Survey).toEqual('FRS');
     expect(result.Outcomes).toEqual([CaseOutcome.Completed, CaseOutcome.CompletedNudge, CaseOutcome.CompletedProxy]);
-  });  
+  });
 });

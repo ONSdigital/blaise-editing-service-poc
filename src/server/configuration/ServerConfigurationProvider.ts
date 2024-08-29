@@ -1,5 +1,6 @@
 import { AuthConfig } from 'blaise-login-react-server';
 import { CaseOutcome } from 'blaise-api-node-client';
+import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
 import { ServerConfiguration } from '../interfaces/serverConfigurationInterface';
 import {
   fixUrl, generateSessionSecret,
@@ -64,7 +65,7 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
       Role: 'SVT_Supervisor',
       Surveys: [{
         Survey: 'FRS',
-        Organisations: ['ONS'],
+        Organisations: [Organisation.ONS],
         Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge, CaseOutcome.CompletedProxy],
       }],
     },
@@ -72,7 +73,7 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
       Role: 'SVT_Editor',
       Surveys: [{
         Survey: 'FRS',
-        Organisations: ['ONS'],
+        Organisations: [Organisation.ONS],
         Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge, CaseOutcome.CompletedProxy],
       }],
     }];

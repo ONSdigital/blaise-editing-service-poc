@@ -3,6 +3,7 @@ import MockAdapter from 'axios-mock-adapter';
 import {
   CaseEditInformation, CaseOutcome, EditedStatus, User,
 } from 'blaise-api-node-client/lib/cjs/blaiseApiClient';
+import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
 import surveyListMockObject from '../../mockObjects/surveyListMockObject';
 import { getSurveys, getEditorInformation, getSupervisorEditorInformation } from '../../../client/api/NodeApi';
 import { EditorInformation } from '../../../client/Interfaces/editorInterface';
@@ -60,15 +61,17 @@ describe('getEditorInformation from Blaise', () => {
       primaryKey: '10001011',
       outcome: CaseOutcome.Completed,
       assignedTo: userName,
-      editedStatus: EditedStatus.Finished,
       interviewer: '',
+      editedStatus: EditedStatus.Finished,
+      organisation: Organisation.ONS,
     },
     {
       primaryKey: '10001012',
       outcome: CaseOutcome.Completed,
       assignedTo: userName,
-      editedStatus: EditedStatus.NotStarted,
       interviewer: '',
+      editedStatus: EditedStatus.NotStarted,
+      organisation: Organisation.ONS,
     }];
 
     const expectedEditorInformation: EditorInformation = {
@@ -99,15 +102,17 @@ describe('getEditorInformation from Blaise', () => {
       primaryKey: '10001011',
       outcome: CaseOutcome.Completed,
       assignedTo: 'bob',
-      editedStatus: EditedStatus.Finished,
       interviewer: '',
+      editedStatus: EditedStatus.Finished,
+      organisation: Organisation.ONS,
     },
     {
       primaryKey: '10001012',
       outcome: CaseOutcome.Completed,
       assignedTo: 'Rich',
-      editedStatus: EditedStatus.NotStarted,
       interviewer: '',
+      editedStatus: EditedStatus.NotStarted,
+      organisation: Organisation.ONS,
     }];
 
     const expectedEditorInformation: EditorInformation = {
@@ -172,22 +177,25 @@ describe('getSupervisorEditorInformation from Blaise', () => {
       primaryKey: '10001011',
       outcome: CaseOutcome.Completed,
       assignedTo: '',
-      editedStatus: EditedStatus.Finished,
       interviewer: '',
+      editedStatus: EditedStatus.Finished,
+      organisation: Organisation.ONS,
     },
     {
       primaryKey: '10001012',
       outcome: CaseOutcome.Completed,
       assignedTo: 'Rich',
-      editedStatus: EditedStatus.Finished,
       interviewer: '',
+      editedStatus: EditedStatus.Finished,
+      organisation: Organisation.ONS,
     },
     {
       primaryKey: '10001015',
       outcome: CaseOutcome.Completed,
       assignedTo: 'Rich',
-      editedStatus: EditedStatus.Query,
       interviewer: '',
+      editedStatus: EditedStatus.Query,
+      organisation: Organisation.ONS,
     }];
 
     const expectedSupervisorInformation: SupervisorInformation = {

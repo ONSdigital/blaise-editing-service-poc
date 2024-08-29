@@ -1,4 +1,5 @@
 import { CaseOutcome } from 'blaise-api-node-client';
+import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
 import ServerConfigurationProvider from '../../../server/configuration/ServerConfigurationProvider';
 import { RoleConfiguration } from '../../../server/interfaces/roleConfigurationInterface';
 import { getSurveyConfigForRole } from '../../../server/helpers/configurationHelper';
@@ -52,29 +53,37 @@ export default class FakeServerConfigurationProvider implements ServerConfigurat
     this.RoleConfiguration = roleConfiguration ?? [{
       Role: 'SVT_Supervisor',
       Surveys: [{
-        Survey: 'LMS',
-        Organisations: ['ONS'],
-        Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
+        Survey: 'FRS',
+        Organisations: [Organisation.ONS],
+        Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge, CaseOutcome.CompletedProxy],
       }],
     },
     {
       Role: 'SVT_Editor',
       Surveys: [{
         Survey: 'TEST',
-        Organisations: ['ONS'],
+        Organisations: [Organisation.ONS],
         Outcomes: [],
       },
       {
         Survey: 'FRS',
-        Organisations: ['ONS'],
-        Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge],
+        Organisations: [Organisation.ONS],
+        Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge, CaseOutcome.CompletedProxy],
+      }],
+    },
+    {
+      Role: 'SVT_NotConfigured',
+      Surveys: [{
+        Survey: 'LMS',
+        Organisations: [Organisation.ONS],
+        Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge, CaseOutcome.CompletedProxy],
       }],
     },
     {
       Role: 'SVT_AllOutcomes',
       Surveys: [{
         Survey: 'FRS',
-        Organisations: ['ONS'],
+        Organisations: [Organisation.ONS],
         Outcomes: [],
       }],
     }];

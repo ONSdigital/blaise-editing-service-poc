@@ -1,6 +1,7 @@
 import supertest, { Response } from 'supertest';
 import { IMock, Mock, Times } from 'typemoq';
 import { CaseEditInformation, CaseOutcome, EditedStatus } from 'blaise-api-node-client';
+import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
 import nodeServer from '../../../server/server';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
@@ -21,6 +22,8 @@ const sut = supertest(server);
 // Using Node.js `assert`
 // const assert = require('assert').strict;
 
+const validUserRoles:string[] = ['SVT_Supervisor', 'SVT_Editor'];
+
 describe('Get case edit information tests', () => {
   beforeEach(() => {
     blaiseApiMock.reset();
@@ -30,46 +33,50 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.reset();
   });
 
-  it('should return a 200 response with an expected filtered list of case edit details When given a valid quetsionnaire and userRole', async () => {
+  it.each(validUserRoles)('should return a 200 response with an expected filtered list of case edit details When given a valid quetsionnaire and userRole', async (userRole) => {
     // arrange
     const questionnaireName = 'FRS2504A';
-    const userRole = 'SVT_Editor';
 
     const caseEditInformationListMockObject : CaseEditInformation[] = [
       {
         primaryKey: '10001011',
         outcome: CaseOutcome.Completed,
         assignedTo: 'Rich',
-        editedStatus: EditedStatus.Finished,
         interviewer: '',
+        editedStatus: EditedStatus.Finished,
+        organisation: Organisation.ONS,
       },
       {
         primaryKey: '10001012',
         outcome: CaseOutcome.Completed,
         assignedTo: 'bob',
-        editedStatus: EditedStatus.NotStarted,
         interviewer: '',
+        editedStatus: EditedStatus.NotStarted,
+        organisation: Organisation.ONS,
       },
       {
         primaryKey: '10001013',
         outcome: CaseOutcome.Partial,
         assignedTo: 'Julie',
-        editedStatus: EditedStatus.Query,
         interviewer: '',
+        editedStatus: EditedStatus.Query,
+        organisation: Organisation.ONS,
       },
       {
         primaryKey: '10001014',
         outcome: CaseOutcome.CompletedNudge,
         assignedTo: 'Sarah',
-        editedStatus: EditedStatus.Started,
         interviewer: '',
+        editedStatus: EditedStatus.Started,
+        organisation: Organisation.ONS,
       },
       {
         primaryKey: '10001015',
         outcome: CaseOutcome.Completed,
         assignedTo: 'Rich',
-        editedStatus: EditedStatus.Started,
         interviewer: '',
+        editedStatus: EditedStatus.Started,
+        organisation: Organisation.ONS,
       },
     ];
 
@@ -78,29 +85,187 @@ describe('Get case edit information tests', () => {
         primaryKey: '10001011',
         outcome: CaseOutcome.Completed,
         assignedTo: 'Rich',
-        editedStatus: EditedStatus.Finished,
         interviewer: '',
+        editedStatus: EditedStatus.Finished,
+        organisation: Organisation.ONS,
       },
       {
         primaryKey: '10001012',
         outcome: CaseOutcome.Completed,
         assignedTo: 'bob',
-        editedStatus: EditedStatus.NotStarted,
         interviewer: '',
+        editedStatus: EditedStatus.NotStarted,
+        organisation: Organisation.ONS,
       },
       {
         primaryKey: '10001014',
         outcome: CaseOutcome.CompletedNudge,
         assignedTo: 'Sarah',
-        editedStatus: EditedStatus.Started,
         interviewer: '',
+        editedStatus: EditedStatus.Started,
+        organisation: Organisation.ONS,
       },
       {
         primaryKey: '10001015',
         outcome: CaseOutcome.Completed,
         assignedTo: 'Rich',
-        editedStatus: EditedStatus.Started,
         interviewer: '',
+        editedStatus: EditedStatus.Started,
+        organisation: Organisation.ONS,
+      },
+    ];
+
+    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => caseEditInformationListMockObject);
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
+
+    // assert
+    expect(response.status).toEqual(200);
+    expect(response.body).toEqual(filteredCaseEditInformationListMockObject);
+    blaiseApiMock.verify((api) => api.getCaseEditInformation(questionnaireName), Times.once());
+  });
+
+  it.each(validUserRoles)('should return a 200 response with an expected filtered list of case edit details When outcome codes match role', async (userRole) => {
+    // arrange
+    const questionnaireName = 'FRS2504A';
+
+    const caseEditInformationListMockObject : CaseEditInformation[] = [
+      {
+        primaryKey: '10001011',
+        outcome: CaseOutcome.Completed,
+        assignedTo: 'Rich',
+        interviewer: '',
+        editedStatus: EditedStatus.Finished,
+        organisation: Organisation.ONS,
+      },
+      {
+        primaryKey: '10001012',
+        outcome: CaseOutcome.CompletedNudge,
+        assignedTo: 'bob',
+        interviewer: '',
+        editedStatus: EditedStatus.NotStarted,
+        organisation: Organisation.ONS,
+      },
+      {
+        primaryKey: '10001013',
+        outcome: CaseOutcome.Partial,
+        assignedTo: 'Julie',
+        interviewer: '',
+        editedStatus: EditedStatus.Query,
+        organisation: Organisation.ONS,
+      },
+      {
+        primaryKey: '10001014',
+        outcome: CaseOutcome.CompletedProxy,
+        assignedTo: 'Sarah',
+        interviewer: '',
+        editedStatus: EditedStatus.Started,
+        organisation: Organisation.ONS,
+      },
+      {
+        primaryKey: '10001015',
+        outcome: CaseOutcome.Partial,
+        assignedTo: 'Rich',
+        interviewer: '',
+        editedStatus: EditedStatus.Started,
+        organisation: Organisation.ONS,
+      },
+    ];
+
+    const filteredCaseEditInformationListMockObject : CaseEditInformation[] = [
+      {
+        primaryKey: '10001011',
+        outcome: CaseOutcome.Completed,
+        assignedTo: 'Rich',
+        interviewer: '',
+        editedStatus: EditedStatus.Finished,
+        organisation: Organisation.ONS,
+      },
+      {
+        primaryKey: '10001012',
+        outcome: CaseOutcome.CompletedNudge,
+        assignedTo: 'bob',
+        interviewer: '',
+        editedStatus: EditedStatus.NotStarted,
+        organisation: Organisation.ONS,
+      },
+      {
+        primaryKey: '10001014',
+        outcome: CaseOutcome.CompletedProxy,
+        assignedTo: 'Sarah',
+        interviewer: '',
+        editedStatus: EditedStatus.Started,
+        organisation: Organisation.ONS,
+      },
+    ];
+
+    blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => caseEditInformationListMockObject);
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
+
+    // assert
+    expect(response.status).toEqual(200);
+    expect(response.body).toEqual(filteredCaseEditInformationListMockObject);
+    blaiseApiMock.verify((api) => api.getCaseEditInformation(questionnaireName), Times.once());
+  });
+
+  it.each(validUserRoles)('should return a 200 response with an expected filtered list of case edit details When organisation match role', async (userRole) => {
+    // arrange
+    const questionnaireName = 'FRS2504A';
+
+    const caseEditInformationListMockObject : CaseEditInformation[] = [
+      {
+        primaryKey: '10001011',
+        outcome: CaseOutcome.Completed,
+        assignedTo: 'Rich',
+        interviewer: '',
+        editedStatus: EditedStatus.Finished,
+        organisation: Organisation.NatCen,
+      },
+      {
+        primaryKey: '10001012',
+        outcome: CaseOutcome.CompletedNudge,
+        assignedTo: 'bob',
+        interviewer: '',
+        editedStatus: EditedStatus.NotStarted,
+        organisation: Organisation.ONS,
+      },
+      {
+        primaryKey: '10001013',
+        outcome: CaseOutcome.Partial,
+        assignedTo: 'Julie',
+        interviewer: '',
+        editedStatus: EditedStatus.Query,
+        organisation: Organisation.ONS,
+      },
+      {
+        primaryKey: '10001014',
+        outcome: CaseOutcome.CompletedProxy,
+        assignedTo: 'Sarah',
+        interviewer: '',
+        editedStatus: EditedStatus.Started,
+        organisation: Organisation.Nisra,
+      },
+      {
+        primaryKey: '10001015',
+        outcome: CaseOutcome.Partial,
+        assignedTo: 'Rich',
+        interviewer: '',
+        editedStatus: EditedStatus.Started,
+        organisation: Organisation.ONS,
+      },
+    ];
+
+    const filteredCaseEditInformationListMockObject : CaseEditInformation[] = [
+      {
+        primaryKey: '10001012',
+        outcome: CaseOutcome.CompletedNudge,
+        assignedTo: 'bob',
+        interviewer: '',
+        editedStatus: EditedStatus.NotStarted,
+        organisation: Organisation.ONS,
       },
     ];
 
@@ -124,36 +289,41 @@ describe('Get case edit information tests', () => {
         primaryKey: '10001011',
         outcome: CaseOutcome.Completed,
         assignedTo: 'Rich',
-        editedStatus: EditedStatus.Finished,
         interviewer: '',
+        editedStatus: EditedStatus.Finished,
+        organisation: Organisation.ONS,
       },
       {
         primaryKey: '10001012',
         outcome: CaseOutcome.Completed,
         assignedTo: 'bob',
-        editedStatus: EditedStatus.NotStarted,
         interviewer: '',
+        editedStatus: EditedStatus.NotStarted,
+        organisation: Organisation.ONS,
       },
       {
         primaryKey: '10001013',
         outcome: CaseOutcome.Partial,
         assignedTo: 'Julie',
-        editedStatus: EditedStatus.Query,
         interviewer: '',
+        editedStatus: EditedStatus.Query,
+        organisation: Organisation.ONS,
       },
       {
         primaryKey: '10001014',
         outcome: CaseOutcome.CompletedNudge,
         assignedTo: 'Sarah',
-        editedStatus: EditedStatus.Started,
         interviewer: '',
+        editedStatus: EditedStatus.Started,
+        organisation: Organisation.ONS,
       },
       {
         primaryKey: '10001015',
         outcome: CaseOutcome.Completed,
         assignedTo: 'Rich',
-        editedStatus: EditedStatus.Started,
         interviewer: '',
+        editedStatus: EditedStatus.Started,
+        organisation: Organisation.ONS,
       },
     ];
 
@@ -171,14 +341,15 @@ describe('Get case edit information tests', () => {
   it('should return a 500 response if the users role is not configured for the survey', async () => {
     // arrange
     const questionnaireName = 'FRS2504A';
-    const userRole = 'SVT_Supervisor'; // configured for LMS questionnaires only
+    const userRole = 'SVT_NotConfigured'; // configured for LMS questionnaires only
     const caseEditInformationListMockObject : CaseEditInformation[] = [
       {
         primaryKey: '10001011',
         outcome: CaseOutcome.Completed,
         assignedTo: 'Rich',
-        editedStatus: EditedStatus.Finished,
         interviewer: '',
+        editedStatus: EditedStatus.Finished,
+        organisation: Organisation.ONS,
       },
     ];
 

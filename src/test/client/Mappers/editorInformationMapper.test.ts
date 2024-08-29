@@ -1,6 +1,7 @@
 import { CaseEditInformation } from 'blaise-api-node-client/lib/cjs/interfaces/case';
 import CaseOutcome from 'blaise-api-node-client/lib/cjs/enums/caseOutcome';
 import EditedStatus from 'blaise-api-node-client/lib/cjs/enums/editedStatus';
+import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
 import mapEditorInformation from '../../../client/Mappers/editorInformaitionMapper';
 import { EditorInformation } from '../../../client/Interfaces/editorInterface';
 
@@ -12,15 +13,17 @@ describe('Map editor informaiton', () => {
       primaryKey: '10001011',
       outcome: CaseOutcome.Completed,
       assignedTo: 'Rich',
-      editedStatus: EditedStatus.NotStarted,
       interviewer: '',
+      editedStatus: EditedStatus.NotStarted,
+      organisation: Organisation.ONS,
     },
     {
       primaryKey: '10001013',
       outcome: CaseOutcome.Completed,
       assignedTo: 'Rich',
-      editedStatus: EditedStatus.Started,
       interviewer: '',
+      editedStatus: EditedStatus.Started,
+      organisation: Organisation.ONS,
     },
     ];
 

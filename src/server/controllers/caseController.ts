@@ -40,14 +40,11 @@ export default class CaseController implements Controller {
 
   async GetCaseEditInformationForRole(questionnaireName:string, userRole: string): Promise<CaseEditInformation[]> {
     const surveyTla = questionnaireName.substring(0, 3);
-    const surveyConfig = this.config.getSurveyConfigForRole(surveyTla, userRole);
+    const config = this.config.getSurveyConfigForRole(surveyTla, userRole);
 
-    const CaseEditInformationList = await this.blaiseApi.getCaseEditInformation(questionnaireName);
-    const outcomesFilter = surveyConfig.Outcomes;
-
-    if (outcomesFilter.length > 0) {
-      return CaseEditInformationList.filter((caseEditInformation) => outcomesFilter.includes(caseEditInformation.outcome));
-    }
-    return CaseEditInformationList;
+    const cases = await this.blaiseApi.getCaseEditInformation(questionnaireName);
+    return cases
+      .filter((caseEditInformation) => config.Organisations.includes(caseEditInformation.organisation))
+      .filter((caseEditInformation) => (config.Outcomes.length > 0 ? config.Outcomes.includes(caseEditInformation.outcome) : caseEditInformation));
   }
 }

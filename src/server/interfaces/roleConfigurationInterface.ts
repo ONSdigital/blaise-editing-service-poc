@@ -1,4 +1,5 @@
 import { CaseOutcome } from 'blaise-api-node-client';
+import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
 
 export interface RoleConfiguration {
   Role: string;
@@ -7,6 +8,6 @@ export interface RoleConfiguration {
 
 export interface SurveyCaseConfiguration {
   Survey: string
-  Organisations: string[];
+  Organisations: Organisation[];
   Outcomes: CaseOutcome[]
 }
