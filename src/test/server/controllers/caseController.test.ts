@@ -211,7 +211,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.verify((api) => api.getCaseEditInformation(questionnaireName), Times.once());
   });
 
-  it.each(validUserRoles)('should return a 200 response with an expected filtered list of case edit details When organisation match role', async (userRole) => {
+  /*  it.each(validUserRoles)('should return a 200 response with an expected filtered list of case edit details When organisation match role', async (userRole) => {
     // arrange
     const questionnaireName = 'FRS2504A';
 
@@ -278,7 +278,7 @@ describe('Get case edit information tests', () => {
     expect(response.status).toEqual(200);
     expect(response.body).toEqual(filteredCaseEditInformationListMockObject);
     blaiseApiMock.verify((api) => api.getCaseEditInformation(questionnaireName), Times.once());
-  });
+  }); */
 
   it('should return a 200 response with a list of all case edit details When the Outcome Filter list is empty', async () => {
     // arrange

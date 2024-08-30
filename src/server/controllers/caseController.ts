@@ -46,7 +46,7 @@ export default class CaseController implements Controller {
     console.log('config ', config);
 
     const filteredcases = cases
-      .filter((caseEditInformation) => config.Organisations.includes(caseEditInformation.organisation))
+      // .filter((caseEditInformation) => config.Organisations.includes(caseEditInformation.organisation))
       .filter((caseEditInformation) => (config.Outcomes.length > 0 ? config.Outcomes.includes(caseEditInformation.outcome) : caseEditInformation));
 
     console.log('filteredcases ', filteredcases);
