@@ -79,11 +79,11 @@ describe('getEditorInformation from Blaise', () => {
       Cases: [
         {
           CaseId: '10001011',
-          EditStatus: EditedStatus.Finished,
+          EditStatus: 'Finished',
         },
         {
           CaseId: '10001012',
-          EditStatus: EditedStatus.NotStarted,
+          EditStatus: 'Not started',
         },
       ],
     };
@@ -120,7 +120,7 @@ describe('getEditorInformation from Blaise', () => {
       Cases: [
         {
           CaseId: '10001012',
-          EditStatus: EditedStatus.NotStarted,
+          EditStatus: 'Not started',
         },
       ],
     };

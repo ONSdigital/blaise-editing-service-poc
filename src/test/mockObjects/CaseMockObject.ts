@@ -57,11 +57,11 @@ export const MappedEditorInformationRichMockObject: EditorInformation = {
   Cases: [
     {
       CaseId: '10001011',
-      EditStatus: EditedStatus.Finished,
+      EditStatus: 'Finished',
     },
     {
       CaseId: '10001015',
-      EditStatus: EditedStatus.Started,
+      EditStatus: 'Started',
     },
   ],
 };

@@ -373,7 +373,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2504A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                3
+                                Finished
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -406,7 +406,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2504A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                1
+                                Started
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -439,7 +439,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2504A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                0
+                                Not started
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -472,7 +472,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2504A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                3
+                                Finished
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -505,7 +505,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2504A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                3
+                                Finished
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -710,7 +710,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2505A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                3
+                                Finished
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -743,7 +743,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2505A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                1
+                                Started
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -776,7 +776,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2505A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                0
+                                Not started
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -809,7 +809,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2505A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                3
+                                Finished
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -1104,7 +1104,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2504A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              3
+                              Finished
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1137,7 +1137,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2504A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              1
+                              Started
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1170,7 +1170,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2504A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              0
+                              Not started
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1203,7 +1203,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2504A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              3
+                              Finished
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1236,7 +1236,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2504A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              3
+                              Finished
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1441,7 +1441,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2505A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              3
+                              Finished
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1474,7 +1474,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2505A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              1
+                              Started
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1507,7 +1507,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2505A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              0
+                              Not started
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1540,7 +1540,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2505A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              3
+                              Finished
                             </td>
                             <td
                               class="ons-table__cell links"

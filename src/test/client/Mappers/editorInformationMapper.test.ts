@@ -25,17 +25,41 @@ describe('Map editor informaiton', () => {
       editedStatus: EditedStatus.Started,
       organisation: Organisation.ONS,
     },
+    {
+      primaryKey: '10001014',
+      outcome: CaseOutcome.CompletedProxy,
+      assignedTo: 'Jake',
+      interviewer: '',
+      editedStatus: EditedStatus.Query,
+      organisation: Organisation.ONS,
+    },
+    {
+      primaryKey: '10001015',
+      outcome: CaseOutcome.CompletedNudge,
+      assignedTo: 'Jake',
+      interviewer: '',
+      editedStatus: EditedStatus.Finished,
+      organisation: Organisation.ONS,
+    },
     ];
 
     const expectedEditorInformaiton: EditorInformation = {
-      numberOfCasesAllocated: 2,
+      numberOfCasesAllocated: 4,
       Cases: [{
         CaseId: '10001011',
-        EditStatus: EditedStatus.NotStarted,
+        EditStatus: 'Not started',
       },
       {
         CaseId: '10001013',
-        EditStatus: EditedStatus.Started,
+        EditStatus: 'Started',
+      },
+      {
+        CaseId: '10001014',
+        EditStatus: 'Queried',
+      },
+      {
+        CaseId: '10001015',
+        EditStatus: 'Finished',
       }],
     };
 
