@@ -79,7 +79,7 @@ describe('getEditorInformation from Blaise', () => {
       Cases: [
         {
           CaseId: '10001011',
-          EditStatus: 'Finished',
+          EditStatus: 'Completed',
         },
         {
           CaseId: '10001012',

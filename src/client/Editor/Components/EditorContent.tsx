@@ -33,15 +33,19 @@ export default function EditorContent({ editorInformation, questionnaire }: Edit
         onChange={() => {}}
         options={[
           {
-            label: 'In Progress',
+            label: 'In progress',
             value: 'in-progress',
           },
           {
-            label: 'Complete',
-            value: 'complete',
+            label: 'Queried',
+            value: 'queried',
           },
           {
-            label: 'Not Started',
+            label: 'Completed',
+            value: 'completed',
+          },
+          {
+            label: 'Not started',
             value: 'not-started',
           },
         ]}

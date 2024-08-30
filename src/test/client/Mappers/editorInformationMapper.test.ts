@@ -51,7 +51,7 @@ describe('Map editor informaiton', () => {
       },
       {
         CaseId: '10001013',
-        EditStatus: 'Started',
+        EditStatus: 'In progress',
       },
       {
         CaseId: '10001014',
@@ -59,7 +59,7 @@ describe('Map editor informaiton', () => {
       },
       {
         CaseId: '10001015',
-        EditStatus: 'Finished',
+        EditStatus: 'Completed',
       }],
     };
 

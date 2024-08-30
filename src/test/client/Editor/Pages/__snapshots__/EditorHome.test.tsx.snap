@@ -312,19 +312,25 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               selected=""
                               value="in-progress"
                             >
-                              In Progress
+                              In progress
                             </option>
                             <option
-                              data-testid="option-filter-cases-complete"
-                              value="complete"
+                              data-testid="option-filter-cases-queried"
+                              value="queried"
                             >
-                              Complete
+                              Queried
+                            </option>
+                            <option
+                              data-testid="option-filter-cases-completed"
+                              value="completed"
+                            >
+                              Completed
                             </option>
                             <option
                               data-testid="option-filter-cases-not-started"
                               value="not-started"
                             >
-                              Not Started
+                              Not started
                             </option>
                           </select>
                         </div>
@@ -373,7 +379,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2504A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                Finished
+                                Completed
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -406,7 +412,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2504A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                Started
+                                In progress
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -472,7 +478,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2504A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                Finished
+                                Completed
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -505,7 +511,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2504A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                Finished
+                                Completed
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -649,19 +655,25 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               selected=""
                               value="in-progress"
                             >
-                              In Progress
+                              In progress
                             </option>
                             <option
-                              data-testid="option-filter-cases-complete"
-                              value="complete"
+                              data-testid="option-filter-cases-queried"
+                              value="queried"
                             >
-                              Complete
+                              Queried
+                            </option>
+                            <option
+                              data-testid="option-filter-cases-completed"
+                              value="completed"
+                            >
+                              Completed
                             </option>
                             <option
                               data-testid="option-filter-cases-not-started"
                               value="not-started"
                             >
-                              Not Started
+                              Not started
                             </option>
                           </select>
                         </div>
@@ -710,7 +722,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2505A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                Finished
+                                Completed
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -743,7 +755,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2505A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                Started
+                                In progress
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -809,7 +821,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                                 aria-label="FRS2505A-EditStatus"
                                 class="ons-table__cell status"
                               >
-                                Finished
+                                Completed
                               </td>
                               <td
                                 class="ons-table__cell links"
@@ -1043,19 +1055,25 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             selected=""
                             value="in-progress"
                           >
-                            In Progress
+                            In progress
                           </option>
                           <option
-                            data-testid="option-filter-cases-complete"
-                            value="complete"
+                            data-testid="option-filter-cases-queried"
+                            value="queried"
                           >
-                            Complete
+                            Queried
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-completed"
+                            value="completed"
+                          >
+                            Completed
                           </option>
                           <option
                             data-testid="option-filter-cases-not-started"
                             value="not-started"
                           >
-                            Not Started
+                            Not started
                           </option>
                         </select>
                       </div>
@@ -1104,7 +1122,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2504A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              Finished
+                              Completed
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1137,7 +1155,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2504A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              Started
+                              In progress
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1203,7 +1221,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2504A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              Finished
+                              Completed
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1236,7 +1254,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2504A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              Finished
+                              Completed
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1380,19 +1398,25 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             selected=""
                             value="in-progress"
                           >
-                            In Progress
+                            In progress
                           </option>
                           <option
-                            data-testid="option-filter-cases-complete"
-                            value="complete"
+                            data-testid="option-filter-cases-queried"
+                            value="queried"
                           >
-                            Complete
+                            Queried
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-completed"
+                            value="completed"
+                          >
+                            Completed
                           </option>
                           <option
                             data-testid="option-filter-cases-not-started"
                             value="not-started"
                           >
-                            Not Started
+                            Not started
                           </option>
                         </select>
                       </div>
@@ -1441,7 +1465,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2505A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              Finished
+                              Completed
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1474,7 +1498,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2505A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              Started
+                              In progress
                             </td>
                             <td
                               class="ons-table__cell links"
@@ -1540,7 +1564,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               aria-label="FRS2505A-EditStatus"
                               class="ons-table__cell status"
                             >
-                              Finished
+                              Completed
                             </td>
                             <td
                               class="ons-table__cell links"

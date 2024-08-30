@@ -4,9 +4,9 @@ import { EditorInformation } from '../Interfaces/editorInterface';
 
 const EditedStatusDescription = new Map<EditedStatus, string>([
   [EditedStatus.NotStarted, 'Not started'],
-  [EditedStatus.Started, 'Started'],
+  [EditedStatus.Started, 'In progress'],
   [EditedStatus.Query, 'Queried'],
-  [EditedStatus.Finished, 'Finished'],
+  [EditedStatus.Finished, 'Completed'],
 ]);
 
 export default function mapEditorInformation(caseEditInformationList: CaseEditInformation[]): EditorInformation {
