@@ -29,7 +29,7 @@ export async function getSurveys(): Promise<Survey[]> {
 }
 
 export async function getCaseSummary(questionnaireName: string, caseId: string): Promise<CaseSummaryDetails> {
-  return getDataFromNode(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`, 'The questionnaire is no longer available');
+  return getDataFromNode(`/api/questionnaires/${questionnaireName.toUpperCase()}/cases/${caseId}/summary`, 'The questionnaire is no longer available');
 }
 
 async function getCaseEditInformation(questionnaireName: string, userRole: UserRole) {
