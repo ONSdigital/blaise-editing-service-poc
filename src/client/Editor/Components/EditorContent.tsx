@@ -74,6 +74,7 @@ export default function EditorContent({ editorInformation, questionnaire }: Edit
               </td>
               <td className="ons-table__cell links">
                 <Link to={`/questionnaires/${questionnaire.questionnaireName}/cases/${caseDetails.CaseId}/summary`}>Summary</Link>
+                {' | '}
                 <Link className="Edit" to="/">Edit</Link>
               </td>
             </tr>
