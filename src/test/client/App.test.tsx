@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Authenticate } from 'blaise-login-react-client';
 import { getEditorInformation, getSupervisorEditorInformation, getSurveys } from '../../client/api/NodeApi';
 import { Survey } from '../../common/interfaces/surveyInterface';
-import userMockObject from '../mockObjects/userMockObject';
+import userMockObject from '../server/mockObjects/userMockObject';
 import App from '../../client/App';
 import { SupervisorInformationMockObject1, SupervisorInformationMockObject2 } from './MockObjects/SupervisorMockObjects';
 import { EditorInformation } from '../../client/Interfaces/editorInterface';

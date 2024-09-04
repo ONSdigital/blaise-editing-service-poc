@@ -6,6 +6,7 @@ import nodeServer from '../../../server/server';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
+import { caseSummaryMockObject } from '../mockObjects/CaseMockObject';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
@@ -23,6 +24,77 @@ const sut = supertest(server);
 // const assert = require('assert').strict;
 
 const validUserRoles:string[] = ['SVT_Supervisor', 'SVT_Editor'];
+
+describe('Get case summary tests', () => {
+  beforeEach(() => {
+    blaiseApiMock.reset();
+  });
+
+  afterAll(() => {
+    blaiseApiMock.reset();
+  });
+
+  it('It should return a 200 response with expected case summary', async () => {
+    // arrange
+    const caseId: string = '1';
+    const questionnaireName: string = 'TEST111A';
+
+    blaiseApiMock.setup((api) => api.getCaseSummary(questionnaireName, caseId)).returns(async () => caseSummaryMockObject);
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`);
+
+    // assert
+    expect(response.status).toEqual(200);
+    expect(response.text).toEqual(JSON.stringify(caseSummaryMockObject));
+    blaiseApiMock.verify((api) => api.getCaseSummary(questionnaireName, caseId), Times.once());
+  });
+
+  it('It should return a 500 response when a call is made to retrieve a case and the rest api is not availiable', async () => {
+    // arrange
+    const axiosError = createAxiosError(500);
+    const caseId: string = '1';
+    const questionnaireName: string = 'TEST111A';
+
+    blaiseApiMock.setup((api) => api.getCaseSummary(questionnaireName, caseId)).returns(() => Promise.reject(axiosError));
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`);
+
+    // assert
+    expect(response.status).toEqual(500);
+  });
+
+  it('It should return a 500 response when the api client throws an error', async () => {
+    // arrange
+    const clientError = new Error();
+    const caseId: string = '1';
+    const questionnaireName: string = 'TEST111A';
+
+    blaiseApiMock.setup((api) => api.getCaseSummary(questionnaireName, caseId)).returns(() => Promise.reject(clientError));
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`);
+
+    // assert
+    expect(response.status).toEqual(500);
+  });
+
+  it('It should return a 404 response when a call is made to retrieve a case and the client returns a 404 not found', async () => {
+    // arrange
+    const axiosError = createAxiosError(404);
+    const caseId: string = '1';
+    const questionnaireName: string = 'TEST111A';
+
+    blaiseApiMock.setup((api) => api.getCaseSummary(questionnaireName, caseId)).returns(() => Promise.reject(axiosError));
+
+    // act
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`);
+
+    // assert
+    expect(response.status).toEqual(404);
+  });
+});
 
 describe('Get case edit information tests', () => {
   beforeEach(() => {
@@ -211,7 +283,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.verify((api) => api.getCaseEditInformation(questionnaireName), Times.once());
   });
 
-  /*  it.each(validUserRoles)('should return a 200 response with an expected filtered list of case edit details When organisation match role', async (userRole) => {
+  it.each(validUserRoles)('should return a 200 response with an expected filtered list of case edit details When organisation match role', async (userRole) => {
     // arrange
     const questionnaireName = 'FRS2504A';
 
@@ -278,7 +350,7 @@ describe('Get case edit information tests', () => {
     expect(response.status).toEqual(200);
     expect(response.body).toEqual(filteredCaseEditInformationListMockObject);
     blaiseApiMock.verify((api) => api.getCaseEditInformation(questionnaireName), Times.once());
-  }); */
+  });
 
   it('should return a 200 response with a list of all case edit details When the Outcome Filter list is empty', async () => {
     // arrange

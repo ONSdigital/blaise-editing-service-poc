@@ -1,6 +1,6 @@
 import { render, act, RenderResult } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import userMockObject from '../../../mockObjects/userMockObject';
+import userMockObject from '../../../server/mockObjects/userMockObject';
 import { getEditorInformation, getSurveys } from '../../../../client/api/NodeApi';
 import { Survey } from '../../../../common/interfaces/surveyInterface';
 import EditorHome from '../../../../client/Editor/Pages/EditorHome';

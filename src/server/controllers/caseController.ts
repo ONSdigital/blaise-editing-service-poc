@@ -4,6 +4,7 @@ import { Controller } from '../interfaces/controllerInterface';
 import notFound from '../helpers/axiosHelper';
 import BlaiseApi from '../api/BlaiseApi';
 import ServerConfigurationProvider from '../configuration/ServerConfigurationProvider';
+import { CaseSummary } from '../../common/interfaces/caseInterface';
 
 export default class CaseController implements Controller {
   blaiseApi: BlaiseApi;
@@ -14,11 +15,33 @@ export default class CaseController implements Controller {
     this.blaiseApi = blaiseApi;
     this.config = config;
     this.getCaseEditInformation = this.getCaseEditInformation.bind(this);
+    this.getCaseSummary = this.getCaseSummary.bind(this);
   }
 
   getRoutes() {
     const router = express.Router();
-    return router.get('/api/questionnaire/:questionnaireName/cases/edit', this.getCaseEditInformation);
+    router.get('/api/questionnaires/:questionnaireName/cases/:caseId/summary', this.getCaseSummary);
+    router.get('/api/questionnaire/:questionnaireName/cases/edit', this.getCaseEditInformation);
+
+    return router;
+  }
+
+  async getCaseSummary(request: Request<{ questionnaireName:string, caseId:string }>, response: Response<CaseSummary>) {
+    const {
+      questionnaireName,
+      caseId,
+    } = request.params;
+
+    try {
+      const caseSummary = await this.blaiseApi.getCaseSummary(questionnaireName, caseId);
+
+      return response.status(200).json(caseSummary);
+    } catch (error: unknown) {
+      if (notFound(error)) {
+        return response.status(404).json();
+      }
+      return response.status(500).json();
+    }
   }
 
   async getCaseEditInformation(request: Request<{ questionnaireName:string }, {}, {}, { userRole:string }>, response: Response<CaseEditInformation[]>) {

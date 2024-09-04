@@ -1,13 +1,4 @@
-import { CaseOutcome } from 'blaise-api-node-client';
-
-export interface CaseDetails {
-  CaseId: string,
-  CaseStatus: CaseOutcome,
-  EditorAllocated: string
-  EditCaseLink: string;
-}
-
-export interface CaseFactsheetDetails {
+export interface CaseSummary {
   CaseId: string
   OutcomeCode: number,
   InterviewerName: string,

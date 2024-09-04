@@ -1,9 +1,12 @@
 import BlaiseApiClient, { CaseEditInformationListMockObject } from 'blaise-api-node-client';
-import { IMock, Mock, Times } from 'typemoq';
+import {
+  IMock, It, Mock, Times,
+} from 'typemoq';
 import BlaiseApi from '../../../server/api/BlaiseApi';
-import { questionnaireDetailsListMockObject, questionnaireListMockObject } from '../../mockObjects/questionnaireListMockObject';
+import { questionnaireDetailsListMockObject, questionnaireListMockObject } from '../mockObjects/questionnaireListMockObject';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
-import userMockObject from '../../mockObjects/userMockObject';
+import userMockObject from '../mockObjects/userMockObject';
+import { caseResponseMockObject, caseSummaryMockObject } from '../mockObjects/CaseMockObject';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
@@ -19,6 +22,7 @@ describe('getQuestionnaires from Blaise', () => {
   beforeEach(() => {
     blaiseApiClientMock.reset();
   });
+
   it('Should call getQuestionnaires for all questionnaires in that list', async () => {
     // arrange
     blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => questionnaireListMockObject);
@@ -42,10 +46,45 @@ describe('getQuestionnaires from Blaise', () => {
   });
 });
 
+describe('getCaseSummary from Blaise', () => {
+  beforeEach(() => {
+    blaiseApiClientMock.reset();
+  });
+
+  it('Should retrieve a case summary from blaise', async () => {
+    // arrange
+    const questionnaireName = 'OPN2201A';
+    const caseId = '90001';
+
+    blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => caseResponseMockObject);
+
+    // act
+    const result = await sut.getCaseSummary(questionnaireName, caseId);
+
+    // assert
+    expect(result).toEqual(caseSummaryMockObject);
+  });
+
+  it('Should call the getCaseFactsheet function with the expected parameters', async () => {
+    // arrange
+    const questionnaireName = 'OPN2201A';
+    const caseId = '90001';
+
+    blaiseApiClientMock.setup((client) => client.getCase(It.isAnyString(), It.isAnyString(), It.isAnyString())).returns(async () => caseResponseMockObject);
+
+    // act
+    await sut.getCaseSummary(questionnaireName, caseId);
+
+    // assert
+    blaiseApiClientMock.verify((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId), Times.once());
+  });
+});
+
 describe('getCaseEditInformation from Blaise', () => {
   beforeEach(() => {
     blaiseApiClientMock.reset();
   });
+
   it('Should call getCaseEditInformation for a given questionnaire', async () => {
     // arrange
     const questionnaire = 'FRS2504A';
@@ -75,6 +114,7 @@ describe('getUsers from Blaise', () => {
   beforeEach(() => {
     blaiseApiClientMock.reset();
   });
+
   it('Should call getCaseEditInformation for a given questionnaire', async () => {
     // arrange
     blaiseApiClientMock.setup((client) => client.getUsers()).returns(async () => [userMockObject]);

@@ -4,7 +4,7 @@ import {
   CaseEditInformation, CaseOutcome, EditedStatus, User,
 } from 'blaise-api-node-client/lib/cjs/blaiseApiClient';
 import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
-import surveyListMockObject from '../../mockObjects/surveyListMockObject';
+import surveyListMockObject from '../../server/mockObjects/surveyListMockObject';
 import { getSurveys, getEditorInformation, getSupervisorEditorInformation } from '../../../client/api/NodeApi';
 import { EditorInformation } from '../../../client/Interfaces/editorInterface';
 import { SupervisorInformation } from '../../../client/Interfaces/supervisorInterface';

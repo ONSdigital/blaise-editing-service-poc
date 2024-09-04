@@ -1,7 +1,7 @@
 import { render, RenderResult } from '@testing-library/react';
-import userMockObject from '../../../mockObjects/userMockObject';
+import userMockObject from '../../../server/mockObjects/userMockObject';
 import QuestionnairesList from '../../../../client/Common/components/QuestionnairesList';
-import { frsQuestionnaireDetails1MockObject } from '../../../mockObjects/questionnaireListMockObject';
+import { frsQuestionnaireDetails1MockObject } from '../../../server/mockObjects/questionnaireListMockObject';
 
 let view:RenderResult;
 

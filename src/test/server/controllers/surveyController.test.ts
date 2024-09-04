@@ -4,8 +4,8 @@ import nodeServer from '../../../server/server';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
-import { questionnaireDetailsListMockObject } from '../../mockObjects/questionnaireListMockObject';
-import surveyListMockObject from '../../mockObjects/surveyListMockObject';
+import { questionnaireDetailsListMockObject } from '../mockObjects/questionnaireListMockObject';
+import surveyListMockObject from '../mockObjects/surveyListMockObject';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();

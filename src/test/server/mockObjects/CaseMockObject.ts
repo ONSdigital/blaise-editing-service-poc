@@ -1,7 +1,8 @@
-import { CaseOutcome, CaseEditInformation, EditedStatus } from 'blaise-api-node-client';
+import {
+  CaseOutcome, CaseEditInformation, EditedStatus, CaseResponse,
+} from 'blaise-api-node-client';
 import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
-import { EditorInformation } from '../../client/Interfaces/editorInterface';
-import { SupervisorInformation } from '../../client/Interfaces/supervisorInterface';
+import { CaseSummary } from '../../../common/interfaces/caseInterface';
 
 export const caseEditInformationMockObject1: CaseEditInformation = {
   primaryKey: '10001011',
@@ -22,6 +23,7 @@ export const caseEditInformationMockObject2: CaseEditInformation = {
 export const caseEditInformationMockObject3: CaseEditInformation = {
   primaryKey: '10001013',
   outcome: CaseOutcome.Partial,
+
   assignedTo: 'Julie',
   interviewer: '',
   editedStatus: EditedStatus.Query,
@@ -52,49 +54,49 @@ export const CaseEditInformationListMockObject: CaseEditInformation[] = [
   caseEditInformationMockObject5,
 ];
 
-export const MappedEditorInformationRichMockObject: EditorInformation = {
-  numberOfCasesAllocated: 2,
-  Cases: [
-    {
-      CaseId: '10001011',
-      EditStatus: 'Completed',
-    },
-    {
-      CaseId: '10001015',
-      EditStatus: 'In progress',
-    },
-  ],
+export const caseResponseMockObject: CaseResponse = {
+  caseId: '90001',
+  fieldData: {
+    'qiD.Serial_Number': '90001',
+    'qDataBag.Prem1': 'Flat 1',
+    'qDataBag.Prem2': 'Richmond House',
+    'qDataBag.Prem3': 'Rice Road',
+    'qDataBag.Prem4': 'Duffrin',
+    'qDataBag.District': 'Gwent',
+    'qDataBag.PostTown': 'Newport',
+    'qDataBag.PostCode': 'NZ11 4PD',
+    'qhAdmin.HOut': '110',
+    'qhAdmin.Interviewer[1]': 'Rich',
+    dmhSize: 2,
+    'dmName[1]': 'Richmond Ricecake',
+    'dmDteOfBth[1]': new Date(1980, 1, 15),
+    'dmName[2]': 'Bartholomew Edgar',
+    'dmDteOfBth[2]': new Date(1995, 5, 11),
+  },
 };
 
-export const MappedSupervisorInformationMockObject: SupervisorInformation = {
-  TotalNumberOfCases: 5,
-  NumberOfCasesNotAllocated: 0,
-  NumberOfCasesAllocated: 5,
-  NumberOfCasesCompleted: 1,
-  EditorInformation: [
+export const caseSummaryMockObject: CaseSummary = {
+  CaseId: '90001',
+  OutcomeCode: 110,
+  InterviewerName: 'Rich',
+  NumberOfRespondents: 2,
+  Address: {
+    AddressLine1: 'Flat 1',
+    AddressLine2: 'Richmond House',
+    AddressLine3: 'Rice Road',
+    AddressLine4: 'Duffrin',
+    County: 'Gwent',
+    Town: 'Newport',
+    Postcode: 'NZ11 4PD',
+  },
+  Respondents: [
     {
-      EditorName: 'Rich',
-      NumberOfCasesAllocated: 2,
-      NumberOfCasesCompleted: 1,
-      NumberOfCasesQueried: 0,
+      RespondentName: 'Richmond Ricecake',
+      DateOfBirth: new Date(1980, 1, 15),
     },
     {
-      EditorName: 'bob',
-      NumberOfCasesAllocated: 1,
-      NumberOfCasesCompleted: 0,
-      NumberOfCasesQueried: 0,
-    },
-    {
-      EditorName: 'Julie',
-      NumberOfCasesAllocated: 1,
-      NumberOfCasesCompleted: 0,
-      NumberOfCasesQueried: 1,
-    },
-    {
-      EditorName: 'Sarah',
-      NumberOfCasesAllocated: 1,
-      NumberOfCasesCompleted: 0,
-      NumberOfCasesQueried: 0,
+      RespondentName: 'Bartholomew Edgar',
+      DateOfBirth: new Date(1995, 5, 11),
     },
   ],
 };
