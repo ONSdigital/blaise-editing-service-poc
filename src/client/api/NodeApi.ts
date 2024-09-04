@@ -34,7 +34,7 @@ export async function getCaseSummary(questionnaireName: string, caseId: string):
 
 async function getCaseEditInformation(questionnaireName: string, userRole: UserRole) {
   // TODO Fix the URL upper
-  return getDataFromNode<CaseEditInformation[]>(`/api/questionnaire/${questionnaireName.toUpperCase()}/cases/edit?userRole=${userRole}`, 'Unable to find case edit information, please contact Richmond Rice');
+  return getDataFromNode<CaseEditInformation[]>(`/api/questionnaires/${questionnaireName.toUpperCase()}/cases/edit?userRole=${userRole}`, 'Unable to find case edit information, please contact Richmond Rice');
 }
 
 export async function getEditorInformation(questionnaireName: string, editorUsername:string, editorRole: UserRole): Promise<EditorInformation> {

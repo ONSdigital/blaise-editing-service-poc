@@ -190,7 +190,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => caseEditInformationListMockObject);
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${userRole}`);
 
     // assert
     expect(response.status).toEqual(200);
@@ -275,7 +275,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => caseEditInformationListMockObject);
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${userRole}`);
 
     // assert
     expect(response.status).toEqual(200);
@@ -344,7 +344,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => caseEditInformationListMockObject);
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${userRole}`);
 
     // assert
     expect(response.status).toEqual(200);
@@ -402,7 +402,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => caseEditInformationListMockObject);
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${userRole}`);
 
     // assert
     expect(response.status).toEqual(200);
@@ -428,7 +428,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => caseEditInformationListMockObject);
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${userRole}`);
 
     // assert
     expect(response.status).toEqual(500);
@@ -444,7 +444,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(axiosError));
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${userRole}`);
 
     // assert
     expect(response.status).toEqual(500);
@@ -460,7 +460,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(apiClientError));
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${userRole}`);
 
     // assert
     expect(response.status).toEqual(500);
@@ -473,7 +473,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => []);
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit`);
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/edit`);
 
     // assert
     expect(response.status).toEqual(500);
@@ -486,7 +486,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(async () => []);
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRoleInvalid}`);
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${userRoleInvalid}`);
 
     // assert
     expect(response.status).toEqual(500);
@@ -502,7 +502,7 @@ describe('Get case edit information tests', () => {
     blaiseApiMock.setup((api) => api.getCaseEditInformation(questionnaireName)).returns(() => Promise.reject(axiosError));
 
     // act
-    const response: Response = await sut.get(`/api/questionnaire/${questionnaireName}/cases/edit?userRole=${userRole}`);
+    const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${userRole}`);
 
     // assert
     expect(response.status).toEqual(404);
