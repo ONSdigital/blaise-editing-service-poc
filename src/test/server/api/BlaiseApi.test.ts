@@ -6,7 +6,7 @@ import BlaiseApi from '../../../server/api/BlaiseApi';
 import { questionnaireDetailsListMockObject, questionnaireListMockObject } from '../mockObjects/questionnaireListMockObject';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
 import userMockObject from '../mockObjects/userMockObject';
-import { caseResponseMockObject, caseSummaryMockObject } from '../mockObjects/CaseMockObject';
+import { caseResponseMockObject, caseSummaryDetailsMockObject } from '../mockObjects/CaseMockObject';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
@@ -62,7 +62,7 @@ describe('getCaseSummary from Blaise', () => {
     const result = await sut.getCaseSummary(questionnaireName, caseId);
 
     // assert
-    expect(result).toEqual(caseSummaryMockObject);
+    expect(result).toEqual(caseSummaryDetailsMockObject);
   });
 
   it('Should call the getCaseFactsheet function with the expected parameters', async () => {

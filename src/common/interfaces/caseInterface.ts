@@ -1,4 +1,4 @@
-export interface CaseSummary {
+export interface CaseSummaryDetails {
   CaseId: string
   OutcomeCode: number,
   InterviewerName: string,

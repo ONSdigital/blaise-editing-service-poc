@@ -4,7 +4,7 @@ import { Controller } from '../interfaces/controllerInterface';
 import notFound from '../helpers/axiosHelper';
 import BlaiseApi from '../api/BlaiseApi';
 import ServerConfigurationProvider from '../configuration/ServerConfigurationProvider';
-import { CaseSummary } from '../../common/interfaces/caseInterface';
+import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
 
 export default class CaseController implements Controller {
   blaiseApi: BlaiseApi;
@@ -26,7 +26,7 @@ export default class CaseController implements Controller {
     return router;
   }
 
-  async getCaseSummary(request: Request<{ questionnaireName:string, caseId:string }>, response: Response<CaseSummary>) {
+  async getCaseSummary(request: Request<{ questionnaireName:string, caseId:string }>, response: Response<CaseSummaryDetails>) {
     const {
       questionnaireName,
       caseId,

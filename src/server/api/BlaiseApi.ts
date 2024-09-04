@@ -2,7 +2,7 @@ import BlaiseClient, { CaseEditInformation, Questionnaire, User } from 'blaise-a
 import { ServerConfiguration } from '../interfaces/serverConfigurationInterface';
 import { QuestionnaireDetails } from '../../common/interfaces/surveyInterface';
 import mapQuestionnaireDetails from '../mappers/questionnaireMapper';
-import { CaseSummary } from '../../common/interfaces/caseInterface';
+import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
 import mapCaseSummary from '../mappers/caseMapper';
 
 export default class BlaiseApi {
@@ -30,7 +30,7 @@ export default class BlaiseApi {
     return questionnaireDetailsList;
   }
 
-  async getCaseSummary(questionnaireName: string, caseId: string): Promise<CaseSummary> {
+  async getCaseSummary(questionnaireName: string, caseId: string): Promise<CaseSummaryDetails> {
     const caseResponse = await this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
 
     return mapCaseSummary(caseResponse);

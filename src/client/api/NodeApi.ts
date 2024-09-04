@@ -9,6 +9,7 @@ import { EditorInformation } from '../Interfaces/editorInterface';
 import mapEditorInformation from '../Mappers/editorInformaitionMapper';
 import mapSupervisorInformation from '../Mappers/supervisorInformationMapper';
 import UserRole from '../Common/enums/UserRole';
+import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
 
 async function getDataFromNode<T>(url: string, notFoundError: string): Promise<T> {
   try {
@@ -25,6 +26,10 @@ async function getDataFromNode<T>(url: string, notFoundError: string): Promise<T
 
 export async function getSurveys(): Promise<Survey[]> {
   return getDataFromNode('/api/surveys', 'Unable to find surveys, please contact Richmond Rice');
+}
+
+export async function getCaseSummary(questionnaireName: string, caseId: string): Promise<CaseSummaryDetails> {
+  return getDataFromNode(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`, 'The questionnaire is no longer available');
 }
 
 async function getCaseEditInformation(questionnaireName: string, userRole: UserRole) {

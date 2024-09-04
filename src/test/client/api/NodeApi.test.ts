@@ -5,10 +5,13 @@ import {
 } from 'blaise-api-node-client/lib/cjs/blaiseApiClient';
 import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
 import surveyListMockObject from '../../server/mockObjects/surveyListMockObject';
-import { getSurveys, getEditorInformation, getSupervisorEditorInformation } from '../../../client/api/NodeApi';
+import {
+  getSurveys, getEditorInformation, getSupervisorEditorInformation, getCaseSummary,
+} from '../../../client/api/NodeApi';
 import { EditorInformation } from '../../../client/Interfaces/editorInterface';
 import { SupervisorInformation } from '../../../client/Interfaces/supervisorInterface';
 import UserRole from '../../../client/Common/enums/UserRole';
+import { caseSummaryDetailsMockObject } from '../../server/mockObjects/CaseMockObject';
 
 // use axios mock adapter
 const axiosMock = new MockAdapter(axios, { onNoMatch: 'throwException' });
@@ -47,6 +50,46 @@ describe('GetSurveys from Blaise', () => {
 
     // act && assert
     expect(getSurveys()).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+  });
+});
+
+describe('GetCaseSummary from Blaise', () => {
+  const questionnaireName = 'LMS2201_LT1';
+  const caseId = '900001';
+
+  it('Should retrieve a list of cases in blaise with a 200 response', async () => {
+    // arrange
+    axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`).reply(200, caseSummaryDetailsMockObject);
+
+    // act
+    const result = await getCaseSummary(questionnaireName, caseId);
+
+    // assert
+    expect(JSON.stringify(result)).toEqual(JSON.stringify(caseSummaryDetailsMockObject));
+  });
+
+  it('Should throw the error "The questionnaire is no longer available', async () => {
+    // arrange
+    axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`).reply(404, null);
+
+    // act && assert
+    expect(getCaseSummary(questionnaireName, caseId)).rejects.toThrow(/The questionnaire is no longer available/);
+  });
+
+  it('Should throw the error "Unable to retrieve case factsheet, please try again in a few minutes" when a 500 response is recieved', async () => {
+    // arrange
+    axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`).reply(500, null);
+
+    // act && assert
+    expect(getCaseSummary(questionnaireName, caseId)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+  });
+
+  it('Should throw the error "Unable to retrieve case factsheet, please try again in a few minutes" when there is a network error', async () => {
+    // arrange
+    axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`).networkError();
+
+    // act && assert
+    expect(getCaseSummary(questionnaireName, caseId)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 });
 

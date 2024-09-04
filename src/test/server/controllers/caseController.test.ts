@@ -6,7 +6,7 @@ import nodeServer from '../../../server/server';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
-import { caseSummaryMockObject } from '../mockObjects/CaseMockObject';
+import { caseSummaryDetailsMockObject } from '../mockObjects/CaseMockObject';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
@@ -39,14 +39,14 @@ describe('Get case summary tests', () => {
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
 
-    blaiseApiMock.setup((api) => api.getCaseSummary(questionnaireName, caseId)).returns(async () => caseSummaryMockObject);
+    blaiseApiMock.setup((api) => api.getCaseSummary(questionnaireName, caseId)).returns(async () => caseSummaryDetailsMockObject);
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`);
 
     // assert
     expect(response.status).toEqual(200);
-    expect(response.text).toEqual(JSON.stringify(caseSummaryMockObject));
+    expect(response.text).toEqual(JSON.stringify(caseSummaryDetailsMockObject));
     blaiseApiMock.verify((api) => api.getCaseSummary(questionnaireName, caseId), Times.once());
   });
 

@@ -26,7 +26,7 @@ export default function AppContent({ user }: AppContentProps): ReactElement {
 
       <CreateRoutes onConditionThat={userRole === UserRole.SVT_Editor}>
         <Route path="/" element={<EditorHome user={user} />} />
-        <Route path="/summary" element={<CaseSummary />} />
+        <Route path="questionnaires/:questionnaireName/cases/:caseId/summary" element={<CaseSummary />} />
       </CreateRoutes>
     </>
   );

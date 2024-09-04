@@ -1,8 +1,8 @@
 import { CaseResponse } from 'blaise-api-node-client';
-import { CaseSummary } from '../../common/interfaces/caseInterface';
+import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
 
-export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummary {
-  const caseSummary: CaseSummary = {
+export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummaryDetails {
+  const caseSummary: CaseSummaryDetails = {
     CaseId: caseResponse.caseId,
     OutcomeCode: Number(caseResponse.fieldData['qhAdmin.HOut']),
     InterviewerName: caseResponse.fieldData['qhAdmin.Interviewer[1]'],

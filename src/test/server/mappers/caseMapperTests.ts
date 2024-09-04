@@ -1,5 +1,5 @@
 import { CaseResponse } from 'blaise-api-node-client';
-import { CaseSummary } from '../../../common/interfaces/caseInterface';
+import { CaseSummaryDetails } from '../../../common/interfaces/caseInterface';
 import mapCaseSummary from '../../../server/mappers/caseMapper';
 
 describe('Map case response to case summary', () => {
@@ -26,7 +26,7 @@ describe('Map case response to case summary', () => {
       },
     };
 
-    const expectedFactsheet:CaseSummary = {
+    const expectedFactsheet:CaseSummaryDetails = {
       CaseId: '9001',
       OutcomeCode: 110,
       InterviewerName: 'Rich',
