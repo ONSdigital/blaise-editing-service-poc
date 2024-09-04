@@ -76,7 +76,7 @@ describe('GetCaseSummary from Blaise', () => {
     expect(getCaseSummary(questionnaireName, caseId)).rejects.toThrow(/The questionnaire is no longer available/);
   });
 
-  it('Should throw the error "Unable to retrieve case factsheet, please try again in a few minutes" when a 500 response is recieved', async () => {
+  it('Should throw the error "Unable to retrieve case summary, please try again in a few minutes" when a 500 response is recieved', async () => {
     // arrange
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`).reply(500, null);
 
@@ -84,7 +84,7 @@ describe('GetCaseSummary from Blaise', () => {
     expect(getCaseSummary(questionnaireName, caseId)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 
-  it('Should throw the error "Unable to retrieve case factsheet, please try again in a few minutes" when there is a network error', async () => {
+  it('Should throw the error "Unable to retrieve case summary, please try again in a few minutes" when there is a network error', async () => {
     // arrange
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`).networkError();
 

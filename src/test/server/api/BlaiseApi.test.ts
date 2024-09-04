@@ -65,7 +65,7 @@ describe('getCaseSummary from Blaise', () => {
     expect(result).toEqual(caseSummaryDetailsMockObject);
   });
 
-  it('Should call the getCaseFactsheet function with the expected parameters', async () => {
+  it('Should call the getCaseSummary function with the expected parameters', async () => {
     // arrange
     const questionnaireName = 'OPN2201A';
     const caseId = '90001';

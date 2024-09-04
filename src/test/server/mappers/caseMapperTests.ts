@@ -26,7 +26,7 @@ describe('Map case response to case summary', () => {
       },
     };
 
-    const expectedFactsheet:CaseSummaryDetails = {
+    const expectedSummaryDetails:CaseSummaryDetails = {
       CaseId: '9001',
       OutcomeCode: 110,
       InterviewerName: 'Rich',
@@ -56,7 +56,7 @@ describe('Map case response to case summary', () => {
     const result = mapCaseSummary(CaseResponseData);
 
     // assert
-    expect(result).toEqual(expectedFactsheet);
+    expect(result).toEqual(expectedSummaryDetails);
   });
 
   it.each(['one', 'dyhzjsgfkb'])('It should error when household size can not be converted into a number', (value) => {

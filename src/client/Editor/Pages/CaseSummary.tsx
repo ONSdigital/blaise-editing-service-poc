@@ -6,12 +6,12 @@ import AsyncContent from '../../Common/components/AsyncContent';
 import { CaseSummaryDetails } from '../../../common/interfaces/caseInterface';
 import CaseSummaryContent from '../Components/CaseSummaryContent';
 
-function DisplayCaseFactsheet(questionnaireName: string, caseId: string) {
-  const caseFactsheet = useAsyncRequestWithTwoParams<CaseSummaryDetails, string, string>(getCaseSummary, questionnaireName, caseId);
+function DisplayCaseSummary(questionnaireName: string, caseId: string) {
+  const caseSummary = useAsyncRequestWithTwoParams<CaseSummaryDetails, string, string>(getCaseSummary, questionnaireName, caseId);
 
   return (
     <div data-testid="Summary">
-      <AsyncContent content={caseFactsheet}>
+      <AsyncContent content={caseSummary}>
         {(caseSummaryContent) => <CaseSummaryContent caseSummary={caseSummaryContent} />}
       </AsyncContent>
     </div>
@@ -26,5 +26,5 @@ export type CaseSummaryParams = {
 export default function CaseSummary(): ReactElement {
   const { questionnaireName, caseId } = useParams<keyof CaseSummaryParams>() as CaseSummaryParams;
 
-  return DisplayCaseFactsheet(questionnaireName, caseId);
+  return DisplayCaseSummary(questionnaireName, caseId);
 }
