@@ -1,5 +1,5 @@
 import { ONSPanel, ONSSelect, ONSTable } from 'blaise-design-system-react-components';
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { EditorInformation } from '../../Interfaces/editorInterface';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
@@ -10,6 +10,8 @@ interface EditorsContentProps {
 }
 
 export default function EditorContent({ editorInformation, questionnaire }: EditorsContentProps): ReactElement {
+  const [status, setStatus] = useState('');
+
   return (
     <div className="editorContent" data-testid={`${questionnaire.questionnaireName}-editorContent`}>
       <ONSPanel status="info">
@@ -30,23 +32,27 @@ export default function EditorContent({ editorInformation, questionnaire }: Edit
         defaultValue="in-progress"
         id="filter-cases"
         label="Filter cases"
-        onChange={() => {}}
+        onChange={(e) => setStatus(e.target.value)}
         options={[
           {
+            label: 'All',
+            value: '',
+          },
+          {
             label: 'In progress',
-            value: 'in-progress',
+            value: 'In progress',
           },
           {
             label: 'Queried',
-            value: 'queried',
+            value: 'Queried',
           },
           {
             label: 'Completed',
-            value: 'completed',
+            value: 'Completed',
           },
           {
             label: 'Not started',
-            value: 'not-started',
+            value: 'Not started',
           },
         ]}
         value=""
@@ -61,7 +67,7 @@ export default function EditorContent({ editorInformation, questionnaire }: Edit
         tableID={`${questionnaire.questionnaireName}-Case-table`}
       >
         <>
-          {editorInformation.Cases.map((caseDetails) => (
+          {editorInformation.Cases.filter((c) => (status.length > 0 ? c.EditStatus === status : c)).map((caseDetails) => (
             <tr
               className="ons-table__row"
               key={caseDetails.CaseId}
