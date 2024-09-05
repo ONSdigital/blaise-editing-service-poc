@@ -38,7 +38,8 @@
       "error", {
          "devDependencies": true
       }
-  ]
+  ],
+  "no-param-reassign": ["error", { "props": false }]
   },
   "ignorePatterns": [".eslintrc.js", "node_modules/*","dist/*","build/*","coverage/*"]
 

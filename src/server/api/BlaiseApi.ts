@@ -36,8 +36,14 @@ export default class BlaiseApi {
     return mapCaseSummary(caseResponse);
   }
 
-  async getCaseEditInformation(questionnaire: string): Promise<CaseEditInformation[]> {
-    return this.blaiseApiClient.getCaseEditInformation(this.config.ServerPark, questionnaire);
+  async getCaseEditInformation(questionnaireName: string): Promise<CaseEditInformation[]> {
+    const caseEditInformationList = await this.blaiseApiClient.getCaseEditInformation(this.config.ServerPark, questionnaireName);
+
+    caseEditInformationList.forEach((caseEditInformation) => {
+      caseEditInformation.editUrl = `https://${this.config.ExternalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=${caseEditInformation.primaryKey}`;
+    });
+
+    return caseEditInformationList;
   }
 
   async getUsers(): Promise<User[]> {

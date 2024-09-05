@@ -87,26 +87,34 @@ describe('getCaseEditInformation from Blaise', () => {
 
   it('Should call getCaseEditInformation for a given questionnaire', async () => {
     // arrange
-    const questionnaire = 'FRS2504A';
-    blaiseApiClientMock.setup((client) => client.getCaseEditInformation(configFake.ServerPark, questionnaire)).returns(async () => CaseEditInformationListMockObject);
+    const questionnaireName = 'FRS2504A';
+    blaiseApiClientMock.setup((client) => client.getCaseEditInformation(configFake.ServerPark, questionnaireName)).returns(async () => CaseEditInformationListMockObject);
 
     // act
-    await sut.getCaseEditInformation(questionnaire);
+    await sut.getCaseEditInformation(questionnaireName);
 
     // assert
-    blaiseApiClientMock.verify((client) => client.getCaseEditInformation(configFake.ServerPark, questionnaire), Times.once());
+    blaiseApiClientMock.verify((client) => client.getCaseEditInformation(configFake.ServerPark, questionnaireName), Times.once());
   });
 
   it('Should return an expected list of Cases for editing', async () => {
     // arrange
-    const questionnaire = 'FRS2504A';
-    blaiseApiClientMock.setup((client) => client.getCaseEditInformation(configFake.ServerPark, questionnaire)).returns(async () => CaseEditInformationListMockObject);
+    const questionnaireName = 'FRS2504A';
+    const expectedEditUrlBase = `https://${configFake.ExternalWebUrl}/${questionnaireName}?Mode=CAWI&KeyValue=`;
+    blaiseApiClientMock.setup((client) => client.getCaseEditInformation(configFake.ServerPark, questionnaireName)).returns(async () => CaseEditInformationListMockObject);
 
     // act
-    const result = await sut.getCaseEditInformation(questionnaire);
+    const caseEditInformationList = await sut.getCaseEditInformation(questionnaireName);
 
     // assert
-    expect(result).toEqual(CaseEditInformationListMockObject);
+    caseEditInformationList.forEach((caseEditInformation, index) => {
+      expect(caseEditInformation.primaryKey).toEqual(CaseEditInformationListMockObject[index]?.primaryKey);
+      expect(caseEditInformation.outcome).toEqual(CaseEditInformationListMockObject[index]?.outcome);
+      expect(caseEditInformation.assignedTo).toEqual(CaseEditInformationListMockObject[index]?.assignedTo);
+      expect(caseEditInformation.editedStatus).toEqual(CaseEditInformationListMockObject[index]?.editedStatus);
+      expect(caseEditInformation.interviewer).toEqual(CaseEditInformationListMockObject[index]?.interviewer);
+      expect(caseEditInformation.editUrl).toEqual(`${expectedEditUrlBase}${caseEditInformation.primaryKey}`);
+    });
   });
 });
 

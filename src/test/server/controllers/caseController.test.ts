@@ -117,6 +117,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Finished,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011',
       },
       {
         primaryKey: '10001012',
@@ -125,6 +126,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.NotStarted,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001012',
       },
       {
         primaryKey: '10001013',
@@ -133,6 +135,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Query,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001013',
       },
       {
         primaryKey: '10001014',
@@ -141,6 +144,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Started,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001014',
       },
       {
         primaryKey: '10001015',
@@ -149,6 +153,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Started,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001015',
       },
     ];
 
@@ -160,6 +165,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Finished,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011',
       },
       {
         primaryKey: '10001012',
@@ -168,6 +174,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.NotStarted,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001012',
       },
       {
         primaryKey: '10001014',
@@ -176,6 +183,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Started,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001014',
       },
       {
         primaryKey: '10001015',
@@ -184,6 +192,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Started,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001015',
       },
     ];
 
@@ -210,6 +219,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Finished,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011',
       },
       {
         primaryKey: '10001012',
@@ -218,6 +228,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.NotStarted,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001012',
       },
       {
         primaryKey: '10001013',
@@ -226,6 +237,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Query,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001013',
       },
       {
         primaryKey: '10001014',
@@ -234,6 +246,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Started,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001014',
       },
       {
         primaryKey: '10001015',
@@ -242,6 +255,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Started,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001015',
       },
     ];
 
@@ -253,6 +267,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Finished,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011',
       },
       {
         primaryKey: '10001012',
@@ -261,6 +276,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.NotStarted,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001012',
       },
       {
         primaryKey: '10001014',
@@ -269,6 +285,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Started,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001014',
       },
     ];
 
@@ -295,6 +312,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Finished,
         organisation: Organisation.NatCen,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011',
       },
       {
         primaryKey: '10001012',
@@ -303,6 +321,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.NotStarted,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001012',
       },
       {
         primaryKey: '10001013',
@@ -311,6 +330,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Query,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001013',
       },
       {
         primaryKey: '10001014',
@@ -319,6 +339,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Started,
         organisation: Organisation.Nisra,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001014',
       },
       {
         primaryKey: '10001015',
@@ -327,6 +348,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Started,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001015',
       },
     ];
 
@@ -338,6 +360,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.NotStarted,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001012',
       },
     ];
 
@@ -364,6 +387,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Finished,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011',
       },
       {
         primaryKey: '10001012',
@@ -372,6 +396,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.NotStarted,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001012',
       },
       {
         primaryKey: '10001013',
@@ -380,6 +405,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Query,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001013',
       },
       {
         primaryKey: '10001014',
@@ -388,6 +414,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Started,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001014',
       },
       {
         primaryKey: '10001015',
@@ -396,6 +423,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Started,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001015',
       },
     ];
 
@@ -422,6 +450,7 @@ describe('Get case edit information tests', () => {
         interviewer: '',
         editedStatus: EditedStatus.Finished,
         organisation: Organisation.ONS,
+        editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011',
       },
     ];
 

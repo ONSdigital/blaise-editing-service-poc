@@ -13,12 +13,14 @@ export default function mapEditorInformation(caseEditInformationList: CaseEditIn
   const cases:{
     CaseId: string,
     EditStatus: string
+    EditUrl: string
   }[] = [];
 
   caseEditInformationList.forEach((caseEditInformation) => {
     cases.push({
       CaseId: caseEditInformation.primaryKey,
       EditStatus: EditedStatusDescription.get(caseEditInformation.editedStatus) ?? 'N/A',
+      EditUrl: caseEditInformation.editUrl,
     });
   });
 

@@ -33,6 +33,7 @@ describe('Map editor informaiton', () => {
       interviewer: '',
       editedStatus: EditedStatus.NotStarted,
       organisation: Organisation.ONS,
+      editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011',
     },
     {
       primaryKey: '10001012',
@@ -41,6 +42,7 @@ describe('Map editor informaiton', () => {
       interviewer: '',
       editedStatus: EditedStatus.Query,
       organisation: Organisation.ONS,
+      editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001012',
     },
     {
       primaryKey: '10001013',
@@ -49,6 +51,7 @@ describe('Map editor informaiton', () => {
       interviewer: '',
       editedStatus: EditedStatus.Started,
       organisation: Organisation.ONS,
+      editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001013',
     },
     ];
 
@@ -95,6 +98,7 @@ describe('Map editor informaiton', () => {
       interviewer: '',
       editedStatus: EditedStatus.NotStarted,
       organisation: Organisation.ONS,
+      editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011',
     },
     {
       primaryKey: '10001012',
@@ -103,6 +107,7 @@ describe('Map editor informaiton', () => {
       interviewer: '',
       editedStatus: EditedStatus.Query,
       organisation: Organisation.ONS,
+      editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001012',
     },
     {
       primaryKey: '10001013',
@@ -111,6 +116,7 @@ describe('Map editor informaiton', () => {
       interviewer: '',
       editedStatus: EditedStatus.NotStarted,
       organisation: Organisation.ONS,
+      editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001013',
     },
     ];
 
