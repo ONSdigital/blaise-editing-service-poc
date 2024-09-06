@@ -49,13 +49,17 @@ export function getRoles(roles: RoleConfiguration[]): string[] {
   return roles.map((r) => r.Role);
 }
 
-export function getSurveys(roles: RoleConfiguration[]): string[] {
+export function getSurveysForRole(roleConfiguration: RoleConfiguration[], userRole: string) {
+  const roleConfig = roleConfiguration.find(({ Role }) => Role === userRole);
+
+  if (roleConfig === undefined) {
+    throw new Error(`Role ${userRole} not found in Role configuration`);
+  }
+
   const surveys: string[] = [];
 
-  roles.forEach((role) => {
-    role.Surveys.forEach(({ Survey }) => {
-      if (surveys.indexOf(Survey) === -1) surveys.push(Survey);
-    });
+  roleConfig.Surveys.forEach(({ Survey }) => {
+    if (surveys.indexOf(Survey) === -1) surveys.push(Survey);
   });
 
   return surveys;

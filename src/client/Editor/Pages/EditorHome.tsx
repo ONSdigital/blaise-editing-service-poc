@@ -3,7 +3,7 @@ import { User } from 'blaise-api-node-client';
 import AsyncContent from '../../Common/components/AsyncContent';
 import { Survey } from '../../../common/interfaces/surveyInterface';
 import { getSurveys } from '../../api/NodeApi';
-import { useAsyncRequest } from '../../Common/hooks/useAsyncRequest';
+import { useAsyncRequestWithParam } from '../../Common/hooks/useAsyncRequest';
 import SurveysList from '../../Common/components/SurveysList';
 
 interface SurveyProps {
@@ -12,7 +12,7 @@ interface SurveyProps {
 
 export default function Surveys({ user }: SurveyProps) {
   // TODO: maybe filter surveys returned here - pass user details to node and bring back full list or filtered
-  const surveys = useAsyncRequest<Survey []>(getSurveys);
+  const surveys = useAsyncRequestWithParam<Survey[], string>(getSurveys, user.role);
 
   return (
     <>

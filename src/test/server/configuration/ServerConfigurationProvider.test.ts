@@ -13,7 +13,6 @@ const sessionTimeout = '12h';
 const roles = 'SVT_Supervisor,SVT_Editor';
 const rolesList = ['SVT_Supervisor', 'SVT_Editor'];
 const surveys = 'FRS';
-const surveysList = ['FRS'];
 
 describe('Configuration file tests', () => {
   beforeEach(() => {
@@ -105,7 +104,6 @@ describe('Authentication file tests', () => {
     expect(sut.SessionSecret).toEqual(sessionSecret);
     expect(sut.SessionTimeout).toEqual(sessionTimeout);
     expect(sut.Roles).toEqual(rolesList);
-    expect(sut.Surveys).toEqual(surveysList);
     expect(sut.BlaiseApiUrl).toEqual(`http://${blaiseApiUrl}`);
   });
 
@@ -142,17 +140,6 @@ describe('Authentication file tests', () => {
     expect(sut.Roles).toEqual(['SVT_Supervisor', 'SVT_Editor']);
   });
 
-  it.each([undefined, '', '_SURVEYS'])('should return the surveys listed in the role config if surveys is empty or does not exist', (value) => {
-    // arrange
-    process.env['SURVEYS'] = value;
-
-    // act
-    const sut = new ServerConfigurationProvider();
-
-    // assert
-    expect(sut.Surveys).toEqual(['FRS']);
-  });
-
   it.each([undefined, '', '  ', '   '])('should throw an error if BLAISE_API_URL is empty or does not exist', (value) => {
     // arrange
     process.env['BLAISE_API_URL'] = value;
@@ -173,6 +160,17 @@ describe('Authentication file tests', () => {
 
     // assert
     expect(configuration).toThrowError('VM_EXTERNAL_WEB_URL has not been set or is set to an empty string');
+  });
+
+  it.each(['SVT_Supervisor', 'SVT_Editor'])('should return the expected surveys for the role', (role) => {
+    // arrange
+    const sut = new ServerConfigurationProvider();
+
+    // act
+    const result = sut.getSurveysForRole(role);
+
+    // assert
+    expect(result).toEqual(['FRS']);
   });
 
   it.each(['SVT_Supervisor', 'SVT_Editor'])('should return the expected survey configuration for FRS', (role) => {

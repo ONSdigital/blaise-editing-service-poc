@@ -9,11 +9,11 @@ import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
 export default class CaseController implements Controller {
   blaiseApi: BlaiseApi;
 
-  config: ServerConfigurationProvider;
+  configuration: ServerConfigurationProvider;
 
-  constructor(blaiseApi: BlaiseApi, config: ServerConfigurationProvider) {
+  constructor(blaiseApi: BlaiseApi, configuration: ServerConfigurationProvider) {
     this.blaiseApi = blaiseApi;
-    this.config = config;
+    this.configuration = configuration;
     this.getCaseEditInformation = this.getCaseEditInformation.bind(this);
     this.getCaseSummary = this.getCaseSummary.bind(this);
   }
@@ -65,12 +65,11 @@ export default class CaseController implements Controller {
     const cases = await this.blaiseApi.getCaseEditInformation(questionnaireName);
     console.log('cases ', cases);
     const surveyTla = questionnaireName.substring(0, 3);
-    const config = this.config.getSurveyConfigForRole(surveyTla, userRole);
-    console.log('config ', config);
+    const roleConfig = this.configuration.getSurveyConfigForRole(surveyTla, userRole);
 
     const filteredcases = cases
-      .filter((caseEditInformation) => config.Organisations.includes(caseEditInformation.organisation))
-      .filter((caseEditInformation) => (config.Outcomes.length > 0 ? config.Outcomes.includes(caseEditInformation.outcome) : caseEditInformation));
+      .filter((caseEditInformation) => roleConfig.Organisations.includes(caseEditInformation.organisation))
+      .filter((caseEditInformation) => (roleConfig.Outcomes.length > 0 ? roleConfig.Outcomes.includes(caseEditInformation.outcome) : caseEditInformation));
 
     console.log('filteredcases ', filteredcases);
 

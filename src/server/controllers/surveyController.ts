@@ -4,16 +4,16 @@ import notFound from '../helpers/axiosHelper';
 import { QuestionnaireDetails, Survey } from '../../common/interfaces/surveyInterface';
 import mapSurveys from '../mappers/surveyMapper';
 import BlaiseApi from '../api/BlaiseApi';
-import { SurveyConfiguration } from '../interfaces/surveyConfigurationInterface';
+import ServerConfigurationProvider from '../configuration/ServerConfigurationProvider';
 
 export default class SurveyController implements Controller {
   blaiseApi: BlaiseApi;
 
-  configuration: SurveyConfiguration;
+  configuration: ServerConfigurationProvider;
 
-  constructor(blaiseApi: BlaiseApi, surveyConfiguration: SurveyConfiguration) {
+  constructor(blaiseApi: BlaiseApi, configuration: ServerConfigurationProvider) {
     this.blaiseApi = blaiseApi;
-    this.configuration = surveyConfiguration;
+    this.configuration = configuration;
     this.getSurveys = this.getSurveys.bind(this);
   }
 
@@ -22,9 +22,11 @@ export default class SurveyController implements Controller {
     return router.get('/api/surveys', this.getSurveys);
   }
 
-  async getSurveys(_request: Request, response: Response<Survey[]>) {
+  async getSurveys(request: Request<{}, {}, {}, { userRole:string }>, response: Response<Survey[]>) {
+    const { userRole } = request.query;
+
     try {
-      const questionnaires = await this.GetSupportedQuestionnaires();
+      const questionnaires = await this.GetQuestionnairesForRole(userRole);
       const surveys = mapSurveys(questionnaires ?? []);
 
       return response.status(200).json(surveys);
@@ -36,8 +38,10 @@ export default class SurveyController implements Controller {
     }
   }
 
-  async GetSupportedQuestionnaires(): Promise<QuestionnaireDetails[]> {
+  async GetQuestionnairesForRole(userRole: string): Promise<QuestionnaireDetails[]> {
+    const surveys = this.configuration.getSurveysForRole(userRole);
     const questionnaires = await this.blaiseApi.getQuestionnaires();
-    return questionnaires.filter((q) => this.configuration.Surveys.includes(q.surveyTla));
+
+    return questionnaires.filter((q) => surveys.includes(q.surveyTla));
   }
 }

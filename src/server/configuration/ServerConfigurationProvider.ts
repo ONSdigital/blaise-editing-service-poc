@@ -5,14 +5,13 @@ import { ServerConfiguration } from '../interfaces/serverConfigurationInterface'
 import {
   fixUrl, generateSessionSecret,
   getNumberOrThrowError, getStringOrSetDefault, getStringOrThrowError, GetListOrSetDefault,
-  getSurveys,
   getRoles,
   getSurveyConfigForRole,
+  getSurveysForRole,
 } from '../helpers/configurationHelper';
-import { SurveyConfiguration } from '../interfaces/surveyConfigurationInterface';
 import { RoleConfiguration } from '../interfaces/roleConfigurationInterface';
 
-export default class ServerConfigurationProvider implements SurveyConfiguration, ServerConfiguration, AuthConfig {
+export default class ServerConfigurationProvider implements ServerConfiguration, AuthConfig {
   BlaiseApiUrl: string;
 
   BuildFolder: string;
@@ -29,8 +28,6 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
 
   Roles: string[];
 
-  Surveys: string[];
-
   DefaultSessionTimeout: string = '12h';
 
   RoleConfiguration: RoleConfiguration[];
@@ -44,7 +41,6 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
       SESSION_SECRET,
       SESSION_TIMEOUT,
       ROLES,
-      SURVEYS,
     } = process.env;
 
     this.BuildFolder = '../../build';
@@ -75,11 +71,16 @@ export default class ServerConfigurationProvider implements SurveyConfiguration,
         Survey: 'FRS',
         Organisations: [Organisation.ONS],
         Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge, CaseOutcome.CompletedProxy],
-      }],
-    }];
+      },
+      ],
+    }
+    ];
 
     this.Roles = GetListOrSetDefault(ROLES, getRoles(this.RoleConfiguration));
-    this.Surveys = GetListOrSetDefault(SURVEYS, getSurveys(this.RoleConfiguration));
+  }
+
+  getSurveysForRole(userRole: string) {
+    return getSurveysForRole(this.RoleConfiguration, userRole);
   }
 
   getSurveyConfigForRole(surveyTla: string, userRole: string) {

@@ -17,39 +17,41 @@ import { caseSummaryDetailsMockObject } from '../../server/mockObjects/CaseMockO
 const axiosMock = new MockAdapter(axios, { onNoMatch: 'throwException' });
 
 describe('GetSurveys from Blaise', () => {
-  it('Should retrieve a list of surveys in blaise with a 200 response', async () => {
+  const validUserRoles:UserRole[] = [UserRole.SVT_Supervisor, UserRole.SVT_Editor];
+
+  it.each(validUserRoles)('Should retrieve a list of surveys in blaise with a 200 response', async (userRole) => {
     // arrange
-    axiosMock.onGet('/api/surveys').reply(200, surveyListMockObject);
+    axiosMock.onGet(`/api/surveys?userRole=${userRole}`).reply(200, surveyListMockObject);
 
     // act
-    const result = await getSurveys();
+    const result = await getSurveys(userRole);
 
     // assert
     expect(result).toEqual(surveyListMockObject);
   });
 
-  it('Should throw the error "Unable to find surveys, please contact Richmond Rice" when a 404 response is recieved', async () => {
+  it.each(validUserRoles)('Should throw the error "Unable to find surveys, please contact Richmond Rice" when a 404 response is recieved', async (userRole) => {
     // arrange
-    axiosMock.onGet('/api/surveys').reply(404, null);
+    axiosMock.onGet(`/api/surveys?userRole=${userRole}`).reply(404, null);
 
     // act && assert
-    expect(getSurveys()).rejects.toThrow('Unable to find surveys, please contact Richmond Rice');
+    expect(getSurveys(userRole)).rejects.toThrow('Unable to find surveys, please contact Richmond Rice');
   });
 
-  it('Should throw the error "Unable to retrieve surveys, please try again in a few minutes" when a 500 response is recieved', async () => {
+  it.each(validUserRoles)('Should throw the error "Unable to retrieve surveys, please try again in a few minutes" when a 500 response is recieved', async (userRole) => {
     // arrange
-    axiosMock.onGet('/api/surveys').reply(500, null);
+    axiosMock.onGet(`/api/surveys?userRole=${userRole}`).reply(500, null);
 
     // act && assert
-    expect(getSurveys()).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getSurveys(userRole)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 
-  it('Should throw the error "Unable to complete request, please try again in a few minutes" when there is a network error', async () => {
+  it.each(validUserRoles)('Should throw the error "Unable to complete request, please try again in a few minutes" when there is a network error', async (userRole) => {
     // arrange
-    axiosMock.onGet('/api/surveys').networkError();
+    axiosMock.onGet(`/api/surveys?userRole=${userRole}`).networkError();
 
     // act && assert
-    expect(getSurveys()).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getSurveys(userRole)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 });
 

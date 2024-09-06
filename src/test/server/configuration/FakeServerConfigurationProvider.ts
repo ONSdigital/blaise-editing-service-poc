@@ -2,7 +2,7 @@ import { CaseOutcome } from 'blaise-api-node-client';
 import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
 import ServerConfigurationProvider from '../../../server/configuration/ServerConfigurationProvider';
 import { RoleConfiguration } from '../../../server/interfaces/roleConfigurationInterface';
-import { getSurveyConfigForRole } from '../../../server/helpers/configurationHelper';
+import { getSurveyConfigForRole, getSurveysForRole } from '../../../server/helpers/configurationHelper';
 
 export default class FakeServerConfigurationProvider implements ServerConfigurationProvider {
   BlaiseApiUrl: string;
@@ -21,8 +21,6 @@ export default class FakeServerConfigurationProvider implements ServerConfigurat
 
   Roles: string[];
 
-  Surveys: string[];
-
   DefaultSessionTimeout: string = '12h';
 
   DefaultRoles: string[] = ['SVT_Supervisor', 'SVT_Editor'];
@@ -38,7 +36,6 @@ export default class FakeServerConfigurationProvider implements ServerConfigurat
     sessionSecret?: string,
     sessionTimeout?: string,
     roles?: string[],
-    surveys?: string[],
     roleConfiguration?: RoleConfiguration[],
   ) {
     this.BlaiseApiUrl = blaiseApiUrl ?? 'restapi.blaise.com';
@@ -49,7 +46,6 @@ export default class FakeServerConfigurationProvider implements ServerConfigurat
     this.SessionSecret = sessionSecret ?? 'richlikesricecakes';
     this.SessionTimeout = sessionTimeout ?? this.DefaultSessionTimeout;
     this.Roles = roles ?? this.DefaultRoles;
-    this.Surveys = surveys ?? ['FRS'];
     this.RoleConfiguration = roleConfiguration ?? [{
       Role: 'SVT_Supervisor',
       Surveys: [{
@@ -87,6 +83,10 @@ export default class FakeServerConfigurationProvider implements ServerConfigurat
         Outcomes: [],
       }],
     }];
+  }
+
+  getSurveysForRole(userRole: string) {
+    return getSurveysForRole(this.RoleConfiguration, userRole);
   }
 
   getSurveyConfigForRole(surveyTla: string, userRole: string) {
