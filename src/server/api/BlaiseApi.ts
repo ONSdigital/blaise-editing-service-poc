@@ -1,9 +1,9 @@
-import BlaiseClient, { CaseEditInformation, Questionnaire, User } from 'blaise-api-node-client';
+import BlaiseClient, {
+  CaseEditInformation, CaseResponse, Questionnaire, User,
+} from 'blaise-api-node-client';
 import { ServerConfiguration } from '../interfaces/serverConfigurationInterface';
 import { QuestionnaireDetails } from '../../common/interfaces/surveyInterface';
 import mapQuestionnaireDetails from '../mappers/questionnaireMapper';
-import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
-import mapCaseSummary from '../mappers/caseMapper';
 
 export default class BlaiseApi {
   config: ServerConfiguration;
@@ -14,7 +14,7 @@ export default class BlaiseApi {
     this.config = config;
     this.blaiseApiClient = blaiseApiClient;
     this.getQuestionnaires = this.getQuestionnaires.bind(this);
-    this.getCaseSummary = this.getCaseSummary.bind(this);
+    this.getCase = this.getCase.bind(this);
     this.getCaseEditInformation = this.getCaseEditInformation.bind(this);
     this.getUsers = this.getUsers.bind(this);
   }
@@ -30,10 +30,8 @@ export default class BlaiseApi {
     return questionnaireDetailsList;
   }
 
-  async getCaseSummary(questionnaireName: string, caseId: string): Promise<CaseSummaryDetails> {
-    const caseResponse = await this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
-
-    return mapCaseSummary(caseResponse);
+  async getCase(questionnaireName: string, caseId: string): Promise<CaseResponse> {
+    return this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
   }
 
   async getCaseEditInformation(questionnaireName: string): Promise<CaseEditInformation[]> {

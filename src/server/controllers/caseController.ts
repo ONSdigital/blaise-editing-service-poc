@@ -5,6 +5,7 @@ import notFound from '../helpers/axiosHelper';
 import BlaiseApi from '../api/BlaiseApi';
 import ServerConfigurationProvider from '../configuration/ServerConfigurationProvider';
 import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
+import mapCaseSummary from '../mappers/caseMapper';
 
 export default class CaseController implements Controller {
   blaiseApi: BlaiseApi;
@@ -33,7 +34,8 @@ export default class CaseController implements Controller {
     } = request.params;
 
     try {
-      const caseSummary = await this.blaiseApi.getCaseSummary(questionnaireName, caseId);
+      const caseResponse = await this.blaiseApi.getCase(questionnaireName, caseId);
+      const caseSummary = mapCaseSummary(caseResponse);
 
       return response.status(200).json(caseSummary);
     } catch (error: unknown) {
@@ -56,22 +58,18 @@ export default class CaseController implements Controller {
       if (notFound(error)) {
         return response.status(404).json();
       }
-      console.log('error - ', error);
       return response.status(500).json();
     }
   }
 
   async GetCaseEditInformationForRole(questionnaireName:string, userRole: string): Promise<CaseEditInformation[]> {
     const cases = await this.blaiseApi.getCaseEditInformation(questionnaireName);
-    console.log('cases ', cases);
     const surveyTla = questionnaireName.substring(0, 3);
     const roleConfig = this.configuration.getSurveyConfigForRole(surveyTla, userRole);
 
     const filteredcases = cases
       .filter((caseEditInformation) => roleConfig.Organisations.includes(caseEditInformation.organisation))
       .filter((caseEditInformation) => (roleConfig.Outcomes.length > 0 ? roleConfig.Outcomes.includes(caseEditInformation.outcome) : caseEditInformation));
-
-    console.log('filteredcases ', filteredcases);
 
     return filteredcases;
   }

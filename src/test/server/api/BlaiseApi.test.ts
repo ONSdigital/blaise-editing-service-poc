@@ -6,7 +6,7 @@ import BlaiseApi from '../../../server/api/BlaiseApi';
 import { questionnaireDetailsListMockObject, questionnaireListMockObject } from '../mockObjects/questionnaireListMockObject';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
 import userMockObject from '../mockObjects/userMockObject';
-import { caseResponseMockObject, caseSummaryDetailsMockObject } from '../mockObjects/CaseMockObject';
+import { caseResponseMockObject } from '../mockObjects/CaseMockObject';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
@@ -46,12 +46,12 @@ describe('getQuestionnaires from Blaise', () => {
   });
 });
 
-describe('getCaseSummary from Blaise', () => {
+describe('getCase from Blaise', () => {
   beforeEach(() => {
     blaiseApiClientMock.reset();
   });
 
-  it('Should retrieve a case summary from blaise', async () => {
+  it('Should retrieve a case from blaise', async () => {
     // arrange
     const questionnaireName = 'OPN2201A';
     const caseId = '90001';
@@ -59,13 +59,13 @@ describe('getCaseSummary from Blaise', () => {
     blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => caseResponseMockObject);
 
     // act
-    const result = await sut.getCaseSummary(questionnaireName, caseId);
+    const result = await sut.getCase(questionnaireName, caseId);
 
     // assert
-    expect(result).toEqual(caseSummaryDetailsMockObject);
+    expect(result).toEqual(caseResponseMockObject);
   });
 
-  it('Should call the getCaseSummary function with the expected parameters', async () => {
+  it('Should call the getCase function with the expected parameters', async () => {
     // arrange
     const questionnaireName = 'OPN2201A';
     const caseId = '90001';
@@ -73,7 +73,7 @@ describe('getCaseSummary from Blaise', () => {
     blaiseApiClientMock.setup((client) => client.getCase(It.isAnyString(), It.isAnyString(), It.isAnyString())).returns(async () => caseResponseMockObject);
 
     // act
-    await sut.getCaseSummary(questionnaireName, caseId);
+    await sut.getCase(questionnaireName, caseId);
 
     // assert
     blaiseApiClientMock.verify((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId), Times.once());

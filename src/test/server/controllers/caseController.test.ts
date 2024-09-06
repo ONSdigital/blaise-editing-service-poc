@@ -6,7 +6,7 @@ import nodeServer from '../../../server/server';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
-import { caseSummaryDetailsMockObject } from '../mockObjects/CaseMockObject';
+import { caseResponseMockObject, caseSummaryDetailsMockObject } from '../mockObjects/CaseMockObject';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
@@ -39,7 +39,7 @@ describe('Get case summary tests', () => {
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
 
-    blaiseApiMock.setup((api) => api.getCaseSummary(questionnaireName, caseId)).returns(async () => caseSummaryDetailsMockObject);
+    blaiseApiMock.setup((api) => api.getCase(questionnaireName, caseId)).returns(async () => caseResponseMockObject);
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`);
@@ -47,7 +47,7 @@ describe('Get case summary tests', () => {
     // assert
     expect(response.status).toEqual(200);
     expect(response.text).toEqual(JSON.stringify(caseSummaryDetailsMockObject));
-    blaiseApiMock.verify((api) => api.getCaseSummary(questionnaireName, caseId), Times.once());
+    blaiseApiMock.verify((api) => api.getCase(questionnaireName, caseId), Times.once());
   });
 
   it('It should return a 500 response when a call is made to retrieve a case and the rest api is not availiable', async () => {
@@ -56,7 +56,7 @@ describe('Get case summary tests', () => {
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
 
-    blaiseApiMock.setup((api) => api.getCaseSummary(questionnaireName, caseId)).returns(() => Promise.reject(axiosError));
+    blaiseApiMock.setup((api) => api.getCase(questionnaireName, caseId)).returns(() => Promise.reject(axiosError));
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`);
@@ -71,7 +71,7 @@ describe('Get case summary tests', () => {
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
 
-    blaiseApiMock.setup((api) => api.getCaseSummary(questionnaireName, caseId)).returns(() => Promise.reject(clientError));
+    blaiseApiMock.setup((api) => api.getCase(questionnaireName, caseId)).returns(() => Promise.reject(clientError));
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`);
@@ -86,7 +86,7 @@ describe('Get case summary tests', () => {
     const caseId: string = '1';
     const questionnaireName: string = 'TEST111A';
 
-    blaiseApiMock.setup((api) => api.getCaseSummary(questionnaireName, caseId)).returns(() => Promise.reject(axiosError));
+    blaiseApiMock.setup((api) => api.getCase(questionnaireName, caseId)).returns(() => Promise.reject(axiosError));
 
     // act
     const response: Response = await sut.get(`/api/questionnaires/${questionnaireName}/cases/${caseId}/summary`);

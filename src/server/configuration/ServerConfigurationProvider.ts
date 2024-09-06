@@ -73,7 +73,7 @@ export default class ServerConfigurationProvider implements ServerConfiguration,
         Outcomes: [CaseOutcome.Completed, CaseOutcome.CompletedNudge, CaseOutcome.CompletedProxy],
       },
       ],
-    }
+    },
     ];
 
     this.Roles = GetListOrSetDefault(ROLES, getRoles(this.RoleConfiguration));
