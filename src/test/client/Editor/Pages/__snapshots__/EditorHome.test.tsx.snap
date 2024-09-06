@@ -308,27 +308,32 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               Select an option
                             </option>
                             <option
-                              data-testid="option-filter-cases-in-progress"
-                              selected=""
-                              value="in-progress"
+                              data-testid="option-filter-cases-"
+                              value=""
+                            >
+                              All
+                            </option>
+                            <option
+                              data-testid="option-filter-cases-In progress"
+                              value="In progress"
                             >
                               In progress
                             </option>
                             <option
-                              data-testid="option-filter-cases-queried"
-                              value="queried"
+                              data-testid="option-filter-cases-Queried"
+                              value="Queried"
                             >
                               Queried
                             </option>
                             <option
-                              data-testid="option-filter-cases-completed"
-                              value="completed"
+                              data-testid="option-filter-cases-Completed"
+                              value="Completed"
                             >
                               Completed
                             </option>
                             <option
-                              data-testid="option-filter-cases-not-started"
-                              value="not-started"
+                              data-testid="option-filter-cases-Not started"
+                              value="Not started"
                             >
                               Not started
                             </option>
@@ -386,8 +391,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <a
                                   href="/questionnaires/FRS2504A/cases/10001011/summary"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
                                 >
                                   Summary
                                 </a>
@@ -422,8 +425,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <a
                                   href="/questionnaires/FRS2504A/cases/10001012/summary"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
                                 >
                                   Summary
                                 </a>
@@ -458,8 +459,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <a
                                   href="/questionnaires/FRS2504A/cases/10001013/summary"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
                                 >
                                   Summary
                                 </a>
@@ -494,8 +493,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <a
                                   href="/questionnaires/FRS2504A/cases/10001014/summary"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
                                 >
                                   Summary
                                 </a>
@@ -530,8 +527,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <a
                                   href="/questionnaires/FRS2504A/cases/10001015/summary"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
                                 >
                                   Summary
                                 </a>
@@ -666,27 +661,32 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               Select an option
                             </option>
                             <option
-                              data-testid="option-filter-cases-in-progress"
-                              selected=""
-                              value="in-progress"
+                              data-testid="option-filter-cases-"
+                              value=""
+                            >
+                              All
+                            </option>
+                            <option
+                              data-testid="option-filter-cases-In progress"
+                              value="In progress"
                             >
                               In progress
                             </option>
                             <option
-                              data-testid="option-filter-cases-queried"
-                              value="queried"
+                              data-testid="option-filter-cases-Queried"
+                              value="Queried"
                             >
                               Queried
                             </option>
                             <option
-                              data-testid="option-filter-cases-completed"
-                              value="completed"
+                              data-testid="option-filter-cases-Completed"
+                              value="Completed"
                             >
                               Completed
                             </option>
                             <option
-                              data-testid="option-filter-cases-not-started"
-                              value="not-started"
+                              data-testid="option-filter-cases-Not started"
+                              value="Not started"
                             >
                               Not started
                             </option>
@@ -744,8 +744,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <a
                                   href="/questionnaires/FRS2505A/cases/20001011/summary"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
                                 >
                                   Summary
                                 </a>
@@ -780,8 +778,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <a
                                   href="/questionnaires/FRS2505A/cases/20001012/summary"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
                                 >
                                   Summary
                                 </a>
@@ -816,8 +812,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <a
                                   href="/questionnaires/FRS2505A/cases/20001013/summary"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
                                 >
                                   Summary
                                 </a>
@@ -852,8 +846,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <a
                                   href="/questionnaires/FRS2505A/cases/20001014/summary"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
                                 >
                                   Summary
                                 </a>
@@ -1078,27 +1070,32 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             Select an option
                           </option>
                           <option
-                            data-testid="option-filter-cases-in-progress"
-                            selected=""
-                            value="in-progress"
+                            data-testid="option-filter-cases-"
+                            value=""
+                          >
+                            All
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-In progress"
+                            value="In progress"
                           >
                             In progress
                           </option>
                           <option
-                            data-testid="option-filter-cases-queried"
-                            value="queried"
+                            data-testid="option-filter-cases-Queried"
+                            value="Queried"
                           >
                             Queried
                           </option>
                           <option
-                            data-testid="option-filter-cases-completed"
-                            value="completed"
+                            data-testid="option-filter-cases-Completed"
+                            value="Completed"
                           >
                             Completed
                           </option>
                           <option
-                            data-testid="option-filter-cases-not-started"
-                            value="not-started"
+                            data-testid="option-filter-cases-Not started"
+                            value="Not started"
                           >
                             Not started
                           </option>
@@ -1156,8 +1153,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <a
                                 href="/questionnaires/FRS2504A/cases/10001011/summary"
-                                rel="noopener noreferrer"
-                                target="_blank"
                               >
                                 Summary
                               </a>
@@ -1192,8 +1187,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <a
                                 href="/questionnaires/FRS2504A/cases/10001012/summary"
-                                rel="noopener noreferrer"
-                                target="_blank"
                               >
                                 Summary
                               </a>
@@ -1228,8 +1221,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <a
                                 href="/questionnaires/FRS2504A/cases/10001013/summary"
-                                rel="noopener noreferrer"
-                                target="_blank"
                               >
                                 Summary
                               </a>
@@ -1264,8 +1255,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <a
                                 href="/questionnaires/FRS2504A/cases/10001014/summary"
-                                rel="noopener noreferrer"
-                                target="_blank"
                               >
                                 Summary
                               </a>
@@ -1300,8 +1289,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <a
                                 href="/questionnaires/FRS2504A/cases/10001015/summary"
-                                rel="noopener noreferrer"
-                                target="_blank"
                               >
                                 Summary
                               </a>
@@ -1436,27 +1423,32 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             Select an option
                           </option>
                           <option
-                            data-testid="option-filter-cases-in-progress"
-                            selected=""
-                            value="in-progress"
+                            data-testid="option-filter-cases-"
+                            value=""
+                          >
+                            All
+                          </option>
+                          <option
+                            data-testid="option-filter-cases-In progress"
+                            value="In progress"
                           >
                             In progress
                           </option>
                           <option
-                            data-testid="option-filter-cases-queried"
-                            value="queried"
+                            data-testid="option-filter-cases-Queried"
+                            value="Queried"
                           >
                             Queried
                           </option>
                           <option
-                            data-testid="option-filter-cases-completed"
-                            value="completed"
+                            data-testid="option-filter-cases-Completed"
+                            value="Completed"
                           >
                             Completed
                           </option>
                           <option
-                            data-testid="option-filter-cases-not-started"
-                            value="not-started"
+                            data-testid="option-filter-cases-Not started"
+                            value="Not started"
                           >
                             Not started
                           </option>
@@ -1514,8 +1506,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <a
                                 href="/questionnaires/FRS2505A/cases/20001011/summary"
-                                rel="noopener noreferrer"
-                                target="_blank"
                               >
                                 Summary
                               </a>
@@ -1550,8 +1540,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <a
                                 href="/questionnaires/FRS2505A/cases/20001012/summary"
-                                rel="noopener noreferrer"
-                                target="_blank"
                               >
                                 Summary
                               </a>
@@ -1586,8 +1574,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <a
                                 href="/questionnaires/FRS2505A/cases/20001013/summary"
-                                rel="noopener noreferrer"
-                                target="_blank"
                               >
                                 Summary
                               </a>
@@ -1622,8 +1608,6 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <a
                                 href="/questionnaires/FRS2505A/cases/20001014/summary"
-                                rel="noopener noreferrer"
-                                target="_blank"
                               >
                                 Summary
                               </a>
