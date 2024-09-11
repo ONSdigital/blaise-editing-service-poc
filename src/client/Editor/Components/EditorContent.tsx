@@ -3,6 +3,8 @@ import { ReactElement, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { EditorInformation } from '../../Interfaces/editorInterface';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
+import { CaseSummaryDetails } from '../../../common/interfaces/caseInterface';
+import mapCaseSummaryText from '../../Mappers/caseSummaryTextMapper';
 //
 
 interface EditorsContentProps {
@@ -10,17 +12,41 @@ interface EditorsContentProps {
   questionnaire: QuestionnaireDetails
 }
 
-/* async function exportSummary(questionnaireName: string, case_id: string) {
-  const caseSummary = await getCaseSummary2(questionnaireName, case_id);
+async function exportSummary() {
+  const caseSummary: CaseSummaryDetails = {
+    CaseId: '90001',
+    OutcomeCode: 110,
+    InterviewerName: 'Rich',
+    NumberOfRespondents: 2,
+    Address: {
+      AddressLine1: 'Flat 1',
+      AddressLine2: 'Richmond House',
+      AddressLine3: 'Rice Road',
+      AddressLine4: 'Duffrin',
+      County: 'Gwent',
+      Town: 'Newport',
+      Postcode: 'NZ11 4PD',
+    },
+    Respondents: [
+      {
+        RespondentName: 'Richmond Ricecake',
+        DateOfBirth: new Date(1980, 1, 15),
+      },
+      {
+        RespondentName: 'Bartholomew Edgar',
+        DateOfBirth: new Date(1995, 5, 11),
+      },
+    ],
+  };
 
-  const fileData = JSON.stringify(caseSummary);
-  const blob = new Blob([fileData], { type: 'text/plain' });
-  const url = URL.createObjectURL(blob);
+  let summaryText = mapCaseSummaryText(caseSummary);
   const link = document.createElement('a');
-  link.download = `case-summary-${case_id}.txt`;
-  link.href = url;
+
+  link.download = `case-summary-${caseSummary.CaseId}.txt`;
+  summaryText = summaryText.replace(/\n/g, '%0D%0A');
+  link.href = `data:text/plain, ${summaryText}`;
   link.click();
-} */
+}
 
 export default function EditorContent({ editorInformation, questionnaire }: EditorsContentProps): ReactElement {
   const [status, setStatus] = useState('');
@@ -92,9 +118,9 @@ export default function EditorContent({ editorInformation, questionnaire }: Edit
                 {caseDetails.EditStatus}
               </td>
               <td className="ons-table__cell links">
-                {/*                 <span className="link" onClick={() => { exportSummary(questionnaire.questionnaireName, caseDetails.CaseId); }} onKeyDown={() => { exportSummary(questionnaire.questionnaireName, caseDetails.CaseId); }} role="presentation">Download</span>
-                {' | '} */}
-                <Link to={`/questionnaires/${questionnaire.questionnaireName}/cases/${caseDetails.CaseId}/summary`}>Summary</Link>
+                <span className="link" onClick={() => { exportSummary(); }} onKeyDown={() => { exportSummary(); }} role="presentation">Download Summary</span>
+                {' | '}
+                <Link to={`/questionnaires/${questionnaire.questionnaireName}/cases/${caseDetails.CaseId}/summary`}>View Summary</Link>
                 {' | '}
                 <Link to={caseDetails.EditUrl} target="_blank" rel="noopener noreferrer">Edit</Link>
               </td>

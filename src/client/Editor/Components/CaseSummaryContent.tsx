@@ -16,7 +16,7 @@ export default function CaseSummaryContent({ caseSummary }: CaseSummaryContentPr
         {' '}
         completed by
         {' '}
-        <strong>Inteviewer1</strong>
+        <strong>{caseSummary.InterviewerName}</strong>
       </ONSPanel>
       <dl
         className="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"

@@ -389,10 +389,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               <td
                                 class="ons-table__cell links"
                               >
+                                <span
+                                  class="link"
+                                  role="presentation"
+                                >
+                                  Download Summary
+                                </span>
+                                 | 
                                 <a
                                   href="/questionnaires/FRS2504A/cases/10001011/summary"
                                 >
-                                  Summary
+                                  View Summary
                                 </a>
                                  | 
                                 <a
@@ -422,10 +429,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               <td
                                 class="ons-table__cell links"
                               >
+                                <span
+                                  class="link"
+                                  role="presentation"
+                                >
+                                  Download Summary
+                                </span>
+                                 | 
                                 <a
                                   href="/questionnaires/FRS2504A/cases/10001012/summary"
                                 >
-                                  Summary
+                                  View Summary
                                 </a>
                                  | 
                                 <a
@@ -455,10 +469,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               <td
                                 class="ons-table__cell links"
                               >
+                                <span
+                                  class="link"
+                                  role="presentation"
+                                >
+                                  Download Summary
+                                </span>
+                                 | 
                                 <a
                                   href="/questionnaires/FRS2504A/cases/10001013/summary"
                                 >
-                                  Summary
+                                  View Summary
                                 </a>
                                  | 
                                 <a
@@ -488,10 +509,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               <td
                                 class="ons-table__cell links"
                               >
+                                <span
+                                  class="link"
+                                  role="presentation"
+                                >
+                                  Download Summary
+                                </span>
+                                 | 
                                 <a
                                   href="/questionnaires/FRS2504A/cases/10001014/summary"
                                 >
-                                  Summary
+                                  View Summary
                                 </a>
                                  | 
                                 <a
@@ -521,10 +549,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               <td
                                 class="ons-table__cell links"
                               >
+                                <span
+                                  class="link"
+                                  role="presentation"
+                                >
+                                  Download Summary
+                                </span>
+                                 | 
                                 <a
                                   href="/questionnaires/FRS2504A/cases/10001015/summary"
                                 >
-                                  Summary
+                                  View Summary
                                 </a>
                                  | 
                                 <a
@@ -737,10 +772,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               <td
                                 class="ons-table__cell links"
                               >
+                                <span
+                                  class="link"
+                                  role="presentation"
+                                >
+                                  Download Summary
+                                </span>
+                                 | 
                                 <a
                                   href="/questionnaires/FRS2505A/cases/20001011/summary"
                                 >
-                                  Summary
+                                  View Summary
                                 </a>
                                  | 
                                 <a
@@ -770,10 +812,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               <td
                                 class="ons-table__cell links"
                               >
+                                <span
+                                  class="link"
+                                  role="presentation"
+                                >
+                                  Download Summary
+                                </span>
+                                 | 
                                 <a
                                   href="/questionnaires/FRS2505A/cases/20001012/summary"
                                 >
-                                  Summary
+                                  View Summary
                                 </a>
                                  | 
                                 <a
@@ -803,10 +852,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               <td
                                 class="ons-table__cell links"
                               >
+                                <span
+                                  class="link"
+                                  role="presentation"
+                                >
+                                  Download Summary
+                                </span>
+                                 | 
                                 <a
                                   href="/questionnaires/FRS2505A/cases/20001013/summary"
                                 >
-                                  Summary
+                                  View Summary
                                 </a>
                                  | 
                                 <a
@@ -836,10 +892,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               <td
                                 class="ons-table__cell links"
                               >
+                                <span
+                                  class="link"
+                                  role="presentation"
+                                >
+                                  Download Summary
+                                </span>
+                                 | 
                                 <a
                                   href="/questionnaires/FRS2505A/cases/20001014/summary"
                                 >
-                                  Summary
+                                  View Summary
                                 </a>
                                  | 
                                 <a
@@ -1142,10 +1205,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             <td
                               class="ons-table__cell links"
                             >
+                              <span
+                                class="link"
+                                role="presentation"
+                              >
+                                Download Summary
+                              </span>
+                               | 
                               <a
                                 href="/questionnaires/FRS2504A/cases/10001011/summary"
                               >
-                                Summary
+                                View Summary
                               </a>
                                | 
                               <a
@@ -1175,10 +1245,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             <td
                               class="ons-table__cell links"
                             >
+                              <span
+                                class="link"
+                                role="presentation"
+                              >
+                                Download Summary
+                              </span>
+                               | 
                               <a
                                 href="/questionnaires/FRS2504A/cases/10001012/summary"
                               >
-                                Summary
+                                View Summary
                               </a>
                                | 
                               <a
@@ -1208,10 +1285,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             <td
                               class="ons-table__cell links"
                             >
+                              <span
+                                class="link"
+                                role="presentation"
+                              >
+                                Download Summary
+                              </span>
+                               | 
                               <a
                                 href="/questionnaires/FRS2504A/cases/10001013/summary"
                               >
-                                Summary
+                                View Summary
                               </a>
                                | 
                               <a
@@ -1241,10 +1325,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             <td
                               class="ons-table__cell links"
                             >
+                              <span
+                                class="link"
+                                role="presentation"
+                              >
+                                Download Summary
+                              </span>
+                               | 
                               <a
                                 href="/questionnaires/FRS2504A/cases/10001014/summary"
                               >
-                                Summary
+                                View Summary
                               </a>
                                | 
                               <a
@@ -1274,10 +1365,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             <td
                               class="ons-table__cell links"
                             >
+                              <span
+                                class="link"
+                                role="presentation"
+                              >
+                                Download Summary
+                              </span>
+                               | 
                               <a
                                 href="/questionnaires/FRS2504A/cases/10001015/summary"
                               >
-                                Summary
+                                View Summary
                               </a>
                                | 
                               <a
@@ -1490,10 +1588,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             <td
                               class="ons-table__cell links"
                             >
+                              <span
+                                class="link"
+                                role="presentation"
+                              >
+                                Download Summary
+                              </span>
+                               | 
                               <a
                                 href="/questionnaires/FRS2505A/cases/20001011/summary"
                               >
-                                Summary
+                                View Summary
                               </a>
                                | 
                               <a
@@ -1523,10 +1628,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             <td
                               class="ons-table__cell links"
                             >
+                              <span
+                                class="link"
+                                role="presentation"
+                              >
+                                Download Summary
+                              </span>
+                               | 
                               <a
                                 href="/questionnaires/FRS2505A/cases/20001012/summary"
                               >
-                                Summary
+                                View Summary
                               </a>
                                | 
                               <a
@@ -1556,10 +1668,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             <td
                               class="ons-table__cell links"
                             >
+                              <span
+                                class="link"
+                                role="presentation"
+                              >
+                                Download Summary
+                              </span>
+                               | 
                               <a
                                 href="/questionnaires/FRS2505A/cases/20001013/summary"
                               >
-                                Summary
+                                View Summary
                               </a>
                                | 
                               <a
@@ -1589,10 +1708,17 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             <td
                               class="ons-table__cell links"
                             >
+                              <span
+                                class="link"
+                                role="presentation"
+                              >
+                                Download Summary
+                              </span>
+                               | 
                               <a
                                 href="/questionnaires/FRS2505A/cases/20001014/summary"
                               >
-                                Summary
+                                View Summary
                               </a>
                                | 
                               <a
