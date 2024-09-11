@@ -3,11 +3,24 @@ import { ReactElement, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { EditorInformation } from '../../Interfaces/editorInterface';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
+//
 
 interface EditorsContentProps {
   editorInformation: EditorInformation;
   questionnaire: QuestionnaireDetails
 }
+
+/* async function exportSummary(questionnaireName: string, case_id: string) {
+  const caseSummary = await getCaseSummary2(questionnaireName, case_id);
+
+  const fileData = JSON.stringify(caseSummary);
+  const blob = new Blob([fileData], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.download = `case-summary-${case_id}.txt`;
+  link.href = url;
+  link.click();
+} */
 
 export default function EditorContent({ editorInformation, questionnaire }: EditorsContentProps): ReactElement {
   const [status, setStatus] = useState('');
@@ -79,9 +92,11 @@ export default function EditorContent({ editorInformation, questionnaire }: Edit
                 {caseDetails.EditStatus}
               </td>
               <td className="ons-table__cell links">
+                {/*                 <span className="link" onClick={() => { exportSummary(questionnaire.questionnaireName, caseDetails.CaseId); }} onKeyDown={() => { exportSummary(questionnaire.questionnaireName, caseDetails.CaseId); }} role="presentation">Download</span>
+                {' | '} */}
                 <Link to={`/questionnaires/${questionnaire.questionnaireName}/cases/${caseDetails.CaseId}/summary`}>Summary</Link>
                 {' | '}
-                <Link className="Edit" to={caseDetails.EditUrl} target="_blank" rel="noopener noreferrer">Edit</Link>
+                <Link to={caseDetails.EditUrl} target="_blank" rel="noopener noreferrer">Edit</Link>
               </td>
             </tr>
           ))}

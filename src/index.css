@@ -36,3 +36,17 @@ code {
       margin-top:0
   }
 }
+
+.link {
+  cursor:pointer;
+  color:#206095;
+  text-decoration:underline;
+  text-decoration-thickness: 1px;
+  text-underline-position: under;
+}
+
+.link:hover {
+  color: #206095;
+  -webkit-text-decoration: underline solid #206095 2px;
+  text-decoration: underline solid #206095  2px
+}

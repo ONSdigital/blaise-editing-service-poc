@@ -9,6 +9,7 @@ import { EditorInformation } from '../Interfaces/editorInterface';
 import mapEditorInformation from '../Mappers/editorInformaitionMapper';
 import mapSupervisorInformation from '../Mappers/supervisorInformationMapper';
 import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
+// import { caseSummaryDetailsMockObject } from '../../test/server/mockObjects/CaseMockObject';
 
 async function getDataFromNode<T>(url: string, notFoundError: string): Promise<T> {
   try {
@@ -30,6 +31,12 @@ export async function getSurveys(userRole: string): Promise<Survey[]> {
 export async function getCaseSummary(questionnaireName: string, caseId: string): Promise<CaseSummaryDetails> {
   return getDataFromNode(`/api/questionnaires/${questionnaireName.toUpperCase()}/cases/${caseId}/summary`, 'The questionnaire is no longer available');
 }
+
+/* export async function getCaseSummary2(questionnaireName: string, caseId: string): Promise<CaseSummaryDetails> {
+  console.log(questionnaireName);
+  caseSummaryDetailsMockObject.CaseId = caseId;
+  return caseSummaryDetailsMockObject;
+} */
 
 async function getCaseEditInformation(questionnaireName: string, userRole: string) {
   // TODO Fix the URL upper
