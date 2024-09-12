@@ -391,6 +391,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <span
                                   class="link"
+                                  id="download-10001011-summary"
                                   role="presentation"
                                 >
                                   Download Summary
@@ -431,6 +432,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <span
                                   class="link"
+                                  id="download-10001012-summary"
                                   role="presentation"
                                 >
                                   Download Summary
@@ -471,6 +473,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <span
                                   class="link"
+                                  id="download-10001013-summary"
                                   role="presentation"
                                 >
                                   Download Summary
@@ -511,6 +514,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <span
                                   class="link"
+                                  id="download-10001014-summary"
                                   role="presentation"
                                 >
                                   Download Summary
@@ -551,6 +555,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <span
                                   class="link"
+                                  id="download-10001015-summary"
                                   role="presentation"
                                 >
                                   Download Summary
@@ -774,6 +779,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <span
                                   class="link"
+                                  id="download-20001011-summary"
                                   role="presentation"
                                 >
                                   Download Summary
@@ -814,6 +820,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <span
                                   class="link"
+                                  id="download-20001012-summary"
                                   role="presentation"
                                 >
                                   Download Summary
@@ -854,6 +861,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <span
                                   class="link"
+                                  id="download-20001013-summary"
                                   role="presentation"
                                 >
                                   Download Summary
@@ -894,6 +902,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                               >
                                 <span
                                   class="link"
+                                  id="download-20001014-summary"
                                   role="presentation"
                                 >
                                   Download Summary
@@ -1207,6 +1216,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <span
                                 class="link"
+                                id="download-10001011-summary"
                                 role="presentation"
                               >
                                 Download Summary
@@ -1247,6 +1257,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <span
                                 class="link"
+                                id="download-10001012-summary"
                                 role="presentation"
                               >
                                 Download Summary
@@ -1287,6 +1298,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <span
                                 class="link"
+                                id="download-10001013-summary"
                                 role="presentation"
                               >
                                 Download Summary
@@ -1327,6 +1339,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <span
                                 class="link"
+                                id="download-10001014-summary"
                                 role="presentation"
                               >
                                 Download Summary
@@ -1367,6 +1380,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <span
                                 class="link"
+                                id="download-10001015-summary"
                                 role="presentation"
                               >
                                 Download Summary
@@ -1590,6 +1604,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <span
                                 class="link"
+                                id="download-20001011-summary"
                                 role="presentation"
                               >
                                 Download Summary
@@ -1630,6 +1645,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <span
                                 class="link"
+                                id="download-20001012-summary"
                                 role="presentation"
                               >
                                 Download Summary
@@ -1670,6 +1686,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <span
                                 class="link"
+                                id="download-20001013-summary"
                                 role="presentation"
                               >
                                 Download Summary
@@ -1710,6 +1727,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             >
                               <span
                                 class="link"
+                                id="download-20001014-summary"
                                 role="presentation"
                               >
                                 Download Summary
