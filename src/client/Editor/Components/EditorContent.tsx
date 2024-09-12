@@ -3,49 +3,11 @@ import { ReactElement, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { EditorInformation } from '../../Interfaces/editorInterface';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
-import { CaseSummaryDetails } from '../../../common/interfaces/caseInterface';
-import mapCaseSummaryText from '../../Mappers/caseSummaryTextMapper';
-//
+import { DownloadCaseSummaryLink } from '../../Common/components/DownloadCaseSummaryink';
 
 interface EditorsContentProps {
   editorInformation: EditorInformation;
   questionnaire: QuestionnaireDetails
-}
-
-async function exportSummary() {
-  const caseSummary: CaseSummaryDetails = {
-    CaseId: '90001',
-    OutcomeCode: 110,
-    InterviewerName: 'Rich',
-    NumberOfRespondents: 2,
-    Address: {
-      AddressLine1: 'Flat 1',
-      AddressLine2: 'Richmond House',
-      AddressLine3: 'Rice Road',
-      AddressLine4: 'Duffrin',
-      County: 'Gwent',
-      Town: 'Newport',
-      Postcode: 'NZ11 4PD',
-    },
-    Respondents: [
-      {
-        RespondentName: 'Richmond Ricecake',
-        DateOfBirth: new Date(1980, 1, 15),
-      },
-      {
-        RespondentName: 'Bartholomew Edgar',
-        DateOfBirth: new Date(1995, 5, 11),
-      },
-    ],
-  };
-
-  let summaryText = mapCaseSummaryText(caseSummary);
-  const link = document.createElement('a');
-
-  link.download = `case-summary-${caseSummary.CaseId}.txt`;
-  summaryText = summaryText.replace(/\n/g, '%0D%0A');
-  link.href = `data:text/plain, ${summaryText}`;
-  link.click();
 }
 
 export default function EditorContent({ editorInformation, questionnaire }: EditorsContentProps): ReactElement {
@@ -118,7 +80,7 @@ export default function EditorContent({ editorInformation, questionnaire }: Edit
                 {caseDetails.EditStatus}
               </td>
               <td className="ons-table__cell links">
-                <span className="link" onClick={() => { exportSummary(); }} onKeyDown={() => { exportSummary(); }} role="presentation">Download Summary</span>
+                <DownloadCaseSummaryLink caseId={caseDetails.CaseId} />
                 {' | '}
                 <Link to={`/questionnaires/${questionnaire.questionnaireName}/cases/${caseDetails.CaseId}/summary`}>View Summary</Link>
                 {' | '}
@@ -128,7 +90,6 @@ export default function EditorContent({ editorInformation, questionnaire }: Edit
           ))}
         </>
       </ONSTable>
-
     </div>
   );
 }
