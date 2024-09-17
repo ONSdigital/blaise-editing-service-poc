@@ -1,13 +1,20 @@
 import { ONSButton, ONSPanel, ONSSelect } from 'blaise-design-system-react-components';
 import { ReactElement } from 'react';
+import { useParams } from 'react-router-dom';
+
+export type AllocateParams = {
+  questionnaireName: string
+};
 
 export default function AllocateCases(): ReactElement {
+  const { questionnaireName } = useParams<keyof AllocateParams>() as AllocateParams;
   return (
     <>
       <ONSPanel status="info">
         Allocate cases from an interviewer to an editor. All cases conducted by that interviewer will be allocated to the editor
       </ONSPanel>
       <br />
+      <h3>{questionnaireName}</h3>
       <ONSSelect
         defaultValue="Doctor Doom"
         id="select-editor"
@@ -28,7 +35,6 @@ export default function AllocateCases(): ReactElement {
         ]}
         value=""
       />
-
       <ONSSelect
         defaultValue="Interviewer1"
         id="select-interviewer"

@@ -20,17 +20,11 @@ function MapEditors(caseEditInformationList: CaseEditInformation[], editors: Use
 }
 
 export default function mapSupervisorInformation(caseEditInformationList: CaseEditInformation[], editors: User[]): SupervisorInformation {
-  const totalNumberOfCases = caseEditInformationList.length;
-  const numberOfCasesNotAllocated = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo === '').length;
-  const numberOfCasesAllocated = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo !== '').length;
-  const numberOfCasesCompleted = caseEditInformationList.filter((caseEditInformation) => caseEditInformation.editedStatus === EditedStatus.Finished).length;
-  const editorInformation : SupervisorEditorInformation[] = MapEditors(caseEditInformationList, editors);
-
   return {
-    TotalNumberOfCases: totalNumberOfCases,
-    NumberOfCasesNotAllocated: numberOfCasesNotAllocated,
-    NumberOfCasesAllocated: numberOfCasesAllocated,
-    NumberOfCasesCompleted: numberOfCasesCompleted,
-    EditorInformation: editorInformation,
+    TotalNumberOfCases: caseEditInformationList.length,
+    NumberOfCasesNotAllocated: caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo === '').length,
+    NumberOfCasesAllocated: caseEditInformationList.filter((caseEditInformation) => caseEditInformation.assignedTo !== '').length,
+    NumberOfCasesCompleted: caseEditInformationList.filter((caseEditInformation) => caseEditInformation.editedStatus === EditedStatus.Finished).length,
+    EditorInformation: MapEditors(caseEditInformationList, editors),
   };
 }

@@ -6,7 +6,7 @@ import mapEditorInformation from '../../../client/Mappers/editorInformaitionMapp
 import { EditorInformation } from '../../../client/Interfaces/editorInterface';
 
 describe('Map editor informaiton', () => {
-  it('It should return a correctly mapped editor informaito given all details are present', () => {
+  it('It should return a correctly mapped editor information model given all details are present', () => {
     // arrange
 
     const caseEditInformationList: CaseEditInformation[] = [{
@@ -47,7 +47,7 @@ describe('Map editor informaiton', () => {
     },
     ];
 
-    const expectedEditorInformaiton: EditorInformation = {
+    const expectedEditorInformation: EditorInformation = {
       numberOfCasesAllocated: 4,
       Cases: [{
         CaseId: '10001011',
@@ -75,6 +75,6 @@ describe('Map editor informaiton', () => {
     const result = mapEditorInformation(caseEditInformationList);
 
     // assert
-    expect(result).toEqual(expectedEditorInformaiton);
+    expect(result).toEqual(expectedEditorInformation);
   });
 });

@@ -1,13 +1,20 @@
 import { ONSButton, ONSPanel, ONSSelect } from 'blaise-design-system-react-components';
 import { ReactElement } from 'react';
+import { useParams } from 'react-router-dom';
+
+export type AllocateParams = {
+  questionnaireName: string
+};
 
 export default function ReallocateCases(): ReactElement {
+  const { questionnaireName } = useParams<keyof AllocateParams>() as AllocateParams;
   return (
     <>
       <ONSPanel status="info">
         Re-allocate cases from one editor to another editor. All non-completed cases will be transfered
       </ONSPanel>
       <br />
+      <h3>{questionnaireName}</h3>
       <ONSSelect
         defaultValue="Doctor Doom"
         id="select-editor"
@@ -28,7 +35,6 @@ export default function ReallocateCases(): ReactElement {
         ]}
         value=""
       />
-
       <ONSSelect
         defaultValue="cfantastic"
         id="select-editor"

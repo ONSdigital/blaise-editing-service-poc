@@ -38,7 +38,6 @@ export default function SupervisorsContent({ questionnaire, supervisorInformatio
           'Allocated',
           'Completed',
           'Queried',
-          '',
         ]}
         tableID={`${questionnaire.questionnaireName}-editor-table`}
       >
@@ -49,10 +48,7 @@ export default function SupervisorsContent({ questionnaire, supervisorInformatio
               key={editor.EditorName}
             >
               <td className="ons-table__cell" aria-label={`${questionnaire.questionnaireName}-Editor`}>
-                <Link to="/">
-                  {editor.EditorName}
-                  :
-                </Link>
+                {editor.EditorName}
               </td>
               <td className="ons-table__cell status" aria-label={`${questionnaire.questionnaireName}-NumberOfCasesAllocated`}>
                 {editor.NumberOfCasesAllocated}
@@ -63,13 +59,21 @@ export default function SupervisorsContent({ questionnaire, supervisorInformatio
               <td className="ons-table__cell " aria-label={`${questionnaire.questionnaireName}-NumberOfCasesQueried`}>
                 {editor.NumberOfCasesQueried}
               </td>
-              <td className="ons-table__cell links">
-                <Link to="/allocate">Allocate</Link>
-                {' | '}
-                <Link to="/reallocate">Reallocate</Link>
-              </td>
             </tr>
           ))}
+          <tr
+            className="ons-table__row"
+            key="allocate-editor"
+          >
+            <td className="ons-table__cell">
+              <Link to={`/questionnaires/${questionnaire.questionnaireName}/allocate`}>Allocate</Link>
+              {' | '}
+              <Link to={`/questionnaires/${questionnaire.questionnaireName}/reallocate`}>Reallocate</Link>
+            </td>
+            <td className="ons-table__cell" />
+            <td className="ons-table__cell" />
+            <td className="ons-table__cell" />
+          </tr>
         </>
       </ONSTable>
     </div>

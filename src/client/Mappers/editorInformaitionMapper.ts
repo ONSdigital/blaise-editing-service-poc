@@ -10,23 +10,17 @@ const EditedStatusDescription = new Map<EditedStatus, string>([
 ]);
 
 export default function mapEditorInformation(caseEditInformationList: CaseEditInformation[]): EditorInformation {
-  const cases:{
-    CaseId: string,
-    EditStatus: string
-    EditUrl: string
-  }[] = [];
+  const editorInformation = <EditorInformation>{ numberOfCasesAllocated: 0, Cases: [] };
 
   caseEditInformationList.forEach((caseEditInformation) => {
-    cases.push({
+    editorInformation.Cases.push({
       CaseId: caseEditInformation.primaryKey,
       EditStatus: EditedStatusDescription.get(caseEditInformation.editedStatus) ?? 'N/A',
       EditUrl: caseEditInformation.editUrl,
     });
   });
 
-  const numberOfCasesAllocated = cases.length;
-  return {
-    numberOfCasesAllocated,
-    Cases: cases,
-  };
+  editorInformation.numberOfCasesAllocated = editorInformation.Cases.length;
+
+  return editorInformation;
 }

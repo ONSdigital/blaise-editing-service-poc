@@ -20,8 +20,8 @@ export default function AppContent({ user }: AppContentProps): ReactElement {
     <>
       <CreateRoutes onConditionThat={userRole === UserRole.SVT_Supervisor}>
         <Route path="/" element={<SupervisorsHome user={user} />} />
-        <Route path="/allocate" element={<AllocateCases />} />
-        <Route path="/reallocate" element={<ReallocateCases />} />
+        <Route path="/questionnaires/:questionnaireName/allocate" element={<AllocateCases />} />
+        <Route path="/questionnaires/:questionnaireName/reallocate" element={<ReallocateCases />} />
       </CreateRoutes>
 
       <CreateRoutes onConditionThat={userRole === UserRole.SVT_Editor}>
