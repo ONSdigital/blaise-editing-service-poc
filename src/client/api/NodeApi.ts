@@ -9,6 +9,8 @@ import { EditorInformation } from '../Interfaces/editorInterface';
 import mapEditorInformation from '../Mappers/editorInformaitionMapper';
 import mapSupervisorInformation from '../Mappers/supervisorInformationMapper';
 import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
+import { CasesNotAllocatedInformation } from '../Interfaces/caseAllocationInterface';
+import mapCasesNotAllocated from '../Mappers/caseAllocationMapper';
 // import { caseSummaryDetailsMockObject } from '../../test/server/mockObjects/CaseMockObject';
 
 async function getDataFromNode<T>(url: string, notFoundError: string): Promise<T> {
@@ -32,12 +34,6 @@ export async function getCaseSummary(questionnaireName: string, caseId: string):
   return getDataFromNode(`/api/questionnaires/${questionnaireName.toUpperCase()}/cases/${caseId}/summary`, 'The questionnaire is no longer available');
 }
 
-/* export async function getCaseSummary2(questionnaireName: string, caseId: string): Promise<CaseSummaryDetails> {
-  console.log(questionnaireName);
-  caseSummaryDetailsMockObject.CaseId = caseId;
-  return caseSummaryDetailsMockObject;
-} */
-
 async function getCaseEditInformation(questionnaireName: string, userRole: string) {
   // TODO Fix the URL upper
   return getDataFromNode<CaseEditInformation[]>(`/api/questionnaires/${questionnaireName.toUpperCase()}/cases/edit?userRole=${userRole}`, 'Unable to find case edit information, please contact Richmond Rice');
@@ -52,7 +48,14 @@ export async function getEditorInformation(questionnaireName: string, editorUser
 
 export async function getSupervisorEditorInformation(questionnaireName: string, supervisorRole: string, editorRole: string): Promise<SupervisorInformation> {
   const caseEditInformationList = await getCaseEditInformation(questionnaireName, supervisorRole);
-  const editorInformation = await getDataFromNode<User[]>(`/api/users?userRole=${editorRole}`, 'Unable to find user information, please contact Richmond Rice');
+  const editors = await getDataFromNode<User[]>(`/api/users?userRole=${editorRole}`, 'Unable to find user information, please contact Richmond Rice');
 
-  return mapSupervisorInformation(caseEditInformationList, editorInformation);
+  return mapSupervisorInformation(caseEditInformationList, editors);
+}
+
+export async function getCasesNotAllocatedInformation(questionnaireName: string, supervisorRole: string, editorRole: string): Promise<CasesNotAllocatedInformation> {
+  const caseEditInformationList = await getCaseEditInformation(questionnaireName, supervisorRole);
+  const editors = await getDataFromNode<User[]>(`/api/users?userRole=${editorRole}`, 'Unable to find user information, please contact Richmond Rice');
+
+  return mapCasesNotAllocated(caseEditInformationList, editors);
 }

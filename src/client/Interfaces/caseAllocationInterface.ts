@@ -1,8 +1,9 @@
 export interface CasesNotAllocatedInformation {
-  interviewerCases: InterviewerCases[]
+  editors: string[]
+  interviewers: Interviewers[]
 }
 
-interface InterviewerCases {
+interface Interviewers {
   Interviewer: string;
   Cases: string[]
 }

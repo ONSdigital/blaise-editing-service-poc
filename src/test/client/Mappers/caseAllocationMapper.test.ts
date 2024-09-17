@@ -47,8 +47,28 @@ describe('Map cases not allocated informaiton', () => {
     },
     ];
 
-    const expectedCasesNotAllocatedInformation: CasesNotAllocatedInformation = {
-      interviewerCases: [{
+    const editors = [{
+      name: 'Dave',
+      role: 'SVT_Editor',
+      serverParks: ['gusty'],
+      defaultServerPark: 'gusty',
+    },
+    {
+      name: 'Malcom',
+      role: 'SVT_Editor',
+      serverParks: ['gusty'],
+      defaultServerPark: 'gusty',
+    },
+    {
+      name: 'Rich',
+      role: 'SVT_Editor',
+      serverParks: ['gusty'],
+      defaultServerPark: 'gusty',
+    }];
+
+    const expectedResult: CasesNotAllocatedInformation = {
+      editors: ['Dave', 'Malcom', 'Rich'],
+      interviewers: [{
         Interviewer: 'bobw',
         Cases: ['10001011', '10001014'],
       },
@@ -60,9 +80,9 @@ describe('Map cases not allocated informaiton', () => {
     };
 
     // act
-    const result = mapCasesNotAllocated(caseEditInformationList);
+    const result = mapCasesNotAllocated(caseEditInformationList, editors);
 
     // assert
-    expect(result).toEqual(expectedCasesNotAllocatedInformation);
+    expect(result).toEqual(expectedResult);
   });
 });
