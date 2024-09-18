@@ -7,19 +7,6 @@ interface AllocateProps {
   allocation: AllocationDetails;
 }
 
-function getEditorOptions(allocation: AllocationDetails) {
-  const options: Option[] = [];
-
-  allocation.editors.forEach((editor) => {
-    options.push({
-      label: `${editor.name} (${editor.Cases.length} case(s))`,
-      value: editor.name,
-    });
-  });
-
-  return options;
-}
-
 function getInterviewerOptions(allocation: AllocationDetails) {
   const options: Option[] = [];
 
@@ -33,21 +20,34 @@ function getInterviewerOptions(allocation: AllocationDetails) {
   return options;
 }
 
+function getEditorOptions(allocation: AllocationDetails) {
+  const options: Option[] = [];
+
+  allocation.editors.forEach((editor) => {
+    options.push({
+      label: `${editor.name} (${editor.Cases.length} case(s))`,
+      value: editor.name,
+    });
+  });
+
+  return options;
+}
+
 export default function AllocateCases({ allocation } : AllocateProps): ReactElement {
   return (
     <>
       <ONSSelect
         defaultValue=""
-        id="select-editor"
-        label="Select editor"
-        options={getEditorOptions(allocation)}
+        id="select-interviewer"
+        label="Allocate cases from interviewer"
+        options={getInterviewerOptions(allocation)}
         value=""
       />
       <ONSSelect
         defaultValue=""
-        id="select-interviewer"
-        label="Select interviewer"
-        options={getInterviewerOptions(allocation)}
+        id="select-editor"
+        label="To editor"
+        options={getEditorOptions(allocation)}
         value=""
       />
       <br />
