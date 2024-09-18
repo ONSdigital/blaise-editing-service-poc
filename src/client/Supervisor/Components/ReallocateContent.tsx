@@ -7,7 +7,20 @@ interface ReallocateProps {
   allocation: AllocationDetails;
 }
 
-function getEditorOptions(allocation: AllocationDetails) {
+function getEditorToOptions(allocation: AllocationDetails) {
+  const options: Option[] = [];
+
+  allocation.editors.forEach((editor) => {
+    options.push({
+      label: `${editor.name} (${editor.Cases.length} case(s))`,
+      value: editor.name,
+    });
+  });
+
+  return options;
+}
+
+function getEditorFromOptions(allocation: AllocationDetails) {
   const options: Option[] = [];
 
   allocation.editors.forEach((editor) => {
@@ -25,22 +38,20 @@ function getEditorOptions(allocation: AllocationDetails) {
 }
 
 export default function RellocateCases({ allocation } : ReallocateProps): ReactElement {
-  const options = getEditorOptions(allocation);
-
   return (
     <>
       <ONSSelect
         defaultValue=""
         id="select-editor-to"
         label="Select editor (to)"
-        options={options}
+        options={getEditorToOptions(allocation)}
         value=""
       />
       <ONSSelect
         defaultValue=""
         id="select-editor-from"
         label="Select editor (from)"
-        options={options}
+        options={getEditorFromOptions(allocation)}
         value=""
       />
       <br />
