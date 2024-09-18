@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 import { AllocationDetails } from '../../Interfaces/allocationInterface';
 import Option from '../../Interfaces/controlsInterface';
 
-interface AllocateProps {
+interface ReallocateProps {
   allocation: AllocationDetails;
 }
 
@@ -20,39 +20,28 @@ function getEditorOptions(allocation: AllocationDetails) {
   return options;
 }
 
-function getInterviewerOptions(allocation: AllocationDetails) {
-  const options: Option[] = [];
+export default function RellocateCases({ allocation } : ReallocateProps): ReactElement {
+  const options = getEditorOptions(allocation);
 
-  allocation.interviewers.forEach((interviewer) => {
-    options.push({
-      label: `${interviewer.name} (${interviewer.Cases.length} cases)`,
-      value: interviewer.name,
-    });
-  });
-
-  return options;
-}
-
-export default function AllocateCases({ allocation } : AllocateProps): ReactElement {
   return (
     <>
       <ONSSelect
         defaultValue=""
-        id="select-editor"
-        label="Select editor"
-        options={getEditorOptions(allocation)}
+        id="select-editor-to"
+        label="Select editor (to)"
+        options={options}
         value=""
       />
       <ONSSelect
         defaultValue=""
-        id="select-interviewer"
-        label="Select interviewer"
-        options={getInterviewerOptions(allocation)}
+        id="select-editor-from"
+        label="Select editor (from)"
+        options={options}
         value=""
       />
       <br />
       <ONSButton
-        label="Allocate"
+        label="Reallocate"
         primary
       />
     </>

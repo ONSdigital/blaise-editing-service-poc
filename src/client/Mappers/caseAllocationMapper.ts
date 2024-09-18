@@ -1,25 +1,52 @@
 import { CaseEditInformation } from 'blaise-api-node-client/lib/cjs/interfaces/case';
 import { User } from 'blaise-api-node-client/lib/cjs/blaiseApiClient';
-import { CasesNotAllocatedInformation } from '../Interfaces/caseAllocationInterface';
+import { AllocationDetails } from '../Interfaces/allocationInterface';
 
-export default function mapCasesNotAllocated(caseEditInformationList: CaseEditInformation[], editors: User[]): CasesNotAllocatedInformation {
-  const caseNotAllocated = <CasesNotAllocatedInformation>{ editors: [], interviewers: [] };
-  caseNotAllocated.editors = editors.map((editor) => editor.name);
+function mapEditorDetails(caseEditInformationList: CaseEditInformation[], editors: User[], allocationDetails: AllocationDetails) {
+  editors.forEach((editor) => {
+    allocationDetails.editors.push({
+      name: editor.name,
+      Cases: [],
+    });
+  });
 
   caseEditInformationList.forEach((caseEditInformation) => {
-    if (caseEditInformation.assignedTo !== '') return;
+    if (caseEditInformation.assignedTo === '') {
+      return;
+    }
 
-    const interviewer = caseNotAllocated.interviewers?.find((c) => c.Interviewer === caseEditInformation.interviewer);
+    const editorItem = allocationDetails.editors?.find((e) => e.name === caseEditInformation.assignedTo);
 
-    if (interviewer !== undefined) {
-      interviewer.Cases.push(caseEditInformation.primaryKey);
+    if (editorItem !== undefined) {
+      editorItem.Cases.push(caseEditInformation.primaryKey);
+    }
+  });
+}
+
+function mapInterviewerDetails(caseEditInformationList: CaseEditInformation[], allocationDetails: AllocationDetails) {
+  caseEditInformationList.forEach((caseEditInformation) => {
+    if (caseEditInformation.assignedTo !== '') {
+      return;
+    }
+
+    const interviewerItem = allocationDetails.interviewers?.find((i) => i.name === caseEditInformation.interviewer);
+
+    if (interviewerItem !== undefined) {
+      interviewerItem.Cases.push(caseEditInformation.primaryKey);
     } else {
-      caseNotAllocated.interviewers.push({
-        Interviewer: caseEditInformation.interviewer,
+      allocationDetails.interviewers.push({
+        name: caseEditInformation.interviewer,
         Cases: [caseEditInformation.primaryKey],
       });
     }
   });
+}
 
-  return caseNotAllocated;
+export default function mapAllocationDetails(caseEditInformationList: CaseEditInformation[], editors: User[]): AllocationDetails {
+  const allocationDetails = <AllocationDetails>{ editors: [], interviewers: [] };
+
+  mapEditorDetails(caseEditInformationList, editors, allocationDetails);
+  mapInterviewerDetails(caseEditInformationList, allocationDetails);
+
+  return allocationDetails;
 }

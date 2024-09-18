@@ -7,13 +7,13 @@ import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
 import surveyListMockObject from '../../server/mockObjects/surveyListMockObject';
 import {
   getSurveys, getEditorInformation, getSupervisorEditorInformation, getCaseSummary,
-  getCasesNotAllocatedInformation,
+  getAllocationDetails,
 } from '../../../client/api/NodeApi';
 import { EditorInformation } from '../../../client/Interfaces/editorInterface';
 import { SupervisorInformation } from '../../../client/Interfaces/supervisorInterface';
 import UserRole from '../../../client/Common/enums/UserRole';
 import { caseSummaryDetailsMockObject } from '../../server/mockObjects/CaseMockObject';
-import { CasesNotAllocatedInformation } from '../../../client/Interfaces/caseAllocationInterface';
+import { AllocationDetails } from '../../../client/Interfaces/allocationInterface';
 
 // use axios mock adapter
 const axiosMock = new MockAdapter(axios, { onNoMatch: 'throwException' });
@@ -303,7 +303,7 @@ describe('getSupervisorEditorInformation from Blaise', () => {
   });
 });
 
-describe('getCasesNotAllocatedInformation from Blaise', () => {
+describe('getAllocationDetails from Blaise', () => {
   const questionnaireName = 'FRS2201';
   const supervisorRole = UserRole.SVT_Supervisor;
   const editorRole = UserRole.SVT_Editor;
@@ -338,21 +338,24 @@ describe('getCasesNotAllocatedInformation from Blaise', () => {
     {
       primaryKey: '10001015',
       outcome: CaseOutcome.Completed,
-      assignedTo: '',
+      assignedTo: 'Rich',
       interviewer: 'bobw',
       editedStatus: EditedStatus.Query,
       organisation: Organisation.ONS,
       editUrl: '',
     }];
 
-    const expectedResult: CasesNotAllocatedInformation = {
-      editors: ['Rich'],
+    const expectedResult: AllocationDetails = {
+      editors: [{
+        name: 'Rich',
+        Cases: ['10001015'],
+      }],
       interviewers: [{
-        Interviewer: 'bobw',
-        Cases: ['10001011', '10001015'],
+        name: 'bobw',
+        Cases: ['10001011'],
       },
       {
-        Interviewer: 'jamester',
+        name: 'jamester',
         Cases: ['10001012'],
       },
       ],
@@ -362,7 +365,8 @@ describe('getCasesNotAllocatedInformation from Blaise', () => {
     axiosMock.onGet(`/api/users?userRole=${editorRole}`).reply(200, editorsListMock);
 
     // act
-    const result = await getCasesNotAllocatedInformation(questionnaireName, supervisorRole, editorRole);
+    const result = await getAllocationDetails(questionnaireName, supervisorRole, editorRole);
+    console.log(result);
 
     // assert
     expect(result).toEqual(expectedResult);
@@ -373,7 +377,7 @@ describe('getCasesNotAllocatedInformation from Blaise', () => {
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${supervisorRole}`).reply(404, null);
 
     // act && assert
-    expect(getCasesNotAllocatedInformation(questionnaireName, supervisorRole, editorRole)).rejects.toThrow('Unable to find case edit information, please contact Richmond Rice');
+    expect(getAllocationDetails(questionnaireName, supervisorRole, editorRole)).rejects.toThrow('Unable to find case edit information, please contact Richmond Rice');
   });
 
   it('Should throw the error "Unable to complete request, please try again in a few minutes" when a 500 response is recieved', async () => {
@@ -381,7 +385,7 @@ describe('getCasesNotAllocatedInformation from Blaise', () => {
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${supervisorRole}`).reply(500, null);
 
     // act && assert
-    expect(getCasesNotAllocatedInformation(questionnaireName, supervisorRole, editorRole)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getAllocationDetails(questionnaireName, supervisorRole, editorRole)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 
   it('Should throw the error "Unable to complete request, please try again in a few minutes" when there is a network error', async () => {
@@ -389,6 +393,6 @@ describe('getCasesNotAllocatedInformation from Blaise', () => {
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${supervisorRole}`).networkError();
 
     // act && assert
-    expect(getCasesNotAllocatedInformation(questionnaireName, supervisorRole, editorRole)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(getAllocationDetails(questionnaireName, supervisorRole, editorRole)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 });

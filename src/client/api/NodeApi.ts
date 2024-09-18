@@ -9,8 +9,8 @@ import { EditorInformation } from '../Interfaces/editorInterface';
 import mapEditorInformation from '../Mappers/editorInformaitionMapper';
 import mapSupervisorInformation from '../Mappers/supervisorInformationMapper';
 import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
-import { CasesNotAllocatedInformation } from '../Interfaces/caseAllocationInterface';
 import mapCasesNotAllocated from '../Mappers/caseAllocationMapper';
+import { AllocationDetails } from '../Interfaces/allocationInterface';
 // import { caseSummaryDetailsMockObject } from '../../test/server/mockObjects/CaseMockObject';
 
 async function getDataFromNode<T>(url: string, notFoundError: string): Promise<T> {
@@ -53,7 +53,7 @@ export async function getSupervisorEditorInformation(questionnaireName: string, 
   return mapSupervisorInformation(caseEditInformationList, editors);
 }
 
-export async function getCasesNotAllocatedInformation(questionnaireName: string, supervisorRole: string, editorRole: string): Promise<CasesNotAllocatedInformation> {
+export async function getAllocationDetails(questionnaireName: string, supervisorRole: string, editorRole: string): Promise<AllocationDetails> {
   const caseEditInformationList = await getCaseEditInformation(questionnaireName, supervisorRole);
   const editors = await getDataFromNode<User[]>(`/api/users?userRole=${editorRole}`, 'Unable to find user information, please contact Richmond Rice');
 

@@ -2,8 +2,8 @@ import { CaseEditInformation } from 'blaise-api-node-client/lib/cjs/interfaces/c
 import CaseOutcome from 'blaise-api-node-client/lib/cjs/enums/caseOutcome';
 import EditedStatus from 'blaise-api-node-client/lib/cjs/enums/editedStatus';
 import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
-import { CasesNotAllocatedInformation } from '../../../client/Interfaces/caseAllocationInterface';
-import mapCasesNotAllocated from '../../../client/Mappers/caseAllocationMapper';
+import { AllocationDetails } from '../../../client/Interfaces/allocationInterface';
+import mapAllocationDetails from '../../../client/Mappers/caseAllocationMapper';
 
 describe('Map cases not allocated informaiton', () => {
   it('It should return a correctly mapped cases not allocated model given all details are present', () => {
@@ -14,6 +14,15 @@ describe('Map cases not allocated informaiton', () => {
       outcome: CaseOutcome.Completed,
       assignedTo: '',
       interviewer: 'bobw',
+      editedStatus: EditedStatus.NotStarted,
+      organisation: Organisation.ONS,
+      editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011',
+    },
+    {
+      primaryKey: '10001012',
+      outcome: CaseOutcome.Completed,
+      assignedTo: 'Jake',
+      interviewer: 'jamester',
       editedStatus: EditedStatus.NotStarted,
       organisation: Organisation.ONS,
       editUrl: 'https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011',
@@ -54,7 +63,7 @@ describe('Map cases not allocated informaiton', () => {
       defaultServerPark: 'gusty',
     },
     {
-      name: 'Malcom',
+      name: 'Jake',
       role: 'SVT_Editor',
       serverParks: ['gusty'],
       defaultServerPark: 'gusty',
@@ -66,21 +75,33 @@ describe('Map cases not allocated informaiton', () => {
       defaultServerPark: 'gusty',
     }];
 
-    const expectedResult: CasesNotAllocatedInformation = {
-      editors: ['Dave', 'Malcom', 'Rich'],
+    const expectedResult: AllocationDetails = {
+      editors: [{
+        name: 'Dave',
+        Cases: [],
+      },
+      {
+        name: 'Jake',
+        Cases: ['10001012', '10001015'],
+      },
+      {
+        name: 'Rich',
+        Cases: [],
+      },
+      ],
       interviewers: [{
-        Interviewer: 'bobw',
+        name: 'bobw',
         Cases: ['10001011', '10001014'],
       },
       {
-        Interviewer: 'jamester',
+        name: 'jamester',
         Cases: ['10001013'],
       },
       ],
     };
 
     // act
-    const result = mapCasesNotAllocated(caseEditInformationList, editors);
+    const result = mapAllocationDetails(caseEditInformationList, editors);
 
     // assert
     expect(result).toEqual(expectedResult);
