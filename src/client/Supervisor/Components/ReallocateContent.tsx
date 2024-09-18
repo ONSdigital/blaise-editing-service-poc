@@ -11,8 +11,12 @@ function getEditorOptions(allocation: AllocationDetails) {
   const options: Option[] = [];
 
   allocation.editors.forEach((editor) => {
+    if (editor.Cases.length === 0) {
+      return;
+    }
+
     options.push({
-      label: `${editor.name} (${editor.Cases.length} cases)`,
+      label: `${editor.name} (${editor.Cases.length} case(s))`,
       value: editor.name,
     });
   });

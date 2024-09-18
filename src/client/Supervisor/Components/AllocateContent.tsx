@@ -12,7 +12,7 @@ function getEditorOptions(allocation: AllocationDetails) {
 
   allocation.editors.forEach((editor) => {
     options.push({
-      label: `${editor.name} (${editor.Cases.length} cases)`,
+      label: `${editor.name} (${editor.Cases.length} case(s))`,
       value: editor.name,
     });
   });
@@ -25,7 +25,7 @@ function getInterviewerOptions(allocation: AllocationDetails) {
 
   allocation.interviewers.forEach((interviewer) => {
     options.push({
-      label: `${interviewer.name} (${interviewer.Cases.length} cases)`,
+      label: `${interviewer.name} (${interviewer.Cases.length} case(s))`,
       value: interviewer.name,
     });
   });
