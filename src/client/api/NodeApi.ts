@@ -10,14 +10,24 @@ import mapEditorInformation from '../Mappers/editorInformaitionMapper';
 import mapSupervisorInformation from '../Mappers/supervisorInformationMapper';
 import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
 import mapCasesNotAllocated from '../Mappers/caseAllocationMapper';
-import { AllocationDetails } from '../Interfaces/allocationInterface';
-// import { caseSummaryDetailsMockObject } from '../../test/server/mockObjects/CaseMockObject';
+import { AllocationDetails, UserAllocationDetails } from '../../common/interfaces/allocationInterface';
 
 async function getDataFromNode<T>(url: string, notFoundError: string): Promise<T> {
   try {
     const response = await axios.get(url);
 
     return response.data;
+  } catch (error) {
+    if (notFound(error)) {
+      throw new Error(notFoundError);
+    }
+    throw new Error('Unable to complete request, please try again in a few minutes');
+  }
+}
+
+async function patchDataToNode<T>(url: string, data: T, notFoundError: string): Promise<void> {
+  try {
+    await axios.patch(url, data);
   } catch (error) {
     if (notFound(error)) {
       throw new Error(notFoundError);
@@ -58,4 +68,8 @@ export async function getAllocationDetails(questionnaireName: string, supervisor
   const editors = await getDataFromNode<User[]>(`/api/users?userRole=${editorRole}`, 'Unable to find user information, please contact Richmond Rice');
 
   return mapCasesNotAllocated(caseEditInformationList, editors);
+}
+
+export async function updateAllocationDetails(questionnaireName: string, allocationDetails: UserAllocationDetails): Promise<void> {
+  await patchDataToNode<UserAllocationDetails>(`/api/questionnaires/${questionnaireName.toUpperCase()}/cases/`, allocationDetails, 'Unable to allocate, please contact Richmond Rice');
 }

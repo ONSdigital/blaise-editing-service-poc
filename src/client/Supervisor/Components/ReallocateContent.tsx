@@ -1,7 +1,7 @@
 import { ONSButton, ONSSelect } from 'blaise-design-system-react-components';
 import { ReactElement } from 'react';
-import { AllocationDetails } from '../../Interfaces/allocationInterface';
 import Option from '../../Interfaces/controlsInterface';
+import { AllocationDetails } from '../../../common/interfaces/allocationInterface';
 
 interface ReallocateProps {
   allocation: AllocationDetails;
@@ -10,14 +10,14 @@ interface ReallocateProps {
 function getEditorFromOptions(allocation: AllocationDetails) {
   const options: Option[] = [];
 
-  allocation.editors.forEach((editor) => {
+  allocation.Editors.forEach((editor) => {
     if (editor.Cases.length === 0) {
       return;
     }
 
     options.push({
-      label: `${editor.name} (${editor.Cases.length} case(s))`,
-      value: editor.name,
+      label: `${editor.Name} (${editor.Cases.length} case(s))`,
+      value: editor.Name,
     });
   });
 
@@ -27,10 +27,10 @@ function getEditorFromOptions(allocation: AllocationDetails) {
 function getEditorToOptions(allocation: AllocationDetails) {
   const options: Option[] = [];
 
-  allocation.editors.forEach((editor) => {
+  allocation.Editors.forEach((editor) => {
     options.push({
-      label: `${editor.name} (${editor.Cases.length} case(s))`,
-      value: editor.name,
+      label: `${editor.Name} (${editor.Cases.length} case(s))`,
+      value: editor.Name,
     });
   });
 

@@ -5,8 +5,8 @@ import UserRole from '../../Common/enums/UserRole';
 import { useAsyncRequestWithThreeParams } from '../../Common/hooks/useAsyncRequest';
 import AsyncContent from '../../Common/components/AsyncContent';
 import AllocateContent from '../Components/AllocateContent';
-import { AllocationDetails } from '../../Interfaces/allocationInterface';
 import { getAllocationDetails } from '../../api/NodeApi';
+import { AllocationDetails } from '../../../common/interfaces/allocationInterface';
 
 interface AllocateProps {
   supervisorRole: UserRole;

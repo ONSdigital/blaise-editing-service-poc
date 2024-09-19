@@ -1,7 +1,7 @@
 import { ONSButton, ONSSelect } from 'blaise-design-system-react-components';
 import { ReactElement } from 'react';
-import { AllocationDetails } from '../../Interfaces/allocationInterface';
 import Option from '../../Interfaces/controlsInterface';
+import { AllocationDetails } from '../../../common/interfaces/allocationInterface';
 
 interface AllocateProps {
   allocation: AllocationDetails;
@@ -10,10 +10,10 @@ interface AllocateProps {
 function getInterviewerOptions(allocation: AllocationDetails) {
   const options: Option[] = [];
 
-  allocation.interviewers.forEach((interviewer) => {
+  allocation.Interviewers.forEach((interviewer) => {
     options.push({
-      label: `${interviewer.name} (${interviewer.Cases.length} case(s))`,
-      value: interviewer.name,
+      label: `${interviewer.Name} (${interviewer.Cases.length} case(s))`,
+      value: interviewer.Name,
     });
   });
 
@@ -23,10 +23,10 @@ function getInterviewerOptions(allocation: AllocationDetails) {
 function getEditorOptions(allocation: AllocationDetails) {
   const options: Option[] = [];
 
-  allocation.editors.forEach((editor) => {
+  allocation.Editors.forEach((editor) => {
     options.push({
-      label: `${editor.name} (${editor.Cases.length} case(s))`,
-      value: editor.name,
+      label: `${editor.Name} (${editor.Cases.length} case(s))`,
+      value: editor.Name,
     });
   });
 

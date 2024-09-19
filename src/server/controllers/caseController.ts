@@ -6,6 +6,8 @@ import BlaiseApi from '../api/BlaiseApi';
 import ServerConfigurationProvider from '../configuration/ServerConfigurationProvider';
 import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
 import mapCaseSummary from '../mappers/caseMapper';
+import { UserAllocationDetails } from '../../common/interfaces/allocationInterface';
+//import { Auth } from 'blaise-login-react-server';
 
 export default class CaseController implements Controller {
   blaiseApi: BlaiseApi;
@@ -17,12 +19,15 @@ export default class CaseController implements Controller {
     this.configuration = configuration;
     this.getCaseEditInformation = this.getCaseEditInformation.bind(this);
     this.getCaseSummary = this.getCaseSummary.bind(this);
+    this.allocateCases = this.allocateCases.bind(this);
   }
 
   getRoutes() {
+    //const auth = new Auth(this.configuration);
     const router = express.Router();
     router.get('/api/questionnaires/:questionnaireName/cases/:caseId/summary', this.getCaseSummary);
     router.get('/api/questionnaires/:questionnaireName/cases/edit', this.getCaseEditInformation);
+    router.patch('/api/questionnaires/:questionnaireName/cases', this.allocateCases);
 
     return router;
   }
@@ -72,5 +77,27 @@ export default class CaseController implements Controller {
       .filter((caseEditInformation) => (roleConfig.Outcomes.length > 0 ? roleConfig.Outcomes.includes(caseEditInformation.outcome) : caseEditInformation));
 
     return filteredcases;
+  }
+
+  async allocateCases(request: Request<{ questionnaireName:string }, {}, { allocationDetails: UserAllocationDetails }, { }>, response: Response) {
+    const { questionnaireName } = request.params;
+    const { allocationDetails } = request.body;
+
+    console.log("request headers ", request.headers)
+    console.log("allocationDetails ", allocationDetails);
+
+    try {
+      await Promise.all(
+        allocationDetails.Cases.map(async (caseId) => {
+          await this.blaiseApi.updateCase(questionnaireName, caseId, { 'QEdit.AssignedTo': allocationDetails.Name });
+        }));
+
+      return response.status(204).json();
+    } catch (error: unknown) {
+      if (notFound(error)) {
+        return response.status(404).json();
+      }
+      return response.status(500).json();
+    }
   }
 }

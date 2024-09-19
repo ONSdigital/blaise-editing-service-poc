@@ -1,5 +1,5 @@
 import supertest, { Response } from 'supertest';
-import { IMock, Mock, Times } from 'typemoq';
+import { IMock, It, Mock, Times } from 'typemoq';
 import { CaseEditInformation, CaseOutcome, EditedStatus } from 'blaise-api-node-client';
 import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
 import nodeServer from '../../../server/server';
@@ -7,6 +7,8 @@ import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
 import { caseResponseMockObject, caseSummaryDetailsMockObject } from '../mockObjects/CaseMockObject';
+import { UserAllocationDetails } from '../../../common/interfaces/allocationInterface';
+//import { UserAllocationDetails } from '../../../common/interfaces/allocationInterface';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
@@ -536,4 +538,102 @@ describe('Get case edit information tests', () => {
     // assert
     expect(response.status).toEqual(404);
   });
+});
+
+describe('allocate cases tests', () => {
+  beforeEach(() => {
+    blaiseApiMock.reset();
+  });
+
+  afterAll(() => {
+    blaiseApiMock.reset();
+  });
+
+  it('It should return a 204 response when cases are allocated', async () => {
+    // arrange
+    const caseId1: string = '1';
+    const caseId2: string = '2';
+    const questionnaireName: string = 'TEST111A';
+    const editor: string = 'jake';
+    const allocationDetails: UserAllocationDetails = {
+      Name: editor,
+      Cases: [caseId1, caseId2],
+    };
+
+    const payload = {allocationDetails};
+
+    const caseFields = { 'QEdit.AssignedTo': editor };
+
+    blaiseApiMock.setup((api) => api.updateCase(questionnaireName, caseId1, caseFields));
+    blaiseApiMock.setup((api) => api.updateCase(questionnaireName, caseId2, caseFields));
+
+    // act
+    const response: Response = await sut
+    .patch(`/api/questionnaires/${questionnaireName}/cases`).send(payload);
+
+    // assert
+    expect(response.status).toEqual(204);
+    blaiseApiMock.verify((api) => api.updateCase(questionnaireName, caseId1, caseFields), Times.once());
+    blaiseApiMock.verify((api) => api.updateCase(questionnaireName, caseId2, caseFields), Times.once());
+  });
+
+  it('It should return a 500 response when a call is made to retrieve a case and the rest api is not availiable', async () => {
+    // arrange
+    const axiosError = createAxiosError(500);
+    const questionnaireName: string = 'TEST111A';
+    const allocationDetails: UserAllocationDetails = {
+      Name: 'jake',
+      Cases: ['1'],
+    };
+
+    const payload = {allocationDetails};
+
+    blaiseApiMock.setup((api) => api.updateCase(It.isAny(), It.isAny(), It.isAny())).returns(() => Promise.reject(axiosError));
+
+    // act
+    const response: Response = await sut.patch(`/api/questionnaires/${questionnaireName}/cases`).send(payload);
+
+    // assert
+    expect(response.status).toEqual(500);
+  });
+
+  it('It should return a 500 response when the api client throws an error', async () => {
+    // arrange
+    const clientError = new Error();
+    const questionnaireName: string = 'TEST111A';
+    const allocationDetails: UserAllocationDetails = {
+      Name: 'jake',
+      Cases: ['1'],
+    };
+
+    const payload = {allocationDetails};
+
+    blaiseApiMock.setup((api) => api.updateCase(It.isAny(), It.isAny(), It.isAny())).returns(() => Promise.reject(clientError));
+
+    // act
+    const response: Response = await sut.patch(`/api/questionnaires/${questionnaireName}/cases`).send(payload);
+
+    // assert
+    expect(response.status).toEqual(500);
+  });
+
+  it('It should return a 404 response when a call is made to retrieve a case and the client returns a 404 not found', async () => {
+    // arrange
+    const axiosError = createAxiosError(404);
+    const questionnaireName: string = 'TEST111A';
+    const allocationDetails: UserAllocationDetails = {
+      Name: 'jake',
+      Cases: ['1'],
+    };
+
+    const payload = {allocationDetails};
+
+    blaiseApiMock.setup((api) => api.updateCase(It.isAny(), It.isAny(), It.isAny())).returns(() => Promise.reject(axiosError));
+
+    // act
+    const response: Response = await sut.patch(`/api/questionnaires/${questionnaireName}/cases`).send(payload);
+
+    // assert
+    expect(response.status).toEqual(404);
+  }); 
 });

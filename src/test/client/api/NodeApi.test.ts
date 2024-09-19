@@ -8,12 +8,13 @@ import surveyListMockObject from '../../server/mockObjects/surveyListMockObject'
 import {
   getSurveys, getEditorInformation, getSupervisorEditorInformation, getCaseSummary,
   getAllocationDetails,
+  updateAllocationDetails,
 } from '../../../client/api/NodeApi';
 import { EditorInformation } from '../../../client/Interfaces/editorInterface';
 import { SupervisorInformation } from '../../../client/Interfaces/supervisorInterface';
 import UserRole from '../../../client/Common/enums/UserRole';
 import { caseSummaryDetailsMockObject } from '../../server/mockObjects/CaseMockObject';
-import { AllocationDetails } from '../../../client/Interfaces/allocationInterface';
+import { AllocationDetails, UserAllocationDetails } from '../../../common/interfaces/allocationInterface';
 
 // use axios mock adapter
 const axiosMock = new MockAdapter(axios, { onNoMatch: 'throwException' });
@@ -346,16 +347,16 @@ describe('getAllocationDetails from Blaise', () => {
     }];
 
     const expectedResult: AllocationDetails = {
-      editors: [{
-        name: 'Rich',
+      Editors: [{
+        Name: 'Rich',
         Cases: ['10001015'],
       }],
-      interviewers: [{
-        name: 'bobw',
+      Interviewers: [{
+        Name: 'bobw',
         Cases: ['10001011'],
       },
       {
-        name: 'jamester',
+        Name: 'jamester',
         Cases: ['10001012'],
       },
       ],
@@ -372,7 +373,7 @@ describe('getAllocationDetails from Blaise', () => {
     expect(result).toEqual(expectedResult);
   });
 
-  it('Should throw the error "Unable to find supervisor information, please contact Richmond Rice" when a 404 response is recieved', async () => {
+  it('Should throw the error "Unable to find case edit information, please contact Richmond Rice', async () => {
     // arrange
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${supervisorRole}`).reply(404, null);
 
@@ -394,5 +395,50 @@ describe('getAllocationDetails from Blaise', () => {
 
     // act && assert
     expect(getAllocationDetails(questionnaireName, supervisorRole, editorRole)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+  });
+});
+
+describe('updateAllocationDetails in Blaise', () => {
+  const questionnaireName = 'FRS2201';
+  const allocationDetails: UserAllocationDetails = {
+    Name: 'jake',
+    Cases: ['1'],
+  };
+
+  it('Should update allocation details with a 204 response', async () => {
+    // arrange
+   
+    axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/`).reply(204, allocationDetails);
+
+    // act
+    const result = await updateAllocationDetails(questionnaireName, allocationDetails);
+    console.log(result);
+
+    // assert
+    expect(result).toBeUndefined();
+  });
+
+  it('Should throw the error "Unable to allocate, please contact Richmond Rice" when a 404 response is recieved', async () => {
+    // arrange
+    axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/`).reply(404, null);
+
+    // act && assert
+    expect(updateAllocationDetails(questionnaireName, allocationDetails)).rejects.toThrow('Unable to allocate, please contact Richmond Rice');
+  });
+
+  it('Should throw the error "Unable to complete request, please try again in a few minutes" when a 500 response is recieved', async () => {
+    // arrange
+    axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/`).reply(500, null);
+
+    // act && assert
+    expect(updateAllocationDetails(questionnaireName, allocationDetails)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+  });
+
+  it('Should throw the error "Unable to complete request, please try again in a few minutes" when there is a network error', async () => {
+    // arrange
+    axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/`).networkError();
+
+    // act && assert
+    expect(updateAllocationDetails(questionnaireName, allocationDetails)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 });

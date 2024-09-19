@@ -1,11 +1,11 @@
 import { CaseEditInformation } from 'blaise-api-node-client/lib/cjs/interfaces/case';
 import { User } from 'blaise-api-node-client/lib/cjs/blaiseApiClient';
-import { AllocationDetails } from '../Interfaces/allocationInterface';
+import { AllocationDetails } from '../../common/interfaces/allocationInterface';
 
 function mapEditorDetails(caseEditInformationList: CaseEditInformation[], editors: User[], allocationDetails: AllocationDetails) {
   editors.forEach((editor) => {
-    allocationDetails.editors.push({
-      name: editor.name,
+    allocationDetails.Editors.push({
+      Name: editor.name,
       Cases: [],
     });
   });
@@ -15,7 +15,7 @@ function mapEditorDetails(caseEditInformationList: CaseEditInformation[], editor
       return;
     }
 
-    const editorItem = allocationDetails.editors?.find((e) => e.name === caseEditInformation.assignedTo);
+    const editorItem = allocationDetails.Editors?.find((e) => e.Name === caseEditInformation.assignedTo);
 
     if (editorItem !== undefined) {
       editorItem.Cases.push(caseEditInformation.primaryKey);
@@ -29,13 +29,13 @@ function mapInterviewerDetails(caseEditInformationList: CaseEditInformation[], a
       return;
     }
 
-    const interviewerItem = allocationDetails.interviewers?.find((i) => i.name === caseEditInformation.interviewer);
+    const interviewerItem = allocationDetails.Interviewers?.find((i) => i.Name === caseEditInformation.interviewer);
 
     if (interviewerItem !== undefined) {
       interviewerItem.Cases.push(caseEditInformation.primaryKey);
     } else {
-      allocationDetails.interviewers.push({
-        name: caseEditInformation.interviewer,
+      allocationDetails.Interviewers.push({
+        Name: caseEditInformation.interviewer,
         Cases: [caseEditInformation.primaryKey],
       });
     }
@@ -43,7 +43,7 @@ function mapInterviewerDetails(caseEditInformationList: CaseEditInformation[], a
 }
 
 export default function mapAllocationDetails(caseEditInformationList: CaseEditInformation[], editors: User[]): AllocationDetails {
-  const allocationDetails = <AllocationDetails>{ editors: [], interviewers: [] };
+  const allocationDetails = <AllocationDetails>{ Editors: [], Interviewers: [] };
 
   mapEditorDetails(caseEditInformationList, editors, allocationDetails);
   mapInterviewerDetails(caseEditInformationList, allocationDetails);

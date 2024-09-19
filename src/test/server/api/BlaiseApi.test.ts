@@ -1,6 +1,6 @@
 import BlaiseApiClient, { CaseEditInformationListMockObject } from 'blaise-api-node-client';
 import {
-  IMock, It, Mock, Times,
+  IMock, Mock, Times,
 } from 'typemoq';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import { questionnaireDetailsListMockObject, questionnaireListMockObject } from '../mockObjects/questionnaireListMockObject';
@@ -64,19 +64,26 @@ describe('getCase from Blaise', () => {
     // assert
     expect(result).toEqual(caseResponseMockObject);
   });
+});
 
-  it('Should call the getCase function with the expected parameters', async () => {
+describe('updateCase from Blaise', () => {
+  beforeEach(() => {
+    blaiseApiClientMock.reset();
+  });
+
+  it('Should call the update function with the expected parameters', async () => {
     // arrange
     const questionnaireName = 'OPN2201A';
     const caseId = '90001';
+    const caseFields = {};
 
-    blaiseApiClientMock.setup((client) => client.getCase(It.isAnyString(), It.isAnyString(), It.isAnyString())).returns(async () => caseResponseMockObject);
+    blaiseApiClientMock.setup((client) => client.updateCase(configFake.ServerPark, questionnaireName, caseId, caseFields)).returns(async () => null);
 
     // act
-    await sut.getCase(questionnaireName, caseId);
+    await sut.updateCase(questionnaireName, caseId, caseFields);
 
     // assert
-    blaiseApiClientMock.verify((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId), Times.once());
+    blaiseApiClientMock.verify((client) => client.updateCase(configFake.ServerPark, questionnaireName, caseId, caseFields), Times.once());
   });
 });
 

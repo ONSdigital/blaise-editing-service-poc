@@ -4,9 +4,9 @@ import { useParams } from 'react-router-dom';
 import UserRole from '../../Common/enums/UserRole';
 import { useAsyncRequestWithThreeParams } from '../../Common/hooks/useAsyncRequest';
 import { getAllocationDetails } from '../../api/NodeApi';
-import { AllocationDetails } from '../../Interfaces/allocationInterface';
 import AsyncContent from '../../Common/components/AsyncContent';
 import ReallocateContent from '../Components/ReallocateContent';
+import { AllocationDetails } from '../../../common/interfaces/allocationInterface';
 
 interface ReallocateProps {
   supervisorRole: UserRole;

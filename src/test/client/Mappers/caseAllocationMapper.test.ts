@@ -2,8 +2,8 @@ import { CaseEditInformation } from 'blaise-api-node-client/lib/cjs/interfaces/c
 import CaseOutcome from 'blaise-api-node-client/lib/cjs/enums/caseOutcome';
 import EditedStatus from 'blaise-api-node-client/lib/cjs/enums/editedStatus';
 import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
-import { AllocationDetails } from '../../../client/Interfaces/allocationInterface';
 import mapAllocationDetails from '../../../client/Mappers/caseAllocationMapper';
+import { AllocationDetails } from '../../../common/interfaces/allocationInterface';
 
 describe('Map cases not allocated informaiton', () => {
   it('It should return a correctly mapped cases not allocated model given all details are present', () => {
@@ -76,25 +76,25 @@ describe('Map cases not allocated informaiton', () => {
     }];
 
     const expectedResult: AllocationDetails = {
-      editors: [{
-        name: 'Dave',
+      Editors: [{
+        Name: 'Dave',
         Cases: [],
       },
       {
-        name: 'Jake',
+        Name: 'Jake',
         Cases: ['10001012', '10001015'],
       },
       {
-        name: 'Rich',
+        Name: 'Rich',
         Cases: [],
       },
       ],
-      interviewers: [{
-        name: 'bobw',
+      Interviewers: [{
+        Name: 'bobw',
         Cases: ['10001011', '10001014'],
       },
       {
-        name: 'jamester',
+        Name: 'jamester',
         Cases: ['10001013'],
       },
       ],

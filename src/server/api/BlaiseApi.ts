@@ -1,4 +1,5 @@
 import BlaiseClient, {
+  CaseData,
   CaseEditInformation, CaseResponse, Questionnaire, User,
 } from 'blaise-api-node-client';
 import { ServerConfiguration } from '../interfaces/serverConfigurationInterface';
@@ -17,6 +18,7 @@ export default class BlaiseApi {
     this.getCase = this.getCase.bind(this);
     this.getCaseEditInformation = this.getCaseEditInformation.bind(this);
     this.getUsers = this.getUsers.bind(this);
+    this.updateCase = this.updateCase.bind(this);
   }
 
   async getQuestionnaires(): Promise<QuestionnaireDetails[]> {
@@ -32,6 +34,10 @@ export default class BlaiseApi {
 
   async getCase(questionnaireName: string, caseId: string): Promise<CaseResponse> {
     return this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
+  }
+
+  async updateCase(questionnaireName: string, caseId: string, caseFields: CaseData) {
+    this.blaiseApiClient.updateCase(this.config.ServerPark, questionnaireName, caseId, caseFields);
   }
 
   async getCaseEditInformation(questionnaireName: string): Promise<CaseEditInformation[]> {
