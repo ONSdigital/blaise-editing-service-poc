@@ -8,10 +8,13 @@ import BlaiseApi from '../../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
 import { caseResponseMockObject, caseSummaryDetailsMockObject } from '../mockObjects/CaseMockObject';
 import { UserAllocationDetails } from '../../../common/interfaces/allocationInterface';
-//import { UserAllocationDetails } from '../../../common/interfaces/allocationInterface';
+import { Auth } from 'blaise-login-react-server';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
+
+// mock auth
+Auth.prototype.ValidateToken = jest.fn().mockReturnValue(true);
 
 // mock blaise api client
 const blaiseApiMock: IMock<BlaiseApi> = Mock.ofType(BlaiseApi);

@@ -4,9 +4,13 @@ import nodeServer from '../../../server/server';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
 import createAxiosError from './axiosTestHelper';
+import { Auth } from 'blaise-login-react-server';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
+
+// mock auth
+Auth.prototype.ValidateToken = jest.fn().mockReturnValue(true);
 
 // mock blaise api client
 const blaiseApiMock: IMock<BlaiseApi> = Mock.ofType(BlaiseApi);

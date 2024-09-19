@@ -7,11 +7,10 @@ import ServerConfigurationProvider from '../configuration/ServerConfigurationPro
 import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
 import mapCaseSummary from '../mappers/caseMapper';
 import { UserAllocationDetails } from '../../common/interfaces/allocationInterface';
-//import { Auth } from 'blaise-login-react-server';
+import { Auth } from 'blaise-login-react-server';
 
 export default class CaseController implements Controller {
   blaiseApi: BlaiseApi;
-
   configuration: ServerConfigurationProvider;
 
   constructor(blaiseApi: BlaiseApi, configuration: ServerConfigurationProvider) {
@@ -23,11 +22,11 @@ export default class CaseController implements Controller {
   }
 
   getRoutes() {
-    //const auth = new Auth(this.configuration);
+    const auth = new Auth(this.configuration);
     const router = express.Router();
-    router.get('/api/questionnaires/:questionnaireName/cases/:caseId/summary', this.getCaseSummary);
-    router.get('/api/questionnaires/:questionnaireName/cases/edit', this.getCaseEditInformation);
-    router.patch('/api/questionnaires/:questionnaireName/cases', this.allocateCases);
+    router.get('/api/questionnaires/:questionnaireName/cases/:caseId/summary', auth.Middleware, this.getCaseSummary);
+    router.get('/api/questionnaires/:questionnaireName/cases/edit', auth.Middleware, this.getCaseEditInformation);
+    router.patch('/api/questionnaires/:questionnaireName/cases', auth.Middleware, this.allocateCases);
 
     return router;
   }

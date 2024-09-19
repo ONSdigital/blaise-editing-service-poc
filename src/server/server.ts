@@ -32,7 +32,7 @@ export default function nodeServer(config: ConfigurationProvider, blaiseApi: Bla
   server.use('/', caseController.getRoutes());
 
   // User routing
-  const userController = new UserController(blaiseApi);
+  const userController = new UserController(blaiseApi, config);
   server.use('/', userController.getRoutes());
 
   // login routing

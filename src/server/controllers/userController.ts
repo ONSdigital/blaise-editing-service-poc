@@ -3,18 +3,23 @@ import { User } from 'blaise-api-node-client';
 import { Controller } from '../interfaces/controllerInterface';
 import notFound from '../helpers/axiosHelper';
 import BlaiseApi from '../api/BlaiseApi';
+import { Auth } from 'blaise-login-react-server';
+import ServerConfigurationProvider from '../configuration/ServerConfigurationProvider';
 
 export default class UserController implements Controller {
   blaiseApi: BlaiseApi;
+  configuration: ServerConfigurationProvider;
 
-  constructor(blaiseApi: BlaiseApi) {
+  constructor(blaiseApi: BlaiseApi, configuration: ServerConfigurationProvider) {
     this.blaiseApi = blaiseApi;
+    this.configuration = configuration;
     this.getUsers = this.getUsers.bind(this);
   }
 
   getRoutes() {
+    const auth = new Auth(this.configuration);
     const router = express.Router();
-    return router.get('/api/users', this.getUsers);
+    return router.get('/api/users', auth.Middleware, this.getUsers);
   }
 
   async getUsers(request: Request<{}, {}, {}, { userRole:string }>, response: Response<User[]>) {

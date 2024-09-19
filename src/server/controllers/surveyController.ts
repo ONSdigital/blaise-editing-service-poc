@@ -5,10 +5,10 @@ import { QuestionnaireDetails, Survey } from '../../common/interfaces/surveyInte
 import mapSurveys from '../mappers/surveyMapper';
 import BlaiseApi from '../api/BlaiseApi';
 import ServerConfigurationProvider from '../configuration/ServerConfigurationProvider';
+import { Auth } from 'blaise-login-react-server';
 
 export default class SurveyController implements Controller {
   blaiseApi: BlaiseApi;
-
   configuration: ServerConfigurationProvider;
 
   constructor(blaiseApi: BlaiseApi, configuration: ServerConfigurationProvider) {
@@ -18,8 +18,9 @@ export default class SurveyController implements Controller {
   }
 
   getRoutes() {
+    const auth = new Auth(this.configuration);
     const router = express.Router();
-    return router.get('/api/surveys', this.getSurveys);
+    return router.get('/api/surveys', auth.Middleware, this.getSurveys);
   }
 
   async getSurveys(request: Request<{}, {}, {}, { userRole:string }>, response: Response<Survey[]>) {
