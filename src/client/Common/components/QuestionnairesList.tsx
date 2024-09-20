@@ -7,7 +7,7 @@ import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface
 import UserRole from '../enums/UserRole';
 import SupervisorsQuestionnaireDetails from '../../Supervisor/Components/SupervisorsQuestionnaireDetails';
 import EditorsQuestionnaireDetails from '../../Editor/Components/EditorsQuestionnaireDetails';
-import ErrorDetails from './ErrorDetails';
+import ErrorPanel from './ErrorPanel';
 
 function RenderQuestionnaireDetails(user:User, questionnaire:QuestionnaireDetails) {
   const { role, name } = user;
@@ -20,7 +20,7 @@ function RenderQuestionnaireDetails(user:User, questionnaire:QuestionnaireDetail
     return <EditorsQuestionnaireDetails questionnaire={questionnaire} username={name} editorRole={UserRole.SVT_Editor} />;
   }
 
-  return <ErrorDetails error={new Error(`User role ${role} not recognised`)} />;
+  return <ErrorPanel message={`User role ${role} not recognised`} />;
 }
 
 interface QuestionnairesListProps {

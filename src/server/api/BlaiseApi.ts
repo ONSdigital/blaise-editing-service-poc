@@ -36,8 +36,8 @@ export default class BlaiseApi {
     return this.blaiseApiClient.getCase(this.config.ServerPark, questionnaireName, caseId);
   }
 
-  async updateCase(questionnaireName: string, caseId: string, caseFields: CaseData) {
-    this.blaiseApiClient.updateCase(this.config.ServerPark, questionnaireName, caseId, caseFields);
+  async updateCase(questionnaireName: string, caseId: string, caseFields: CaseData): Promise<void> {
+    await this.blaiseApiClient.updateCase(this.config.ServerPark, questionnaireName, caseId, caseFields);
   }
 
   async getCaseEditInformation(questionnaireName: string): Promise<CaseEditInformation[]> {

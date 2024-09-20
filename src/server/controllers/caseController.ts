@@ -82,7 +82,6 @@ export default class CaseController implements Controller {
     const { questionnaireName } = request.params;
     const { name, cases } = request.body;
 
-    console.log('request headers ', request.headers);
     console.log('request body ', request.body);
     console.log('name ', name);
     console.log('cases ', cases);

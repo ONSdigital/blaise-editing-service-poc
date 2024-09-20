@@ -1471,7 +1471,14 @@ exports[`Given there the blaise rest api is not available should render the page
           <div
             class="ons-panel__body "
           >
-            try again in a few minutes
+            <h4>
+              Something went wrong
+            </h4>
+            <p
+              data-testid="ErrorMessage"
+            >
+              try again in a few minutes
+            </p>
           </div>
         </div>
       </div>
@@ -1496,7 +1503,14 @@ exports[`Given there the blaise rest api is not available should render the page
         <div
           class="ons-panel__body "
         >
-          try again in a few minutes
+          <h4>
+            Something went wrong
+          </h4>
+          <p
+            data-testid="ErrorMessage"
+          >
+            try again in a few minutes
+          </p>
         </div>
       </div>
     </div>

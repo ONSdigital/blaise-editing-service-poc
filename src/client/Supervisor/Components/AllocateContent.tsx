@@ -1,4 +1,4 @@
-import { ONSButton, ONSSelect } from 'blaise-design-system-react-components';
+import { ONSButton, ONSPanel, ONSSelect } from 'blaise-design-system-react-components';
 import { ReactElement, SetStateAction, useState } from 'react';
 import Option from '../../Interfaces/controlsInterface';
 import { AllocationDetails } from '../../../common/interfaces/allocationInterface';
@@ -7,9 +7,11 @@ import { updateAllocationDetails } from '../../api/NodeApi';
 interface AllocateProps {
   questionnaireName: string;
   allocation: AllocationDetails;
+  setErrored: (errored: boolean) => void
+  setSuccess: (success: boolean) => void
 }
 
-function getInterviewerOptions(allocation: AllocationDetails) {
+function getInterviewerOptions(allocation: AllocationDetails): Option[] {
   const options: Option[] = [];
 
   allocation.Interviewers.forEach((interviewer) => {
@@ -22,7 +24,7 @@ function getInterviewerOptions(allocation: AllocationDetails) {
   return options;
 }
 
-function getEditorOptions(allocation: AllocationDetails) {
+function getEditorOptions(allocation: AllocationDetails): Option[] {
   const options: Option[] = [];
 
   allocation.Editors.forEach((editor) => {
@@ -35,31 +37,54 @@ function getEditorOptions(allocation: AllocationDetails) {
   return options;
 }
 
-async function allocateCases(questionnaireName: string, name: string, cases: string[]) {
-  console.log(`Allocte cases for ${questionnaireName} ${name} ${cases}`);
-  await updateAllocationDetails(questionnaireName, name, cases);
-}
-
-export default function AllocateCases({ questionnaireName, allocation } : AllocateProps): ReactElement {
+export default function AllocateCases({
+  questionnaireName, allocation, setErrored, setSuccess,
+} : AllocateProps): ReactElement {
   const interviewerOptions = getInterviewerOptions(allocation);
   const editorOptions = getEditorOptions(allocation);
-
-  const [casesValue, setICasesValue] = useState(['']);
+  const [casesValue, setCasesValue] = useState(['']);
   const [nameValue, setNameValue] = useState('');
+  const [submitting, setSubmitting] = useState(false);
 
   const handleInterviewerChange = (e: { target: { value: SetStateAction<string>; }; }) => {
     const interviewer = allocation.Interviewers.find((i) => i.Name === e.target.value);
-    setICasesValue(interviewer?.Cases ?? []);
+    setCasesValue(interviewer?.Cases ?? []);
   };
 
   const handleEditorChange = (e: { target: { value: SetStateAction<string>; }; }) => {
     setNameValue(e.target?.value);
   };
 
+  async function allocateCases(name: string, cases: string[]) {
+    setSuccess(false);
+    setErrored(false);
+    setSubmitting(true);
+
+    try {
+      await updateAllocationDetails(questionnaireName, name, cases);
+      setSuccess(true);
+    } catch (error: unknown) {
+      setErrored(true);
+    }
+
+    setSubmitting(false);
+  }
+
+  if (interviewerOptions.length === 0 || editorOptions.length === 0) {
+    return (
+      <ONSPanel status="info">
+        {
+              interviewerOptions.length === 0
+                ? 'There are no cases left to allocate'
+                : 'There are no editors configured'
+            }
+      </ONSPanel>
+    );
+  }
+
   return (
     <>
       <ONSSelect
-        defaultValue=""
         id="select-interviewer"
         label="Allocate cases from interviewer"
         options={interviewerOptions}
@@ -67,7 +92,6 @@ export default function AllocateCases({ questionnaireName, allocation } : Alloca
         onChange={handleInterviewerChange}
       />
       <ONSSelect
-        defaultValue=""
         id="select-editor"
         label="To editor"
         options={editorOptions}
@@ -78,7 +102,8 @@ export default function AllocateCases({ questionnaireName, allocation } : Alloca
       <ONSButton
         label="Allocate"
         primary
-        onClick={async () => { await allocateCases(questionnaireName, nameValue, casesValue); }}
+        loading={submitting}
+        onClick={async () => { await allocateCases(nameValue, casesValue); }}
       />
     </>
   );

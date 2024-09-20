@@ -559,7 +559,7 @@ describe('allocate cases tests', () => {
     const caseId2: string = '2';
     const questionnaireName: string = 'TEST111A';
     const editor: string = 'jake';
-    const payload = { "name": editor, "cases": [caseId1, caseId2]};
+    const payload = { name: editor, cases: [caseId1, caseId2] };
     const caseFields = { 'QEdit.AssignedTo': editor };
 
     blaiseApiMock.setup((api) => api.updateCase(questionnaireName, caseId1, caseFields));
@@ -579,7 +579,7 @@ describe('allocate cases tests', () => {
     // arrange
     const axiosError = createAxiosError(500);
     const questionnaireName: string = 'TEST111A';
-    const payload = { "name": 'jake', "cases": ['1']};
+    const payload = { name: 'jake', cases: ['1'] };
 
     blaiseApiMock.setup((api) => api.updateCase(It.isAny(), It.isAny(), It.isAny())).returns(() => Promise.reject(axiosError));
 
@@ -594,7 +594,7 @@ describe('allocate cases tests', () => {
     // arrange
     const clientError = new Error();
     const questionnaireName: string = 'TEST111A';
-    const payload = { "name": 'jake', "cases": ['1']};
+    const payload = { name: 'jake', cases: ['1'] };
 
     blaiseApiMock.setup((api) => api.updateCase(It.isAny(), It.isAny(), It.isAny())).returns(() => Promise.reject(clientError));
 
@@ -609,7 +609,7 @@ describe('allocate cases tests', () => {
     // arrange
     const axiosError = createAxiosError(404);
     const questionnaireName: string = 'TEST111A';
-    const payload = { "name": 'jake', "cases": ['1']};
+    const payload = { name: 'jake', cases: ['1'] };
 
     blaiseApiMock.setup((api) => api.updateCase(It.isAny(), It.isAny(), It.isAny())).returns(() => Promise.reject(axiosError));
 

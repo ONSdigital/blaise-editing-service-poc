@@ -69,15 +69,21 @@ exports[`Renders the error screen if the users role is not in the accepted list 
             data-testid="questionnaire-accordion-0-content"
             id="questionnaire-accordion-0-content"
           >
-            <div>
-              <h2>
-                Something went wrong
-              </h2>
-              <p
-                data-testid="ErrorMessage"
+            <div
+              class="ons-panel ons-panel--error ons-panel--no-title  ons-u-mt-m"
+            >
+              <div
+                class="ons-panel__body "
               >
-                User role invalid_Role not recognised
-              </p>
+                <h4>
+                  Something went wrong
+                </h4>
+                <p
+                  data-testid="ErrorMessage"
+                >
+                  User role invalid_Role not recognised
+                </p>
+              </div>
             </div>
           </div>
         </details>
@@ -149,15 +155,21 @@ exports[`Renders the error screen if the users role is not in the accepted list 
           data-testid="questionnaire-accordion-0-content"
           id="questionnaire-accordion-0-content"
         >
-          <div>
-            <h2>
-              Something went wrong
-            </h2>
-            <p
-              data-testid="ErrorMessage"
+          <div
+            class="ons-panel ons-panel--error ons-panel--no-title  ons-u-mt-m"
+          >
+            <div
+              class="ons-panel__body "
             >
-              User role invalid_Role not recognised
-            </p>
+              <h4>
+                Something went wrong
+              </h4>
+              <p
+                data-testid="ErrorMessage"
+              >
+                User role invalid_Role not recognised
+              </p>
+            </div>
           </div>
         </div>
       </details>
