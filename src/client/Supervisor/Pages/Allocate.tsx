@@ -2,7 +2,7 @@ import { ONSPanel } from 'blaise-design-system-react-components';
 import { ReactElement, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import UserRole from '../../Common/enums/UserRole';
-import { useAsyncRequestWithThreeParams } from '../../Common/hooks/useAsyncRequest';
+import { useAsyncRequestWithThreeParamsWithRefresh } from '../../Common/hooks/useAsyncRequest';
 import AsyncContent from '../../Common/components/AsyncContent';
 import AllocateContent from '../Components/AllocateContent';
 import { getAllocationDetails } from '../../api/NodeApi';
@@ -21,10 +21,12 @@ export type AllocateParams = {
 
 export default function AllocateCases({ supervisorRole, editorRole } : AllocateProps): ReactElement {
   const { questionnaireName } = useParams<keyof AllocateParams>() as AllocateParams;
-  const allocationInformation = useAsyncRequestWithThreeParams<AllocationDetails, string, UserRole, UserRole>(getAllocationDetails, questionnaireName, supervisorRole, editorRole);
 
   const [errored, setErrored] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [refresh, setRefresh] = useState(0);
+
+  const allocationInformation = useAsyncRequestWithThreeParamsWithRefresh<AllocationDetails, string, UserRole, UserRole, number>(getAllocationDetails, questionnaireName, supervisorRole, editorRole, refresh);
 
   return (
     <>
@@ -38,8 +40,9 @@ export default function AllocateCases({ supervisorRole, editorRole } : AllocateP
       <br />
       <h3>{questionnaireName}</h3>
       <AsyncContent content={allocationInformation}>
-        {(loadedAllocationInformation) => <AllocateContent questionnaireName={questionnaireName} allocation={loadedAllocationInformation} setErrored={setErrored} setSuccess={setSuccess} />}
+        {(loadedAllocationInformation) => <AllocateContent questionnaireName={questionnaireName} allocation={loadedAllocationInformation} setErrored={setErrored} setSuccess={setSuccess} setRefresh={setRefresh} />}
       </AsyncContent>
+      <br />
     </>
   );
 }

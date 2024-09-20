@@ -87,3 +87,16 @@ export function useAsyncRequestWithThreeParams<T1, T2, T3, T4>(request:(param1: 
 
   return state;
 }
+
+export function useAsyncRequestWithThreeParamsWithRefresh<T1, T2, T3, T4, T5>(request:(param1: T2, param2: T3, param3: T4, resetParam:T5) => Promise<T1>, param1: T2, param2: T3, param3: T4, refreshParam: T5) {
+  const [state, setState] = useState<AsyncState<T1>>(loading());
+
+  useEffect(() => {
+    setState(loading());
+    request(param1, param2, param3, refreshParam)
+      .then((response) => setState(succeeded(response)))
+      .catch((error) => setState(errored(error.message)));
+  }, [request, refreshParam]);
+
+  return state;
+}

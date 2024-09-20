@@ -7,8 +7,9 @@ import { updateAllocationDetails } from '../../api/NodeApi';
 interface AllocateProps {
   questionnaireName: string;
   allocation: AllocationDetails;
-  setErrored: (errored: boolean) => void
-  setSuccess: (success: boolean) => void
+  setErrored: (errored: boolean) => void;
+  setSuccess: (success: boolean) => void;
+  setRefresh: (refresh: number) => void;
 }
 
 function getInterviewerOptions(allocation: AllocationDetails): Option[] {
@@ -38,7 +39,7 @@ function getEditorOptions(allocation: AllocationDetails): Option[] {
 }
 
 export default function AllocateCases({
-  questionnaireName, allocation, setErrored, setSuccess,
+  questionnaireName, allocation, setErrored, setSuccess, setRefresh,
 } : AllocateProps): ReactElement {
   const interviewerOptions = getInterviewerOptions(allocation);
   const editorOptions = getEditorOptions(allocation);
@@ -63,6 +64,7 @@ export default function AllocateCases({
     try {
       await updateAllocationDetails(questionnaireName, name, cases);
       setSuccess(true);
+      setRefresh(1);
     } catch (error: unknown) {
       setErrored(true);
     }
