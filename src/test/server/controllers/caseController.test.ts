@@ -1,14 +1,16 @@
 import supertest, { Response } from 'supertest';
-import { IMock, It, Mock, Times } from 'typemoq';
+import {
+  IMock, It, Mock, Times,
+} from 'typemoq';
 import { CaseEditInformation, CaseOutcome, EditedStatus } from 'blaise-api-node-client';
 import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
+import { Auth } from 'blaise-login-react-server';
 import nodeServer from '../../../server/server';
 import createAxiosError from './axiosTestHelper';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
 import { caseResponseMockObject, caseSummaryDetailsMockObject } from '../mockObjects/CaseMockObject';
 import { UserAllocationDetails } from '../../../common/interfaces/allocationInterface';
-import { Auth } from 'blaise-login-react-server';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();
@@ -563,7 +565,7 @@ describe('allocate cases tests', () => {
       Cases: [caseId1, caseId2],
     };
 
-    const payload = {allocationDetails};
+    const payload = { allocationDetails };
 
     const caseFields = { 'QEdit.AssignedTo': editor };
 
@@ -572,7 +574,7 @@ describe('allocate cases tests', () => {
 
     // act
     const response: Response = await sut
-    .patch(`/api/questionnaires/${questionnaireName}/cases`).send(payload);
+      .patch(`/api/questionnaires/${questionnaireName}/cases`).send(payload);
 
     // assert
     expect(response.status).toEqual(204);
@@ -589,7 +591,7 @@ describe('allocate cases tests', () => {
       Cases: ['1'],
     };
 
-    const payload = {allocationDetails};
+    const payload = { allocationDetails };
 
     blaiseApiMock.setup((api) => api.updateCase(It.isAny(), It.isAny(), It.isAny())).returns(() => Promise.reject(axiosError));
 
@@ -609,7 +611,7 @@ describe('allocate cases tests', () => {
       Cases: ['1'],
     };
 
-    const payload = {allocationDetails};
+    const payload = { allocationDetails };
 
     blaiseApiMock.setup((api) => api.updateCase(It.isAny(), It.isAny(), It.isAny())).returns(() => Promise.reject(clientError));
 
@@ -629,7 +631,7 @@ describe('allocate cases tests', () => {
       Cases: ['1'],
     };
 
-    const payload = {allocationDetails};
+    const payload = { allocationDetails };
 
     blaiseApiMock.setup((api) => api.updateCase(It.isAny(), It.isAny(), It.isAny())).returns(() => Promise.reject(axiosError));
 
@@ -638,5 +640,5 @@ describe('allocate cases tests', () => {
 
     // assert
     expect(response.status).toEqual(404);
-  }); 
+  });
 });

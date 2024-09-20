@@ -1,10 +1,10 @@
 import supertest, { Response } from 'supertest';
 import { IMock, Mock, Times } from 'typemoq';
+import { Auth } from 'blaise-login-react-server';
 import nodeServer from '../../../server/server';
 import BlaiseApi from '../../../server/api/BlaiseApi';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
 import createAxiosError from './axiosTestHelper';
-import { Auth } from 'blaise-login-react-server';
 
 // create fake config
 const configFake = new FakeServerConfigurationProvider();

@@ -1,13 +1,14 @@
 import express, { Request, Response } from 'express';
 import { User } from 'blaise-api-node-client';
+import { Auth } from 'blaise-login-react-server';
 import { Controller } from '../interfaces/controllerInterface';
 import notFound from '../helpers/axiosHelper';
 import BlaiseApi from '../api/BlaiseApi';
-import { Auth } from 'blaise-login-react-server';
 import ServerConfigurationProvider from '../configuration/ServerConfigurationProvider';
 
 export default class UserController implements Controller {
   blaiseApi: BlaiseApi;
+
   configuration: ServerConfigurationProvider;
 
   constructor(blaiseApi: BlaiseApi, configuration: ServerConfigurationProvider) {

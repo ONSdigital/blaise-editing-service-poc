@@ -1,14 +1,15 @@
 import express, { Request, Response } from 'express';
+import { Auth } from 'blaise-login-react-server';
 import { Controller } from '../interfaces/controllerInterface';
 import notFound from '../helpers/axiosHelper';
 import { QuestionnaireDetails, Survey } from '../../common/interfaces/surveyInterface';
 import mapSurveys from '../mappers/surveyMapper';
 import BlaiseApi from '../api/BlaiseApi';
 import ServerConfigurationProvider from '../configuration/ServerConfigurationProvider';
-import { Auth } from 'blaise-login-react-server';
 
 export default class SurveyController implements Controller {
   blaiseApi: BlaiseApi;
+
   configuration: ServerConfigurationProvider;
 
   constructor(blaiseApi: BlaiseApi, configuration: ServerConfigurationProvider) {

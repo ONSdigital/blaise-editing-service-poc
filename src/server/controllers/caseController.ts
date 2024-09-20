@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import { CaseEditInformation } from 'blaise-api-node-client';
+import { Auth } from 'blaise-login-react-server';
 import { Controller } from '../interfaces/controllerInterface';
 import notFound from '../helpers/axiosHelper';
 import BlaiseApi from '../api/BlaiseApi';
@@ -7,10 +8,10 @@ import ServerConfigurationProvider from '../configuration/ServerConfigurationPro
 import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
 import mapCaseSummary from '../mappers/caseMapper';
 import { UserAllocationDetails } from '../../common/interfaces/allocationInterface';
-import { Auth } from 'blaise-login-react-server';
 
 export default class CaseController implements Controller {
   blaiseApi: BlaiseApi;
+
   configuration: ServerConfigurationProvider;
 
   constructor(blaiseApi: BlaiseApi, configuration: ServerConfigurationProvider) {
@@ -82,14 +83,15 @@ export default class CaseController implements Controller {
     const { questionnaireName } = request.params;
     const { allocationDetails } = request.body;
 
-    console.log("request headers ", request.headers)
-    console.log("allocationDetails ", allocationDetails);
+    console.log('request headers ', request.headers);
+    console.log('allocationDetails ', allocationDetails);
 
     try {
       await Promise.all(
         allocationDetails.Cases.map(async (caseId) => {
           await this.blaiseApi.updateCase(questionnaireName, caseId, { 'QEdit.AssignedTo': allocationDetails.Name });
-        }));
+        }),
+      );
 
       return response.status(204).json();
     } catch (error: unknown) {

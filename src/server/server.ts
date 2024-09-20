@@ -13,7 +13,7 @@ const cors = require('cors');
 export default function nodeServer(config: ConfigurationProvider, blaiseApi: BlaiseApi): Express {
   const server = express();
   server.use(express.json());
-  server.use(express.urlencoded({extended: true}));
+  server.use(express.urlencoded({ extended: true }));
   server.use(cors());
 
   // treat the index.html as a template and substitute the values at runtime
@@ -22,7 +22,7 @@ export default function nodeServer(config: ConfigurationProvider, blaiseApi: Bla
   server.use('/static', express.static(path.join(__dirname, `${config.BuildFolder}/static`)));
 
   const auth = new Auth(config);
-  
+
   // survey routing
   const surveyController = new SurveyController(blaiseApi, config);
   server.use('/', surveyController.getRoutes());

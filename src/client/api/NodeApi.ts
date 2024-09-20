@@ -1,8 +1,5 @@
-import axios from 'axios';
-
 import { CaseEditInformation } from 'blaise-api-node-client/lib/cjs/interfaces/case';
 import { User } from 'blaise-api-node-client/lib/cjs/interfaces/user';
-import notFound from '../../server/helpers/axiosHelper';
 import { Survey } from '../../common/interfaces/surveyInterface';
 import { SupervisorInformation } from '../Interfaces/supervisorInterface';
 import { EditorInformation } from '../Interfaces/editorInterface';
@@ -11,30 +8,7 @@ import mapSupervisorInformation from '../Mappers/supervisorInformationMapper';
 import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
 import mapCasesNotAllocated from '../Mappers/caseAllocationMapper';
 import { AllocationDetails, UserAllocationDetails } from '../../common/interfaces/allocationInterface';
-
-async function getDataFromNode<T>(url: string, notFoundError: string): Promise<T> {
-  try {
-    const response = await axios.get(url);
-
-    return response.data;
-  } catch (error) {
-    if (notFound(error)) {
-      throw new Error(notFoundError);
-    }
-    throw new Error('Unable to complete request, please try again in a few minutes');
-  }
-}
-
-async function patchDataToNode<T>(url: string, data: T, notFoundError: string): Promise<void> {
-  try {
-    await axios.patch(url, data);
-  } catch (error) {
-    if (notFound(error)) {
-      throw new Error(notFoundError);
-    }
-    throw new Error('Unable to complete request, please try again in a few minutes');
-  }
-}
+import { getDataFromNode, patchDataToNode } from './AxiosApi';
 
 export async function getSurveys(userRole: string): Promise<Survey[]> {
   return getDataFromNode(`/api/surveys?userRole=${userRole}`, 'Unable to find surveys, please contact Richmond Rice');
@@ -70,6 +44,7 @@ export async function getAllocationDetails(questionnaireName: string, supervisor
   return mapCasesNotAllocated(caseEditInformationList, editors);
 }
 
-export async function updateAllocationDetails(questionnaireName: string, allocationDetails: UserAllocationDetails): Promise<void> {
+export async function updateAllocationDetails(questionnaireName: string, name:string, cases:string[]): Promise<void> {
+  const allocationDetails: UserAllocationDetails = { Name: name, Cases: cases };
   await patchDataToNode<UserAllocationDetails>(`/api/questionnaires/${questionnaireName.toUpperCase()}/cases/`, allocationDetails, 'Unable to allocate, please contact Richmond Rice');
 }

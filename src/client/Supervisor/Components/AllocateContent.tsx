@@ -1,9 +1,11 @@
 import { ONSButton, ONSSelect } from 'blaise-design-system-react-components';
-import { ReactElement } from 'react';
+import { ReactElement, SetStateAction, useState } from 'react';
 import Option from '../../Interfaces/controlsInterface';
 import { AllocationDetails } from '../../../common/interfaces/allocationInterface';
+import { updateAllocationDetails } from '../../api/NodeApi';
 
 interface AllocateProps {
+  questionnaireName: string;
   allocation: AllocationDetails;
 }
 
@@ -33,27 +35,50 @@ function getEditorOptions(allocation: AllocationDetails) {
   return options;
 }
 
-export default function AllocateCases({ allocation } : AllocateProps): ReactElement {
+async function allocateCases(questionnaireName: string, name: string, cases: string[]) {
+  console.log(`Allocte cases for ${questionnaireName} ${name} ${cases}`);
+  await updateAllocationDetails(questionnaireName, name, cases);
+}
+
+export default function AllocateCases({ questionnaireName, allocation } : AllocateProps): ReactElement {
+  const interviewerOptions = getInterviewerOptions(allocation);
+  const editorOptions = getEditorOptions(allocation);
+
+  const [casesValue, setICasesValue] = useState(['']);
+  const [nameValue, setNameValue] = useState('');
+
+  const handleInterviewerChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+    const interviewer = allocation.Interviewers.find((i) => i.Name === e.target.value);
+    setICasesValue(interviewer?.Cases ?? []);
+  };
+
+  const handleEditorChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+    setNameValue(e.target?.value);
+  };
+
   return (
     <>
       <ONSSelect
         defaultValue=""
         id="select-interviewer"
         label="Allocate cases from interviewer"
-        options={getInterviewerOptions(allocation)}
+        options={interviewerOptions}
         value=""
+        onChange={handleInterviewerChange}
       />
       <ONSSelect
         defaultValue=""
         id="select-editor"
         label="To editor"
-        options={getEditorOptions(allocation)}
+        options={editorOptions}
         value=""
+        onChange={handleEditorChange}
       />
       <br />
       <ONSButton
         label="Allocate"
         primary
+        onClick={async () => { await allocateCases(questionnaireName, nameValue, casesValue); }}
       />
     </>
   );

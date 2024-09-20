@@ -29,7 +29,7 @@ export default function AllocateCases({ supervisorRole, editorRole } : AllocateP
       <br />
       <h3>{questionnaireName}</h3>
       <AsyncContent content={allocationInformation}>
-        {(loadedAllocationInformation) => <AllocateContent allocation={loadedAllocationInformation} />}
+        {(loadedAllocationInformation) => <AllocateContent questionnaireName={questionnaireName} allocation={loadedAllocationInformation} />}
       </AsyncContent>
     </>
   );

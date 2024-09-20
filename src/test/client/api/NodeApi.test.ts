@@ -14,7 +14,7 @@ import { EditorInformation } from '../../../client/Interfaces/editorInterface';
 import { SupervisorInformation } from '../../../client/Interfaces/supervisorInterface';
 import UserRole from '../../../client/Common/enums/UserRole';
 import { caseSummaryDetailsMockObject } from '../../server/mockObjects/CaseMockObject';
-import { AllocationDetails, UserAllocationDetails } from '../../../common/interfaces/allocationInterface';
+import { AllocationDetails } from '../../../common/interfaces/allocationInterface';
 
 // use axios mock adapter
 const axiosMock = new MockAdapter(axios, { onNoMatch: 'throwException' });
@@ -400,19 +400,16 @@ describe('getAllocationDetails from Blaise', () => {
 
 describe('updateAllocationDetails in Blaise', () => {
   const questionnaireName = 'FRS2201';
-  const allocationDetails: UserAllocationDetails = {
-    Name: 'jake',
-    Cases: ['1'],
-  };
+  const name = 'jake';
+  const cases = ['1'];
 
   it('Should update allocation details with a 204 response', async () => {
     // arrange
-   
-    axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/`).reply(204, allocationDetails);
+
+    axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/`).reply(204, null);
 
     // act
-    const result = await updateAllocationDetails(questionnaireName, allocationDetails);
-    console.log(result);
+    const result = await updateAllocationDetails(questionnaireName, name, cases);
 
     // assert
     expect(result).toBeUndefined();
@@ -423,7 +420,7 @@ describe('updateAllocationDetails in Blaise', () => {
     axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/`).reply(404, null);
 
     // act && assert
-    expect(updateAllocationDetails(questionnaireName, allocationDetails)).rejects.toThrow('Unable to allocate, please contact Richmond Rice');
+    expect(updateAllocationDetails(questionnaireName, name, cases)).rejects.toThrow('Unable to allocate, please contact Richmond Rice');
   });
 
   it('Should throw the error "Unable to complete request, please try again in a few minutes" when a 500 response is recieved', async () => {
@@ -431,7 +428,7 @@ describe('updateAllocationDetails in Blaise', () => {
     axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/`).reply(500, null);
 
     // act && assert
-    expect(updateAllocationDetails(questionnaireName, allocationDetails)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(updateAllocationDetails(questionnaireName, name, cases)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 
   it('Should throw the error "Unable to complete request, please try again in a few minutes" when there is a network error', async () => {
@@ -439,6 +436,6 @@ describe('updateAllocationDetails in Blaise', () => {
     axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/`).networkError();
 
     // act && assert
-    expect(updateAllocationDetails(questionnaireName, allocationDetails)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+    expect(updateAllocationDetails(questionnaireName, name, cases)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 });
