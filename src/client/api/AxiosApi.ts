@@ -25,9 +25,9 @@ export async function getDataFromNode<T>(url: string, notFoundError: string): Pr
   }
 }
 
-export async function patchDataToNode<T>(url: string, data: T, notFoundError: string): Promise<void> {
+export async function patchDataToNode(url: string, payload: any, notFoundError: string): Promise<void> {
   try {
-    await axios.patch(url, data, axiosConfig());
+    await axios.patch(url, payload, axiosConfig());
   } catch (error) {
     if (notFound(error)) {
       throw new Error(notFoundError);

@@ -7,7 +7,6 @@ import BlaiseApi from '../api/BlaiseApi';
 import ServerConfigurationProvider from '../configuration/ServerConfigurationProvider';
 import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
 import mapCaseSummary from '../mappers/caseMapper';
-import { UserAllocationDetails } from '../../common/interfaces/allocationInterface';
 
 export default class CaseController implements Controller {
   blaiseApi: BlaiseApi;
@@ -79,17 +78,19 @@ export default class CaseController implements Controller {
     return filteredcases;
   }
 
-  async allocateCases(request: Request<{ questionnaireName:string }, {}, { allocationDetails: UserAllocationDetails }, { }>, response: Response) {
+  async allocateCases(request: Request<{ questionnaireName:string }, {}, { name:string, cases: string[] }, { }>, response: Response) {
     const { questionnaireName } = request.params;
-    const { allocationDetails } = request.body;
+    const { name, cases } = request.body;
 
     console.log('request headers ', request.headers);
-    console.log('allocationDetails ', allocationDetails);
+    console.log('request body ', request.body);
+    console.log('name ', name);
+    console.log('cases ', cases);
 
     try {
       await Promise.all(
-        allocationDetails.Cases.map(async (caseId) => {
-          await this.blaiseApi.updateCase(questionnaireName, caseId, { 'QEdit.AssignedTo': allocationDetails.Name });
+        cases.map(async (caseId) => {
+          await this.blaiseApi.updateCase(questionnaireName, caseId, { 'QEdit.AssignedTo': name });
         }),
       );
 

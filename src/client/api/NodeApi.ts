@@ -7,7 +7,7 @@ import mapEditorInformation from '../Mappers/editorInformaitionMapper';
 import mapSupervisorInformation from '../Mappers/supervisorInformationMapper';
 import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
 import mapCasesNotAllocated from '../Mappers/caseAllocationMapper';
-import { AllocationDetails, UserAllocationDetails } from '../../common/interfaces/allocationInterface';
+import { AllocationDetails } from '../../common/interfaces/allocationInterface';
 import { getDataFromNode, patchDataToNode } from './AxiosApi';
 
 export async function getSurveys(userRole: string): Promise<Survey[]> {
@@ -45,6 +45,6 @@ export async function getAllocationDetails(questionnaireName: string, supervisor
 }
 
 export async function updateAllocationDetails(questionnaireName: string, name:string, cases:string[]): Promise<void> {
-  const allocationDetails: UserAllocationDetails = { Name: name, Cases: cases };
-  await patchDataToNode<UserAllocationDetails>(`/api/questionnaires/${questionnaireName.toUpperCase()}/cases/`, allocationDetails, 'Unable to allocate, please contact Richmond Rice');
+  const payload = { name, cases };
+  await patchDataToNode(`/api/questionnaires/${questionnaireName.toUpperCase()}/cases/`, payload, 'Unable to allocate, please contact Richmond Rice');
 }
