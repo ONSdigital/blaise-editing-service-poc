@@ -96,7 +96,7 @@ export function useAsyncRequestWithThreeParamsWithRefresh<T1, T2, T3, T4, T5>(re
     request(param1, param2, param3, refreshParam)
       .then((response) => setState(succeeded(response)))
       .catch((error) => setState(errored(error.message)));
-  }, [request, refreshParam]);
+  }, [request, param1, param2, param3, refreshParam]);
 
   return state;
 }

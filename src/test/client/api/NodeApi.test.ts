@@ -367,7 +367,6 @@ describe('getAllocationDetails from Blaise', () => {
 
     // act
     const result = await getAllocationDetails(questionnaireName, supervisorRole, editorRole);
-    console.log(result);
 
     // assert
     expect(result).toEqual(expectedResult);

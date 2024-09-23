@@ -1,48 +1,44 @@
-import { ONSPanel } from 'blaise-design-system-react-components';
 import { ReactElement, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ONSPanel } from 'blaise-design-system-react-components';
 import UserRole from '../../Common/enums/UserRole';
-import { useAsyncRequestWithThreeParamsWithRefresh } from '../../Common/hooks/useAsyncRequest';
-import AsyncContent from '../../Common/components/AsyncContent';
-import AllocateContent from '../Components/AllocateContent';
-import { getAllocationDetails } from '../../api/NodeApi';
-import { AllocationDetails } from '../../../common/interfaces/allocationInterface';
 import ErrorPanel from '../../Common/components/ErrorPanel';
 import SuccessPanel from '../../Common/components/SuccessPanel';
+import AllocateContent from '../Components/AllocateContent';
+import { Message } from '../../Common/types/MessageType';
 
 interface AllocateProps {
   supervisorRole: UserRole;
   editorRole: UserRole;
+  reallocate: boolean;
 }
 
 export type AllocateParams = {
   questionnaireName: string
 };
 
-export default function AllocateCases({ supervisorRole, editorRole } : AllocateProps): ReactElement {
+export default function AllocateCases({ supervisorRole, editorRole, reallocate } : AllocateProps): ReactElement {
   const { questionnaireName } = useParams<keyof AllocateParams>() as AllocateParams;
-
-  const [errored, setErrored] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [refresh, setRefresh] = useState(0);
-
-  const allocationInformation = useAsyncRequestWithThreeParamsWithRefresh<AllocationDetails, string, UserRole, UserRole, number>(getAllocationDetails, questionnaireName, supervisorRole, editorRole, refresh);
+  const defaultMessage: Message = { show: false, text: '', type: '' };
+  const [message, setMessage] = useState(defaultMessage);
 
   return (
     <>
       <ONSPanel status="info">
-        Allocate cases from an interviewer to an editor. All cases conducted by that interviewer will be allocated to the editor
+        {
+          reallocate === false
+            ? 'Allocate cases from an interviewer to an editor. All cases conducted by that interviewer will be allocated to the editor'
+            : 'Reallocate cases from one editor to another editor. All non-completed cases will be transfered'
+        }
       </ONSPanel>
 
-      {errored && <ErrorPanel message="Unable to allocate cases, please try again" /> }
-      {success && <SuccessPanel message="Cases have been allocated" /> }
+      {message.show && message.type === 'error' && <ErrorPanel message={message.text} /> }
+      {message.show && message.type === 'success' && <SuccessPanel message={message.text} /> }
 
       <br />
       <h3>{questionnaireName}</h3>
-      <AsyncContent content={allocationInformation}>
-        {(loadedAllocationInformation) => <AllocateContent questionnaireName={questionnaireName} allocation={loadedAllocationInformation} setErrored={setErrored} setSuccess={setSuccess} setRefresh={setRefresh} />}
-      </AsyncContent>
-      <br />
+
+      <AllocateContent questionnaireName={questionnaireName} supervisorRole={supervisorRole} editorRole={editorRole} reallocate={reallocate} setMessage={setMessage} />
     </>
   );
 }
