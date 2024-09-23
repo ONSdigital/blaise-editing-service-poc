@@ -17,7 +17,7 @@ export type AllocateParams = {
   questionnaireName: string
 };
 
-export default function AllocateCases({ supervisorRole, editorRole, reallocate } : AllocateProps): ReactElement {
+export default function Allocate({ supervisorRole, editorRole, reallocate } : AllocateProps): ReactElement {
   const { questionnaireName } = useParams<keyof AllocateParams>() as AllocateParams;
   const defaultMessage: Message = { show: false, text: '', type: '' };
   const [message, setMessage] = useState(defaultMessage);
