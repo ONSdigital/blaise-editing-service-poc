@@ -146,7 +146,7 @@ describe('Given we wish to allocte cases from an Interviewer to an Editor', () =
 
     // assert
     const successMessage = view.getByTestId('SuccessMessage');
-    expect(successMessage).toHaveTextContent('Cases have been allocated');
+    expect(successMessage).toHaveTextContent(`Case(s) '10001013' have been allocated to 'Jake' for '${questionnaireName}'`);
 
     expect(view.queryByTestId('ErrorMessage')).not.toBeInTheDocument();
   });
@@ -172,7 +172,7 @@ describe('Given we wish to allocte cases from an Interviewer to an Editor', () =
 
     // assert
     const errorMessage = view.getByTestId('ErrorMessage');
-    expect(errorMessage).toHaveTextContent('Cases could not be allocated');
+    expect(errorMessage).toHaveTextContent('Case(s) could not be allocated, please try again in a few seconds');
 
     expect(view.queryByTestId('SuccessMessage')).not.toBeInTheDocument();
   });
@@ -300,7 +300,7 @@ describe('Given we wish to reallocte cases from an Editor to another Editor', ()
 
     // assert
     const successMessage = view.getByTestId('SuccessMessage');
-    expect(successMessage).toHaveTextContent('Cases have been allocated');
+    expect(successMessage).toHaveTextContent(`Case(s) '10001012, 10001015' have been allocated to 'Rich' for '${questionnaireName}'`);
 
     expect(view.queryByTestId('ErrorMessage')).not.toBeInTheDocument();
   });
@@ -326,7 +326,7 @@ describe('Given we wish to reallocte cases from an Editor to another Editor', ()
 
     // assert
     const errorMessage = view.getByTestId('ErrorMessage');
-    expect(errorMessage).toHaveTextContent('Cases could not be allocated');
+    expect(errorMessage).toHaveTextContent('Case(s) could not be allocated, please try again in a few seconds');
 
     expect(view.queryByTestId('SuccessMessage')).not.toBeInTheDocument();
   });

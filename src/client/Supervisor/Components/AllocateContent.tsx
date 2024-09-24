@@ -58,10 +58,10 @@ export default function AllocateCases({
 
     try {
       await updateAllocationDetails(questionnaireName, name, cases);
-      setMessage({ show: true, text: 'Cases have been allocated', type: 'success' });
+      setMessage({ show: true, text: `Case(s) '${cases.join(', ')}' have been allocated to '${name}' for '${questionnaireName}'`, type: 'success' });
       refreshContent();
     } catch (error: unknown) {
-      setMessage({ show: true, text: 'Cases could not be allocated', type: 'error' });
+      setMessage({ show: true, text: 'Case(s) could not be allocated, please try again in a few seconds', type: 'error' });
     }
   }
 

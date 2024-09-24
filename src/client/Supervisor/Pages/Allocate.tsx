@@ -32,8 +32,8 @@ export default function Allocate({ supervisorRole, editorRole, reallocate } : Al
         }
       </ONSPanel>
 
-      {message.show && message.type === 'error' && <ErrorPanel message={message.text} /> }
-      {message.show && message.type === 'success' && <SuccessPanel message={message.text} /> }
+      {message.show && message.type === 'error' && <ErrorPanel message={message.text} setMessage={setMessage} /> }
+      {message.show && message.type === 'success' && <SuccessPanel message={message.text} setMessage={setMessage} /> }
 
       <br />
       <h3>{questionnaireName}</h3>
