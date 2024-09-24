@@ -1,4 +1,6 @@
-import { render, act, RenderResult } from '@testing-library/react';
+import {
+  render, act, RenderResult, fireEvent,
+} from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Router from 'react-router';
 import { getAllocationDetails, updateAllocationDetails } from '../../../../client/api/NodeApi';
@@ -14,6 +16,7 @@ const questionnaireName = 'FRS2504A';
 let view:RenderResult;
 
 // set mocks
+/* eslint import/no-extraneous-dependencies: 0 */
 jest.mock('react-router', () => ({ ...jest.requireActual('react-router'), useParams: jest.fn() }));
 jest.spyOn(Router, 'useParams').mockReturnValue({ questionnaireName });
 
@@ -26,17 +29,15 @@ describe('Given we wish to allocte cases from an Interviewer to an Editor', () =
 
   beforeEach(() => {
     getAllocationDetailsMock.mockReturnValue(Promise.resolve(AllocationMockObject));
-    updateAllocationDetailsMock.mockResolvedValueOnce();
   });
 
   afterEach(() => {
     getAllocationDetailsMock.mockReset();
+    updateAllocationDetailsMock.mockReset();
   });
 
   it('should render the allocation page correctly', async () => {
-    // arrange
-
-    // act
+    // arrange && act
     await act(async () => {
       view = render(
         <BrowserRouter>
@@ -50,9 +51,7 @@ describe('Given we wish to allocte cases from an Interviewer to an Editor', () =
   });
 
   it('should display an have the correct page info for allocation', async () => {
-    // arrange
-
-    // act
+    // arrange && act
     await act(async () => {
       view = render(
         <BrowserRouter>
@@ -67,9 +66,7 @@ describe('Given we wish to allocte cases from an Interviewer to an Editor', () =
   });
 
   it('should display alist of availiable interviewer for alloction from', async () => {
-    // arrange
-
-    // act
+    // arrange && act
     await act(async () => {
       view = render(
         <BrowserRouter>
@@ -89,9 +86,7 @@ describe('Given we wish to allocte cases from an Interviewer to an Editor', () =
   });
 
   it('should display alist of availiable editors for alloction to', async () => {
-    // arrange
-
-    // act
+    // arrange && act
     await act(async () => {
       view = render(
         <BrowserRouter>
@@ -109,28 +104,81 @@ describe('Given we wish to allocte cases from an Interviewer to an Editor', () =
       expect(editorListOption.children[editorIndex + 1]).toHaveTextContent(`${Editor.Name} (${Editor.Cases.length} case(s))`);
     });
   });
-  
-  // it('should call updateAllocationDetails when the allocation button is clicked', async () => {
-  //   // arrange
-  //   getAllocationDetailsMock.mockReturnValue(Promise.resolve(AllocationMockObject));
-  //   updateAllocationDetailsMock.mockResolvedValueOnce();
 
-  //   // act
-  //   await act(async () => {
-  //     view = render(
-  //       <BrowserRouter>
-  //         <Allocate supervisorRole={supervisorRole} editorRole={editorRole} reallocate={reallocate} />
-  //       </BrowserRouter>,
-  //     );
-  //   });
-  //   fireEvent.change(view.getByTestId('select-from'), { target: { value: 2 } })
-  //   fireEvent.change(view.getByTestId('select-to'), { target: { value: 2 } })
-  //   fireEvent.click(view.getByText('Allocate'));
-    
+  it('should call updateAllocationDetails with the expected parameters when the allocation button is clicked', async () => {
+    // arrange
+    updateAllocationDetailsMock.mockResolvedValueOnce();
 
-  //   // assert
-  //   expect(updateAllocationDetailsMock).toBeCalled();
-  // });    
+    await act(async () => {
+      view = render(
+        <BrowserRouter>
+          <Allocate supervisorRole={supervisorRole} editorRole={editorRole} reallocate={reallocate} />
+        </BrowserRouter>,
+      );
+    });
+
+    // act
+    await act(async () => {
+      fireEvent.change(view.getByTestId('select-from'), { target: { value: 'jamester' } });
+      fireEvent.change(view.getByTestId('select-to'), { target: { value: 'Jake' } });
+      fireEvent.click(view.getByText('Allocate'));
+    });
+
+    // assert
+    expect(updateAllocationDetailsMock).toBeCalledWith(questionnaireName, 'Jake', ['10001013']);
+  });
+
+  it('should show a success message when allocation is successful', async () => {
+    // arrange
+    updateAllocationDetailsMock.mockResolvedValueOnce();
+
+    await act(async () => {
+      view = render(
+        <BrowserRouter>
+          <Allocate supervisorRole={supervisorRole} editorRole={editorRole} reallocate={reallocate} />
+        </BrowserRouter>,
+      );
+    });
+
+    // act
+    await act(async () => {
+      fireEvent.change(view.getByTestId('select-from'), { target: { value: 'jamester' } });
+      fireEvent.change(view.getByTestId('select-to'), { target: { value: 'Jake' } });
+      fireEvent.click(view.getByText('Allocate'));
+    });
+
+    // assert
+    const successMessage = view.getByTestId('SuccessMessage');
+    expect(successMessage).toHaveTextContent('Cases have been allocated');
+
+    expect(view.queryByTestId("ErrorMessage")).not.toBeInTheDocument();
+  });  
+
+  it('should show an error message when allocation is not successful', async () => {
+    // arrange
+    updateAllocationDetailsMock.mockRejectedValue(new Error('Could not allocate cases'));
+
+    await act(async () => {
+      view = render(
+        <BrowserRouter>
+          <Allocate supervisorRole={supervisorRole} editorRole={editorRole} reallocate={reallocate} />
+        </BrowserRouter>,
+      );
+    });
+
+    // act
+    await act(async () => {
+      fireEvent.change(view.getByTestId('select-from'), { target: { value: 'jamester' } });
+      fireEvent.change(view.getByTestId('select-to'), { target: { value: 'Jake' } });
+      fireEvent.click(view.getByText('Allocate'));
+    });
+
+    // assert
+    const errorMessage = view.getByTestId('ErrorMessage');
+    expect(errorMessage).toHaveTextContent('Cases could not be allocated');
+
+    expect(view.queryByTestId("SuccessMessage")).not.toBeInTheDocument();
+  });    
 });
 
 describe('Given we wish to reallocte cases from an Editor to another Editor', () => {
@@ -145,9 +193,7 @@ describe('Given we wish to reallocte cases from an Editor to another Editor', ()
   });
 
   it('should render the allocation page correctly', async () => {
-    // arrange
-
-    // act
+    // arrange && act
     await act(async () => {
       view = render(
         <BrowserRouter>
@@ -161,9 +207,7 @@ describe('Given we wish to reallocte cases from an Editor to another Editor', ()
   });
 
   it('should display an have the correct page info for reallocation', async () => {
-    // arrange
-
-    // act
+    // arrange && act
     await act(async () => {
       view = render(
         <BrowserRouter>
@@ -178,9 +222,7 @@ describe('Given we wish to reallocte cases from an Editor to another Editor', ()
   });
 
   it('should display alist of editors for realloction from', async () => {
-    // arrange
-
-    // act
+    // arrange && act
     await act(async () => {
       view = render(
         <BrowserRouter>
@@ -200,9 +242,7 @@ describe('Given we wish to reallocte cases from an Editor to another Editor', ()
   });
 
   it('should display a list of availiable editors for realloction to', async () => {
-    // arrange
-
-    // act
+    // arrange && act
     await act(async () => {
       view = render(
         <BrowserRouter>
