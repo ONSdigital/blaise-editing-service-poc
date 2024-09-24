@@ -5856,9 +5856,9 @@ bl@^4.0.3, bl@^4.1.0:
     regenerator-runtime "^0.14.1"
     typescript "~4.2.2"
 
-"blaise-design-system-react-components@git+https://github.com/ONSdigital/blaise-design-system-react-components#0.14.0", "blaise-design-system-react-components@git+https://github.com/ONSdigital/blaise-design-system-react-components#00fb2d9afb49ec424e1aadf13361b7dccb8e628f":
+"blaise-design-system-react-components@git+https://github.com/ONSdigital/blaise-design-system-react-components#0.14.0", "blaise-design-system-react-components@git+https://github.com/ONSdigital/blaise-design-system-react-components#14786b365ff2bf5cc3a393ba2ae3cd2e2dd857b6":
   version "1.0.0"
-  resolved "git+https://github.com/ONSdigital/blaise-design-system-react-components#00fb2d9afb49ec424e1aadf13361b7dccb8e628f"
+  resolved "git+https://github.com/ONSdigital/blaise-design-system-react-components#14786b365ff2bf5cc3a393ba2ae3cd2e2dd857b6"
   dependencies:
     "@testing-library/dom" "^10.4.0"
     formik "^2.2.9"

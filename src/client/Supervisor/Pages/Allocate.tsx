@@ -24,7 +24,7 @@ export default function Allocate({ supervisorRole, editorRole, reallocate } : Al
 
   return (
     <>
-      <ONSPanel status="info">
+      <ONSPanel status="info" testID="allocation-page-panel">
         {
           reallocate === false
             ? 'Allocate cases from an interviewer to an editor. All cases conducted by that interviewer will be allocated to the editor'

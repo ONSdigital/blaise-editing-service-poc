@@ -7,6 +7,7 @@ exports[`Given we wish to allocte cases from an Interviewer to an Editor should 
     <div>
       <div
         class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+        data-testid="allocation-page-panel"
       >
         <div
           class="ons-panel__body "
@@ -26,6 +27,7 @@ exports[`Given we wish to allocte cases from an Interviewer to an Editor should 
         </label>
         <select
           class="ons-input "
+          data-testid="select-from"
           id="select-from"
           name="select"
         >
@@ -61,6 +63,7 @@ exports[`Given we wish to allocte cases from an Interviewer to an Editor should 
         </label>
         <select
           class="ons-input "
+          data-testid="select-to"
           id="select-to"
           name="select"
         >
@@ -109,6 +112,7 @@ exports[`Given we wish to allocte cases from an Interviewer to an Editor should 
   "container": <div>
     <div
       class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+      data-testid="allocation-page-panel"
     >
       <div
         class="ons-panel__body "
@@ -128,6 +132,7 @@ exports[`Given we wish to allocte cases from an Interviewer to an Editor should 
       </label>
       <select
         class="ons-input "
+        data-testid="select-from"
         id="select-from"
         name="select"
       >
@@ -163,6 +168,7 @@ exports[`Given we wish to allocte cases from an Interviewer to an Editor should 
       </label>
       <select
         class="ons-input "
+        data-testid="select-to"
         id="select-to"
         name="select"
       >
@@ -268,6 +274,7 @@ exports[`Given we wish to reallocte cases from an Editor to another Editor shoul
     <div>
       <div
         class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+        data-testid="allocation-page-panel"
       >
         <div
           class="ons-panel__body "
@@ -287,6 +294,7 @@ exports[`Given we wish to reallocte cases from an Editor to another Editor shoul
         </label>
         <select
           class="ons-input "
+          data-testid="select-from"
           id="select-from"
           name="select"
         >
@@ -328,6 +336,7 @@ exports[`Given we wish to reallocte cases from an Editor to another Editor shoul
         </label>
         <select
           class="ons-input "
+          data-testid="select-to"
           id="select-to"
           name="select"
         >
@@ -376,6 +385,7 @@ exports[`Given we wish to reallocte cases from an Editor to another Editor shoul
   "container": <div>
     <div
       class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+      data-testid="allocation-page-panel"
     >
       <div
         class="ons-panel__body "
@@ -395,6 +405,7 @@ exports[`Given we wish to reallocte cases from an Editor to another Editor shoul
       </label>
       <select
         class="ons-input "
+        data-testid="select-from"
         id="select-from"
         name="select"
       >
@@ -436,6 +447,7 @@ exports[`Given we wish to reallocte cases from an Editor to another Editor shoul
       </label>
       <select
         class="ons-input "
+        data-testid="select-to"
         id="select-to"
         name="select"
       >

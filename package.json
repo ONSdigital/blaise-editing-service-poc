@@ -9,6 +9,8 @@
     "build-react": "react-scripts build",
     "eject-react": "react-scripts eject",
     "clean": "npx rimraf dist && npx rimraf build",
+    "test-react": "yarn clean && yarn build-react && jest --coverage --watchAll=false",
+    "test-server": "yarn clean && yarn build-server && jest --coverage --watchAll=false",
     "test": "yarn clean && yarn build-react && yarn build-server && jest --coverage --watchAll=false",
     "lint": "yarn eslint . --fix",
     "build-server": "tsc --project tsconfig.server.json",
@@ -42,7 +44,7 @@
   },
   "resolutions": {
     "blaise-api-node-client": "https://github.com/ONSdigital/blaise-api-node-client#c8449e9905c9f8952f0465b6861253e7c740ac26",
-    "blaise-design-system-react-components": "git+https://github.com/ONSdigital/blaise-design-system-react-components#00fb2d9afb49ec424e1aadf13361b7dccb8e628f"
+    "blaise-design-system-react-components": "git+https://github.com/ONSdigital/blaise-design-system-react-components#14786b365ff2bf5cc3a393ba2ae3cd2e2dd857b6"
   },
   "dependencies": {
     "@types/ejs": "^3.1.2",
@@ -52,7 +54,7 @@
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.4.0",
     "blaise-api-node-client": "https://github.com/ONSdigital/blaise-api-node-client#c8449e9905c9f8952f0465b6861253e7c740ac26",
-    "blaise-design-system-react-components": "git+https://github.com/ONSdigital/blaise-design-system-react-components#00fb2d9afb49ec424e1aadf13361b7dccb8e628f",
+    "blaise-design-system-react-components": "git+https://github.com/ONSdigital/blaise-design-system-react-components#14786b365ff2bf5cc3a393ba2ae3cd2e2dd857b6",
     "blaise-login-react-client": "https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-client?39f4182a62b1faaf01039fb8c94adc296ac78766",
     "blaise-login-react-server": "https://gitpkg.now.sh/ONSdigital/blaise-login-react/blaise-login-react-server?39f4182a62b1faaf01039fb8c94adc296ac78766",
     "concurrently": "^8.1.0",

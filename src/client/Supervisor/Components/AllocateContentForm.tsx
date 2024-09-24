@@ -46,6 +46,7 @@ export default function AllocateCases({
         options={fromOptions}
         value=""
         onChange={handleCasesChange}
+        testId="select-from"
       />
       <ONSSelect
         id="select-to"
@@ -53,6 +54,7 @@ export default function AllocateCases({
         options={toOptions}
         value=""
         onChange={handleNameChange}
+        testId="select-to"
       />
       <br />
       <ONSButton
