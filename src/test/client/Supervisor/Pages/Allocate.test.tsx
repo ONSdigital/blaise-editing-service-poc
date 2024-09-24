@@ -1,6 +1,7 @@
 import { render, act, RenderResult } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { getAllocationDetails } from '../../../../client/api/NodeApi';
+import Router from 'react-router';
+import { getAllocationDetails, updateAllocationDetails } from '../../../../client/api/NodeApi';
 import UserRole from '../../../../client/Common/enums/UserRole';
 import { AllocationDetails } from '../../../../common/interfaces/allocationInterface';
 import AllocationMockObject from '../../MockObjects/AllocationMockObjects';
@@ -9,17 +10,23 @@ import Allocate from '../../../../client/Supervisor/Pages/Allocate';
 // set global vars
 const supervisorRole:UserRole = UserRole.SVT_Supervisor;
 const editorRole:UserRole = UserRole.SVT_Editor;
+const questionnaireName = 'FRS2504A';
 let view:RenderResult;
 
 // set mocks
+jest.mock('react-router', () => ({ ...jest.requireActual('react-router'), useParams: jest.fn() }));
+jest.spyOn(Router, 'useParams').mockReturnValue({ questionnaireName });
+
 jest.mock('../../../../client/api/NodeApi');
 const getAllocationDetailsMock = getAllocationDetails as jest.Mock<Promise<AllocationDetails>>;
+const updateAllocationDetailsMock = updateAllocationDetails as jest.Mock<Promise<void>>;
 
 describe('Given we wish to allocte cases from an Interviewer to an Editor', () => {
   const reallocate = false;
 
   beforeEach(() => {
-    getAllocationDetailsMock.mockReturnValueOnce(Promise.resolve(AllocationMockObject));
+    getAllocationDetailsMock.mockReturnValue(Promise.resolve(AllocationMockObject));
+    updateAllocationDetailsMock.mockResolvedValueOnce();
   });
 
   afterEach(() => {
@@ -102,6 +109,28 @@ describe('Given we wish to allocte cases from an Interviewer to an Editor', () =
       expect(editorListOption.children[editorIndex + 1]).toHaveTextContent(`${Editor.Name} (${Editor.Cases.length} case(s))`);
     });
   });
+  
+  // it('should call updateAllocationDetails when the allocation button is clicked', async () => {
+  //   // arrange
+  //   getAllocationDetailsMock.mockReturnValue(Promise.resolve(AllocationMockObject));
+  //   updateAllocationDetailsMock.mockResolvedValueOnce();
+
+  //   // act
+  //   await act(async () => {
+  //     view = render(
+  //       <BrowserRouter>
+  //         <Allocate supervisorRole={supervisorRole} editorRole={editorRole} reallocate={reallocate} />
+  //       </BrowserRouter>,
+  //     );
+  //   });
+  //   fireEvent.change(view.getByTestId('select-from'), { target: { value: 2 } })
+  //   fireEvent.change(view.getByTestId('select-to'), { target: { value: 2 } })
+  //   fireEvent.click(view.getByText('Allocate'));
+    
+
+  //   // assert
+  //   expect(updateAllocationDetailsMock).toBeCalled();
+  // });    
 });
 
 describe('Given we wish to reallocte cases from an Editor to another Editor', () => {

@@ -16,7 +16,9 @@ exports[`Given we wish to allocte cases from an Interviewer to an Editor should 
         </div>
       </div>
       <br />
-      <h3 />
+      <h3>
+        FRS2504A
+      </h3>
       <div>
         <label
           class="ons-label"
@@ -121,7 +123,9 @@ exports[`Given we wish to allocte cases from an Interviewer to an Editor should 
       </div>
     </div>
     <br />
-    <h3 />
+    <h3>
+      FRS2504A
+    </h3>
     <div>
       <label
         class="ons-label"
@@ -283,7 +287,9 @@ exports[`Given we wish to reallocte cases from an Editor to another Editor shoul
         </div>
       </div>
       <br />
-      <h3 />
+      <h3>
+        FRS2504A
+      </h3>
       <div>
         <label
           class="ons-label"
@@ -394,7 +400,9 @@ exports[`Given we wish to reallocte cases from an Editor to another Editor shoul
       </div>
     </div>
     <br />
-    <h3 />
+    <h3>
+      FRS2504A
+    </h3>
     <div>
       <label
         class="ons-label"
