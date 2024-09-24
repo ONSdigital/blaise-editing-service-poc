@@ -29,6 +29,7 @@ describe('Given we wish to allocte cases from an Interviewer to an Editor', () =
 
   beforeEach(() => {
     getAllocationDetailsMock.mockReturnValue(Promise.resolve(AllocationMockObject));
+    updateAllocationDetailsMock.mockResolvedValue();
   });
 
   afterEach(() => {
@@ -107,8 +108,6 @@ describe('Given we wish to allocte cases from an Interviewer to an Editor', () =
 
   it('should call updateAllocationDetails with the expected parameters when the allocation button is clicked', async () => {
     // arrange
-    updateAllocationDetailsMock.mockResolvedValueOnce();
-
     await act(async () => {
       view = render(
         <BrowserRouter>
@@ -130,8 +129,6 @@ describe('Given we wish to allocte cases from an Interviewer to an Editor', () =
 
   it('should show a success message when allocation is successful', async () => {
     // arrange
-    updateAllocationDetailsMock.mockResolvedValueOnce();
-
     await act(async () => {
       view = render(
         <BrowserRouter>
@@ -151,8 +148,8 @@ describe('Given we wish to allocte cases from an Interviewer to an Editor', () =
     const successMessage = view.getByTestId('SuccessMessage');
     expect(successMessage).toHaveTextContent('Cases have been allocated');
 
-    expect(view.queryByTestId("ErrorMessage")).not.toBeInTheDocument();
-  });  
+    expect(view.queryByTestId('ErrorMessage')).not.toBeInTheDocument();
+  });
 
   it('should show an error message when allocation is not successful', async () => {
     // arrange
@@ -177,19 +174,21 @@ describe('Given we wish to allocte cases from an Interviewer to an Editor', () =
     const errorMessage = view.getByTestId('ErrorMessage');
     expect(errorMessage).toHaveTextContent('Cases could not be allocated');
 
-    expect(view.queryByTestId("SuccessMessage")).not.toBeInTheDocument();
-  });    
+    expect(view.queryByTestId('SuccessMessage')).not.toBeInTheDocument();
+  });
 });
 
 describe('Given we wish to reallocte cases from an Editor to another Editor', () => {
   const reallocate = true;
 
   beforeEach(() => {
-    getAllocationDetailsMock.mockReturnValueOnce(Promise.resolve(AllocationMockObject));
+    getAllocationDetailsMock.mockReturnValue(Promise.resolve(AllocationMockObject));
+    updateAllocationDetailsMock.mockResolvedValue();
   });
 
   afterEach(() => {
     getAllocationDetailsMock.mockReset();
+    updateAllocationDetailsMock.mockReset();
   });
 
   it('should render the allocation page correctly', async () => {
@@ -259,5 +258,76 @@ describe('Given we wish to reallocte cases from an Editor to another Editor', ()
     AllocationMockObject.Editors.forEach((Editor, editorIndex) => {
       expect(editorListOption.children[editorIndex + 1]).toHaveTextContent(`${Editor.Name} (${Editor.Cases.length} case(s))`);
     });
+  });
+
+  it('should call updateAllocationDetails with the expected parameters when the allocation button is clicked', async () => {
+    // arrange
+    await act(async () => {
+      view = render(
+        <BrowserRouter>
+          <Allocate supervisorRole={supervisorRole} editorRole={editorRole} reallocate={reallocate} />
+        </BrowserRouter>,
+      );
+    });
+
+    // act
+    await act(async () => {
+      fireEvent.change(view.getByTestId('select-from'), { target: { value: 'Jake' } });
+      fireEvent.change(view.getByTestId('select-to'), { target: { value: 'Rich' } });
+      fireEvent.click(view.getByText('Allocate'));
+    });
+
+    // assert
+    expect(updateAllocationDetailsMock).toBeCalledWith(questionnaireName, 'Rich', ['10001012', '10001015']);
+  });
+
+  it('should show a success message when reallocation is successful', async () => {
+    // arrange
+    await act(async () => {
+      view = render(
+        <BrowserRouter>
+          <Allocate supervisorRole={supervisorRole} editorRole={editorRole} reallocate={reallocate} />
+        </BrowserRouter>,
+      );
+    });
+
+    // act
+    await act(async () => {
+      fireEvent.change(view.getByTestId('select-from'), { target: { value: 'Jake' } });
+      fireEvent.change(view.getByTestId('select-to'), { target: { value: 'Rich' } });
+      fireEvent.click(view.getByText('Allocate'));
+    });
+
+    // assert
+    const successMessage = view.getByTestId('SuccessMessage');
+    expect(successMessage).toHaveTextContent('Cases have been allocated');
+
+    expect(view.queryByTestId('ErrorMessage')).not.toBeInTheDocument();
+  });
+
+  it('should show an error message when allocation is not successful', async () => {
+    // arrange
+    updateAllocationDetailsMock.mockRejectedValue(new Error('Could not allocate cases'));
+
+    await act(async () => {
+      view = render(
+        <BrowserRouter>
+          <Allocate supervisorRole={supervisorRole} editorRole={editorRole} reallocate={reallocate} />
+        </BrowserRouter>,
+      );
+    });
+
+    // act
+    await act(async () => {
+      fireEvent.change(view.getByTestId('select-from'), { target: { value: 'Jake' } });
+      fireEvent.change(view.getByTestId('select-to'), { target: { value: 'Rich' } });
+      fireEvent.click(view.getByText('Allocate'));
+    });
+
+    // assert
+    const errorMessage = view.getByTestId('ErrorMessage');
+    expect(errorMessage).toHaveTextContent('Cases could not be allocated');
+
+    expect(view.queryByTestId('SuccessMessage')).not.toBeInTheDocument();
   });
 });
