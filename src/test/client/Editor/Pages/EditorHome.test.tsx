@@ -67,28 +67,24 @@ describe('Given there are surveys available in blaise', () => {
       const surveyListView = view.getByTestId(`survey-accordion-${surveyIndex}-heading`);
       expect(surveyListView).toHaveTextContent(survey.name);
       const questionnaireListView = view.getByTestId(`survey-accordion-${surveyIndex}-content`);
-      survey.questionnaires.forEach(({ questionnaireName, fieldPeriod, numberOfCases }, questionaireIndex) => {
-        expect(questionnaireListView).toHaveTextContent(questionnaireName);
 
-        const questionnaireView = view.getByTestId(`${questionnaireName}-editorContent`);
-        expect(questionnaireView).toHaveTextContent(String(fieldPeriod));
-        expect(questionnaireView).toHaveTextContent(String(numberOfCases));
+      const defaultQuestionnaire = survey.questionnaires[0];
+      if (defaultQuestionnaire === undefined) {
+        throw Error('No default questionnaire found');
+      }
 
-        const caseRows = view.getAllByLabelText(`${questionnaireName}-CaseID`);
-        const editStatusRows = view.getAllByLabelText(`${questionnaireName}-EditStatus`);
+      expect(questionnaireListView).toHaveTextContent(defaultQuestionnaire.questionnaireName);
 
-        if (questionaireIndex === 0) {
-          EditorInformationMockObject1.Cases.forEach((caseDetails, caseIndex) => {
-            expect(caseRows[caseIndex]).toHaveTextContent(caseDetails.CaseId);
-            expect(editStatusRows[caseIndex]).toHaveTextContent(String(caseDetails.EditStatus));
-          });
-        }
-        if (questionaireIndex === 1) {
-          EditorInformationMockObject2.Cases.forEach((caseDetails, caseIndex) => {
-            expect(caseRows[caseIndex]).toHaveTextContent(caseDetails.CaseId);
-            expect(editStatusRows[caseIndex]).toHaveTextContent(String(caseDetails.EditStatus));
-          });
-        }
+      const questionnaireView = view.getByTestId(`${defaultQuestionnaire.questionnaireName}-editorContent`);
+      expect(questionnaireView).toHaveTextContent(String(defaultQuestionnaire.fieldPeriod));
+      expect(questionnaireView).toHaveTextContent(String(defaultQuestionnaire.numberOfCases));
+
+      const caseRows = view.getAllByLabelText(`${defaultQuestionnaire.questionnaireName}-CaseID`);
+      const editStatusRows = view.getAllByLabelText(`${defaultQuestionnaire.questionnaireName}-EditStatus`);
+
+      EditorInformationMockObject1.Cases.forEach((caseDetails, caseIndex) => {
+        expect(caseRows[caseIndex]).toHaveTextContent(caseDetails.CaseId);
+        expect(editStatusRows[caseIndex]).toHaveTextContent(String(caseDetails.EditStatus));
       });
     });
   });

@@ -5,174 +5,100 @@ exports[`Renders the error screen if the users role is not in the accepted list 
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <br />
+      <div>
+        <label
+          class="ons-label"
+          for="select-questionnaire"
+        >
+          Select questionnaire
+           
+        </label>
+        <select
+          class="ons-input "
+          data-testid="select-questionnaire"
+          id="select-questionnaire"
+          name="select"
+        >
+          <option
+            data-testid="select-select-questionnaire"
+            disabled=""
+            value=""
+          >
+            Select an option
+          </option>
+          <option
+            data-testid="option-select-questionnaire-FRS2408B"
+            selected=""
+            value="FRS2408B"
+          >
+            FRS2408B (August 2024)
+          </option>
+        </select>
+      </div>
       <div
-        class="ons-accordion"
-        id="questionnaire-accordion"
+        class="ons-panel ons-panel--error ons-panel--no-title  ons-u-mt-m"
       >
-        <button
-          class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
-          data-close-all="Hide all"
-          data-group="accordion"
-          data-testid="questionnaire-accordion-show-all"
-          type="button"
+        <div
+          class="ons-panel__body "
         >
-          <span
-            class="ons-btn__inner ons-js-collapsible-all-inner"
+          <h4>
+            Something went wrong
+          </h4>
+          <p
+            data-testid="ErrorMessage"
           >
-            Show all
-          </span>
-        </button>
-        <details
-          class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-          data-btn-close="Hide"
-          data-group="accordion"
-          id="questionnaire-accordion-0"
-        >
-          <summary
-            aria-controls="questionnaire-accordion-0"
-            aria-expanded="false"
-            class="ons-collapsible__heading ons-js-collapsible-heading"
-            data-ga-action="Open panel"
-            data-testid="questionnaire-accordion-0-heading"
-            role="link"
-            tabindex="0"
-          >
-            <div
-              class="ons-collapsible__controls"
-            >
-              <h2
-                class="ons-collapsible__title"
-              >
-                FRS2408B
-              </h2>
-              <span
-                class="ons-collapsible__icon"
-              >
-                <svg
-                  class="ons-svg-icon"
-                  focusable="false"
-                  viewBox="0 0 7.5 12.85"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                    transform="translate(-5.02 -1.59)"
-                  />
-                </svg>
-              </span>
-            </div>
-          </summary>
-          <div
-            aria-hidden="true"
-            class="ons-collapsible__content ons-js-collapsible-content"
-            data-testid="questionnaire-accordion-0-content"
-            id="questionnaire-accordion-0-content"
-          >
-            <div
-              class="ons-panel ons-panel--error ons-panel--no-title  ons-u-mt-m"
-            >
-              <div
-                class="ons-panel__body "
-              >
-                <h4>
-                  Something went wrong
-                </h4>
-                <p
-                  data-testid="ErrorMessage"
-                >
-                  User role invalid_Role not recognised
-                </p>
-              </div>
-            </div>
-          </div>
-        </details>
+            User role invalid_Role not recognised
+          </p>
+        </div>
       </div>
     </div>
   </body>,
   "container": <div>
-    <br />
+    <div>
+      <label
+        class="ons-label"
+        for="select-questionnaire"
+      >
+        Select questionnaire
+         
+      </label>
+      <select
+        class="ons-input "
+        data-testid="select-questionnaire"
+        id="select-questionnaire"
+        name="select"
+      >
+        <option
+          data-testid="select-select-questionnaire"
+          disabled=""
+          value=""
+        >
+          Select an option
+        </option>
+        <option
+          data-testid="option-select-questionnaire-FRS2408B"
+          selected=""
+          value="FRS2408B"
+        >
+          FRS2408B (August 2024)
+        </option>
+      </select>
+    </div>
     <div
-      class="ons-accordion"
-      id="questionnaire-accordion"
+      class="ons-panel ons-panel--error ons-panel--no-title  ons-u-mt-m"
     >
-      <button
-        class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
-        data-close-all="Hide all"
-        data-group="accordion"
-        data-testid="questionnaire-accordion-show-all"
-        type="button"
+      <div
+        class="ons-panel__body "
       >
-        <span
-          class="ons-btn__inner ons-js-collapsible-all-inner"
+        <h4>
+          Something went wrong
+        </h4>
+        <p
+          data-testid="ErrorMessage"
         >
-          Show all
-        </span>
-      </button>
-      <details
-        class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-        data-btn-close="Hide"
-        data-group="accordion"
-        id="questionnaire-accordion-0"
-      >
-        <summary
-          aria-controls="questionnaire-accordion-0"
-          aria-expanded="false"
-          class="ons-collapsible__heading ons-js-collapsible-heading"
-          data-ga-action="Open panel"
-          data-testid="questionnaire-accordion-0-heading"
-          role="link"
-          tabindex="0"
-        >
-          <div
-            class="ons-collapsible__controls"
-          >
-            <h2
-              class="ons-collapsible__title"
-            >
-              FRS2408B
-            </h2>
-            <span
-              class="ons-collapsible__icon"
-            >
-              <svg
-                class="ons-svg-icon"
-                focusable="false"
-                viewBox="0 0 7.5 12.85"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                  transform="translate(-5.02 -1.59)"
-                />
-              </svg>
-            </span>
-          </div>
-        </summary>
-        <div
-          aria-hidden="true"
-          class="ons-collapsible__content ons-js-collapsible-content"
-          data-testid="questionnaire-accordion-0-content"
-          id="questionnaire-accordion-0-content"
-        >
-          <div
-            class="ons-panel ons-panel--error ons-panel--no-title  ons-u-mt-m"
-          >
-            <div
-              class="ons-panel__body "
-            >
-              <h4>
-                Something went wrong
-              </h4>
-              <p
-                data-testid="ErrorMessage"
-              >
-                User role invalid_Role not recognised
-              </p>
-            </div>
-          </div>
-        </div>
-      </details>
+          User role invalid_Role not recognised
+        </p>
+      </div>
     </div>
   </div>,
   "debug": [Function],

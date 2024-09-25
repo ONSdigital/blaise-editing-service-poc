@@ -48,7 +48,7 @@ describe('Given there are surveys available in blaise', () => {
     expect(view).toMatchSnapshot();
   });
 
-  it('should display the expected survey details', async () => {
+  it('should display the expected questionnaire details for the default option', async () => {
     // arrange
     const user = userMockObject;
     user.role = userRole;
@@ -68,48 +68,32 @@ describe('Given there are surveys available in blaise', () => {
       expect(surveyListView).toHaveTextContent(survey.name);
 
       const questionnaireListView = view.getByTestId(`survey-accordion-${surveyIndex}-content`);
-      survey.questionnaires.forEach(({ questionnaireName }, QuestionnaireIndex) => {
-        expect(questionnaireListView).toHaveTextContent(questionnaireName);
 
-        if (QuestionnaireIndex === 0) {
-          const questionnaireView = view.getByTestId(`${questionnaireName}-supervisor-Content`);
-          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject1.TotalNumberOfCases));
-          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject1.NumberOfCasesNotAllocated));
-          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject1.NumberOfCasesAllocated));
-          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject1.NumberOfCasesCompleted));
+      const defaultQuestionnaire = survey.questionnaires[0];
+      if (defaultQuestionnaire === undefined) {
+        throw Error('No default questionnaire found');
+      }
 
-          const editorRows = view.getAllByLabelText(`${questionnaireName}-Editor`);
-          const numberOfCasesAllocatedRows = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesAllocated`);
-          const numberOfCasesCompleted = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesCompleted`);
-          const numberOfCasesQueried = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesQueried`);
+      const defaultQuestionnaireName = defaultQuestionnaire.questionnaireName;
 
-          SupervisorInformationMockObject1.EditorInformation.forEach((editor, index) => {
-            expect(editorRows[index]).toHaveTextContent(editor.EditorName);
-            expect(numberOfCasesAllocatedRows[index]).toHaveTextContent(String(editor.NumberOfCasesAllocated));
-            expect(numberOfCasesCompleted[index]).toHaveTextContent(String(editor.NumberOfCasesCompleted));
-            expect(numberOfCasesQueried[index]).toHaveTextContent(String(editor.NumberOfCasesQueried));
-          });
-        }
+      expect(questionnaireListView).toHaveTextContent(defaultQuestionnaireName);
 
-        if (QuestionnaireIndex === 1) {
-          const questionnaireView = view.getByTestId(`${questionnaireName}-supervisor-Content`);
-          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject2.TotalNumberOfCases));
-          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject2.NumberOfCasesNotAllocated));
-          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject2.NumberOfCasesAllocated));
-          expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject2.NumberOfCasesCompleted));
+      const questionnaireView = view.getByTestId(`${defaultQuestionnaireName}-supervisor-Content`);
+      expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject1.TotalNumberOfCases));
+      expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject1.NumberOfCasesNotAllocated));
+      expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject1.NumberOfCasesAllocated));
+      expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject1.NumberOfCasesCompleted));
 
-          const editorRows = view.getAllByLabelText(`${questionnaireName}-Editor`);
-          const numberOfCasesAllocatedRows = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesAllocated`);
-          const numberOfCasesCompleted = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesCompleted`);
-          const numberOfCasesQueried = view.getAllByLabelText(`${questionnaireName}-NumberOfCasesQueried`);
+      const editorRows = view.getAllByLabelText(`${defaultQuestionnaireName}-Editor`);
+      const numberOfCasesAllocatedRows = view.getAllByLabelText(`${defaultQuestionnaireName}-NumberOfCasesAllocated`);
+      const numberOfCasesCompleted = view.getAllByLabelText(`${defaultQuestionnaireName}-NumberOfCasesCompleted`);
+      const numberOfCasesQueried = view.getAllByLabelText(`${defaultQuestionnaireName}-NumberOfCasesQueried`);
 
-          SupervisorInformationMockObject2.EditorInformation.forEach((editor, index) => {
-            expect(editorRows[index]).toHaveTextContent(editor.EditorName);
-            expect(numberOfCasesAllocatedRows[index]).toHaveTextContent(String(editor.NumberOfCasesAllocated));
-            expect(numberOfCasesCompleted[index]).toHaveTextContent(String(editor.NumberOfCasesCompleted));
-            expect(numberOfCasesQueried[index]).toHaveTextContent(String(editor.NumberOfCasesQueried));
-          });
-        }
+      SupervisorInformationMockObject1.EditorInformation.forEach((editor, index) => {
+        expect(editorRows[index]).toHaveTextContent(editor.EditorName);
+        expect(numberOfCasesAllocatedRows[index]).toHaveTextContent(String(editor.NumberOfCasesAllocated));
+        expect(numberOfCasesCompleted[index]).toHaveTextContent(String(editor.NumberOfCasesCompleted));
+        expect(numberOfCasesQueried[index]).toHaveTextContent(String(editor.NumberOfCasesQueried));
       });
     });
   });

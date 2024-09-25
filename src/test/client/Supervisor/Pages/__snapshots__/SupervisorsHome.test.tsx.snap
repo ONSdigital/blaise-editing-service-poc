@@ -176,576 +176,269 @@ exports[`Given there are surveys available in blaise should render the superviso
               data-testid="survey-accordion-0-content"
               id="survey-accordion-0-content"
             >
-              <br />
+              <div>
+                <label
+                  class="ons-label"
+                  for="select-questionnaire"
+                >
+                  Select questionnaire
+                   
+                </label>
+                <select
+                  class="ons-input "
+                  data-testid="select-questionnaire"
+                  id="select-questionnaire"
+                  name="select"
+                >
+                  <option
+                    data-testid="select-select-questionnaire"
+                    disabled=""
+                    value=""
+                  >
+                    Select an option
+                  </option>
+                  <option
+                    data-testid="option-select-questionnaire-FRS2504A"
+                    selected=""
+                    value="FRS2504A"
+                  >
+                    FRS2504A (April 2025)
+                  </option>
+                  <option
+                    data-testid="option-select-questionnaire-FRS2505A"
+                    value="FRS2505A"
+                  >
+                    FRS2505A (May 2025)
+                  </option>
+                </select>
+              </div>
               <div
-                class="ons-accordion"
-                id="questionnaire-accordion"
+                class="questionnaire"
+                data-testid="questionnaire"
               >
-                <button
-                  class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
-                  data-close-all="Hide all"
-                  data-group="accordion"
-                  data-testid="questionnaire-accordion-show-all"
-                  type="button"
+                <div
+                  class="questionnaire"
                 >
-                  <span
-                    class="ons-btn__inner ons-js-collapsible-all-inner"
-                  >
-                    Show all
-                  </span>
-                </button>
-                <details
-                  class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                  data-btn-close="Hide"
-                  data-group="accordion"
-                  id="questionnaire-accordion-0"
-                >
-                  <summary
-                    aria-controls="questionnaire-accordion-0"
-                    aria-expanded="false"
-                    class="ons-collapsible__heading ons-js-collapsible-heading"
-                    data-ga-action="Open panel"
-                    data-testid="questionnaire-accordion-0-heading"
-                    role="link"
-                    tabindex="0"
-                  >
-                    <div
-                      class="ons-collapsible__controls"
-                    >
-                      <h2
-                        class="ons-collapsible__title"
-                      >
-                        FRS2504A
-                      </h2>
-                      <span
-                        class="ons-collapsible__icon"
-                      >
-                        <svg
-                          class="ons-svg-icon"
-                          focusable="false"
-                          viewBox="0 0 7.5 12.85"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                            transform="translate(-5.02 -1.59)"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </summary>
                   <div
-                    aria-hidden="true"
-                    class="ons-collapsible__content ons-js-collapsible-content"
-                    data-testid="questionnaire-accordion-0-content"
-                    id="questionnaire-accordion-0-content"
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                   >
                     <div
-                      class="questionnaire"
-                      data-testid="questionnaire"
+                      class="ons-panel__body "
                     >
-                      <div
-                        class="questionnaire"
+                      <dl
+                        class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                        data-testid="FRS2504A-supervisor-Content"
+                        style="padding: 0px 0px 15px 5px;"
+                        title="Questionnares"
                       >
-                        <div
-                          class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          <div
-                            class="ons-panel__body "
-                          >
-                            <dl
-                              class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                              data-testid="FRS2504A-supervisor-Content"
-                              style="padding: 0px 0px 15px 5px;"
-                              title="Questionnares"
-                            >
-                              <dt
-                                class="ons-description-list__term ons-grid__col ons-col-5@m"
-                              >
-                                Field period:
-                              </dt>
-                              <dd
-                                class="ons-description-list__value ons-grid__col ons-col-7@m"
-                              >
-                                April 2025
-                              </dd>
-                              <dt
-                                class="ons-description-list__term ons-grid__col ons-col-5@m"
-                              >
-                                Total number of cases:
-                              </dt>
-                              <dd
-                                class="ons-description-list__value ons-grid__col ons-col-7@m"
-                              >
-                                1000
-                              </dd>
-                              <dt
-                                class="ons-description-list__term ons-grid__col ons-col-5@m"
-                              >
-                                Number of cases not allocated:
-                              </dt>
-                              <dd
-                                class="ons-description-list__value ons-grid__col ons-col-7@m"
-                              >
-                                966
-                              </dd>
-                              <dt
-                                class="ons-description-list__term ons-grid__col ons-col-5@m"
-                              >
-                                Number of cases allocated:
-                              </dt>
-                              <dd
-                                class="ons-description-list__value ons-grid__col ons-col-7@m"
-                              >
-                                25
-                              </dd>
-                              <dt
-                                class="ons-description-list__term ons-grid__col ons-col-5@m"
-                              >
-                                Number of cases completed:
-                              </dt>
-                              <dd
-                                class="ons-description-list__value ons-grid__col ons-col-7@m"
-                              >
-                                9
-                              </dd>
-                            </dl>
-                          </div>
-                        </div>
-                        <table
-                          class="ons-table"
-                          data-testid="FRS2504A-editor-table"
-                          id="FRS2504A-editor-table"
+                          Field period:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          <thead
-                            class="ons-table__head"
-                          >
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Editor
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Allocated
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Completed
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Queried
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody
-                            class="ons-table__body"
-                          >
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2504A-Editor"
-                                class="ons-table__cell"
-                              >
-                                Doctor Doom
-                              </td>
-                              <td
-                                aria-label="FRS2504A-NumberOfCasesAllocated"
-                                class="ons-table__cell status"
-                              >
-                                10
-                              </td>
-                              <td
-                                aria-label="FRS2504A-NumberOfCasesCompleted"
-                                class="ons-table__cell "
-                              >
-                                5
-                              </td>
-                              <td
-                                aria-label="FRS2504A-NumberOfCasesQueried"
-                                class="ons-table__cell "
-                              >
-                                0
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2504A-Editor"
-                                class="ons-table__cell"
-                              >
-                                Doctor Strange
-                              </td>
-                              <td
-                                aria-label="FRS2504A-NumberOfCasesAllocated"
-                                class="ons-table__cell status"
-                              >
-                                15
-                              </td>
-                              <td
-                                aria-label="FRS2504A-NumberOfCasesCompleted"
-                                class="ons-table__cell "
-                              >
-                                4
-                              </td>
-                              <td
-                                aria-label="FRS2504A-NumberOfCasesQueried"
-                                class="ons-table__cell "
-                              >
-                                1
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2504A-Editor"
-                                class="ons-table__cell"
-                              >
-                                Doctor Who
-                              </td>
-                              <td
-                                aria-label="FRS2504A-NumberOfCasesAllocated"
-                                class="ons-table__cell status"
-                              >
-                                0
-                              </td>
-                              <td
-                                aria-label="FRS2504A-NumberOfCasesCompleted"
-                                class="ons-table__cell "
-                              >
-                                0
-                              </td>
-                              <td
-                                aria-label="FRS2504A-NumberOfCasesQueried"
-                                class="ons-table__cell "
-                              >
-                                0
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                <a
-                                  href="/questionnaires/FRS2504A/allocate"
-                                >
-                                  Allocate
-                                </a>
-                                 | 
-                                <a
-                                  href="/questionnaires/FRS2504A/reallocate"
-                                >
-                                  Reallocate
-                                </a>
-                              </td>
-                              <td
-                                class="ons-table__cell"
-                              />
-                              <td
-                                class="ons-table__cell"
-                              />
-                              <td
-                                class="ons-table__cell"
-                              />
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
+                          April 2025
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Total number of cases:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          1000
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Number of cases not allocated:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          966
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Number of cases allocated:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          25
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Number of cases completed:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          9
+                        </dd>
+                      </dl>
                     </div>
                   </div>
-                </details>
-                <details
-                  class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                  data-btn-close="Hide"
-                  data-group="accordion"
-                  id="questionnaire-accordion-1"
-                >
-                  <summary
-                    aria-controls="questionnaire-accordion-1"
-                    aria-expanded="false"
-                    class="ons-collapsible__heading ons-js-collapsible-heading"
-                    data-ga-action="Open panel"
-                    data-testid="questionnaire-accordion-1-heading"
-                    role="link"
-                    tabindex="0"
+                  <table
+                    class="ons-table"
+                    data-testid="FRS2504A-editor-table"
+                    id="FRS2504A-editor-table"
                   >
-                    <div
-                      class="ons-collapsible__controls"
+                    <thead
+                      class="ons-table__head"
                     >
-                      <h2
-                        class="ons-collapsible__title"
+                      <tr
+                        class="ons-table__row"
                       >
-                        FRS2505A
-                      </h2>
-                      <span
-                        class="ons-collapsible__icon"
-                      >
-                        <svg
-                          class="ons-svg-icon"
-                          focusable="false"
-                          viewBox="0 0 7.5 12.85"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <th
+                          class="ons-table__header"
+                          scope="col"
                         >
-                          <path
-                            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                            transform="translate(-5.02 -1.59)"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </summary>
-                  <div
-                    aria-hidden="true"
-                    class="ons-collapsible__content ons-js-collapsible-content"
-                    data-testid="questionnaire-accordion-1-content"
-                    id="questionnaire-accordion-1-content"
-                  >
-                    <div
-                      class="questionnaire"
-                      data-testid="questionnaire"
+                          Editor
+                        </th>
+                        <th
+                          class="ons-table__header"
+                          scope="col"
+                        >
+                          Allocated
+                        </th>
+                        <th
+                          class="ons-table__header"
+                          scope="col"
+                        >
+                          Completed
+                        </th>
+                        <th
+                          class="ons-table__header"
+                          scope="col"
+                        >
+                          Queried
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="ons-table__body"
                     >
-                      <div
-                        class="questionnaire"
+                      <tr
+                        class="ons-table__row"
                       >
-                        <div
-                          class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                        <td
+                          aria-label="FRS2504A-Editor"
+                          class="ons-table__cell"
                         >
-                          <div
-                            class="ons-panel__body "
-                          >
-                            <dl
-                              class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                              data-testid="FRS2505A-supervisor-Content"
-                              style="padding: 0px 0px 15px 5px;"
-                              title="Questionnares"
-                            >
-                              <dt
-                                class="ons-description-list__term ons-grid__col ons-col-5@m"
-                              >
-                                Field period:
-                              </dt>
-                              <dd
-                                class="ons-description-list__value ons-grid__col ons-col-7@m"
-                              >
-                                May 2025
-                              </dd>
-                              <dt
-                                class="ons-description-list__term ons-grid__col ons-col-5@m"
-                              >
-                                Total number of cases:
-                              </dt>
-                              <dd
-                                class="ons-description-list__value ons-grid__col ons-col-7@m"
-                              >
-                                100
-                              </dd>
-                              <dt
-                                class="ons-description-list__term ons-grid__col ons-col-5@m"
-                              >
-                                Number of cases not allocated:
-                              </dt>
-                              <dd
-                                class="ons-description-list__value ons-grid__col ons-col-7@m"
-                              >
-                                80
-                              </dd>
-                              <dt
-                                class="ons-description-list__term ons-grid__col ons-col-5@m"
-                              >
-                                Number of cases allocated:
-                              </dt>
-                              <dd
-                                class="ons-description-list__value ons-grid__col ons-col-7@m"
-                              >
-                                15
-                              </dd>
-                              <dt
-                                class="ons-description-list__term ons-grid__col ons-col-5@m"
-                              >
-                                Number of cases completed:
-                              </dt>
-                              <dd
-                                class="ons-description-list__value ons-grid__col ons-col-7@m"
-                              >
-                                5
-                              </dd>
-                            </dl>
-                          </div>
-                        </div>
-                        <table
-                          class="ons-table"
-                          data-testid="FRS2505A-editor-table"
-                          id="FRS2505A-editor-table"
+                          Doctor Doom
+                        </td>
+                        <td
+                          aria-label="FRS2504A-NumberOfCasesAllocated"
+                          class="ons-table__cell status"
                         >
-                          <thead
-                            class="ons-table__head"
+                          10
+                        </td>
+                        <td
+                          aria-label="FRS2504A-NumberOfCasesCompleted"
+                          class="ons-table__cell "
+                        >
+                          5
+                        </td>
+                        <td
+                          aria-label="FRS2504A-NumberOfCasesQueried"
+                          class="ons-table__cell "
+                        >
+                          0
+                        </td>
+                      </tr>
+                      <tr
+                        class="ons-table__row"
+                      >
+                        <td
+                          aria-label="FRS2504A-Editor"
+                          class="ons-table__cell"
+                        >
+                          Doctor Strange
+                        </td>
+                        <td
+                          aria-label="FRS2504A-NumberOfCasesAllocated"
+                          class="ons-table__cell status"
+                        >
+                          15
+                        </td>
+                        <td
+                          aria-label="FRS2504A-NumberOfCasesCompleted"
+                          class="ons-table__cell "
+                        >
+                          4
+                        </td>
+                        <td
+                          aria-label="FRS2504A-NumberOfCasesQueried"
+                          class="ons-table__cell "
+                        >
+                          1
+                        </td>
+                      </tr>
+                      <tr
+                        class="ons-table__row"
+                      >
+                        <td
+                          aria-label="FRS2504A-Editor"
+                          class="ons-table__cell"
+                        >
+                          Doctor Who
+                        </td>
+                        <td
+                          aria-label="FRS2504A-NumberOfCasesAllocated"
+                          class="ons-table__cell status"
+                        >
+                          0
+                        </td>
+                        <td
+                          aria-label="FRS2504A-NumberOfCasesCompleted"
+                          class="ons-table__cell "
+                        >
+                          0
+                        </td>
+                        <td
+                          aria-label="FRS2504A-NumberOfCasesQueried"
+                          class="ons-table__cell "
+                        >
+                          0
+                        </td>
+                      </tr>
+                      <tr
+                        class="ons-table__row"
+                      >
+                        <td
+                          class="ons-table__cell"
+                        >
+                          <a
+                            href="/questionnaires/FRS2504A/allocate"
                           >
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Editor
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Allocated
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Completed
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Queried
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody
-                            class="ons-table__body"
+                            Allocate
+                          </a>
+                           | 
+                          <a
+                            href="/questionnaires/FRS2504A/reallocate"
                           >
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2505A-Editor"
-                                class="ons-table__cell"
-                              >
-                                Iron Man
-                              </td>
-                              <td
-                                aria-label="FRS2505A-NumberOfCasesAllocated"
-                                class="ons-table__cell status"
-                              >
-                                11
-                              </td>
-                              <td
-                                aria-label="FRS2505A-NumberOfCasesCompleted"
-                                class="ons-table__cell "
-                              >
-                                2
-                              </td>
-                              <td
-                                aria-label="FRS2505A-NumberOfCasesQueried"
-                                class="ons-table__cell "
-                              >
-                                1
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2505A-Editor"
-                                class="ons-table__cell"
-                              >
-                                Captain America
-                              </td>
-                              <td
-                                aria-label="FRS2505A-NumberOfCasesAllocated"
-                                class="ons-table__cell status"
-                              >
-                                4
-                              </td>
-                              <td
-                                aria-label="FRS2505A-NumberOfCasesCompleted"
-                                class="ons-table__cell "
-                              >
-                                3
-                              </td>
-                              <td
-                                aria-label="FRS2505A-NumberOfCasesQueried"
-                                class="ons-table__cell "
-                              >
-                                0
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2505A-Editor"
-                                class="ons-table__cell"
-                              >
-                                The Hulk
-                              </td>
-                              <td
-                                aria-label="FRS2505A-NumberOfCasesAllocated"
-                                class="ons-table__cell status"
-                              >
-                                0
-                              </td>
-                              <td
-                                aria-label="FRS2505A-NumberOfCasesCompleted"
-                                class="ons-table__cell "
-                              >
-                                0
-                              </td>
-                              <td
-                                aria-label="FRS2505A-NumberOfCasesQueried"
-                                class="ons-table__cell "
-                              >
-                                0
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                class="ons-table__cell"
-                              >
-                                <a
-                                  href="/questionnaires/FRS2505A/allocate"
-                                >
-                                  Allocate
-                                </a>
-                                 | 
-                                <a
-                                  href="/questionnaires/FRS2505A/reallocate"
-                                >
-                                  Reallocate
-                                </a>
-                              </td>
-                              <td
-                                class="ons-table__cell"
-                              />
-                              <td
-                                class="ons-table__cell"
-                              />
-                              <td
-                                class="ons-table__cell"
-                              />
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </details>
+                            Reallocate
+                          </a>
+                        </td>
+                        <td
+                          class="ons-table__cell"
+                        />
+                        <td
+                          class="ons-table__cell"
+                        />
+                        <td
+                          class="ons-table__cell"
+                        />
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </details>
@@ -818,576 +511,269 @@ exports[`Given there are surveys available in blaise should render the superviso
             data-testid="survey-accordion-0-content"
             id="survey-accordion-0-content"
           >
-            <br />
+            <div>
+              <label
+                class="ons-label"
+                for="select-questionnaire"
+              >
+                Select questionnaire
+                 
+              </label>
+              <select
+                class="ons-input "
+                data-testid="select-questionnaire"
+                id="select-questionnaire"
+                name="select"
+              >
+                <option
+                  data-testid="select-select-questionnaire"
+                  disabled=""
+                  value=""
+                >
+                  Select an option
+                </option>
+                <option
+                  data-testid="option-select-questionnaire-FRS2504A"
+                  selected=""
+                  value="FRS2504A"
+                >
+                  FRS2504A (April 2025)
+                </option>
+                <option
+                  data-testid="option-select-questionnaire-FRS2505A"
+                  value="FRS2505A"
+                >
+                  FRS2505A (May 2025)
+                </option>
+              </select>
+            </div>
             <div
-              class="ons-accordion"
-              id="questionnaire-accordion"
+              class="questionnaire"
+              data-testid="questionnaire"
             >
-              <button
-                class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
-                data-close-all="Hide all"
-                data-group="accordion"
-                data-testid="questionnaire-accordion-show-all"
-                type="button"
+              <div
+                class="questionnaire"
               >
-                <span
-                  class="ons-btn__inner ons-js-collapsible-all-inner"
-                >
-                  Show all
-                </span>
-              </button>
-              <details
-                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                data-btn-close="Hide"
-                data-group="accordion"
-                id="questionnaire-accordion-0"
-              >
-                <summary
-                  aria-controls="questionnaire-accordion-0"
-                  aria-expanded="false"
-                  class="ons-collapsible__heading ons-js-collapsible-heading"
-                  data-ga-action="Open panel"
-                  data-testid="questionnaire-accordion-0-heading"
-                  role="link"
-                  tabindex="0"
-                >
-                  <div
-                    class="ons-collapsible__controls"
-                  >
-                    <h2
-                      class="ons-collapsible__title"
-                    >
-                      FRS2504A
-                    </h2>
-                    <span
-                      class="ons-collapsible__icon"
-                    >
-                      <svg
-                        class="ons-svg-icon"
-                        focusable="false"
-                        viewBox="0 0 7.5 12.85"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                          transform="translate(-5.02 -1.59)"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </summary>
                 <div
-                  aria-hidden="true"
-                  class="ons-collapsible__content ons-js-collapsible-content"
-                  data-testid="questionnaire-accordion-0-content"
-                  id="questionnaire-accordion-0-content"
+                  class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                 >
                   <div
-                    class="questionnaire"
-                    data-testid="questionnaire"
+                    class="ons-panel__body "
                   >
-                    <div
-                      class="questionnaire"
+                    <dl
+                      class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                      data-testid="FRS2504A-supervisor-Content"
+                      style="padding: 0px 0px 15px 5px;"
+                      title="Questionnares"
                     >
-                      <div
-                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        <div
-                          class="ons-panel__body "
-                        >
-                          <dl
-                            class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                            data-testid="FRS2504A-supervisor-Content"
-                            style="padding: 0px 0px 15px 5px;"
-                            title="Questionnares"
-                          >
-                            <dt
-                              class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            >
-                              Field period:
-                            </dt>
-                            <dd
-                              class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            >
-                              April 2025
-                            </dd>
-                            <dt
-                              class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            >
-                              Total number of cases:
-                            </dt>
-                            <dd
-                              class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            >
-                              1000
-                            </dd>
-                            <dt
-                              class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            >
-                              Number of cases not allocated:
-                            </dt>
-                            <dd
-                              class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            >
-                              966
-                            </dd>
-                            <dt
-                              class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            >
-                              Number of cases allocated:
-                            </dt>
-                            <dd
-                              class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            >
-                              25
-                            </dd>
-                            <dt
-                              class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            >
-                              Number of cases completed:
-                            </dt>
-                            <dd
-                              class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            >
-                              9
-                            </dd>
-                          </dl>
-                        </div>
-                      </div>
-                      <table
-                        class="ons-table"
-                        data-testid="FRS2504A-editor-table"
-                        id="FRS2504A-editor-table"
+                        Field period:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        <thead
-                          class="ons-table__head"
-                        >
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Editor
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Allocated
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Completed
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Queried
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody
-                          class="ons-table__body"
-                        >
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2504A-Editor"
-                              class="ons-table__cell"
-                            >
-                              Doctor Doom
-                            </td>
-                            <td
-                              aria-label="FRS2504A-NumberOfCasesAllocated"
-                              class="ons-table__cell status"
-                            >
-                              10
-                            </td>
-                            <td
-                              aria-label="FRS2504A-NumberOfCasesCompleted"
-                              class="ons-table__cell "
-                            >
-                              5
-                            </td>
-                            <td
-                              aria-label="FRS2504A-NumberOfCasesQueried"
-                              class="ons-table__cell "
-                            >
-                              0
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2504A-Editor"
-                              class="ons-table__cell"
-                            >
-                              Doctor Strange
-                            </td>
-                            <td
-                              aria-label="FRS2504A-NumberOfCasesAllocated"
-                              class="ons-table__cell status"
-                            >
-                              15
-                            </td>
-                            <td
-                              aria-label="FRS2504A-NumberOfCasesCompleted"
-                              class="ons-table__cell "
-                            >
-                              4
-                            </td>
-                            <td
-                              aria-label="FRS2504A-NumberOfCasesQueried"
-                              class="ons-table__cell "
-                            >
-                              1
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2504A-Editor"
-                              class="ons-table__cell"
-                            >
-                              Doctor Who
-                            </td>
-                            <td
-                              aria-label="FRS2504A-NumberOfCasesAllocated"
-                              class="ons-table__cell status"
-                            >
-                              0
-                            </td>
-                            <td
-                              aria-label="FRS2504A-NumberOfCasesCompleted"
-                              class="ons-table__cell "
-                            >
-                              0
-                            </td>
-                            <td
-                              aria-label="FRS2504A-NumberOfCasesQueried"
-                              class="ons-table__cell "
-                            >
-                              0
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              <a
-                                href="/questionnaires/FRS2504A/allocate"
-                              >
-                                Allocate
-                              </a>
-                               | 
-                              <a
-                                href="/questionnaires/FRS2504A/reallocate"
-                              >
-                                Reallocate
-                              </a>
-                            </td>
-                            <td
-                              class="ons-table__cell"
-                            />
-                            <td
-                              class="ons-table__cell"
-                            />
-                            <td
-                              class="ons-table__cell"
-                            />
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+                        April 2025
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Total number of cases:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        1000
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Number of cases not allocated:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        966
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Number of cases allocated:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        25
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Number of cases completed:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        9
+                      </dd>
+                    </dl>
                   </div>
                 </div>
-              </details>
-              <details
-                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                data-btn-close="Hide"
-                data-group="accordion"
-                id="questionnaire-accordion-1"
-              >
-                <summary
-                  aria-controls="questionnaire-accordion-1"
-                  aria-expanded="false"
-                  class="ons-collapsible__heading ons-js-collapsible-heading"
-                  data-ga-action="Open panel"
-                  data-testid="questionnaire-accordion-1-heading"
-                  role="link"
-                  tabindex="0"
+                <table
+                  class="ons-table"
+                  data-testid="FRS2504A-editor-table"
+                  id="FRS2504A-editor-table"
                 >
-                  <div
-                    class="ons-collapsible__controls"
+                  <thead
+                    class="ons-table__head"
                   >
-                    <h2
-                      class="ons-collapsible__title"
+                    <tr
+                      class="ons-table__row"
                     >
-                      FRS2505A
-                    </h2>
-                    <span
-                      class="ons-collapsible__icon"
-                    >
-                      <svg
-                        class="ons-svg-icon"
-                        focusable="false"
-                        viewBox="0 0 7.5 12.85"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <th
+                        class="ons-table__header"
+                        scope="col"
                       >
-                        <path
-                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                          transform="translate(-5.02 -1.59)"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </summary>
-                <div
-                  aria-hidden="true"
-                  class="ons-collapsible__content ons-js-collapsible-content"
-                  data-testid="questionnaire-accordion-1-content"
-                  id="questionnaire-accordion-1-content"
-                >
-                  <div
-                    class="questionnaire"
-                    data-testid="questionnaire"
+                        Editor
+                      </th>
+                      <th
+                        class="ons-table__header"
+                        scope="col"
+                      >
+                        Allocated
+                      </th>
+                      <th
+                        class="ons-table__header"
+                        scope="col"
+                      >
+                        Completed
+                      </th>
+                      <th
+                        class="ons-table__header"
+                        scope="col"
+                      >
+                        Queried
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ons-table__body"
                   >
-                    <div
-                      class="questionnaire"
+                    <tr
+                      class="ons-table__row"
                     >
-                      <div
-                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                      <td
+                        aria-label="FRS2504A-Editor"
+                        class="ons-table__cell"
                       >
-                        <div
-                          class="ons-panel__body "
-                        >
-                          <dl
-                            class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                            data-testid="FRS2505A-supervisor-Content"
-                            style="padding: 0px 0px 15px 5px;"
-                            title="Questionnares"
-                          >
-                            <dt
-                              class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            >
-                              Field period:
-                            </dt>
-                            <dd
-                              class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            >
-                              May 2025
-                            </dd>
-                            <dt
-                              class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            >
-                              Total number of cases:
-                            </dt>
-                            <dd
-                              class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            >
-                              100
-                            </dd>
-                            <dt
-                              class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            >
-                              Number of cases not allocated:
-                            </dt>
-                            <dd
-                              class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            >
-                              80
-                            </dd>
-                            <dt
-                              class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            >
-                              Number of cases allocated:
-                            </dt>
-                            <dd
-                              class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            >
-                              15
-                            </dd>
-                            <dt
-                              class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            >
-                              Number of cases completed:
-                            </dt>
-                            <dd
-                              class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            >
-                              5
-                            </dd>
-                          </dl>
-                        </div>
-                      </div>
-                      <table
-                        class="ons-table"
-                        data-testid="FRS2505A-editor-table"
-                        id="FRS2505A-editor-table"
+                        Doctor Doom
+                      </td>
+                      <td
+                        aria-label="FRS2504A-NumberOfCasesAllocated"
+                        class="ons-table__cell status"
                       >
-                        <thead
-                          class="ons-table__head"
+                        10
+                      </td>
+                      <td
+                        aria-label="FRS2504A-NumberOfCasesCompleted"
+                        class="ons-table__cell "
+                      >
+                        5
+                      </td>
+                      <td
+                        aria-label="FRS2504A-NumberOfCasesQueried"
+                        class="ons-table__cell "
+                      >
+                        0
+                      </td>
+                    </tr>
+                    <tr
+                      class="ons-table__row"
+                    >
+                      <td
+                        aria-label="FRS2504A-Editor"
+                        class="ons-table__cell"
+                      >
+                        Doctor Strange
+                      </td>
+                      <td
+                        aria-label="FRS2504A-NumberOfCasesAllocated"
+                        class="ons-table__cell status"
+                      >
+                        15
+                      </td>
+                      <td
+                        aria-label="FRS2504A-NumberOfCasesCompleted"
+                        class="ons-table__cell "
+                      >
+                        4
+                      </td>
+                      <td
+                        aria-label="FRS2504A-NumberOfCasesQueried"
+                        class="ons-table__cell "
+                      >
+                        1
+                      </td>
+                    </tr>
+                    <tr
+                      class="ons-table__row"
+                    >
+                      <td
+                        aria-label="FRS2504A-Editor"
+                        class="ons-table__cell"
+                      >
+                        Doctor Who
+                      </td>
+                      <td
+                        aria-label="FRS2504A-NumberOfCasesAllocated"
+                        class="ons-table__cell status"
+                      >
+                        0
+                      </td>
+                      <td
+                        aria-label="FRS2504A-NumberOfCasesCompleted"
+                        class="ons-table__cell "
+                      >
+                        0
+                      </td>
+                      <td
+                        aria-label="FRS2504A-NumberOfCasesQueried"
+                        class="ons-table__cell "
+                      >
+                        0
+                      </td>
+                    </tr>
+                    <tr
+                      class="ons-table__row"
+                    >
+                      <td
+                        class="ons-table__cell"
+                      >
+                        <a
+                          href="/questionnaires/FRS2504A/allocate"
                         >
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Editor
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Allocated
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Completed
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Queried
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody
-                          class="ons-table__body"
+                          Allocate
+                        </a>
+                         | 
+                        <a
+                          href="/questionnaires/FRS2504A/reallocate"
                         >
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2505A-Editor"
-                              class="ons-table__cell"
-                            >
-                              Iron Man
-                            </td>
-                            <td
-                              aria-label="FRS2505A-NumberOfCasesAllocated"
-                              class="ons-table__cell status"
-                            >
-                              11
-                            </td>
-                            <td
-                              aria-label="FRS2505A-NumberOfCasesCompleted"
-                              class="ons-table__cell "
-                            >
-                              2
-                            </td>
-                            <td
-                              aria-label="FRS2505A-NumberOfCasesQueried"
-                              class="ons-table__cell "
-                            >
-                              1
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2505A-Editor"
-                              class="ons-table__cell"
-                            >
-                              Captain America
-                            </td>
-                            <td
-                              aria-label="FRS2505A-NumberOfCasesAllocated"
-                              class="ons-table__cell status"
-                            >
-                              4
-                            </td>
-                            <td
-                              aria-label="FRS2505A-NumberOfCasesCompleted"
-                              class="ons-table__cell "
-                            >
-                              3
-                            </td>
-                            <td
-                              aria-label="FRS2505A-NumberOfCasesQueried"
-                              class="ons-table__cell "
-                            >
-                              0
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2505A-Editor"
-                              class="ons-table__cell"
-                            >
-                              The Hulk
-                            </td>
-                            <td
-                              aria-label="FRS2505A-NumberOfCasesAllocated"
-                              class="ons-table__cell status"
-                            >
-                              0
-                            </td>
-                            <td
-                              aria-label="FRS2505A-NumberOfCasesCompleted"
-                              class="ons-table__cell "
-                            >
-                              0
-                            </td>
-                            <td
-                              aria-label="FRS2505A-NumberOfCasesQueried"
-                              class="ons-table__cell "
-                            >
-                              0
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              class="ons-table__cell"
-                            >
-                              <a
-                                href="/questionnaires/FRS2505A/allocate"
-                              >
-                                Allocate
-                              </a>
-                               | 
-                              <a
-                                href="/questionnaires/FRS2505A/reallocate"
-                              >
-                                Reallocate
-                              </a>
-                            </td>
-                            <td
-                              class="ons-table__cell"
-                            />
-                            <td
-                              class="ons-table__cell"
-                            />
-                            <td
-                              class="ons-table__cell"
-                            />
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </details>
+                          Reallocate
+                        </a>
+                      </td>
+                      <td
+                        class="ons-table__cell"
+                      />
+                      <td
+                        class="ons-table__cell"
+                      />
+                      <td
+                        class="ons-table__cell"
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </details>

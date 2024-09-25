@@ -176,759 +176,381 @@ exports[`Given there are surveys available in blaise should render the editor pa
               data-testid="survey-accordion-0-content"
               id="survey-accordion-0-content"
             >
-              <br />
+              <div>
+                <label
+                  class="ons-label"
+                  for="select-questionnaire"
+                >
+                  Select questionnaire
+                   
+                </label>
+                <select
+                  class="ons-input "
+                  data-testid="select-questionnaire"
+                  id="select-questionnaire"
+                  name="select"
+                >
+                  <option
+                    data-testid="select-select-questionnaire"
+                    disabled=""
+                    value=""
+                  >
+                    Select an option
+                  </option>
+                  <option
+                    data-testid="option-select-questionnaire-FRS2504A"
+                    selected=""
+                    value="FRS2504A"
+                  >
+                    FRS2504A (April 2025)
+                  </option>
+                  <option
+                    data-testid="option-select-questionnaire-FRS2505A"
+                    value="FRS2505A"
+                  >
+                    FRS2505A (May 2025)
+                  </option>
+                </select>
+              </div>
               <div
-                class="ons-accordion"
-                id="questionnaire-accordion"
+                class="questionnaire"
+                data-testid="questionnaire"
               >
-                <button
-                  class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
-                  data-close-all="Hide all"
-                  data-group="accordion"
-                  data-testid="questionnaire-accordion-show-all"
-                  type="button"
+                <div
+                  class="editorContent"
+                  data-testid="FRS2504A-editorContent"
                 >
-                  <span
-                    class="ons-btn__inner ons-js-collapsible-all-inner"
-                  >
-                    Show all
-                  </span>
-                </button>
-                <details
-                  class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                  data-btn-close="Hide"
-                  data-group="accordion"
-                  id="questionnaire-accordion-0"
-                >
-                  <summary
-                    aria-controls="questionnaire-accordion-0"
-                    aria-expanded="false"
-                    class="ons-collapsible__heading ons-js-collapsible-heading"
-                    data-ga-action="Open panel"
-                    data-testid="questionnaire-accordion-0-heading"
-                    role="link"
-                    tabindex="0"
-                  >
-                    <div
-                      class="ons-collapsible__controls"
-                    >
-                      <h2
-                        class="ons-collapsible__title"
-                      >
-                        FRS2504A
-                      </h2>
-                      <span
-                        class="ons-collapsible__icon"
-                      >
-                        <svg
-                          class="ons-svg-icon"
-                          focusable="false"
-                          viewBox="0 0 7.5 12.85"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                            transform="translate(-5.02 -1.59)"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </summary>
                   <div
-                    aria-hidden="true"
-                    class="ons-collapsible__content ons-js-collapsible-content"
-                    data-testid="questionnaire-accordion-0-content"
-                    id="questionnaire-accordion-0-content"
+                    class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                   >
                     <div
-                      class="questionnaire"
-                      data-testid="questionnaire"
+                      class="ons-panel__body "
                     >
-                      <div
-                        class="editorContent"
-                        data-testid="FRS2504A-editorContent"
+                      <dl
+                        class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                        data-testid="editorContent-dl"
+                        style="padding: 0px 0px 15px 5px;"
+                        title="editorContent"
                       >
-                        <div
-                          class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
                         >
-                          <div
-                            class="ons-panel__body "
-                          >
-                            <dl
-                              class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                              data-testid="editorContent-dl"
-                              style="padding: 0px 0px 15px 5px;"
-                              title="editorContent"
-                            >
-                              <dt
-                                class="ons-description-list__term ons-grid__col ons-col-5@m"
-                              >
-                                Field period:
-                              </dt>
-                              <dd
-                                class="ons-description-list__value ons-grid__col ons-col-7@m"
-                              >
-                                <strong>
-                                  April 2025
-                                </strong>
-                              </dd>
-                              <dt
-                                class="ons-description-list__term ons-grid__col ons-col-5@m"
-                              >
-                                Cases assigned to me:
-                              </dt>
-                              <dd
-                                class="ons-description-list__value ons-grid__col ons-col-7@m"
-                              >
-                                <strong>
-                                  5
-                                </strong>
-                              </dd>
-                            </dl>
-                          </div>
-                        </div>
-                        <div>
-                          <label
-                            class="ons-label"
-                            for="filter-cases"
-                          >
-                            Filter cases
-                             
-                          </label>
-                          <select
-                            class="ons-input "
-                            id="filter-cases"
-                            name="select"
-                          >
-                            <option
-                              data-testid="select-filter-cases"
-                              disabled=""
-                              value=""
-                            >
-                              Select an option
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-"
-                              value=""
-                            >
-                              All
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-In progress"
-                              value="In progress"
-                            >
-                              In progress
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-Queried"
-                              value="Queried"
-                            >
-                              Queried
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-Completed"
-                              value="Completed"
-                            >
-                              Completed
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-Not started"
-                              value="Not started"
-                            >
-                              Not started
-                            </option>
-                          </select>
-                        </div>
-                        <table
-                          class="ons-table"
-                          data-testid="FRS2504A-Case-table"
-                          id="FRS2504A-Case-table"
+                          Field period:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
                         >
-                          <thead
-                            class="ons-table__head"
-                          >
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Case ID
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Status
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              />
-                            </tr>
-                          </thead>
-                          <tbody
-                            class="ons-table__body"
-                          >
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2504A-CaseID"
-                                class="ons-table__cell"
-                              >
-                                10001011
-                              </td>
-                              <td
-                                aria-label="FRS2504A-EditStatus"
-                                class="ons-table__cell status"
-                              >
-                                Completed
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <span
-                                  class="link"
-                                  id="download-10001011-summary"
-                                  role="presentation"
-                                >
-                                  Download Summary
-                                </span>
-                                 | 
-                                <a
-                                  href="/questionnaires/FRS2504A/cases/10001011/summary"
-                                >
-                                  View Summary
-                                </a>
-                                 | 
-                                <a
-                                  href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2504A-CaseID"
-                                class="ons-table__cell"
-                              >
-                                10001012
-                              </td>
-                              <td
-                                aria-label="FRS2504A-EditStatus"
-                                class="ons-table__cell status"
-                              >
-                                In progress
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <span
-                                  class="link"
-                                  id="download-10001012-summary"
-                                  role="presentation"
-                                >
-                                  Download Summary
-                                </span>
-                                 | 
-                                <a
-                                  href="/questionnaires/FRS2504A/cases/10001012/summary"
-                                >
-                                  View Summary
-                                </a>
-                                 | 
-                                <a
-                                  href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001012"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2504A-CaseID"
-                                class="ons-table__cell"
-                              >
-                                10001013
-                              </td>
-                              <td
-                                aria-label="FRS2504A-EditStatus"
-                                class="ons-table__cell status"
-                              >
-                                Not started
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <span
-                                  class="link"
-                                  id="download-10001013-summary"
-                                  role="presentation"
-                                >
-                                  Download Summary
-                                </span>
-                                 | 
-                                <a
-                                  href="/questionnaires/FRS2504A/cases/10001013/summary"
-                                >
-                                  View Summary
-                                </a>
-                                 | 
-                                <a
-                                  href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001013"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2504A-CaseID"
-                                class="ons-table__cell"
-                              >
-                                10001014
-                              </td>
-                              <td
-                                aria-label="FRS2504A-EditStatus"
-                                class="ons-table__cell status"
-                              >
-                                Completed
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <span
-                                  class="link"
-                                  id="download-10001014-summary"
-                                  role="presentation"
-                                >
-                                  Download Summary
-                                </span>
-                                 | 
-                                <a
-                                  href="/questionnaires/FRS2504A/cases/10001014/summary"
-                                >
-                                  View Summary
-                                </a>
-                                 | 
-                                <a
-                                  href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001014"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2504A-CaseID"
-                                class="ons-table__cell"
-                              >
-                                10001015
-                              </td>
-                              <td
-                                aria-label="FRS2504A-EditStatus"
-                                class="ons-table__cell status"
-                              >
-                                Completed
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <span
-                                  class="link"
-                                  id="download-10001015-summary"
-                                  role="presentation"
-                                >
-                                  Download Summary
-                                </span>
-                                 | 
-                                <a
-                                  href="/questionnaires/FRS2504A/cases/10001015/summary"
-                                >
-                                  View Summary
-                                </a>
-                                 | 
-                                <a
-                                  href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001015"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
+                          <strong>
+                            April 2025
+                          </strong>
+                        </dd>
+                        <dt
+                          class="ons-description-list__term ons-grid__col ons-col-5@m"
+                        >
+                          Cases assigned to me:
+                        </dt>
+                        <dd
+                          class="ons-description-list__value ons-grid__col ons-col-7@m"
+                        >
+                          <strong>
+                            5
+                          </strong>
+                        </dd>
+                      </dl>
                     </div>
                   </div>
-                </details>
-                <details
-                  class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                  data-btn-close="Hide"
-                  data-group="accordion"
-                  id="questionnaire-accordion-1"
-                >
-                  <summary
-                    aria-controls="questionnaire-accordion-1"
-                    aria-expanded="false"
-                    class="ons-collapsible__heading ons-js-collapsible-heading"
-                    data-ga-action="Open panel"
-                    data-testid="questionnaire-accordion-1-heading"
-                    role="link"
-                    tabindex="0"
-                  >
-                    <div
-                      class="ons-collapsible__controls"
+                  <div>
+                    <label
+                      class="ons-label"
+                      for="filter-cases"
                     >
-                      <h2
-                        class="ons-collapsible__title"
-                      >
-                        FRS2505A
-                      </h2>
-                      <span
-                        class="ons-collapsible__icon"
-                      >
-                        <svg
-                          class="ons-svg-icon"
-                          focusable="false"
-                          viewBox="0 0 7.5 12.85"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                            transform="translate(-5.02 -1.59)"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </summary>
-                  <div
-                    aria-hidden="true"
-                    class="ons-collapsible__content ons-js-collapsible-content"
-                    data-testid="questionnaire-accordion-1-content"
-                    id="questionnaire-accordion-1-content"
-                  >
-                    <div
-                      class="questionnaire"
-                      data-testid="questionnaire"
+                      Filter cases
+                       
+                    </label>
+                    <select
+                      class="ons-input "
+                      id="filter-cases"
+                      name="select"
                     >
-                      <div
-                        class="editorContent"
-                        data-testid="FRS2505A-editorContent"
+                      <option
+                        data-testid="select-filter-cases"
+                        disabled=""
+                        value=""
                       >
-                        <div
-                          class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
-                        >
-                          <div
-                            class="ons-panel__body "
-                          >
-                            <dl
-                              class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                              data-testid="editorContent-dl"
-                              style="padding: 0px 0px 15px 5px;"
-                              title="editorContent"
-                            >
-                              <dt
-                                class="ons-description-list__term ons-grid__col ons-col-5@m"
-                              >
-                                Field period:
-                              </dt>
-                              <dd
-                                class="ons-description-list__value ons-grid__col ons-col-7@m"
-                              >
-                                <strong>
-                                  May 2025
-                                </strong>
-                              </dd>
-                              <dt
-                                class="ons-description-list__term ons-grid__col ons-col-5@m"
-                              >
-                                Cases assigned to me:
-                              </dt>
-                              <dd
-                                class="ons-description-list__value ons-grid__col ons-col-7@m"
-                              >
-                                <strong>
-                                  4
-                                </strong>
-                              </dd>
-                            </dl>
-                          </div>
-                        </div>
-                        <div>
-                          <label
-                            class="ons-label"
-                            for="filter-cases"
-                          >
-                            Filter cases
-                             
-                          </label>
-                          <select
-                            class="ons-input "
-                            id="filter-cases"
-                            name="select"
-                          >
-                            <option
-                              data-testid="select-filter-cases"
-                              disabled=""
-                              value=""
-                            >
-                              Select an option
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-"
-                              value=""
-                            >
-                              All
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-In progress"
-                              value="In progress"
-                            >
-                              In progress
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-Queried"
-                              value="Queried"
-                            >
-                              Queried
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-Completed"
-                              value="Completed"
-                            >
-                              Completed
-                            </option>
-                            <option
-                              data-testid="option-filter-cases-Not started"
-                              value="Not started"
-                            >
-                              Not started
-                            </option>
-                          </select>
-                        </div>
-                        <table
-                          class="ons-table"
-                          data-testid="FRS2505A-Case-table"
-                          id="FRS2505A-Case-table"
-                        >
-                          <thead
-                            class="ons-table__head"
-                          >
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Case ID
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              >
-                                Status
-                              </th>
-                              <th
-                                class="ons-table__header"
-                                scope="col"
-                              />
-                            </tr>
-                          </thead>
-                          <tbody
-                            class="ons-table__body"
-                          >
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2505A-CaseID"
-                                class="ons-table__cell"
-                              >
-                                20001011
-                              </td>
-                              <td
-                                aria-label="FRS2505A-EditStatus"
-                                class="ons-table__cell status"
-                              >
-                                Completed
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <span
-                                  class="link"
-                                  id="download-20001011-summary"
-                                  role="presentation"
-                                >
-                                  Download Summary
-                                </span>
-                                 | 
-                                <a
-                                  href="/questionnaires/FRS2505A/cases/20001011/summary"
-                                >
-                                  View Summary
-                                </a>
-                                 | 
-                                <a
-                                  href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2505A-CaseID"
-                                class="ons-table__cell"
-                              >
-                                20001012
-                              </td>
-                              <td
-                                aria-label="FRS2505A-EditStatus"
-                                class="ons-table__cell status"
-                              >
-                                In progress
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <span
-                                  class="link"
-                                  id="download-20001012-summary"
-                                  role="presentation"
-                                >
-                                  Download Summary
-                                </span>
-                                 | 
-                                <a
-                                  href="/questionnaires/FRS2505A/cases/20001012/summary"
-                                >
-                                  View Summary
-                                </a>
-                                 | 
-                                <a
-                                  href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=20001012"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2505A-CaseID"
-                                class="ons-table__cell"
-                              >
-                                20001013
-                              </td>
-                              <td
-                                aria-label="FRS2505A-EditStatus"
-                                class="ons-table__cell status"
-                              >
-                                Not started
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <span
-                                  class="link"
-                                  id="download-20001013-summary"
-                                  role="presentation"
-                                >
-                                  Download Summary
-                                </span>
-                                 | 
-                                <a
-                                  href="/questionnaires/FRS2505A/cases/20001013/summary"
-                                >
-                                  View Summary
-                                </a>
-                                 | 
-                                <a
-                                  href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=20001013"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                            <tr
-                              class="ons-table__row"
-                            >
-                              <td
-                                aria-label="FRS2505A-CaseID"
-                                class="ons-table__cell"
-                              >
-                                20001014
-                              </td>
-                              <td
-                                aria-label="FRS2505A-EditStatus"
-                                class="ons-table__cell status"
-                              >
-                                Completed
-                              </td>
-                              <td
-                                class="ons-table__cell links"
-                              >
-                                <span
-                                  class="link"
-                                  id="download-20001014-summary"
-                                  role="presentation"
-                                >
-                                  Download Summary
-                                </span>
-                                 | 
-                                <a
-                                  href="/questionnaires/FRS2505A/cases/20001014/summary"
-                                >
-                                  View Summary
-                                </a>
-                                 | 
-                                <a
-                                  href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=1000120001014011"
-                                  rel="noopener noreferrer"
-                                  target="_blank"
-                                >
-                                  Edit
-                                </a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
+                        Select an option
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-"
+                        value=""
+                      >
+                        All
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-In progress"
+                        value="In progress"
+                      >
+                        In progress
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-Queried"
+                        value="Queried"
+                      >
+                        Queried
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-Completed"
+                        value="Completed"
+                      >
+                        Completed
+                      </option>
+                      <option
+                        data-testid="option-filter-cases-Not started"
+                        value="Not started"
+                      >
+                        Not started
+                      </option>
+                    </select>
                   </div>
-                </details>
+                  <table
+                    class="ons-table"
+                    data-testid="FRS2504A-Case-table"
+                    id="FRS2504A-Case-table"
+                  >
+                    <thead
+                      class="ons-table__head"
+                    >
+                      <tr
+                        class="ons-table__row"
+                      >
+                        <th
+                          class="ons-table__header"
+                          scope="col"
+                        >
+                          Case ID
+                        </th>
+                        <th
+                          class="ons-table__header"
+                          scope="col"
+                        >
+                          Status
+                        </th>
+                        <th
+                          class="ons-table__header"
+                          scope="col"
+                        />
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="ons-table__body"
+                    >
+                      <tr
+                        class="ons-table__row"
+                      >
+                        <td
+                          aria-label="FRS2504A-CaseID"
+                          class="ons-table__cell"
+                        >
+                          10001011
+                        </td>
+                        <td
+                          aria-label="FRS2504A-EditStatus"
+                          class="ons-table__cell status"
+                        >
+                          Completed
+                        </td>
+                        <td
+                          class="ons-table__cell links"
+                        >
+                          <span
+                            class="link"
+                            id="download-10001011-summary"
+                            role="presentation"
+                          >
+                            Download Summary
+                          </span>
+                           | 
+                          <a
+                            href="/questionnaires/FRS2504A/cases/10001011/summary"
+                          >
+                            View Summary
+                          </a>
+                           | 
+                          <a
+                            href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Edit
+                          </a>
+                        </td>
+                      </tr>
+                      <tr
+                        class="ons-table__row"
+                      >
+                        <td
+                          aria-label="FRS2504A-CaseID"
+                          class="ons-table__cell"
+                        >
+                          10001012
+                        </td>
+                        <td
+                          aria-label="FRS2504A-EditStatus"
+                          class="ons-table__cell status"
+                        >
+                          In progress
+                        </td>
+                        <td
+                          class="ons-table__cell links"
+                        >
+                          <span
+                            class="link"
+                            id="download-10001012-summary"
+                            role="presentation"
+                          >
+                            Download Summary
+                          </span>
+                           | 
+                          <a
+                            href="/questionnaires/FRS2504A/cases/10001012/summary"
+                          >
+                            View Summary
+                          </a>
+                           | 
+                          <a
+                            href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001012"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Edit
+                          </a>
+                        </td>
+                      </tr>
+                      <tr
+                        class="ons-table__row"
+                      >
+                        <td
+                          aria-label="FRS2504A-CaseID"
+                          class="ons-table__cell"
+                        >
+                          10001013
+                        </td>
+                        <td
+                          aria-label="FRS2504A-EditStatus"
+                          class="ons-table__cell status"
+                        >
+                          Not started
+                        </td>
+                        <td
+                          class="ons-table__cell links"
+                        >
+                          <span
+                            class="link"
+                            id="download-10001013-summary"
+                            role="presentation"
+                          >
+                            Download Summary
+                          </span>
+                           | 
+                          <a
+                            href="/questionnaires/FRS2504A/cases/10001013/summary"
+                          >
+                            View Summary
+                          </a>
+                           | 
+                          <a
+                            href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001013"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Edit
+                          </a>
+                        </td>
+                      </tr>
+                      <tr
+                        class="ons-table__row"
+                      >
+                        <td
+                          aria-label="FRS2504A-CaseID"
+                          class="ons-table__cell"
+                        >
+                          10001014
+                        </td>
+                        <td
+                          aria-label="FRS2504A-EditStatus"
+                          class="ons-table__cell status"
+                        >
+                          Completed
+                        </td>
+                        <td
+                          class="ons-table__cell links"
+                        >
+                          <span
+                            class="link"
+                            id="download-10001014-summary"
+                            role="presentation"
+                          >
+                            Download Summary
+                          </span>
+                           | 
+                          <a
+                            href="/questionnaires/FRS2504A/cases/10001014/summary"
+                          >
+                            View Summary
+                          </a>
+                           | 
+                          <a
+                            href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001014"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Edit
+                          </a>
+                        </td>
+                      </tr>
+                      <tr
+                        class="ons-table__row"
+                      >
+                        <td
+                          aria-label="FRS2504A-CaseID"
+                          class="ons-table__cell"
+                        >
+                          10001015
+                        </td>
+                        <td
+                          aria-label="FRS2504A-EditStatus"
+                          class="ons-table__cell status"
+                        >
+                          Completed
+                        </td>
+                        <td
+                          class="ons-table__cell links"
+                        >
+                          <span
+                            class="link"
+                            id="download-10001015-summary"
+                            role="presentation"
+                          >
+                            Download Summary
+                          </span>
+                           | 
+                          <a
+                            href="/questionnaires/FRS2504A/cases/10001015/summary"
+                          >
+                            View Summary
+                          </a>
+                           | 
+                          <a
+                            href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001015"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            Edit
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </details>
@@ -1001,759 +623,381 @@ exports[`Given there are surveys available in blaise should render the editor pa
             data-testid="survey-accordion-0-content"
             id="survey-accordion-0-content"
           >
-            <br />
+            <div>
+              <label
+                class="ons-label"
+                for="select-questionnaire"
+              >
+                Select questionnaire
+                 
+              </label>
+              <select
+                class="ons-input "
+                data-testid="select-questionnaire"
+                id="select-questionnaire"
+                name="select"
+              >
+                <option
+                  data-testid="select-select-questionnaire"
+                  disabled=""
+                  value=""
+                >
+                  Select an option
+                </option>
+                <option
+                  data-testid="option-select-questionnaire-FRS2504A"
+                  selected=""
+                  value="FRS2504A"
+                >
+                  FRS2504A (April 2025)
+                </option>
+                <option
+                  data-testid="option-select-questionnaire-FRS2505A"
+                  value="FRS2505A"
+                >
+                  FRS2505A (May 2025)
+                </option>
+              </select>
+            </div>
             <div
-              class="ons-accordion"
-              id="questionnaire-accordion"
+              class="questionnaire"
+              data-testid="questionnaire"
             >
-              <button
-                class="ons-btn ons-js-collapsible-all ons-u-mb-s ons-btn--secondary ons-btn--small"
-                data-close-all="Hide all"
-                data-group="accordion"
-                data-testid="questionnaire-accordion-show-all"
-                type="button"
+              <div
+                class="editorContent"
+                data-testid="FRS2504A-editorContent"
               >
-                <span
-                  class="ons-btn__inner ons-js-collapsible-all-inner"
-                >
-                  Show all
-                </span>
-              </button>
-              <details
-                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                data-btn-close="Hide"
-                data-group="accordion"
-                id="questionnaire-accordion-0"
-              >
-                <summary
-                  aria-controls="questionnaire-accordion-0"
-                  aria-expanded="false"
-                  class="ons-collapsible__heading ons-js-collapsible-heading"
-                  data-ga-action="Open panel"
-                  data-testid="questionnaire-accordion-0-heading"
-                  role="link"
-                  tabindex="0"
-                >
-                  <div
-                    class="ons-collapsible__controls"
-                  >
-                    <h2
-                      class="ons-collapsible__title"
-                    >
-                      FRS2504A
-                    </h2>
-                    <span
-                      class="ons-collapsible__icon"
-                    >
-                      <svg
-                        class="ons-svg-icon"
-                        focusable="false"
-                        viewBox="0 0 7.5 12.85"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                          transform="translate(-5.02 -1.59)"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </summary>
                 <div
-                  aria-hidden="true"
-                  class="ons-collapsible__content ons-js-collapsible-content"
-                  data-testid="questionnaire-accordion-0-content"
-                  id="questionnaire-accordion-0-content"
+                  class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
                 >
                   <div
-                    class="questionnaire"
-                    data-testid="questionnaire"
+                    class="ons-panel__body "
                   >
-                    <div
-                      class="editorContent"
-                      data-testid="FRS2504A-editorContent"
+                    <dl
+                      class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+                      data-testid="editorContent-dl"
+                      style="padding: 0px 0px 15px 5px;"
+                      title="editorContent"
                     >
-                      <div
-                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
                       >
-                        <div
-                          class="ons-panel__body "
-                        >
-                          <dl
-                            class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                            data-testid="editorContent-dl"
-                            style="padding: 0px 0px 15px 5px;"
-                            title="editorContent"
-                          >
-                            <dt
-                              class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            >
-                              Field period:
-                            </dt>
-                            <dd
-                              class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            >
-                              <strong>
-                                April 2025
-                              </strong>
-                            </dd>
-                            <dt
-                              class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            >
-                              Cases assigned to me:
-                            </dt>
-                            <dd
-                              class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            >
-                              <strong>
-                                5
-                              </strong>
-                            </dd>
-                          </dl>
-                        </div>
-                      </div>
-                      <div>
-                        <label
-                          class="ons-label"
-                          for="filter-cases"
-                        >
-                          Filter cases
-                           
-                        </label>
-                        <select
-                          class="ons-input "
-                          id="filter-cases"
-                          name="select"
-                        >
-                          <option
-                            data-testid="select-filter-cases"
-                            disabled=""
-                            value=""
-                          >
-                            Select an option
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-"
-                            value=""
-                          >
-                            All
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-In progress"
-                            value="In progress"
-                          >
-                            In progress
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-Queried"
-                            value="Queried"
-                          >
-                            Queried
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-Completed"
-                            value="Completed"
-                          >
-                            Completed
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-Not started"
-                            value="Not started"
-                          >
-                            Not started
-                          </option>
-                        </select>
-                      </div>
-                      <table
-                        class="ons-table"
-                        data-testid="FRS2504A-Case-table"
-                        id="FRS2504A-Case-table"
+                        Field period:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
                       >
-                        <thead
-                          class="ons-table__head"
-                        >
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Case ID
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Status
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            />
-                          </tr>
-                        </thead>
-                        <tbody
-                          class="ons-table__body"
-                        >
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2504A-CaseID"
-                              class="ons-table__cell"
-                            >
-                              10001011
-                            </td>
-                            <td
-                              aria-label="FRS2504A-EditStatus"
-                              class="ons-table__cell status"
-                            >
-                              Completed
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <span
-                                class="link"
-                                id="download-10001011-summary"
-                                role="presentation"
-                              >
-                                Download Summary
-                              </span>
-                               | 
-                              <a
-                                href="/questionnaires/FRS2504A/cases/10001011/summary"
-                              >
-                                View Summary
-                              </a>
-                               | 
-                              <a
-                                href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2504A-CaseID"
-                              class="ons-table__cell"
-                            >
-                              10001012
-                            </td>
-                            <td
-                              aria-label="FRS2504A-EditStatus"
-                              class="ons-table__cell status"
-                            >
-                              In progress
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <span
-                                class="link"
-                                id="download-10001012-summary"
-                                role="presentation"
-                              >
-                                Download Summary
-                              </span>
-                               | 
-                              <a
-                                href="/questionnaires/FRS2504A/cases/10001012/summary"
-                              >
-                                View Summary
-                              </a>
-                               | 
-                              <a
-                                href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001012"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2504A-CaseID"
-                              class="ons-table__cell"
-                            >
-                              10001013
-                            </td>
-                            <td
-                              aria-label="FRS2504A-EditStatus"
-                              class="ons-table__cell status"
-                            >
-                              Not started
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <span
-                                class="link"
-                                id="download-10001013-summary"
-                                role="presentation"
-                              >
-                                Download Summary
-                              </span>
-                               | 
-                              <a
-                                href="/questionnaires/FRS2504A/cases/10001013/summary"
-                              >
-                                View Summary
-                              </a>
-                               | 
-                              <a
-                                href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001013"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2504A-CaseID"
-                              class="ons-table__cell"
-                            >
-                              10001014
-                            </td>
-                            <td
-                              aria-label="FRS2504A-EditStatus"
-                              class="ons-table__cell status"
-                            >
-                              Completed
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <span
-                                class="link"
-                                id="download-10001014-summary"
-                                role="presentation"
-                              >
-                                Download Summary
-                              </span>
-                               | 
-                              <a
-                                href="/questionnaires/FRS2504A/cases/10001014/summary"
-                              >
-                                View Summary
-                              </a>
-                               | 
-                              <a
-                                href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001014"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2504A-CaseID"
-                              class="ons-table__cell"
-                            >
-                              10001015
-                            </td>
-                            <td
-                              aria-label="FRS2504A-EditStatus"
-                              class="ons-table__cell status"
-                            >
-                              Completed
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <span
-                                class="link"
-                                id="download-10001015-summary"
-                                role="presentation"
-                              >
-                                Download Summary
-                              </span>
-                               | 
-                              <a
-                                href="/questionnaires/FRS2504A/cases/10001015/summary"
-                              >
-                                View Summary
-                              </a>
-                               | 
-                              <a
-                                href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001015"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+                        <strong>
+                          April 2025
+                        </strong>
+                      </dd>
+                      <dt
+                        class="ons-description-list__term ons-grid__col ons-col-5@m"
+                      >
+                        Cases assigned to me:
+                      </dt>
+                      <dd
+                        class="ons-description-list__value ons-grid__col ons-col-7@m"
+                      >
+                        <strong>
+                          5
+                        </strong>
+                      </dd>
+                    </dl>
                   </div>
                 </div>
-              </details>
-              <details
-                class="ons-collapsible ons-js-collapsible ons-collapsible--accordion "
-                data-btn-close="Hide"
-                data-group="accordion"
-                id="questionnaire-accordion-1"
-              >
-                <summary
-                  aria-controls="questionnaire-accordion-1"
-                  aria-expanded="false"
-                  class="ons-collapsible__heading ons-js-collapsible-heading"
-                  data-ga-action="Open panel"
-                  data-testid="questionnaire-accordion-1-heading"
-                  role="link"
-                  tabindex="0"
-                >
-                  <div
-                    class="ons-collapsible__controls"
+                <div>
+                  <label
+                    class="ons-label"
+                    for="filter-cases"
                   >
-                    <h2
-                      class="ons-collapsible__title"
-                    >
-                      FRS2505A
-                    </h2>
-                    <span
-                      class="ons-collapsible__icon"
-                    >
-                      <svg
-                        class="ons-svg-icon"
-                        focusable="false"
-                        viewBox="0 0 7.5 12.85"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.74,14.28l-.57-.56a.5.5,0,0,1,0-.71h0l5-5-5-5a.5.5,0,0,1,0-.71h0l.57-.56a.5.5,0,0,1,.71,0h0l5.93,5.93a.5.5,0,0,1,0,.7L6.45,14.28a.5.5,0,0,1-.71,0Z"
-                          transform="translate(-5.02 -1.59)"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </summary>
-                <div
-                  aria-hidden="true"
-                  class="ons-collapsible__content ons-js-collapsible-content"
-                  data-testid="questionnaire-accordion-1-content"
-                  id="questionnaire-accordion-1-content"
-                >
-                  <div
-                    class="questionnaire"
-                    data-testid="questionnaire"
+                    Filter cases
+                     
+                  </label>
+                  <select
+                    class="ons-input "
+                    id="filter-cases"
+                    name="select"
                   >
-                    <div
-                      class="editorContent"
-                      data-testid="FRS2505A-editorContent"
+                    <option
+                      data-testid="select-filter-cases"
+                      disabled=""
+                      value=""
                     >
-                      <div
-                        class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
-                      >
-                        <div
-                          class="ons-panel__body "
-                        >
-                          <dl
-                            class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                            data-testid="editorContent-dl"
-                            style="padding: 0px 0px 15px 5px;"
-                            title="editorContent"
-                          >
-                            <dt
-                              class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            >
-                              Field period:
-                            </dt>
-                            <dd
-                              class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            >
-                              <strong>
-                                May 2025
-                              </strong>
-                            </dd>
-                            <dt
-                              class="ons-description-list__term ons-grid__col ons-col-5@m"
-                            >
-                              Cases assigned to me:
-                            </dt>
-                            <dd
-                              class="ons-description-list__value ons-grid__col ons-col-7@m"
-                            >
-                              <strong>
-                                4
-                              </strong>
-                            </dd>
-                          </dl>
-                        </div>
-                      </div>
-                      <div>
-                        <label
-                          class="ons-label"
-                          for="filter-cases"
-                        >
-                          Filter cases
-                           
-                        </label>
-                        <select
-                          class="ons-input "
-                          id="filter-cases"
-                          name="select"
-                        >
-                          <option
-                            data-testid="select-filter-cases"
-                            disabled=""
-                            value=""
-                          >
-                            Select an option
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-"
-                            value=""
-                          >
-                            All
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-In progress"
-                            value="In progress"
-                          >
-                            In progress
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-Queried"
-                            value="Queried"
-                          >
-                            Queried
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-Completed"
-                            value="Completed"
-                          >
-                            Completed
-                          </option>
-                          <option
-                            data-testid="option-filter-cases-Not started"
-                            value="Not started"
-                          >
-                            Not started
-                          </option>
-                        </select>
-                      </div>
-                      <table
-                        class="ons-table"
-                        data-testid="FRS2505A-Case-table"
-                        id="FRS2505A-Case-table"
-                      >
-                        <thead
-                          class="ons-table__head"
-                        >
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Case ID
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            >
-                              Status
-                            </th>
-                            <th
-                              class="ons-table__header"
-                              scope="col"
-                            />
-                          </tr>
-                        </thead>
-                        <tbody
-                          class="ons-table__body"
-                        >
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2505A-CaseID"
-                              class="ons-table__cell"
-                            >
-                              20001011
-                            </td>
-                            <td
-                              aria-label="FRS2505A-EditStatus"
-                              class="ons-table__cell status"
-                            >
-                              Completed
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <span
-                                class="link"
-                                id="download-20001011-summary"
-                                role="presentation"
-                              >
-                                Download Summary
-                              </span>
-                               | 
-                              <a
-                                href="/questionnaires/FRS2505A/cases/20001011/summary"
-                              >
-                                View Summary
-                              </a>
-                               | 
-                              <a
-                                href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2505A-CaseID"
-                              class="ons-table__cell"
-                            >
-                              20001012
-                            </td>
-                            <td
-                              aria-label="FRS2505A-EditStatus"
-                              class="ons-table__cell status"
-                            >
-                              In progress
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <span
-                                class="link"
-                                id="download-20001012-summary"
-                                role="presentation"
-                              >
-                                Download Summary
-                              </span>
-                               | 
-                              <a
-                                href="/questionnaires/FRS2505A/cases/20001012/summary"
-                              >
-                                View Summary
-                              </a>
-                               | 
-                              <a
-                                href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=20001012"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2505A-CaseID"
-                              class="ons-table__cell"
-                            >
-                              20001013
-                            </td>
-                            <td
-                              aria-label="FRS2505A-EditStatus"
-                              class="ons-table__cell status"
-                            >
-                              Not started
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <span
-                                class="link"
-                                id="download-20001013-summary"
-                                role="presentation"
-                              >
-                                Download Summary
-                              </span>
-                               | 
-                              <a
-                                href="/questionnaires/FRS2505A/cases/20001013/summary"
-                              >
-                                View Summary
-                              </a>
-                               | 
-                              <a
-                                href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=20001013"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr
-                            class="ons-table__row"
-                          >
-                            <td
-                              aria-label="FRS2505A-CaseID"
-                              class="ons-table__cell"
-                            >
-                              20001014
-                            </td>
-                            <td
-                              aria-label="FRS2505A-EditStatus"
-                              class="ons-table__cell status"
-                            >
-                              Completed
-                            </td>
-                            <td
-                              class="ons-table__cell links"
-                            >
-                              <span
-                                class="link"
-                                id="download-20001014-summary"
-                                role="presentation"
-                              >
-                                Download Summary
-                              </span>
-                               | 
-                              <a
-                                href="/questionnaires/FRS2505A/cases/20001014/summary"
-                              >
-                                View Summary
-                              </a>
-                               | 
-                              <a
-                                href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=1000120001014011"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                      Select an option
+                    </option>
+                    <option
+                      data-testid="option-filter-cases-"
+                      value=""
+                    >
+                      All
+                    </option>
+                    <option
+                      data-testid="option-filter-cases-In progress"
+                      value="In progress"
+                    >
+                      In progress
+                    </option>
+                    <option
+                      data-testid="option-filter-cases-Queried"
+                      value="Queried"
+                    >
+                      Queried
+                    </option>
+                    <option
+                      data-testid="option-filter-cases-Completed"
+                      value="Completed"
+                    >
+                      Completed
+                    </option>
+                    <option
+                      data-testid="option-filter-cases-Not started"
+                      value="Not started"
+                    >
+                      Not started
+                    </option>
+                  </select>
                 </div>
-              </details>
+                <table
+                  class="ons-table"
+                  data-testid="FRS2504A-Case-table"
+                  id="FRS2504A-Case-table"
+                >
+                  <thead
+                    class="ons-table__head"
+                  >
+                    <tr
+                      class="ons-table__row"
+                    >
+                      <th
+                        class="ons-table__header"
+                        scope="col"
+                      >
+                        Case ID
+                      </th>
+                      <th
+                        class="ons-table__header"
+                        scope="col"
+                      >
+                        Status
+                      </th>
+                      <th
+                        class="ons-table__header"
+                        scope="col"
+                      />
+                    </tr>
+                  </thead>
+                  <tbody
+                    class="ons-table__body"
+                  >
+                    <tr
+                      class="ons-table__row"
+                    >
+                      <td
+                        aria-label="FRS2504A-CaseID"
+                        class="ons-table__cell"
+                      >
+                        10001011
+                      </td>
+                      <td
+                        aria-label="FRS2504A-EditStatus"
+                        class="ons-table__cell status"
+                      >
+                        Completed
+                      </td>
+                      <td
+                        class="ons-table__cell links"
+                      >
+                        <span
+                          class="link"
+                          id="download-10001011-summary"
+                          role="presentation"
+                        >
+                          Download Summary
+                        </span>
+                         | 
+                        <a
+                          href="/questionnaires/FRS2504A/cases/10001011/summary"
+                        >
+                          View Summary
+                        </a>
+                         | 
+                        <a
+                          href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001011"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ons-table__row"
+                    >
+                      <td
+                        aria-label="FRS2504A-CaseID"
+                        class="ons-table__cell"
+                      >
+                        10001012
+                      </td>
+                      <td
+                        aria-label="FRS2504A-EditStatus"
+                        class="ons-table__cell status"
+                      >
+                        In progress
+                      </td>
+                      <td
+                        class="ons-table__cell links"
+                      >
+                        <span
+                          class="link"
+                          id="download-10001012-summary"
+                          role="presentation"
+                        >
+                          Download Summary
+                        </span>
+                         | 
+                        <a
+                          href="/questionnaires/FRS2504A/cases/10001012/summary"
+                        >
+                          View Summary
+                        </a>
+                         | 
+                        <a
+                          href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001012"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ons-table__row"
+                    >
+                      <td
+                        aria-label="FRS2504A-CaseID"
+                        class="ons-table__cell"
+                      >
+                        10001013
+                      </td>
+                      <td
+                        aria-label="FRS2504A-EditStatus"
+                        class="ons-table__cell status"
+                      >
+                        Not started
+                      </td>
+                      <td
+                        class="ons-table__cell links"
+                      >
+                        <span
+                          class="link"
+                          id="download-10001013-summary"
+                          role="presentation"
+                        >
+                          Download Summary
+                        </span>
+                         | 
+                        <a
+                          href="/questionnaires/FRS2504A/cases/10001013/summary"
+                        >
+                          View Summary
+                        </a>
+                         | 
+                        <a
+                          href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001013"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ons-table__row"
+                    >
+                      <td
+                        aria-label="FRS2504A-CaseID"
+                        class="ons-table__cell"
+                      >
+                        10001014
+                      </td>
+                      <td
+                        aria-label="FRS2504A-EditStatus"
+                        class="ons-table__cell status"
+                      >
+                        Completed
+                      </td>
+                      <td
+                        class="ons-table__cell links"
+                      >
+                        <span
+                          class="link"
+                          id="download-10001014-summary"
+                          role="presentation"
+                        >
+                          Download Summary
+                        </span>
+                         | 
+                        <a
+                          href="/questionnaires/FRS2504A/cases/10001014/summary"
+                        >
+                          View Summary
+                        </a>
+                         | 
+                        <a
+                          href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001014"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ons-table__row"
+                    >
+                      <td
+                        aria-label="FRS2504A-CaseID"
+                        class="ons-table__cell"
+                      >
+                        10001015
+                      </td>
+                      <td
+                        aria-label="FRS2504A-EditStatus"
+                        class="ons-table__cell status"
+                      >
+                        Completed
+                      </td>
+                      <td
+                        class="ons-table__cell links"
+                      >
+                        <span
+                          class="link"
+                          id="download-10001015-summary"
+                          role="presentation"
+                        >
+                          Download Summary
+                        </span>
+                         | 
+                        <a
+                          href="/questionnaires/FRS2504A/cases/10001015/summary"
+                        >
+                          View Summary
+                        </a>
+                         | 
+                        <a
+                          href="https://cati.blaise.com/FRS2504A?Mode=CAWI&KeyValue=10001015"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </details>
