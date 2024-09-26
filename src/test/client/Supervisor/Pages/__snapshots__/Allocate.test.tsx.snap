@@ -24,7 +24,7 @@ exports[`Given we wish to allocte cases from an Interviewer to an Editor should 
           class="ons-label"
           for="select-from"
         >
-          Allocate cases from
+          Allocate cases from interviewer
            
         </label>
         <select
@@ -60,7 +60,7 @@ exports[`Given we wish to allocte cases from an Interviewer to an Editor should 
           class="ons-label"
           for="select-to"
         >
-          To
+          To editor
            
         </label>
         <select
@@ -131,7 +131,7 @@ exports[`Given we wish to allocte cases from an Interviewer to an Editor should 
         class="ons-label"
         for="select-from"
       >
-        Allocate cases from
+        Allocate cases from interviewer
          
       </label>
       <select
@@ -167,7 +167,7 @@ exports[`Given we wish to allocte cases from an Interviewer to an Editor should 
         class="ons-label"
         for="select-to"
       >
-        To
+        To editor
          
       </label>
       <select
@@ -295,7 +295,7 @@ exports[`Given we wish to reallocte cases from an Editor to another Editor shoul
           class="ons-label"
           for="select-from"
         >
-          Allocate cases from
+          Reallocate cases from editor
            
         </label>
         <select
@@ -337,7 +337,7 @@ exports[`Given we wish to reallocte cases from an Editor to another Editor shoul
           class="ons-label"
           for="select-to"
         >
-          To
+          To editor
            
         </label>
         <select
@@ -383,7 +383,7 @@ exports[`Given we wish to reallocte cases from an Editor to another Editor shoul
         <span
           class="ons-btn__inner"
         >
-          Allocate
+          Reallocate
         </span>
       </button>
     </div>
@@ -408,7 +408,7 @@ exports[`Given we wish to reallocte cases from an Editor to another Editor shoul
         class="ons-label"
         for="select-from"
       >
-        Allocate cases from
+        Reallocate cases from editor
          
       </label>
       <select
@@ -450,7 +450,7 @@ exports[`Given we wish to reallocte cases from an Editor to another Editor shoul
         class="ons-label"
         for="select-to"
       >
-        To
+        To editor
          
       </label>
       <select
@@ -496,7 +496,7 @@ exports[`Given we wish to reallocte cases from an Editor to another Editor shoul
       <span
         class="ons-btn__inner"
       >
-        Allocate
+        Reallocate
       </span>
     </button>
   </div>,

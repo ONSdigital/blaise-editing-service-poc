@@ -29,6 +29,7 @@ export default function EditorContent({ editorInformation, questionnaire }: Edit
 
         </dl>
       </ONSPanel>
+      <br />
       <ONSSelect
         defaultValue="in-progress"
         id="filter-cases"

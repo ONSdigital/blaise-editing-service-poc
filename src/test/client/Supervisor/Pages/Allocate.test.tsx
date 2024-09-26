@@ -274,7 +274,7 @@ describe('Given we wish to reallocte cases from an Editor to another Editor', ()
     await act(async () => {
       fireEvent.change(view.getByTestId('select-from'), { target: { value: 'Jake' } });
       fireEvent.change(view.getByTestId('select-to'), { target: { value: 'Rich' } });
-      fireEvent.click(view.getByText('Allocate'));
+      fireEvent.click(view.getByText('Reallocate'));
     });
 
     // assert
@@ -295,7 +295,7 @@ describe('Given we wish to reallocte cases from an Editor to another Editor', ()
     await act(async () => {
       fireEvent.change(view.getByTestId('select-from'), { target: { value: 'Jake' } });
       fireEvent.change(view.getByTestId('select-to'), { target: { value: 'Rich' } });
-      fireEvent.click(view.getByText('Allocate'));
+      fireEvent.click(view.getByText('Reallocate'));
     });
 
     // assert
@@ -321,7 +321,7 @@ describe('Given we wish to reallocte cases from an Editor to another Editor', ()
     await act(async () => {
       fireEvent.change(view.getByTestId('select-from'), { target: { value: 'Jake' } });
       fireEvent.change(view.getByTestId('select-to'), { target: { value: 'Rich' } });
-      fireEvent.click(view.getByText('Allocate'));
+      fireEvent.click(view.getByText('Reallocate'));
     });
 
     // assert

@@ -284,6 +284,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                       </dl>
                     </div>
                   </div>
+                  <br />
                   <table
                     class="ons-table"
                     data-testid="FRS2504A-editor-table"
@@ -619,6 +620,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                     </dl>
                   </div>
                 </div>
+                <br />
                 <table
                   class="ons-table"
                   data-testid="FRS2504A-editor-table"

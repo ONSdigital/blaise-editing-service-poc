@@ -259,6 +259,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       </dl>
                     </div>
                   </div>
+                  <br />
                   <div>
                     <label
                       class="ons-label"
@@ -706,6 +707,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                     </dl>
                   </div>
                 </div>
+                <br />
                 <div>
                   <label
                     class="ons-label"

@@ -31,7 +31,7 @@ export default function SupervisorsContent({ questionnaire, supervisorInformatio
           <dd className="ons-description-list__value ons-grid__col ons-col-7@m">{supervisorInformation.NumberOfCasesCompleted}</dd>
         </dl>
       </ONSPanel>
-
+      <br />
       <ONSTable
         columns={[
           'Editor',

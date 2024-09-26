@@ -7,11 +7,12 @@ interface AllocateProps {
   allocationDetails: UserAllocationDetails[];
   fromOptions: Option[];
   toOptions: Option[];
+  reallocate: boolean;
   allocateCases: (name: string, cases: string[]) => Promise<void>
 }
 
 export default function AllocateCases({
-  fromOptions, toOptions, allocationDetails, allocateCases,
+  fromOptions, toOptions, allocationDetails, reallocate, allocateCases,
 } : AllocateProps): ReactElement {
   const [casesValue, setCasesValue] = useState(['']);
   const [nameValue, setNameValue] = useState('');
@@ -42,7 +43,7 @@ export default function AllocateCases({
     <>
       <ONSSelect
         id="select-from"
-        label="Allocate cases from"
+        label={`${reallocate ? 'Reallocate' : 'Allocate'} cases from ${reallocate ? 'editor' : 'interviewer'}`}
         options={fromOptions}
         value=""
         onChange={handleCasesChange}
@@ -50,7 +51,7 @@ export default function AllocateCases({
       />
       <ONSSelect
         id="select-to"
-        label="To"
+        label="To editor"
         options={toOptions}
         value=""
         onChange={handleNameChange}
@@ -58,7 +59,7 @@ export default function AllocateCases({
       />
       <br />
       <ONSButton
-        label="Allocate"
+        label={`${reallocate ? 'Reallocate' : 'Allocate'}`}
         primary
         loading={submitting}
         onClick={async () => { setSubmitting(true); await allocateCases(nameValue, casesValue); setSubmitting(false); }}

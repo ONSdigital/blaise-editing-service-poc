@@ -56,6 +56,11 @@ export default function AllocateCases({
   async function allocateCases(name: string, cases: string[]) {
     setMessage({ show: false, text: '', type: '' });
 
+    if (name === undefined || name === '' || cases.length === 0) {
+      setMessage({ show: true, text: 'Please select valid options', type: 'error' });
+      return;
+    }
+
     try {
       await updateAllocationDetails(questionnaireName, name, cases);
       setMessage({ show: true, text: `Case(s) '${cases.join(', ')}' have been allocated to '${name}' for '${questionnaireName}'`, type: 'success' });
@@ -69,8 +74,8 @@ export default function AllocateCases({
     <AsyncContent content={allocationInformation}>
       {(allocationDetails) => (
         <>
-        { !reallocate && <AllocateContentForm allocationDetails={allocationDetails.Interviewers} allocateCases={allocateCases} fromOptions={getInterviewerOptions(allocationDetails)} toOptions={getEditorOptions(allocationDetails) /* eslint-disable-line */} />} 
-        { reallocate && <AllocateContentForm allocationDetails={allocationDetails.Editors} allocateCases={allocateCases} fromOptions={getEditorOptions(allocationDetails)} toOptions={getEditorOptions(allocationDetails) /* eslint-disable-line */} />}
+        { !reallocate && <AllocateContentForm allocationDetails={allocationDetails.Interviewers} allocateCases={allocateCases} fromOptions={getInterviewerOptions(allocationDetails)} toOptions={getEditorOptions(allocationDetails)} reallocate={reallocate} /* eslint-disable-line *//>} 
+        { reallocate && <AllocateContentForm allocationDetails={allocationDetails.Editors} allocateCases={allocateCases} fromOptions={getEditorOptions(allocationDetails)} toOptions={getEditorOptions(allocationDetails)} reallocate={reallocate} /* eslint-disable-line */ />}
         </>
       )}
     </AsyncContent>
