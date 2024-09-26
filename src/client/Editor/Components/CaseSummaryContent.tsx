@@ -23,20 +23,62 @@ export default function CaseSummaryContent({ caseSummary }: CaseSummaryContentPr
         style={{ margin: '2% 5% 2% 5%' }}
         title="summary"
       >
-        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">CaseId:</dt>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Serial Number</dt>
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.CaseId}</dd>
-        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Address:</dt>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Address.AddressLine1}</dd>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Address.AddressLine2}</dd>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Address.AddressLine3}</dd>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Address.AddressLine4}</dd>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Address.Town}</dd>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Address.County}</dd>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Address.Postcode}</dd>
-        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Interviewer:</dt>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.InterviewerName}</dd>
-        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Outcome code:</dt>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Outcome code</dt>
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.OutcomeCode}</dd>
+
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Interview date</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.InterviewDate.toDateString()}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">District</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.County}</dd>
+
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Interviewer number</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.InterviewerNumber}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Interviewer name</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.InterviewerName}</dd>
+
+        {/* Individual details */}
+
+        {/* Household composition */}
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Address:</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.AddressLine1}</dd>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.AddressLine2}</dd>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.AddressLine3}</dd>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.AddressLine4}</dd>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.Town}</dd>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.County}</dd>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.Postcode}</dd>
+
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Type of accommodation</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Type}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Floor number</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.FloorNumber}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Household status</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Status}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Number of bedrooms</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.NumberOfBedrooms}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Receipt of housing benefit</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.ReceiptOfHousingBenefit}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Period code</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.PeriodCode}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Council tax band</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.CouncilTaxBand}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Business room?</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.BusinessRoom}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Anyone self emplyed?</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.SelfEmployed}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">H/H members</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.SelfEmployedMembers}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Income support received now</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.IncomeSupport}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">H/H members</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.IncomeSupportMembers}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Income based JA received now</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.IncomeBasesJaSupport}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">H/H members</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.IncomeBasesJaSupportMembers}</dd>
+
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Household size:</dt>
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.NumberOfRespondents}</dd>
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Respondents:</dt>

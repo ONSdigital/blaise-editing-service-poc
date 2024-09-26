@@ -35,12 +35,62 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
           >
-            CaseId:
+            Serial Number
           </dt>
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
           >
             90001
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Outcome code
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            110
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Interview date
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            Tue Jun 11 2024
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            District
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            Gwent
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Interviewer number
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            2100
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Interviewer name
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            Rich
           </dd>
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
@@ -85,23 +135,125 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
           >
-            Interviewer:
+            Type of accommodation
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          />
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Floor number
           </dt>
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
           >
-            Rich
+            0
           </dd>
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
           >
-            Outcome code:
+            Household status
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          />
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Number of bedrooms
           </dt>
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
           >
-            110
+            1
           </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Receipt of housing benefit
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            380
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Period code
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            380
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Council tax band
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            band A
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Business room?
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          />
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Anyone self emplyed?
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          />
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            H/H members
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          />
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Income support received now
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          />
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            H/H members
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          />
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Income based JA received now
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          />
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            H/H members
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          />
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
           >
@@ -176,12 +328,62 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
         >
-          CaseId:
+          Serial Number
         </dt>
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
         >
           90001
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Outcome code
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          110
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Interview date
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          Tue Jun 11 2024
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          District
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          Gwent
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Interviewer number
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          2100
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Interviewer name
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          Rich
         </dd>
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
@@ -226,23 +428,125 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
         >
-          Interviewer:
+          Type of accommodation
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        />
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Floor number
         </dt>
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
         >
-          Rich
+          0
         </dd>
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
         >
-          Outcome code:
+          Household status
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        />
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Number of bedrooms
         </dt>
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
         >
-          110
+          1
         </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Receipt of housing benefit
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          380
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Period code
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          380
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Council tax band
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          band A
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Business room?
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        />
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Anyone self emplyed?
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        />
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          H/H members
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        />
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Income support received now
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        />
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          H/H members
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        />
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Income based JA received now
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        />
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          H/H members
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        />
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
         >
