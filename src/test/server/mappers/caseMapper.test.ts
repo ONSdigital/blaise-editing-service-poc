@@ -3,19 +3,14 @@ import { CaseSummaryDetails } from '../../../common/interfaces/caseInterface';
 import mapCaseSummary from '../../../server/mappers/caseMapper';
 
 describe('Map case response to case summary', () => {
-  it('It should return a correctly mapped summary with responent(s)', () => {
+  it.only('It should return a correctly mapped summary with responent(s)', () => {
     // arrange
     const CaseResponseData:CaseResponse = {
       caseId: '9001',
       fieldData: {
         'qiD.Serial_Number': '9001',
-        'qDataBag.Prem1': 'Flat 1',
-        'qDataBag.Prem2': 'Richmond House',
-        'qDataBag.Prem3': 'Rice Road',
-        'qDataBag.Prem4': 'Duffrin',
+        'QSignIn.StartDat': '2024-05-11',
         'qDataBag.District': 'Gwent',
-        'qDataBag.PostTown': 'Newport',
-        'qDataBag.PostCode': 'NZ11 4PD',
         'qhAdmin.HOut': '110',
         'qhAdmin.Interviewer[1]': 'Rich',
         'dmName[1]': 'Richmond Ricecake',
@@ -30,19 +25,10 @@ describe('Map case response to case summary', () => {
       CaseId: '9001',
       OutcomeCode: 110,
       InterviewDate: new Date(2024, 5, 11),
+      District: 'Gwent',
       InterviewerName: 'Rich',
-      InterviewerNumber: '2100',
       NumberOfRespondents: 2,
       Household: {
-        Address: {
-          AddressLine1: 'Flat 1',
-          AddressLine2: 'Richmond House',
-          AddressLine3: 'Rice Road',
-          AddressLine4: 'Duffrin',
-          County: 'Gwent',
-          Town: 'Newport',
-          Postcode: 'NZ11 4PD',
-        },
         Type: '',
         FloorNumber: 0,
         Status: '',
@@ -69,10 +55,13 @@ describe('Map case response to case summary', () => {
         },
       ],
     };
+    console.log(`expected: ${expectedSummaryDetails}`);
+    
 
     // act
     const result = mapCaseSummary(CaseResponseData);
-
+    console.log(`result: ${result}`);
+    
     // assert
     expect(result).toEqual(expectedSummaryDetails);
   });
@@ -83,13 +72,8 @@ describe('Map case response to case summary', () => {
       caseId: '9001',
       fieldData: {
         'qiD.Serial_Number': '9001',
-        'qDataBag.Prem1': 'Flat 1',
-        'qDataBag.Prem2': 'Richmond House',
-        'qDataBag.Prem3': 'Rice Road',
-        'qDataBag.Prem4': '',
+        'QSignIn.StartDat': '2024-05-11',
         'qDataBag.District': 'Gwent',
-        'qDataBag.PostTown': 'Newport',
-        'qDataBag.PostCode': 'NZ11 4PD',
         'qhAdmin.HOut': '100',
         'qhAdmin.Interviewer[1]': 'rich',
         'dmName[1]': 'Richmond Ricecake',
@@ -108,13 +92,8 @@ describe('Map case response to case summary', () => {
       caseId: '9001',
       fieldData: {
         'qiD.Serial_Number': '9001',
-        'qDataBag.Prem1': 'Flat 1',
-        'qDataBag.Prem2': 'Richmond House',
-        'qDataBag.Prem3': 'Rice Road',
-        'qDataBag.Prem4': '',
+        'QSignIn.StartDat': '2024-05-11',
         'qDataBag.District': 'Gwent',
-        'qDataBag.PostTown': 'Newport',
-        'qDataBag.PostCode': 'NZ11 4PD',
         'qhAdmin.HOut': '100',
         'qhAdmin.Interviewer[1]': 'rich',
         'dmName[1]': 'Richmond Ricecake',

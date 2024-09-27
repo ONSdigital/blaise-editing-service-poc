@@ -31,25 +31,14 @@ export default function CaseSummaryContent({ caseSummary }: CaseSummaryContentPr
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Interview date</dt>
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.InterviewDate.toDateString()}</dd>
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">District</dt>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.County}</dd>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.District}</dd>
 
-        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Interviewer number</dt>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.InterviewerNumber}</dd>
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Interviewer name</dt>
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.InterviewerName}</dd>
 
         {/* Individual details */}
 
         {/* Household composition */}
-        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Address:</dt>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.AddressLine1}</dd>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.AddressLine2}</dd>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.AddressLine3}</dd>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.AddressLine4}</dd>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.Town}</dd>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.County}</dd>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Address.Postcode}</dd>
-
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Type of accommodation</dt>
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Type}</dd>
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Floor number</dt>

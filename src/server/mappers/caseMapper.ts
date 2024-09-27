@@ -5,20 +5,11 @@ export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummaryD
   const caseSummary: CaseSummaryDetails = {
     CaseId: caseResponse.caseId,
     OutcomeCode: Number(caseResponse.fieldData['qhAdmin.HOut']),
-    InterviewDate: new Date(2024, 5, 11),
+    InterviewDate: new Date(caseResponse.fieldData['QSignIn.StartDat']),
+    District: caseResponse.fieldData['qDataBag.District'],
     InterviewerName: caseResponse.fieldData['qhAdmin.Interviewer[1]'],
-    InterviewerNumber: '2100',
     NumberOfRespondents: Number(caseResponse.fieldData['dmhSize']),
     Household: {
-      Address: {
-        AddressLine1: caseResponse.fieldData['qDataBag.Prem1'],
-        AddressLine2: caseResponse.fieldData['qDataBag.Prem2'],
-        AddressLine3: caseResponse.fieldData['qDataBag.Prem3'],
-        AddressLine4: caseResponse.fieldData['qDataBag.Prem4'],
-        County: caseResponse.fieldData['qDataBag.District'],
-        Town: caseResponse.fieldData['qDataBag.PostTown'],
-        Postcode: caseResponse.fieldData['qDataBag.PostCode'],
-      },
       Type: '',
       FloorNumber: 0,
       Status: '',
