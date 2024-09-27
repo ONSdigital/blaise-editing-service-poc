@@ -3,7 +3,7 @@ import { CaseSummaryDetails } from '../../../common/interfaces/caseInterface';
 import mapCaseSummary from '../../../server/mappers/caseMapper';
 
 describe('Map case response to case summary', () => {
-  it.only('It should return a correctly mapped summary with responent(s)', () => {
+  it('It should return a correctly mapped summary with responent(s)', () => {
     // arrange
     const CaseResponseData:CaseResponse = {
       caseId: '9001',
@@ -24,7 +24,7 @@ describe('Map case response to case summary', () => {
     const expectedSummaryDetails:CaseSummaryDetails = {
       CaseId: '9001',
       OutcomeCode: 110,
-      InterviewDate: new Date(2024, 5, 11),
+      InterviewDate: new Date('2024-05-11'),
       District: 'Gwent',
       InterviewerName: 'Rich',
       NumberOfRespondents: 2,
@@ -47,21 +47,18 @@ describe('Map case response to case summary', () => {
       Respondents: [
         {
           RespondentName: 'Richmond Ricecake',
-          DateOfBirth: new Date(1980, 1, 15),
+          DateOfBirth: new Date('1980-01-15'),
         },
         {
           RespondentName: 'Bartholomew Edgar',
-          DateOfBirth: new Date(1995, 5, 11),
+          DateOfBirth: new Date('1995-06-11'),
         },
       ],
-    };
-    console.log(`expected: ${expectedSummaryDetails}`);
-    
+    };  
 
     // act
     const result = mapCaseSummary(CaseResponseData);
-    console.log(`result: ${result}`);
-    
+   
     // assert
     expect(result).toEqual(expectedSummaryDetails);
   });
