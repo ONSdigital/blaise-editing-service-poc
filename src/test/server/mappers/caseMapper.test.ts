@@ -12,7 +12,21 @@ describe('Map case response to case summary', () => {
         'QSignIn.StartDat': '2024-05-11',
         'qDataBag.District': 'Gwent',
         'qhAdmin.HOut': '110',
+        'qhAdmin.QObsSheet.MainAcD': '1',
+        'qhAdmin.QObsSheet.TypAcDV': '1',
+        'qhAdmin.QObsSheet.FloorN': '2',
         'qhAdmin.Interviewer[1]': 'Rich',
+        'QAccomdat.HHStat': '1',
+        'QAccomdat.Bedroom': '2',
+        'BU[1].QBenefit.QBenef2[1].HBenAmt': '380',
+        'QCounTax.CTBand': '1',
+        'BU[1].QBUId.BUNum': '1',
+        'BU[1].QSelfJob[1].Adult[1].BusRoom': '1',
+        'BU[1].QCurst1.Adult[1].EmpStat': '2',
+        'BU[1].QCurst1.Adult[1].Persid': '1',
+        'BU[1].QBenefit.QWageBen.Adult[1].WageBen[1]': '5',
+        'BU[1].QBenefit.QWageBen.Adult[1].Persid': '1',
+        'BU[1].QBenefit.QWageBen.Adult[1].JSAType': '2',
         'dmName[1]': 'Richmond Ricecake',
         'dmDteOfBth[1]': '1980-01-15',
         'dmName[2]': 'Bartholomew Edgar',
@@ -23,26 +37,29 @@ describe('Map case response to case summary', () => {
 
     const expectedSummaryDetails:CaseSummaryDetails = {
       CaseId: '9001',
-      OutcomeCode: 110,
+      OutcomeCode: '110',
       InterviewDate: new Date('2024-05-11'),
       District: 'Gwent',
       InterviewerName: 'Rich',
-      NumberOfRespondents: 2,
+      NumberOfRespondents: '2',
       Household: {
-        Type: '',
-        FloorNumber: 0,
-        Status: '',
-        NumberOfBedrooms: 1,
-        ReceiptOfHousingBenefit: 380,
-        PeriodCode: 380,
-        CouncilTaxBand: 'band A',
-        BusinessRoom: false,
-        SelfEmployed: false,
-        SelfEmployedMembers: '',
-        IncomeSupport: false,
-        IncomeSupportMembers: '',
-        IncomeBasesJaSupport: false,
-        IncomeBasesJaSupportMembers: '',
+        Accommodation: {
+          Main: 'House/Bungalow',
+          Type: 'Detached',
+        },
+        FloorNumber: '2',
+        Status: 'Conventional',
+        NumberOfBedrooms: '2',
+        ReceiptOfHousingBenefit: '380',
+        PeriodCode: '380',
+        CouncilTaxBand: 'Band A',
+        BusinessRoom: true,
+        SelfEmployed: true,
+        SelfEmployedMembers: ['1'],
+        IncomeSupport: true,
+        IncomeSupportMembers: ['1'],
+        IncomeBasedJaSupport: true,
+        IncomeBasedJaSupportMembers: ['2'],
       },
       Respondents: [
         {
@@ -54,11 +71,11 @@ describe('Map case response to case summary', () => {
           DateOfBirth: new Date('1995-06-11'),
         },
       ],
-    };  
+    };
 
     // act
     const result = mapCaseSummary(CaseResponseData);
-   
+
     // assert
     expect(result).toEqual(expectedSummaryDetails);
   });

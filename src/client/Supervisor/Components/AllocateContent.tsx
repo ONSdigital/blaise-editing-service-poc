@@ -6,7 +6,7 @@ import { getAllocationDetails, updateAllocationDetails } from '../../api/NodeApi
 import AllocateContentForm from './AllocateContentForm';
 import Option from '../../Interfaces/controlsInterface';
 import { useAsyncRequestWithThreeParamsWithRefresh } from '../../Common/hooks/useAsyncRequest';
-import UserRole from '../../Common/enums/UserRole';
+import UserRole from '../../Common/enums/UserTypes';
 import AsyncContent from '../../Common/components/AsyncContent';
 import { Message } from '../../Common/types/MessageType';
 

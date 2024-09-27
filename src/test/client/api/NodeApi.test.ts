@@ -12,7 +12,7 @@ import {
 } from '../../../client/api/NodeApi';
 import { EditorInformation } from '../../../client/Interfaces/editorInterface';
 import { SupervisorInformation } from '../../../client/Interfaces/supervisorInterface';
-import UserRole from '../../../client/Common/enums/UserRole';
+import UserRole from '../../../client/Common/enums/UserTypes';
 import { caseSummaryDetailsMockObject } from '../../server/mockObjects/CaseMockObject';
 import { AllocationDetails } from '../../../common/interfaces/allocationInterface';
 

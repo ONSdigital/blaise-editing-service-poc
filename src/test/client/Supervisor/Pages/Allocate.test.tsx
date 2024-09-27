@@ -4,7 +4,7 @@ import {
 import { BrowserRouter } from 'react-router-dom';
 import Router from 'react-router';
 import { getAllocationDetails, updateAllocationDetails } from '../../../../client/api/NodeApi';
-import UserRole from '../../../../client/Common/enums/UserRole';
+import UserRole from '../../../../client/Common/enums/UserTypes';
 import { AllocationDetails } from '../../../../common/interfaces/allocationInterface';
 import AllocationMockObject from '../../MockObjects/AllocationMockObjects';
 import Allocate from '../../../../client/Supervisor/Pages/Allocate';

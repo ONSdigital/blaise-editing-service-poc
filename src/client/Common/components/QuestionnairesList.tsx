@@ -3,7 +3,7 @@ import { ONSSelect } from 'blaise-design-system-react-components';
 import { User } from 'blaise-api-node-client';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 import Option from '../../Interfaces/controlsInterface';
-import UserRole from '../enums/UserRole';
+import UserRole from '../enums/UserTypes';
 import SupervisorsQuestionnaireDetails from '../../Supervisor/Components/SupervisorsQuestionnaireDetails';
 import EditorsQuestionnaireDetails from '../../Editor/Components/EditorsQuestionnaireDetails';
 import ErrorPanel from './ErrorPanel';

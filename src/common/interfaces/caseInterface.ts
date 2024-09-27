@@ -1,25 +1,28 @@
 export interface CaseSummaryDetails {
   CaseId: string
-  OutcomeCode: number,
+  OutcomeCode: string,
   InterviewDate: Date,
   District: string,
   InterviewerName: string,
-  NumberOfRespondents: number,
+  NumberOfRespondents: string,
   Household: {
-    Type: string,
-    FloorNumber: number,
+    Accommodation: {
+      Main: string,
+      Type: string,
+    }
+    FloorNumber: string,
     Status: string,
-    NumberOfBedrooms: number,
-    ReceiptOfHousingBenefit: number,
-    PeriodCode: number,
+    NumberOfBedrooms: string,
+    ReceiptOfHousingBenefit: string,
+    PeriodCode: string,
     CouncilTaxBand: string,
     BusinessRoom: boolean,
     SelfEmployed: boolean,
-    SelfEmployedMembers: string,
+    SelfEmployedMembers: string[],
     IncomeSupport: boolean,
-    IncomeSupportMembers: string,
-    IncomeBasesJaSupport: boolean,
-    IncomeBasesJaSupportMembers: string,
+    IncomeSupportMembers: string[],
+    IncomeBasedJaSupport: boolean,
+    IncomeBasedJaSupportMembers: string[],
 
   },
   Respondents: {

@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Route } from 'react-router-dom';
 import { User } from 'blaise-api-node-client';
-import UserRole from '../enums/UserRole';
+import UserRole from '../enums/UserTypes';
 import CreateRoutes from './CreateRoutes';
 import SupervisorsHome from '../../Supervisor/Pages/SupervisorsHome';
 import EditorHome from '../../Editor/Pages/EditorHome';

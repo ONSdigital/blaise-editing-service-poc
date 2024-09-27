@@ -1,7 +1,7 @@
 import { ReactElement, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ONSPanel } from 'blaise-design-system-react-components';
-import UserRole from '../../Common/enums/UserRole';
+import UserRole from '../../Common/enums/UserTypes';
 import ErrorPanel from '../../Common/components/ErrorPanel';
 import SuccessPanel from '../../Common/components/SuccessPanel';
 import AllocateContent from '../Components/AllocateContent';

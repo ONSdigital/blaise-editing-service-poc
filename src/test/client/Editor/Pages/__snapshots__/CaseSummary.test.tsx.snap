@@ -17,7 +17,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
             Case summary for
              
             <strong>
-              90001
+              9001
             </strong>
              
             completed by
@@ -40,7 +40,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
           >
-            90001
+            9001
           </dd>
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
@@ -60,7 +60,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
           >
-            Tue Jun 11 2024
+            Sat May 11 2024
           </dd>
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
@@ -75,16 +75,6 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
           >
-            Interviewer number
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            2100
-          </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
             Interviewer name
           </dt>
           <dd
@@ -95,51 +85,13 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
           >
-            Address:
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            Flat 1
-          </dd>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            Richmond House
-          </dd>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            Rice Road
-          </dd>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            Duffrin
-          </dd>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            Newport
-          </dd>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            Gwent
-          </dd>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            NZ11 4PD
-          </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
             Type of accommodation
           </dt>
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
-          />
+          >
+            Detached
+          </dd>
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
           >
@@ -148,7 +100,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
           >
-            0
+            2
           </dd>
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
@@ -157,7 +109,9 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           </dt>
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
-          />
+          >
+            Conventional
+          </dd>
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
           >
@@ -166,7 +120,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
           >
-            1
+            2
           </dd>
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
@@ -196,7 +150,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
           >
-            band A
+            Band A
           </dd>
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
@@ -221,7 +175,9 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           </dt>
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
-          />
+          >
+            1
+          </dd>
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
           >
@@ -237,7 +193,9 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           </dt>
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
-          />
+          >
+            1
+          </dd>
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
           >
@@ -253,7 +211,9 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           </dt>
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
-          />
+          >
+            2
+          </dd>
           <dt
             class="ons-metadata__term ons-grid__col ons-col-3@m"
           >
@@ -274,7 +234,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           >
             Richmond Ricecake
              
-            Fri Feb 15 1980
+            Tue Jan 15 1980
           </dd>
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
@@ -310,7 +270,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           Case summary for
            
           <strong>
-            90001
+            9001
           </strong>
            
           completed by
@@ -333,7 +293,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
         >
-          90001
+          9001
         </dd>
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
@@ -353,7 +313,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
         >
-          Tue Jun 11 2024
+          Sat May 11 2024
         </dd>
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
@@ -368,16 +328,6 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
         >
-          Interviewer number
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          2100
-        </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
           Interviewer name
         </dt>
         <dd
@@ -388,51 +338,13 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
         >
-          Address:
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          Flat 1
-        </dd>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          Richmond House
-        </dd>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          Rice Road
-        </dd>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          Duffrin
-        </dd>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          Newport
-        </dd>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          Gwent
-        </dd>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          NZ11 4PD
-        </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
           Type of accommodation
         </dt>
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
-        />
+        >
+          Detached
+        </dd>
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
         >
@@ -441,7 +353,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
         >
-          0
+          2
         </dd>
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
@@ -450,7 +362,9 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         </dt>
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
-        />
+        >
+          Conventional
+        </dd>
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
         >
@@ -459,7 +373,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
         >
-          1
+          2
         </dd>
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
@@ -489,7 +403,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
         >
-          band A
+          Band A
         </dd>
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
@@ -514,7 +428,9 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         </dt>
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
-        />
+        >
+          1
+        </dd>
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
         >
@@ -530,7 +446,9 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         </dt>
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
-        />
+        >
+          1
+        </dd>
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
         >
@@ -546,7 +464,9 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         </dt>
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
-        />
+        >
+          2
+        </dd>
         <dt
           class="ons-metadata__term ons-grid__col ons-col-3@m"
         >
@@ -567,7 +487,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         >
           Richmond Ricecake
            
-          Fri Feb 15 1980
+          Tue Jan 15 1980
         </dd>
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"

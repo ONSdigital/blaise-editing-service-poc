@@ -5,7 +5,7 @@ import { getSupervisorEditorInformation } from '../../api/NodeApi';
 import AsyncContent from '../../Common/components/AsyncContent';
 import { SupervisorInformation } from '../../Interfaces/supervisorInterface';
 import SupervisorsContent from './SupervisorsContent';
-import UserRole from '../../Common/enums/UserRole';
+import UserRole from '../../Common/enums/UserTypes';
 
 interface SupervisorsQuestionnairesDetailsProps {
   questionnaire: QuestionnaireDetails;

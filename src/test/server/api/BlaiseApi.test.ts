@@ -54,7 +54,7 @@ describe('getCase from Blaise', () => {
   it('Should retrieve a case from blaise', async () => {
     // arrange
     const questionnaireName = 'OPN2201A';
-    const caseId = '90001';
+    const caseId = '9001';
 
     blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => caseResponseMockObject);
 
@@ -74,7 +74,7 @@ describe('updateCase from Blaise', () => {
   it('Should call the update function with the expected parameters', async () => {
     // arrange
     const questionnaireName = 'OPN2201A';
-    const caseId = '90001';
+    const caseId = '9001';
     const caseFields = {};
 
     blaiseApiClientMock.setup((client) => client.updateCase(configFake.ServerPark, questionnaireName, caseId, caseFields)).returns(async () => null);

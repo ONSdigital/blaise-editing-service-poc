@@ -7,7 +7,7 @@ import EditorHome from '../../../../client/Editor/Pages/EditorHome';
 import { EditorInformation } from '../../../../client/Interfaces/editorInterface';
 import FilteredSurveyListMockObject from '../../MockObjects/SurveyMockObjects';
 import { EditorInformationMockObject1, EditorInformationMockObject2 } from '../../MockObjects/EditorMockObjects';
-import UserRole from '../../../../client/Common/enums/UserRole';
+import UserRole from '../../../../client/Common/enums/UserTypes';
 
 // set global vars
 const userRole:string = UserRole.SVT_Editor;

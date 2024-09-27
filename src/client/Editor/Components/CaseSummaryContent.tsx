@@ -40,7 +40,7 @@ export default function CaseSummaryContent({ caseSummary }: CaseSummaryContentPr
 
         {/* Household composition */}
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Type of accommodation</dt>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Type}</dd>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Accommodation.Type}</dd>
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Floor number</dt>
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.FloorNumber}</dd>
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Household status</dt>
@@ -64,9 +64,9 @@ export default function CaseSummaryContent({ caseSummary }: CaseSummaryContentPr
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">H/H members</dt>
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.IncomeSupportMembers}</dd>
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Income based JA received now</dt>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.IncomeBasesJaSupport}</dd>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.IncomeBasedJaSupport}</dd>
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">H/H members</dt>
-        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.IncomeBasesJaSupportMembers}</dd>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.IncomeBasedJaSupportMembers}</dd>
 
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Household size:</dt>
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.NumberOfRespondents}</dd>
