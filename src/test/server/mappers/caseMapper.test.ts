@@ -266,4 +266,152 @@ describe('Map case response to case summary', () => {
     // assert
     expect(result.Household.CouncilTaxBand).toEqual(expectedOutputValue);
   });
+
+  it('It should return the expected ReceiptOfHousingBenefit when only one person has this set', () => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    const expectedHousingBenefit = '400';
+    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+      for (let adult = 1; adult <= 2; adult += 1) {
+        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
+      }
+    }
+    CaseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.ReceiptOfHousingBenefit).toEqual(expectedHousingBenefit);
+  });
+
+  it('It should return the expected ReceiptOfHousingBenefit when nobody has this set', () => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    const expectedHousingBenefit = 'n/a';
+    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+      for (let adult = 1; adult <= 2; adult += 1) {
+        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
+      }
+    }
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.ReceiptOfHousingBenefit).toEqual(expectedHousingBenefit);
+  });
+
+  it('It should return the expected ReceiptOfHousingBenefit when Multiple person have this set', () => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    const expectedHousingBenefit = '400';
+    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+      for (let adult = 1; adult <= 2; adult += 1) {
+        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
+      }
+    }
+    CaseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = '380';
+    CaseResponseData.fieldData['BU[2].QBenefit.QBenef2[2].HBenAmt'] = '390';
+    CaseResponseData.fieldData['BU[3].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.ReceiptOfHousingBenefit).toEqual(expectedHousingBenefit);
+  });
+
+  it('It should return the the firts 6 characters for ReceiptOfHousingBenefit when the input is longer than 6', () => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    const inputHousingBenefit = '1234567';
+    const expectedHousingBenefit = '123456';
+    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+      for (let adult = 1; adult <= 2; adult += 1) {
+        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
+      }
+    }
+    CaseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = inputHousingBenefit;
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.ReceiptOfHousingBenefit).toEqual(expectedHousingBenefit);
+  });
+
+  it('It should return the expected PeriodCode when only one person has this set', () => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    const expectedHousingBenefit = '400';
+    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+      for (let adult = 1; adult <= 2; adult += 1) {
+        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
+      }
+    }
+    CaseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.PeriodCode).toEqual(expectedHousingBenefit);
+  });
+
+  it('It should return the expected PeriodCode when nobody has this set', () => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    const expectedHousingBenefit = 'n/a';
+    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+      for (let adult = 1; adult <= 2; adult += 1) {
+        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
+      }
+    }
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.PeriodCode).toEqual(expectedHousingBenefit);
+  });
+
+  it('It should return the expected PeriodCode when Multiple person have this set', () => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    const expectedHousingBenefit = '400';
+    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+      for (let adult = 1; adult <= 2; adult += 1) {
+        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
+      }
+    }
+    CaseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = '380';
+    CaseResponseData.fieldData['BU[2].QBenefit.QBenef2[2].HBenAmt'] = '390';
+    CaseResponseData.fieldData['BU[3].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.PeriodCode).toEqual(expectedHousingBenefit);
+  });
+
+  it('It should return the the firts 6 characters for PeriodCode when the input is longer than 6', () => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    const inputHousingBenefit = '1234567';
+    const expectedHousingBenefit = '123456';
+    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+      for (let adult = 1; adult <= 2; adult += 1) {
+        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
+      }
+    }
+    CaseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = inputHousingBenefit;
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.PeriodCode).toEqual(expectedHousingBenefit);
+  });
 });
