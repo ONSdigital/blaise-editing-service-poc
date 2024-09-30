@@ -1,12 +1,26 @@
 import { CaseResponse } from 'blaise-api-node-client';
 import { CaseSummaryDetails } from '../../../common/interfaces/caseInterface';
 import mapCaseSummary from '../../../server/mappers/caseMapper';
-import { caseResponseMockObject } from '../mockObjects/CaseMockObject';
+
+function SetFieldsToValue(CaseResponseData: CaseResponse, fieldEndsWith: string, fieldValue: string): void {
+  Object.keys(CaseResponseData.fieldData).forEach((key) => {
+    if (key.endsWith(fieldEndsWith)) {
+      CaseResponseData.fieldData[key] = fieldValue;
+    }
+  });
+}
+
+let caseResponseData: CaseResponse;
 
 describe('Map case response to case summary', () => {
+  beforeEach(() => {
+    jest.resetModules();
+    caseResponseData = require('../mockObjects/CaseMockObject').caseResponseMockObject;
+  });
+
   it('It should return a correctly mapped summary with responent(s)', () => {
     // arrange
-    const CaseResponseData:CaseResponse = {
+    const caseResponseData:CaseResponse = {
       caseId: '9001',
       fieldData: {
         'qiD.Serial_Number': '9001',
@@ -75,7 +89,7 @@ describe('Map case response to case summary', () => {
     };
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result).toEqual(expectedSummaryDetails);
@@ -83,42 +97,20 @@ describe('Map case response to case summary', () => {
 
   it.each(['one', 'dyhzjsgfkb'])('It should error when household size can not be converted into a number', (value) => {
     // arrange
-    const CaseResponseData:CaseResponse = {
-      caseId: '9001',
-      fieldData: {
-        'qiD.Serial_Number': '9001',
-        'QSignIn.StartDat': '2024-05-11',
-        'qDataBag.District': 'Gwent',
-        'qhAdmin.HOut': '100',
-        'qhAdmin.Interviewer[1]': 'rich',
-        'dmName[1]': 'Richmond Ricecake',
-        'dmDteOfBth[1]': '1980-01-15',
-        dmhSize: `${value}`,
-      },
-    };
+    SetFieldsToValue(caseResponseData, 'dmhSize', '');
+    caseResponseData.fieldData['dmhSize'] = value;
 
     // act && assert
-    expect(() => mapCaseSummary(CaseResponseData)).toThrowError('Number of responents not specified');
+    expect(() => mapCaseSummary(caseResponseData)).toThrowError('Number of responents not specified');
   });
 
   it.each(['0', '', ' '])('It should error when household Size is missing or zero', (value) => {
     // arrange
-    const CaseResponseData:CaseResponse = {
-      caseId: '9001',
-      fieldData: {
-        'qiD.Serial_Number': '9001',
-        'QSignIn.StartDat': '2024-05-11',
-        'qDataBag.District': 'Gwent',
-        'qhAdmin.HOut': '100',
-        'qhAdmin.Interviewer[1]': 'rich',
-        'dmName[1]': 'Richmond Ricecake',
-        'dmDteOfBth[1]': '1980-01-15',
-        dmhSize: `${value}`,
-      },
-    };
+    SetFieldsToValue(caseResponseData, 'dmhSize', '');
+    caseResponseData.fieldData['dmhSize'] = value;
 
     // act && assert
-    expect(() => mapCaseSummary(CaseResponseData)).toThrowError('Number of responents not specified');
+    expect(() => mapCaseSummary(caseResponseData)).toThrowError('Number of responents not specified');
   });
 
   it.each([
@@ -129,11 +121,11 @@ describe('Map case response to case summary', () => {
     ['5', 'N/A'],
   ])('It should return the expected Accomadation Main when given valid inputs', (inputValue: string, expectedOutputValue: string) => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
-    CaseResponseData.fieldData['qhAdmin.QObsSheet.MainAcD'] = inputValue;
+    SetFieldsToValue(caseResponseData, 'qhAdmin.QObsSheet.MainAcD', '');
+    caseResponseData.fieldData['qhAdmin.QObsSheet.MainAcD'] = inputValue;
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.Accommodation.Main).toEqual(expectedOutputValue);
@@ -146,11 +138,11 @@ describe('Map case response to case summary', () => {
     ['test', ''],
   ])('It should return the expected Accomadation Main when given invalid inputs', (inputValue: string, expectedOutputValue: string) => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
-    CaseResponseData.fieldData['qhAdmin.QObsSheet.MainAcD'] = inputValue;
+    SetFieldsToValue(caseResponseData, 'qhAdmin.QObsSheet.MainAcD', '');
+    caseResponseData.fieldData['qhAdmin.QObsSheet.MainAcD'] = inputValue;
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.Accommodation.Main).toEqual(expectedOutputValue);
@@ -167,11 +159,11 @@ describe('Map case response to case summary', () => {
     ['8', 'N/A'],
   ])('It should return the expected Accomadation Type when given valid inputs', (inputValue: string, expectedOutputValue: string) => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
-    CaseResponseData.fieldData['qhAdmin.QObsSheet.TypAcDV'] = inputValue;
+    SetFieldsToValue(caseResponseData, 'qhAdmin.QObsSheet.TypAcDV', '');
+    caseResponseData.fieldData['qhAdmin.QObsSheet.TypAcDV'] = inputValue;
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.Accommodation.Type).toEqual(expectedOutputValue);
@@ -184,11 +176,11 @@ describe('Map case response to case summary', () => {
     ['test', ''],
   ])('It should return the expected Accomadation Type when given invalid inputs', (inputValue: string, expectedOutputValue: string) => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
-    CaseResponseData.fieldData['qhAdmin.QObsSheet.TypAcDV'] = inputValue;
+    SetFieldsToValue(caseResponseData, 'qhAdmin.QObsSheet.TypAcDV', '');
+    caseResponseData.fieldData['qhAdmin.QObsSheet.TypAcDV'] = inputValue;
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.Accommodation.Type).toEqual(expectedOutputValue);
@@ -200,11 +192,11 @@ describe('Map case response to case summary', () => {
     ['3', 'n/a'],
   ])('It should return the expected HouseStatus when given valid inputs', (inputValue: string, expectedOutputValue: string) => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
-    CaseResponseData.fieldData['QAccomdat.HHStat'] = inputValue;
+    SetFieldsToValue(caseResponseData, 'QAccomdat.HHStat', '');
+    caseResponseData.fieldData['QAccomdat.HHStat'] = inputValue;
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.Status).toEqual(expectedOutputValue);
@@ -217,11 +209,11 @@ describe('Map case response to case summary', () => {
     ['test', ''],
   ])('It should return the expected HouseStatus when given invalid inputs', (inputValue: string, expectedOutputValue: string) => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
-    CaseResponseData.fieldData['QAccomdat.HHStat'] = inputValue;
+    SetFieldsToValue(caseResponseData, 'QAccomdat.HHStat', '');
+    caseResponseData.fieldData['QAccomdat.HHStat'] = inputValue;
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.Status).toEqual(expectedOutputValue);
@@ -240,11 +232,11 @@ describe('Map case response to case summary', () => {
     ['10', 'Band J'],
   ])('It should return the expected CouncilTaxBand when given valid inputs', (inputValue: string, expectedOutputValue: string) => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
-    CaseResponseData.fieldData['QCounTax.CTBand'] = inputValue;
+    SetFieldsToValue(caseResponseData, 'QCounTax.CTBand', '');
+    caseResponseData.fieldData['QCounTax.CTBand'] = inputValue;
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.CouncilTaxBand).toEqual(expectedOutputValue);
@@ -257,11 +249,11 @@ describe('Map case response to case summary', () => {
     ['test', 'Blank'],
   ])('It should return the expected CouncilTaxBand when given invalid inputs', (inputValue: string, expectedOutputValue: string) => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
-    CaseResponseData.fieldData['QCounTax.CTBand'] = inputValue;
+    SetFieldsToValue(caseResponseData, 'QCounTax.CTBand', '');
+    caseResponseData.fieldData['QCounTax.CTBand'] = inputValue;
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.CouncilTaxBand).toEqual(expectedOutputValue);
@@ -269,17 +261,14 @@ describe('Map case response to case summary', () => {
 
   it('It should return the expected ReceiptOfHousingBenefit when only one person has this set', () => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
+
     const expectedHousingBenefit = '400';
-    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
-      for (let adult = 1; adult <= 2; adult += 1) {
-        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
-      }
-    }
-    CaseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
+
+    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.ReceiptOfHousingBenefit).toEqual(expectedHousingBenefit);
@@ -287,16 +276,12 @@ describe('Map case response to case summary', () => {
 
   it('It should return the expected ReceiptOfHousingBenefit when nobody has this set', () => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
+
     const expectedHousingBenefit = 'n/a';
-    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
-      for (let adult = 1; adult <= 2; adult += 1) {
-        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
-      }
-    }
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.ReceiptOfHousingBenefit).toEqual(expectedHousingBenefit);
@@ -304,19 +289,16 @@ describe('Map case response to case summary', () => {
 
   it('It should return the expected ReceiptOfHousingBenefit when Multiple person have this set', () => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
+
     const expectedHousingBenefit = '400';
-    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
-      for (let adult = 1; adult <= 2; adult += 1) {
-        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
-      }
-    }
-    CaseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = '380';
-    CaseResponseData.fieldData['BU[2].QBenefit.QBenef2[2].HBenAmt'] = '390';
-    CaseResponseData.fieldData['BU[3].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
+
+    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = '380';
+    caseResponseData.fieldData['BU[2].QBenefit.QBenef2[2].HBenAmt'] = '390';
+    caseResponseData.fieldData['BU[3].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.ReceiptOfHousingBenefit).toEqual(expectedHousingBenefit);
@@ -324,18 +306,15 @@ describe('Map case response to case summary', () => {
 
   it('It should return the the firts 6 characters for ReceiptOfHousingBenefit when the input is longer than 6', () => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
+
     const inputHousingBenefit = '1234567';
     const expectedHousingBenefit = '123456';
-    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
-      for (let adult = 1; adult <= 2; adult += 1) {
-        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
-      }
-    }
-    CaseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = inputHousingBenefit;
+
+    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = inputHousingBenefit;
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.ReceiptOfHousingBenefit).toEqual(expectedHousingBenefit);
@@ -343,17 +322,14 @@ describe('Map case response to case summary', () => {
 
   it('It should return the expected PeriodCode when only one person has this set', () => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
+
     const expectedHousingBenefit = '400';
-    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
-      for (let adult = 1; adult <= 2; adult += 1) {
-        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
-      }
-    }
-    CaseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
+
+    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.PeriodCode).toEqual(expectedHousingBenefit);
@@ -361,16 +337,12 @@ describe('Map case response to case summary', () => {
 
   it('It should return the expected PeriodCode when nobody has this set', () => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
+
     const expectedHousingBenefit = 'n/a';
-    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
-      for (let adult = 1; adult <= 2; adult += 1) {
-        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
-      }
-    }
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.PeriodCode).toEqual(expectedHousingBenefit);
@@ -378,19 +350,16 @@ describe('Map case response to case summary', () => {
 
   it('It should return the expected PeriodCode when Multiple person have this set', () => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
+
     const expectedHousingBenefit = '400';
-    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
-      for (let adult = 1; adult <= 2; adult += 1) {
-        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
-      }
-    }
-    CaseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = '380';
-    CaseResponseData.fieldData['BU[2].QBenefit.QBenef2[2].HBenAmt'] = '390';
-    CaseResponseData.fieldData['BU[3].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
+
+    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = '380';
+    caseResponseData.fieldData['BU[2].QBenefit.QBenef2[2].HBenAmt'] = '390';
+    caseResponseData.fieldData['BU[3].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.PeriodCode).toEqual(expectedHousingBenefit);
@@ -398,70 +367,35 @@ describe('Map case response to case summary', () => {
 
   it('It should return the the firts 6 characters for PeriodCode when the input is longer than 6', () => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
+
     const inputHousingBenefit = '1234567';
     const expectedHousingBenefit = '123456';
-    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
-      for (let adult = 1; adult <= 2; adult += 1) {
-        CaseResponseData.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${adult}].HBenAmt`] = '';
-      }
-    }
-    CaseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = inputHousingBenefit;
+
+    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = inputHousingBenefit;
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.PeriodCode).toEqual(expectedHousingBenefit);
   });
 
   it.each([
-    ['1','1','1'],
-    ['3','2','2'],
-    ['5','3','1'],
-    ['7','4','2']
-  ])('It should return true for BusinessRoom when it is set for any person', (benefitUnitToSet: string,selfEmployedToSet: string,adultToSet: string) => {
+    ['1', '1', '1'],
+    ['3', '2', '2'],
+    ['5', '3', '1'],
+    ['7', '4', '2'],
+  ])('It should return true for BusinessRoom when it is set for any person', (benefitUnitToSet: string, selfEmployedToSet: string, adultToSet: string) => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
-    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
-      CaseResponseData.fieldData[`BU[${benefitUnit}.QBUId.BUNum`] = ''
-      for (let adult = 1; adult <= 2; adult += 1) {
-        for (let selfEmployed = 1; selfEmployed <= 5; selfEmployed += 1) {
-          CaseResponseData.fieldData[`BU[${benefitUnit}].QSelfJob[${selfEmployed}].Adult[${adult}].BusRoom`] = '';
-        }
-      }
-    }
-    CaseResponseData.fieldData[`BU[${benefitUnitToSet}].QBUId.BUNum`] = '1';
-    CaseResponseData.fieldData[`BU[${benefitUnitToSet}].QSelfJob[${selfEmployedToSet}].Adult[${adultToSet}].BusRoom`] = '1';
+    SetFieldsToValue(caseResponseData, '.QBUId.BUNum', '');
+    SetFieldsToValue(caseResponseData, '.BusRoom', '');
+
+    caseResponseData.fieldData[`BU[${benefitUnitToSet}].QBUId.BUNum`] = '1';
+    caseResponseData.fieldData[`BU[${benefitUnitToSet}].QSelfJob[${selfEmployedToSet}].Adult[${adultToSet}].BusRoom`] = '1';
 
     // act
-    const result = mapCaseSummary(CaseResponseData);
-
-    // assert
-    expect(result.Household.BusinessRoom).toEqual(true);
-  });
-
-  it.each([
-    ['1','1','1'],
-    ['3','2','2'],
-    ['5','3','1'],
-    ['7','4','2']
-  ])('It should return true for BusinessRoom when it is set for any person', (benefitUnitToSet: string,selfEmployedToSet: string,adultToSet: string) => {
-    // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
-    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
-      CaseResponseData.fieldData[`BU[${benefitUnit}.QBUId.BUNum`] = ''
-      for (let adult = 1; adult <= 2; adult += 1) {
-        for (let selfEmployed = 1; selfEmployed <= 5; selfEmployed += 1) {
-          CaseResponseData.fieldData[`BU[${benefitUnit}].QSelfJob[${selfEmployed}].Adult[${adult}].BusRoom`] = '';
-        }
-      }
-    }
-    CaseResponseData.fieldData[`BU[${benefitUnitToSet}].QBUId.BUNum`] = '1';
-    CaseResponseData.fieldData[`BU[${benefitUnitToSet}].QSelfJob[${selfEmployedToSet}].Adult[${adultToSet}].BusRoom`] = '1';
-
-    // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.BusinessRoom).toEqual(true);
@@ -469,20 +403,76 @@ describe('Map case response to case summary', () => {
 
   it('It should return false for BusinessRoom when it is not set for any person', () => {
     // arrange
-    const CaseResponseData:CaseResponse = caseResponseMockObject;
-    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
-      CaseResponseData.fieldData[`BU[${benefitUnit}.QBUId.BUNum`] = ''
-      for (let adult = 1; adult <= 2; adult += 1) {
-        for (let selfEmployed = 1; selfEmployed <= 5; selfEmployed += 1) {
-          CaseResponseData.fieldData[`BU[${benefitUnit}].QSelfJob[${selfEmployed}].Adult[${adult}].BusRoom`] = '';
-        }
-      }
-    }
-    
+
+    SetFieldsToValue(caseResponseData, '.QBUId.BUNum', '');
+    SetFieldsToValue(caseResponseData, '.BusRoom', '');
+
     // act
-    const result = mapCaseSummary(CaseResponseData);
+    const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.BusinessRoom).toEqual(false);
+  });
+
+  it.each([
+    ['1', '1', '1'],
+    ['4', '2', '8'],
+    ['7', '1', '13'],
+  ])('It should return true for SelfEmployed with a list of self employed members when there is only one set', (benefitUnitToSet: string, adultToSet: string, personIdToSet: string) => {
+    // arrange
+    SetFieldsToValue(caseResponseData, '.QBUId.BUNum', '');
+    SetFieldsToValue(caseResponseData, '.EmpStat', '');
+    SetFieldsToValue(caseResponseData, '.Persid', '');
+
+    caseResponseData.fieldData[`BU[${benefitUnitToSet}].QBUId.BUNum`] = '1';
+    caseResponseData.fieldData[`BU[${benefitUnitToSet}].QCurst1.Adult[${adultToSet}].EmpStat`] = '2';
+    caseResponseData.fieldData[`BU[${benefitUnitToSet}].QCurst1.Adult[${adultToSet}].Persid`] = `${personIdToSet}`;
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Household.SelfEmployed).toEqual(true);
+    expect(result.Household.SelfEmployedMembers).toEqual([personIdToSet]);
+  });
+
+  it('It should return true for SelfEmployed with a list of self employed members when there are multiple set', () => {
+    // arrange
+    SetFieldsToValue(caseResponseData, '.QBUId.BUNum', '');
+    SetFieldsToValue(caseResponseData, '.EmpStat', '');
+    SetFieldsToValue(caseResponseData, '.Persid', '');
+
+    caseResponseData.fieldData['BU[1].QBUId.BUNum'] = '1';
+    caseResponseData.fieldData['BU[1].QCurst1.Adult[1].EmpStat'] = '2';
+    caseResponseData.fieldData['BU[1].QCurst1.Adult[1].Persid'] = '1';
+
+    caseResponseData.fieldData['BU[4].QBUId.BUNum'] = '1';
+    caseResponseData.fieldData['BU[4].QCurst1.Adult[2].EmpStat'] = '2';
+    caseResponseData.fieldData['BU[4].QCurst1.Adult[2].Persid'] = '8';
+
+    caseResponseData.fieldData['BU[7].QBUId.BUNum'] = '1';
+    caseResponseData.fieldData['BU[7].QCurst1.Adult[1].EmpStat'] = '2';
+    caseResponseData.fieldData['BU[7].QCurst1.Adult[1].Persid'] = '13';
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Household.SelfEmployed).toEqual(true);
+    expect(result.Household.SelfEmployedMembers).toEqual(['1', '8', '13']);
+  });
+
+  it('It should return false for SelfEmployed with an empty list when there are none set', () => {
+    // arrange
+    SetFieldsToValue(caseResponseData, '.QBUId.BUNum', '');
+    SetFieldsToValue(caseResponseData, '.EmpStat', '');
+    SetFieldsToValue(caseResponseData, '.Persid', '');
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Household.SelfEmployed).toEqual(false);
+    expect(result.Household.SelfEmployedMembers).toEqual([]);
   });
 });
