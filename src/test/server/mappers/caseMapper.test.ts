@@ -1,6 +1,7 @@
 import { CaseResponse } from 'blaise-api-node-client';
 import { CaseSummaryDetails } from '../../../common/interfaces/caseInterface';
 import mapCaseSummary from '../../../server/mappers/caseMapper';
+import { caseResponseMockObject } from '../mockObjects/CaseMockObject';
 
 describe('Map case response to case summary', () => {
   it('It should return a correctly mapped summary with responent(s)', () => {
@@ -118,5 +119,151 @@ describe('Map case response to case summary', () => {
 
     // act && assert
     expect(() => mapCaseSummary(CaseResponseData)).toThrowError('Number of responents not specified');
+  });
+
+  it.each([
+    ['1', 'House/Bungalow'],
+    ['2', 'Flat/Maisonette'],
+    ['3', 'Room/Rooms'],
+    ['4', 'Other'],
+    ['5', 'N/A'],
+  ])('It should return the expected Accomadation Main when given valid inputs', (inputValue: string, expectedOutputValue: string) => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    CaseResponseData.fieldData['qhAdmin.QObsSheet.MainAcD'] = inputValue;
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.Accommodation.Main).toEqual(expectedOutputValue);
+  });
+
+  it.each([
+    ['0', ''],
+    ['6', ''],
+    ['', ''],
+    ['test', ''],
+  ])('It should return the expected Accomadation Main when given invalid inputs', (inputValue: string, expectedOutputValue: string) => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    CaseResponseData.fieldData['qhAdmin.QObsSheet.MainAcD'] = inputValue;
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.Accommodation.Main).toEqual(expectedOutputValue);
+  });
+
+  it.each([
+    ['1', 'Detached'],
+    ['2', 'S-Detached'],
+    ['3', 'Terrace'],
+    ['4', 'Purp-Built'],
+    ['5', 'Converted'],
+    ['6', 'Mobile Home'],
+    ['7', 'Other Kind'],
+    ['8', 'N/A'],
+  ])('It should return the expected Accomadation Type when given valid inputs', (inputValue: string, expectedOutputValue: string) => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    CaseResponseData.fieldData['qhAdmin.QObsSheet.TypAcDV'] = inputValue;
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.Accommodation.Type).toEqual(expectedOutputValue);
+  });
+
+  it.each([
+    ['0', ''],
+    ['9', ''],
+    ['', ''],
+    ['test', ''],
+  ])('It should return the expected Accomadation Type when given invalid inputs', (inputValue: string, expectedOutputValue: string) => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    CaseResponseData.fieldData['qhAdmin.QObsSheet.TypAcDV'] = inputValue;
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.Accommodation.Type).toEqual(expectedOutputValue);
+  });
+
+  it.each([
+    ['1', 'Conventional'],
+    ['2', 'Shared'],
+    ['3', 'n/a'],
+  ])('It should return the expected HouseStatus when given valid inputs', (inputValue: string, expectedOutputValue: string) => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    CaseResponseData.fieldData['QAccomdat.HHStat'] = inputValue;
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.Status).toEqual(expectedOutputValue);
+  });
+
+  it.each([
+    ['0', ''],
+    ['4', ''],
+    ['', ''],
+    ['test', ''],
+  ])('It should return the expected HouseStatus when given invalid inputs', (inputValue: string, expectedOutputValue: string) => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    CaseResponseData.fieldData['QAccomdat.HHStat'] = inputValue;
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.Status).toEqual(expectedOutputValue);
+  });
+
+  it.each([
+    ['1', 'Band A'],
+    ['2', 'Band B'],
+    ['3', 'Band C'],
+    ['4', 'Band D'],
+    ['5', 'Band E'],
+    ['6', 'Band F'],
+    ['7', 'Band G'],
+    ['8', 'Band H'],
+    ['9', 'Band I'],
+    ['10', 'Band J'],
+  ])('It should return the expected CouncilTaxBand when given valid inputs', (inputValue: string, expectedOutputValue: string) => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    CaseResponseData.fieldData['QCounTax.CTBand'] = inputValue;
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.CouncilTaxBand).toEqual(expectedOutputValue);
+  });
+
+  it.each([
+    ['0', 'Blank'],
+    ['11', 'Blank'],
+    ['', 'Blank'],
+    ['test', 'Blank'],
+  ])('It should return the expected CouncilTaxBand when given invalid inputs', (inputValue: string, expectedOutputValue: string) => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    CaseResponseData.fieldData['QCounTax.CTBand'] = inputValue;
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.CouncilTaxBand).toEqual(expectedOutputValue);
   });
 });

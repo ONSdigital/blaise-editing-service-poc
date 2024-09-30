@@ -119,6 +119,7 @@ function GetJsaPeople(caseResponse: CaseResponse): string[] {
 
 export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummaryDetails {
   const housingBenefit = GetHousingBenefit(caseResponse);
+  const businessRoom = HasBusinessRoom(caseResponse);
   const selfEmployedMembers = GetSelfEmployedMembers(caseResponse);
   const jsaPeople = GetJsaPeople(caseResponse);
   const incomeSupportPeople = GetIncomeSupportPeople(caseResponse);
@@ -140,7 +141,7 @@ export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummaryD
       ReceiptOfHousingBenefit: housingBenefit,
       PeriodCode: housingBenefit,
       CouncilTaxBand: CouncilTaxBand[Number(caseResponse.fieldData['QCounTax.CTBand'])] ?? 'Blank',
-      BusinessRoom: HasBusinessRoom(caseResponse),
+      BusinessRoom: businessRoom,
       SelfEmployed: selfEmployedMembers.length > 0,
       SelfEmployedMembers: selfEmployedMembers,
       IncomeSupport: incomeSupportPeople.length > 0,
