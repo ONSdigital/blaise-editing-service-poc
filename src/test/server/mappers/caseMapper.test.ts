@@ -414,4 +414,75 @@ describe('Map case response to case summary', () => {
     // assert
     expect(result.Household.PeriodCode).toEqual(expectedHousingBenefit);
   });
+
+  it.each([
+    ['1','1','1'],
+    ['3','2','2'],
+    ['5','3','1'],
+    ['7','4','2']
+  ])('It should return true for BusinessRoom when it is set for any person', (benefitUnitToSet: string,selfEmployedToSet: string,adultToSet: string) => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+      CaseResponseData.fieldData[`BU[${benefitUnit}.QBUId.BUNum`] = ''
+      for (let adult = 1; adult <= 2; adult += 1) {
+        for (let selfEmployed = 1; selfEmployed <= 5; selfEmployed += 1) {
+          CaseResponseData.fieldData[`BU[${benefitUnit}].QSelfJob[${selfEmployed}].Adult[${adult}].BusRoom`] = '';
+        }
+      }
+    }
+    CaseResponseData.fieldData[`BU[${benefitUnitToSet}].QBUId.BUNum`] = '1';
+    CaseResponseData.fieldData[`BU[${benefitUnitToSet}].QSelfJob[${selfEmployedToSet}].Adult[${adultToSet}].BusRoom`] = '1';
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.BusinessRoom).toEqual(true);
+  });
+
+  it.each([
+    ['1','1','1'],
+    ['3','2','2'],
+    ['5','3','1'],
+    ['7','4','2']
+  ])('It should return true for BusinessRoom when it is set for any person', (benefitUnitToSet: string,selfEmployedToSet: string,adultToSet: string) => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+      CaseResponseData.fieldData[`BU[${benefitUnit}.QBUId.BUNum`] = ''
+      for (let adult = 1; adult <= 2; adult += 1) {
+        for (let selfEmployed = 1; selfEmployed <= 5; selfEmployed += 1) {
+          CaseResponseData.fieldData[`BU[${benefitUnit}].QSelfJob[${selfEmployed}].Adult[${adult}].BusRoom`] = '';
+        }
+      }
+    }
+    CaseResponseData.fieldData[`BU[${benefitUnitToSet}].QBUId.BUNum`] = '1';
+    CaseResponseData.fieldData[`BU[${benefitUnitToSet}].QSelfJob[${selfEmployedToSet}].Adult[${adultToSet}].BusRoom`] = '1';
+
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.BusinessRoom).toEqual(true);
+  });
+
+  it('It should return false for BusinessRoom when it is not set for any person', () => {
+    // arrange
+    const CaseResponseData:CaseResponse = caseResponseMockObject;
+    for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+      CaseResponseData.fieldData[`BU[${benefitUnit}.QBUId.BUNum`] = ''
+      for (let adult = 1; adult <= 2; adult += 1) {
+        for (let selfEmployed = 1; selfEmployed <= 5; selfEmployed += 1) {
+          CaseResponseData.fieldData[`BU[${benefitUnit}].QSelfJob[${selfEmployed}].Adult[${adult}].BusRoom`] = '';
+        }
+      }
+    }
+    
+    // act
+    const result = mapCaseSummary(CaseResponseData);
+
+    // assert
+    expect(result.Household.BusinessRoom).toEqual(false);
+  });
 });
