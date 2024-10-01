@@ -34,12 +34,22 @@ async function getCaseSummary(caseid: string) {
     },
     Respondents: [
       {
+        PersonNumber: '1',
         RespondentName: 'Richmond Ricecake',
-        DateOfBirth: new Date(1980, 1, 15),
+        BenefitUnit: '1',
+        Sex: 'M',
+        DateOfBirth: new Date('1980-01-15'),
+        MaritalStatus: 'COH',
+        Relationship: ['*', '1'],
       },
       {
-        RespondentName: 'Bartholomew Edgar',
-        DateOfBirth: new Date(1995, 5, 11),
+        PersonNumber: '2',
+        RespondentName: 'Betty Bettison',
+        BenefitUnit: '1',
+        Sex: 'F',
+        DateOfBirth: new Date('1995-06-11'),
+        MaritalStatus: 'COH',
+        Relationship: ['1', '*'],
       },
     ],
   };

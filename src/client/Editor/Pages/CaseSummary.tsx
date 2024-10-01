@@ -38,12 +38,22 @@ function DisplayCaseSummary(questionnaireName: string, caseId: string) {
     },
     Respondents: [
       {
+        PersonNumber: '1',
         RespondentName: 'Richmond Ricecake',
+        BenefitUnit: '1',
+        Sex: 'M',
         DateOfBirth: new Date('1980-01-15'),
+        MaritalStatus: 'COH',
+        Relationship: ['*', '1'],
       },
       {
-        RespondentName: 'Bartholomew Edgar',
+        PersonNumber: '2',
+        RespondentName: 'Betty Bettison',
+        BenefitUnit: '1',
+        Sex: 'F',
         DateOfBirth: new Date('1995-06-11'),
+        MaritalStatus: 'COH',
+        Relationship: ['1', '*'],
       },
     ],
   };

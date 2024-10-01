@@ -39,6 +39,23 @@ const CouncilTaxBand: Record<number, string> = {
   10: 'Band J',
 };
 
+const Sex: Record<number, string> = {
+  1: 'M',
+  2: 'F',
+};
+
+const MartitalStatus: Record<number, string> = {
+  1: 'S',
+  2: 'M',
+  3: 'CPL',
+  4: 'SEP',
+  5: 'DIV',
+  6: 'W',
+  7: 'CPS',
+  8: 'CPD',
+  9: 'CPW',
+};
+
 function GetHousingBenefit(caseResponse: CaseResponse): string {
   let housingBenefit = 'n/a';
   for (let i = 1; i <= 7; i += 1) {
@@ -117,6 +134,26 @@ function GetJsaPeople(caseResponse: CaseResponse): string[] {
   return jsaPeople;
 }
 
+function GetMaritalStatus(caseResponse: CaseResponse, respondentNumber: number): string {
+  if (caseResponse.fieldData[`hhg.p[${respondentNumber}].livewith`] === '1') {
+    return 'COH';
+  }
+  return MartitalStatus[Number(caseResponse.fieldData[`hhg.p[${respondentNumber}].ms`])] ?? '-';
+}
+
+function GetRelationshipMatrix(caseResponse: CaseResponse, respondentNumber: number, numberOfRespondents: number): string[] {
+  const relationshipMatrix: string[] = [];
+  for (let i = 1; i <= numberOfRespondents; i += 1) {
+    let relationship: string = caseResponse.fieldData[`HHG.P[${respondentNumber}].QRel[${i}].R`];
+    if (relationship === '97') {
+      relationship = '*';
+    }
+    relationshipMatrix.push(relationship);
+  }
+
+  return relationshipMatrix;
+}
+
 export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummaryDetails {
   const housingBenefit = GetHousingBenefit(caseResponse);
   const businessRoom = HasBusinessRoom(caseResponse);
@@ -129,7 +166,7 @@ export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummaryD
     InterviewDate: new Date(caseResponse.fieldData['QSignIn.StartDat']),
     District: caseResponse.fieldData['qDataBag.District'],
     InterviewerName: caseResponse.fieldData['qhAdmin.Interviewer[1]'],
-    NumberOfRespondents: caseResponse.fieldData['dmhSize'],
+    NumberOfRespondents: caseResponse.fieldData['dmhSize'], // 'hhsize' in B4?
     Household: {
       Accommodation: {
         Main: Accommodation[Number(caseResponse.fieldData['qhAdmin.QObsSheet.MainAcD'])] ?? '',
@@ -160,8 +197,13 @@ export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummaryD
 
   for (let respondentNumber = 1; respondentNumber <= numberOfRespondents; respondentNumber += 1) {
     caseSummary.Respondents.push({
-      RespondentName: caseResponse.fieldData[`dmName[${respondentNumber}]`],
-      DateOfBirth: new Date(caseResponse.fieldData[`dmDteOfBth[${respondentNumber}]`]),
+      PersonNumber: `${respondentNumber}`,
+      RespondentName: caseResponse.fieldData[`dmName[${respondentNumber}]`], // `QNames.M[${respondentNumber}].Name` in B4?
+      BenefitUnit: caseResponse.fieldData[`HHG.P[${respondentNumber}].BenUnit`],
+      Sex: Sex[Number(caseResponse.fieldData[`HHG.P[${respondentNumber}].Sex`])] ?? '',
+      DateOfBirth: new Date(caseResponse.fieldData[`dmDteOfBth[${respondentNumber}]`]), // `HHG.P[${respondentNumber}].DoB` in B4?
+      MaritalStatus: GetMaritalStatus(caseResponse, respondentNumber),
+      Relationship: GetRelationshipMatrix(caseResponse, respondentNumber, numberOfRespondents),
     });
   }
 

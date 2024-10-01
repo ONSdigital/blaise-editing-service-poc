@@ -80,11 +80,21 @@ export const caseResponseMockObject: CaseResponse = {
     'BU[1].QBenefit.QWageBen.Adult[1].WageBen[1]': '5',
     'BU[1].QBenefit.QWageBen.Adult[1].Persid': '1',
     'BU[1].QBenefit.QWageBen.Adult[1].JSAType': '2',
-    'dmName[1]': 'Richmond Ricecake',
-    'dmDteOfBth[1]': '1980-01-15',
-    'dmName[2]': 'Bartholomew Edgar',
-    'dmDteOfBth[2]': '1995-06-11',
-    dmhSize: '2',
+    dmhSize: '2', // 'hhsize' in B4?
+    'dmName[1]': 'Richmond Ricecake', // `QNames.M[1].Name` in B4?
+    'HHG.P[1].BenUnit': '1',
+    'HHG.P[1].Sex': '1',
+    'dmDteOfBth[1]': '1980-01-15', // 'HHG.P[1].DoB' in B4?
+    'hhg.p[1].livewith': '1',
+    'HHG.P[1].QRel[1].R': '97',
+    'HHG.P[1].QRel[2].R': '1',
+    'dmName[2]': 'Betty Bettison', // `QNames.M[2].Name` in B4?
+    'HHG.P[2].BenUnit': '1',
+    'HHG.P[2].Sex': '2',
+    'dmDteOfBth[2]': '1995-06-11', // 'HHG.P[2].DoB' in B4?
+    'hhg.p[2].livewith': '1',
+    'HHG.P[2].QRel[1].R': '1',
+    'HHG.P[2].QRel[2].R': '97',
   },
 };
 
@@ -116,12 +126,22 @@ export const caseSummaryDetailsMockObject: CaseSummaryDetails = {
   },
   Respondents: [
     {
+      PersonNumber: '1',
       RespondentName: 'Richmond Ricecake',
+      BenefitUnit: '1',
+      Sex: 'M',
       DateOfBirth: new Date('1980-01-15'),
+      MaritalStatus: 'COH',
+      Relationship: ['*', '1'],
     },
     {
-      RespondentName: 'Bartholomew Edgar',
+      PersonNumber: '2',
+      RespondentName: 'Betty Bettison',
+      BenefitUnit: '1',
+      Sex: 'F',
       DateOfBirth: new Date('1995-06-11'),
+      MaritalStatus: 'COH',
+      Relationship: ['1', '*'],
     },
   ],
 };

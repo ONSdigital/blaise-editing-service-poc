@@ -26,7 +26,12 @@ export interface CaseSummaryDetails {
 
   },
   Respondents: {
+    PersonNumber: string,
     RespondentName: string,
+    BenefitUnit: string,
+    Sex: string,
     DateOfBirth: Date,
+    MaritalStatus: string,
+    Relationship: string[],
   }[]
 }
