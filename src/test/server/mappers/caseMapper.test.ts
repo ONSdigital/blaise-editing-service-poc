@@ -475,4 +475,73 @@ describe('Map case response to case summary', () => {
     expect(result.Household.SelfEmployed).toEqual(false);
     expect(result.Household.SelfEmployedMembers).toEqual([]);
   });
+
+  it.each([
+    ['1', '1', '1', '1'],
+    ['4', '2', '6', '8'],
+    ['7', '1', '10', '13'],
+  ])('It should return true for IncomeSupport with a list of income support members when there is only one set', (benefitUnitToSet: string, adultToSet: string, wageBenefitToSet: string, personIdToSet: string) => {
+    // arrange
+    SetFieldsToValue(caseResponseData, '.QBUId.BUNum', '');
+    for (let wageBenefit = 1; wageBenefit <= 10; wageBenefit += 1) {
+      SetFieldsToValue(caseResponseData, `.WageBen[${wageBenefit}]`, '');
+    }
+    SetFieldsToValue(caseResponseData, '.Persid', '');
+
+    caseResponseData.fieldData[`BU[${benefitUnitToSet}].QBUId.BUNum`] = '1';
+    caseResponseData.fieldData[`BU[${benefitUnitToSet}].QBenefit.QWageBen.Adult[${adultToSet}].WageBen[${wageBenefitToSet}]`] = '5';
+    caseResponseData.fieldData[`BU[${benefitUnitToSet}].QBenefit.QWageBen.Adult[${adultToSet}].Persid`] = `${personIdToSet}`;
+    
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Household.IncomeSupport).toEqual(true);
+    expect(result.Household.IncomeSupportMembers).toEqual([personIdToSet]);
+  });
+
+  it('It should return true for IncomeSupport with a list of income support members when there are multiple set', () => {
+    // arrange
+    SetFieldsToValue(caseResponseData, '.QBUId.BUNum', '');
+    for (let wageBenefit = 1; wageBenefit <= 10; wageBenefit += 1) {
+      SetFieldsToValue(caseResponseData, `.WageBen[${wageBenefit}]`, '');
+    }
+    SetFieldsToValue(caseResponseData, '.Persid', '');
+
+    caseResponseData.fieldData[`BU[1].QBUId.BUNum`] = '1';
+    caseResponseData.fieldData[`BU[1].QBenefit.QWageBen.Adult[1].WageBen[1]`] = '5';
+    caseResponseData.fieldData[`BU[1].QBenefit.QWageBen.Adult[1].Persid`] = '1';
+    
+
+    caseResponseData.fieldData['BU[4].QBUId.BUNum'] = '1';
+    caseResponseData.fieldData[`BU[4].QBenefit.QWageBen.Adult[2].WageBen[6]`] = '5';
+    caseResponseData.fieldData[`BU[4].QBenefit.QWageBen.Adult[2].Persid`] = '8';
+
+    caseResponseData.fieldData['BU[7].QBUId.BUNum'] = '1';
+    caseResponseData.fieldData[`BU[7].QBenefit.QWageBen.Adult[1].WageBen[10]`] = '5';
+    caseResponseData.fieldData[`BU[7].QBenefit.QWageBen.Adult[1].Persid`] = '13';
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Household.IncomeSupport).toEqual(true);
+    expect(result.Household.IncomeSupportMembers).toEqual(['1', '8', '13']);
+  });
+
+  it('It should return false for IncomeSupport with an empty list when there are none set', () => {
+    // arrange
+    SetFieldsToValue(caseResponseData, '.QBUId.BUNum', '');
+    for (let wageBenefit = 1; wageBenefit <= 10; wageBenefit += 1) {
+      SetFieldsToValue(caseResponseData, `.WageBen[${wageBenefit}]`, '');
+    }
+    SetFieldsToValue(caseResponseData, '.Persid', '');
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Household.IncomeSupport).toEqual(false);
+    expect(result.Household.IncomeSupportMembers).toEqual([]);
+  });
 });
