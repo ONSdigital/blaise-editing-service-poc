@@ -544,4 +544,59 @@ describe('Map case response to case summary', () => {
     expect(result.Household.IncomeSupport).toEqual(false);
     expect(result.Household.IncomeSupportMembers).toEqual([]);
   });
+
+  it.each([
+    ['1', '1', '2'],
+    ['4', '2', '3'],
+    ['7', '1', '2'],
+  ])('It should return true for IncomeBasedJaSupport with a list of income based Ja members when there is only one set', (benefitUnitToSet: string, adultToSet: string, JsaTypeToSet: string) => {
+    // arrange
+    SetFieldsToValue(caseResponseData, '.QBUId.BUNum', '');
+    SetFieldsToValue(caseResponseData, '.JSAType', '');
+
+    caseResponseData.fieldData[`BU[${benefitUnitToSet}].QBUId.BUNum`] = '1';
+    caseResponseData.fieldData[`BU[${benefitUnitToSet}].QBenefit.QWageBen.Adult[${adultToSet}].JSAType`] = `${JsaTypeToSet}`;
+    
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Household.IncomeBasedJaSupport).toEqual(true);
+    expect(result.Household.IncomeBasedJaSupportMembers).toEqual([JsaTypeToSet]);
+  });
+
+  it('It should return true for IncomeBasedJaSupport with a list of income based Ja members when there are multiple set', () => {
+    // arrange
+    SetFieldsToValue(caseResponseData, '.QBUId.BUNum', '');
+    SetFieldsToValue(caseResponseData, '.JSAType', '');
+
+    caseResponseData.fieldData[`BU[1].QBUId.BUNum`] = '1';
+    caseResponseData.fieldData[`BU[1].QBenefit.QWageBen.Adult[1].JSAType`] = '2';
+    
+    caseResponseData.fieldData[`BU[4].QBUId.BUNum`] = '1';
+    caseResponseData.fieldData[`BU[4].QBenefit.QWageBen.Adult[2].JSAType`] = '3';
+
+    caseResponseData.fieldData[`BU[7].QBUId.BUNum`] = '1';
+    caseResponseData.fieldData[`BU[7].QBenefit.QWageBen.Adult[1].JSAType`] = '2';
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Household.IncomeBasedJaSupport).toEqual(true);
+    expect(result.Household.IncomeBasedJaSupportMembers).toEqual(['2','3','2']);
+  });
+
+  it('It should return false for IncomeBasedJaSupport with an empty list when there are none set', () => {
+    // arrange
+    SetFieldsToValue(caseResponseData, '.QBUId.BUNum', '');
+    SetFieldsToValue(caseResponseData, '.JSAType', '');
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Household.IncomeBasedJaSupport).toEqual(false);
+    expect(result.Household.IncomeBasedJaSupportMembers).toEqual([]);
+  });
 });
