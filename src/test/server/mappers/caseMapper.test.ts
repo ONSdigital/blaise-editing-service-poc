@@ -15,7 +15,7 @@ let caseResponseData: CaseResponse;
 describe('Map case response to case summary', () => {
   beforeEach(() => {
     jest.resetModules();
-    caseResponseData = require('../mockObjects/CaseMockObject').caseResponseMockObject;
+    caseResponseData = require('../mockObjects/CaseMockObject').caseResponseMockObject; /* eslint-disable-line */
   });
 
   it('It should return a correctly mapped summary with responent(s)', () => {
