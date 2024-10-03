@@ -82,178 +82,140 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           >
             Rich
           </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            Type of accommodation
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            Detached
-          </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            Floor number
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            2
-          </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            Household status
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            Conventional
-          </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            Number of bedrooms
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            2
-          </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            Receipt of housing benefit
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            380
-          </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            Period code
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            380
-          </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            Council tax band
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            Band A
-          </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            Business room?
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          />
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            Anyone self emplyed?
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          />
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            H/H members
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            1
-          </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            Income support received now
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          />
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            H/H members
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            1
-          </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            Income based JA received now
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          />
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            H/H members
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            2
-          </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            Household size:
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            2
-          </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            Respondents:
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            Richmond Ricecake
-             
-            Tue Jan 15 1980
-          </dd>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            Betty Bettison
-             
-            Sun Jun 11 1995
-          </dd>
-          <dt
-            class="ons-metadata__term ons-grid__col ons-col-3@m"
-          >
-            Notes:
-          </dt>
-          <dd
-            class="ons-metadata__value ons-grid__col ons-col-9@m"
-          >
-            These are the notes that the editor has made and has been extracted from the quetsionnarie. They may be able to be edited and saved again in this screen. If this is what you wish to do?
-          </dd>
         </dl>
+        <br />
+        <table
+          class="ons-table"
+          data-testid="Respondents-table"
+          id="Respondents-table"
+        >
+          <thead
+            class="ons-table__head"
+          >
+            <tr
+              class="ons-table__row"
+            >
+              <th
+                class="ons-table__header"
+                scope="col"
+              />
+              <th
+                class="ons-table__header"
+                scope="col"
+              >
+                Name
+              </th>
+              <th
+                class="ons-table__header"
+                scope="col"
+              >
+                BU
+              </th>
+              <th
+                class="ons-table__header"
+                scope="col"
+              >
+                Sex
+              </th>
+              <th
+                class="ons-table__header"
+                scope="col"
+              >
+                DOB
+              </th>
+              <th
+                class="ons-table__header"
+                scope="col"
+              >
+                Marital status
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="ons-table__body"
+          >
+            <tr
+              class="ons-table__row"
+            >
+              <td
+                aria-label="1-RespondentNumber"
+                class="ons-table__cell"
+              >
+                1
+              </td>
+              <td
+                aria-label="Richmond Ricecake-RespondentName"
+                class="ons-table__cell status"
+              >
+                Richmond Ricecake
+              </td>
+              <td
+                aria-label="1-BenefitUnit"
+                class="ons-table__cell"
+              >
+                1
+              </td>
+              <td
+                aria-label="M-Sex"
+                class="ons-table__cell"
+              >
+                M
+              </td>
+              <td
+                aria-label="Tue Jan 15 1980 00:00:00 GMT+0000 (Greenwich Mean Time)-DateOfBirth"
+                class="ons-table__cell"
+              >
+                Tue Jan 15 1980
+              </td>
+              <td
+                aria-label="COH-MaritalStatus"
+                class="ons-table__cell"
+              >
+                COH
+              </td>
+            </tr>
+            <tr
+              class="ons-table__row"
+            >
+              <td
+                aria-label="2-RespondentNumber"
+                class="ons-table__cell"
+              >
+                2
+              </td>
+              <td
+                aria-label="Betty Bettison-RespondentName"
+                class="ons-table__cell status"
+              >
+                Betty Bettison
+              </td>
+              <td
+                aria-label="1-BenefitUnit"
+                class="ons-table__cell"
+              >
+                1
+              </td>
+              <td
+                aria-label="F-Sex"
+                class="ons-table__cell"
+              >
+                F
+              </td>
+              <td
+                aria-label="Sun Jun 11 1995 01:00:00 GMT+0100 (British Summer Time)-DateOfBirth"
+                class="ons-table__cell"
+              >
+                Sun Jun 11 1995
+              </td>
+              <td
+                aria-label="COH-MaritalStatus"
+                class="ons-table__cell"
+              >
+                COH
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </body>,
@@ -335,178 +297,140 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         >
           Rich
         </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          Type of accommodation
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          Detached
-        </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          Floor number
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          2
-        </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          Household status
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          Conventional
-        </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          Number of bedrooms
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          2
-        </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          Receipt of housing benefit
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          380
-        </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          Period code
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          380
-        </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          Council tax band
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          Band A
-        </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          Business room?
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        />
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          Anyone self emplyed?
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        />
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          H/H members
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          1
-        </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          Income support received now
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        />
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          H/H members
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          1
-        </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          Income based JA received now
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        />
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          H/H members
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          2
-        </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          Household size:
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          2
-        </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          Respondents:
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          Richmond Ricecake
-           
-          Tue Jan 15 1980
-        </dd>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          Betty Bettison
-           
-          Sun Jun 11 1995
-        </dd>
-        <dt
-          class="ons-metadata__term ons-grid__col ons-col-3@m"
-        >
-          Notes:
-        </dt>
-        <dd
-          class="ons-metadata__value ons-grid__col ons-col-9@m"
-        >
-          These are the notes that the editor has made and has been extracted from the quetsionnarie. They may be able to be edited and saved again in this screen. If this is what you wish to do?
-        </dd>
       </dl>
+      <br />
+      <table
+        class="ons-table"
+        data-testid="Respondents-table"
+        id="Respondents-table"
+      >
+        <thead
+          class="ons-table__head"
+        >
+          <tr
+            class="ons-table__row"
+          >
+            <th
+              class="ons-table__header"
+              scope="col"
+            />
+            <th
+              class="ons-table__header"
+              scope="col"
+            >
+              Name
+            </th>
+            <th
+              class="ons-table__header"
+              scope="col"
+            >
+              BU
+            </th>
+            <th
+              class="ons-table__header"
+              scope="col"
+            >
+              Sex
+            </th>
+            <th
+              class="ons-table__header"
+              scope="col"
+            >
+              DOB
+            </th>
+            <th
+              class="ons-table__header"
+              scope="col"
+            >
+              Marital status
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="ons-table__body"
+        >
+          <tr
+            class="ons-table__row"
+          >
+            <td
+              aria-label="1-RespondentNumber"
+              class="ons-table__cell"
+            >
+              1
+            </td>
+            <td
+              aria-label="Richmond Ricecake-RespondentName"
+              class="ons-table__cell status"
+            >
+              Richmond Ricecake
+            </td>
+            <td
+              aria-label="1-BenefitUnit"
+              class="ons-table__cell"
+            >
+              1
+            </td>
+            <td
+              aria-label="M-Sex"
+              class="ons-table__cell"
+            >
+              M
+            </td>
+            <td
+              aria-label="Tue Jan 15 1980 00:00:00 GMT+0000 (Greenwich Mean Time)-DateOfBirth"
+              class="ons-table__cell"
+            >
+              Tue Jan 15 1980
+            </td>
+            <td
+              aria-label="COH-MaritalStatus"
+              class="ons-table__cell"
+            >
+              COH
+            </td>
+          </tr>
+          <tr
+            class="ons-table__row"
+          >
+            <td
+              aria-label="2-RespondentNumber"
+              class="ons-table__cell"
+            >
+              2
+            </td>
+            <td
+              aria-label="Betty Bettison-RespondentName"
+              class="ons-table__cell status"
+            >
+              Betty Bettison
+            </td>
+            <td
+              aria-label="1-BenefitUnit"
+              class="ons-table__cell"
+            >
+              1
+            </td>
+            <td
+              aria-label="F-Sex"
+              class="ons-table__cell"
+            >
+              F
+            </td>
+            <td
+              aria-label="Sun Jun 11 1995 01:00:00 GMT+0100 (British Summer Time)-DateOfBirth"
+              class="ons-table__cell"
+            >
+              Sun Jun 11 1995
+            </td>
+            <td
+              aria-label="COH-MaritalStatus"
+              class="ons-table__cell"
+            >
+              COH
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>,
   "debug": [Function],
