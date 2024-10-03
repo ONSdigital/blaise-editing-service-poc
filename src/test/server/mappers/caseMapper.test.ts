@@ -803,4 +803,55 @@ describe('Map case response to case summary', () => {
     expect(result.Respondents[2]?.MaritalStatus).toEqual('CPL');
     expect(result.Respondents[3]?.MaritalStatus).toEqual('W');
   });
+
+  it('It should return the expected Relationship array when there is only one resident', () => {
+    // arrange
+    SetFieldsToValue(caseResponseData, 'dmhSize', ''); // 'hhsize' in B4, check with BDSS?
+    SetFieldsToValue(caseResponseData, '].R', '');
+
+    caseResponseData.fieldData['dmhSize'] = '1';
+    caseResponseData.fieldData['hhg.P[1].QRel[1].R'] = '97';
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Respondents[0]?.Relationship).toEqual(['*']);
+  });
+
+  it('It should return the expected Relationship array for all residents when there are multiple resident', () => {
+    // arrange
+    SetFieldsToValue(caseResponseData, 'dmhSize', ''); // 'hhsize' in B4, check with BDSS?
+    SetFieldsToValue(caseResponseData, '].R', '');
+
+    caseResponseData.fieldData['dmhSize'] = '4';
+    caseResponseData.fieldData['hhg.P[1].QRel[1].R'] = '97';
+    caseResponseData.fieldData['hhg.P[1].QRel[2].R'] = '1';
+    caseResponseData.fieldData['hhg.P[1].QRel[3].R'] = '7';
+    caseResponseData.fieldData['hhg.P[1].QRel[4].R'] = '16';
+
+    caseResponseData.fieldData['hhg.P[2].QRel[1].R'] = '1';
+    caseResponseData.fieldData['hhg.P[2].QRel[2].R'] = '97';
+    caseResponseData.fieldData['hhg.P[2].QRel[3].R'] = '7';
+    caseResponseData.fieldData['hhg.P[2].QRel[4].R'] = '16';
+
+    caseResponseData.fieldData['hhg.P[3].QRel[1].R'] = '3';
+    caseResponseData.fieldData['hhg.P[3].QRel[2].R'] = '3';
+    caseResponseData.fieldData['hhg.P[3].QRel[3].R'] = '97';
+    caseResponseData.fieldData['hhg.P[3].QRel[4].R'] = '7';
+
+    caseResponseData.fieldData['hhg.P[4].QRel[1].R'] = '15';
+    caseResponseData.fieldData['hhg.P[4].QRel[2].R'] = '15';
+    caseResponseData.fieldData['hhg.P[4].QRel[3].R'] = '3';
+    caseResponseData.fieldData['hhg.P[4].QRel[4].R'] = '97';
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Respondents[0]?.Relationship).toEqual(['*', '1', '7', '16']);
+    expect(result.Respondents[1]?.Relationship).toEqual(['1', '*', '7', '16']);
+    expect(result.Respondents[2]?.Relationship).toEqual(['3', '3', '*', '7']);
+    expect(result.Respondents[3]?.Relationship).toEqual(['15', '15', '3', '*']);
+  });
 });
