@@ -166,7 +166,7 @@ export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummaryD
     InterviewDate: new Date(caseResponse.fieldData['QSignIn.StartDat']),
     District: caseResponse.fieldData['qDataBag.District'],
     InterviewerName: caseResponse.fieldData['qhAdmin.Interviewer[1]'],
-    NumberOfRespondents: caseResponse.fieldData['dmhSize'], // 'hhsize' in B4?
+    NumberOfRespondents: caseResponse.fieldData['dmhSize'], // 'hhsize' in B4, check with BDSS?
     Household: {
       Accommodation: {
         Main: Accommodation[Number(caseResponse.fieldData['qhAdmin.QObsSheet.MainAcD'])] ?? '',
@@ -198,10 +198,10 @@ export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummaryD
   for (let respondentNumber = 1; respondentNumber <= numberOfRespondents; respondentNumber += 1) {
     caseSummary.Respondents.push({
       PersonNumber: `${respondentNumber}`,
-      RespondentName: caseResponse.fieldData[`dmName[${respondentNumber}]`], // `QNames.M[${respondentNumber}].Name` in B4?
+      RespondentName: caseResponse.fieldData[`dmName[${respondentNumber}]`], // `QNames.M[${respondentNumber}].Name` in B4, check with BDSS?
       BenefitUnit: caseResponse.fieldData[`HHG.P[${respondentNumber}].BenUnit`],
       Sex: Sex[Number(caseResponse.fieldData[`HHG.P[${respondentNumber}].Sex`])] ?? '',
-      DateOfBirth: new Date(caseResponse.fieldData[`dmDteOfBth[${respondentNumber}]`]), // `HHG.P[${respondentNumber}].DoB` in B4?
+      DateOfBirth: new Date(caseResponse.fieldData[`dmDteOfBth[${respondentNumber}]`]), // `HHG.P[${respondentNumber}].DoB` in B4, check with BDSS?
       MaritalStatus: GetMaritalStatus(caseResponse, respondentNumber),
       Relationship: GetRelationshipMatrix(caseResponse, respondentNumber, numberOfRespondents),
     });

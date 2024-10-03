@@ -42,18 +42,18 @@ describe('Map case response to case summary', () => {
         'BU[1].QBenefit.QWageBen.Adult[1].WageBen[1]': '5',
         'BU[1].QBenefit.QWageBen.Adult[1].Persid': '1',
         'BU[1].QBenefit.QWageBen.Adult[1].JSAType': '2',
-        dmhSize: '2', // 'hhsize' in B4?
-        'dmName[1]': 'Richmond Ricecake', // `QNames.M[1].Name` in B4?
+        dmhSize: '2', // 'hhsize' in B4, check with BDSS?
+        'dmName[1]': 'Richmond Ricecake', // `QNames.M[1].Name` in B4, check with BDSS?
         'HHG.P[1].BenUnit': '1',
         'HHG.P[1].Sex': '1',
-        'dmDteOfBth[1]': '1980-01-15', // 'HHG.P[1].DoB' in B4?
+        'dmDteOfBth[1]': '1980-01-15', // 'HHG.P[1].DoB' in B4, check with BDSS?
         'hhg.p[1].livewith': '1',
         'HHG.P[1].QRel[1].R': '97',
         'HHG.P[1].QRel[2].R': '1',
-        'dmName[2]': 'Betty Bettison', // `QNames.M[2].Name` in B4?
+        'dmName[2]': 'Betty Bettison', // `QNames.M[2].Name` in B4, check with BDSS?
         'HHG.P[2].BenUnit': '1',
         'HHG.P[2].Sex': '2',
-        'dmDteOfBth[2]': '1995-06-11', // 'HHG.P[2].DoB' in B4?
+        'dmDteOfBth[2]': '1995-06-11', // 'HHG.P[2].DoB' in B4, check with BDSS?
         'hhg.p[2].livewith': '1',
         'HHG.P[2].QRel[1].R': '1',
         'HHG.P[2].QRel[2].R': '97',
@@ -117,8 +117,8 @@ describe('Map case response to case summary', () => {
 
   it.each(['one', 'dyhzjsgfkb'])('It should error when household size can not be converted into a number', (value) => {
     // arrange
-    SetFieldsToValue(caseResponseData, 'dmhSize', '');
-    caseResponseData.fieldData['dmhSize'] = value;
+    SetFieldsToValue(caseResponseData, 'dmhSize', ''); // 'hhsize' in B4, check with BDSS?
+    caseResponseData.fieldData[''] = value;
 
     // act && assert
     expect(() => mapCaseSummary(caseResponseData)).toThrowError('Number of responents not specified');
@@ -126,7 +126,7 @@ describe('Map case response to case summary', () => {
 
   it.each(['0', '', ' '])('It should error when household Size is missing or zero', (value) => {
     // arrange
-    SetFieldsToValue(caseResponseData, 'dmhSize', '');
+    SetFieldsToValue(caseResponseData, 'dmhSize', ''); // 'hhsize' in B4, check with BDSS?
     caseResponseData.fieldData['dmhSize'] = value;
 
     // act && assert
@@ -617,5 +617,106 @@ describe('Map case response to case summary', () => {
     // assert
     expect(result.Household.IncomeBasedJaSupport).toEqual(false);
     expect(result.Household.IncomeBasedJaSupportMembers).toEqual([]);
+  });
+
+  it.each(['1',
+    '3',
+    '6',
+    '10'])('It should a respondents array of the the correct size for all Respondents', (numberOfRespondents) => {
+    // arrange
+    SetFieldsToValue(caseResponseData, 'dmhSize', ''); // 'hhsize' in B4, check with BDSS?
+    caseResponseData.fieldData['dmhSize'] = numberOfRespondents;
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Respondents.length).toEqual(Number(numberOfRespondents));
+  });
+
+  it('It should return the person number when there is only one reposndent', () => {
+    // arrange
+    SetFieldsToValue(caseResponseData, 'dmhSize', ''); // 'hhsize' in B4, check with BDSS?
+    caseResponseData.fieldData['dmhSize'] = '1';
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Respondents[0]?.PersonNumber).toEqual('1');
+  });
+
+  it('It should return the person number for all when there are multiple reposndents', () => {
+    // arrange
+    SetFieldsToValue(caseResponseData, 'dmhSize', ''); // 'hhsize' in B4, check with BDSS?
+    caseResponseData.fieldData['dmhSize'] = '3';
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Respondents[0]?.PersonNumber).toEqual('1');
+    expect(result.Respondents[1]?.PersonNumber).toEqual('2');
+    expect(result.Respondents[2]?.PersonNumber).toEqual('3');
+  });
+
+  it.each([
+    ['1', 'M'],
+    ['2', 'F'],
+  ])('It should return the expected sex when given valid inputs', (inputValue: string, expectedOutputValue: string) => {
+  // arrange
+    SetFieldsToValue(caseResponseData, 'dmhSize', ''); // 'hhsize' in B4, check with BDSS?
+    SetFieldsToValue(caseResponseData, '].Sex', '');
+
+    caseResponseData.fieldData['dmhSize'] = '1';
+    caseResponseData.fieldData['HHG.P[1].Sex'] = inputValue;
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Respondents[0]?.Sex).toEqual(expectedOutputValue);
+  });
+
+  it.each([
+    ['0', ''],
+    ['3', ''],
+    ['', ''],
+    ['test', ''],
+  ])('It should return the expected sex when given invalid inputs', (inputValue: string, expectedOutputValue: string) => {
+  // arrange
+    SetFieldsToValue(caseResponseData, 'dmhSize', ''); // 'hhsize' in B4, check with BDSS?
+    SetFieldsToValue(caseResponseData, '].Sex', '');
+
+    caseResponseData.fieldData['dmhSize'] = '1';
+    caseResponseData.fieldData['HHG.P[1].Sex'] = inputValue;
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Respondents[0]?.Sex).toEqual(expectedOutputValue);
+  });
+
+  it('It should return the expected sex for all respondents when given valid inputs for multiple responent', () => {
+    // arrange
+    SetFieldsToValue(caseResponseData, 'dmhSize', ''); // 'hhsize' in B4, check with BDSS?
+    SetFieldsToValue(caseResponseData, '].Sex', '');
+
+    caseResponseData.fieldData['dmhSize'] = '4';
+
+    caseResponseData.fieldData['HHG.P[1].Sex'] = '1';
+    caseResponseData.fieldData['HHG.P[2].Sex'] = '2';
+    caseResponseData.fieldData['HHG.P[3].Sex'] = '2';
+    caseResponseData.fieldData['HHG.P[4].Sex'] = '1';
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Respondents[0]?.Sex).toEqual('M');
+    expect(result.Respondents[1]?.Sex).toEqual('F');
+    expect(result.Respondents[2]?.Sex).toEqual('F');
+    expect(result.Respondents[3]?.Sex).toEqual('M');
   });
 });
