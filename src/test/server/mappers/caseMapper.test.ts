@@ -44,19 +44,19 @@ describe('Map case response to case summary', () => {
         'BU[1].QBenefit.QWageBen.Adult[1].JSAType': '2',
         dmhSize: '2', // 'hhsize' in B4, check with BDSS?
         'dmName[1]': 'Richmond Ricecake', // `QNames.M[1].Name` in B4, check with BDSS?
-        'HHG.P[1].BenUnit': '1',
-        'HHG.P[1].Sex': '1',
-        'dmDteOfBth[1]': '1980-01-15', // 'HHG.P[1].DoB' in B4, check with BDSS?
+        'hhg.P[1].BenUnit': '1',
+        'hhg.P[1].Sex': '1',
+        'dmDteOfBth[1]': '1980-01-15', // 'hhg.P[1].DoB' in B4, check with BDSS?
         'hhg.p[1].livewith': '1',
-        'HHG.P[1].QRel[1].R': '97',
-        'HHG.P[1].QRel[2].R': '1',
+        'hhg.P[1].QRel[1].R': '97',
+        'hhg.P[1].QRel[2].R': '1',
         'dmName[2]': 'Betty Bettison', // `QNames.M[2].Name` in B4, check with BDSS?
-        'HHG.P[2].BenUnit': '1',
-        'HHG.P[2].Sex': '2',
-        'dmDteOfBth[2]': '1995-06-11', // 'HHG.P[2].DoB' in B4, check with BDSS?
+        'hhg.P[2].BenUnit': '1',
+        'hhg.P[2].Sex': '2',
+        'dmDteOfBth[2]': '1995-06-11', // 'hhg.P[2].DoB' in B4, check with BDSS?
         'hhg.p[2].livewith': '1',
-        'HHG.P[2].QRel[1].R': '1',
-        'HHG.P[2].QRel[2].R': '97',
+        'hhg.P[2].QRel[1].R': '1',
+        'hhg.P[2].QRel[2].R': '97',
       },
     };
 
@@ -669,7 +669,7 @@ describe('Map case response to case summary', () => {
     SetFieldsToValue(caseResponseData, '].Sex', '');
 
     caseResponseData.fieldData['dmhSize'] = '1';
-    caseResponseData.fieldData['HHG.P[1].Sex'] = inputValue;
+    caseResponseData.fieldData['hhg.P[1].Sex'] = inputValue;
 
     // act
     const result = mapCaseSummary(caseResponseData);
@@ -689,7 +689,7 @@ describe('Map case response to case summary', () => {
     SetFieldsToValue(caseResponseData, '].Sex', '');
 
     caseResponseData.fieldData['dmhSize'] = '1';
-    caseResponseData.fieldData['HHG.P[1].Sex'] = inputValue;
+    caseResponseData.fieldData['hhg.P[1].Sex'] = inputValue;
 
     // act
     const result = mapCaseSummary(caseResponseData);
@@ -705,10 +705,10 @@ describe('Map case response to case summary', () => {
 
     caseResponseData.fieldData['dmhSize'] = '4';
 
-    caseResponseData.fieldData['HHG.P[1].Sex'] = '1';
-    caseResponseData.fieldData['HHG.P[2].Sex'] = '2';
-    caseResponseData.fieldData['HHG.P[3].Sex'] = '2';
-    caseResponseData.fieldData['HHG.P[4].Sex'] = '1';
+    caseResponseData.fieldData['hhg.P[1].Sex'] = '1';
+    caseResponseData.fieldData['hhg.P[2].Sex'] = '2';
+    caseResponseData.fieldData['hhg.P[3].Sex'] = '2';
+    caseResponseData.fieldData['hhg.P[4].Sex'] = '1';
 
     // act
     const result = mapCaseSummary(caseResponseData);
@@ -718,5 +718,89 @@ describe('Map case response to case summary', () => {
     expect(result.Respondents[1]?.Sex).toEqual('F');
     expect(result.Respondents[2]?.Sex).toEqual('F');
     expect(result.Respondents[3]?.Sex).toEqual('M');
+  });
+
+  it.each([
+    ['1', '', 'COH'],
+    ['2', '1', 'S'],
+    ['2', '2', 'M'],
+    ['2', '3', 'CPL'],
+    ['2', '4', 'SEP'],
+    ['2', '5', 'DIV'],
+    ['2', '6', 'W'],
+    ['2', '7', 'CPS'],
+    ['2', '8', 'CPD'],
+    ['2', '9', 'CPW'],
+  ])('It should return the expected marital status when given valid inputs', (inputLivesWithValue: string, inputMaritalStatusValue: string, expectedOutputValue: string) => {
+    // arrange
+    SetFieldsToValue(caseResponseData, 'dmhSize', ''); // 'hhsize' in B4, check with BDSS?
+    SetFieldsToValue(caseResponseData, '].livewith', '');
+    SetFieldsToValue(caseResponseData, '].ms', '');
+
+    caseResponseData.fieldData['dmhSize'] = '1';
+    caseResponseData.fieldData['hhg.p[1].livewith'] = inputLivesWithValue;
+    caseResponseData.fieldData['hhg.p[1].ms'] = inputMaritalStatusValue;
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Respondents[0]?.MaritalStatus).toEqual(expectedOutputValue);
+  });
+
+  it.each([
+    ['', '', '-'],
+    ['0', '', '-'],
+    ['3', '', '-'],
+    ['test', '', '-'],
+    ['2', '', '-'],
+    ['2', '0', '-'],
+    ['2', '10', '-'],
+    ['2', 'test', '-'],
+  ])('It should return the expected marital status when given invalid inputs', (inputLivesWithValue: string, inputMaritalStatusValue: string, expectedOutputValue: string) => {
+    // arrange
+    SetFieldsToValue(caseResponseData, 'dmhSize', ''); // 'hhsize' in B4, check with BDSS?
+    SetFieldsToValue(caseResponseData, '].livewith', '');
+    SetFieldsToValue(caseResponseData, '].ms', '');
+
+    caseResponseData.fieldData['dmhSize'] = '1';
+    caseResponseData.fieldData['hhg.p[1].livewith'] = inputLivesWithValue;
+    caseResponseData.fieldData['hhg.p[1].ms'] = inputMaritalStatusValue;
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Respondents[0]?.MaritalStatus).toEqual(expectedOutputValue);
+  });
+
+  it('It should return the expected marital status for all respondents when given valid inputs for multiple responent', () => {
+    // arrange
+    SetFieldsToValue(caseResponseData, 'dmhSize', ''); // 'hhsize' in B4, check with BDSS?
+    SetFieldsToValue(caseResponseData, '].livewith', '');
+    SetFieldsToValue(caseResponseData, '].ms', '');
+
+    caseResponseData.fieldData['dmhSize'] = '4';
+
+    caseResponseData.fieldData['hhg.p[1].livewith'] = '1';
+    caseResponseData.fieldData['hhg.p[1].ms'] = '';
+
+    caseResponseData.fieldData['hhg.p[2].livewith'] = '2';
+    caseResponseData.fieldData['hhg.p[2].ms'] = '1';
+
+    caseResponseData.fieldData['hhg.p[3].livewith'] = '2';
+    caseResponseData.fieldData['hhg.p[3].ms'] = '3';
+
+    caseResponseData.fieldData['hhg.p[4].livewith'] = '2';
+    caseResponseData.fieldData['hhg.p[4].ms'] = '6';
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Respondents[0]?.MaritalStatus).toEqual('COH');
+    expect(result.Respondents[1]?.MaritalStatus).toEqual('S');
+    expect(result.Respondents[2]?.MaritalStatus).toEqual('CPL');
+    expect(result.Respondents[3]?.MaritalStatus).toEqual('W');
   });
 });

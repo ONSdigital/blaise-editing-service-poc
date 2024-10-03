@@ -144,7 +144,7 @@ function GetMaritalStatus(caseResponse: CaseResponse, respondentNumber: number):
 function GetRelationshipMatrix(caseResponse: CaseResponse, respondentNumber: number, numberOfRespondents: number): string[] {
   const relationshipMatrix: string[] = [];
   for (let i = 1; i <= numberOfRespondents; i += 1) {
-    let relationship: string = caseResponse.fieldData[`HHG.P[${respondentNumber}].QRel[${i}].R`];
+    let relationship: string = caseResponse.fieldData[`hhg.P[${respondentNumber}].QRel[${i}].R`];
     if (relationship === '97') {
       relationship = '*';
     }
@@ -199,9 +199,9 @@ export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummaryD
     caseSummary.Respondents.push({
       PersonNumber: `${respondentNumber}`,
       RespondentName: caseResponse.fieldData[`dmName[${respondentNumber}]`], // `QNames.M[${respondentNumber}].Name` in B4, check with BDSS?
-      BenefitUnit: caseResponse.fieldData[`HHG.P[${respondentNumber}].BenUnit`],
-      Sex: Sex[Number(caseResponse.fieldData[`HHG.P[${respondentNumber}].Sex`])] ?? '',
-      DateOfBirth: new Date(caseResponse.fieldData[`dmDteOfBth[${respondentNumber}]`]), // `HHG.P[${respondentNumber}].DoB` in B4, check with BDSS?
+      BenefitUnit: caseResponse.fieldData[`hhg.P[${respondentNumber}].BenUnit`],
+      Sex: Sex[Number(caseResponse.fieldData[`hhg.P[${respondentNumber}].Sex`])] ?? '',
+      DateOfBirth: new Date(caseResponse.fieldData[`dmDteOfBth[${respondentNumber}]`]), // `hhg.P[${respondentNumber}].DoB` in B4, check with BDSS?
       MaritalStatus: GetMaritalStatus(caseResponse, respondentNumber),
       Relationship: GetRelationshipMatrix(caseResponse, respondentNumber, numberOfRespondents),
     });
