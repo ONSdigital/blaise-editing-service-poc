@@ -12,7 +12,7 @@ const caseSummaryDetailsMockObject: CaseSummaryDetails = {
   InterviewDate: new Date('2024-05-11'),
   District: 'Gwent',
   InterviewerName: 'Rich',
-  NumberOfRespondents: '6',
+  NumberOfRespondents: '2',
   Household: {
     Accommodation: {
       Main: 'House/Bungalow',
@@ -26,7 +26,7 @@ const caseSummaryDetailsMockObject: CaseSummaryDetails = {
     CouncilTaxBand: 'Band A',
     BusinessRoom: true,
     SelfEmployed: true,
-    SelfEmployedMembers: ['1'],
+    SelfEmployedMembers: ['1', '2'],
     IncomeSupport: true,
     IncomeSupportMembers: ['1'],
     IncomeBasedJaSupport: true,
@@ -40,7 +40,7 @@ const caseSummaryDetailsMockObject: CaseSummaryDetails = {
       Sex: 'M',
       DateOfBirth: new Date('1980-01-15'),
       MaritalStatus: 'COH',
-      Relationship: ['*', '15', '12', '4', '6', '1'],
+      Relationship: ['*', '1'],
     },
     {
       PersonNumber: '2',
@@ -49,43 +49,7 @@ const caseSummaryDetailsMockObject: CaseSummaryDetails = {
       Sex: 'F',
       DateOfBirth: new Date('1995-06-11'),
       MaritalStatus: 'COH',
-      Relationship: ['4', '*', '20', '3', '3', '17'],
-    },
-    {
-      PersonNumber: '3',
-      RespondentName: 'Bobby Bobbington',
-      BenefitUnit: '2',
-      Sex: 'M',
-      DateOfBirth: new Date('1980-01-15'),
-      MaritalStatus: 'COH',
-      Relationship: ['10', '2', '*', '8', '8', '1'],
-    },
-    {
-      PersonNumber: '4',
-      RespondentName: 'Caroline Carrot',
-      BenefitUnit: '2',
-      Sex: 'F',
-      DateOfBirth: new Date('1995-06-11'),
-      MaritalStatus: 'COH',
-      Relationship: ['1', '1', '12', '*', '14', '7'],
-    },
-    {
-      PersonNumber: '5',
-      RespondentName: 'Frank Frankleton',
-      BenefitUnit: '3',
-      Sex: 'M',
-      DateOfBirth: new Date('1980-01-15'),
-      MaritalStatus: 'COH',
-      Relationship: ['16', '14', '3', '4', '*', '8'],
-    },
-    {
-      PersonNumber: '6',
-      RespondentName: 'Maggie Magpie',
-      BenefitUnit: '3',
-      Sex: 'F',
-      DateOfBirth: new Date('1995-06-11'),
-      MaritalStatus: 'COH',
-      Relationship: ['15', '20', '3', '5', '9', '*'],
+      Relationship: ['1', '*'],
     },
   ],
 };
@@ -129,13 +93,25 @@ describe('Given there is a case available in blaise for a questionnaire', () => 
     expect(caseSummaryView).toHaveTextContent(expectedCaseSummaryDetails.InterviewDate.toDateString());
     expect(caseSummaryView).toHaveTextContent(expectedCaseSummaryDetails.District);
     expect(caseSummaryView).toHaveTextContent(expectedCaseSummaryDetails.InterviewerName);
+    expect(caseSummaryView).toHaveTextContent(`Main: ${expectedCaseSummaryDetails.Household.Accommodation.Main}`);
+    expect(caseSummaryView).toHaveTextContent(`Type: ${expectedCaseSummaryDetails.Household.Accommodation.Type}`);
+    expect(caseSummaryView).toHaveTextContent(expectedCaseSummaryDetails.Household.FloorNumber);
+    expect(caseSummaryView).toHaveTextContent(expectedCaseSummaryDetails.Household.Status);
+    expect(caseSummaryView).toHaveTextContent(expectedCaseSummaryDetails.Household.NumberOfBedrooms);
+    expect(caseSummaryView).toHaveTextContent(expectedCaseSummaryDetails.Household.ReceiptOfHousingBenefit);
+    expect(caseSummaryView).toHaveTextContent(`Period code: ${expectedCaseSummaryDetails.Household.PeriodCode}`);
+    expect(caseSummaryView).toHaveTextContent(expectedCaseSummaryDetails.Household.CouncilTaxBand);
+    expect(caseSummaryView).toHaveTextContent('Yes');
+    expect(caseSummaryView).toHaveTextContent(`Yes - H/H members: ${expectedCaseSummaryDetails.Household.SelfEmployedMembers.join(', ')}`);
+    expect(caseSummaryView).toHaveTextContent(`Yes - H/H members: ${expectedCaseSummaryDetails.Household.IncomeSupportMembers.join(', ')}`);
+    expect(caseSummaryView).toHaveTextContent(`Yes - H/H members: ${expectedCaseSummaryDetails.Household.IncomeBasedJaSupportMembers.join(', ')}`);
 
     const respondentNumberRows = view.getAllByLabelText('RespondentNumber');
     const respondentNameRows = view.getAllByLabelText('RespondentName');
     const benefitUnitRows = view.getAllByLabelText('BenefitUnit');
     const sexRows = view.getAllByLabelText('Sex');
     const dateOfBirthRows = view.getAllByLabelText('DateOfBirth');
-    const maritalStatusRows = view.getAllByLabelText('$MaritalStatus');
+    const maritalStatusRows = view.getAllByLabelText('MaritalStatus');
 
     expectedCaseSummaryDetails.Respondents.forEach((respondent, respondentIndex) => {
       expect(respondentNumberRows[respondentIndex]).toHaveTextContent(respondent.PersonNumber);

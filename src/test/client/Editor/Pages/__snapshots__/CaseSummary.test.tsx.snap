@@ -146,30 +146,6 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               >
                 2
               </th>
-              <th
-                class="ons-table__header"
-                scope="col"
-              >
-                3
-              </th>
-              <th
-                class="ons-table__header"
-                scope="col"
-              >
-                4
-              </th>
-              <th
-                class="ons-table__header"
-                scope="col"
-              >
-                5
-              </th>
-              <th
-                class="ons-table__header"
-                scope="col"
-              >
-                6
-              </th>
             </tr>
           </thead>
           <tbody
@@ -209,7 +185,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
                 Tue Jan 15 1980
               </td>
               <td
-                aria-label="$MaritalStatus"
+                aria-label="MaritalStatus"
                 class="ons-table__cell"
               >
                 COH
@@ -219,30 +195,6 @@ exports[`Given there is a case available in blaise for a questionnaire should di
                 class="ons-table__cell"
               >
                 *
-              </td>
-              <td
-                aria-label="Relationship-1"
-                class="ons-table__cell"
-              >
-                15
-              </td>
-              <td
-                aria-label="Relationship-1"
-                class="ons-table__cell"
-              >
-                12
-              </td>
-              <td
-                aria-label="Relationship-1"
-                class="ons-table__cell"
-              >
-                4
-              </td>
-              <td
-                aria-label="Relationship-1"
-                class="ons-table__cell"
-              >
-                6
               </td>
               <td
                 aria-label="Relationship-1"
@@ -285,347 +237,19 @@ exports[`Given there is a case available in blaise for a questionnaire should di
                 Sun Jun 11 1995
               </td>
               <td
-                aria-label="$MaritalStatus"
+                aria-label="MaritalStatus"
                 class="ons-table__cell"
               >
                 COH
               </td>
               <td
                 aria-label="Relationship-2"
-                class="ons-table__cell"
-              >
-                4
-              </td>
-              <td
-                aria-label="Relationship-2"
-                class="ons-table__cell"
-              >
-                *
-              </td>
-              <td
-                aria-label="Relationship-2"
-                class="ons-table__cell"
-              >
-                20
-              </td>
-              <td
-                aria-label="Relationship-2"
-                class="ons-table__cell"
-              >
-                3
-              </td>
-              <td
-                aria-label="Relationship-2"
-                class="ons-table__cell"
-              >
-                3
-              </td>
-              <td
-                aria-label="Relationship-2"
-                class="ons-table__cell"
-              >
-                17
-              </td>
-            </tr>
-            <tr
-              class="ons-table__row"
-            >
-              <td
-                aria-label="RespondentNumber"
-                class="ons-table__cell"
-              >
-                3
-              </td>
-              <td
-                aria-label="RespondentName"
-                class="ons-table__cell status"
-              >
-                Bobby Bobbington
-              </td>
-              <td
-                aria-label="BenefitUnit"
-                class="ons-table__cell"
-              >
-                2
-              </td>
-              <td
-                aria-label="Sex"
-                class="ons-table__cell"
-              >
-                M
-              </td>
-              <td
-                aria-label="DateOfBirth"
-                class="ons-table__cell"
-              >
-                Tue Jan 15 1980
-              </td>
-              <td
-                aria-label="$MaritalStatus"
-                class="ons-table__cell"
-              >
-                COH
-              </td>
-              <td
-                aria-label="Relationship-3"
-                class="ons-table__cell"
-              >
-                10
-              </td>
-              <td
-                aria-label="Relationship-3"
-                class="ons-table__cell"
-              >
-                2
-              </td>
-              <td
-                aria-label="Relationship-3"
-                class="ons-table__cell"
-              >
-                *
-              </td>
-              <td
-                aria-label="Relationship-3"
-                class="ons-table__cell"
-              >
-                8
-              </td>
-              <td
-                aria-label="Relationship-3"
-                class="ons-table__cell"
-              >
-                8
-              </td>
-              <td
-                aria-label="Relationship-3"
-                class="ons-table__cell"
-              >
-                1
-              </td>
-            </tr>
-            <tr
-              class="ons-table__row"
-            >
-              <td
-                aria-label="RespondentNumber"
-                class="ons-table__cell"
-              >
-                4
-              </td>
-              <td
-                aria-label="RespondentName"
-                class="ons-table__cell status"
-              >
-                Caroline Carrot
-              </td>
-              <td
-                aria-label="BenefitUnit"
-                class="ons-table__cell"
-              >
-                2
-              </td>
-              <td
-                aria-label="Sex"
-                class="ons-table__cell"
-              >
-                F
-              </td>
-              <td
-                aria-label="DateOfBirth"
-                class="ons-table__cell"
-              >
-                Sun Jun 11 1995
-              </td>
-              <td
-                aria-label="$MaritalStatus"
-                class="ons-table__cell"
-              >
-                COH
-              </td>
-              <td
-                aria-label="Relationship-4"
                 class="ons-table__cell"
               >
                 1
               </td>
               <td
-                aria-label="Relationship-4"
-                class="ons-table__cell"
-              >
-                1
-              </td>
-              <td
-                aria-label="Relationship-4"
-                class="ons-table__cell"
-              >
-                12
-              </td>
-              <td
-                aria-label="Relationship-4"
-                class="ons-table__cell"
-              >
-                *
-              </td>
-              <td
-                aria-label="Relationship-4"
-                class="ons-table__cell"
-              >
-                14
-              </td>
-              <td
-                aria-label="Relationship-4"
-                class="ons-table__cell"
-              >
-                7
-              </td>
-            </tr>
-            <tr
-              class="ons-table__row"
-            >
-              <td
-                aria-label="RespondentNumber"
-                class="ons-table__cell"
-              >
-                5
-              </td>
-              <td
-                aria-label="RespondentName"
-                class="ons-table__cell status"
-              >
-                Frank Frankleton
-              </td>
-              <td
-                aria-label="BenefitUnit"
-                class="ons-table__cell"
-              >
-                3
-              </td>
-              <td
-                aria-label="Sex"
-                class="ons-table__cell"
-              >
-                M
-              </td>
-              <td
-                aria-label="DateOfBirth"
-                class="ons-table__cell"
-              >
-                Tue Jan 15 1980
-              </td>
-              <td
-                aria-label="$MaritalStatus"
-                class="ons-table__cell"
-              >
-                COH
-              </td>
-              <td
-                aria-label="Relationship-5"
-                class="ons-table__cell"
-              >
-                16
-              </td>
-              <td
-                aria-label="Relationship-5"
-                class="ons-table__cell"
-              >
-                14
-              </td>
-              <td
-                aria-label="Relationship-5"
-                class="ons-table__cell"
-              >
-                3
-              </td>
-              <td
-                aria-label="Relationship-5"
-                class="ons-table__cell"
-              >
-                4
-              </td>
-              <td
-                aria-label="Relationship-5"
-                class="ons-table__cell"
-              >
-                *
-              </td>
-              <td
-                aria-label="Relationship-5"
-                class="ons-table__cell"
-              >
-                8
-              </td>
-            </tr>
-            <tr
-              class="ons-table__row"
-            >
-              <td
-                aria-label="RespondentNumber"
-                class="ons-table__cell"
-              >
-                6
-              </td>
-              <td
-                aria-label="RespondentName"
-                class="ons-table__cell status"
-              >
-                Maggie Magpie
-              </td>
-              <td
-                aria-label="BenefitUnit"
-                class="ons-table__cell"
-              >
-                3
-              </td>
-              <td
-                aria-label="Sex"
-                class="ons-table__cell"
-              >
-                F
-              </td>
-              <td
-                aria-label="DateOfBirth"
-                class="ons-table__cell"
-              >
-                Sun Jun 11 1995
-              </td>
-              <td
-                aria-label="$MaritalStatus"
-                class="ons-table__cell"
-              >
-                COH
-              </td>
-              <td
-                aria-label="Relationship-6"
-                class="ons-table__cell"
-              >
-                15
-              </td>
-              <td
-                aria-label="Relationship-6"
-                class="ons-table__cell"
-              >
-                20
-              </td>
-              <td
-                aria-label="Relationship-6"
-                class="ons-table__cell"
-              >
-                3
-              </td>
-              <td
-                aria-label="Relationship-6"
-                class="ons-table__cell"
-              >
-                5
-              </td>
-              <td
-                aria-label="Relationship-6"
-                class="ons-table__cell"
-              >
-                9
-              </td>
-              <td
-                aria-label="Relationship-6"
+                aria-label="Relationship-2"
                 class="ons-table__cell"
               >
                 *
@@ -633,6 +257,112 @@ exports[`Given there is a case available in blaise for a questionnaire should di
             </tr>
           </tbody>
         </table>
+        <br />
+        <dl
+          class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+          style="margin: 2% 5% 2% 5%;"
+        >
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Accommodation type
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            Main: House/Bungalow - Type: Detached
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Floor number
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            2
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Household Status
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            Conventional
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Number of bedrooms
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            2
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Receipt of housing benefit
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            380 - Period code: 380
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Council tax band
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            Band A
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Business room
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            Yes
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Self employed
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            Yes - H/H members: 1, 2
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Income support
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            Yes - H/H members: 1
+          </dd>
+          <dt
+            class="ons-metadata__term ons-grid__col ons-col-3@m"
+          >
+            Income based JA support
+          </dt>
+          <dd
+            class="ons-metadata__value ons-grid__col ons-col-9@m"
+          >
+            Yes - H/H members: 2
+          </dd>
+        </dl>
       </div>
     </div>
   </body>,
@@ -778,30 +508,6 @@ exports[`Given there is a case available in blaise for a questionnaire should di
             >
               2
             </th>
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              3
-            </th>
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              4
-            </th>
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              5
-            </th>
-            <th
-              class="ons-table__header"
-              scope="col"
-            >
-              6
-            </th>
           </tr>
         </thead>
         <tbody
@@ -841,7 +547,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               Tue Jan 15 1980
             </td>
             <td
-              aria-label="$MaritalStatus"
+              aria-label="MaritalStatus"
               class="ons-table__cell"
             >
               COH
@@ -851,30 +557,6 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               class="ons-table__cell"
             >
               *
-            </td>
-            <td
-              aria-label="Relationship-1"
-              class="ons-table__cell"
-            >
-              15
-            </td>
-            <td
-              aria-label="Relationship-1"
-              class="ons-table__cell"
-            >
-              12
-            </td>
-            <td
-              aria-label="Relationship-1"
-              class="ons-table__cell"
-            >
-              4
-            </td>
-            <td
-              aria-label="Relationship-1"
-              class="ons-table__cell"
-            >
-              6
             </td>
             <td
               aria-label="Relationship-1"
@@ -917,347 +599,19 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               Sun Jun 11 1995
             </td>
             <td
-              aria-label="$MaritalStatus"
+              aria-label="MaritalStatus"
               class="ons-table__cell"
             >
               COH
             </td>
             <td
               aria-label="Relationship-2"
-              class="ons-table__cell"
-            >
-              4
-            </td>
-            <td
-              aria-label="Relationship-2"
-              class="ons-table__cell"
-            >
-              *
-            </td>
-            <td
-              aria-label="Relationship-2"
-              class="ons-table__cell"
-            >
-              20
-            </td>
-            <td
-              aria-label="Relationship-2"
-              class="ons-table__cell"
-            >
-              3
-            </td>
-            <td
-              aria-label="Relationship-2"
-              class="ons-table__cell"
-            >
-              3
-            </td>
-            <td
-              aria-label="Relationship-2"
-              class="ons-table__cell"
-            >
-              17
-            </td>
-          </tr>
-          <tr
-            class="ons-table__row"
-          >
-            <td
-              aria-label="RespondentNumber"
-              class="ons-table__cell"
-            >
-              3
-            </td>
-            <td
-              aria-label="RespondentName"
-              class="ons-table__cell status"
-            >
-              Bobby Bobbington
-            </td>
-            <td
-              aria-label="BenefitUnit"
-              class="ons-table__cell"
-            >
-              2
-            </td>
-            <td
-              aria-label="Sex"
-              class="ons-table__cell"
-            >
-              M
-            </td>
-            <td
-              aria-label="DateOfBirth"
-              class="ons-table__cell"
-            >
-              Tue Jan 15 1980
-            </td>
-            <td
-              aria-label="$MaritalStatus"
-              class="ons-table__cell"
-            >
-              COH
-            </td>
-            <td
-              aria-label="Relationship-3"
-              class="ons-table__cell"
-            >
-              10
-            </td>
-            <td
-              aria-label="Relationship-3"
-              class="ons-table__cell"
-            >
-              2
-            </td>
-            <td
-              aria-label="Relationship-3"
-              class="ons-table__cell"
-            >
-              *
-            </td>
-            <td
-              aria-label="Relationship-3"
-              class="ons-table__cell"
-            >
-              8
-            </td>
-            <td
-              aria-label="Relationship-3"
-              class="ons-table__cell"
-            >
-              8
-            </td>
-            <td
-              aria-label="Relationship-3"
-              class="ons-table__cell"
-            >
-              1
-            </td>
-          </tr>
-          <tr
-            class="ons-table__row"
-          >
-            <td
-              aria-label="RespondentNumber"
-              class="ons-table__cell"
-            >
-              4
-            </td>
-            <td
-              aria-label="RespondentName"
-              class="ons-table__cell status"
-            >
-              Caroline Carrot
-            </td>
-            <td
-              aria-label="BenefitUnit"
-              class="ons-table__cell"
-            >
-              2
-            </td>
-            <td
-              aria-label="Sex"
-              class="ons-table__cell"
-            >
-              F
-            </td>
-            <td
-              aria-label="DateOfBirth"
-              class="ons-table__cell"
-            >
-              Sun Jun 11 1995
-            </td>
-            <td
-              aria-label="$MaritalStatus"
-              class="ons-table__cell"
-            >
-              COH
-            </td>
-            <td
-              aria-label="Relationship-4"
               class="ons-table__cell"
             >
               1
             </td>
             <td
-              aria-label="Relationship-4"
-              class="ons-table__cell"
-            >
-              1
-            </td>
-            <td
-              aria-label="Relationship-4"
-              class="ons-table__cell"
-            >
-              12
-            </td>
-            <td
-              aria-label="Relationship-4"
-              class="ons-table__cell"
-            >
-              *
-            </td>
-            <td
-              aria-label="Relationship-4"
-              class="ons-table__cell"
-            >
-              14
-            </td>
-            <td
-              aria-label="Relationship-4"
-              class="ons-table__cell"
-            >
-              7
-            </td>
-          </tr>
-          <tr
-            class="ons-table__row"
-          >
-            <td
-              aria-label="RespondentNumber"
-              class="ons-table__cell"
-            >
-              5
-            </td>
-            <td
-              aria-label="RespondentName"
-              class="ons-table__cell status"
-            >
-              Frank Frankleton
-            </td>
-            <td
-              aria-label="BenefitUnit"
-              class="ons-table__cell"
-            >
-              3
-            </td>
-            <td
-              aria-label="Sex"
-              class="ons-table__cell"
-            >
-              M
-            </td>
-            <td
-              aria-label="DateOfBirth"
-              class="ons-table__cell"
-            >
-              Tue Jan 15 1980
-            </td>
-            <td
-              aria-label="$MaritalStatus"
-              class="ons-table__cell"
-            >
-              COH
-            </td>
-            <td
-              aria-label="Relationship-5"
-              class="ons-table__cell"
-            >
-              16
-            </td>
-            <td
-              aria-label="Relationship-5"
-              class="ons-table__cell"
-            >
-              14
-            </td>
-            <td
-              aria-label="Relationship-5"
-              class="ons-table__cell"
-            >
-              3
-            </td>
-            <td
-              aria-label="Relationship-5"
-              class="ons-table__cell"
-            >
-              4
-            </td>
-            <td
-              aria-label="Relationship-5"
-              class="ons-table__cell"
-            >
-              *
-            </td>
-            <td
-              aria-label="Relationship-5"
-              class="ons-table__cell"
-            >
-              8
-            </td>
-          </tr>
-          <tr
-            class="ons-table__row"
-          >
-            <td
-              aria-label="RespondentNumber"
-              class="ons-table__cell"
-            >
-              6
-            </td>
-            <td
-              aria-label="RespondentName"
-              class="ons-table__cell status"
-            >
-              Maggie Magpie
-            </td>
-            <td
-              aria-label="BenefitUnit"
-              class="ons-table__cell"
-            >
-              3
-            </td>
-            <td
-              aria-label="Sex"
-              class="ons-table__cell"
-            >
-              F
-            </td>
-            <td
-              aria-label="DateOfBirth"
-              class="ons-table__cell"
-            >
-              Sun Jun 11 1995
-            </td>
-            <td
-              aria-label="$MaritalStatus"
-              class="ons-table__cell"
-            >
-              COH
-            </td>
-            <td
-              aria-label="Relationship-6"
-              class="ons-table__cell"
-            >
-              15
-            </td>
-            <td
-              aria-label="Relationship-6"
-              class="ons-table__cell"
-            >
-              20
-            </td>
-            <td
-              aria-label="Relationship-6"
-              class="ons-table__cell"
-            >
-              3
-            </td>
-            <td
-              aria-label="Relationship-6"
-              class="ons-table__cell"
-            >
-              5
-            </td>
-            <td
-              aria-label="Relationship-6"
-              class="ons-table__cell"
-            >
-              9
-            </td>
-            <td
-              aria-label="Relationship-6"
+              aria-label="Relationship-2"
               class="ons-table__cell"
             >
               *
@@ -1265,6 +619,112 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           </tr>
         </tbody>
       </table>
+      <br />
+      <dl
+        class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+        style="margin: 2% 5% 2% 5%;"
+      >
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Accommodation type
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          Main: House/Bungalow - Type: Detached
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Floor number
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          2
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Household Status
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          Conventional
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Number of bedrooms
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          2
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Receipt of housing benefit
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          380 - Period code: 380
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Council tax band
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          Band A
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Business room
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          Yes
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Self employed
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          Yes - H/H members: 1, 2
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Income support
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          Yes - H/H members: 1
+        </dd>
+        <dt
+          class="ons-metadata__term ons-grid__col ons-col-3@m"
+        >
+          Income based JA support
+        </dt>
+        <dd
+          class="ons-metadata__value ons-grid__col ons-col-9@m"
+        >
+          Yes - H/H members: 2
+        </dd>
+      </dl>
     </div>
   </div>,
   "debug": [Function],

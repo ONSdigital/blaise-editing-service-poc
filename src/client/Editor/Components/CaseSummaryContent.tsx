@@ -53,8 +53,8 @@ export default function CaseSummaryContent({ caseSummary }: CaseSummaryContentPr
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Interviewer name</dt>
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.InterviewerName}</dd>
       </dl>
+
       <br />
-      {/* Individual details */}
 
       <ONSTable
         columns={GetColumnHeadings(Number(caseSummary.NumberOfRespondents))}
@@ -82,7 +82,7 @@ export default function CaseSummaryContent({ caseSummary }: CaseSummaryContentPr
               <td className="ons-table__cell" aria-label="DateOfBirth">
                 {respondent.DateOfBirth.toDateString()}
               </td>
-              <td className="ons-table__cell" aria-label="$MaritalStatus">
+              <td className="ons-table__cell" aria-label="MaritalStatus">
                 {respondent.MaritalStatus}
               </td>
               {respondent.Relationship.map((relationship) => (
@@ -94,6 +94,44 @@ export default function CaseSummaryContent({ caseSummary }: CaseSummaryContentPr
           ))}
         </>
       </ONSTable>
+
+      <br />
+
+      <dl
+        className="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
+        style={{ margin: '2% 5% 2% 5%' }}
+      >
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Accommodation type</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">
+          {`Main: ${caseSummary.Household.Accommodation.Main} - Type: ${caseSummary.Household.Accommodation.Type}`}
+        </dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Floor number</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.FloorNumber}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Household Status</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.Status}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Number of bedrooms</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.NumberOfBedrooms}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Receipt of housing benefit</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">
+          {`${caseSummary.Household.ReceiptOfHousingBenefit} - Period code: ${caseSummary.Household.PeriodCode}`}
+        </dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Council tax band</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.CouncilTaxBand}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Business room</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.BusinessRoom ? 'Yes' : 'No'}</dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Self employed</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">
+          {caseSummary.Household.SelfEmployed ? `Yes - H/H members: ${caseSummary.Household.SelfEmployedMembers.join(', ')}` : 'No'}
+        </dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Income support</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">
+          {caseSummary.Household.IncomeSupport ? `Yes - H/H members: ${caseSummary.Household.IncomeSupportMembers.join(', ')}` : 'No'}
+        </dd>
+        <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Income based JA support</dt>
+        <dd className="ons-metadata__value ons-grid__col ons-col-9@m">
+          {caseSummary.Household.IncomeBasedJaSupport ? `Yes - H/H members: ${caseSummary.Household.IncomeBasedJaSupportMembers.join(', ')}` : 'No'}
+        </dd>
+      </dl>
 
     </>
   );
