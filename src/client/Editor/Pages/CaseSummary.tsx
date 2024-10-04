@@ -75,7 +75,7 @@ function DisplayCaseSummary(questionnaireName: string, caseId: string) {
       },
       {
         PersonNumber: '5',
-        RespondentName: 'Frank Frank',
+        RespondentName: 'Frank Frankleton',
         BenefitUnit: '3',
         Sex: 'M',
         DateOfBirth: new Date('1980-01-15'),

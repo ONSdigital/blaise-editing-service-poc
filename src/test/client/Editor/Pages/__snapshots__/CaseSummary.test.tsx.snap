@@ -179,43 +179,43 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               class="ons-table__row"
             >
               <td
-                aria-label="RespondentNumber-0"
+                aria-label="RespondentNumber"
                 class="ons-table__cell"
               >
                 1
               </td>
               <td
-                aria-label="RespondentName-0"
+                aria-label="RespondentName"
                 class="ons-table__cell status"
               >
                 Richmond Ricecake
               </td>
               <td
-                aria-label="BenefitUnit-0"
+                aria-label="BenefitUnit"
                 class="ons-table__cell"
               >
                 1
               </td>
               <td
-                aria-label="Sex-0"
+                aria-label="Sex"
                 class="ons-table__cell"
               >
                 M
               </td>
               <td
-                aria-label="DateOfBirth-0"
+                aria-label="DateOfBirth"
                 class="ons-table__cell"
               >
                 Tue Jan 15 1980
               </td>
               <td
-                aria-label="$MaritalStatus-0"
+                aria-label="$MaritalStatus"
                 class="ons-table__cell"
               >
                 COH
               </td>
               <td
-                aria-label="Relationship-0"
+                aria-label="Relationship-1"
                 class="ons-table__cell"
               >
                 *
@@ -227,25 +227,25 @@ exports[`Given there is a case available in blaise for a questionnaire should di
                 15
               </td>
               <td
-                aria-label="Relationship-2"
+                aria-label="Relationship-1"
                 class="ons-table__cell"
               >
                 12
               </td>
               <td
-                aria-label="Relationship-3"
+                aria-label="Relationship-1"
                 class="ons-table__cell"
               >
                 4
               </td>
               <td
-                aria-label="Relationship-4"
+                aria-label="Relationship-1"
                 class="ons-table__cell"
               >
                 6
               </td>
               <td
-                aria-label="Relationship-5"
+                aria-label="Relationship-1"
                 class="ons-table__cell"
               >
                 1
@@ -255,49 +255,49 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               class="ons-table__row"
             >
               <td
-                aria-label="RespondentNumber-1"
+                aria-label="RespondentNumber"
                 class="ons-table__cell"
               >
                 2
               </td>
               <td
-                aria-label="RespondentName-1"
+                aria-label="RespondentName"
                 class="ons-table__cell status"
               >
                 Betty Bettison
               </td>
               <td
-                aria-label="BenefitUnit-1"
+                aria-label="BenefitUnit"
                 class="ons-table__cell"
               >
                 1
               </td>
               <td
-                aria-label="Sex-1"
+                aria-label="Sex"
                 class="ons-table__cell"
               >
                 F
               </td>
               <td
-                aria-label="DateOfBirth-1"
+                aria-label="DateOfBirth"
                 class="ons-table__cell"
               >
                 Sun Jun 11 1995
               </td>
               <td
-                aria-label="$MaritalStatus-1"
+                aria-label="$MaritalStatus"
                 class="ons-table__cell"
               >
                 COH
               </td>
               <td
-                aria-label="Relationship-0"
+                aria-label="Relationship-2"
                 class="ons-table__cell"
               >
                 4
               </td>
               <td
-                aria-label="Relationship-1"
+                aria-label="Relationship-2"
                 class="ons-table__cell"
               >
                 *
@@ -309,19 +309,19 @@ exports[`Given there is a case available in blaise for a questionnaire should di
                 20
               </td>
               <td
-                aria-label="Relationship-3"
+                aria-label="Relationship-2"
                 class="ons-table__cell"
               >
                 3
               </td>
               <td
-                aria-label="Relationship-4"
+                aria-label="Relationship-2"
                 class="ons-table__cell"
               >
                 3
               </td>
               <td
-                aria-label="Relationship-5"
+                aria-label="Relationship-2"
                 class="ons-table__cell"
               >
                 17
@@ -331,55 +331,55 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               class="ons-table__row"
             >
               <td
-                aria-label="RespondentNumber-2"
+                aria-label="RespondentNumber"
                 class="ons-table__cell"
               >
                 3
               </td>
               <td
-                aria-label="RespondentName-2"
+                aria-label="RespondentName"
                 class="ons-table__cell status"
               >
                 Bobby Bobbington
               </td>
               <td
-                aria-label="BenefitUnit-2"
+                aria-label="BenefitUnit"
                 class="ons-table__cell"
               >
                 2
               </td>
               <td
-                aria-label="Sex-2"
+                aria-label="Sex"
                 class="ons-table__cell"
               >
                 M
               </td>
               <td
-                aria-label="DateOfBirth-2"
+                aria-label="DateOfBirth"
                 class="ons-table__cell"
               >
                 Tue Jan 15 1980
               </td>
               <td
-                aria-label="$MaritalStatus-2"
+                aria-label="$MaritalStatus"
                 class="ons-table__cell"
               >
                 COH
               </td>
               <td
-                aria-label="Relationship-0"
+                aria-label="Relationship-3"
                 class="ons-table__cell"
               >
                 10
               </td>
               <td
-                aria-label="Relationship-1"
+                aria-label="Relationship-3"
                 class="ons-table__cell"
               >
                 2
               </td>
               <td
-                aria-label="Relationship-2"
+                aria-label="Relationship-3"
                 class="ons-table__cell"
               >
                 *
@@ -391,13 +391,13 @@ exports[`Given there is a case available in blaise for a questionnaire should di
                 8
               </td>
               <td
-                aria-label="Relationship-4"
+                aria-label="Relationship-3"
                 class="ons-table__cell"
               >
                 8
               </td>
               <td
-                aria-label="Relationship-5"
+                aria-label="Relationship-3"
                 class="ons-table__cell"
               >
                 1
@@ -407,61 +407,61 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               class="ons-table__row"
             >
               <td
-                aria-label="RespondentNumber-3"
+                aria-label="RespondentNumber"
                 class="ons-table__cell"
               >
                 4
               </td>
               <td
-                aria-label="RespondentName-3"
+                aria-label="RespondentName"
                 class="ons-table__cell status"
               >
                 Caroline Carrot
               </td>
               <td
-                aria-label="BenefitUnit-3"
+                aria-label="BenefitUnit"
                 class="ons-table__cell"
               >
                 2
               </td>
               <td
-                aria-label="Sex-3"
+                aria-label="Sex"
                 class="ons-table__cell"
               >
                 F
               </td>
               <td
-                aria-label="DateOfBirth-3"
+                aria-label="DateOfBirth"
                 class="ons-table__cell"
               >
                 Sun Jun 11 1995
               </td>
               <td
-                aria-label="$MaritalStatus-3"
+                aria-label="$MaritalStatus"
                 class="ons-table__cell"
               >
                 COH
               </td>
               <td
-                aria-label="Relationship-0"
+                aria-label="Relationship-4"
                 class="ons-table__cell"
               >
                 1
               </td>
               <td
-                aria-label="Relationship-1"
+                aria-label="Relationship-4"
                 class="ons-table__cell"
               >
                 1
               </td>
               <td
-                aria-label="Relationship-2"
+                aria-label="Relationship-4"
                 class="ons-table__cell"
               >
                 12
               </td>
               <td
-                aria-label="Relationship-3"
+                aria-label="Relationship-4"
                 class="ons-table__cell"
               >
                 *
@@ -473,7 +473,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
                 14
               </td>
               <td
-                aria-label="Relationship-5"
+                aria-label="Relationship-4"
                 class="ons-table__cell"
               >
                 7
@@ -483,67 +483,67 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               class="ons-table__row"
             >
               <td
-                aria-label="RespondentNumber-4"
+                aria-label="RespondentNumber"
                 class="ons-table__cell"
               >
                 5
               </td>
               <td
-                aria-label="RespondentName-4"
+                aria-label="RespondentName"
                 class="ons-table__cell status"
               >
-                Frank Frank
+                Frank Frankleton
               </td>
               <td
-                aria-label="BenefitUnit-4"
+                aria-label="BenefitUnit"
                 class="ons-table__cell"
               >
                 3
               </td>
               <td
-                aria-label="Sex-4"
+                aria-label="Sex"
                 class="ons-table__cell"
               >
                 M
               </td>
               <td
-                aria-label="DateOfBirth-4"
+                aria-label="DateOfBirth"
                 class="ons-table__cell"
               >
                 Tue Jan 15 1980
               </td>
               <td
-                aria-label="$MaritalStatus-4"
+                aria-label="$MaritalStatus"
                 class="ons-table__cell"
               >
                 COH
               </td>
               <td
-                aria-label="Relationship-0"
+                aria-label="Relationship-5"
                 class="ons-table__cell"
               >
                 16
               </td>
               <td
-                aria-label="Relationship-1"
+                aria-label="Relationship-5"
                 class="ons-table__cell"
               >
                 14
               </td>
               <td
-                aria-label="Relationship-2"
+                aria-label="Relationship-5"
                 class="ons-table__cell"
               >
                 3
               </td>
               <td
-                aria-label="Relationship-3"
+                aria-label="Relationship-5"
                 class="ons-table__cell"
               >
                 4
               </td>
               <td
-                aria-label="Relationship-4"
+                aria-label="Relationship-5"
                 class="ons-table__cell"
               >
                 *
@@ -559,73 +559,73 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               class="ons-table__row"
             >
               <td
-                aria-label="RespondentNumber-5"
+                aria-label="RespondentNumber"
                 class="ons-table__cell"
               >
                 6
               </td>
               <td
-                aria-label="RespondentName-5"
+                aria-label="RespondentName"
                 class="ons-table__cell status"
               >
                 Maggie Magpie
               </td>
               <td
-                aria-label="BenefitUnit-5"
+                aria-label="BenefitUnit"
                 class="ons-table__cell"
               >
                 3
               </td>
               <td
-                aria-label="Sex-5"
+                aria-label="Sex"
                 class="ons-table__cell"
               >
                 F
               </td>
               <td
-                aria-label="DateOfBirth-5"
+                aria-label="DateOfBirth"
                 class="ons-table__cell"
               >
                 Sun Jun 11 1995
               </td>
               <td
-                aria-label="$MaritalStatus-5"
+                aria-label="$MaritalStatus"
                 class="ons-table__cell"
               >
                 COH
               </td>
               <td
-                aria-label="Relationship-0"
+                aria-label="Relationship-6"
                 class="ons-table__cell"
               >
                 15
               </td>
               <td
-                aria-label="Relationship-1"
+                aria-label="Relationship-6"
                 class="ons-table__cell"
               >
                 20
               </td>
               <td
-                aria-label="Relationship-2"
+                aria-label="Relationship-6"
                 class="ons-table__cell"
               >
                 3
               </td>
               <td
-                aria-label="Relationship-3"
+                aria-label="Relationship-6"
                 class="ons-table__cell"
               >
                 5
               </td>
               <td
-                aria-label="Relationship-4"
+                aria-label="Relationship-6"
                 class="ons-table__cell"
               >
                 9
               </td>
               <td
-                aria-label="Relationship-5"
+                aria-label="Relationship-6"
                 class="ons-table__cell"
               >
                 *
@@ -811,43 +811,43 @@ exports[`Given there is a case available in blaise for a questionnaire should di
             class="ons-table__row"
           >
             <td
-              aria-label="RespondentNumber-0"
+              aria-label="RespondentNumber"
               class="ons-table__cell"
             >
               1
             </td>
             <td
-              aria-label="RespondentName-0"
+              aria-label="RespondentName"
               class="ons-table__cell status"
             >
               Richmond Ricecake
             </td>
             <td
-              aria-label="BenefitUnit-0"
+              aria-label="BenefitUnit"
               class="ons-table__cell"
             >
               1
             </td>
             <td
-              aria-label="Sex-0"
+              aria-label="Sex"
               class="ons-table__cell"
             >
               M
             </td>
             <td
-              aria-label="DateOfBirth-0"
+              aria-label="DateOfBirth"
               class="ons-table__cell"
             >
               Tue Jan 15 1980
             </td>
             <td
-              aria-label="$MaritalStatus-0"
+              aria-label="$MaritalStatus"
               class="ons-table__cell"
             >
               COH
             </td>
             <td
-              aria-label="Relationship-0"
+              aria-label="Relationship-1"
               class="ons-table__cell"
             >
               *
@@ -859,25 +859,25 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               15
             </td>
             <td
-              aria-label="Relationship-2"
+              aria-label="Relationship-1"
               class="ons-table__cell"
             >
               12
             </td>
             <td
-              aria-label="Relationship-3"
+              aria-label="Relationship-1"
               class="ons-table__cell"
             >
               4
             </td>
             <td
-              aria-label="Relationship-4"
+              aria-label="Relationship-1"
               class="ons-table__cell"
             >
               6
             </td>
             <td
-              aria-label="Relationship-5"
+              aria-label="Relationship-1"
               class="ons-table__cell"
             >
               1
@@ -887,49 +887,49 @@ exports[`Given there is a case available in blaise for a questionnaire should di
             class="ons-table__row"
           >
             <td
-              aria-label="RespondentNumber-1"
+              aria-label="RespondentNumber"
               class="ons-table__cell"
             >
               2
             </td>
             <td
-              aria-label="RespondentName-1"
+              aria-label="RespondentName"
               class="ons-table__cell status"
             >
               Betty Bettison
             </td>
             <td
-              aria-label="BenefitUnit-1"
+              aria-label="BenefitUnit"
               class="ons-table__cell"
             >
               1
             </td>
             <td
-              aria-label="Sex-1"
+              aria-label="Sex"
               class="ons-table__cell"
             >
               F
             </td>
             <td
-              aria-label="DateOfBirth-1"
+              aria-label="DateOfBirth"
               class="ons-table__cell"
             >
               Sun Jun 11 1995
             </td>
             <td
-              aria-label="$MaritalStatus-1"
+              aria-label="$MaritalStatus"
               class="ons-table__cell"
             >
               COH
             </td>
             <td
-              aria-label="Relationship-0"
+              aria-label="Relationship-2"
               class="ons-table__cell"
             >
               4
             </td>
             <td
-              aria-label="Relationship-1"
+              aria-label="Relationship-2"
               class="ons-table__cell"
             >
               *
@@ -941,19 +941,19 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               20
             </td>
             <td
-              aria-label="Relationship-3"
+              aria-label="Relationship-2"
               class="ons-table__cell"
             >
               3
             </td>
             <td
-              aria-label="Relationship-4"
+              aria-label="Relationship-2"
               class="ons-table__cell"
             >
               3
             </td>
             <td
-              aria-label="Relationship-5"
+              aria-label="Relationship-2"
               class="ons-table__cell"
             >
               17
@@ -963,55 +963,55 @@ exports[`Given there is a case available in blaise for a questionnaire should di
             class="ons-table__row"
           >
             <td
-              aria-label="RespondentNumber-2"
+              aria-label="RespondentNumber"
               class="ons-table__cell"
             >
               3
             </td>
             <td
-              aria-label="RespondentName-2"
+              aria-label="RespondentName"
               class="ons-table__cell status"
             >
               Bobby Bobbington
             </td>
             <td
-              aria-label="BenefitUnit-2"
+              aria-label="BenefitUnit"
               class="ons-table__cell"
             >
               2
             </td>
             <td
-              aria-label="Sex-2"
+              aria-label="Sex"
               class="ons-table__cell"
             >
               M
             </td>
             <td
-              aria-label="DateOfBirth-2"
+              aria-label="DateOfBirth"
               class="ons-table__cell"
             >
               Tue Jan 15 1980
             </td>
             <td
-              aria-label="$MaritalStatus-2"
+              aria-label="$MaritalStatus"
               class="ons-table__cell"
             >
               COH
             </td>
             <td
-              aria-label="Relationship-0"
+              aria-label="Relationship-3"
               class="ons-table__cell"
             >
               10
             </td>
             <td
-              aria-label="Relationship-1"
+              aria-label="Relationship-3"
               class="ons-table__cell"
             >
               2
             </td>
             <td
-              aria-label="Relationship-2"
+              aria-label="Relationship-3"
               class="ons-table__cell"
             >
               *
@@ -1023,13 +1023,13 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               8
             </td>
             <td
-              aria-label="Relationship-4"
+              aria-label="Relationship-3"
               class="ons-table__cell"
             >
               8
             </td>
             <td
-              aria-label="Relationship-5"
+              aria-label="Relationship-3"
               class="ons-table__cell"
             >
               1
@@ -1039,61 +1039,61 @@ exports[`Given there is a case available in blaise for a questionnaire should di
             class="ons-table__row"
           >
             <td
-              aria-label="RespondentNumber-3"
+              aria-label="RespondentNumber"
               class="ons-table__cell"
             >
               4
             </td>
             <td
-              aria-label="RespondentName-3"
+              aria-label="RespondentName"
               class="ons-table__cell status"
             >
               Caroline Carrot
             </td>
             <td
-              aria-label="BenefitUnit-3"
+              aria-label="BenefitUnit"
               class="ons-table__cell"
             >
               2
             </td>
             <td
-              aria-label="Sex-3"
+              aria-label="Sex"
               class="ons-table__cell"
             >
               F
             </td>
             <td
-              aria-label="DateOfBirth-3"
+              aria-label="DateOfBirth"
               class="ons-table__cell"
             >
               Sun Jun 11 1995
             </td>
             <td
-              aria-label="$MaritalStatus-3"
+              aria-label="$MaritalStatus"
               class="ons-table__cell"
             >
               COH
             </td>
             <td
-              aria-label="Relationship-0"
+              aria-label="Relationship-4"
               class="ons-table__cell"
             >
               1
             </td>
             <td
-              aria-label="Relationship-1"
+              aria-label="Relationship-4"
               class="ons-table__cell"
             >
               1
             </td>
             <td
-              aria-label="Relationship-2"
+              aria-label="Relationship-4"
               class="ons-table__cell"
             >
               12
             </td>
             <td
-              aria-label="Relationship-3"
+              aria-label="Relationship-4"
               class="ons-table__cell"
             >
               *
@@ -1105,7 +1105,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               14
             </td>
             <td
-              aria-label="Relationship-5"
+              aria-label="Relationship-4"
               class="ons-table__cell"
             >
               7
@@ -1115,67 +1115,67 @@ exports[`Given there is a case available in blaise for a questionnaire should di
             class="ons-table__row"
           >
             <td
-              aria-label="RespondentNumber-4"
+              aria-label="RespondentNumber"
               class="ons-table__cell"
             >
               5
             </td>
             <td
-              aria-label="RespondentName-4"
+              aria-label="RespondentName"
               class="ons-table__cell status"
             >
-              Frank Frank
+              Frank Frankleton
             </td>
             <td
-              aria-label="BenefitUnit-4"
+              aria-label="BenefitUnit"
               class="ons-table__cell"
             >
               3
             </td>
             <td
-              aria-label="Sex-4"
+              aria-label="Sex"
               class="ons-table__cell"
             >
               M
             </td>
             <td
-              aria-label="DateOfBirth-4"
+              aria-label="DateOfBirth"
               class="ons-table__cell"
             >
               Tue Jan 15 1980
             </td>
             <td
-              aria-label="$MaritalStatus-4"
+              aria-label="$MaritalStatus"
               class="ons-table__cell"
             >
               COH
             </td>
             <td
-              aria-label="Relationship-0"
+              aria-label="Relationship-5"
               class="ons-table__cell"
             >
               16
             </td>
             <td
-              aria-label="Relationship-1"
+              aria-label="Relationship-5"
               class="ons-table__cell"
             >
               14
             </td>
             <td
-              aria-label="Relationship-2"
+              aria-label="Relationship-5"
               class="ons-table__cell"
             >
               3
             </td>
             <td
-              aria-label="Relationship-3"
+              aria-label="Relationship-5"
               class="ons-table__cell"
             >
               4
             </td>
             <td
-              aria-label="Relationship-4"
+              aria-label="Relationship-5"
               class="ons-table__cell"
             >
               *
@@ -1191,73 +1191,73 @@ exports[`Given there is a case available in blaise for a questionnaire should di
             class="ons-table__row"
           >
             <td
-              aria-label="RespondentNumber-5"
+              aria-label="RespondentNumber"
               class="ons-table__cell"
             >
               6
             </td>
             <td
-              aria-label="RespondentName-5"
+              aria-label="RespondentName"
               class="ons-table__cell status"
             >
               Maggie Magpie
             </td>
             <td
-              aria-label="BenefitUnit-5"
+              aria-label="BenefitUnit"
               class="ons-table__cell"
             >
               3
             </td>
             <td
-              aria-label="Sex-5"
+              aria-label="Sex"
               class="ons-table__cell"
             >
               F
             </td>
             <td
-              aria-label="DateOfBirth-5"
+              aria-label="DateOfBirth"
               class="ons-table__cell"
             >
               Sun Jun 11 1995
             </td>
             <td
-              aria-label="$MaritalStatus-5"
+              aria-label="$MaritalStatus"
               class="ons-table__cell"
             >
               COH
             </td>
             <td
-              aria-label="Relationship-0"
+              aria-label="Relationship-6"
               class="ons-table__cell"
             >
               15
             </td>
             <td
-              aria-label="Relationship-1"
+              aria-label="Relationship-6"
               class="ons-table__cell"
             >
               20
             </td>
             <td
-              aria-label="Relationship-2"
+              aria-label="Relationship-6"
               class="ons-table__cell"
             >
               3
             </td>
             <td
-              aria-label="Relationship-3"
+              aria-label="Relationship-6"
               class="ons-table__cell"
             >
               5
             </td>
             <td
-              aria-label="Relationship-4"
+              aria-label="Relationship-6"
               class="ons-table__cell"
             >
               9
             </td>
             <td
-              aria-label="Relationship-5"
+              aria-label="Relationship-6"
               class="ons-table__cell"
             >
               *
