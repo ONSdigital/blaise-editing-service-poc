@@ -6,6 +6,23 @@ interface CaseSummaryContentProps {
   caseSummary: CaseSummaryDetails;
 }
 
+function GetColumnHeadings(numberOfRespondents: number): string[] {
+  const columns = [
+    '',
+    'Name',
+    'BU',
+    'Sex',
+    'DOB',
+    'Marital status',
+  ];
+
+  for (let respondent = 1; respondent <= numberOfRespondents; respondent += 1) {
+    columns.push(`${respondent}`);
+  }
+
+  return columns;
+}
+
 export default function CaseSummaryContent({ caseSummary }: CaseSummaryContentProps): ReactElement {
   return (
     <>
@@ -40,40 +57,39 @@ export default function CaseSummaryContent({ caseSummary }: CaseSummaryContentPr
       {/* Individual details */}
 
       <ONSTable
-        columns={[
-          '',
-          'Name',
-          'BU',
-          'Sex',
-          'DOB',
-          'Marital status',
-        ]}
+        columns={GetColumnHeadings(Number(caseSummary.NumberOfRespondents))}
+        tableCaption="Relationship Grid"
         tableID="Respondents-table"
       >
         <>
-          {caseSummary.Respondents.map((respondent) => (
+          {caseSummary.Respondents.map((respondent, respondentIndex) => (
             <tr
               className="ons-table__row"
               key={respondent.PersonNumber}
             >
-              <td className="ons-table__cell" aria-label={`${respondent.PersonNumber}-RespondentNumber`}>
+              <td className="ons-table__cell" aria-label={`RespondentNumber-${respondentIndex}`}>
                 {respondent.PersonNumber}
               </td>
-              <td className="ons-table__cell status" aria-label={`${respondent.RespondentName}-RespondentName`}>
+              <td className="ons-table__cell status" aria-label={`RespondentName-${respondentIndex}`}>
                 {respondent.RespondentName}
               </td>
-              <td className="ons-table__cell" aria-label={`${respondent.BenefitUnit}-BenefitUnit`}>
+              <td className="ons-table__cell" aria-label={`BenefitUnit-${respondentIndex}`}>
                 {respondent.BenefitUnit}
               </td>
-              <td className="ons-table__cell" aria-label={`${respondent.Sex}-Sex`}>
+              <td className="ons-table__cell" aria-label={`Sex-${respondentIndex}`}>
                 {respondent.Sex}
               </td>
-              <td className="ons-table__cell" aria-label={`${respondent.DateOfBirth}-DateOfBirth`}>
+              <td className="ons-table__cell" aria-label={`DateOfBirth-${respondentIndex}`}>
                 {respondent.DateOfBirth.toDateString()}
               </td>
-              <td className="ons-table__cell" aria-label={`${respondent.MaritalStatus}-MaritalStatus`}>
+              <td className="ons-table__cell" aria-label={`$MaritalStatus-${respondentIndex}`}>
                 {respondent.MaritalStatus}
               </td>
+              {respondent.Relationship.map((relationship, RelationshipIndex) => (
+                <td className="ons-table__cell" aria-label={`Relationship-${RelationshipIndex}`}>
+                  {relationship}
+                </td>
+              ))}
             </tr>
           ))}
         </>

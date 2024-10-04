@@ -89,6 +89,11 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           data-testid="Respondents-table"
           id="Respondents-table"
         >
+          <caption
+            class="table__caption"
+          >
+            Relationship Grid
+          </caption>
           <thead
             class="ons-table__head"
           >
@@ -129,6 +134,42 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               >
                 Marital status
               </th>
+              <th
+                class="ons-table__header"
+                scope="col"
+              >
+                1
+              </th>
+              <th
+                class="ons-table__header"
+                scope="col"
+              >
+                2
+              </th>
+              <th
+                class="ons-table__header"
+                scope="col"
+              >
+                3
+              </th>
+              <th
+                class="ons-table__header"
+                scope="col"
+              >
+                4
+              </th>
+              <th
+                class="ons-table__header"
+                scope="col"
+              >
+                5
+              </th>
+              <th
+                class="ons-table__header"
+                scope="col"
+              >
+                6
+              </th>
             </tr>
           </thead>
           <tbody
@@ -138,80 +179,456 @@ exports[`Given there is a case available in blaise for a questionnaire should di
               class="ons-table__row"
             >
               <td
-                aria-label="1-RespondentNumber"
+                aria-label="RespondentNumber-0"
                 class="ons-table__cell"
               >
                 1
               </td>
               <td
-                aria-label="Richmond Ricecake-RespondentName"
+                aria-label="RespondentName-0"
                 class="ons-table__cell status"
               >
                 Richmond Ricecake
               </td>
               <td
-                aria-label="1-BenefitUnit"
+                aria-label="BenefitUnit-0"
                 class="ons-table__cell"
               >
                 1
               </td>
               <td
-                aria-label="M-Sex"
+                aria-label="Sex-0"
                 class="ons-table__cell"
               >
                 M
               </td>
               <td
-                aria-label="Tue Jan 15 1980 00:00:00 GMT+0000 (Greenwich Mean Time)-DateOfBirth"
+                aria-label="DateOfBirth-0"
                 class="ons-table__cell"
               >
                 Tue Jan 15 1980
               </td>
               <td
-                aria-label="COH-MaritalStatus"
+                aria-label="$MaritalStatus-0"
                 class="ons-table__cell"
               >
                 COH
+              </td>
+              <td
+                aria-label="Relationship-0"
+                class="ons-table__cell"
+              >
+                *
+              </td>
+              <td
+                aria-label="Relationship-1"
+                class="ons-table__cell"
+              >
+                15
+              </td>
+              <td
+                aria-label="Relationship-2"
+                class="ons-table__cell"
+              >
+                12
+              </td>
+              <td
+                aria-label="Relationship-3"
+                class="ons-table__cell"
+              >
+                4
+              </td>
+              <td
+                aria-label="Relationship-4"
+                class="ons-table__cell"
+              >
+                6
+              </td>
+              <td
+                aria-label="Relationship-5"
+                class="ons-table__cell"
+              >
+                1
               </td>
             </tr>
             <tr
               class="ons-table__row"
             >
               <td
-                aria-label="2-RespondentNumber"
+                aria-label="RespondentNumber-1"
                 class="ons-table__cell"
               >
                 2
               </td>
               <td
-                aria-label="Betty Bettison-RespondentName"
+                aria-label="RespondentName-1"
                 class="ons-table__cell status"
               >
                 Betty Bettison
               </td>
               <td
-                aria-label="1-BenefitUnit"
+                aria-label="BenefitUnit-1"
                 class="ons-table__cell"
               >
                 1
               </td>
               <td
-                aria-label="F-Sex"
+                aria-label="Sex-1"
                 class="ons-table__cell"
               >
                 F
               </td>
               <td
-                aria-label="Sun Jun 11 1995 01:00:00 GMT+0100 (British Summer Time)-DateOfBirth"
+                aria-label="DateOfBirth-1"
                 class="ons-table__cell"
               >
                 Sun Jun 11 1995
               </td>
               <td
-                aria-label="COH-MaritalStatus"
+                aria-label="$MaritalStatus-1"
                 class="ons-table__cell"
               >
                 COH
+              </td>
+              <td
+                aria-label="Relationship-0"
+                class="ons-table__cell"
+              >
+                4
+              </td>
+              <td
+                aria-label="Relationship-1"
+                class="ons-table__cell"
+              >
+                *
+              </td>
+              <td
+                aria-label="Relationship-2"
+                class="ons-table__cell"
+              >
+                20
+              </td>
+              <td
+                aria-label="Relationship-3"
+                class="ons-table__cell"
+              >
+                3
+              </td>
+              <td
+                aria-label="Relationship-4"
+                class="ons-table__cell"
+              >
+                3
+              </td>
+              <td
+                aria-label="Relationship-5"
+                class="ons-table__cell"
+              >
+                17
+              </td>
+            </tr>
+            <tr
+              class="ons-table__row"
+            >
+              <td
+                aria-label="RespondentNumber-2"
+                class="ons-table__cell"
+              >
+                3
+              </td>
+              <td
+                aria-label="RespondentName-2"
+                class="ons-table__cell status"
+              >
+                Bobby Bobbington
+              </td>
+              <td
+                aria-label="BenefitUnit-2"
+                class="ons-table__cell"
+              >
+                2
+              </td>
+              <td
+                aria-label="Sex-2"
+                class="ons-table__cell"
+              >
+                M
+              </td>
+              <td
+                aria-label="DateOfBirth-2"
+                class="ons-table__cell"
+              >
+                Tue Jan 15 1980
+              </td>
+              <td
+                aria-label="$MaritalStatus-2"
+                class="ons-table__cell"
+              >
+                COH
+              </td>
+              <td
+                aria-label="Relationship-0"
+                class="ons-table__cell"
+              >
+                10
+              </td>
+              <td
+                aria-label="Relationship-1"
+                class="ons-table__cell"
+              >
+                2
+              </td>
+              <td
+                aria-label="Relationship-2"
+                class="ons-table__cell"
+              >
+                *
+              </td>
+              <td
+                aria-label="Relationship-3"
+                class="ons-table__cell"
+              >
+                8
+              </td>
+              <td
+                aria-label="Relationship-4"
+                class="ons-table__cell"
+              >
+                8
+              </td>
+              <td
+                aria-label="Relationship-5"
+                class="ons-table__cell"
+              >
+                1
+              </td>
+            </tr>
+            <tr
+              class="ons-table__row"
+            >
+              <td
+                aria-label="RespondentNumber-3"
+                class="ons-table__cell"
+              >
+                4
+              </td>
+              <td
+                aria-label="RespondentName-3"
+                class="ons-table__cell status"
+              >
+                Caroline Carrot
+              </td>
+              <td
+                aria-label="BenefitUnit-3"
+                class="ons-table__cell"
+              >
+                2
+              </td>
+              <td
+                aria-label="Sex-3"
+                class="ons-table__cell"
+              >
+                F
+              </td>
+              <td
+                aria-label="DateOfBirth-3"
+                class="ons-table__cell"
+              >
+                Sun Jun 11 1995
+              </td>
+              <td
+                aria-label="$MaritalStatus-3"
+                class="ons-table__cell"
+              >
+                COH
+              </td>
+              <td
+                aria-label="Relationship-0"
+                class="ons-table__cell"
+              >
+                1
+              </td>
+              <td
+                aria-label="Relationship-1"
+                class="ons-table__cell"
+              >
+                1
+              </td>
+              <td
+                aria-label="Relationship-2"
+                class="ons-table__cell"
+              >
+                12
+              </td>
+              <td
+                aria-label="Relationship-3"
+                class="ons-table__cell"
+              >
+                *
+              </td>
+              <td
+                aria-label="Relationship-4"
+                class="ons-table__cell"
+              >
+                14
+              </td>
+              <td
+                aria-label="Relationship-5"
+                class="ons-table__cell"
+              >
+                7
+              </td>
+            </tr>
+            <tr
+              class="ons-table__row"
+            >
+              <td
+                aria-label="RespondentNumber-4"
+                class="ons-table__cell"
+              >
+                5
+              </td>
+              <td
+                aria-label="RespondentName-4"
+                class="ons-table__cell status"
+              >
+                Frank Frank
+              </td>
+              <td
+                aria-label="BenefitUnit-4"
+                class="ons-table__cell"
+              >
+                3
+              </td>
+              <td
+                aria-label="Sex-4"
+                class="ons-table__cell"
+              >
+                M
+              </td>
+              <td
+                aria-label="DateOfBirth-4"
+                class="ons-table__cell"
+              >
+                Tue Jan 15 1980
+              </td>
+              <td
+                aria-label="$MaritalStatus-4"
+                class="ons-table__cell"
+              >
+                COH
+              </td>
+              <td
+                aria-label="Relationship-0"
+                class="ons-table__cell"
+              >
+                16
+              </td>
+              <td
+                aria-label="Relationship-1"
+                class="ons-table__cell"
+              >
+                14
+              </td>
+              <td
+                aria-label="Relationship-2"
+                class="ons-table__cell"
+              >
+                3
+              </td>
+              <td
+                aria-label="Relationship-3"
+                class="ons-table__cell"
+              >
+                4
+              </td>
+              <td
+                aria-label="Relationship-4"
+                class="ons-table__cell"
+              >
+                *
+              </td>
+              <td
+                aria-label="Relationship-5"
+                class="ons-table__cell"
+              >
+                8
+              </td>
+            </tr>
+            <tr
+              class="ons-table__row"
+            >
+              <td
+                aria-label="RespondentNumber-5"
+                class="ons-table__cell"
+              >
+                6
+              </td>
+              <td
+                aria-label="RespondentName-5"
+                class="ons-table__cell status"
+              >
+                Maggie Magpie
+              </td>
+              <td
+                aria-label="BenefitUnit-5"
+                class="ons-table__cell"
+              >
+                3
+              </td>
+              <td
+                aria-label="Sex-5"
+                class="ons-table__cell"
+              >
+                F
+              </td>
+              <td
+                aria-label="DateOfBirth-5"
+                class="ons-table__cell"
+              >
+                Sun Jun 11 1995
+              </td>
+              <td
+                aria-label="$MaritalStatus-5"
+                class="ons-table__cell"
+              >
+                COH
+              </td>
+              <td
+                aria-label="Relationship-0"
+                class="ons-table__cell"
+              >
+                15
+              </td>
+              <td
+                aria-label="Relationship-1"
+                class="ons-table__cell"
+              >
+                20
+              </td>
+              <td
+                aria-label="Relationship-2"
+                class="ons-table__cell"
+              >
+                3
+              </td>
+              <td
+                aria-label="Relationship-3"
+                class="ons-table__cell"
+              >
+                5
+              </td>
+              <td
+                aria-label="Relationship-4"
+                class="ons-table__cell"
+              >
+                9
+              </td>
+              <td
+                aria-label="Relationship-5"
+                class="ons-table__cell"
+              >
+                *
               </td>
             </tr>
           </tbody>
@@ -304,6 +721,11 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         data-testid="Respondents-table"
         id="Respondents-table"
       >
+        <caption
+          class="table__caption"
+        >
+          Relationship Grid
+        </caption>
         <thead
           class="ons-table__head"
         >
@@ -344,6 +766,42 @@ exports[`Given there is a case available in blaise for a questionnaire should di
             >
               Marital status
             </th>
+            <th
+              class="ons-table__header"
+              scope="col"
+            >
+              1
+            </th>
+            <th
+              class="ons-table__header"
+              scope="col"
+            >
+              2
+            </th>
+            <th
+              class="ons-table__header"
+              scope="col"
+            >
+              3
+            </th>
+            <th
+              class="ons-table__header"
+              scope="col"
+            >
+              4
+            </th>
+            <th
+              class="ons-table__header"
+              scope="col"
+            >
+              5
+            </th>
+            <th
+              class="ons-table__header"
+              scope="col"
+            >
+              6
+            </th>
           </tr>
         </thead>
         <tbody
@@ -353,80 +811,456 @@ exports[`Given there is a case available in blaise for a questionnaire should di
             class="ons-table__row"
           >
             <td
-              aria-label="1-RespondentNumber"
+              aria-label="RespondentNumber-0"
               class="ons-table__cell"
             >
               1
             </td>
             <td
-              aria-label="Richmond Ricecake-RespondentName"
+              aria-label="RespondentName-0"
               class="ons-table__cell status"
             >
               Richmond Ricecake
             </td>
             <td
-              aria-label="1-BenefitUnit"
+              aria-label="BenefitUnit-0"
               class="ons-table__cell"
             >
               1
             </td>
             <td
-              aria-label="M-Sex"
+              aria-label="Sex-0"
               class="ons-table__cell"
             >
               M
             </td>
             <td
-              aria-label="Tue Jan 15 1980 00:00:00 GMT+0000 (Greenwich Mean Time)-DateOfBirth"
+              aria-label="DateOfBirth-0"
               class="ons-table__cell"
             >
               Tue Jan 15 1980
             </td>
             <td
-              aria-label="COH-MaritalStatus"
+              aria-label="$MaritalStatus-0"
               class="ons-table__cell"
             >
               COH
+            </td>
+            <td
+              aria-label="Relationship-0"
+              class="ons-table__cell"
+            >
+              *
+            </td>
+            <td
+              aria-label="Relationship-1"
+              class="ons-table__cell"
+            >
+              15
+            </td>
+            <td
+              aria-label="Relationship-2"
+              class="ons-table__cell"
+            >
+              12
+            </td>
+            <td
+              aria-label="Relationship-3"
+              class="ons-table__cell"
+            >
+              4
+            </td>
+            <td
+              aria-label="Relationship-4"
+              class="ons-table__cell"
+            >
+              6
+            </td>
+            <td
+              aria-label="Relationship-5"
+              class="ons-table__cell"
+            >
+              1
             </td>
           </tr>
           <tr
             class="ons-table__row"
           >
             <td
-              aria-label="2-RespondentNumber"
+              aria-label="RespondentNumber-1"
               class="ons-table__cell"
             >
               2
             </td>
             <td
-              aria-label="Betty Bettison-RespondentName"
+              aria-label="RespondentName-1"
               class="ons-table__cell status"
             >
               Betty Bettison
             </td>
             <td
-              aria-label="1-BenefitUnit"
+              aria-label="BenefitUnit-1"
               class="ons-table__cell"
             >
               1
             </td>
             <td
-              aria-label="F-Sex"
+              aria-label="Sex-1"
               class="ons-table__cell"
             >
               F
             </td>
             <td
-              aria-label="Sun Jun 11 1995 01:00:00 GMT+0100 (British Summer Time)-DateOfBirth"
+              aria-label="DateOfBirth-1"
               class="ons-table__cell"
             >
               Sun Jun 11 1995
             </td>
             <td
-              aria-label="COH-MaritalStatus"
+              aria-label="$MaritalStatus-1"
               class="ons-table__cell"
             >
               COH
+            </td>
+            <td
+              aria-label="Relationship-0"
+              class="ons-table__cell"
+            >
+              4
+            </td>
+            <td
+              aria-label="Relationship-1"
+              class="ons-table__cell"
+            >
+              *
+            </td>
+            <td
+              aria-label="Relationship-2"
+              class="ons-table__cell"
+            >
+              20
+            </td>
+            <td
+              aria-label="Relationship-3"
+              class="ons-table__cell"
+            >
+              3
+            </td>
+            <td
+              aria-label="Relationship-4"
+              class="ons-table__cell"
+            >
+              3
+            </td>
+            <td
+              aria-label="Relationship-5"
+              class="ons-table__cell"
+            >
+              17
+            </td>
+          </tr>
+          <tr
+            class="ons-table__row"
+          >
+            <td
+              aria-label="RespondentNumber-2"
+              class="ons-table__cell"
+            >
+              3
+            </td>
+            <td
+              aria-label="RespondentName-2"
+              class="ons-table__cell status"
+            >
+              Bobby Bobbington
+            </td>
+            <td
+              aria-label="BenefitUnit-2"
+              class="ons-table__cell"
+            >
+              2
+            </td>
+            <td
+              aria-label="Sex-2"
+              class="ons-table__cell"
+            >
+              M
+            </td>
+            <td
+              aria-label="DateOfBirth-2"
+              class="ons-table__cell"
+            >
+              Tue Jan 15 1980
+            </td>
+            <td
+              aria-label="$MaritalStatus-2"
+              class="ons-table__cell"
+            >
+              COH
+            </td>
+            <td
+              aria-label="Relationship-0"
+              class="ons-table__cell"
+            >
+              10
+            </td>
+            <td
+              aria-label="Relationship-1"
+              class="ons-table__cell"
+            >
+              2
+            </td>
+            <td
+              aria-label="Relationship-2"
+              class="ons-table__cell"
+            >
+              *
+            </td>
+            <td
+              aria-label="Relationship-3"
+              class="ons-table__cell"
+            >
+              8
+            </td>
+            <td
+              aria-label="Relationship-4"
+              class="ons-table__cell"
+            >
+              8
+            </td>
+            <td
+              aria-label="Relationship-5"
+              class="ons-table__cell"
+            >
+              1
+            </td>
+          </tr>
+          <tr
+            class="ons-table__row"
+          >
+            <td
+              aria-label="RespondentNumber-3"
+              class="ons-table__cell"
+            >
+              4
+            </td>
+            <td
+              aria-label="RespondentName-3"
+              class="ons-table__cell status"
+            >
+              Caroline Carrot
+            </td>
+            <td
+              aria-label="BenefitUnit-3"
+              class="ons-table__cell"
+            >
+              2
+            </td>
+            <td
+              aria-label="Sex-3"
+              class="ons-table__cell"
+            >
+              F
+            </td>
+            <td
+              aria-label="DateOfBirth-3"
+              class="ons-table__cell"
+            >
+              Sun Jun 11 1995
+            </td>
+            <td
+              aria-label="$MaritalStatus-3"
+              class="ons-table__cell"
+            >
+              COH
+            </td>
+            <td
+              aria-label="Relationship-0"
+              class="ons-table__cell"
+            >
+              1
+            </td>
+            <td
+              aria-label="Relationship-1"
+              class="ons-table__cell"
+            >
+              1
+            </td>
+            <td
+              aria-label="Relationship-2"
+              class="ons-table__cell"
+            >
+              12
+            </td>
+            <td
+              aria-label="Relationship-3"
+              class="ons-table__cell"
+            >
+              *
+            </td>
+            <td
+              aria-label="Relationship-4"
+              class="ons-table__cell"
+            >
+              14
+            </td>
+            <td
+              aria-label="Relationship-5"
+              class="ons-table__cell"
+            >
+              7
+            </td>
+          </tr>
+          <tr
+            class="ons-table__row"
+          >
+            <td
+              aria-label="RespondentNumber-4"
+              class="ons-table__cell"
+            >
+              5
+            </td>
+            <td
+              aria-label="RespondentName-4"
+              class="ons-table__cell status"
+            >
+              Frank Frank
+            </td>
+            <td
+              aria-label="BenefitUnit-4"
+              class="ons-table__cell"
+            >
+              3
+            </td>
+            <td
+              aria-label="Sex-4"
+              class="ons-table__cell"
+            >
+              M
+            </td>
+            <td
+              aria-label="DateOfBirth-4"
+              class="ons-table__cell"
+            >
+              Tue Jan 15 1980
+            </td>
+            <td
+              aria-label="$MaritalStatus-4"
+              class="ons-table__cell"
+            >
+              COH
+            </td>
+            <td
+              aria-label="Relationship-0"
+              class="ons-table__cell"
+            >
+              16
+            </td>
+            <td
+              aria-label="Relationship-1"
+              class="ons-table__cell"
+            >
+              14
+            </td>
+            <td
+              aria-label="Relationship-2"
+              class="ons-table__cell"
+            >
+              3
+            </td>
+            <td
+              aria-label="Relationship-3"
+              class="ons-table__cell"
+            >
+              4
+            </td>
+            <td
+              aria-label="Relationship-4"
+              class="ons-table__cell"
+            >
+              *
+            </td>
+            <td
+              aria-label="Relationship-5"
+              class="ons-table__cell"
+            >
+              8
+            </td>
+          </tr>
+          <tr
+            class="ons-table__row"
+          >
+            <td
+              aria-label="RespondentNumber-5"
+              class="ons-table__cell"
+            >
+              6
+            </td>
+            <td
+              aria-label="RespondentName-5"
+              class="ons-table__cell status"
+            >
+              Maggie Magpie
+            </td>
+            <td
+              aria-label="BenefitUnit-5"
+              class="ons-table__cell"
+            >
+              3
+            </td>
+            <td
+              aria-label="Sex-5"
+              class="ons-table__cell"
+            >
+              F
+            </td>
+            <td
+              aria-label="DateOfBirth-5"
+              class="ons-table__cell"
+            >
+              Sun Jun 11 1995
+            </td>
+            <td
+              aria-label="$MaritalStatus-5"
+              class="ons-table__cell"
+            >
+              COH
+            </td>
+            <td
+              aria-label="Relationship-0"
+              class="ons-table__cell"
+            >
+              15
+            </td>
+            <td
+              aria-label="Relationship-1"
+              class="ons-table__cell"
+            >
+              20
+            </td>
+            <td
+              aria-label="Relationship-2"
+              class="ons-table__cell"
+            >
+              3
+            </td>
+            <td
+              aria-label="Relationship-3"
+              class="ons-table__cell"
+            >
+              5
+            </td>
+            <td
+              aria-label="Relationship-4"
+              class="ons-table__cell"
+            >
+              9
+            </td>
+            <td
+              aria-label="Relationship-5"
+              class="ons-table__cell"
+            >
+              *
             </td>
           </tr>
         </tbody>
