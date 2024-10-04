@@ -1,10 +1,60 @@
 import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
 
+function PadString(input: string, length: number): string {
+  const endSpace = Math.round((length - input.length) / 2);
+  const startSpace = length - input.length - endSpace;
+  const start = new Array(startSpace).fill(' ').join('');
+  const end = new Array(endSpace).fill(' ').join('');
+
+  return `${start}${input}${end}`;
+}
+
 export default function mapCaseSummaryText(caseSummary: CaseSummaryDetails): string {
-  let caseSummaryText = `Case ID:      ${caseSummary.CaseId}\n`;
-  caseSummaryText += `Interviewer:   ${caseSummary.InterviewerName}\n`;
-  caseSummaryText += `Outcome        ${caseSummary.OutcomeCode}\n`;
-  caseSummaryText += `Respondents    ${caseSummary.NumberOfRespondents}\n`;
+  const maxNameLength = caseSummary.Respondents.reduce((max, respondent) => Math.max(max, respondent.RespondentName.length), 0);
+
+  let caseSummaryText = `Case ID:           ${caseSummary.CaseId}\n`;
+  caseSummaryText += `Outcome:            ${caseSummary.OutcomeCode}\n`;
+  caseSummaryText += `Interview date:     ${caseSummary.InterviewDate.toDateString()}\n`;
+  caseSummaryText += `District:           ${caseSummary.District}\n`;
+  caseSummaryText += `Interviewer:        ${caseSummary.InterviewerName}\n`;
+  caseSummaryText += '\n';
+
+  caseSummaryText += `${PadString('', 4)}|`;
+  caseSummaryText += `${PadString('Name', (maxNameLength > 4) ? maxNameLength + 2 : 6)}|`;
+  caseSummaryText += `${PadString('BU', 4)}|`;
+  caseSummaryText += `${PadString('Sex', 5)}|`;
+  caseSummaryText += `${PadString('DOB', 17)}|`;
+  caseSummaryText += `${PadString('Mar Stat', 10)}|`;
+  for (let respondentId = 1; respondentId <= Number(caseSummary.NumberOfRespondents); respondentId += 1) {
+    caseSummaryText += `${PadString(`${respondentId}`, 4)}|`;
+  }
+  caseSummaryText += '\n';
+
+  caseSummary.Respondents.forEach((respondent) => {
+    caseSummaryText += `${PadString(respondent.PersonNumber, 4)}|`;
+    caseSummaryText += `${PadString(respondent.RespondentName, (maxNameLength > 4) ? maxNameLength + 2 : 6)}|`;
+    caseSummaryText += `${PadString(respondent.BenefitUnit, 4)}|`;
+    caseSummaryText += `${PadString(respondent.Sex, 5)}|`;
+    caseSummaryText += `${PadString(respondent.DateOfBirth.toDateString(), 17)}|`;
+    caseSummaryText += `${PadString(respondent.MaritalStatus, 10)}|`;
+    respondent.Relationship.forEach((relationship) => {
+      caseSummaryText += `${PadString(relationship, 4)}|`;
+    });
+    caseSummaryText += '\n';
+  });
+
+  caseSummaryText += '\n';
+
+  caseSummaryText += `Accommodation type: Main:    ${caseSummary.Household.Accommodation.Main}  Type: ${caseSummary.Household.Accommodation.Type}\n`;
+  caseSummaryText += `Floor number:                ${caseSummary.Household.FloorNumber}\n`;
+  caseSummaryText += `Household status:            ${caseSummary.Household.Status}\n`;
+  caseSummaryText += `Number of bedrooms:          ${caseSummary.Household.NumberOfBedrooms}\n`;
+  caseSummaryText += `Receipt of housing benefits: ${caseSummary.Household.ReceiptOfHousingBenefit}    Period Code: ${caseSummary.Household.PeriodCode}\n`;
+  caseSummaryText += `Council tax band:            ${caseSummary.Household.CouncilTaxBand}\n`;
+  caseSummaryText += `Business room:               ${(caseSummary.Household.BusinessRoom) ? 'Yes' : 'No'}\n`;
+  caseSummaryText += `Anyone self employed:        ${(caseSummary.Household.SelfEmployed) ? `Yes    H/H members: ${caseSummary.Household.SelfEmployedMembers.join(', ')}` : 'No'}\n`;
+  caseSummaryText += `Income support recieved now: ${(caseSummary.Household.IncomeSupport) ? `Yes    H/H members: ${caseSummary.Household.IncomeSupportMembers.join(', ')}` : 'No'}\n`;
+  caseSummaryText += `Income-based JA recieved:    ${(caseSummary.Household.IncomeBasedJaSupport) ? `Yes    H/H members: ${caseSummary.Household.IncomeBasedJaSupportMembers.join(', ')}` : 'No'}`;
 
   return caseSummaryText;
 }
