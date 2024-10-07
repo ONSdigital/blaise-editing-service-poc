@@ -58,9 +58,9 @@ const MartitalStatus: Record<number, string> = {
 
 function GetHousingBenefit(caseResponse: CaseResponse): string {
   let housingBenefit = 'n/a';
-  for (let i = 1; i <= 7; i += 1) {
-    for (let j = 1; j <= 2; j += 1) {
-      const benefitAmount = caseResponse.fieldData[`BU[${i}].QBenefit.QBenef2[${j}].HBenAmt`];
+  for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+    for (let person = 1; person <= 2; person += 1) {
+      const benefitAmount = caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${person}].HBenAmt`];
       if (Number(benefitAmount) > 0) {
         housingBenefit = benefitAmount;
       }
@@ -71,11 +71,11 @@ function GetHousingBenefit(caseResponse: CaseResponse): string {
 }
 
 function HasBusinessRoom(caseResponse: CaseResponse): boolean {
-  for (let i = 1; i <= 7; i += 1) {
-    if (caseResponse.fieldData[`BU[${i}].QBUId.BUNum`] !== '') {
-      for (let j = 1; j <= 5; j += 1) {
-        for (let k = 1; k <= 2; k += 1) {
-          if (caseResponse.fieldData[`BU[${i}].QSelfJob[${j}].Adult[${k}].BusRoom`] === '1') {
+  for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+    if (caseResponse.fieldData[`BU[${benefitUnit}].QBUId.BUNum`] !== '') {
+      for (let person = 1; person <= 2; person += 1) {
+        for (let selfJob = 1; selfJob <= 5; selfJob += 1) {
+          if (caseResponse.fieldData[`BU[${benefitUnit}].QSelfJob[${selfJob}].Adult[${person}].BusRoom`] === '1') {
             return true;
           }
         }
@@ -88,11 +88,11 @@ function HasBusinessRoom(caseResponse: CaseResponse): boolean {
 
 function GetSelfEmployedMembers(caseResponse: CaseResponse): string[] {
   const selfEmployedMembers: string[] = [];
-  for (let i = 1; i <= 7; i += 1) {
-    if (caseResponse.fieldData[`BU[${i}].QBUId.BUNum`] !== '') {
-      for (let j = 1; j <= 2; j += 1) {
-        if (caseResponse.fieldData[`BU[${i}].QCurst1.Adult[${j}].EmpStat`] === '2') {
-          selfEmployedMembers.push(caseResponse.fieldData[`BU[${i}].QCurst1.Adult[${j}].Persid`]);
+  for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+    if (caseResponse.fieldData[`BU[${benefitUnit}].QBUId.BUNum`] !== '') {
+      for (let person = 1; person <= 2; person += 1) {
+        if (caseResponse.fieldData[`BU[${benefitUnit}].QCurst1.Adult[${person}].EmpStat`] === '2') {
+          selfEmployedMembers.push(caseResponse.fieldData[`BU[${benefitUnit}].QCurst1.Adult[${person}].Persid`]);
         }
       }
     }
@@ -103,12 +103,12 @@ function GetSelfEmployedMembers(caseResponse: CaseResponse): string[] {
 
 function GetIncomeSupportPeople(caseResponse: CaseResponse): string[] {
   const incomeSupportPeople: string[] = [];
-  for (let i = 1; i <= 7; i += 1) {
-    if (caseResponse.fieldData[`BU[${i}].QBUId.BUNum`] !== '') {
-      for (let j = 1; j <= 2; j += 1) {
-        for (let k = 1; k <= 10; k += 1) {
-          if (caseResponse.fieldData[`BU[${i}].QBenefit.QWageBen.Adult[${j}].WageBen[${k}]`] === '5') {
-            incomeSupportPeople.push(caseResponse.fieldData[`BU[${i}].QBenefit.QWageBen.Adult[${j}].Persid`]);
+  for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+    if (caseResponse.fieldData[`BU[${benefitUnit}].QBUId.BUNum`] !== '') {
+      for (let person = 1; person <= 2; person += 1) {
+        for (let wageBenefit = 1; wageBenefit <= 10; wageBenefit += 1) {
+          if (caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QWageBen.Adult[${person}].WageBen[${wageBenefit}]`] === '5') {
+            incomeSupportPeople.push(caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QWageBen.Adult[${person}].Persid`]);
           }
         }
       }
@@ -120,12 +120,12 @@ function GetIncomeSupportPeople(caseResponse: CaseResponse): string[] {
 
 function GetJsaPeople(caseResponse: CaseResponse): string[] {
   const jsaPeople: string[] = [];
-  for (let i = 1; i <= 7; i += 1) {
-    if (caseResponse.fieldData[`BU[${i}].QBUId.BUNum`] !== '') {
-      for (let j = 1; j <= 2; j += 1) {
-        if (caseResponse.fieldData[`BU[${i}].QBenefit.QWageBen.Adult[${j}].JSAType`] === '2'
-          || caseResponse.fieldData[`BU[${i}].QBenefit.QWageBen.Adult[${j}].JSAType`] === '3') {
-          jsaPeople.push(caseResponse.fieldData[`BU[${i}].QBenefit.QWageBen.Adult[${j}].JSAType`]);
+  for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+    if (caseResponse.fieldData[`BU[${benefitUnit}].QBUId.BUNum`] !== '') {
+      for (let person = 1; person <= 2; person += 1) {
+        if (caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QWageBen.Adult[${person}].JSAType`] === '2'
+          || caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QWageBen.Adult[${person}].JSAType`] === '3') {
+          jsaPeople.push(caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QWageBen.Adult[${person}].JSAType`]);
         }
       }
     }
@@ -143,8 +143,8 @@ function GetMaritalStatus(caseResponse: CaseResponse, respondentNumber: number):
 
 function GetRelationshipMatrix(caseResponse: CaseResponse, respondentNumber: number, numberOfRespondents: number): string[] {
   const relationshipMatrix: string[] = [];
-  for (let i = 1; i <= numberOfRespondents; i += 1) {
-    let relationship: string = caseResponse.fieldData[`hhg.P[${respondentNumber}].QRel[${i}].R`];
+  for (let person = 1; person <= numberOfRespondents; person += 1) {
+    let relationship: string = caseResponse.fieldData[`hhg.P[${respondentNumber}].QRel[${person}].R`];
     if (relationship === '97') {
       relationship = '*';
     }

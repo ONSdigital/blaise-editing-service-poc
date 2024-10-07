@@ -11,8 +11,10 @@ function PadString(input: string, length: number): string {
 
 export default function mapCaseSummaryText(caseSummary: CaseSummaryDetails): string {
   const maxNameLength = caseSummary.Respondents.reduce((max, respondent) => Math.max(max, respondent.RespondentName.length), 0);
+  const nameColumnWidth = Math.max(maxNameLength, 4) + 2;
 
-  let caseSummaryText = `Case ID:           ${caseSummary.CaseId}\n`;
+  let caseSummaryText = '';
+  caseSummaryText += `Case ID:            ${caseSummary.CaseId}\n`;
   caseSummaryText += `Outcome:            ${caseSummary.OutcomeCode}\n`;
   caseSummaryText += `Interview date:     ${caseSummary.InterviewDate.toDateString()}\n`;
   caseSummaryText += `District:           ${caseSummary.District}\n`;
@@ -20,7 +22,7 @@ export default function mapCaseSummaryText(caseSummary: CaseSummaryDetails): str
   caseSummaryText += '\n';
 
   caseSummaryText += `${PadString('', 4)}|`;
-  caseSummaryText += `${PadString('Name', (maxNameLength > 4) ? maxNameLength + 2 : 6)}|`;
+  caseSummaryText += `${PadString('Name', nameColumnWidth)}|`;
   caseSummaryText += `${PadString('BU', 4)}|`;
   caseSummaryText += `${PadString('Sex', 5)}|`;
   caseSummaryText += `${PadString('DOB', 17)}|`;
@@ -32,7 +34,7 @@ export default function mapCaseSummaryText(caseSummary: CaseSummaryDetails): str
 
   caseSummary.Respondents.forEach((respondent) => {
     caseSummaryText += `${PadString(respondent.PersonNumber, 4)}|`;
-    caseSummaryText += `${PadString(respondent.RespondentName, (maxNameLength > 4) ? maxNameLength + 2 : 6)}|`;
+    caseSummaryText += `${PadString(respondent.RespondentName, nameColumnWidth)}|`;
     caseSummaryText += `${PadString(respondent.BenefitUnit, 4)}|`;
     caseSummaryText += `${PadString(respondent.Sex, 5)}|`;
     caseSummaryText += `${PadString(respondent.DateOfBirth.toDateString(), 17)}|`;
@@ -45,7 +47,7 @@ export default function mapCaseSummaryText(caseSummary: CaseSummaryDetails): str
 
   caseSummaryText += '\n';
 
-  caseSummaryText += `Accommodation type: Main:    ${caseSummary.Household.Accommodation.Main}  Type: ${caseSummary.Household.Accommodation.Type}\n`;
+  caseSummaryText += `Accommodation type: Main:    ${caseSummary.Household.Accommodation.Main}    Type: ${caseSummary.Household.Accommodation.Type}\n`;
   caseSummaryText += `Floor number:                ${caseSummary.Household.FloorNumber}\n`;
   caseSummaryText += `Household status:            ${caseSummary.Household.Status}\n`;
   caseSummaryText += `Number of bedrooms:          ${caseSummary.Household.NumberOfBedrooms}\n`;
