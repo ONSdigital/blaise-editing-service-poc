@@ -27,9 +27,9 @@ exports[`Renders the error screen if the users role is not in the accepted list 
             Select an option
           </option>
           <option
-            data-testid="option-select-questionnaire-FRS2408B"
+            data-testid="option-select-questionnaire-FRS2408B_EDIT"
             selected=""
-            value="FRS2408B"
+            value="FRS2408B_EDIT"
           >
             FRS2408B (August 2024)
           </option>
@@ -76,9 +76,9 @@ exports[`Renders the error screen if the users role is not in the accepted list 
           Select an option
         </option>
         <option
-          data-testid="option-select-questionnaire-FRS2408B"
+          data-testid="option-select-questionnaire-FRS2408B_EDIT"
           selected=""
-          value="FRS2408B"
+          value="FRS2408B_EDIT"
         >
           FRS2408B (August 2024)
         </option>

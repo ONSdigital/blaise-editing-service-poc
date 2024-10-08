@@ -5,12 +5,12 @@ import { EditorInformation } from '../../Interfaces/editorInterface';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 import { DownloadCaseSummaryLink } from '../../Common/components/DownloadCaseSummaryink';
 
-interface EditorsContentProps {
+interface EditorContentProps {
   editorInformation: EditorInformation;
   questionnaire: QuestionnaireDetails
 }
 
-export default function EditorContent({ editorInformation, questionnaire }: EditorsContentProps): ReactElement {
+export default function EditorContent({ editorInformation, questionnaire }: EditorContentProps): ReactElement {
   const [status, setStatus] = useState('');
 
   return (

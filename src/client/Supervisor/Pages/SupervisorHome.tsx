@@ -10,7 +10,7 @@ interface SurveyProps {
   user: User;
 }
 
-export default function SupervisorsHome({ user }: SurveyProps) {
+export default function SupervisorHome({ user }: SurveyProps) {
   // TODO: maybe filter surveys returned here - pass user details to node and bring back full list or filtered
   const surveys = useAsyncRequestWithParam<Survey[], string>(getSurveys, user.role);
 

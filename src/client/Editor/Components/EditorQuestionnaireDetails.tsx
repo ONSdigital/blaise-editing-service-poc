@@ -7,13 +7,13 @@ import EditorContent from './EditorContent';
 import { EditorInformation } from '../../Interfaces/editorInterface';
 import UserRole from '../../Common/enums/UserTypes';
 
-interface EditorsQuestionnairesDetailsProps {
+interface EditorQuestionnairesDetailsProps {
   questionnaire: QuestionnaireDetails;
   username: string;
   editorRole: UserRole;
 }
 
-export default function EditorsQuestionnairesDetails({ questionnaire, username, editorRole }: EditorsQuestionnairesDetailsProps): ReactElement {
+export default function EditorQuestionnairesDetails({ questionnaire, username, editorRole }: EditorQuestionnairesDetailsProps): ReactElement {
   const editorInformation = useAsyncRequestWithThreeParams<EditorInformation, string, string, UserRole>(getEditorInformation, questionnaire.questionnaireName, username, editorRole);
 
   return (

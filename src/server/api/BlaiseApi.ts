@@ -26,7 +26,9 @@ export default class BlaiseApi {
 
     const questionnaireDetailsList: QuestionnaireDetails[] = [];
     questionnaires.forEach((questionnaire : Questionnaire) => {
-      questionnaireDetailsList.push(mapQuestionnaireDetails(questionnaire));
+      if(questionnaire.name.endsWith('_EDIT')) {
+        questionnaireDetailsList.push(mapQuestionnaireDetails(questionnaire));
+      }
     });
 
     return questionnaireDetailsList;

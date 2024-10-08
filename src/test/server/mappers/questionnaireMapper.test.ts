@@ -7,7 +7,7 @@ describe('Map a questionnaire', () => {
     // arrange
 
     const questionnaire: Questionnaire = {
-      name: 'LMS2101_AA1',
+      name: 'FRS2504A_EDIT',
       serverParkName: 'gusty',
       installDate: '2021-01-15T15:26:43.4233454+00:00',
       fieldPeriod: '2021-01-01T00:00:00',
@@ -18,7 +18,8 @@ describe('Map a questionnaire', () => {
     };
 
     const expectedQuestionnaireDetails: QuestionnaireDetails = {
-      questionnaireName: 'LMS2101_AA1',
+      questionnaireName: 'FRS2504A_EDIT',
+      questionnaireDisplayName: 'FRS2504A',
       numberOfCases: 3,
       fieldPeriod: 'January 2021',
       surveyTla: 'LMS',
@@ -35,7 +36,7 @@ describe('Map a questionnaire', () => {
     // arrange
 
     const questionnaire: Questionnaire = {
-      name: 'LMS2101_AA1',
+      name: 'FRS2504A_EDIT',
       serverParkName: 'gusty',
       installDate: '2021-01-15T15:26:43.4233454+00:00',
       hasData: false,
@@ -43,7 +44,8 @@ describe('Map a questionnaire', () => {
     };
 
     const expectedQuestionnaireDetails: QuestionnaireDetails = {
-      questionnaireName: 'LMS2101_AA1',
+      questionnaireName: 'FRS2504A_EDIT',
+      questionnaireDisplayName: 'FRS2504A',
       numberOfCases: 0,
       fieldPeriod: 'N/A',
       surveyTla: 'N/A',

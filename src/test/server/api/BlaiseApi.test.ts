@@ -1,9 +1,9 @@
-import BlaiseApiClient, { CaseEditInformationListMockObject } from 'blaise-api-node-client';
+import BlaiseApiClient, { CaseEditInformationListMockObject, Questionnaire } from 'blaise-api-node-client';
 import {
   IMock, Mock, Times,
 } from 'typemoq';
 import BlaiseApi from '../../../server/api/BlaiseApi';
-import { questionnaireDetailsListMockObject, questionnaireListMockObject } from '../mockObjects/questionnaireListMockObject';
+import { questionnaireListMockObject } from '../mockObjects/questionnaireListMockObject';
 import FakeServerConfigurationProvider from '../configuration/FakeServerConfigurationProvider';
 import userMockObject from '../mockObjects/userMockObject';
 import { caseResponseMockObject } from '../mockObjects/CaseMockObject';
@@ -23,7 +23,7 @@ describe('getQuestionnaires from Blaise', () => {
     blaiseApiClientMock.reset();
   });
 
-  it('Should call getQuestionnaires for all questionnaires in that list', async () => {
+  it('Should call getQuestionnaires for the correct serverpark', async () => {
     // arrange
     blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => questionnaireListMockObject);
 
@@ -34,15 +34,41 @@ describe('getQuestionnaires from Blaise', () => {
     blaiseApiClientMock.verify((client) => client.getQuestionnaires(configFake.ServerPark), Times.once());
   });
 
-  it('Should return an expected list of questionnaires for editing', async () => {
+  it('Should return an expected list of edit questionnaires for editing', async () => {
     // arrange
-    blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => questionnaireListMockObject);
+    const questionnaireList: Questionnaire[] = [
+      {
+        name: 'FRS2408B',
+        serverParkName: 'gusty',
+        installDate: '2021-03-15T15:26:43.4233454+00:00',
+        fieldPeriod: '2024-08-01T00:00:00',
+        surveyTla: 'FRS',
+        status: 'Active',
+        dataRecordCount: 0,
+        hasData: false,
+        active: false,
+      },
+      {
+        name: 'FRS2408B_EDIT',
+        serverParkName: 'gusty',
+        installDate: '2021-03-15T15:26:43.4233454+00:00',
+        fieldPeriod: '2024-08-01T00:00:00',
+        surveyTla: 'FRS',
+        status: 'Active',
+        dataRecordCount: 0,
+        hasData: false,
+        active: false,
+      }      
+    ]
+
+    blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => questionnaireList);
 
     // act
     const result = await sut.getQuestionnaires();
 
     // assert
-    expect(result).toEqual(questionnaireDetailsListMockObject);
+    expect(result.length).toEqual(1);
+    expect(result[0]?.questionnaireName).toEqual('FRS2408B_EDIT');
   });
 });
 
@@ -51,9 +77,23 @@ describe('getCase from Blaise', () => {
     blaiseApiClientMock.reset();
   });
 
-  it('Should retrieve a case from blaise', async () => {
+  it('Should call getCase with the expected parameters', async () => {
     // arrange
-    const questionnaireName = 'OPN2201A';
+    const questionnaireName = 'FRS2504A';
+    const caseId = '9001';
+
+    blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => caseResponseMockObject);
+
+    // act
+    await sut.getCase(questionnaireName, caseId);
+
+    // assert
+    blaiseApiClientMock.verify((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId), Times.once());
+  });
+
+  it('Should retrieve an extpected case from blaise', async () => {
+    // arrange
+    const questionnaireName = 'FRS2504A';
     const caseId = '9001';
 
     blaiseApiClientMock.setup((client) => client.getCase(configFake.ServerPark, questionnaireName, caseId)).returns(async () => caseResponseMockObject);

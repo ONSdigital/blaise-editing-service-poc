@@ -198,15 +198,15 @@ exports[`Given there are surveys available in blaise should render the superviso
                     Select an option
                   </option>
                   <option
-                    data-testid="option-select-questionnaire-FRS2504A"
+                    data-testid="option-select-questionnaire-FRS2504A_EDIT"
                     selected=""
-                    value="FRS2504A"
+                    value="FRS2504A_EDIT"
                   >
                     FRS2504A (April 2025)
                   </option>
                   <option
-                    data-testid="option-select-questionnaire-FRS2505A"
-                    value="FRS2505A"
+                    data-testid="option-select-questionnaire-FRS2505A_EDIT"
+                    value="FRS2505A_EDIT"
                   >
                     FRS2505A (May 2025)
                   </option>
@@ -227,7 +227,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                     >
                       <dl
                         class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                        data-testid="FRS2504A-supervisor-Content"
+                        data-testid="FRS2504A_EDIT-supervisor-Content"
                         style="padding: 0px 0px 15px 5px;"
                         title="Questionnares"
                       >
@@ -287,8 +287,8 @@ exports[`Given there are surveys available in blaise should render the superviso
                   <br />
                   <table
                     class="ons-table"
-                    data-testid="FRS2504A-editor-table"
-                    id="FRS2504A-editor-table"
+                    data-testid="FRS2504A_EDIT-editor-table"
+                    id="FRS2504A_EDIT-editor-table"
                   >
                     <thead
                       class="ons-table__head"
@@ -329,25 +329,25 @@ exports[`Given there are surveys available in blaise should render the superviso
                         class="ons-table__row"
                       >
                         <td
-                          aria-label="FRS2504A-Editor"
+                          aria-label="FRS2504A_EDIT-Editor"
                           class="ons-table__cell"
                         >
                           Doctor Doom
                         </td>
                         <td
-                          aria-label="FRS2504A-NumberOfCasesAllocated"
+                          aria-label="FRS2504A_EDIT-NumberOfCasesAllocated"
                           class="ons-table__cell status"
                         >
                           10
                         </td>
                         <td
-                          aria-label="FRS2504A-NumberOfCasesCompleted"
+                          aria-label="FRS2504A_EDIT-NumberOfCasesCompleted"
                           class="ons-table__cell "
                         >
                           5
                         </td>
                         <td
-                          aria-label="FRS2504A-NumberOfCasesQueried"
+                          aria-label="FRS2504A_EDIT-NumberOfCasesQueried"
                           class="ons-table__cell "
                         >
                           0
@@ -357,25 +357,25 @@ exports[`Given there are surveys available in blaise should render the superviso
                         class="ons-table__row"
                       >
                         <td
-                          aria-label="FRS2504A-Editor"
+                          aria-label="FRS2504A_EDIT-Editor"
                           class="ons-table__cell"
                         >
                           Doctor Strange
                         </td>
                         <td
-                          aria-label="FRS2504A-NumberOfCasesAllocated"
+                          aria-label="FRS2504A_EDIT-NumberOfCasesAllocated"
                           class="ons-table__cell status"
                         >
                           15
                         </td>
                         <td
-                          aria-label="FRS2504A-NumberOfCasesCompleted"
+                          aria-label="FRS2504A_EDIT-NumberOfCasesCompleted"
                           class="ons-table__cell "
                         >
                           4
                         </td>
                         <td
-                          aria-label="FRS2504A-NumberOfCasesQueried"
+                          aria-label="FRS2504A_EDIT-NumberOfCasesQueried"
                           class="ons-table__cell "
                         >
                           1
@@ -385,25 +385,25 @@ exports[`Given there are surveys available in blaise should render the superviso
                         class="ons-table__row"
                       >
                         <td
-                          aria-label="FRS2504A-Editor"
+                          aria-label="FRS2504A_EDIT-Editor"
                           class="ons-table__cell"
                         >
                           Doctor Who
                         </td>
                         <td
-                          aria-label="FRS2504A-NumberOfCasesAllocated"
+                          aria-label="FRS2504A_EDIT-NumberOfCasesAllocated"
                           class="ons-table__cell status"
                         >
                           0
                         </td>
                         <td
-                          aria-label="FRS2504A-NumberOfCasesCompleted"
+                          aria-label="FRS2504A_EDIT-NumberOfCasesCompleted"
                           class="ons-table__cell "
                         >
                           0
                         </td>
                         <td
-                          aria-label="FRS2504A-NumberOfCasesQueried"
+                          aria-label="FRS2504A_EDIT-NumberOfCasesQueried"
                           class="ons-table__cell "
                         >
                           0
@@ -416,13 +416,13 @@ exports[`Given there are surveys available in blaise should render the superviso
                           class="ons-table__cell"
                         >
                           <a
-                            href="/questionnaires/FRS2504A/allocate"
+                            href="/questionnaires/FRS2504A_EDIT/allocate"
                           >
                             Allocate
                           </a>
                            | 
                           <a
-                            href="/questionnaires/FRS2504A/reallocate"
+                            href="/questionnaires/FRS2504A_EDIT/reallocate"
                           >
                             Reallocate
                           </a>
@@ -534,15 +534,15 @@ exports[`Given there are surveys available in blaise should render the superviso
                   Select an option
                 </option>
                 <option
-                  data-testid="option-select-questionnaire-FRS2504A"
+                  data-testid="option-select-questionnaire-FRS2504A_EDIT"
                   selected=""
-                  value="FRS2504A"
+                  value="FRS2504A_EDIT"
                 >
                   FRS2504A (April 2025)
                 </option>
                 <option
-                  data-testid="option-select-questionnaire-FRS2505A"
-                  value="FRS2505A"
+                  data-testid="option-select-questionnaire-FRS2505A_EDIT"
+                  value="FRS2505A_EDIT"
                 >
                   FRS2505A (May 2025)
                 </option>
@@ -563,7 +563,7 @@ exports[`Given there are surveys available in blaise should render the superviso
                   >
                     <dl
                       class="ons-metadata ons-metadata__list ons-grid ons-grid--gutterless ons-u-cf ons-u-mb-no"
-                      data-testid="FRS2504A-supervisor-Content"
+                      data-testid="FRS2504A_EDIT-supervisor-Content"
                       style="padding: 0px 0px 15px 5px;"
                       title="Questionnares"
                     >
@@ -623,8 +623,8 @@ exports[`Given there are surveys available in blaise should render the superviso
                 <br />
                 <table
                   class="ons-table"
-                  data-testid="FRS2504A-editor-table"
-                  id="FRS2504A-editor-table"
+                  data-testid="FRS2504A_EDIT-editor-table"
+                  id="FRS2504A_EDIT-editor-table"
                 >
                   <thead
                     class="ons-table__head"
@@ -665,25 +665,25 @@ exports[`Given there are surveys available in blaise should render the superviso
                       class="ons-table__row"
                     >
                       <td
-                        aria-label="FRS2504A-Editor"
+                        aria-label="FRS2504A_EDIT-Editor"
                         class="ons-table__cell"
                       >
                         Doctor Doom
                       </td>
                       <td
-                        aria-label="FRS2504A-NumberOfCasesAllocated"
+                        aria-label="FRS2504A_EDIT-NumberOfCasesAllocated"
                         class="ons-table__cell status"
                       >
                         10
                       </td>
                       <td
-                        aria-label="FRS2504A-NumberOfCasesCompleted"
+                        aria-label="FRS2504A_EDIT-NumberOfCasesCompleted"
                         class="ons-table__cell "
                       >
                         5
                       </td>
                       <td
-                        aria-label="FRS2504A-NumberOfCasesQueried"
+                        aria-label="FRS2504A_EDIT-NumberOfCasesQueried"
                         class="ons-table__cell "
                       >
                         0
@@ -693,25 +693,25 @@ exports[`Given there are surveys available in blaise should render the superviso
                       class="ons-table__row"
                     >
                       <td
-                        aria-label="FRS2504A-Editor"
+                        aria-label="FRS2504A_EDIT-Editor"
                         class="ons-table__cell"
                       >
                         Doctor Strange
                       </td>
                       <td
-                        aria-label="FRS2504A-NumberOfCasesAllocated"
+                        aria-label="FRS2504A_EDIT-NumberOfCasesAllocated"
                         class="ons-table__cell status"
                       >
                         15
                       </td>
                       <td
-                        aria-label="FRS2504A-NumberOfCasesCompleted"
+                        aria-label="FRS2504A_EDIT-NumberOfCasesCompleted"
                         class="ons-table__cell "
                       >
                         4
                       </td>
                       <td
-                        aria-label="FRS2504A-NumberOfCasesQueried"
+                        aria-label="FRS2504A_EDIT-NumberOfCasesQueried"
                         class="ons-table__cell "
                       >
                         1
@@ -721,25 +721,25 @@ exports[`Given there are surveys available in blaise should render the superviso
                       class="ons-table__row"
                     >
                       <td
-                        aria-label="FRS2504A-Editor"
+                        aria-label="FRS2504A_EDIT-Editor"
                         class="ons-table__cell"
                       >
                         Doctor Who
                       </td>
                       <td
-                        aria-label="FRS2504A-NumberOfCasesAllocated"
+                        aria-label="FRS2504A_EDIT-NumberOfCasesAllocated"
                         class="ons-table__cell status"
                       >
                         0
                       </td>
                       <td
-                        aria-label="FRS2504A-NumberOfCasesCompleted"
+                        aria-label="FRS2504A_EDIT-NumberOfCasesCompleted"
                         class="ons-table__cell "
                       >
                         0
                       </td>
                       <td
-                        aria-label="FRS2504A-NumberOfCasesQueried"
+                        aria-label="FRS2504A_EDIT-NumberOfCasesQueried"
                         class="ons-table__cell "
                       >
                         0
@@ -752,13 +752,13 @@ exports[`Given there are surveys available in blaise should render the superviso
                         class="ons-table__cell"
                       >
                         <a
-                          href="/questionnaires/FRS2504A/allocate"
+                          href="/questionnaires/FRS2504A_EDIT/allocate"
                         >
                           Allocate
                         </a>
                          | 
                         <a
-                          href="/questionnaires/FRS2504A/reallocate"
+                          href="/questionnaires/FRS2504A_EDIT/reallocate"
                         >
                           Reallocate
                         </a>

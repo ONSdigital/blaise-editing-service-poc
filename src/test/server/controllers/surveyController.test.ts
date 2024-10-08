@@ -39,25 +39,29 @@ describe('Get surveys tests', () => {
 
     const questionnaireDetailsListMockObject: QuestionnaireDetails[] = [
       {
-        questionnaireName: 'LMS2101_AA1',
+        questionnaireName: 'LMS2101_AA1_EDIT',
+        questionnaireDisplayName: 'LMS2101_AA1',
         numberOfCases: 3,
         fieldPeriod: 'January 2021',
         surveyTla: 'LMS',
       },
       {
-        questionnaireName: 'FRS2408B',
+        questionnaireName: 'FRS2408B_EDIT',
+        questionnaireDisplayName: 'FRS2408B',
         numberOfCases: 0,
         fieldPeriod: 'August 2024',
         surveyTla: 'FRS',
       },
       {
-        questionnaireName: 'FRS2504A',
+        questionnaireName: 'FRS2504A_EDIT',
+        questionnaireDisplayName: 'FRS2504A',
         numberOfCases: 1,
         fieldPeriod: 'April 2025',
         surveyTla: 'FRS',
       },
       {
-        questionnaireName: 'OPN2201A',
+        questionnaireName: 'OPN2201A_EDIT',
+        questionnaireDisplayName: 'OPN2201A',
         numberOfCases: 3,
         fieldPeriod: 'January 2022',
         surveyTla: 'OPN',
@@ -68,13 +72,15 @@ describe('Get surveys tests', () => {
       {
         name: 'FRS',
         questionnaires: [{
-          questionnaireName: 'FRS2408B',
+          questionnaireName: 'FRS2408B_EDIT',
+          questionnaireDisplayName: 'FRS2408B',
           numberOfCases: 0,
           fieldPeriod: 'August 2024',
           surveyTla: 'FRS',
         },
         {
-          questionnaireName: 'FRS2504A',
+          questionnaireName: 'FRS2504A_EDIT',
+          questionnaireDisplayName: 'FRS2504A',
           numberOfCases: 1,
           fieldPeriod: 'April 2025',
           surveyTla: 'FRS',

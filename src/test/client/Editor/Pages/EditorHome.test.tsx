@@ -73,7 +73,7 @@ describe('Given there are surveys available in blaise', () => {
         throw Error('No default questionnaire found');
       }
 
-      expect(questionnaireListView).toHaveTextContent(defaultQuestionnaire.questionnaireName);
+      expect(questionnaireListView).toHaveTextContent(defaultQuestionnaire.questionnaireDisplayName);
 
       const questionnaireView = view.getByTestId(`${defaultQuestionnaire.questionnaireName}-editorContent`);
       expect(questionnaireView).toHaveTextContent(String(defaultQuestionnaire.fieldPeriod));

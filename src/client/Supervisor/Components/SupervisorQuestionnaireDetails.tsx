@@ -4,23 +4,23 @@ import { useAsyncRequestWithThreeParams } from '../../Common/hooks/useAsyncReque
 import { getSupervisorEditorInformation } from '../../api/NodeApi';
 import AsyncContent from '../../Common/components/AsyncContent';
 import { SupervisorInformation } from '../../Interfaces/supervisorInterface';
-import SupervisorsContent from './SupervisorsContent';
+import SupervisorContent from './SupervisorContent';
 import UserRole from '../../Common/enums/UserTypes';
 
-interface SupervisorsQuestionnairesDetailsProps {
+interface SupervisorQuestionnairesDetailsProps {
   questionnaire: QuestionnaireDetails;
   supervisorRole: UserRole;
   editorRole: UserRole;
 }
 
-export default function SupervisorsQuestionnairesDetails({ questionnaire, supervisorRole, editorRole }: SupervisorsQuestionnairesDetailsProps): ReactElement {
+export default function SupervisorQuestionnairesDetails({ questionnaire, supervisorRole, editorRole }: SupervisorQuestionnairesDetailsProps): ReactElement {
   const supervisorInformation = useAsyncRequestWithThreeParams<SupervisorInformation, string, UserRole, UserRole>(getSupervisorEditorInformation, questionnaire.questionnaireName, supervisorRole, editorRole);
 
   return (
 
     <div className="questionnaire" data-testid="questionnaire">
       <AsyncContent content={supervisorInformation}>
-        {(loadedSupervisorInformation) => <SupervisorsContent supervisorInformation={loadedSupervisorInformation} questionnaire={questionnaire} />}
+        {(loadedSupervisorInformation) => <SupervisorContent supervisorInformation={loadedSupervisorInformation} questionnaire={questionnaire} />}
       </AsyncContent>
     </div>
   );

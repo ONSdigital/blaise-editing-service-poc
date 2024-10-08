@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import { User } from 'blaise-api-node-client';
 import UserRole from '../enums/UserTypes';
 import CreateRoutes from './CreateRoutes';
-import SupervisorsHome from '../../Supervisor/Pages/SupervisorsHome';
+import SupervisorHome from '../../Supervisor/Pages/SupervisorHome';
 import EditorHome from '../../Editor/Pages/EditorHome';
 import Allocate from '../../Supervisor/Pages/Allocate';
 import CaseSummary from '../../Editor/Pages/CaseSummary';
@@ -18,7 +18,7 @@ export default function AppContent({ user }: AppContentProps): ReactElement {
   return (
     <>
       <CreateRoutes onConditionThat={userRole === UserRole.SVT_Supervisor}>
-        <Route path="/" element={<SupervisorsHome user={user} />} />
+        <Route path="/" element={<SupervisorHome user={user} />} />
         <Route path="/questionnaires/:questionnaireName/allocate" element={<Allocate supervisorRole={UserRole.SVT_Supervisor} editorRole={UserRole.SVT_Editor} reallocate={false} />} />
         <Route path="/questionnaires/:questionnaireName/reallocate" element={<Allocate supervisorRole={UserRole.SVT_Supervisor} editorRole={UserRole.SVT_Editor} reallocate />} />
       </CreateRoutes>

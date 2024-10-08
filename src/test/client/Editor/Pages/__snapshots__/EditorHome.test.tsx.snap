@@ -198,15 +198,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                     Select an option
                   </option>
                   <option
-                    data-testid="option-select-questionnaire-FRS2504A"
+                    data-testid="option-select-questionnaire-FRS2504A_EDIT"
                     selected=""
-                    value="FRS2504A"
+                    value="FRS2504A_EDIT"
                   >
                     FRS2504A (April 2025)
                   </option>
                   <option
-                    data-testid="option-select-questionnaire-FRS2505A"
-                    value="FRS2505A"
+                    data-testid="option-select-questionnaire-FRS2505A_EDIT"
+                    value="FRS2505A_EDIT"
                   >
                     FRS2505A (May 2025)
                   </option>
@@ -218,7 +218,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
               >
                 <div
                   class="editorContent"
-                  data-testid="FRS2504A-editorContent"
+                  data-testid="FRS2504A_EDIT-editorContent"
                 >
                   <div
                     class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
@@ -314,8 +314,8 @@ exports[`Given there are surveys available in blaise should render the editor pa
                   </div>
                   <table
                     class="ons-table"
-                    data-testid="FRS2504A-Case-table"
-                    id="FRS2504A-Case-table"
+                    data-testid="FRS2504A_EDIT-Case-table"
+                    id="FRS2504A_EDIT-Case-table"
                   >
                     <thead
                       class="ons-table__head"
@@ -348,13 +348,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         class="ons-table__row"
                       >
                         <td
-                          aria-label="FRS2504A-CaseID"
+                          aria-label="FRS2504A_EDIT-CaseID"
                           class="ons-table__cell"
                         >
                           10001011
                         </td>
                         <td
-                          aria-label="FRS2504A-EditStatus"
+                          aria-label="FRS2504A_EDIT-EditStatus"
                           class="ons-table__cell status"
                         >
                           Completed
@@ -371,7 +371,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </span>
                            | 
                           <a
-                            href="/questionnaires/FRS2504A/cases/10001011/summary"
+                            href="/questionnaires/FRS2504A_EDIT/cases/10001011/summary"
                           >
                             View Summary
                           </a>
@@ -389,13 +389,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         class="ons-table__row"
                       >
                         <td
-                          aria-label="FRS2504A-CaseID"
+                          aria-label="FRS2504A_EDIT-CaseID"
                           class="ons-table__cell"
                         >
                           10001012
                         </td>
                         <td
-                          aria-label="FRS2504A-EditStatus"
+                          aria-label="FRS2504A_EDIT-EditStatus"
                           class="ons-table__cell status"
                         >
                           In progress
@@ -412,7 +412,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </span>
                            | 
                           <a
-                            href="/questionnaires/FRS2504A/cases/10001012/summary"
+                            href="/questionnaires/FRS2504A_EDIT/cases/10001012/summary"
                           >
                             View Summary
                           </a>
@@ -430,13 +430,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         class="ons-table__row"
                       >
                         <td
-                          aria-label="FRS2504A-CaseID"
+                          aria-label="FRS2504A_EDIT-CaseID"
                           class="ons-table__cell"
                         >
                           10001013
                         </td>
                         <td
-                          aria-label="FRS2504A-EditStatus"
+                          aria-label="FRS2504A_EDIT-EditStatus"
                           class="ons-table__cell status"
                         >
                           Not started
@@ -453,7 +453,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </span>
                            | 
                           <a
-                            href="/questionnaires/FRS2504A/cases/10001013/summary"
+                            href="/questionnaires/FRS2504A_EDIT/cases/10001013/summary"
                           >
                             View Summary
                           </a>
@@ -471,13 +471,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         class="ons-table__row"
                       >
                         <td
-                          aria-label="FRS2504A-CaseID"
+                          aria-label="FRS2504A_EDIT-CaseID"
                           class="ons-table__cell"
                         >
                           10001014
                         </td>
                         <td
-                          aria-label="FRS2504A-EditStatus"
+                          aria-label="FRS2504A_EDIT-EditStatus"
                           class="ons-table__cell status"
                         >
                           Completed
@@ -494,7 +494,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </span>
                            | 
                           <a
-                            href="/questionnaires/FRS2504A/cases/10001014/summary"
+                            href="/questionnaires/FRS2504A_EDIT/cases/10001014/summary"
                           >
                             View Summary
                           </a>
@@ -512,13 +512,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         class="ons-table__row"
                       >
                         <td
-                          aria-label="FRS2504A-CaseID"
+                          aria-label="FRS2504A_EDIT-CaseID"
                           class="ons-table__cell"
                         >
                           10001015
                         </td>
                         <td
-                          aria-label="FRS2504A-EditStatus"
+                          aria-label="FRS2504A_EDIT-EditStatus"
                           class="ons-table__cell status"
                         >
                           Completed
@@ -535,7 +535,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           </span>
                            | 
                           <a
-                            href="/questionnaires/FRS2504A/cases/10001015/summary"
+                            href="/questionnaires/FRS2504A_EDIT/cases/10001015/summary"
                           >
                             View Summary
                           </a>
@@ -646,15 +646,15 @@ exports[`Given there are surveys available in blaise should render the editor pa
                   Select an option
                 </option>
                 <option
-                  data-testid="option-select-questionnaire-FRS2504A"
+                  data-testid="option-select-questionnaire-FRS2504A_EDIT"
                   selected=""
-                  value="FRS2504A"
+                  value="FRS2504A_EDIT"
                 >
                   FRS2504A (April 2025)
                 </option>
                 <option
-                  data-testid="option-select-questionnaire-FRS2505A"
-                  value="FRS2505A"
+                  data-testid="option-select-questionnaire-FRS2505A_EDIT"
+                  value="FRS2505A_EDIT"
                 >
                   FRS2505A (May 2025)
                 </option>
@@ -666,7 +666,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
             >
               <div
                 class="editorContent"
-                data-testid="FRS2504A-editorContent"
+                data-testid="FRS2504A_EDIT-editorContent"
               >
                 <div
                   class="ons-panel ons-panel--info ons-panel--no-title  ons-u-mt-m"
@@ -762,8 +762,8 @@ exports[`Given there are surveys available in blaise should render the editor pa
                 </div>
                 <table
                   class="ons-table"
-                  data-testid="FRS2504A-Case-table"
-                  id="FRS2504A-Case-table"
+                  data-testid="FRS2504A_EDIT-Case-table"
+                  id="FRS2504A_EDIT-Case-table"
                 >
                   <thead
                     class="ons-table__head"
@@ -796,13 +796,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       class="ons-table__row"
                     >
                       <td
-                        aria-label="FRS2504A-CaseID"
+                        aria-label="FRS2504A_EDIT-CaseID"
                         class="ons-table__cell"
                       >
                         10001011
                       </td>
                       <td
-                        aria-label="FRS2504A-EditStatus"
+                        aria-label="FRS2504A_EDIT-EditStatus"
                         class="ons-table__cell status"
                       >
                         Completed
@@ -819,7 +819,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         </span>
                          | 
                         <a
-                          href="/questionnaires/FRS2504A/cases/10001011/summary"
+                          href="/questionnaires/FRS2504A_EDIT/cases/10001011/summary"
                         >
                           View Summary
                         </a>
@@ -837,13 +837,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       class="ons-table__row"
                     >
                       <td
-                        aria-label="FRS2504A-CaseID"
+                        aria-label="FRS2504A_EDIT-CaseID"
                         class="ons-table__cell"
                       >
                         10001012
                       </td>
                       <td
-                        aria-label="FRS2504A-EditStatus"
+                        aria-label="FRS2504A_EDIT-EditStatus"
                         class="ons-table__cell status"
                       >
                         In progress
@@ -860,7 +860,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         </span>
                          | 
                         <a
-                          href="/questionnaires/FRS2504A/cases/10001012/summary"
+                          href="/questionnaires/FRS2504A_EDIT/cases/10001012/summary"
                         >
                           View Summary
                         </a>
@@ -878,13 +878,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       class="ons-table__row"
                     >
                       <td
-                        aria-label="FRS2504A-CaseID"
+                        aria-label="FRS2504A_EDIT-CaseID"
                         class="ons-table__cell"
                       >
                         10001013
                       </td>
                       <td
-                        aria-label="FRS2504A-EditStatus"
+                        aria-label="FRS2504A_EDIT-EditStatus"
                         class="ons-table__cell status"
                       >
                         Not started
@@ -901,7 +901,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         </span>
                          | 
                         <a
-                          href="/questionnaires/FRS2504A/cases/10001013/summary"
+                          href="/questionnaires/FRS2504A_EDIT/cases/10001013/summary"
                         >
                           View Summary
                         </a>
@@ -919,13 +919,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       class="ons-table__row"
                     >
                       <td
-                        aria-label="FRS2504A-CaseID"
+                        aria-label="FRS2504A_EDIT-CaseID"
                         class="ons-table__cell"
                       >
                         10001014
                       </td>
                       <td
-                        aria-label="FRS2504A-EditStatus"
+                        aria-label="FRS2504A_EDIT-EditStatus"
                         class="ons-table__cell status"
                       >
                         Completed
@@ -942,7 +942,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         </span>
                          | 
                         <a
-                          href="/questionnaires/FRS2504A/cases/10001014/summary"
+                          href="/questionnaires/FRS2504A_EDIT/cases/10001014/summary"
                         >
                           View Summary
                         </a>
@@ -960,13 +960,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                       class="ons-table__row"
                     >
                       <td
-                        aria-label="FRS2504A-CaseID"
+                        aria-label="FRS2504A_EDIT-CaseID"
                         class="ons-table__cell"
                       >
                         10001015
                       </td>
                       <td
-                        aria-label="FRS2504A-EditStatus"
+                        aria-label="FRS2504A_EDIT-EditStatus"
                         class="ons-table__cell status"
                       >
                         Completed
@@ -983,7 +983,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                         </span>
                          | 
                         <a
-                          href="/questionnaires/FRS2504A/cases/10001015/summary"
+                          href="/questionnaires/FRS2504A_EDIT/cases/10001015/summary"
                         >
                           View Summary
                         </a>

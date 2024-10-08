@@ -4,8 +4,8 @@ import { User } from 'blaise-api-node-client';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
 import Option from '../../Interfaces/controlsInterface';
 import UserRole from '../enums/UserTypes';
-import SupervisorsQuestionnaireDetails from '../../Supervisor/Components/SupervisorsQuestionnaireDetails';
-import EditorsQuestionnaireDetails from '../../Editor/Components/EditorsQuestionnaireDetails';
+import SupervisorQuestionnaireDetails from '../../Supervisor/Components/SupervisorQuestionnaireDetails';
+import EditorQuestionnaireDetails from '../../Editor/Components/EditorQuestionnaireDetails';
 import ErrorPanel from './ErrorPanel';
 
 interface QuestionnairesListProps {
@@ -17,11 +17,11 @@ function RenderQuestionnaireDetails(user:User, questionnaire:QuestionnaireDetail
   const { role, name } = user;
 
   if (role === UserRole.SVT_Supervisor) {
-    return <SupervisorsQuestionnaireDetails questionnaire={questionnaire} supervisorRole={UserRole.SVT_Supervisor} editorRole={UserRole.SVT_Editor} />;
+    return <SupervisorQuestionnaireDetails questionnaire={questionnaire} supervisorRole={UserRole.SVT_Supervisor} editorRole={UserRole.SVT_Editor} />;
   }
 
   if (role === UserRole.SVT_Editor) {
-    return <EditorsQuestionnaireDetails questionnaire={questionnaire} username={name} editorRole={UserRole.SVT_Editor} />;
+    return <EditorQuestionnaireDetails questionnaire={questionnaire} username={name} editorRole={UserRole.SVT_Editor} />;
   }
 
   return <ErrorPanel message={`User role ${role} not recognised`} />;
@@ -32,7 +32,7 @@ function getquestionnaireOptions(questionnaires: QuestionnaireDetails[]): Option
 
   questionnaires.forEach((questionnaire) => {
     options.push({
-      label: `${questionnaire.questionnaireName} (${questionnaire.fieldPeriod})`,
+      label: `${questionnaire.questionnaireDisplayName} (${questionnaire.fieldPeriod})`,
       value: questionnaire.questionnaireName,
     });
   });

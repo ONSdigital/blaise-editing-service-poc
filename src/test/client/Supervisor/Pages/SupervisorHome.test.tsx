@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import userMockObject from '../../../server/mockObjects/userMockObject';
 import { getSupervisorEditorInformation, getSurveys } from '../../../../client/api/NodeApi';
 import { Survey } from '../../../../common/interfaces/surveyInterface';
-import SupervisorsHome from '../../../../client/Supervisor/Pages/SupervisorsHome';
+import SupervisorHome from '../../../../client/Supervisor/Pages/SupervisorHome';
 import { SupervisorInformation } from '../../../../client/Interfaces/supervisorInterface';
 import UserRole from '../../../../client/Common/enums/UserTypes';
 import FilteredSurveyListMockObject from '../../MockObjects/SurveyMockObjects';
@@ -39,7 +39,7 @@ describe('Given there are surveys available in blaise', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <SupervisorsHome user={user} />
+          <SupervisorHome user={user} />
         </BrowserRouter>,
       );
     });
@@ -57,7 +57,7 @@ describe('Given there are surveys available in blaise', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <SupervisorsHome user={user} />
+          <SupervisorHome user={user} />
         </BrowserRouter>,
       );
     });
@@ -76,7 +76,7 @@ describe('Given there are surveys available in blaise', () => {
 
       const defaultQuestionnaireName = defaultQuestionnaire.questionnaireName;
 
-      expect(questionnaireListView).toHaveTextContent(defaultQuestionnaireName);
+      expect(questionnaireListView).toHaveTextContent(defaultQuestionnaire.questionnaireDisplayName);
 
       const questionnaireView = view.getByTestId(`${defaultQuestionnaireName}-supervisor-Content`);
       expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject1.TotalNumberOfCases));
@@ -117,7 +117,7 @@ describe('Given there are no surveys available in blaise', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <SupervisorsHome user={user} />
+          <SupervisorHome user={user} />
         </BrowserRouter>,
       );
     });
@@ -135,7 +135,7 @@ describe('Given there are no surveys available in blaise', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <SupervisorsHome user={user} />
+          <SupervisorHome user={user} />
         </BrowserRouter>,
       );
     });
@@ -164,7 +164,7 @@ describe('Given there the blaise rest api is not available', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <SupervisorsHome user={user} />
+          <SupervisorHome user={user} />
         </BrowserRouter>,
       );
     });
@@ -183,7 +183,7 @@ describe('Given there the blaise rest api is not available', () => {
     await act(async () => {
       view = render(
         <BrowserRouter>
-          <SupervisorsHome user={user} />
+          <SupervisorHome user={user} />
         </BrowserRouter>,
       );
     });
