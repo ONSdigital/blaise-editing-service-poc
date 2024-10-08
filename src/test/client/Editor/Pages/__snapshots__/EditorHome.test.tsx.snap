@@ -367,13 +367,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             id="download-10001011-summary"
                             role="presentation"
                           >
-                            Download Summary
+                            Download case summary
                           </span>
                            | 
                           <a
                             href="/questionnaires/FRS2504A_EDIT/cases/10001011/summary"
                           >
-                            View Summary
+                            View case summary
                           </a>
                            | 
                           <a
@@ -381,7 +381,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             rel="noopener noreferrer"
                             target="_blank"
                           >
-                            Edit
+                            Edit case
                           </a>
                         </td>
                       </tr>
@@ -408,13 +408,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             id="download-10001012-summary"
                             role="presentation"
                           >
-                            Download Summary
+                            Download case summary
                           </span>
                            | 
                           <a
                             href="/questionnaires/FRS2504A_EDIT/cases/10001012/summary"
                           >
-                            View Summary
+                            View case summary
                           </a>
                            | 
                           <a
@@ -422,7 +422,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             rel="noopener noreferrer"
                             target="_blank"
                           >
-                            Edit
+                            Edit case
                           </a>
                         </td>
                       </tr>
@@ -449,13 +449,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             id="download-10001013-summary"
                             role="presentation"
                           >
-                            Download Summary
+                            Download case summary
                           </span>
                            | 
                           <a
                             href="/questionnaires/FRS2504A_EDIT/cases/10001013/summary"
                           >
-                            View Summary
+                            View case summary
                           </a>
                            | 
                           <a
@@ -463,7 +463,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             rel="noopener noreferrer"
                             target="_blank"
                           >
-                            Edit
+                            Edit case
                           </a>
                         </td>
                       </tr>
@@ -490,13 +490,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             id="download-10001014-summary"
                             role="presentation"
                           >
-                            Download Summary
+                            Download case summary
                           </span>
                            | 
                           <a
                             href="/questionnaires/FRS2504A_EDIT/cases/10001014/summary"
                           >
-                            View Summary
+                            View case summary
                           </a>
                            | 
                           <a
@@ -504,7 +504,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             rel="noopener noreferrer"
                             target="_blank"
                           >
-                            Edit
+                            Edit case
                           </a>
                         </td>
                       </tr>
@@ -531,13 +531,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             id="download-10001015-summary"
                             role="presentation"
                           >
-                            Download Summary
+                            Download case summary
                           </span>
                            | 
                           <a
                             href="/questionnaires/FRS2504A_EDIT/cases/10001015/summary"
                           >
-                            View Summary
+                            View case summary
                           </a>
                            | 
                           <a
@@ -545,7 +545,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                             rel="noopener noreferrer"
                             target="_blank"
                           >
-                            Edit
+                            Edit case
                           </a>
                         </td>
                       </tr>
@@ -815,13 +815,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           id="download-10001011-summary"
                           role="presentation"
                         >
-                          Download Summary
+                          Download case summary
                         </span>
                          | 
                         <a
                           href="/questionnaires/FRS2504A_EDIT/cases/10001011/summary"
                         >
-                          View Summary
+                          View case summary
                         </a>
                          | 
                         <a
@@ -829,7 +829,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           rel="noopener noreferrer"
                           target="_blank"
                         >
-                          Edit
+                          Edit case
                         </a>
                       </td>
                     </tr>
@@ -856,13 +856,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           id="download-10001012-summary"
                           role="presentation"
                         >
-                          Download Summary
+                          Download case summary
                         </span>
                          | 
                         <a
                           href="/questionnaires/FRS2504A_EDIT/cases/10001012/summary"
                         >
-                          View Summary
+                          View case summary
                         </a>
                          | 
                         <a
@@ -870,7 +870,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           rel="noopener noreferrer"
                           target="_blank"
                         >
-                          Edit
+                          Edit case
                         </a>
                       </td>
                     </tr>
@@ -897,13 +897,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           id="download-10001013-summary"
                           role="presentation"
                         >
-                          Download Summary
+                          Download case summary
                         </span>
                          | 
                         <a
                           href="/questionnaires/FRS2504A_EDIT/cases/10001013/summary"
                         >
-                          View Summary
+                          View case summary
                         </a>
                          | 
                         <a
@@ -911,7 +911,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           rel="noopener noreferrer"
                           target="_blank"
                         >
-                          Edit
+                          Edit case
                         </a>
                       </td>
                     </tr>
@@ -938,13 +938,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           id="download-10001014-summary"
                           role="presentation"
                         >
-                          Download Summary
+                          Download case summary
                         </span>
                          | 
                         <a
                           href="/questionnaires/FRS2504A_EDIT/cases/10001014/summary"
                         >
-                          View Summary
+                          View case summary
                         </a>
                          | 
                         <a
@@ -952,7 +952,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           rel="noopener noreferrer"
                           target="_blank"
                         >
-                          Edit
+                          Edit case
                         </a>
                       </td>
                     </tr>
@@ -979,13 +979,13 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           id="download-10001015-summary"
                           role="presentation"
                         >
-                          Download Summary
+                          Download case summary
                         </span>
                          | 
                         <a
                           href="/questionnaires/FRS2504A_EDIT/cases/10001015/summary"
                         >
-                          View Summary
+                          View case summary
                         </a>
                          | 
                         <a
@@ -993,7 +993,7 @@ exports[`Given there are surveys available in blaise should render the editor pa
                           rel="noopener noreferrer"
                           target="_blank"
                         >
-                          Edit
+                          Edit case
                         </a>
                       </td>
                     </tr>

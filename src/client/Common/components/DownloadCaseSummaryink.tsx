@@ -76,7 +76,7 @@ export function DownloadCaseSummaryLink({ caseId }: Props) {
       onKeyDown={() => { exportSummary(caseId); }}
       role="presentation"
     >
-      Download Summary
+      Download case summary
     </span>
   );
 }

@@ -83,9 +83,9 @@ export default function EditorContent({ editorInformation, questionnaire }: Edit
               <td className="ons-table__cell links">
                 <DownloadCaseSummaryLink caseId={caseDetails.CaseId} />
                 {' | '}
-                <Link to={`/questionnaires/${questionnaire.questionnaireName}/cases/${caseDetails.CaseId}/summary`}>View Summary</Link>
+                <Link to={`/questionnaires/${questionnaire.questionnaireName}/cases/${caseDetails.CaseId}/summary`}>View case summary</Link>
                 {' | '}
-                <Link to={caseDetails.EditUrl} target="_blank" rel="noopener noreferrer">Edit</Link>
+                <Link to={caseDetails.EditUrl} target="_blank" rel="noopener noreferrer">Edit case</Link>
               </td>
             </tr>
           ))}
