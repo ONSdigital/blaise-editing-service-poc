@@ -7,6 +7,7 @@ import UserRole from '../enums/UserTypes';
 import SupervisorQuestionnaireDetails from '../../Supervisor/Components/SupervisorQuestionnaireDetails';
 import EditorQuestionnaireDetails from '../../Editor/Components/EditorQuestionnaireDetails';
 import ErrorPanel from './ErrorPanel';
+import questionnaireDisplayName from '../functions/QuestionnaireFunctions';
 
 interface QuestionnairesListProps {
   questionnaires: QuestionnaireDetails[];
@@ -32,7 +33,7 @@ function getquestionnaireOptions(questionnaires: QuestionnaireDetails[]): Option
 
   questionnaires.forEach((questionnaire) => {
     options.push({
-      label: `${questionnaire.questionnaireName} (${questionnaire.fieldPeriod})`,
+      label: `${questionnaireDisplayName(questionnaire.questionnaireName)} (${questionnaire.fieldPeriod})`,
       value: questionnaire.questionnaireName,
     });
   });

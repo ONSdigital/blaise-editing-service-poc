@@ -6,7 +6,7 @@ import ErrorPanel from '../../Common/components/ErrorPanel';
 import SuccessPanel from '../../Common/components/SuccessPanel';
 import AllocateContent from '../Components/AllocateContent';
 import { Message } from '../../Common/types/MessageType';
-
+import questionnaireDisplayName from '../../Common/functions/QuestionnaireFunctions';
 
 interface AllocateProps {
   supervisorRole: UserRole;
@@ -37,7 +37,7 @@ export default function Allocate({ supervisorRole, editorRole, reallocate } : Al
       {message.show && message.type === 'success' && <SuccessPanel message={message.text} setMessage={setMessage} /> }
 
       <br />
-      <h3>{questionnaireName}</h3>
+      <h3>{questionnaireDisplayName(questionnaireName)}</h3>
 
       <AllocateContent questionnaireName={questionnaireName} supervisorRole={supervisorRole} editorRole={editorRole} reallocate={reallocate} setMessage={setMessage} />
     </>
