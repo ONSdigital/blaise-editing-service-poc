@@ -58,8 +58,8 @@ describe('getQuestionnaires from Blaise', () => {
         dataRecordCount: 0,
         hasData: false,
         active: false,
-      }      
-    ]
+      },
+    ];
 
     blaiseApiClientMock.setup((client) => client.getQuestionnaires(configFake.ServerPark)).returns(async () => questionnaireList);
 

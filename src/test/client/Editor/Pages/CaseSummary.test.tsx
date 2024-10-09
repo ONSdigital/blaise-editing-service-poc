@@ -22,7 +22,7 @@ const caseSummaryDetailsMockObject: CaseSummaryDetails = {
     Status: 'Conventional',
     NumberOfBedrooms: '2',
     ReceiptOfHousingBenefit: '380',
-    PeriodCode: '380',
+    PeriodCode: 'One week',
     CouncilTaxBand: 'Band A',
     BusinessRoom: true,
     SelfEmployed: true,

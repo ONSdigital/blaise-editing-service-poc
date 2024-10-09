@@ -26,6 +26,25 @@ const HouseStatus: Record<number, string> = {
   3: 'n/a',
 };
 
+const BenefitPeriod: Record<number, string> = {
+  1: 'One week',
+  2: 'Two weeks',
+  3: 'Three weeks',
+  4: 'Four weeks',
+  5: 'calendar month',
+  7: 'Two calendar months',
+  8: 'Eight times a year',
+  9: 'Nine times a year',
+  10: 'Ten times a year',
+  13: 'Three months/13 weeks',
+  24: 'Twice a month',
+  26: 'Six months/26 weeks',
+  52: 'One year/12 months/52 weeks',
+  90: 'Less than one week',
+  95: 'One off/lump sum',
+  97: 'Unknown',
+};
+
 const CouncilTaxBand: Record<number, string> = {
   1: 'Band A',
   2: 'Band B',
@@ -56,7 +75,7 @@ const MartitalStatus: Record<number, string> = {
   9: 'CPW',
 };
 
-function GetHousingBenefit(caseResponse: CaseResponse): string {
+function GetHousingBenefitAmount(caseResponse: CaseResponse): string {
   let housingBenefit = 'n/a';
   for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
     for (let person = 1; person <= 2; person += 1) {
@@ -68,6 +87,20 @@ function GetHousingBenefit(caseResponse: CaseResponse): string {
   }
 
   return housingBenefit.substring(0, 6);
+}
+
+function GetHousingBenefitPeriod(caseResponse: CaseResponse): string {
+  let housingBenefitPeriod = 'n/a';
+  for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
+    for (let person = 1; person <= 2; person += 1) {
+      const benefitAmount = caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${person}].HBenAmt`];
+      if (Number(benefitAmount) > 0) {
+        housingBenefitPeriod = BenefitPeriod[Number(caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${person}].HBenPd`])] ?? '';
+      }
+    }
+  }
+
+  return housingBenefitPeriod;
 }
 
 function HasBusinessRoom(caseResponse: CaseResponse): boolean {
@@ -155,7 +188,8 @@ function GetRelationshipMatrix(caseResponse: CaseResponse, respondentNumber: num
 }
 
 export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummaryDetails {
-  const housingBenefit = GetHousingBenefit(caseResponse);
+  const housingBenefitAmount = GetHousingBenefitAmount(caseResponse);
+  const housingBenefitPeriod = GetHousingBenefitPeriod(caseResponse);
   const businessRoom = HasBusinessRoom(caseResponse);
   const selfEmployedMembers = GetSelfEmployedMembers(caseResponse);
   const jsaPeople = GetJsaPeople(caseResponse);
@@ -175,8 +209,8 @@ export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummaryD
       FloorNumber: caseResponse.fieldData['qhAdmin.QObsSheet.FloorN'],
       Status: HouseStatus[Number(caseResponse.fieldData['QAccomdat.HHStat'])] ?? '',
       NumberOfBedrooms: caseResponse.fieldData['QAccomdat.Bedroom'],
-      ReceiptOfHousingBenefit: housingBenefit,
-      PeriodCode: housingBenefit,
+      ReceiptOfHousingBenefit: housingBenefitAmount,
+      PeriodCode: housingBenefitPeriod,
       CouncilTaxBand: CouncilTaxBand[Number(caseResponse.fieldData['QCounTax.CTBand'])] ?? 'Blank',
       BusinessRoom: businessRoom,
       SelfEmployed: selfEmployedMembers.length > 0,
