@@ -15,7 +15,7 @@ export default function mapCaseSummaryText(caseSummary: CaseSummaryDetails): str
 
   let caseSummaryText = '';
   caseSummaryText += '\n';
-  caseSummaryText += `${PadString('Fact Sheet', 255)}\n`;
+  caseSummaryText += 'Fact Sheet\n';
   caseSummaryText += '\n';
   caseSummaryText += '\n';
   caseSummaryText += `Case ID:            ${caseSummary.CaseId}\n`;
