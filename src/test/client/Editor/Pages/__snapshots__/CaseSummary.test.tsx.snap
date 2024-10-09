@@ -360,7 +360,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
           <dd
             class="ons-metadata__value ons-grid__col ons-col-9@m"
           >
-            Yes - H/H members: 2
+            Yes - H/H members: 1
           </dd>
         </dl>
       </div>
@@ -722,7 +722,7 @@ exports[`Given there is a case available in blaise for a questionnaire should di
         <dd
           class="ons-metadata__value ons-grid__col ons-col-9@m"
         >
-          Yes - H/H members: 2
+          Yes - H/H members: 1
         </dd>
       </dl>
     </div>

@@ -158,7 +158,7 @@ function GetJsaPeople(caseResponse: CaseResponse): string[] {
       for (let person = 1; person <= 2; person += 1) {
         if (caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QWageBen.Adult[${person}].JSAType`] === '2'
           || caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QWageBen.Adult[${person}].JSAType`] === '3') {
-          jsaPeople.push(caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QWageBen.Adult[${person}].JSAType`]);
+          jsaPeople.push(caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QWageBen.Adult[${person}].Persid`]);
         }
       }
     }

@@ -30,7 +30,7 @@ async function getCaseSummary(caseid: string) {
       IncomeSupport: true,
       IncomeSupportMembers: ['1'],
       IncomeBasedJaSupport: true,
-      IncomeBasedJaSupportMembers: ['2'],
+      IncomeBasedJaSupportMembers: ['1'],
     },
     Respondents: [
       {

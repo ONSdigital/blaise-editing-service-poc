@@ -87,7 +87,7 @@ describe('Map case response to case summary', () => {
         IncomeSupport: true,
         IncomeSupportMembers: ['1'],
         IncomeBasedJaSupport: true,
-        IncomeBasedJaSupportMembers: ['2'],
+        IncomeBasedJaSupportMembers: ['1'],
       },
       Respondents: [
         {
@@ -597,45 +597,51 @@ describe('Map case response to case summary', () => {
   });
 
   it.each([
-    ['1', '1', '2'],
-    ['4', '2', '3'],
-    ['7', '1', '2'],
-  ])('It should return true for IncomeBasedJaSupport with a list of income based Ja members when there is only one set', (benefitUnitToSet: string, adultToSet: string, JsaTypeToSet: string) => {
+    ['1', '1', '2', '1'],
+    ['4', '2', '3', '8'],
+    ['7', '1', '2', '13'],
+  ])('It should return true for IncomeBasedJaSupport with a list of income based Ja members when there is only one set', (benefitUnitToSet: string, adultToSet: string, JsaTypeToSet: string, personIdToSet: string) => {
     // arrange
     SetFieldsToValue(caseResponseData, '.QBUId.BUNum', '');
     SetFieldsToValue(caseResponseData, '.JSAType', '');
+    SetFieldsToValue(caseResponseData, '.Persid', '');
 
     caseResponseData.fieldData[`BU[${benefitUnitToSet}].QBUId.BUNum`] = '1';
     caseResponseData.fieldData[`BU[${benefitUnitToSet}].QBenefit.QWageBen.Adult[${adultToSet}].JSAType`] = `${JsaTypeToSet}`;
+    caseResponseData.fieldData[`BU[${benefitUnitToSet}].QBenefit.QWageBen.Adult[${adultToSet}].Persid`] = `${personIdToSet}`;
 
     // act
     const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.IncomeBasedJaSupport).toEqual(true);
-    expect(result.Household.IncomeBasedJaSupportMembers).toEqual([JsaTypeToSet]);
+    expect(result.Household.IncomeBasedJaSupportMembers).toEqual([personIdToSet]);
   });
 
   it('It should return true for IncomeBasedJaSupport with a list of income based Ja members when there are multiple set', () => {
     // arrange
     SetFieldsToValue(caseResponseData, '.QBUId.BUNum', '');
     SetFieldsToValue(caseResponseData, '.JSAType', '');
+    SetFieldsToValue(caseResponseData, '.Persid', '');
 
     caseResponseData.fieldData['BU[1].QBUId.BUNum'] = '1';
     caseResponseData.fieldData['BU[1].QBenefit.QWageBen.Adult[1].JSAType'] = '2';
+    caseResponseData.fieldData['BU[1].QBenefit.QWageBen.Adult[1].Persid'] = '1';
 
     caseResponseData.fieldData['BU[4].QBUId.BUNum'] = '1';
     caseResponseData.fieldData['BU[4].QBenefit.QWageBen.Adult[2].JSAType'] = '3';
+    caseResponseData.fieldData['BU[4].QBenefit.QWageBen.Adult[2].Persid'] = '8';
 
     caseResponseData.fieldData['BU[7].QBUId.BUNum'] = '1';
     caseResponseData.fieldData['BU[7].QBenefit.QWageBen.Adult[1].JSAType'] = '2';
+    caseResponseData.fieldData['BU[7].QBenefit.QWageBen.Adult[1].Persid'] = '13';
 
     // act
     const result = mapCaseSummary(caseResponseData);
 
     // assert
     expect(result.Household.IncomeBasedJaSupport).toEqual(true);
-    expect(result.Household.IncomeBasedJaSupportMembers).toEqual(['2', '3', '2']);
+    expect(result.Household.IncomeBasedJaSupportMembers).toEqual(['1', '8', '13']);
   });
 
   it('It should return false for IncomeBasedJaSupport with an empty list when there are none set', () => {
