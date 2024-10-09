@@ -14,6 +14,10 @@ export default function mapCaseSummaryText(caseSummary: CaseSummaryDetails): str
   const nameColumnWidth = Math.max(maxNameLength, 4) + 2;
 
   let caseSummaryText = '';
+  caseSummaryText += '\n';
+  caseSummaryText += `${PadString('Fact Sheet', 255)}\n`;
+  caseSummaryText += '\n';
+  caseSummaryText += '\n';
   caseSummaryText += `Case ID:            ${caseSummary.CaseId}\n`;
   caseSummaryText += `Outcome:            ${caseSummary.OutcomeCode}\n`;
   caseSummaryText += `Interview date:     ${caseSummary.InterviewDate.toDateString()}\n`;
