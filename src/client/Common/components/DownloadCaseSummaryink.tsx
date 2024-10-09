@@ -63,7 +63,7 @@ async function exportSummary(caseId: string) {
   const link = document.createElement('a');
   link.download = fileName;
   fileContent = fileContent.replace(/\n/g, '%0D%0A');
-  link.href = `data:text/plain, ${fileContent}`;
+  link.href = `data:text/plain,${fileContent}`;
   link.click();
 }
 

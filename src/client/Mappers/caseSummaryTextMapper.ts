@@ -47,16 +47,16 @@ export default function mapCaseSummaryText(caseSummary: CaseSummaryDetails): str
 
   caseSummaryText += '\n';
 
-  caseSummaryText += `Accommodation type: Main:    ${caseSummary.Household.Accommodation.Main}    Type: ${caseSummary.Household.Accommodation.Type}\n`;
+  caseSummaryText += `Accommodation type: Main:    ${caseSummary.Household.Accommodation.Main}  -  Type: ${caseSummary.Household.Accommodation.Type}\n`;
   caseSummaryText += `Floor number:                ${caseSummary.Household.FloorNumber}\n`;
   caseSummaryText += `Household status:            ${caseSummary.Household.Status}\n`;
   caseSummaryText += `Number of bedrooms:          ${caseSummary.Household.NumberOfBedrooms}\n`;
-  caseSummaryText += `Receipt of housing benefits: ${caseSummary.Household.ReceiptOfHousingBenefit}    Period Code: ${caseSummary.Household.PeriodCode}\n`;
+  caseSummaryText += `Receipt of housing benefits: ${caseSummary.Household.ReceiptOfHousingBenefit}  -  Period Code: ${caseSummary.Household.PeriodCode}\n`;
   caseSummaryText += `Council tax band:            ${caseSummary.Household.CouncilTaxBand}\n`;
   caseSummaryText += `Business room:               ${(caseSummary.Household.BusinessRoom) ? 'Yes' : 'No'}\n`;
-  caseSummaryText += `Anyone self employed:        ${(caseSummary.Household.SelfEmployed) ? `Yes    H/H members: ${caseSummary.Household.SelfEmployedMembers.join(', ')}` : 'No'}\n`;
-  caseSummaryText += `Income support recieved now: ${(caseSummary.Household.IncomeSupport) ? `Yes    H/H members: ${caseSummary.Household.IncomeSupportMembers.join(', ')}` : 'No'}\n`;
-  caseSummaryText += `Income-based JA recieved:    ${(caseSummary.Household.IncomeBasedJaSupport) ? `Yes    H/H members: ${caseSummary.Household.IncomeBasedJaSupportMembers.join(', ')}` : 'No'}`;
+  caseSummaryText += `Anyone self employed:        ${(caseSummary.Household.SelfEmployed) ? `Yes  -  H/H members: ${caseSummary.Household.SelfEmployedMembers.join(', ')}` : 'No'}\n`;
+  caseSummaryText += `Income support recieved now: ${(caseSummary.Household.IncomeSupport) ? `Yes  -  H/H members: ${caseSummary.Household.IncomeSupportMembers.join(', ')}` : 'No'}\n`;
+  caseSummaryText += `Income-based JA recieved:    ${(caseSummary.Household.IncomeBasedJaSupport) ? `Yes  -  H/H members: ${caseSummary.Household.IncomeBasedJaSupportMembers.join(', ')}` : 'No'}`;
 
   return caseSummaryText;
 }
