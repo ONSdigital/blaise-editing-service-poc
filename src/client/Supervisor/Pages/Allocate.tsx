@@ -7,6 +7,7 @@ import SuccessPanel from '../../Common/components/SuccessPanel';
 import AllocateContent from '../Components/AllocateContent';
 import { Message } from '../../Common/types/MessageType';
 
+
 interface AllocateProps {
   supervisorRole: UserRole;
   editorRole: UserRole;
@@ -19,7 +20,6 @@ export type AllocateParams = {
 
 export default function Allocate({ supervisorRole, editorRole, reallocate } : AllocateProps): ReactElement {
   const { questionnaireName } = useParams<keyof AllocateParams>() as AllocateParams;
-  const questionnaireDisplayName = questionnaireName.replace('_EDIT', '');
   const defaultMessage: Message = { show: false, text: '', type: '' };
   const [message, setMessage] = useState(defaultMessage);
 
@@ -37,7 +37,7 @@ export default function Allocate({ supervisorRole, editorRole, reallocate } : Al
       {message.show && message.type === 'success' && <SuccessPanel message={message.text} setMessage={setMessage} /> }
 
       <br />
-      <h3>{questionnaireDisplayName}</h3>
+      <h3>{questionnaireName}</h3>
 
       <AllocateContent questionnaireName={questionnaireName} supervisorRole={supervisorRole} editorRole={editorRole} reallocate={reallocate} setMessage={setMessage} />
     </>

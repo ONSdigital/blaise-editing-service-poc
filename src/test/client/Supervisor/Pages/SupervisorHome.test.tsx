@@ -76,7 +76,7 @@ describe('Given there are surveys available in blaise', () => {
 
       const defaultQuestionnaireName = defaultQuestionnaire.questionnaireName;
 
-      expect(questionnaireListView).toHaveTextContent(defaultQuestionnaire.questionnaireDisplayName);
+      expect(questionnaireListView).toHaveTextContent(defaultQuestionnaire.questionnaireName.replace('_EDIT', ''));
 
       const questionnaireView = view.getByTestId(`${defaultQuestionnaireName}-supervisor-Content`);
       expect(questionnaireView).toHaveTextContent(String(SupervisorInformationMockObject1.TotalNumberOfCases));

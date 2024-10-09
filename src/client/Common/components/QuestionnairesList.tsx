@@ -32,7 +32,7 @@ function getquestionnaireOptions(questionnaires: QuestionnaireDetails[]): Option
 
   questionnaires.forEach((questionnaire) => {
     options.push({
-      label: `${questionnaire.questionnaireDisplayName} (${questionnaire.fieldPeriod})`,
+      label: `${questionnaire.questionnaireName} (${questionnaire.fieldPeriod})`,
       value: questionnaire.questionnaireName,
     });
   });

@@ -19,7 +19,6 @@ describe('Map a questionnaire', () => {
 
     const expectedQuestionnaireDetails: QuestionnaireDetails = {
       questionnaireName: 'FRS2504A_EDIT',
-      questionnaireDisplayName: 'FRS2504A',
       numberOfCases: 3,
       fieldPeriod: 'January 2021',
       surveyTla: 'LMS',
@@ -45,7 +44,6 @@ describe('Map a questionnaire', () => {
 
     const expectedQuestionnaireDetails: QuestionnaireDetails = {
       questionnaireName: 'FRS2504A_EDIT',
-      questionnaireDisplayName: 'FRS2504A',
       numberOfCases: 0,
       fieldPeriod: 'N/A',
       surveyTla: 'N/A',

@@ -18,7 +18,6 @@ function mapFieldPeriod(fieldPeriodDate: string | undefined): string {
 export default function mapQuestionnaireDetails(questionnaire: Questionnaire): QuestionnaireDetails {
   const questionaireDetails: QuestionnaireDetails = {
     questionnaireName: questionnaire.name,
-    questionnaireDisplayName: questionnaire.name.replace('_EDIT', ''),
     numberOfCases: questionnaire.dataRecordCount ?? 0,
     fieldPeriod: mapFieldPeriod(questionnaire.fieldPeriod),
     surveyTla: questionnaire.surveyTla ?? 'N/A',

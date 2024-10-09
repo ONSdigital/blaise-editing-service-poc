@@ -57,7 +57,6 @@ export const questionnaireListMockObject: Questionnaire[] = [
 
 export const lmsQuestionnaireDetailsMockObject: QuestionnaireDetails = {
   questionnaireName: 'LMS2101_AA1_EDIT',
-  questionnaireDisplayName: 'LMS2101_AA1',
   numberOfCases: 3,
   fieldPeriod: 'January 2021',
   surveyTla: 'LMS',
@@ -65,7 +64,6 @@ export const lmsQuestionnaireDetailsMockObject: QuestionnaireDetails = {
 
 export const frsQuestionnaireDetails1MockObject: QuestionnaireDetails = {
   questionnaireName: 'FRS2408B_EDIT',
-  questionnaireDisplayName: 'FRS2408B',
   numberOfCases: 0,
   fieldPeriod: 'August 2024',
   surveyTla: 'FRS',
@@ -73,7 +71,6 @@ export const frsQuestionnaireDetails1MockObject: QuestionnaireDetails = {
 
 export const frsQuestionnaireDetails2MockObject: QuestionnaireDetails = {
   questionnaireName: 'FRS2504A_EDIT',
-  questionnaireDisplayName: 'FRS2504A',
   numberOfCases: 1,
   fieldPeriod: 'April 2025',
   surveyTla: 'FRS',
@@ -81,7 +78,6 @@ export const frsQuestionnaireDetails2MockObject: QuestionnaireDetails = {
 
 export const opnQuestionnaireDetailsMockObject: QuestionnaireDetails = {
   questionnaireName: 'OPN2201A_EDIT',
-  questionnaireDisplayName: 'OPN2201A',
   numberOfCases: 3,
   fieldPeriod: 'January 2022',
   surveyTla: 'OPN',
