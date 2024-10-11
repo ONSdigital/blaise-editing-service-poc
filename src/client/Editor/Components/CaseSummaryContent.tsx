@@ -113,7 +113,12 @@ export default function CaseSummaryContent({ caseSummary }: CaseSummaryContentPr
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.NumberOfBedrooms}</dd>
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Receipt of housing benefit</dt>
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m">
-          {`${caseSummary.Household.ReceiptOfHousingBenefit} - Period code: ${caseSummary.Household.PeriodCode}`}
+          {caseSummary.Household.ReceiptOfHousingBenefit.map((housingBenefit) => (
+            <span key={housingBenefit.Amount}>
+              {`amount: ${housingBenefit.Amount}, period: ${housingBenefit.PeriodCode}`}
+              <br />
+            </span>
+          ))}
         </dd>
         <dt className="ons-metadata__term ons-grid__col ons-col-3@m">Council tax band</dt>
         <dd className="ons-metadata__value ons-grid__col ons-col-9@m">{caseSummary.Household.CouncilTaxBand}</dd>

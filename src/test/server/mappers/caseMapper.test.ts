@@ -1,5 +1,5 @@
 import { CaseResponse } from 'blaise-api-node-client';
-import { CaseSummaryDetails } from '../../../common/interfaces/caseInterface';
+import { CaseSummaryDetails, HousingBenefits } from '../../../common/interfaces/caseInterface';
 import mapCaseSummary from '../../../server/mappers/caseMapper';
 
 function SetFieldsToValue(CaseResponseData: CaseResponse, fieldEndsWith: string, fieldValue: string): void {
@@ -78,8 +78,10 @@ describe('Map case response to case summary', () => {
         FloorNumber: '2',
         Status: 'Conventional',
         NumberOfBedrooms: '2',
-        ReceiptOfHousingBenefit: '380',
-        PeriodCode: 'One week',
+        ReceiptOfHousingBenefit: [{
+          Amount: '380',
+          PeriodCode: 'One week',
+        }],
         CouncilTaxBand: 'Band A',
         BusinessRoom: true,
         SelfEmployed: true,
@@ -282,67 +284,6 @@ describe('Map case response to case summary', () => {
     expect(result.Household.CouncilTaxBand).toEqual(expectedOutputValue);
   });
 
-  it('It should return the expected ReceiptOfHousingBenefit when only one person has this set', () => {
-    // arrange
-    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
-
-    const expectedHousingBenefit = '400';
-
-    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
-
-    // act
-    const result = mapCaseSummary(caseResponseData);
-
-    // assert
-    expect(result.Household.ReceiptOfHousingBenefit).toEqual(expectedHousingBenefit);
-  });
-
-  it('It should return the expected ReceiptOfHousingBenefit when nobody has this set', () => {
-    // arrange
-    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
-
-    const expectedHousingBenefit = 'n/a';
-
-    // act
-    const result = mapCaseSummary(caseResponseData);
-
-    // assert
-    expect(result.Household.ReceiptOfHousingBenefit).toEqual(expectedHousingBenefit);
-  });
-
-  it('It should return the expected ReceiptOfHousingBenefit when Multiple person have this set', () => {
-    // arrange
-    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
-
-    const expectedHousingBenefit = '400';
-
-    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = '380';
-    caseResponseData.fieldData['BU[2].QBenefit.QBenef2[2].HBenAmt'] = '390';
-    caseResponseData.fieldData['BU[3].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
-
-    // act
-    const result = mapCaseSummary(caseResponseData);
-
-    // assert
-    expect(result.Household.ReceiptOfHousingBenefit).toEqual(expectedHousingBenefit);
-  });
-
-  it('It should return the the firts 6 characters for ReceiptOfHousingBenefit when the input is longer than 6', () => {
-    // arrange
-    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
-
-    const inputHousingBenefit = '1234567';
-    const expectedHousingBenefit = '123456';
-
-    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = inputHousingBenefit;
-
-    // act
-    const result = mapCaseSummary(caseResponseData);
-
-    // assert
-    expect(result.Household.ReceiptOfHousingBenefit).toEqual(expectedHousingBenefit);
-  });
-
   it.each([
     ['1', 'One week'],
     ['2', 'Two weeks'],
@@ -360,19 +301,41 @@ describe('Map case response to case summary', () => {
     ['90', 'Less than one week'],
     ['95', 'One off/lump sum'],
     ['97', 'Unknown'],
-  ])('It should return the expected PeriodCode when given a valid input for only one person', (inputValue: string, expectedOutputValue: string) => {
+  ])('It should return the expected ReceiptOfHousingBenefit when only one person has this set', (PeriodCodeInput: string, expectedPeriodCode: string) => {
     // arrange
     SetFieldsToValue(caseResponseData, '.HBenAmt', '');
     SetFieldsToValue(caseResponseData, '.HBenPd', '');
 
-    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = '380';
-    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenPd'] = inputValue;
+    const expectedHousingBenefit = '400';
+
+    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = expectedHousingBenefit;
+    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenPd'] = PeriodCodeInput;
 
     // act
     const result = mapCaseSummary(caseResponseData);
 
     // assert
-    expect(result.Household.PeriodCode).toEqual(expectedOutputValue);
+    expect(result.Household.ReceiptOfHousingBenefit).toEqual([{
+      Amount: expectedHousingBenefit,
+      PeriodCode: expectedPeriodCode,
+    }]);
+  });
+
+  it('It should return the expected ReceiptOfHousingBenefit when nobody has this set', () => {
+    // arrange
+    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
+    SetFieldsToValue(caseResponseData, '.HBenPd', '');
+
+    const expectedHousingBenefit: HousingBenefits[] = [{
+      Amount: 'n/a',
+      PeriodCode: 'n/a',
+    }];
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Household.ReceiptOfHousingBenefit).toEqual(expectedHousingBenefit);
   });
 
   it.each([
@@ -380,57 +343,77 @@ describe('Map case response to case summary', () => {
     ['98', ''],
     ['', ''],
     ['test', ''],
-  ])('It should return the expected PeriodCode when given an invalid input for only one person', (inputValue: string, expectedOutputValue: string) => {
+  ])('It should return the expected PeriodCode when given an invalid input for only one person', (PeriodCodeInput: string, expectedPeriodCode: string) => {
     // arrange
     SetFieldsToValue(caseResponseData, '.HBenAmt', '');
     SetFieldsToValue(caseResponseData, '.HBenPd', '');
 
     caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = '380';
-    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenPd'] = inputValue;
+    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenPd'] = PeriodCodeInput;
 
     // act
     const result = mapCaseSummary(caseResponseData);
 
     // assert
-    expect(result.Household.PeriodCode).toEqual(expectedOutputValue);
+    expect(result.Household.ReceiptOfHousingBenefit).toEqual([{
+      Amount: '380',
+      PeriodCode: expectedPeriodCode,
+    }]);
   });
 
-  it('It should return the expected PeriodCode when nobody has this set', () => {
+  it('It should return the expected ReceiptOfHousingBenefit when Multiple person have this set', () => {
     // arrange
     SetFieldsToValue(caseResponseData, '.HBenAmt', '');
     SetFieldsToValue(caseResponseData, '.HBenPd', '');
-
-    const expectedHousingBenefit = 'n/a';
-
-    // act
-    const result = mapCaseSummary(caseResponseData);
-
-    // assert
-    expect(result.Household.PeriodCode).toEqual(expectedHousingBenefit);
-  });
-
-  it('It should return the expected PeriodCode when Multiple person have this set', () => {
-    // arrange
-    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
-    SetFieldsToValue(caseResponseData, '.HBenPd', '');
-
-    const expectedPeriodCodeInput = '3';
-    const expectedPeriodCodeOutput = 'Three weeks';
 
     caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = '380';
     caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenPd'] = '1';
 
-    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[2].HBenAmt'] = '390';
-    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[2].HBenPd'] = '2';
-
     caseResponseData.fieldData['BU[2].QBenefit.QBenef2[2].HBenAmt'] = '390';
-    caseResponseData.fieldData['BU[2].QBenefit.QBenef2[2].HBenPd'] = expectedPeriodCodeInput;
+    caseResponseData.fieldData['BU[2].QBenefit.QBenef2[2].HBenPd'] = '5';
+
+    caseResponseData.fieldData['BU[3].QBenefit.QBenef2[1].HBenAmt'] = '400';
+    caseResponseData.fieldData['BU[3].QBenefit.QBenef2[1].HBenPd'] = '26';
+
+    const expectedHousingBenefit: HousingBenefits[] = [{
+      Amount: '380',
+      PeriodCode: 'One week',
+    },
+    {
+      Amount: '390',
+      PeriodCode: 'calendar month',
+    },
+    {
+      Amount: '400',
+      PeriodCode: 'Six months/26 weeks',
+    }];
 
     // act
     const result = mapCaseSummary(caseResponseData);
 
     // assert
-    expect(result.Household.PeriodCode).toEqual(expectedPeriodCodeOutput);
+    expect(result.Household.ReceiptOfHousingBenefit).toEqual(expectedHousingBenefit);
+  });
+
+  it('It should return the the first 6 characters for ReceiptOfHousingBenefit when the input is longer than 6', () => {
+    // arrange
+    SetFieldsToValue(caseResponseData, '.HBenAmt', '');
+    SetFieldsToValue(caseResponseData, '.HBenPd', '');
+
+    const inputHousingBenefit = '1234567';
+    const expectedHousingBenefit = '123456';
+
+    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenAmt'] = inputHousingBenefit;
+    caseResponseData.fieldData['BU[1].QBenefit.QBenef2[1].HBenPd'] = '1';
+
+    // act
+    const result = mapCaseSummary(caseResponseData);
+
+    // assert
+    expect(result.Household.ReceiptOfHousingBenefit).toEqual([{
+      Amount: expectedHousingBenefit,
+      PeriodCode: 'One week',
+    }]);
   });
 
   it.each([

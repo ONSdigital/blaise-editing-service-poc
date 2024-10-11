@@ -1,5 +1,5 @@
 import { CaseResponse } from 'blaise-api-node-client';
-import { CaseSummaryDetails } from '../../common/interfaces/caseInterface';
+import { CaseSummaryDetails, HousingBenefits } from '../../common/interfaces/caseInterface';
 
 const Accommodation: Record<number, string> = {
   1: 'House/Bungalow',
@@ -75,32 +75,22 @@ const MartitalStatus: Record<number, string> = {
   9: 'CPW',
 };
 
-function GetHousingBenefitAmount(caseResponse: CaseResponse): string {
-  let housingBenefit = 'n/a';
+function GetHousingBenefitArray(caseResponse: CaseResponse): HousingBenefits[] {
+  const housingBenefit: HousingBenefits[] = [];
   for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
     for (let person = 1; person <= 2; person += 1) {
-      const benefitAmount = caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${person}].HBenAmt`];
+      const benefitAmount: string = caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${person}].HBenAmt`];
+      const benefitPeriod: string = BenefitPeriod[Number(caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${person}].HBenPd`])] ?? '';
       if (Number(benefitAmount) > 0) {
-        housingBenefit = benefitAmount;
+        housingBenefit.push({
+          Amount: benefitAmount.substring(0, 6),
+          PeriodCode: benefitPeriod,
+        });
       }
     }
   }
 
-  return housingBenefit.substring(0, 6);
-}
-
-function GetHousingBenefitPeriod(caseResponse: CaseResponse): string {
-  let housingBenefitPeriod = 'n/a';
-  for (let benefitUnit = 1; benefitUnit <= 7; benefitUnit += 1) {
-    for (let person = 1; person <= 2; person += 1) {
-      const benefitAmount = caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${person}].HBenAmt`];
-      if (Number(benefitAmount) > 0) {
-        housingBenefitPeriod = BenefitPeriod[Number(caseResponse.fieldData[`BU[${benefitUnit}].QBenefit.QBenef2[${person}].HBenPd`])] ?? '';
-      }
-    }
-  }
-
-  return housingBenefitPeriod;
+  return (housingBenefit.length === 0) ? [{ Amount: 'n/a', PeriodCode: 'n/a' }] : housingBenefit;
 }
 
 function HasBusinessRoom(caseResponse: CaseResponse): boolean {
@@ -188,8 +178,7 @@ function GetRelationshipMatrix(caseResponse: CaseResponse, respondentNumber: num
 }
 
 export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummaryDetails {
-  const housingBenefitAmount = GetHousingBenefitAmount(caseResponse);
-  const housingBenefitPeriod = GetHousingBenefitPeriod(caseResponse);
+  const housingBenefitArray = GetHousingBenefitArray(caseResponse);
   const businessRoom = HasBusinessRoom(caseResponse);
   const selfEmployedMembers = GetSelfEmployedMembers(caseResponse);
   const jsaPeople = GetJsaPeople(caseResponse);
@@ -209,8 +198,7 @@ export default function mapCaseSummary(caseResponse: CaseResponse): CaseSummaryD
       FloorNumber: caseResponse.fieldData['qhAdmin.QObsSheet.FloorN'],
       Status: HouseStatus[Number(caseResponse.fieldData['QAccomdat.HHStat'])] ?? '',
       NumberOfBedrooms: caseResponse.fieldData['QAccomdat.Bedroom'],
-      ReceiptOfHousingBenefit: housingBenefitAmount,
-      PeriodCode: housingBenefitPeriod,
+      ReceiptOfHousingBenefit: housingBenefitArray,
       CouncilTaxBand: CouncilTaxBand[Number(caseResponse.fieldData['QCounTax.CTBand'])] ?? 'Blank',
       BusinessRoom: businessRoom,
       SelfEmployed: selfEmployedMembers.length > 0,

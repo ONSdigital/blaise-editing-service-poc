@@ -25,8 +25,16 @@ function DisplayCaseSummary(questionnaireName: string, caseId: string) {
       FloorNumber: '2',
       Status: 'Conventional',
       NumberOfBedrooms: '2',
-      ReceiptOfHousingBenefit: '380',
-      PeriodCode: 'One week',
+      ReceiptOfHousingBenefit: [
+        {
+          Amount: '380',
+          PeriodCode: 'One week',
+        },
+        {
+          Amount: '420',
+          PeriodCode: 'Two weeks',
+        },
+      ],
       CouncilTaxBand: 'Band A',
       BusinessRoom: true,
       SelfEmployed: true,

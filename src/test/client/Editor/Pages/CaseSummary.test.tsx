@@ -21,8 +21,10 @@ const caseSummaryDetailsMockObject: CaseSummaryDetails = {
     FloorNumber: '2',
     Status: 'Conventional',
     NumberOfBedrooms: '2',
-    ReceiptOfHousingBenefit: '380',
-    PeriodCode: 'One week',
+    ReceiptOfHousingBenefit: [{
+      Amount: '380',
+      PeriodCode: 'One week',
+    }],
     CouncilTaxBand: 'Band A',
     BusinessRoom: true,
     SelfEmployed: true,
@@ -98,8 +100,9 @@ describe('Given there is a case available in blaise for a questionnaire', () => 
     expect(caseSummaryView).toHaveTextContent(expectedCaseSummaryDetails.Household.FloorNumber);
     expect(caseSummaryView).toHaveTextContent(expectedCaseSummaryDetails.Household.Status);
     expect(caseSummaryView).toHaveTextContent(expectedCaseSummaryDetails.Household.NumberOfBedrooms);
-    expect(caseSummaryView).toHaveTextContent(expectedCaseSummaryDetails.Household.ReceiptOfHousingBenefit);
-    expect(caseSummaryView).toHaveTextContent(`Period code: ${expectedCaseSummaryDetails.Household.PeriodCode}`);
+    expectedCaseSummaryDetails.Household.ReceiptOfHousingBenefit.forEach((housingBenefit) => {
+      expect(caseSummaryView).toHaveTextContent(`amount: ${housingBenefit.Amount}, period: ${housingBenefit.PeriodCode}`);
+    });
     expect(caseSummaryView).toHaveTextContent(expectedCaseSummaryDetails.Household.CouncilTaxBand);
     expect(caseSummaryView).toHaveTextContent('Yes');
     expect(caseSummaryView).toHaveTextContent(`Yes - H/H members: ${expectedCaseSummaryDetails.Household.SelfEmployedMembers.join(', ')}`);

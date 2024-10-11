@@ -55,7 +55,16 @@ export default function mapCaseSummaryText(caseSummary: CaseSummaryDetails): str
   caseSummaryText += `Floor number:                ${caseSummary.Household.FloorNumber}\n`;
   caseSummaryText += `Household status:            ${caseSummary.Household.Status}\n`;
   caseSummaryText += `Number of bedrooms:          ${caseSummary.Household.NumberOfBedrooms}\n`;
-  caseSummaryText += `Receipt of housing benefits: ${caseSummary.Household.ReceiptOfHousingBenefit}  -  Period Code: ${caseSummary.Household.PeriodCode}\n`;
+
+  caseSummary.Household.ReceiptOfHousingBenefit.forEach((housingBenefit, index) => {
+    if (index === 0) {
+      caseSummaryText += `Receipt of housing benefits: amount: ${housingBenefit.Amount}, Period: ${housingBenefit.PeriodCode}\n`;
+    }
+    if (index > 0) {
+      caseSummaryText += `                             amount: ${housingBenefit.Amount}, Period: ${housingBenefit.PeriodCode}\n`;
+    }
+  });
+
   caseSummaryText += `Council tax band:            ${caseSummary.Household.CouncilTaxBand}\n`;
   caseSummaryText += `Business room:               ${(caseSummary.Household.BusinessRoom) ? 'Yes' : 'No'}\n`;
   caseSummaryText += `Anyone self employed:        ${(caseSummary.Household.SelfEmployed) ? `Yes  -  H/H members: ${caseSummary.Household.SelfEmployedMembers.join(', ')}` : 'No'}\n`;

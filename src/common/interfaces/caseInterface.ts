@@ -1,3 +1,8 @@
+export interface HousingBenefits {
+  Amount: string,
+  PeriodCode: string,
+}
+
 export interface CaseSummaryDetails {
   CaseId: string
   OutcomeCode: string,
@@ -13,8 +18,7 @@ export interface CaseSummaryDetails {
     FloorNumber: string,
     Status: string,
     NumberOfBedrooms: string,
-    ReceiptOfHousingBenefit: string,
-    PeriodCode: string,
+    ReceiptOfHousingBenefit: HousingBenefits[],
     CouncilTaxBand: string,
     BusinessRoom: boolean,
     SelfEmployed: boolean,
