@@ -8,6 +8,7 @@ import SupervisorQuestionnaireDetails from '../../Supervisor/Components/Supervis
 import EditorQuestionnaireDetails from '../../Editor/Components/EditorQuestionnaireDetails';
 import ErrorPanel from './ErrorPanel';
 import questionnaireDisplayName from '../functions/QuestionnaireFunctions';
+import ResearchQuestionnaireDetails from '../../Research/Components/ResearchQuestionnaireDetails';
 
 interface QuestionnairesListProps {
   questionnaires: QuestionnaireDetails[];
@@ -23,6 +24,10 @@ function RenderQuestionnaireDetails(user:User, questionnaire:QuestionnaireDetail
 
   if (role === UserRole.SVT_Editor) {
     return <EditorQuestionnaireDetails questionnaire={questionnaire} username={name} editorRole={UserRole.SVT_Editor} />;
+  }
+
+  if (role === UserRole.FRS_Research) {
+    return <ResearchQuestionnaireDetails questionnaire={questionnaire} />;
   }
 
   return <ErrorPanel message={`User role ${role} not recognised`} />;

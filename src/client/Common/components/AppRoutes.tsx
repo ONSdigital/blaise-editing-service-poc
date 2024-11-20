@@ -7,6 +7,7 @@ import SupervisorHome from '../../Supervisor/Pages/SupervisorHome';
 import EditorHome from '../../Editor/Pages/EditorHome';
 import Allocate from '../../Supervisor/Pages/Allocate';
 import CaseSummary from '../../Editor/Pages/CaseSummary';
+import ResearchHome from '../../Research/Pages/ResearchHome';
 
 interface AppContentProps {
   user:User
@@ -26,6 +27,10 @@ export default function AppContent({ user }: AppContentProps): ReactElement {
       <CreateRoutes onConditionThat={userRole === UserRole.SVT_Editor}>
         <Route path="/" element={<EditorHome user={user} />} />
         <Route path="questionnaires/:questionnaireName/cases/:caseId/summary" element={<CaseSummary />} />
+      </CreateRoutes>
+
+      <CreateRoutes onConditionThat={userRole === UserRole.FRS_Research}>
+        <Route path="/" element={<ResearchHome user={user} />} />
       </CreateRoutes>
     </>
   );

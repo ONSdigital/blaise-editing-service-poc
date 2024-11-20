@@ -74,6 +74,15 @@ export default class ServerConfigurationProvider implements ServerConfiguration,
       },
       ],
     },
+    {
+      Role: 'FRS_Research',
+      Surveys: [{
+        Survey: 'FRS',
+        Organisations: [],
+        Outcomes: [],
+      },
+      ],
+    },
     ];
 
     this.Roles = GetListOrSetDefault(ROLES, getRoles(this.RoleConfiguration));

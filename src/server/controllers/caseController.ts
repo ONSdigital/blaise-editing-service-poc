@@ -72,7 +72,7 @@ export default class CaseController implements Controller {
     const roleConfig = this.configuration.getSurveyConfigForRole(surveyTla, userRole);
 
     const filteredcases = cases
-      .filter((caseEditInformation) => roleConfig.Organisations.includes(caseEditInformation.organisation))
+      .filter((caseEditInformation) => (roleConfig.Organisations.length > 0 ? roleConfig.Organisations.includes(caseEditInformation.organisation) : caseEditInformation))
       .filter((caseEditInformation) => (roleConfig.Outcomes.length > 0 ? roleConfig.Outcomes.includes(caseEditInformation.outcome) : caseEditInformation));
 
     return filteredcases;
