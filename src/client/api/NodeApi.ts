@@ -48,3 +48,8 @@ export async function updateAllocationDetails(questionnaireName: string, name:st
   const payload = { name, cases };
   await patchDataToNode(`/api/questionnaires/${questionnaireName.toUpperCase()}/cases/`, payload, 'Unable to allocate, please contact Richmond Rice');
 }
+
+export async function getCaseSearchResults(questionnaireName: string, caseId: string, role: string): Promise<CaseEditInformation[]> {
+  const caseEditInformationList = await getCaseEditInformation(questionnaireName, role);
+  return caseEditInformationList.filter((caseEditInformation) => caseEditInformation.primaryKey.startsWith(caseId));
+}

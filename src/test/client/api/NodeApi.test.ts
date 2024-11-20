@@ -9,6 +9,7 @@ import {
   getSurveys, getEditorInformation, getSupervisorEditorInformation, getCaseSummary,
   getAllocationDetails,
   updateAllocationDetails,
+  getCaseSearchResults,
 } from '../../../client/api/NodeApi';
 import { EditorInformation } from '../../../client/Interfaces/editorInterface';
 import { SupervisorInformation } from '../../../client/Interfaces/supervisorInterface';
@@ -436,5 +437,113 @@ describe('updateAllocationDetails in Blaise', () => {
 
     // act && assert
     expect(updateAllocationDetails(questionnaireName, name, cases)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+  });
+});
+
+describe('getCaseSearchResults from Blaise for FRS Research role', () => {
+  const questionnaireName = 'FRS2201';
+  const caseId = '10001011';
+  const role = UserRole.FRS_Research;
+
+  it('Should retrieve a single case that matches the case id with a 200 response', async () => {
+    // arrange
+    const caseEditInformationListMock: CaseEditInformation[] = [{
+      primaryKey: '10001011',
+      outcome: CaseOutcome.Completed,
+      assignedTo: 'rich',
+      interviewer: '',
+      editedStatus: EditedStatus.Finished,
+      organisation: Organisation.ONS,
+      editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001011',
+    },
+    {
+      primaryKey: '10001012',
+      outcome: CaseOutcome.Completed,
+      assignedTo: 'rich',
+      interviewer: '',
+      editedStatus: EditedStatus.NotStarted,
+      organisation: Organisation.ONS,
+      editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001012',
+    }];
+
+    axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${role}`).reply(200, caseEditInformationListMock);
+
+    // act
+    const result = await getCaseSearchResults(questionnaireName, caseId, role);
+
+    // assert
+    expect(result).toEqual([caseEditInformationListMock[0]]);
+  });
+
+  it('Should retrieve a list of cases that match a partial case id for all organisations', async () => {
+    // arrange
+    const caseEditInformationListMock: CaseEditInformation[] = [{
+      primaryKey: '10001011',
+      outcome: CaseOutcome.Completed,
+      assignedTo: 'bob',
+      interviewer: '',
+      editedStatus: EditedStatus.Finished,
+      organisation: Organisation.ONS,
+      editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001011',
+    },
+    {
+      primaryKey: '10001012',
+      outcome: CaseOutcome.Completed,
+      assignedTo: 'Rich',
+      interviewer: '',
+      editedStatus: EditedStatus.NotStarted,
+      organisation: Organisation.NatCen,
+      editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001012',
+    },
+    {
+      primaryKey: '90001013',
+      outcome: CaseOutcome.Completed,
+      assignedTo: 'Rich',
+      interviewer: '',
+      editedStatus: EditedStatus.NotStarted,
+      organisation: Organisation.ONS,
+      editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001012',
+    },
+    {
+      primaryKey: '10001014',
+      outcome: CaseOutcome.Completed,
+      assignedTo: 'Rich',
+      interviewer: '',
+      editedStatus: EditedStatus.NotStarted,
+      organisation: Organisation.Nisra,
+      editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001012',
+    }];
+
+    axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${role}`).reply(200, caseEditInformationListMock);
+
+    // act
+    const result = await getCaseSearchResults(questionnaireName, '1000101', role);
+
+    // assert
+    expect(result).toEqual([caseEditInformationListMock[0], caseEditInformationListMock[1], caseEditInformationListMock[3]]);
+  });
+
+  it('Should throw the error "Unable to find case edit information, please contact Richmond Rice" when a 404 response is recieved', async () => {
+    // arrange
+    axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${role}`).reply(404, null);
+
+    // act && assert
+    expect(getCaseSearchResults(questionnaireName, caseId, role)).rejects.toThrow('Unable to find case edit information, please contact Richmond Rice');
+  });
+
+  it('Should throw the error "Unable to complete request, please try again in a few minutes" when a 500 response is recieved', async () => {
+    // arrange
+    axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${role}`).reply(500, null);
+
+    // act && assert
+    expect(getCaseSearchResults(questionnaireName, caseId, role)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
+  });
+
+  it('Should throw the error "Unable to complete request, please try again in a few minutes" when there is a network error', async () => {
+    // arrange
+    axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${role}`).networkError();
+
+    // act && assert
+    expect(getCaseSearchResults(questionnaireName, caseId, role)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 });

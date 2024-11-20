@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
+import ResearchContent from './ResearchContent';
 
 interface ResearchQuestionnairesDetailsProps {
   questionnaire: QuestionnaireDetails;
@@ -9,7 +10,7 @@ export default function ResearchQuestionnairesDetails({ questionnaire }: Researc
   return (
 
     <div className="questionnaire" data-testid="questionnaire">
-      <strong>{questionnaire.questionnaireName}</strong>
+      <ResearchContent questionnaire={questionnaire} />
     </div>
   );
 }
