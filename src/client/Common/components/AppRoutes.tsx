@@ -8,6 +8,7 @@ import EditorHome from '../../Editor/Pages/EditorHome';
 import Allocate from '../../Supervisor/Pages/Allocate';
 import CaseSummary from '../../Editor/Pages/CaseSummary';
 import ResearchHome from '../../Research/Pages/ResearchHome';
+import RecodeCaseForm from '../../Research/Components/RecodeCaseForm';
 
 interface AppContentProps {
   user:User
@@ -31,6 +32,7 @@ export default function AppContent({ user }: AppContentProps): ReactElement {
 
       <CreateRoutes onConditionThat={userRole === UserRole.FRS_Research}>
         <Route path="/" element={<ResearchHome user={user} />} />
+        <Route path="/questionnaires/:questionnaireName/cases/:caseId/recode" element={<RecodeCaseForm />} />
       </CreateRoutes>
     </>
   );

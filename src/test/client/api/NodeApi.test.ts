@@ -406,7 +406,7 @@ describe('updateAllocationDetails in Blaise', () => {
   it('Should update allocation details with a 204 response', async () => {
     // arrange
 
-    axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/`).reply(204, null);
+    axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/allocate`).reply(204, null);
 
     // act
     const result = await updateAllocationDetails(questionnaireName, name, cases);
@@ -417,7 +417,7 @@ describe('updateAllocationDetails in Blaise', () => {
 
   it('Should throw the error "Unable to allocate, please contact Richmond Rice" when a 404 response is recieved', async () => {
     // arrange
-    axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/`).reply(404, null);
+    axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/allocate`).reply(404, null);
 
     // act && assert
     expect(updateAllocationDetails(questionnaireName, name, cases)).rejects.toThrow('Unable to allocate, please contact Richmond Rice');
@@ -425,7 +425,7 @@ describe('updateAllocationDetails in Blaise', () => {
 
   it('Should throw the error "Unable to complete request, please try again in a few minutes" when a 500 response is recieved', async () => {
     // arrange
-    axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/`).reply(500, null);
+    axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/allocate`).reply(500, null);
 
     // act && assert
     expect(updateAllocationDetails(questionnaireName, name, cases)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
@@ -433,7 +433,7 @@ describe('updateAllocationDetails in Blaise', () => {
 
   it('Should throw the error "Unable to complete request, please try again in a few minutes" when there is a network error', async () => {
     // arrange
-    axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/`).networkError();
+    axiosMock.onPatch(`/api/questionnaires/${questionnaireName}/cases/allocate`).networkError();
 
     // act && assert
     expect(updateAllocationDetails(questionnaireName, name, cases)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
