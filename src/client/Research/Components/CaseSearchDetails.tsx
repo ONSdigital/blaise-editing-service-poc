@@ -50,9 +50,9 @@ export default function CaseSearchDetails({ questionnaireName, caseId, role }: C
                   <td className="ons-table__cell links">
                     <Link to={caseDetails.editUrl} target="_blank" rel="noopener noreferrer">Edit case</Link>
                     {' | '}
-                    <Link to="/">Read only</Link>
+                    <Link to="/">View case</Link>
                     {' | '}
-                    <Link to="/">Recode case</Link>
+                    <Link to={`/questionnaires/${questionnaireName}/cases/${caseDetails.primaryKey}/recode`}>Recode case</Link>
                   </td>
                 </tr>
               ))}
