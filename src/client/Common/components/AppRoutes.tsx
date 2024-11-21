@@ -9,6 +9,7 @@ import Allocate from '../../Supervisor/Pages/Allocate';
 import CaseSummary from '../../Editor/Pages/CaseSummary';
 import ResearchHome from '../../Research/Pages/ResearchHome';
 import RecodeCaseForm from '../../Research/Components/RecodeCaseForm';
+import CaseSearch from '../../Supervisor/Components/CaseSearch';
 
 interface AppContentProps {
   user:User
@@ -23,6 +24,7 @@ export default function AppContent({ user }: AppContentProps): ReactElement {
         <Route path="/" element={<SupervisorHome user={user} />} />
         <Route path="/questionnaires/:questionnaireName/allocate" element={<Allocate supervisorRole={UserRole.SVT_Supervisor} editorRole={UserRole.SVT_Editor} reallocate={false} />} />
         <Route path="/questionnaires/:questionnaireName/reallocate" element={<Allocate supervisorRole={UserRole.SVT_Supervisor} editorRole={UserRole.SVT_Editor} reallocate />} />
+        <Route path="questionnaires/:questionnaireName/cases/search" element={<CaseSearch />} />
       </CreateRoutes>
 
       <CreateRoutes onConditionThat={userRole === UserRole.SVT_Editor}>

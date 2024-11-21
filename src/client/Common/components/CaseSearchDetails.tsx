@@ -1,12 +1,12 @@
 import { ReactElement } from 'react';
 import { CaseEditInformation } from 'blaise-api-node-client';
 import { ONSTable } from 'blaise-design-system-react-components';
-import { Link } from 'react-router-dom';
 import Organisation from 'blaise-api-node-client/lib/cjs/enums/organisation';
-import { useAsyncRequestWithThreeParams } from '../../Common/hooks/useAsyncRequest';
-import UserRole from '../../Common/enums/UserTypes';
+import { useAsyncRequestWithThreeParams } from '../hooks/useAsyncRequest';
+import UserRole from '../enums/UserTypes';
 import { getCaseSearchResults } from '../../api/NodeApi';
-import AsyncContent from '../../Common/components/AsyncContent';
+import AsyncContent from './AsyncContent';
+import CaseSearchLinks from './CaseSearchLinks';
 
 interface CaseSearchDetailsProps {
   questionnaireName: string;
@@ -48,11 +48,7 @@ export default function CaseSearchDetails({ questionnaireName, caseId, role }: C
                     {Organisation[caseDetails.organisation]}
                   </td>
                   <td className="ons-table__cell links">
-                    <Link to={caseDetails.editUrl} target="_blank" rel="noopener noreferrer">Edit case</Link>
-                    {' | '}
-                    <Link to="/">View case</Link>
-                    {' | '}
-                    <Link to={`/questionnaires/${questionnaireName}/cases/${caseDetails.primaryKey}/recode`}>Recode case</Link>
+                    <CaseSearchLinks questionnaireName={questionnaireName} caseDetails={caseDetails} role={role} />
                   </td>
                 </tr>
               ))}

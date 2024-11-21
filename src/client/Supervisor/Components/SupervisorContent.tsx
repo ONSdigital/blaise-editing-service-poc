@@ -69,6 +69,8 @@ export default function SupervisorContent({ questionnaire, supervisorInformation
               <Link to={`/questionnaires/${questionnaire.questionnaireName}/allocate`}>Allocate</Link>
               {' | '}
               <Link to={`/questionnaires/${questionnaire.questionnaireName}/reallocate`}>Reallocate</Link>
+              {' | '}
+              <Link to={`/questionnaires/${questionnaire.questionnaireName}/cases/search`}>Search</Link>
             </td>
             <td className="ons-table__cell" />
             <td className="ons-table__cell" />

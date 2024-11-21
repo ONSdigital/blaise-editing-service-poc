@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
-import ResearchContent from './CaseSearchForm';
+import ResearchContent from './ResearchContent';
 
 interface ResearchQuestionnairesDetailsProps {
   questionnaire: QuestionnaireDetails;

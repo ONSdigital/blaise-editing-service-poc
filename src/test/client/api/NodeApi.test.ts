@@ -549,7 +549,6 @@ describe('getCaseSearchResults from Blaise for FRS Research role', () => {
   });
 });
 
-
 describe('recodeCase in Blaise', () => {
   const questionnaireName = 'FRS2201';
   const caseId = '9001';
@@ -591,4 +590,3 @@ describe('recodeCase in Blaise', () => {
     expect(recodeCase(questionnaireName, caseId, outcomeCode)).rejects.toThrow('Unable to complete request, please try again in a few minutes');
   });
 });
-

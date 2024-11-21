@@ -1,7 +1,8 @@
 import { ReactElement } from 'react';
 import { ONSPanel } from 'blaise-design-system-react-components';
 import { QuestionnaireDetails } from '../../../common/interfaces/surveyInterface';
-import CaseSearchForm from './CaseSearchForm';
+import CaseSearchForm from '../../Common/components/CaseSearchForm';
+import UserRole from '../../Common/enums/UserTypes';
 
 interface ResearchContentProps {
   questionnaire: QuestionnaireDetails;
@@ -19,11 +20,13 @@ export default function ResearchContent({ questionnaire }: ResearchContentProps)
         >
           <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Field period:</dt>
           <dd className="ons-description-list__value ons-grid__col ons-col-7@m">{questionnaire.fieldPeriod}</dd>
+          <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Total number of cases:</dt>
+          <dd className="ons-description-list__value ons-grid__col ons-col-7@m">{questionnaire.numberOfCases}</dd>
         </dl>
       </ONSPanel>
       <br />
 
-      <CaseSearchForm questionnaire={questionnaire} />
+      <CaseSearchForm questionnaireName={questionnaire.questionnaireName} userRole={UserRole.FRS_Research} />
 
     </div>
   );
