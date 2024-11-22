@@ -266,5 +266,5 @@ describe('Authentication file tests', () => {
     // assert
     expect(result.Survey).toEqual('FRS');
     expect(result.Organisations).toEqual([]);
-  });  
+  });
 });

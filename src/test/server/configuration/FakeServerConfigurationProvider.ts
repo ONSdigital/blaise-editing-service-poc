@@ -84,7 +84,7 @@ export default class FakeServerConfigurationProvider implements ServerConfigurat
         Outcomes: [],
       },
       ],
-    },    
+    },
     {
       Role: 'SVT_NotConfigured',
       Surveys: [{

@@ -119,7 +119,7 @@ export default class CaseController implements Controller {
       await this.blaiseApi.updateCase(`${questionnaireName}_EDIT`, caseId, {
         'qhAdmin.HOut': outcomeCode,
         'QEdit.AssignedTo': '',
-        'QEdit.Edited': 0,
+        'QEdit.Edited': '',
         'QEdit.LastUpdated': moment('1900-01-01').format('DD-MM-YYYY_HH:mm'),
       });
 

@@ -638,7 +638,9 @@ describe('recode case tests', () => {
     const outcomeCode:string = '210';
     const payload = { outcomeCode };
     const caseFields1 = { 'qhAdmin.HOut': outcomeCode };
-    const caseFields2 = { 'qhAdmin.HOut': outcomeCode, 'QEdit.AssignedTo': '', 'QEdit.Edited': 0, 'QEdit.LastUpdated': '01-01-1900_00:00' };
+    const caseFields2 = {
+      'qhAdmin.HOut': outcomeCode, 'QEdit.AssignedTo': '', 'QEdit.Edited': '', 'QEdit.LastUpdated': '01-01-1900_00:00',
+    };
 
     blaiseApiMock.setup((api) => api.updateCase(questionnaireName, caseId, caseFields1));
     blaiseApiMock.setup((api) => api.updateCase(editQuestionnaireName, caseId, caseFields2));
