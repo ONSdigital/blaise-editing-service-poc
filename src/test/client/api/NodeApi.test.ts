@@ -115,6 +115,7 @@ describe('getEditorInformation from Blaise', () => {
       editedStatus: EditedStatus.Finished,
       organisation: Organisation.ONS,
       editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001011',
+      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001011&DataEntrySettings=ReadOnly',
     },
     {
       primaryKey: '10001012',
@@ -124,6 +125,7 @@ describe('getEditorInformation from Blaise', () => {
       editedStatus: EditedStatus.NotStarted,
       organisation: Organisation.ONS,
       editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001012',
+      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001012&DataEntrySettings=ReadOnly',
     }];
 
     const expectedEditorInformation: EditorInformation = {
@@ -160,6 +162,7 @@ describe('getEditorInformation from Blaise', () => {
       editedStatus: EditedStatus.Finished,
       organisation: Organisation.ONS,
       editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001011',
+      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001011&DataEntrySettings=ReadOnly',
     },
     {
       primaryKey: '10001012',
@@ -169,6 +172,7 @@ describe('getEditorInformation from Blaise', () => {
       editedStatus: EditedStatus.NotStarted,
       organisation: Organisation.ONS,
       editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001012',
+      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001012&DataEntrySettings=ReadOnly',
     }];
 
     const expectedEditorInformation: EditorInformation = {
@@ -238,6 +242,7 @@ describe('getSupervisorEditorInformation from Blaise', () => {
       editedStatus: EditedStatus.Finished,
       organisation: Organisation.ONS,
       editUrl: '',
+      readOnlyUrl:'',
     },
     {
       primaryKey: '10001012',
@@ -247,6 +252,7 @@ describe('getSupervisorEditorInformation from Blaise', () => {
       editedStatus: EditedStatus.Finished,
       organisation: Organisation.ONS,
       editUrl: '',
+      readOnlyUrl:'',
     },
     {
       primaryKey: '10001015',
@@ -256,6 +262,7 @@ describe('getSupervisorEditorInformation from Blaise', () => {
       editedStatus: EditedStatus.Query,
       organisation: Organisation.ONS,
       editUrl: '',
+      readOnlyUrl:'',
     }];
 
     const expectedSupervisorInformation: SupervisorInformation = {
@@ -328,6 +335,7 @@ describe('getAllocationDetails from Blaise', () => {
       editedStatus: EditedStatus.Finished,
       organisation: Organisation.ONS,
       editUrl: '',
+      readOnlyUrl:'',
     },
     {
       primaryKey: '10001012',
@@ -337,6 +345,7 @@ describe('getAllocationDetails from Blaise', () => {
       editedStatus: EditedStatus.Finished,
       organisation: Organisation.ONS,
       editUrl: '',
+      readOnlyUrl:'',
     },
     {
       primaryKey: '10001015',
@@ -346,6 +355,7 @@ describe('getAllocationDetails from Blaise', () => {
       editedStatus: EditedStatus.Query,
       organisation: Organisation.ONS,
       editUrl: '',
+      readOnlyUrl:'',
     }];
 
     const expectedResult: AllocationDetails = {
@@ -456,6 +466,7 @@ describe('getCaseSearchResults from Blaise for FRS Research role', () => {
       editedStatus: EditedStatus.Finished,
       organisation: Organisation.ONS,
       editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001011',
+      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001011&DataEntrySettings=ReadOnly',
     },
     {
       primaryKey: '10001012',
@@ -465,6 +476,7 @@ describe('getCaseSearchResults from Blaise for FRS Research role', () => {
       editedStatus: EditedStatus.NotStarted,
       organisation: Organisation.ONS,
       editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001012',
+      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001012&DataEntrySettings=ReadOnly',
     }];
 
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${role}`).reply(200, caseEditInformationListMock);
@@ -486,6 +498,7 @@ describe('getCaseSearchResults from Blaise for FRS Research role', () => {
       editedStatus: EditedStatus.Finished,
       organisation: Organisation.ONS,
       editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001011',
+      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001011&DataEntrySettings=ReadOnly',
     },
     {
       primaryKey: '10001012',
@@ -495,6 +508,7 @@ describe('getCaseSearchResults from Blaise for FRS Research role', () => {
       editedStatus: EditedStatus.NotStarted,
       organisation: Organisation.NatCen,
       editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001012',
+      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001012&DataEntrySettings=ReadOnly',
     },
     {
       primaryKey: '90001013',
@@ -503,7 +517,8 @@ describe('getCaseSearchResults from Blaise for FRS Research role', () => {
       interviewer: '',
       editedStatus: EditedStatus.NotStarted,
       organisation: Organisation.ONS,
-      editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001012',
+      editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001013',
+      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001013&DataEntrySettings=ReadOnly',
     },
     {
       primaryKey: '10001014',
@@ -512,7 +527,8 @@ describe('getCaseSearchResults from Blaise for FRS Research role', () => {
       interviewer: '',
       editedStatus: EditedStatus.NotStarted,
       organisation: Organisation.Nisra,
-      editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001012',
+      editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001014',
+      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001014&DataEntrySettings=ReadOnly',
     }];
 
     axiosMock.onGet(`/api/questionnaires/${questionnaireName}/cases/edit?userRole=${role}`).reply(200, caseEditInformationListMock);

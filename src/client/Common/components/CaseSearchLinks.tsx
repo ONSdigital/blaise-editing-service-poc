@@ -17,7 +17,7 @@ export default function CaseSearchLinks({ questionnaireName, caseDetails, role }
                         <>
                           <Link to={caseDetails.editUrl} target="_blank" rel="noopener noreferrer">Edit case</Link>
                           {' | '}
-                          <Link to="/">View case</Link>
+                          <Link to={caseDetails.readOnlyUrl} target="_blank" rel="noopener noreferrer">View case</Link>
                         </>
                       )}
 
@@ -26,7 +26,7 @@ export default function CaseSearchLinks({ questionnaireName, caseDetails, role }
                         <>
                           <Link to={caseDetails.editUrl} target="_blank" rel="noopener noreferrer">Edit interviewer case</Link>
                           {' | '}
-                          <Link to="/">View interviewer case</Link>
+                          <Link to={caseDetails.readOnlyUrl} target="_blank" rel="noopener noreferrer">View interviewer case</Link>
                           {' | '}
                           <Link to={`/questionnaires/${questionnaireName}/cases/${caseDetails.primaryKey}/recode`}>Recode interviewer case</Link>
                         </>

@@ -162,6 +162,7 @@ describe('getCaseEditInformation from Blaise', () => {
       expect(caseEditInformation.editedStatus).toEqual(CaseEditInformationListMockObject[index]?.editedStatus);
       expect(caseEditInformation.interviewer).toEqual(CaseEditInformationListMockObject[index]?.interviewer);
       expect(caseEditInformation.editUrl).toEqual(`${expectedEditUrlBase}${caseEditInformation.primaryKey}`);
+      expect(caseEditInformation.readOnlyUrl).toEqual(`${expectedEditUrlBase}${caseEditInformation.primaryKey}&DataEntrySettings=ReadOnly`);
     });
   });
 });
