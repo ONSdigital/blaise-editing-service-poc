@@ -91,7 +91,7 @@ export default class ServerConfigurationProvider implements ServerConfiguration,
         Outcomes: [],
       },
       ],
-    },    
+    },
     ];
 
     this.Roles = GetListOrSetDefault(ROLES, getRoles(this.RoleConfiguration));

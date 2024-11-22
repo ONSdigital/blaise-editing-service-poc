@@ -10,7 +10,7 @@ interface SurveyProps {
   user: User;
 }
 
-export default function ResearchHome({ user }: SurveyProps) {
+export default function SupportHome({ user }: SurveyProps) {
   const surveys = useAsyncRequestWithParam<Survey[], string>(getSurveys, user.role);
 
   return (

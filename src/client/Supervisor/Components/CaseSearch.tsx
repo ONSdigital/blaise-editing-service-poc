@@ -4,6 +4,7 @@ import { ONSPanel } from 'blaise-design-system-react-components';
 import CaseSearchForm from '../../Common/components/CaseSearchForm';
 import { AllocateParams } from '../Pages/Allocate';
 import UserRole from '../../Common/enums/UserTypes';
+import questionnaireDisplayName from '../../Common/functions/QuestionnaireFunctions';
 
 export type CaseSearchParams = {
   questionnaireName: string
@@ -22,7 +23,7 @@ export default function CaseSearch(): ReactElement {
           style={{ padding: '0 0 15px 5px' }}
         >
           <dt className="ons-description-list__term ons-grid__col ons-col-5@m">Questionnaire Name:</dt>
-          <dd className="ons-description-list__value ons-grid__col ons-col-7@m">{questionnaireName}</dd>
+          <dd className="ons-description-list__value ons-grid__col ons-col-7@m">{questionnaireDisplayName(questionnaireName)}</dd>
         </dl>
       </ONSPanel>
       <br />
