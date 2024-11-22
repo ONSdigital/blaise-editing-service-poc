@@ -34,7 +34,7 @@ describe('Map editor informaiton', () => {
       editedStatus: EditedStatus.NotStarted,
       organisation: Organisation.ONS,
       editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001011',
-      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001011&DataEntrySettings=ReadOnly',
+      readOnlyUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001011&DataEntrySettings=ReadOnly',
     },
     {
       primaryKey: '10001012',
@@ -44,7 +44,7 @@ describe('Map editor informaiton', () => {
       editedStatus: EditedStatus.Query,
       organisation: Organisation.ONS,
       editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001012',
-      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001012&DataEntrySettings=ReadOnly',
+      readOnlyUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001012&DataEntrySettings=ReadOnly',
     },
     {
       primaryKey: '10001013',
@@ -54,7 +54,7 @@ describe('Map editor informaiton', () => {
       editedStatus: EditedStatus.Started,
       organisation: Organisation.ONS,
       editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001013',
-      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001013&DataEntrySettings=ReadOnly',
+      readOnlyUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001013&DataEntrySettings=ReadOnly',
     },
     ];
 
@@ -102,7 +102,7 @@ describe('Map editor informaiton', () => {
       editedStatus: EditedStatus.NotStarted,
       organisation: Organisation.ONS,
       editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001011',
-      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001011&DataEntrySettings=ReadOnly',
+      readOnlyUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001011&DataEntrySettings=ReadOnly',
     },
     {
       primaryKey: '10001012',
@@ -112,7 +112,7 @@ describe('Map editor informaiton', () => {
       editedStatus: EditedStatus.Query,
       organisation: Organisation.ONS,
       editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001012',
-      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001012&DataEntrySettings=ReadOnly',
+      readOnlyUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001012&DataEntrySettings=ReadOnly',
     },
     {
       primaryKey: '10001013',
@@ -122,7 +122,7 @@ describe('Map editor informaiton', () => {
       editedStatus: EditedStatus.NotStarted,
       organisation: Organisation.ONS,
       editUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001013',
-      readOnlyUrl:'https://cati.blaise.com/FRS2504A?KeyValue=10001013&DataEntrySettings=ReadOnly',
+      readOnlyUrl: 'https://cati.blaise.com/FRS2504A?KeyValue=10001013&DataEntrySettings=ReadOnly',
     },
     ];
 
