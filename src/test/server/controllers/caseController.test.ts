@@ -630,18 +630,18 @@ describe('recode case tests', () => {
     blaiseApiMock.reset();
   });
 
-  it('It should return a 204 response when cases are allocated', async () => {
+  it('It should return a 204 response when cases are recoded', async () => {
     // arrange
-    const questionnaireName: string = 'TEST111A_EDIT';
-    const uneditedQuestionnaireName: string = 'TEST111A';
+    const questionnaireName: string = 'TEST111A';
+    const editQuestionnaireName: string = 'TEST111A_EDIT';
     const caseId: string = '9001';
     const outcomeCode:string = '210';
     const payload = { outcomeCode };
-    const caseFields1 = { 'QEdit.AssignedTo': '', 'QEdit.Edited': 0, 'QEdit.LastUpdated': '01-01-1900_00:00' };
-    const caseFields2 = { 'qhAdmin.HOut': outcomeCode };
+    const caseFields1 = { 'qhAdmin.HOut': outcomeCode };
+    const caseFields2 = { 'QEdit.AssignedTo': '', 'QEdit.Edited': 0, 'QEdit.LastUpdated': '01-01-1900_00:00' };
 
     blaiseApiMock.setup((api) => api.updateCase(questionnaireName, caseId, caseFields1));
-    blaiseApiMock.setup((api) => api.updateCase(uneditedQuestionnaireName, caseId, caseFields2));
+    blaiseApiMock.setup((api) => api.updateCase(editQuestionnaireName, caseId, caseFields2));
 
     // act
     const response: Response = await sut
@@ -650,7 +650,7 @@ describe('recode case tests', () => {
     // assert
     expect(response.status).toEqual(204);
     blaiseApiMock.verify((api) => api.updateCase(questionnaireName, caseId, caseFields1), Times.once());
-    blaiseApiMock.verify((api) => api.updateCase(uneditedQuestionnaireName, caseId, caseFields2), Times.once());
+    blaiseApiMock.verify((api) => api.updateCase(editQuestionnaireName, caseId, caseFields2), Times.once());
   });
 
   it('It should return a 500 response when a call is made to retrieve a case and the rest api is not availiable', async () => {

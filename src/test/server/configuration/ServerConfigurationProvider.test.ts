@@ -138,7 +138,7 @@ describe('Authentication file tests', () => {
     const sut = new ServerConfigurationProvider();
 
     // assert
-    expect(sut.Roles).toEqual(['SVT_Supervisor', 'SVT_Editor', 'FRS_Research']);
+    expect(sut.Roles).toEqual(['SVT_Supervisor', 'SVT_Editor', 'FRS_Research', 'Survey_Support']);
   });
 
   it.each([undefined, '', '  ', '   '])('should throw an error if BLAISE_API_URL is empty or does not exist', (value) => {
@@ -232,4 +232,39 @@ describe('Authentication file tests', () => {
     expect(result.Survey).toEqual('FRS');
     expect(result.Organisations).toEqual([]);
   });
+
+  it.each(['Survey_Support'])('should return the expected surveys for the Survey Support role', (role) => {
+    // arrange
+    const sut = new ServerConfigurationProvider();
+
+    // act
+    const result = sut.getSurveysForRole(role);
+
+    // assert
+    expect(result).toEqual(['FRS']);
+  });
+
+  it.each(['Survey_Support'])('should return the expected outcome configuration for Survey Support role for FRS', (role) => {
+    // arrange
+    const sut = new ServerConfigurationProvider();
+
+    // act
+    const result = sut.getSurveyConfigForRole('FRS', role);
+
+    // assert
+    expect(result.Survey).toEqual('FRS');
+    expect(result.Outcomes).toEqual([]);
+  });
+
+  it.each(['Survey_Support'])('should return the expected organisation configuration for Survey Support role for FRS', (role) => {
+    // arrange
+    const sut = new ServerConfigurationProvider();
+
+    // act
+    const result = sut.getSurveyConfigForRole('FRS', role);
+
+    // assert
+    expect(result.Survey).toEqual('FRS');
+    expect(result.Organisations).toEqual([]);
+  });  
 });

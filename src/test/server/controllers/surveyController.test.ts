@@ -22,8 +22,6 @@ const server = nodeServer(configFake, blaiseApiMock.object);
 // supertest will handle all http calls
 const sut = supertest(server);
 
-const validUserRoles:string[] = ['SVT_Supervisor', 'SVT_Editor'];
-
 describe('Get surveys tests', () => {
   beforeEach(() => {
     blaiseApiMock.reset();
@@ -33,11 +31,17 @@ describe('Get surveys tests', () => {
     blaiseApiMock.reset();
   });
 
-  it.each(validUserRoles)('should return a 200 response with an expected list of surveys', async (userRole) => {
+  it.each(['SVT_Supervisor', 'SVT_Editor'])('should return a 200 response with an expected list of surveys for the SVT Roles', async (userRole) => {
     // arrange
     // mock blaise client to return a list of questionnaires with allocation
 
     const questionnaireDetailsListMockObject: QuestionnaireDetails[] = [
+      {
+        questionnaireName: 'LMS2101_AA1',
+        numberOfCases: 3,
+        fieldPeriod: 'January 2021',
+        surveyTla: 'LMS',
+      },      
       {
         questionnaireName: 'LMS2101_AA1_EDIT',
         numberOfCases: 3,
@@ -45,17 +49,35 @@ describe('Get surveys tests', () => {
         surveyTla: 'LMS',
       },
       {
+        questionnaireName: 'FRS2408B',
+        numberOfCases: 0,
+        fieldPeriod: 'August 2024',
+        surveyTla: 'FRS',
+      },      
+      {
         questionnaireName: 'FRS2408B_EDIT',
         numberOfCases: 0,
         fieldPeriod: 'August 2024',
         surveyTla: 'FRS',
       },
       {
+        questionnaireName: 'FRS2504A',
+        numberOfCases: 1,
+        fieldPeriod: 'April 2025',
+        surveyTla: 'FRS',
+      },      
+      {
         questionnaireName: 'FRS2504A_EDIT',
         numberOfCases: 1,
         fieldPeriod: 'April 2025',
         surveyTla: 'FRS',
       },
+      {
+        questionnaireName: 'OPN2201A',
+        numberOfCases: 3,
+        fieldPeriod: 'January 2022',
+        surveyTla: 'OPN',
+      },      
       {
         questionnaireName: 'OPN2201A_EDIT',
         numberOfCases: 3,
@@ -93,6 +115,180 @@ describe('Get surveys tests', () => {
     expect(response.body).toEqual(expectedSurveyListMockObject);
     blaiseApiMock.verify((api) => api.getQuestionnaires(), Times.once());
   });
+
+  it('should return a 200 response with an expected list of surveys for the FRS Research Role', async () => {
+    // arrange
+    const userRole = 'FRS_Research'
+
+    // mock blaise client to return a list of questionnaires with allocation
+
+    const questionnaireDetailsListMockObject: QuestionnaireDetails[] = [
+      {
+        questionnaireName: 'LMS2101_AA1',
+        numberOfCases: 3,
+        fieldPeriod: 'January 2021',
+        surveyTla: 'LMS',
+      },      
+      {
+        questionnaireName: 'LMS2101_AA1_EDIT',
+        numberOfCases: 3,
+        fieldPeriod: 'January 2021',
+        surveyTla: 'LMS',
+      },
+      {
+        questionnaireName: 'FRS2408B',
+        numberOfCases: 0,
+        fieldPeriod: 'August 2024',
+        surveyTla: 'FRS',
+      },      
+      {
+        questionnaireName: 'FRS2408B_EDIT',
+        numberOfCases: 0,
+        fieldPeriod: 'August 2024',
+        surveyTla: 'FRS',
+      },
+      {
+        questionnaireName: 'FRS2504A',
+        numberOfCases: 1,
+        fieldPeriod: 'April 2025',
+        surveyTla: 'FRS',
+      },      
+      {
+        questionnaireName: 'FRS2504A_EDIT',
+        numberOfCases: 1,
+        fieldPeriod: 'April 2025',
+        surveyTla: 'FRS',
+      },
+      {
+        questionnaireName: 'OPN2201A',
+        numberOfCases: 3,
+        fieldPeriod: 'January 2022',
+        surveyTla: 'OPN',
+      },      
+      {
+        questionnaireName: 'OPN2201A_EDIT',
+        numberOfCases: 3,
+        fieldPeriod: 'January 2022',
+        surveyTla: 'OPN',
+      },
+    ];
+
+    const expectedSurveyListMockObject: Survey[] = [
+      {
+        name: 'FRS',
+        questionnaires: [{
+          questionnaireName: 'FRS2408B_EDIT',
+          numberOfCases: 0,
+          fieldPeriod: 'August 2024',
+          surveyTla: 'FRS',
+        },
+        {
+          questionnaireName: 'FRS2504A_EDIT',
+          numberOfCases: 1,
+          fieldPeriod: 'April 2025',
+          surveyTla: 'FRS',
+        },
+        ],
+      },
+    ];
+
+    blaiseApiMock.setup((api) => api.getQuestionnaires()).returns(async () => questionnaireDetailsListMockObject);
+
+    // act
+    const response: Response = await sut.get(`/api/surveys?userRole=${userRole}`);
+
+    // assert
+    expect(response.status).toEqual(200);
+    expect(response.body).toEqual(expectedSurveyListMockObject);
+    blaiseApiMock.verify((api) => api.getQuestionnaires(), Times.once());
+  });  
+
+  it('should return a 200 response with an expected list of surveys for the Survey Support Role', async () => {
+    // arrange
+    const userRole = 'Survey_Support'
+
+    // mock blaise client to return a list of questionnaires with allocation
+
+    const questionnaireDetailsListMockObject: QuestionnaireDetails[] = [
+      {
+        questionnaireName: 'LMS2101_AA1',
+        numberOfCases: 3,
+        fieldPeriod: 'January 2021',
+        surveyTla: 'LMS',
+      },      
+      {
+        questionnaireName: 'LMS2101_AA1_EDIT',
+        numberOfCases: 3,
+        fieldPeriod: 'January 2021',
+        surveyTla: 'LMS',
+      },
+      {
+        questionnaireName: 'FRS2408B',
+        numberOfCases: 0,
+        fieldPeriod: 'August 2024',
+        surveyTla: 'FRS',
+      },      
+      {
+        questionnaireName: 'FRS2408B_EDIT',
+        numberOfCases: 0,
+        fieldPeriod: 'August 2024',
+        surveyTla: 'FRS',
+      },
+      {
+        questionnaireName: 'FRS2504A',
+        numberOfCases: 1,
+        fieldPeriod: 'April 2025',
+        surveyTla: 'FRS',
+      },      
+      {
+        questionnaireName: 'FRS2504A_EDIT',
+        numberOfCases: 1,
+        fieldPeriod: 'April 2025',
+        surveyTla: 'FRS',
+      },
+      {
+        questionnaireName: 'OPN2201A',
+        numberOfCases: 3,
+        fieldPeriod: 'January 2022',
+        surveyTla: 'OPN',
+      },      
+      {
+        questionnaireName: 'OPN2201A_EDIT',
+        numberOfCases: 3,
+        fieldPeriod: 'January 2022',
+        surveyTla: 'OPN',
+      },
+    ];
+
+    const expectedSurveyListMockObject: Survey[] = [    
+      {
+        name: 'FRS',
+        questionnaires: [{
+          questionnaireName: 'FRS2408B',
+          numberOfCases: 0,
+          fieldPeriod: 'August 2024',
+          surveyTla: 'FRS',
+        }, 
+        {
+          questionnaireName: 'FRS2504A',
+          numberOfCases: 1,
+          fieldPeriod: 'April 2025',
+          surveyTla: 'FRS',
+        },
+        ],
+      },     
+    ];
+
+    blaiseApiMock.setup((api) => api.getQuestionnaires()).returns(async () => questionnaireDetailsListMockObject);
+
+    // act
+    const response: Response = await sut.get(`/api/surveys?userRole=${userRole}`);
+
+    // assert
+    expect(response.status).toEqual(200);
+    expect(response.body).toEqual(expectedSurveyListMockObject);
+    blaiseApiMock.verify((api) => api.getQuestionnaires(), Times.once());
+  });    
 
   it('It should return a 500 response when a call is made to retrieve a list of surveys and the rest api is not availiable', async () => {
     // arrange
